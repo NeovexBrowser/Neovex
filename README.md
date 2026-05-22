@@ -1,21 +1,108 @@
-# ![Logo](chrome/app/theme/chromium/product_logo_64.png) Chromium
+# ![Logo](chrome/app/theme/chromium/product_logo_64.png) Neovex
 
-Chromium is an open-source browser project that aims to build a safer, faster,
-and more stable way for all users to experience the web.
+Neovex is a Chromium-based browser focused on minimalism, performance, privacy, and a cleaner browsing experience.
 
-The project's web site is https://www.chromium.org.
+The goal of Neovex is not to reinvent the browser engine, but to build a refined experience on top of Chromium with custom features, UI improvements, and productivity-focused enhancements.
 
-To check out the source code locally, don't use `git clone`! Instead,
-follow [the instructions on how to get the code](docs/get_the_code.md).
+---
 
-Documentation in the source is rooted in [docs/README.md](docs/README.md).
+## Features
 
-Learn how to [Get Around the Chromium Source Code Directory
-Structure](https://www.chromium.org/developers/how-tos/getting-around-the-chrome-source-code).
+- Lightweight and minimal design
+- Glassmorphism-inspired UI
+- Custom New Tab Page
+- Wallpaper customization
+- Built-in ad blocker
+- Enhanced private browsing
+- Tor integration for private sessions
+- Study mode and focus tools
+- Custom branding and visual redesign
+- Performance-focused optimizations
 
-For historical reasons, there are some small top level directories. Now the
-guidance is that new top level directories are for product (e.g. Chrome,
-Android WebView, Ash). Even if these products have multiple executables, the
-code should be in subdirectories of the product.
+---
 
-If you found a bug, please file it at https://crbug.com/new.
+## Screenshots
+
+```md
+![Neovex Homepage](screenshots/home.png)
+```
+
+---
+
+## Development Setup
+
+Neovex currently contains modified source files and custom additions built on top of Chromium.
+
+### Get Chromium
+
+```bash
+fetch chromium
+cd src
+```
+
+### Clone Neovex
+
+```bash
+git clone https://github.com/pahal-desai/Neovex.git neovex
+```
+
+### Apply Neovex modifications
+
+Copy and replace the files from the Neovex repository into the Chromium source directory.
+
+### Generate build files
+
+```bash
+gn gen out/Default
+```
+
+### Build
+
+```bash
+autoninja -C out/Default chrome
+```
+
+### Run
+
+```bash
+out/Default/chrome.exe
+```
+
+---
+
+## Project Structure
+
+```
+Neovex/
+├── chrome/
+├── components/
+├── ui/
+├── third_party/
+└── custom browser features
+```
+
+---
+
+## Contributing
+
+Contributions, suggestions, and feedback are welcome.
+
+If you discover bugs or UI issues:
+
+- Open an issue
+- Create a pull request
+- Share feedback
+
+---
+
+## Disclaimer
+
+Neovex is an independent project and is not affiliated with Google or the Chromium project.
+
+Chromium is used as the browser engine.
+
+---
+
+## License
+
+This project follows Chromium's applicable open-source licensing requirements.
