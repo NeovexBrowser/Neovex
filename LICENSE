@@ -1,15 +1,112 @@
-MIT License
+# Apache License
+# Version 2.0, January 2004
+# http://www.apache.org/licenses/
 
-Copyright (c) 2026 Neovex
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## 1. Definitions
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+"License" shall mean the terms and conditions for use, reproduction,
+and distribution as defined by Sections 1 through 9 of this document.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+"Licensor" shall mean the copyright owner or entity authorized by
+the copyright owner that is granting the License.
+
+"Legal Entity" shall mean the union of the acting entity and all other
+entities that control, are controlled by, or are under common control
+with that entity.
+
+"Source" form shall mean the preferred form for making modifications,
+including but not limited to software source code, documentation source,
+and configuration files.
+
+"Object" form shall mean any form resulting from mechanical transformation
+or translation of a Source form.
+
+"Work" shall mean the work of authorship, whether in Source or Object form,
+made available under the License.
+
+"Derivative Works" shall mean any work, whether in Source or Object form,
+that is based on (or derived from) the Work and for which the editorial
+revisions, annotations, elaborations, or other modifications represent,
+as a whole, an original work of authorship.
+
+"Contribution" shall mean any work of authorship, including the original
+version of the Work and any modifications or additions to that Work or
+Derivative Works thereof, that is intentionally submitted to Licensor
+for inclusion in the Work by the copyright owner or by an individual
+or Legal Entity authorized to submit on behalf of the copyright owner.
+
+"Contributor" shall mean Licensor and any individual or Legal Entity
+on behalf of whom a Contribution has been received by Licensor and
+subsequently incorporated within the Work.
+
+---
+
+## 2. Grant of Copyright License
+
+Each Contributor hereby grants to You a perpetual, worldwide,
+non-exclusive, no-charge, royalty-free, irrevocable copyright license
+to reproduce, prepare Derivative Works of, publicly display, publicly
+perform, sublicense, and distribute the Work and such Derivative Works.
+
+---
+
+## 3. Grant of Patent License
+
+Each Contributor hereby grants You a perpetual, worldwide,
+non-exclusive, no-charge, royalty-free, irrevocable (except as stated
+in this section) patent license to make, have made, use, offer to sell,
+sell, import, and otherwise transfer the Work.
+
+---
+
+## 4. Redistribution
+
+You may reproduce and distribute copies of the Work or Derivative Works
+under any medium, with or without modifications, provided that you meet
+the following conditions:
+
+- You must give any other recipients a copy of this License
+- You must state any significant changes made
+- You must retain notices in the Source form
+
+---
+
+## 5. Submission of Contributions
+
+Unless explicitly stated otherwise, any Contribution intentionally
+submitted for inclusion in the Work shall be licensed under this License.
+
+---
+
+## 6. Trademarks
+
+This License does not grant permission to use the trade names, trademarks,
+service marks, or product names of the Licensor, except as required for
+reasonable and customary use.
+
+---
+
+## 7. Disclaimer of Warranty
+
+Unless required by applicable law or agreed to in writing, Licensor
+provides the Work "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.
+
+---
+
+## 8. Limitation of Liability
+
+In no event shall the Licensor be liable for any damages arising from
+the use or inability to use the Work.
+
+---
+
+## 9. Acceptance of Warranty or Additional Liability
+
+You may choose to offer support, warranty, or liability obligations
+separately, but only on your own behalf.
+
+---
+
+END OF TERMS AND CONDITIONS
