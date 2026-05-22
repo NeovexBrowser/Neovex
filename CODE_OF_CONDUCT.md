@@ -1,99 +1,198 @@
-# Chromium Code of Conduct
+# \# Neovex Code of Conduct
 
-Google and the Chromium team are committed to preserving and fostering a
-diverse, welcoming community. Below is our community code of conduct, which
-applies to our repos and organizations, issue trackers, mailing lists,
-blog content, and any other Chromium-supported communication group, as
-well as any private communication initiated in the context of these
-spaces. This code of conduct must be followed by everyone contributing to
-the Chromium project, regardless of affiliation or position.
+# 
 
-Simply put, community discussions should be
+# Neovex is committed to building a safe, open, and high-signal community for everyone. This code applies to all Neovex spaces including repositories, issue trackers, discussions, chats, events, and any related communication channels.
 
- * respectful and kind;
- * about Chromium;
- * about features and code, not the individuals involved.
+# 
 
-## Be respectful and constructive.
+# In short, community interaction should be:
 
-Treat everyone with respect. Build on each other's ideas. Each of us has the
-right to enjoy our experience and participate without fear of harassment,
-discrimination, or condescension, whether blatant or subtle. Remember that
-Chromium is a geographically distributed team and that you may not be
-communicating with someone in their primary language. We all get frustrated
-when working on hard problems, but we cannot allow that frustration to turn
-into personal attacks.
+# 
 
-It is especially important that we are respectful of each other's time. As a
-general rule, while it is acceptable to use AI for Chromium development
-(code authoring, bug finding, etc), you should not "delegate" discussing
-something with another human to an AI. If you file an AI-generated bug or
-upload an AI-authored CL and a human replies on it, you should reply to their
-comment yourself, not have your AI do so. Remember that at all times you are
-responsible for actions taken under your account in Chromium spaces, and if
-an agent using your account is disrespectful or unkind, the consequences of
-that as outlined below will apply to your account.
+# \- respectful and constructive  
 
-## Speak up if you see or hear something.
+# \- focused on Neovex, its tools, and its ecosystem  
 
-You are empowered to politely engage when you feel that you or others are
-disrespected. The person making you feel uncomfortable may not be aware of what
-they are doing - politely bringing their behavior to their attention is
-encouraged.
+# \- about ideas and work, not people  
 
-If you are uncomfortable speaking up, or feel that your concerns are not being
-duly considered, you can email community@chromium.org to request involvement
-from a community manager. All concerns shared with community managers will be
-kept confidential, but you may also submit an anonymous report [here](https://docs.google.com/a/google.com/forms/d/e/1FAIpQLSe-LDjW9eIJ-TpI2poZxnGtU-SvUWkFZc8x0aiKGY1s7NKPdA/viewform?c=0&w=1).
-Please note that without a way to contact you, an anonymous report may be
-difficult to act on. You may also create a throwaway account to report. In
-cases where a public response is deemed necessary, the identities of victims
-and reporters will remain confidential unless those individuals instruct us
-otherwise.
+# 
 
-While all reports will be taken seriously, the Chromium community managers may
-not act on complaints that they feel are not violations of this code of
-conduct.
+# \---
 
-## We will not tolerate harassment of any kind, including but not limited to:
+# 
 
- * Harassing comments
- * Intimidation
- * Encouraging a person to engage in self-harm.
- * Sustained disruption or derailing of threads, channels, lists, etc.
- * Offensive or violent comments, jokes or otherwise
- * Inappropriate sexual content
- * Unwelcome sexual or otherwise aggressive attention
- * Continued one-on-one communication after requests to cease
- * Distribution or threat of distribution of people's personally identifying
-   information, AKA “doxing”
+# \## Be respectful and constructive
 
-## Consequences for failing to comply with this policy
+# 
 
-Consequences for failing to comply with this policy may include, at the sole
-discretion of the Chromium community managers:
+# Treat everyone with basic respect, even when opinions differ.
 
- * a request for an apology;
- * a private or public warning or reprimand;
- * a temporary ban from the mailing list, blog, Chromium repository or
-   organization, or other Chromium-supported communication group, including
-   loss of committer status;
- * a permanent ban from any of the above, or from all current and future
-   Chromium-supported or Google-supported communities, including loss of
-   committer status.
+# 
 
-Participants warned to stop any harassing behavior are expected to comply
-immediately; failure to do so will result in an escalation of consequences.
+# \- Keep discussions productive and grounded  
 
-Bans or other consequences under this policy can be appealed by email to
-community@chromium.org.
+# \- Critique ideas, not individuals  
 
-## Acknowledgements
+# \- Assume good intent where possible  
 
-This Code of Conduct is based on the Geek Feminism Code of Conduct, the Django
-Code of Conduct and the Geek Feminism Wiki "Effective codes of conduct" guide.
+# \- Remember: people come from different backgrounds, skill levels, and time zones  
 
-## License
+# 
 
-This Code of Conduct is available for reuse under the Creative Commons Zero
-(CC0) license.
+# Disagreement is fine. Disrespect is not.
+
+# 
+
+# \---
+
+# 
+
+# \## Stay focused
+
+# 
+
+# Neovex spaces exist to build and improve Neovex.
+
+# 
+
+# \- Keep conversations relevant  
+
+# \- Avoid derailment or repeated off-topic posting  
+
+# \- Don’t use community channels for personal disputes  
+
+# 
+
+# If something doesn’t fit, redirect it or move it elsewhere.
+
+# 
+
+# \---
+
+# 
+
+# \## No harassment or toxic behavior
+
+# 
+
+# We do not tolerate:
+
+# 
+
+# \- harassment, insults, or targeted abuse  
+
+# \- intimidation or threats  
+
+# \- repeated unwanted contact  
+
+# \- sexual harassment or inappropriate content  
+
+# \- hate speech or discriminatory language  
+
+# \- doxxing or sharing private information  
+
+# \- encouraging self-harm or violence  
+
+# \- deliberate disruption of discussions or workflows  
+
+# 
+
+# One-time mistakes can be corrected. Repeated behavior won’t be.
+
+# 
+
+# \---
+
+# 
+
+# \## Use AI responsibly
+
+# 
+
+# AI tools can help with coding, debugging, and ideas, but:
+
+# 
+
+# \- you are responsible for what you submit  
+
+# \- don’t use AI to harass, impersonate, or mislead others  
+
+# \- don’t outsource human interaction in a way that removes accountability  
+
+# \- if someone responds to you, respond yourself  
+
+# 
+
+# \---
+
+# 
+
+# \## Speak up early
+
+# 
+
+# If something feels off:
+
+# 
+
+# \- address it directly and calmly if safe  
+
+# \- or report it to moderators/admins  
+
+# \- escalation is okay if the issue continues  
+
+# 
+
+# Reports will be handled as confidentially as possible.
+
+# 
+
+# \---
+
+# 
+
+# \## Consequences
+
+# 
+
+# Violations may result in:
+
+# 
+
+# \- warning or request to correct behavior  
+
+# \- temporary restriction from Neovex spaces  
+
+# \- loss of access or contributor privileges  
+
+# \- permanent ban from current and future Neovex communities  
+
+# 
+
+# Enforcement is at moderator discretion based on severity and pattern of behavior.
+
+# 
+
+# \---
+
+# 
+
+# \## Acknowledgements
+
+# 
+
+# This code is inspired by widely used open-source community standards, adapted for Neovex.
+
+# 
+
+# \---
+
+# 
+
+# \## License
+
+# 
+
+# This Code of Conduct is available under CC0 (public domain).
+
