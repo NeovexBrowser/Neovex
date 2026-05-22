@@ -2,30 +2,24 @@
 
 Neovex is a Chromium-based browser focused on minimalism, performance, privacy, and a cleaner browsing experience.
 
-The goal of Neovex is not to reinvent the browser engine, but to build a refined experience on top of Chromium with custom features, UI improvements, and productivity-focused enhancements.
-
 ---
 
 ## Features
 
 - Lightweight and minimal design
-- Glassmorphism-inspired UI
-- Custom New Tab Page
-- Wallpaper customization
 - Built-in ad blocker
 - Enhanced private browsing
 - Tor integration for private sessions
 - Study mode and focus tools
-- Custom branding and visual redesign
 - Performance-focused optimizations
 
 ---
 
 ## Screenshots
 
-```md
+
 ![Neovex Homepage](screenshots/home.png)
-```
+
 
 ---
 
