@@ -1,0 +1,398 @@
+// Copyright 2019 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#include "third_party/blink/renderer/modules/clipboard/clipboard_item.h"
+
+#include "third_party/blink/public/common/features.h"
+#include "third_party/blink/public/mojom/clipboard/clipboard.mojom-blink.h"
+#include "third_party/blink/renderer/bindings/core/v8/script_function.h"
+#include "third_party/blink/renderer/bindings/core/v8/script_promise_resolver.h"
+#include "third_party/blink/renderer/core/clipboard/system_clipboard.h"
+#include "third_party/blink/renderer/core/dom/dom_exception.h"
+#include "third_party/blink/renderer/core/execution_context/execution_context.h"
+#include "third_party/blink/renderer/core/frame/local_dom_window.h"
+#include "third_party/blink/renderer/core/frame/local_frame.h"
+#include "third_party/blink/renderer/core/frame/web_feature.h"
+#include "third_party/blink/renderer/modules/clipboard/clipboard.h"
+#include "third_party/blink/renderer/platform/bindings/script_state.h"
+#include "third_party/blink/renderer/platform/heap/garbage_collected.h"
+#include "third_party/blink/renderer/platform/wtf/text/strcat.h"
+#include "third_party/blink/renderer/platform/wtf/text/string_builder.h"
+#include "third_party/blink/renderer/platform/wtf/text/string_utf8_adaptor.h"
+#include "ui/base/clipboard/clipboard_constants.h"
+
+namespace blink {
+
+// The time threshold to consider an operation as "delayed" for UseCounter
+// purposes.
+constexpr base::TimeDelta kClipboardOperation5SecDelay = base::Seconds(5);
+constexpr base::TimeDelta kClipboardOperation1MinDelay = base::Minutes(1);
+constexpr base::TimeDelta kClipboardOperation10MinDelay = base::Minutes(10);
+
+class UnionToBlobResolverFunction final
+    : public ThenCallable<V8UnionBlobOrString,
+                          UnionToBlobResolverFunction,
+                          Blob> {
+ public:
+  explicit UnionToBlobResolverFunction(const String& mime_type)
+      : mime_type_(mime_type) {}
+
+  Blob* React(ScriptState* script_state, V8UnionBlobOrString* union_value) {
+    if (union_value->IsBlob()) {
+      return union_value->GetAsBlob();
+    } else if (union_value->IsString()) {
+      // ClipboardItem::getType() returns a Blob, so we need to convert the
+      // string to a Blob here.
+      StringUtf8Adaptor utf8_text(union_value->GetAsString());
+      return Blob::Create(base::as_byte_span(utf8_text), mime_type_);
+    }
+    return nullptr;
+  }
+
+ private:
+  String mime_type_;
+};
+
+// static
+ClipboardItem* ClipboardItem::Create(
+    const HeapVector<
+        std::pair<String, MemberScriptPromise<V8UnionBlobOrString>>>&
+        representations,
+    ExceptionState& exception_state) {
+  // Check that incoming dictionary isn't empty. If it is, it's possible that
+  // Javascript bindings implicitly converted an Object (like a
+  // ScriptPromise<V8UnionBlobOrString>) into {}, an empty dictionary.
+  if (!representations.size()) {
+    exception_state.ThrowTypeError("Empty dictionary argument");
+    return nullptr;
+  }
+  return MakeGarbageCollected<ClipboardItem>(representations);
+}
+
+ClipboardItem::ClipboardItem(const HeapVector<String>& mime_types,
+                             std::optional<absl::uint128> sequence_number,
+                             ExecutionContext* execution_context,
+                             bool sanitize_html_for_lazy_read,
+                             AccessMode access_mode)
+    : ExecutionContextLifecycleObserver(execution_context),
+      sequence_number_(sequence_number),
+      access_mode_(access_mode),
+      sanitize_html_for_lazy_read_(sanitize_html_for_lazy_read),
+      creation_time_(base::TimeTicks::Now()) {
+  CHECK(
+      RuntimeEnabledFeatures::ReadClipboardDataOnClipboardItemGetTypeEnabled());
+  for (const auto& mime_type : mime_types) {
+    String web_custom_format = Clipboard::ParseWebCustomFormat(mime_type);
+    if (web_custom_format.empty()) {
+      mime_types_.emplace_back(mime_type);
+    } else {
+      String web_custom_format_string =
+          StrCat({ui::kWebClipboardFormatPrefix, web_custom_format});
+      mime_types_.emplace_back(web_custom_format_string);
+      custom_format_types_.push_back(web_custom_format_string);
+    }
+  }
+}
+
+ClipboardItem::ClipboardItem(
+    const HeapVector<
+        std::pair<String, MemberScriptPromise<V8UnionBlobOrString>>>&
+        representations,
+    std::optional<absl::uint128> sequence_number)
+    : ExecutionContextLifecycleObserver(nullptr),
+      sequence_number_(sequence_number),
+      creation_time_(base::TimeTicks::Now()) {
+  for (const auto& representation : representations) {
+    String web_custom_format =
+        Clipboard::ParseWebCustomFormat(representation.first);
+    if (web_custom_format.empty()) {
+      // Any arbitrary type can be added to ClipboardItem, but there may not be
+      // any read/write support for that type.
+      // TODO(caseq,japhet): we can't pass typed promises from bindings yet, but
+      // when we can, the type cast below should go away.
+      representations_.emplace_back(representation.first,
+                                    representation.second);
+    } else {
+      // Types with "web " prefix are special, so we do some level of MIME type
+      // parsing here to get a valid web custom format type.
+      // We want to ensure that the string after removing the "web " prefix is
+      // a valid MIME type.
+      // e.g. "web text/html" is a web custom MIME type & "text/html" is a
+      // well-known MIME type. Removing the "web " prefix makes it hard to
+      // differentiate between the two.
+      // TODO(caseq,japhet): we can't pass typed promises from bindings yet, but
+      // when we can, the type cast below should go away.
+      String web_custom_format_string =
+          StrCat({ui::kWebClipboardFormatPrefix, web_custom_format});
+      representations_.emplace_back(web_custom_format_string,
+                                    representation.second);
+      custom_format_types_.push_back(web_custom_format_string);
+    }
+  }
+}
+
+Vector<String> ClipboardItem::types() const {
+  Vector<String> types;
+  if (access_mode_ == AccessMode::kLazy) {
+    CHECK(RuntimeEnabledFeatures::
+              ReadClipboardDataOnClipboardItemGetTypeEnabled());
+    types.ReserveInitialCapacity(mime_types_.size());
+    for (const auto& item : mime_types_) {
+      types.push_back(item);
+    }
+
+  } else {
+    types.ReserveInitialCapacity(representations_.size());
+    for (const auto& item : representations_) {
+      types.push_back(item.first);
+    }
+  }
+  return types;
+}
+
+void ClipboardItem::ResolveFormatData(const String& mime_type, Blob* blob) {
+  CHECK(
+      RuntimeEnabledFeatures::ReadClipboardDataOnClipboardItemGetTypeEnabled());
+
+  if (representations_with_resolvers_.find(mime_type) ==
+      representations_with_resolvers_.end()) {
+    return;
+  }
+  if (HasClipboardChangedSinceClipboardRead()) {
+    representations_with_resolvers_.at(mime_type)->Reject(
+        MakeGarbageCollected<DOMException>(DOMExceptionCode::kDataError,
+                                           "Clipboard data has changed"));
+    return;
+  }
+
+  if (!blob) {
+    representations_with_resolvers_.at(mime_type)->Reject(
+        MakeGarbageCollected<DOMException>(DOMExceptionCode::kDataError,
+                                           "Failed to read clipboard data."));
+    return;
+  }
+
+  representations_with_resolvers_.at(mime_type)->Resolve(blob);
+}
+
+ScriptPromise<Blob> ClipboardItem::getType(ScriptState* script_state,
+                                           const String& type,
+                                           ExceptionState& exception_state) {
+  if (access_mode_ != AccessMode::kLazy) {
+    for (const auto& item : representations_) {
+      if (type == item.first) {
+        if (RuntimeEnabledFeatures::ClipboardItemGetTypeCounterEnabled()) {
+          CaptureTelemetry(ExecutionContext::From(script_state), type);
+        }
+        return item.second.Unwrap().Then(
+            script_state,
+            MakeGarbageCollected<UnionToBlobResolverFunction>(type));
+      }
+    }
+    // For non-lazy ClipboardItems, if type wasn't found above, reject.
+    exception_state.ThrowDOMException(DOMExceptionCode::kNotFoundError,
+                                      "The type was not found");
+    return ScriptPromise<Blob>();
+  }
+
+  CHECK(
+      RuntimeEnabledFeatures::ReadClipboardDataOnClipboardItemGetTypeEnabled());
+
+  if (!GetExecutionContext()) {
+    return ScriptPromise<Blob>();
+  }
+
+  if (HasClipboardChangedSinceClipboardRead()) {
+    exception_state.ThrowDOMException(DOMExceptionCode::kDataError,
+                                      "Clipboard data has changed");
+    return ScriptPromise<Blob>();
+  }
+
+  const bool has_cached_resolver = representations_with_resolvers_.find(type) !=
+                                   representations_with_resolvers_.end();
+  const bool supported_lazy_type = mime_types_.Contains(type);
+  if (RuntimeEnabledFeatures::ClipboardItemGetTypeCounterEnabled() &&
+      (has_cached_resolver || supported_lazy_type)) {
+    CaptureTelemetry(ExecutionContext::From(script_state), type);
+  }
+
+  // Return cached promise if we've already started reading this type. This
+  // ensures multiple getType() calls for the same type share the same promise.
+  if (has_cached_resolver) {
+    return representations_with_resolvers_.at(type)->Promise();
+  }
+
+  if (supported_lazy_type) {
+    // Create the promise resolver first, then store it
+    auto* resolver = MakeGarbageCollected<ScriptPromiseResolver<Blob>>(
+        script_state, exception_state.GetContext());
+    representations_with_resolvers_.insert(type, resolver);
+    ReadRepresentationFromClipboardReader(type);
+    return representations_with_resolvers_.at(type)->Promise();
+  }
+
+  // If we get here, the type was not found
+  exception_state.ThrowDOMException(DOMExceptionCode::kNotFoundError,
+                                    "The type was not found");
+  return ScriptPromise<Blob>();
+}
+
+void ClipboardItem::ReadRepresentationFromClipboardReader(
+    const String& format) {
+  CHECK(
+      RuntimeEnabledFeatures::ReadClipboardDataOnClipboardItemGetTypeEnabled());
+  SystemClipboard* system_clipboard = GetSystemClipboard();
+  if (!system_clipboard) {
+    ResolveFormatData(format, nullptr);
+    return;
+  }
+  ClipboardReader* clipboard_reader = ClipboardReader::Create(
+      system_clipboard, format, this, sanitize_html_for_lazy_read_);
+  if (!clipboard_reader) {
+    ResolveFormatData(format, nullptr);
+    return;
+  }
+  clipboard_reader->Read();
+}
+
+bool ClipboardItem::HasClipboardChangedSinceClipboardRead() {
+  // If sequence_number_ was never initialized, we can't verify if clipboard
+  // changed, so conservatively return true.
+  if (!sequence_number_.has_value()) {
+    return true;
+  }
+
+  SystemClipboard* system_clipboard = GetSystemClipboard();
+  if (!system_clipboard) {
+    return true;
+  }
+
+  return system_clipboard->SequenceNumber() != sequence_number_.value();
+}
+
+LocalFrame* ClipboardItem::GetLocalFrame() const {
+  LocalDOMWindow* window = DynamicTo<LocalDOMWindow>(GetExecutionContext());
+  if (!window) {
+    return nullptr;
+  }
+  return window->GetFrame();
+}
+
+SystemClipboard* ClipboardItem::GetSystemClipboard() const {
+  LocalFrame* frame = GetLocalFrame();
+  if (!frame) {
+    return nullptr;
+  }
+  return frame->GetSystemClipboard();
+}
+
+void ClipboardItem::OnRead(Blob* blob, const String& mime_type) {
+  ResolveFormatData(mime_type, blob);
+}
+
+void ClipboardItem::ContextDestroyed() {
+  DOMException* detached_error = MakeGarbageCollected<DOMException>(
+      DOMExceptionCode::kNotAllowedError, "Document detached.");
+  for (auto& entry : representations_with_resolvers_) {
+    entry.value->Reject(detached_error);
+  }
+  representations_with_resolvers_.clear();
+}
+
+// static
+bool ClipboardItem::supports(const String& type) {
+  if (type.length() >= mojom::blink::ClipboardHost::kMaxFormatSize) {
+    return false;
+  }
+
+  if (!Clipboard::ParseWebCustomFormat(type).empty()) {
+    return true;
+  }
+
+  // TODO(https://crbug.com/1029857): Add support for other types.
+  return type == ui::kMimeTypePng || type == ui::kMimeTypePlainText ||
+         type == ui::kMimeTypeHtml || type == ui::kMimeTypeSvg;
+}
+
+void ClipboardItem::Trace(Visitor* visitor) const {
+  visitor->Trace(representations_);
+  visitor->Trace(representations_with_resolvers_);
+  ClipboardReaderResultHandler::Trace(visitor);
+  ExecutionContextLifecycleObserver::Trace(visitor);
+  ScriptWrappable::Trace(visitor);
+}
+
+void ClipboardItem::CaptureTelemetry(ExecutionContext* context,
+                                     const String& type) {
+  if (!context) {
+    return;
+  }
+  LocalDOMWindow& window = *To<LocalDOMWindow>(context);
+  SystemClipboard* system_clipboard =
+      window.GetFrame() ? window.GetFrame()->GetSystemClipboard() : nullptr;
+  if (system_clipboard) {
+    absl::uint128 current_sequence_number = system_clipboard->SequenceNumber();
+    if (!sequence_number_.has_value() ||
+        current_sequence_number != sequence_number_.value()) {
+      // Case 1: Clipboard changed between read() and getType()
+      UseCounter::Count(context,
+                        WebFeature::kClipboardChangedBetweenReadAndGetType);
+
+      // Case 2: Clipboard changed between two getType() calls
+      if (!last_get_type_calls_.empty()) {
+        UseCounter::Count(context,
+                          WebFeature::kClipboardChangedBetweenGetTypes);
+      }
+    }
+  }
+  // Case 3: Time difference between read() and getType() calls is more
+  // than threshold
+  const base::TimeTicks current_time = base::TimeTicks::Now();
+  const base::TimeDelta time_diff = current_time - creation_time_;
+  if (time_diff >= kClipboardOperation5SecDelay &&
+      time_diff < kClipboardOperation1MinDelay) {
+    UseCounter::Count(
+        context,
+        WebFeature::kClipboardReadAndGetTypeTimeDiffIsBetween5SecAnd1Min);
+  } else if (time_diff >= kClipboardOperation1MinDelay &&
+             time_diff < kClipboardOperation10MinDelay) {
+    UseCounter::Count(
+        context,
+        WebFeature::kClipboardReadAndGetTypeTimeDiffIsBetween1MinAnd10Min);
+  } else if (time_diff > kClipboardOperation10MinDelay) {
+    UseCounter::Count(
+        context, WebFeature::kClipboardReadAndGetTypeTimeDiffIsMoreThan10Min);
+  }
+
+  // Case 4: Time difference between two getType() calls for the same
+  // types is more than threshold
+  auto it = last_get_type_calls_.find(type);
+  if (it != last_get_type_calls_.end()) {
+    const base::TimeDelta type_time_diff = current_time - it->value;
+    if (type_time_diff >= kClipboardOperation5SecDelay &&
+        type_time_diff < kClipboardOperation1MinDelay) {
+      UseCounter::Count(
+          context,
+          WebFeature::kClipboardGetTypeTimeDiffOfSameTypeIsBetween5SecAnd1Min);
+    } else if (type_time_diff >= kClipboardOperation1MinDelay &&
+               type_time_diff < kClipboardOperation10MinDelay) {
+      UseCounter::Count(
+          context,
+          WebFeature::kClipboardGetTypeTimeDiffOfSameTypeIsBetween1MinAnd10Min);
+    } else if (type_time_diff > kClipboardOperation10MinDelay) {
+      UseCounter::Count(
+          context,
+          WebFeature::kClipboardGetTypeTimeDiffOfSameTypeIsMoreThan10Min);
+    }
+  } else {
+    // Update the last call time for this type
+    last_get_type_calls_.Set(type, current_time);
+  }
+
+  if (!window.document()->hasFocus()) {
+    UseCounter::Count(context, WebFeature::kClipboardGetTypeWindowNotInFocus);
+  }
+}
+
+}  // namespace blink

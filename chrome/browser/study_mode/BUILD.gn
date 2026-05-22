@@ -1,0 +1,17 @@
+# Copyright 2025 Neovex Authors. All rights reserved.
+# Study Mode - blocks distracting websites during study sessions
+
+source_set("study_mode") {
+  sources = [
+    "study_mode_navigation_throttle.cc",
+    "study_mode_navigation_throttle.h",
+    "study_mode_tab_helper.cc",
+    "study_mode_tab_helper.h",
+  ]
+
+  deps = [
+    "//base",
+    "//content/public/browser",
+    "//url",
+  ]
+}

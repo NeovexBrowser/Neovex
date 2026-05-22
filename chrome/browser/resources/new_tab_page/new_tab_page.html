@@ -1,0 +1,660 @@
+﻿<!doctype html>
+<html dir="$i18n{textdirection}" lang="$i18n{language}">
+  <head>
+  <link rel="icon" type="image/svg+xml" href="chrome://resources/images/neovex_logo.svg">
+    <meta charset="utf-8">
+    <title>$i18n{title}</title>
+    <style>
+      body {
+        background: $i18n{backgroundColor};
+        margin: 0;
+      }
+
+      #backgroundImage {
+        border: none;
+        height: 100%;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+      }
+
+      [show-background-image] #backgroundImage {
+        visibility: visible;
+      }
+    </style>
+    <style>
+      /* === CUSTOM NTP: Hide default Chromium UI === */
+      #backgroundImage { display: none !important; }
+      ntp-app { display: none !important; }
+
+      /* === CUSTOM NTP: Styling === */
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+      html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+      html{color-scheme:dark !important;}
+      body{background:#0b0b14 !important;color:#fff !important;position:relative;}
+
+      .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.45;}
+      .orb-1{width:520px;height:520px;background:radial-gradient(circle,rgba(88,56,160,0.7),transparent 70%);top:-10%;left:-5%;}
+      .orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(30,64,130,0.6),transparent 70%);top:20%;right:-10%;}
+      .orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(40,110,120,0.5),transparent 70%);bottom:-5%;left:30%;}
+      .orb-4{width:300px;height:300px;background:radial-gradient(circle,rgba(120,50,90,0.4),transparent 70%);bottom:15%;right:20%;}
+
+      .dot-grid{
+        position:absolute;inset:0;
+        background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);
+        background-size:32px 32px;
+        pointer-events:none;
+      }
+
+      .bg-custom{position:absolute;inset:0;z-index:1;background-size:cover;background-position:center;display:none;}
+      .bg-custom.active{display:block;}
+      body.has-custom-bg .orb,
+      body.has-custom-bg .dot-grid{display:none;}
+
+      .content{
+        position:relative;z-index:10;
+        display:flex;flex-direction:column;align-items:center;
+        height:100%;padding-top:140px;
+      }
+
+      .search-bar{
+        width:min(600px,85vw);height:50px;
+        display:flex;align-items:center;
+        background:rgba(255,255,255,0.07);
+        backdrop-filter:blur(20px) saturate(1.2);
+        -webkit-backdrop-filter:blur(20px) saturate(1.2);
+        border:1px solid rgba(255,255,255,0.1);
+        border-radius:26px;padding:0 20px;gap:12px;
+        box-shadow:0 2px 20px rgba(0,0,0,0.15);cursor:text;
+      }
+      .search-bar:hover{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);}
+      .search-bar:focus-within{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.22);box-shadow:0 2px 30px rgba(80,120,200,0.12);}
+      .search-logo{flex-shrink:0;width:20px;height:20px;opacity:.5;}
+      .search-input{flex:1;background:none;border:none;outline:none;font-size:14px;color:rgba(255,255,255,0.85);letter-spacing:.2px;}
+      .search-input::placeholder{color:rgba(255,255,255,0.3);}
+      .search-icon{flex-shrink:0;width:18px;height:18px;opacity:.4;cursor:pointer;}
+      .search-icon:hover{opacity:.8;}
+
+      .quick-links{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;justify-content:center;max-width:720px;}
+      .link-card{
+        width:80px;height:80px;
+        display:flex;align-items:center;justify-content:center;
+        background:rgba(255,255,255,0.05);
+        backdrop-filter:blur(12px);
+        -webkit-backdrop-filter:blur(12px);
+        border:1px solid rgba(255,255,255,0.08);
+        border-radius:14px;cursor:pointer;
+        box-shadow:0 1px 8px rgba(0,0,0,0.1);
+        text-decoration:none;position:relative;flex-shrink:0;
+      }
+      .link-card:hover{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.18);transform:translateY(-2px);}
+      .link-card:active{transform:translateY(0) scale(.97);}
+      .link-card .favicon{width:32px;height:32px;border-radius:6px;object-fit:contain;}
+      .link-card .fallback-letter{
+        width:38px;height:38px;border-radius:10px;
+        display:flex;align-items:center;justify-content:center;
+        font-size:18px;font-weight:600;color:#fff;text-transform:uppercase;
+      }
+      .link-card::after{
+        content:attr(data-title);
+        position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);
+        font-size:10px;color:rgba(255,255,255,0.45);white-space:nowrap;
+        opacity:0;pointer-events:none;
+      }
+      .link-card:hover::after{opacity:1;}
+      .link-card .remove-btn{
+        position:absolute;top:-5px;right:-5px;
+        width:18px;height:18px;border-radius:50%;
+        background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.2);
+        color:#fff;font-size:12px;line-height:1;
+        display:none;align-items:center;justify-content:center;
+        cursor:pointer;z-index:5;
+      }
+      .link-card:hover .remove-btn{display:flex;}
+      .link-card .remove-btn:hover{background:rgba(200,50,50,0.8);}
+      .favicon-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:6px;object-fit:contain;z-index:2;opacity:0;transition:opacity .2s;}
+
+      .add-card{
+        width:80px;height:80px;
+        display:flex;align-items:center;justify-content:center;
+        background:rgba(255,255,255,0.03);
+        border:1.5px dashed rgba(255,255,255,0.12);
+        border-radius:14px;cursor:pointer;flex-shrink:0;
+      }
+      .add-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.25);}
+      .add-card svg{width:22px;height:22px;opacity:.3;}
+      .add-card:hover svg{opacity:.6;}
+
+
+
+      .settings-btn{
+        position:absolute;bottom:22px;left:24px;
+        width:32px;height:32px;border-radius:50%;
+        background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
+        display:flex;align-items:center;justify-content:center;
+        cursor:pointer;z-index:10;
+      }
+      .settings-btn:hover{background:rgba(255,255,255,0.12);}
+      .settings-btn svg{width:15px;height:15px;fill:rgba(255,255,255,0.4);}
+      .settings-btn:hover svg{fill:rgba(255,255,255,0.7);}
+
+      .study-mode{
+        position:absolute;bottom:22px;right:24px;
+        display:flex;align-items:center;gap:8px;
+        color:rgba(255,255,255,0.4);font-size:12px;font-weight:500;
+        z-index:10;user-select:none;
+      }
+      .study-mode.active-mode>span{color:rgba(100,180,255,0.8);}
+      .toggle{width:38px;height:20px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);border-radius:10px;position:relative;cursor:pointer;transition:all .2s;}
+      .toggle.active{background:rgba(100,160,255,0.35);border-color:rgba(100,160,255,0.5);}
+      .toggle-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,0.2);transition:transform .2s;}
+      .toggle.active .toggle-knob{transform:translateX(18px);}
+      .wl-btn{
+        padding:3px 8px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);
+        background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);
+        font-size:10px;cursor:pointer;display:none;
+      }
+      .study-mode.active-mode .wl-btn{display:inline-block;}
+      .wl-btn:hover{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);}
+      .wl-list{max-height:200px;overflow-y:auto;margin-top:10px;}
+      .wl-item{
+        display:flex;align-items:center;justify-content:space-between;
+        padding:7px 10px;background:rgba(255,255,255,0.03);
+        border:1px solid rgba(255,255,255,0.06);border-radius:8px;margin-bottom:6px;
+        font-size:12px;color:rgba(255,255,255,0.6);
+      }
+      .wl-item .wl-rm{color:rgba(255,100,100,0.6);cursor:pointer;font-size:14px;}
+      .wl-item .wl-rm:hover{color:rgba(255,100,100,0.9);}
+      .wl-add-row{display:flex;gap:6px;margin-top:10px;}
+      .wl-add-row input{flex:1;padding:7px 10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#eee;font-size:12px;outline:none;}
+      .wl-add-row input:focus{border-color:rgba(100,160,255,0.4);}
+      .wl-add-row button{padding:7px 14px;border-radius:8px;border:none;background:rgba(80,140,255,0.5);color:#fff;font-size:11px;font-weight:600;cursor:pointer;}
+      .wl-add-row button:hover{background:rgba(80,140,255,0.7);}
+
+      .clock{position:absolute;top:18px;right:24px;color:rgba(255,255,255,0.25);font-size:12px;z-index:10;letter-spacing:.5px;font-weight:500;}
+
+      .modal-overlay{
+        position:fixed;inset:0;z-index:1000;
+        background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);
+        display:none;align-items:center;justify-content:center;
+      }
+      .modal-overlay.open{display:flex;}
+      .modal{
+        background:#141420;border:1px solid rgba(255,255,255,0.08);
+        border-radius:16px;padding:24px 28px;
+        width:min(400px,90vw);color:#ccc;
+        box-shadow:0 16px 48px rgba(0,0,0,0.5);
+      }
+      .modal h2{font-size:16px;font-weight:600;margin-bottom:16px;color:#eee;}
+      .modal label{display:block;font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:5px;margin-top:12px;}
+      .modal input[type="text"],.modal input[type="url"]{
+        width:100%;padding:9px 12px;
+        background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+        border-radius:8px;color:#eee;font-size:13px;outline:none;
+      }
+      .modal input:focus{border-color:rgba(100,160,255,0.4);}
+      .modal-actions{display:flex;gap:8px;margin-top:18px;justify-content:flex-end;}
+      .modal-actions button{padding:8px 16px;border-radius:8px;border:none;font-size:12px;font-weight:600;cursor:pointer;}
+      .btn-primary{background:rgba(80,140,255,0.7);color:#fff;}
+      .btn-primary:hover{background:rgba(80,140,255,0.9);}
+      .btn-secondary{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1);}
+      .btn-secondary:hover{background:rgba(255,255,255,0.12);}
+      .btn-danger{background:rgba(200,50,50,0.6);color:#fff;}
+      .btn-danger:hover{background:rgba(200,50,50,0.8);}
+      .file-input-wrap{display:flex;align-items:center;gap:10px;margin-top:6px;}
+      .file-input-wrap label.file-btn{
+        padding:8px 14px;border-radius:8px;
+        background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+        color:rgba(255,255,255,0.6);font-size:12px;font-weight:500;
+        cursor:pointer;margin:0;white-space:nowrap;
+      }
+      .file-input-wrap label.file-btn:hover{background:rgba(255,255,255,0.12);}
+      .file-input-wrap input{display:none;}
+      .file-input-wrap .file-name{font-size:11px;color:rgba(255,255,255,0.25);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px;}
+      .bg-preview{margin-top:10px;width:100%;height:70px;border-radius:8px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,0.06);display:none;}
+      .bg-preview.active{display:block;}
+    </style>
+  </head>
+  <body>
+    <!-- ============================================= -->
+    <!-- ORIGINAL CHROMIUM NTP ELEMENTS (hidden by CSS) -->
+    <!-- These MUST remain for Mojo/template bindings  -->
+    <!-- ============================================= -->
+    <iframe id="backgroundImage" src="$i18nRaw{backgroundImageUrl}"></iframe>
+    <ntp-app></ntp-app>
+    <script type="module" src="new_tab_page.js"></script>
+    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome">
+    <link rel="stylesheet" href="shared_vars.css">
+
+    <!-- ============================================= -->
+    <!-- CUSTOM NTP UI                                 -->
+    <!-- ============================================= -->
+
+    <!-- Ambient background -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="dot-grid"></div>
+
+    <!-- Custom background -->
+    <div class="bg-custom" id="bgCustom"></div>
+
+    <!-- Content -->
+    <div class="content">
+      <div class="search-bar" id="searchBar">
+        <svg class="search-logo" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search with DuckDuckGo..." autocomplete="off">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" id="searchBtn">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </div>
+      <div class="quick-links" id="quickLinks"></div>
+    </div>
+
+
+
+    <!-- Settings -->
+    <div class="settings-btn" id="settingsBtn" title="Settings">
+      <svg viewBox="0 0 20 20"><path d="M10 13a3 3 0 100-6 3 3 0 000 6zm7.6-2.8l-1.4-.3a6.2 6.2 0 00-.5-1.2l.8-1.2a.5.5 0 00-.1-.6l-1.4-1.4a.5.5 0 00-.6-.1l-1.2.8a6.2 6.2 0 00-1.2-.5l-.3-1.4a.5.5 0 00-.5-.4h-2a.5.5 0 00-.5.4l-.3 1.4a6.2 6.2 0 00-1.2.5l-1.2-.8a.5.5 0 00-.6.1L4 6.9a.5.5 0 00-.1.6l.8 1.2a6.2 6.2 0 00-.5 1.2l-1.4.3a.5.5 0 00-.4.5v2a.5.5 0 00.4.5l1.4.3c.1.4.3.8.5 1.2l-.8 1.2a.5.5 0 00.1.6l1.4 1.4a.5.5 0 00.6.1l1.2-.8c.4.2.8.4 1.2.5l.3 1.4a.5.5 0 00.5.4h2a.5.5 0 00.5-.4l.3-1.4c.4-.1.8-.3 1.2-.5l1.2.8a.5.5 0 00.6-.1l1.4-1.4a.5.5 0 00.1-.6l-.8-1.2c.2-.4.4-.8.5-1.2l1.4-.3a.5.5 0 00.4-.5v-2a.5.5 0 00-.4-.5z"/></svg>
+    </div>
+
+    <!-- Study Mode -->
+    <div class="study-mode" id="studyModeWrap">
+      <span>Study Mode</span>
+      <div class="toggle" id="studyToggle"><div class="toggle-knob"></div></div>
+      <span class="wl-btn" id="whitelistBtn" title="Manage whitelisted sites">Whitelist</span>
+    </div>
+
+    <!-- Whitelist Modal -->
+    <div class="modal-overlay" id="whitelistModal">
+      <div class="modal">
+        <h2>Whitelisted Sites</h2>
+        <p style="font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:8px;">These sites won't be blocked in Study Mode.</p>
+        <div class="wl-list" id="wlList"></div>
+        <div class="wl-add-row">
+          <input type="text" id="wlInput" placeholder="e.g. stackoverflow.com">
+          <button id="wlAddBtn">Add</button>
+        </div>
+        <div class="modal-actions" style="margin-top:14px">
+          <button class="btn-secondary" id="wlCloseBtn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clock -->
+    <div class="clock" id="clock"></div>
+
+    <!-- Add/Edit Site Modal -->
+    <div class="modal-overlay" id="siteModal">
+      <div class="modal">
+        <h2 id="siteModalTitle">Add Shortcut</h2>
+        <label for="siteName">Name</label>
+        <input type="text" id="siteName" placeholder="e.g. YouTube">
+        <label for="siteUrl">URL</label>
+        <input type="url" id="siteUrl" placeholder="https://youtube.com">
+        <div class="modal-actions">
+          <button class="btn-secondary" id="siteCancelBtn">Cancel</button>
+          <button class="btn-danger" id="siteDeleteBtn" style="display:none">Delete</button>
+          <button class="btn-primary" id="siteSaveBtn">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal">
+      <div class="modal">
+        <h2>Settings</h2>
+        <label>Background Image</label>
+        <div class="file-input-wrap">
+          <label class="file-btn" for="bgFileInput">Choose Image</label>
+          <input type="file" id="bgFileInput" accept="image/*">
+          <span class="file-name" id="bgFileName">No file chosen</span>
+        </div>
+        <div class="bg-preview" id="bgPreview"></div>
+        <div class="modal-actions" style="margin-top:14px">
+          <button class="btn-danger" id="bgResetBtn" style="display:none">Remove</button>
+          <button class="btn-secondary" id="settingsCancelBtn">Cancel</button>
+          <button class="btn-primary" id="settingsSaveBtn">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // â”€â”€ DATA â”€â”€
+      var DEFAULT_SITES = [
+        { name: 'YouTube',  url: 'https://youtube.com' },
+        { name: 'Netflix',  url: 'https://netflix.com' },
+        { name: 'Amazon',   url: 'https://amazon.com' },
+        { name: 'GitHub',   url: 'https://github.com' },
+        { name: 'Substack', url: 'https://substack.com' },
+        { name: 'ChatGPT',  url: 'https://chat.openai.com' },
+        { name: 'Discord',  url: 'https://discord.com' }
+      ];
+      var COLORS = ['#e74c3c','#e67e22','#f1c40f','#2ecc71','#1abc9c','#3498db','#9b59b6','#e84393','#00b894','#6c5ce7'];
+
+      function loadSites(){try{var d=JSON.parse(localStorage.getItem('ntp_sites'));return Array.isArray(d)?d:DEFAULT_SITES;}catch(e){return DEFAULT_SITES;}}
+      function saveSitesData(s){localStorage.setItem('ntp_sites',JSON.stringify(s));}
+      function loadBg(){return localStorage.getItem('ntp_bg')||'';}
+      function saveBgData(v){localStorage.setItem('ntp_bg',v);syncBgToIDB(v);}
+
+      // Sync background to IndexedDB for cross-origin access (chrome://settings)
+      function syncBgToIDB(v){
+        var request=indexedDB.open('NeovexShared',1);
+        request.onupgradeneeded=function(e){
+          var db=e.target.result;
+          if(!db.objectStoreNames.contains('settings')) db.createObjectStore('settings');
+        };
+        request.onsuccess=function(e){
+          var db=e.target.result;
+          var tx=db.transaction('settings','readwrite');
+          var store=tx.objectStore('settings');
+          if(v) store.put(v,'ntp_bg');
+          else store.delete('ntp_bg');
+        };
+      }
+
+      function getDomain(u){try{return new URL(u).hostname;}catch(e){return '';}}
+      function getFaviconUrl(u){
+        var d=getDomain(u);
+        if(!d) return '';
+        var googleUrl='https://www.google.com/s2/favicons?domain='+encodeURIComponent(d)+'&sz=64';
+        return 'chrome://image/?url='+encodeURIComponent(googleUrl);
+      }
+      function hashStr(s){var h=0;for(var i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}return Math.abs(h);}
+
+      // â”€â”€ RENDER SHORTCUTS â”€â”€
+      function renderSites(){
+        var container=document.getElementById('quickLinks');
+        while(container.firstChild) container.removeChild(container.firstChild);
+        var sites=loadSites();
+
+        for(var i=0;i<sites.length;i++){
+          (function(idx){
+            var site=sites[idx];
+            var a=document.createElement('a');
+            a.className='link-card';
+            a.href=site.url;
+            a.setAttribute('data-title',site.name);
+
+            var rm=document.createElement('span');
+            rm.className='remove-btn';
+            rm.textContent='\u00d7';
+            rm.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();removeSite(idx);});
+            a.appendChild(rm);
+
+            // Show colorful letter as fallback base
+            var fb=makeFallback(site);
+            a.appendChild(fb);
+            // Load real favicon via chrome://image proxy
+            var furl=getFaviconUrl(site.url);
+            if(furl){
+              var img=document.createElement('img');
+              img.className='favicon-overlay';
+              img.alt=site.name;
+              img.addEventListener('load',function(){
+                this.style.opacity='1';
+                fb.style.display='none';
+              });
+              img.src=furl;
+              a.appendChild(img);
+            }
+            a.addEventListener('contextmenu',function(e){e.preventDefault();openSiteModal(idx);});
+            container.appendChild(a);
+          })(i);
+        }
+
+        var addBtn=document.createElement('div');
+        addBtn.className='add-card';
+        addBtn.title='Add shortcut';
+        var ns='http://www.w3.org/2000/svg';
+        var svg=document.createElementNS(ns,'svg');
+        svg.setAttribute('viewBox','0 0 24 24');
+        svg.setAttribute('fill','none');
+        svg.setAttribute('stroke','rgba(255,255,255,0.5)');
+        svg.setAttribute('stroke-width','2');
+        var ln1=document.createElementNS(ns,'line');
+        ln1.setAttribute('x1','12');ln1.setAttribute('y1','5');ln1.setAttribute('x2','12');ln1.setAttribute('y2','19');
+        var ln2=document.createElementNS(ns,'line');
+        ln2.setAttribute('x1','5');ln2.setAttribute('y1','12');ln2.setAttribute('x2','19');ln2.setAttribute('y2','12');
+        svg.appendChild(ln1);svg.appendChild(ln2);
+        addBtn.appendChild(svg);
+        addBtn.addEventListener('click',function(){openSiteModal(-1);});
+        container.appendChild(addBtn);
+      }
+
+      function makeFallback(site){
+        var div=document.createElement('div');
+        div.className='fallback-letter';
+        div.textContent=(site.name||getDomain(site.url)||'?')[0];
+        div.style.background=COLORS[hashStr(site.url)%COLORS.length];
+        return div;
+      }
+
+      function removeSite(i){var s=loadSites();s.splice(i,1);saveSitesData(s);renderSites();}
+
+      // â”€â”€ SITE MODAL â”€â”€
+      var editIdx=-1;
+
+      function openSiteModal(i){
+        editIdx=i;
+        var sites=loadSites();
+        if(i>=0){
+          document.getElementById('siteModalTitle').textContent='Edit Shortcut';
+          document.getElementById('siteName').value=sites[i].name;
+          document.getElementById('siteUrl').value=sites[i].url;
+          document.getElementById('siteDeleteBtn').style.display='';
+        }else{
+          document.getElementById('siteModalTitle').textContent='Add Shortcut';
+          document.getElementById('siteName').value='';
+          document.getElementById('siteUrl').value='';
+          document.getElementById('siteDeleteBtn').style.display='none';
+        }
+        document.getElementById('siteModal').classList.add('open');
+        document.getElementById('siteName').focus();
+      }
+      function closeSiteModal(){document.getElementById('siteModal').classList.remove('open');editIdx=-1;}
+
+      function saveSite(){
+        var name=document.getElementById('siteName').value.trim();
+        var url=document.getElementById('siteUrl').value.trim();
+        if(!url)return;
+        if(!/^https?:\/\//i.test(url))url='https://'+url;
+        if(!name){var d=getDomain(url).replace(/^www\./,'');name=d.charAt(0).toUpperCase()+d.slice(1);}
+        var sites=loadSites();
+        var entry={name:name||'Site',url:url};
+        if(editIdx>=0){sites[editIdx]=entry;}else{sites.push(entry);}
+        saveSitesData(sites);closeSiteModal();renderSites();
+      }
+
+      document.getElementById('siteCancelBtn').addEventListener('click',closeSiteModal);
+      document.getElementById('siteSaveBtn').addEventListener('click',saveSite);
+      document.getElementById('siteDeleteBtn').addEventListener('click',function(){if(editIdx>=0){removeSite(editIdx);closeSiteModal();}});
+      document.getElementById('siteModal').addEventListener('click',function(e){if(e.target===e.currentTarget)closeSiteModal();});
+
+      // â”€â”€ SETTINGS MODAL â”€â”€
+      var pendingBg='';
+
+      document.getElementById('settingsBtn').addEventListener('click',function(){
+        var existing=loadBg();
+        pendingBg=existing;
+        document.getElementById('bgResetBtn').style.display=existing?'':'none';
+        var preview=document.getElementById('bgPreview');
+        if(existing){
+          preview.style.backgroundImage='url('+existing+')';
+          preview.classList.add('active');
+          document.getElementById('bgFileName').textContent='Current background';
+        }else{
+          preview.classList.remove('active');
+          document.getElementById('bgFileName').textContent='No file chosen';
+        }
+        document.getElementById('settingsModal').classList.add('open');
+      });
+
+      document.getElementById('bgFileInput').addEventListener('change',function(){
+        var file=this.files[0];if(!file)return;
+        document.getElementById('bgFileName').textContent=file.name;
+        var reader=new FileReader();
+        reader.onload=function(e){
+          pendingBg=e.target.result;
+          var p=document.getElementById('bgPreview');
+          p.style.backgroundImage='url('+pendingBg+')';
+          p.classList.add('active');
+          document.getElementById('bgResetBtn').style.display='';
+        };
+        reader.readAsDataURL(file);
+      });
+
+      document.getElementById('bgResetBtn').addEventListener('click',function(){
+        pendingBg='';
+        document.getElementById('bgPreview').classList.remove('active');
+        document.getElementById('bgFileName').textContent='No file chosen';
+        document.getElementById('bgResetBtn').style.display='none';
+        document.getElementById('bgFileInput').value='';
+      });
+
+      function closeSettingsModal(){document.getElementById('settingsModal').classList.remove('open');}
+      document.getElementById('settingsCancelBtn').addEventListener('click',closeSettingsModal);
+      document.getElementById('settingsModal').addEventListener('click',function(e){if(e.target===e.currentTarget)closeSettingsModal();});
+      document.getElementById('settingsSaveBtn').addEventListener('click',function(){
+        saveBgData(pendingBg);applyBg();closeSettingsModal();
+      });
+
+      function applyBg(){
+        var bg=loadBg();
+        var el=document.getElementById('bgCustom');
+        if(bg){el.style.backgroundImage='url('+bg+')';el.classList.add('active');document.body.classList.add('has-custom-bg');}
+        else{el.style.backgroundImage='';el.classList.remove('active');document.body.classList.remove('has-custom-bg');}
+      }
+
+      // â”€â”€ STUDY MODE â”€â”€
+      function loadStudyMode(){return localStorage.getItem('ntp_study_mode')==='true';}
+      function saveStudyMode(v){localStorage.setItem('ntp_study_mode',v?'true':'false');}
+      function loadWhitelist(){try{return JSON.parse(localStorage.getItem('ntp_study_whitelist'))||[];}catch(e){return [];}}
+      function saveWhitelist(list){localStorage.setItem('ntp_study_whitelist',JSON.stringify(list));}
+
+      function syncStudyModeToCpp(){
+        var enabled=loadStudyMode();
+        var whitelist=loadWhitelist();
+        try{
+          chrome.send('setStudyMode',[enabled]);
+          chrome.send('setStudyModeWhitelist',[whitelist]);
+        }catch(e){/* chrome.send may not be available in all contexts */}
+      }
+
+      function applyStudyModeUI(){
+        var enabled=loadStudyMode();
+        var toggle=document.getElementById('studyToggle');
+        var wrap=document.getElementById('studyModeWrap');
+        if(enabled){
+          toggle.classList.add('active');
+          wrap.classList.add('active-mode');
+        }else{
+          toggle.classList.remove('active');
+          wrap.classList.remove('active-mode');
+        }
+      }
+
+      document.getElementById('studyToggle').addEventListener('click',function(){
+        var now=!loadStudyMode();
+        saveStudyMode(now);
+        applyStudyModeUI();
+        syncStudyModeToCpp();
+      });
+
+      // â”€â”€ WHITELIST â”€â”€
+      function renderWhitelist(){
+        var list=loadWhitelist();
+        var container=document.getElementById('wlList');
+        while(container.firstChild) container.removeChild(container.firstChild);
+        for(var i=0;i<list.length;i++){
+          (function(idx){
+            var item=document.createElement('div');
+            item.className='wl-item';
+            var nameSpan=document.createElement('span');
+            nameSpan.textContent=list[idx];
+            var rmBtn=document.createElement('span');
+            rmBtn.className='wl-rm';
+            rmBtn.textContent='\u00d7';
+            rmBtn.addEventListener('click',function(){
+              var l=loadWhitelist();l.splice(idx,1);
+              saveWhitelist(l);syncStudyModeToCpp();renderWhitelist();
+            });
+            item.appendChild(nameSpan);item.appendChild(rmBtn);
+            container.appendChild(item);
+          })(i);
+        }
+        if(list.length===0){
+          var empty=document.createElement('div');
+          empty.style.cssText='font-size:11px;color:rgba(255,255,255,0.2);text-align:center;padding:16px 0;';
+          empty.textContent='No whitelisted sites yet';
+          container.appendChild(empty);
+        }
+      }
+
+      document.getElementById('whitelistBtn').addEventListener('click',function(){
+        renderWhitelist();
+        document.getElementById('whitelistModal').classList.add('open');
+      });
+      document.getElementById('wlCloseBtn').addEventListener('click',function(){
+        document.getElementById('whitelistModal').classList.remove('open');
+      });
+      document.getElementById('whitelistModal').addEventListener('click',function(e){
+        if(e.target===e.currentTarget) document.getElementById('whitelistModal').classList.remove('open');
+      });
+      document.getElementById('wlAddBtn').addEventListener('click',function(){
+        var input=document.getElementById('wlInput');
+        var domain=input.value.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/,'').replace(/\/.*$/,'');
+        if(!domain) return;
+        var list=loadWhitelist();
+        if(list.indexOf(domain)===-1){list.push(domain);saveWhitelist(list);syncStudyModeToCpp();}
+        input.value='';renderWhitelist();
+      });
+      document.getElementById('wlInput').addEventListener('keydown',function(e){
+        if(e.key==='Enter') document.getElementById('wlAddBtn').click();
+      });
+
+      // Init study mode on page load
+      applyStudyModeUI();
+      syncStudyModeToCpp();
+
+      // â”€â”€ SEARCH â”€â”€
+      document.getElementById('searchBar').addEventListener('click',function(){document.getElementById('searchInput').focus();});
+      function doSearch(){var q=document.getElementById('searchInput').value.trim();if(q)window.location.href='https://duckduckgo.com/?q='+encodeURIComponent(q);}
+      document.getElementById('searchInput').addEventListener('keydown',function(e){if(e.key==='Enter')doSearch();});
+      document.getElementById('searchBtn').addEventListener('click',doSearch);
+
+      // â”€â”€ CLOCK â”€â”€
+      function updateClock(){
+        var d=new Date();
+        document.getElementById('clock').textContent=
+          String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+      }
+      updateClock();setInterval(updateClock,10000);
+
+
+
+      // â”€â”€ INIT â”€â”€
+      applyBg();
+      renderSites();
+      // Sync existing wallpaper to IndexedDB for settings page
+      var existingBg = loadBg();
+      if (existingBg) syncBgToIDB(existingBg);
+
+      // â”€â”€ CROSS-ORIGIN WALLPAPER BRIDGE â”€â”€
+      // Respond to settings page requests for wallpaper data
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.type === 'getNeovexWallpaper') {
+          var bg = loadBg();
+          e.source.postMessage({type: 'neovexWallpaper', data: bg}, '*');
+        }
+      });
+    </script>
+  </body>
+</html>
+

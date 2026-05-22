@@ -1,0 +1,35 @@
+../resources/webkit02.dat:
+3
+19
+
+Test 3 of 35 in ../resources/webkit02.dat failed. Input:
+<p id="status"><noscript><strong>A</strong></noscript><span>B</span></p>
+Got:
+| <html>
+|   <head>
+|   <body>
+|     <p>
+|       id="status"
+|       <noscript>
+|         "<strong>A</strong>"
+|       <span>
+|         "B"
+Expected:
+| <html>
+|   <head>
+|   <body>
+|     <p>
+|       id="status"
+|       <noscript>
+|         <strong>
+|           "A"
+|       <span>
+|         "B"
+
+Test 19 of 35 in ../resources/webkit02.dat failed. Input:
+<option><XH<optgroup></optgroup>
+Got:
+| <option>
+|   <xh<optgroup>
+Expected:
+| <option>

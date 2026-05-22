@@ -1,0 +1,186 @@
+﻿<!doctype html>
+<html dir="$i18n{textdirection}" lang="$i18n{language}"
+    class="loading $i18n{loadTimeClasses}">
+<head>
+  <link rel="icon" type="image/svg+xml" href="chrome://resources/images/neovex_logo.svg">
+  <meta charset="utf8">
+  <meta name="color-scheme" content="light dark">
+  <title>$i18n{title}</title>
+  <base href="chrome://extensions">
+  <link rel="stylesheet" href="chrome://resources/css/md_colors.css">
+  <style>
+    html {
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    html, body {
+      background: #0b0b14 !important;
+      color: #e0e0e8 !important;
+      color-scheme: dark !important;
+      position: relative;
+    }
+
+    html {
+      --md-background-color: transparent !important;
+      --md-sys-color-surface: transparent !important;
+      --md-sys-color-surface-variant: rgba(20, 20, 32, 0.5) !important;
+      --md-sys-color-on-surface: #e0e0e8 !important;
+      --md-sys-color-on-surface-variant: #b0b0c0 !important;
+      --md-sys-color-primary: #7c8cff !important;
+      --md-sys-color-on-primary: #fff !important;
+      --md-sys-color-secondary-container: rgba(88,56,160,0.25) !important;
+      --md-sys-color-outline: rgba(255,255,255,0.1) !important;
+      --md-sys-color-outline-variant: rgba(255,255,255,0.06) !important;
+      --cr-card-background-color: rgba(20, 20, 32, 0.5) !important;
+      --cr-primary-text-color: #e0e0e8 !important;
+      --cr-secondary-text-color: rgba(255,255,255,0.5) !important;
+      --cr-card-shadow-color: rgba(0,0,0,0.3) !important;
+      --google-blue-600: #7c8cff !important;
+      --google-blue-300: #a0adff !important;
+      --cr-active-background-color: rgba(88,56,160,0.2) !important;
+      --cr-hover-background-color: rgba(255,255,255,0.05) !important;
+      --cr-focus-outline-color: rgba(124,140,255,0.5) !important;
+      --iron-icon-fill-color: rgba(255,255,255,0.5) !important;
+      --cr-link-color: #a0adff !important;
+      --cr-checked-color: #7c8cff !important;
+      --cr-toggle-color: #7c8cff !important;
+    }
+
+    extensions-manager, cr-toolbar {
+      --cr-toolbar-background-color: rgba(16, 16, 28, 0.7) !important;
+      --cr-toolbar-text-color: #e0e0e8 !important;
+    }
+
+    /* === NTP Ambient Background === */
+    .settings-bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      opacity: 0.45;
+      z-index: -1;
+    }
+    .settings-bg-orb-1 {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(88,56,160,0.7), transparent 70%);
+      top: -10%; left: -5%;
+    }
+    .settings-bg-orb-2 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(30,64,130,0.6), transparent 70%);
+      top: 20%; right: -10%;
+    }
+    .settings-bg-orb-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(40,110,120,0.5), transparent 70%);
+      bottom: -5%; left: 30%;
+    }
+    .settings-bg-orb-4 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(120,50,90,0.4), transparent 70%);
+      bottom: 15%; right: 20%;
+    }
+    .settings-dot-grid {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Custom wallpaper from NTP */
+    #settingsBgCustom {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      display: none;
+    }
+    #settingsBgCustom.active { display: block; }
+    body.has-custom-bg .settings-bg-orb,
+    body.has-custom-bg .settings-dot-grid { display: none; }
+
+    /* Hidden iframe for cross-origin wallpaper bridge */
+    #ntpBridge { display: none; }
+
+    /* Mimics the developer mode toolbar until the real one loads. Note:
+     * .in-dev-mode is applied by i18n{loadTimeClasses}. */
+    html.loading.in-dev-mode body::before {
+      box-sizing: border-box;
+      content: '';
+      display: block;
+      border-bottom: var(--md-toolbar-border);
+      height: calc(var(--md-toolbar-height) + 58px);
+    }
+  </style>
+  <script type="module" src="extensions.js"></script>
+</head>
+<body>
+  <!-- Custom wallpaper (loaded from NTP via postMessage bridge) -->
+  <div id="settingsBgCustom"></div>
+
+  <!-- Ambient background orbs (same as NTP) -->
+  <div class="settings-bg-orb settings-bg-orb-1"></div>
+  <div class="settings-bg-orb settings-bg-orb-2"></div>
+  <div class="settings-bg-orb settings-bg-orb-3"></div>
+  <div class="settings-bg-orb settings-bg-orb-4"></div>
+  <div class="settings-dot-grid"></div>
+
+  <extensions-manager></extensions-manager>
+
+  <!-- Hidden iframe bridge to NTP for wallpaper data -->
+  <iframe id="ntpBridge" src="chrome://new-tab-page/new_tab_page.html"></iframe>
+
+  <script>
+    (function() {
+      // Listen for wallpaper response from NTP iframe
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.type === 'neovexWallpaper' && e.data.data) {
+          var el = document.getElementById('settingsBgCustom');
+          el.style.backgroundImage = 'url(' + e.data.data + ')';
+          el.classList.add('active');
+          document.body.classList.add('has-custom-bg');
+        }
+      });
+
+      // When NTP iframe loads, request the wallpaper
+      var bridge = document.getElementById('ntpBridge');
+      bridge.addEventListener('load', function() {
+        try {
+          bridge.contentWindow.postMessage({type: 'getNeovexWallpaper'}, '*');
+        } catch(e) { /* CSP may block */ }
+      });
+
+      // Also try IndexedDB as fallback
+      try {
+        var request = indexedDB.open('NeovexShared', 1);
+        request.onupgradeneeded = function(e) {
+          var db = e.target.result;
+          if (!db.objectStoreNames.contains('settings')) {
+            db.createObjectStore('settings');
+          }
+        };
+        request.onsuccess = function(e) {
+          var db = e.target.result;
+          var tx = db.transaction('settings', 'readonly');
+          var store = tx.objectStore('settings');
+          var req = store.get('ntp_bg');
+          req.onsuccess = function() {
+            if (req.result && !document.body.classList.contains('has-custom-bg')) {
+              var el = document.getElementById('settingsBgCustom');
+              el.style.backgroundImage = 'url(' + req.result + ')';
+              el.classList.add('active');
+              document.body.classList.add('has-custom-bg');
+            }
+          };
+        };
+      } catch(e) { /* IndexedDB not available */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+</body>
+</html>
+

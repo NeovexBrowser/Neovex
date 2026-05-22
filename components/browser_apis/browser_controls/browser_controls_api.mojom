@@ -1,0 +1,36 @@
+// Copyright 2026 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module browser_controls_api.mojom;
+
+import "components/browser_apis/browser_controls/browser_controls_api_data_model.mojom";
+
+// BrowserControlsService defines methods to be called from the WebUI to the
+// browser-side. This interface consolidates various browser control actions.
+interface BrowserControlsService {
+  // Stops the current page from loading. If the page is not in a loading
+  // state, it is a no-op.
+  StopLoad();
+
+  // Reloads the current page. If the page is already in a loading state,
+  // it will trigger another reload, and abort the previous one.
+  // If `bypass_cache` is set to true, the page will be reloaded while
+  // ignoring the HTTP cache.
+  // `click_flags` contains the list of flag information about the click that
+  // might affect the reload logic (e.g. whether it's clicked through the
+  // middle mouse button, or whether the alt key is pressed).
+  ReloadFromClick(bool bypass_cache, array<ClickDispositionFlag> click_flags);
+
+  // Enters split view mode for the active tab. Only called when not in split.
+  SplitActiveTab();
+
+  // Navigates back.
+  Back(array<ClickDispositionFlag> flags);
+
+  // Navigates forward.
+  Forward(array<ClickDispositionFlag> flags);
+
+  // Notifies that the back button was hovered.
+  BackButtonHovered();
+};

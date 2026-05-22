@@ -1,0 +1,245 @@
+// Copyright 2025 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#import "ios/chrome/browser/first_run/guided_tour/coordinator/guided_tour_coordinator.h"
+
+#import "base/notreached.h"
+#import "ios/chrome/browser/bubble/ui_bundled/guided_tour/guided_tour_bubble_view_controller_presenter.h"
+#import "ios/chrome/browser/shared/coordinator/layout_guide/layout_guide_util.h"
+#import "ios/chrome/browser/shared/public/features/features.h"
+#import "ios/chrome/browser/shared/ui/util/layout_guide_names.h"
+#import "ios/chrome/browser/shared/ui/util/uikit_ui_util.h"
+#import "ios/chrome/browser/shared/ui/util/util_swift.h"
+#import "ios/chrome/browser/toolbar/legacy/ui_bundled/buttons/legacy_toolbar_button.h"
+#import "ios/chrome/grit/ios_strings.h"
+#import "ui/base/l10n/l10n_util_mac.h"
+
+namespace {
+// Corner radius of the spotlight cutouts.
+const CGFloat kNTPTabGridButtonSpotlightCornerRadius = 7.0f;
+const CGFloat kNTPAppBarTabGridButtonSpotlightCornerRadius = 14.0f;
+const CGFloat kNTPTabGridPageControlCornerRadius = 13.0f;
+}  // namespace
+
+@interface GuidedTourCoordinator () <
+    GuidedTourBubbleViewControllerPresenterDelegate>
+@end
+
+@implementation GuidedTourCoordinator {
+  GuidedTourStep _step;
+  __weak id<GuidedTourCoordinatorDelegate> _delegate;
+  GuidedTourBubbleViewControllerPresenter* _presenter;
+}
+
+- (instancetype)initWithStep:(GuidedTourStep)step
+          baseViewController:(UIViewController*)baseViewController
+                     browser:(Browser*)browser
+                    delegate:(id<GuidedTourCoordinatorDelegate>)delegate {
+  if ((self = [super initWithBaseViewController:baseViewController
+                                        browser:browser])) {
+    _step = step;
+    _delegate = delegate;
+  }
+  return self;
+}
+
+#pragma mark - ChromeCoordinator
+
+- (void)start {
+  __weak GuidedTourCoordinator* weakSelf = self;
+  BubbleArrowDirection direction = [self shouldPointArrowDown]
+                                       ? BubbleArrowDirectionDown
+                                       : BubbleArrowDirectionUp;
+  _presenter = [[GuidedTourBubbleViewControllerPresenter alloc]
+      initWithText:[self bodyString]
+      title:[self titleString]
+      guidedTourStep:_step
+      arrowDirection:direction
+      alignment:[self bubbleAlignment]
+      bubbleType:BubbleViewTypeRichWithNext
+      backgroundCutoutCornerRadius:[self backgroundCutoutCornerRadius]
+      dismissalCallback:^(IPHDismissalReasonType reason) {
+        [weakSelf dismissFinished];
+      }
+      completionCallback:^{
+        [weakSelf nextTapped];
+      }];
+  _presenter.delegate = self;
+
+  UIView* anchorView = [self anchorView];
+  CGPoint anchorPoint = [self anchorPointForAnchorView:anchorView];
+
+  [_presenter presentInViewController:self.baseViewController
+                          anchorPoint:anchorPoint
+                           anchorView:[self cutoutView]];
+}
+
+- (void)stop {
+  // Dismissing the presenter could trigger the dismiss callback, so break the
+  // connection to the delegate to avoid infinite loops.
+  _delegate = nil;
+  [_presenter dismiss];
+  _presenter = nil;
+}
+
+#pragma mark - Private
+
+// Returns the view to which the bubble view will be anchored.
+- (UIView*)anchorView {
+  if (_step == GuidedTourStep::kNTP) {
+    if (IsChromeNextIaEnabled()) {
+      UIButton* tabSwitcherButton =
+          static_cast<UIButton*>([LayoutGuideCenterForBrowser(nil)
+              referencedViewUnderName:kTabSwitcherGuide]);
+      return tabSwitcherButton;
+    }
+    LegacyToolbarButton* tabSwitcherButton = static_cast<LegacyToolbarButton*>(
+        [LayoutGuideCenterForBrowser(self.browser)
+            referencedViewUnderName:kTabSwitcherGuide]);
+    return tabSwitcherButton.spotlightView;
+  } else if (_step == GuidedTourStep::kTabGridIncognito) {
+    return [LayoutGuideCenterForBrowser(nil)
+        referencedViewUnderName:kTabGridPageControlIncognitoGuide];
+  } else if (_step == GuidedTourStep::kTabGridLongPress) {
+    return [LayoutGuideCenterForBrowser(self.browser)
+        referencedViewUnderName:kSelectedRegularCellGuide];
+  } else if (_step == GuidedTourStep::kTabGridTabGroup) {
+    return [LayoutGuideCenterForBrowser(nil)
+        referencedViewUnderName:kTabGridPageControlTabGroupsGuide];
+  }
+  NOTREACHED() << "A layout guide view needs to be fetched for each step";
+}
+
+// Returns the anchor point in `anchorView` to which the bubble view will be
+// anchored.
+- (CGPoint)anchorPointForAnchorView:(UIView*)anchorView {
+  CGPoint anchorPoint;
+  if ([self shouldPointArrowDown]) {
+    anchorPoint = CGPointMake(CGRectGetMidX(anchorView.frame),
+                              CGRectGetMinY(anchorView.frame));
+  } else {
+    anchorPoint = CGPointMake(CGRectGetMidX(anchorView.frame),
+                              CGRectGetMaxY(anchorView.frame));
+  }
+  return [anchorView.superview convertPoint:anchorPoint toView:nil];
+}
+
+// Handle the user tapping on the next button.
+- (void)nextTapped {
+  [_delegate nextTappedForStep:_step];
+}
+
+// Handle the dismissal completion of this step.
+- (void)dismissFinished {
+  [_delegate stepCompleted:_step];
+}
+
+// Returns the title string used for this step's Bubble View.
+- (NSString*)titleString {
+  if (_step == GuidedTourStep::kNTP) {
+    return l10n_util::GetNSString(IDS_IOS_FIRST_RUN_GUIDED_TOUR_NTP_IPH_TITLE);
+  } else if (_step == GuidedTourStep::kTabGridIncognito) {
+    return l10n_util::GetNSString(
+        IDS_IOS_FIRST_RUN_GUIDED_TOUR_TAB_GRID_INCOGNITO_IPH_TITLE);
+  } else if (_step == GuidedTourStep::kTabGridLongPress) {
+    return l10n_util::GetNSString(
+        IDS_IOS_FIRST_RUN_GUIDED_TOUR_TAB_GRID_LONG_PRESS_IPH_TITLE);
+  } else if (_step == GuidedTourStep::kTabGridTabGroup) {
+    return l10n_util::GetNSString(
+        IDS_IOS_FIRST_RUN_GUIDED_TOUR_TAB_GRID_TAB_GROUP_IPH_TITLE);
+  }
+  return @"";
+}
+
+// Returns the main text string for this step's Bubble View.
+- (NSString*)bodyString {
+  if (_step == GuidedTourStep::kNTP) {
+    return l10n_util::GetNSString(IDS_IOS_FIRST_RUN_GUIDED_TOUR_NTP_IPH_TEXT);
+  } else if (_step == GuidedTourStep::kTabGridIncognito) {
+    return l10n_util::GetNSString(
+        IDS_IOS_FIRST_RUN_GUIDED_TOUR_TAB_GRID_INCOGNITO_IPH_TEXT);
+  } else if (_step == GuidedTourStep::kTabGridLongPress) {
+    return l10n_util::GetNSString(
+        IDS_IOS_FIRST_RUN_GUIDED_TOUR_TAB_GRID_LONG_PRESS_IPH_TEXT);
+  } else if (_step == GuidedTourStep::kTabGridTabGroup) {
+    return l10n_util::GetNSString(
+        IDS_IOS_FIRST_RUN_GUIDED_TOUR_TAB_GRID_TAB_GROUP_IPH_TEXT);
+  }
+  return @"";
+}
+
+// The corner radius of the spotlight cutout for this Bubble View.
+- (CGFloat)backgroundCutoutCornerRadius {
+  CGFloat NTPTabGridButtonSpotlightCornerRadius =
+      IsChromeNextIaEnabled() ? kNTPAppBarTabGridButtonSpotlightCornerRadius
+                              : kNTPTabGridButtonSpotlightCornerRadius;
+  return _step == GuidedTourStep::kNTP ? NTPTabGridButtonSpotlightCornerRadius
+                                       : kNTPTabGridPageControlCornerRadius;
+}
+
+// YES if the bubble arrow should point down (e.g. the NTP step is pointing down
+// to the bottom toolbar).
+- (BOOL)shouldPointArrowDown {
+  if (_step == GuidedTourStep::kNTP) {
+    return IsSplitToolbarMode(self.baseViewController);
+  }
+  if (_step == GuidedTourStep::kTabGridLongPress) {
+    UIView* anchorView = [self anchorView];
+    CGRect anchorFrameInBaseViewController =
+        [anchorView convertRect:[anchorView bounds]
+                         toView:self.baseViewController.view];
+    // Point arrow down if anchor view is on the bottom half of the screen.
+    return CGRectGetMidY(anchorFrameInBaseViewController) >
+           CGRectGetMidY(self.baseViewController.view.bounds);
+  }
+  return NO;
+}
+
+// Returns the bubble alignment for each step.
+- (BubbleAlignment)bubbleAlignment {
+  if (_step == GuidedTourStep::kNTP) {
+    return BubbleAlignmentBottomOrTrailing;
+  } else if (_step == GuidedTourStep::kTabGridIncognito) {
+    return BubbleAlignmentTopOrLeading;
+  } else if (_step == GuidedTourStep::kTabGridLongPress) {
+    UIView* anchorView = [self anchorView];
+    CGRect anchorFrameInBaseViewController =
+        [anchorView convertRect:[anchorView bounds]
+                         toView:self.baseViewController.view];
+
+    BOOL onLeftHalfOfScreen =
+        CGRectGetMidX(self.baseViewController.view.bounds) >
+        CGRectGetMidX(anchorFrameInBaseViewController);
+    return (onLeftHalfOfScreen) ? BubbleAlignmentTopOrLeading
+                                : BubbleAlignmentBottomOrTrailing;
+  } else if (_step == GuidedTourStep::kTabGridTabGroup) {
+    return BubbleAlignmentBottomOrTrailing;
+  }
+  NOTREACHED()
+      << "Need to define the bubble alignment for each guided tour step";
+}
+
+// Returns a UIView that needs to be cut out of the blur background.
+- (UIView*)cutoutView {
+  UIView* cutoutView;
+  if (_step == GuidedTourStep::kNTP ||
+      _step == GuidedTourStep::kTabGridLongPress) {
+    cutoutView = [self anchorView];
+  } else {
+    // The TabGrid Page Control steps should cut out the entire page control,
+    // not just the anchor view.
+    cutoutView = [LayoutGuideCenterForBrowser(nil)
+        referencedViewUnderName:kTabGridPageControlGuide];
+  }
+  return cutoutView;
+}
+
+#pragma mark - GuidedTourBubbleViewControllerPresenterDelegate
+
+- (CGPoint)anchorPointForGuidedTourBubbleViewControllerPresenter:
+    (GuidedTourBubbleViewControllerPresenter*)presenter {
+  return [self anchorPointForAnchorView:[self anchorView]];
+}
+
+@end

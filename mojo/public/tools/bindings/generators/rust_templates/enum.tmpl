@@ -1,0 +1,10 @@
+{% macro declare_enum(name, enum) -%}
+
+#[derive(Debug, PartialEq, Clone, PrimitiveEnum, Hash, Eq)]
+pub enum {{name}} {
+{%- for field in enum.fields %}
+  {{field.name}} = {{field.numeric_value}},
+{%- endfor %}
+}
+
+{%- endmacro -%}

@@ -1,0 +1,35 @@
+# Copyright 2022 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+source_set("features") {
+  configs += [ "//components/enterprise:extra_warnings" ]
+
+  sources = [ "platform_auth_features.cc" ]
+
+  public = [ "platform_auth_features.h" ]
+
+  public_deps = [ "//base" ]
+}
+
+source_set("test_utils") {
+  testonly = true
+  configs += [ "//components/enterprise:extra_warnings" ]
+
+  sources = [
+    "mock_platform_auth_provider.cc",
+    "scoped_set_provider_for_testing.cc",
+  ]
+
+  public = [
+    "mock_platform_auth_provider.h",
+    "scoped_set_provider_for_testing.h",
+  ]
+
+  public_deps = [
+    "//chrome/browser",
+    "//chrome/browser/enterprise/platform_auth:features",
+    "//net",
+    "//testing/gmock",
+  ]
+}

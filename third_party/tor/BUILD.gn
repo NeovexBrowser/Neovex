@@ -1,0 +1,5 @@
+group("tor") {
+  data = [
+    "win/tor/tor.exe",
+  ]
+}

@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Copyright 2012 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+set -e
+
+LOGOUT_MSG="
+Name: Please log out to update
+Priority: Medium
+OnlyAdminUsers: False
+DontShowAfterReboot: true
+DisplayIf: /opt/google/chrome-remote-desktop/is-remoting-session
+Description: Chrome Remote Desktop has been updated. Please save your work and log out in order to apply this update. Your virtual desktop will be restarted automatically.
+"
+
+NOTIFIER_DIR="/var/lib/update-notifier/user.d"
+VAR_DIR="/var/lib/chrome-remote-desktop"
+HASHES_FILE="$VAR_DIR/hashes"
+INSTALL_DIR="/opt/google/chrome-remote-desktop"
+HOST_PATH="$INSTALL_DIR/chrome-remote-desktop-host"
+# Per Debian policy 9.2.1, system usernames should all start with an underscore.
+CRD_NETWORK_USER="_crd_network"
+
+kill_processes() {
+  # Kill CRD processes except for the service script process. The script process
+  # command line conveniently starts with /usr/bin/python3, so the pkill pattern
+  # won't kill it. SIGKILL is used because the wrapper script will restart the
+  # host immediately (so any cleanup that might otherwise happen is not useful),
+  # and this ensures that hosts restart even if they are deadlocked.
+  # TODO: yuweih - see if it's possible to restart the service script process
+  # without resetting the session.
+  echo "Killing Chrome Remote Desktop processes so that they can be reloaded (sessions will be unaffected)..."
+  pkill -KILL -f "^$INSTALL_DIR" || true
+}
+
+case "$1" in
+  "configure")
+    echo "Adding user $CRD_NETWORK_USER to allow the Chrome Remote Desktop network "
+    echo 'process to be run in a sandboxed environment.'
+    adduser --system "$CRD_NETWORK_USER"
+
+    kill_processes
+
+    # If any files have changed that require the user to restart their virtual
+    # desktops (eg, the wrapper script itself) then notify them but don't do
+    # anything that would result in them losing state.
+    if [ -f "$HASHES_FILE" ]; then
+      if [ -d "$NOTIFIER_DIR" ]; then
+        if ! md5sum --status -c "$HASHES_FILE" 2>/dev/null; then
+          echo "Sending logout notification messages to virtual desktops."
+          echo "$LOGOUT_MSG" > "$NOTIFIER_DIR/chrome-remote-desktop-logout"
+        fi
+      fi
+      rm "$HASHES_FILE"
+      rmdir --ignore-fail-on-non-empty "$VAR_DIR"
+    fi
+    ;;
+
+  "triggered")
+    echo "Responding to dpkg trigger."
+    kill_processes
+    ;;
+esac
+
+# Run the cron job immediately to perform repository configuration.
+nohup sh /etc/cron.daily/chrome-remote-desktop > /dev/null 2>&1 &
+
+#DEBHELPER#

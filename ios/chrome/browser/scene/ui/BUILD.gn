@@ -1,0 +1,22 @@
+# Copyright 2026 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+source_set("ui") {
+  sources = [
+    "scene_view.h",
+    "scene_view.mm",
+    "scene_view_controller.h",
+    "scene_view_controller.mm",
+    "scene_view_delegate.h",
+  ]
+
+  deps = [
+    "//base",
+    "//ios/chrome/browser/app_bar/ui",
+    "//ios/chrome/browser/shared/public/features",
+    "//ios/chrome/browser/shared/ui/util",
+    "//ios/chrome/browser/shared/ui/util:util_swift",
+    "//ios/chrome/common/ui/util",
+  ]
+}

@@ -1,0 +1,39 @@
+/* Copyright 2026 The Chromium Authors
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+/* #css_wrapper_metadata_start
+ * #type=style-lit
+ * #import=//resources/cr_elements/cr_hidden_style_lit.css.js
+ * #import=./toolbar_button.css.js
+ * #scheme=relative
+ * #include=cr-hidden-style-lit toolbar-button
+ * #css_wrapper_metadata_end */
+
+/* The "Blue Bar" status indicator that appears when a split is active */
+.status-indicator {
+  background-color: var(--color-toolbar-action-item-engaged,
+      var(--google-blue-600));
+
+  height: var(--split-tabs-indicator-height);
+  width: var(--split-tabs-indicator-width);
+  border-radius: 1px;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Calculated to align with icon bottom */
+  bottom: calc((var(--toolbar-button-height) -
+                var(--toolbar-button-icon-size)) / 2 -
+               var(--split-tabs-indicator-spacing) -
+               var(--split-tabs-indicator-height));
+
+  pointer-events: none; /* Allows clicks to pass through to the button */
+  z-index: 1; /* Renders above the button background */
+}
+
+cr-icon-button[is-split=true] {
+  --cr-icon-button-fill-color: var(--color-toolbar-action-item-engaged,
+      var(--google-blue-600));
+}

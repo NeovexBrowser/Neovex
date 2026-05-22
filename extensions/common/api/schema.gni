@@ -1,0 +1,139 @@
+# Copyright 2016 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/config/chromeos/ui_mode.gni")
+import("//components/guest_view/buildflags/buildflags.gni")
+import("//extensions/buildflags/buildflags.gni")
+
+# APIs and features included in both normal desktop builds and the experimental
+# desktop-android build.
+# TODO(https://crbug.com/356905053): Continue moving more here.
+extensions_api_schema_files_ = [
+  "alarms.webidl",
+  "declarative_net_request.webidl",
+  "dns.webidl",
+  "events.json",
+  "extension_types.json",
+  "file_handlers.webidl",
+  "i18n.json",
+  "idle.json",
+  "management.json",
+  "metrics_private.json",
+  "offscreen.webidl",
+  "power.webidl",
+  "protocol_handlers.webidl",
+  "runtime.json",
+  "storage.json",
+  "system_cpu.webidl",
+  "system_display.webidl",
+  "system_memory.webidl",
+  "system_network.webidl",
+  "test.json",
+  "types.json",
+  "user_scripts.webidl",
+  "web_request.json",
+]
+
+# Schemas that should be used only to auto-generate the C++ types.
+# In many cases, this includes schemas used to generate types used in manifest
+# parsing.
+extensions_types_only_schema_files_ = [
+  "chrome_url_overrides.webidl",
+  "content_scripts.webidl",
+  "cross_origin_isolation.webidl",
+  "extensions_manifest_types.json",
+  "incognito.json",
+  "oauth2.webidl",
+  "requirements.json",
+  "shared_module.webidl",
+  "web_accessible_resources_mv2.webidl",
+  "web_accessible_resources.webidl",
+]
+
+if (enable_guest_view) {
+  extensions_api_schema_files_ += [
+    "extension_options_internal.webidl",
+    "guest_view_internal.json",
+    "icon_variants.idl",
+    "web_view_internal.json",
+  ]
+}
+
+# APIs that are not currently supported on the experimental desktop-android.
+if (enable_extensions) {
+  extensions_api_schema_files_ += [
+    "app_current_window_internal.webidl",
+    "app_runtime.webidl",
+    "app_view_guest_internal.json",
+    "app_window.webidl",
+    "audio.webidl",
+    "automation_internal.webidl",
+    "automation.idl",
+    "bluetooth_low_energy.webidl",
+    "bluetooth_private.webidl",
+    "bluetooth_socket.webidl",
+    "bluetooth.webidl",
+    "cec_private.webidl",
+    "clipboard.webidl",
+    "feedback_private.webidl",
+    "file_system.idl",
+    "hid.idl",
+    "mime_handler_private.idl",
+    "mime_handler_view_guest_internal.json",
+    "mojo_private.webidl",
+    "networking_private.webidl",
+    "printer_provider_internal.webidl",
+    "printer_provider.webidl",
+    "scripts_internal.webidl",
+    "socket.idl",
+    "sockets_tcp_server.idl",
+    "sockets_tcp.idl",
+    "sockets_udp.idl",
+    "system_storage.webidl",
+    "usb.webidl",
+    "virtual_keyboard_private.json",
+    "virtual_keyboard.webidl",
+  ]
+
+  if (is_chromeos) {
+    extensions_api_schema_files_ += [
+      "diagnostics.webidl",
+      "media_perception_private.webidl",
+      "serial.webidl",
+      "webcam_private.webidl",
+    ]
+  }
+}
+
+# In the experimental desktop-android configuration, we still need to compile
+# the C++ types for certain APIs, since they are used from outside the
+# extensions layer. These should be removed as we add support for the full
+# API by moving these entries to the `extensions_api_schema_files_` above.
+if (enable_desktop_android_extensions) {
+  extensions_types_only_schema_files_ += [
+    "clipboard.webidl",
+    "scripts_internal.webidl",
+    "usb.webidl",
+    "virtual_keyboard_private.json",
+    "virtual_keyboard.webidl",
+  ]
+}
+
+extensions_api_schema_files =
+    get_path_info(extensions_api_schema_files_, "abspath")
+
+extensions_types_only_schema_files =
+    get_path_info(extensions_types_only_schema_files_, "abspath")
+
+extensions_api_uncompiled_sources =
+    get_path_info([ "web_request_internal.json" ], "abspath")
+
+extensions_api_uncompiled_bundle_schema_sources =
+    get_path_info([
+                    "declarative_web_request.json",
+                    "web_view_request.json",
+                  ],
+                  "abspath")
+
+extensions_api_root_namespace = "extensions::api::%(namespace)s"

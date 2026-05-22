@@ -1,0 +1,15 @@
+// Copyright 2025 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// https://github.com/WICG/install-element
+
+[RuntimeEnabled=InstallElement, Exposed=Window]
+interface HTMLInstallElement : HTMLElement {
+  [HTMLConstructor] constructor();
+
+  [CEReactions, Reflect, URL] attribute USVString? installURL;
+  [CEReactions, Reflect, URL] attribute USVString? manifestId;
+};
+
+HTMLInstallElement includes InPagePermissionMixin;

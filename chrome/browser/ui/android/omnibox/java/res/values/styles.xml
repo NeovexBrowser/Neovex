@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2021 The Chromium Authors
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Omnibox suggestions -->
+    <style name="TextAppearance.OmniboxAnswerDescriptionNegative">
+        <item name="android:textColor">
+            @color/answers_description_text_negative
+        </item>
+    </style>
+
+    <style name="TextAppearance.OmniboxAnswerDescriptionPositive">
+        <item name="android:textColor">
+            @color/answers_description_text_positive
+        </item>
+    </style>
+
+    <!-- Fusebox bar styles -->
+    <style name="Fusebox"/>
+    <style name="Fusebox.PopupMenu"/>
+    <style name="Fusebox.PopupMenu.Item" parent="@style/TextButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">
+            @dimen/min_touch_target_size
+        </item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAppearance">
+            @style/TextAppearance.TextMedium.Primary
+        </item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="drawableTint">
+            @color/default_icon_color_tint_list
+        </item>
+        <item name="buttonTextColor">@null</item>
+    </style>
+
+    <style name="Fusebox.PopupMenu.Divider">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="OmniboxIcon" parent="LocationBarButton">
+        <item name="android:layout_width">
+            @dimen/location_bar_status_icon_width
+        </item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="OmniboxActionChipThemeOverlay">
+        <item name="chipStyle">@style/OmniboxActionChip</item>
+    </style>
+
+    <style name="OmniboxActionChip" parent="SuggestionChip">
+        <item name="iconWidth">
+            @dimen/omnibox_pedal_suggestion_icon_size
+        </item>
+        <item name="iconHeight">
+            @dimen/omnibox_pedal_suggestion_icon_size
+        </item>
+        <item name="allowMultipleLines">true</item>
+        <item name="multiLineVerticalPadding">
+            @dimen/omnibox_pedal_suggestion_text_vertical_padding
+        </item>
+        <item name="textAlignStart">true</item>
+    </style>
+
+    <style name="OmniboxIncognitoActionChipThemeOverlay">
+        <item name="chipStyle">@style/OmniboxIncognitoActionChip</item>
+    </style>
+
+    <style name="OmniboxIncognitoActionChip" parent="OmniboxActionChip">
+        <item name="chipColor">@color/default_bg_color_dark</item>
+        <item name="primaryTextAppearance">
+            @style/TextAppearance.TextSmall.Primary.Baseline.Light
+        </item>
+    </style>
+
+    <style name="OmniboxChipSizeOverlay" parent="SizeOverlay.Material3Expressive.Button.Xsmall">
+        <item name="containerPaddingStart">@dimen/omnibox_chip_padding</item>
+        <item name="containerPaddingEnd">@dimen/omnibox_chip_padding_end</item>
+        <item name="containerPaddingTop">@dimen/omnibox_chip_padding</item>
+        <item name="containerPaddingBottom">@dimen/omnibox_chip_padding</item>
+        <item name="containerInsetTop">@dimen/omnibox_chip_padding</item>
+        <item name="containerInsetBottom">@dimen/omnibox_chip_padding</item>
+        <item name="containerInsetLeft">@dimen/omnibox_chip_padding</item>
+        <item name="containerInsetRight">@dimen/omnibox_chip_padding</item>
+        <item name="containerIconSize">?attr/listItemIconSize</item>
+    </style>
+
+    <style name="OmniboxChipThemeOverlay" parent="ThemeOverlay.Material3Expressive.Button.Tonal">
+        <item name="colorContainer">?attr/colorSurface</item>
+        <item name="colorOnContainer">?attr/colorOnSurface</item>
+    </style>
+</resources>

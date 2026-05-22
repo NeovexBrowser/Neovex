@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Actor specific strings (included from generated_resources.grd). -->
+<grit-part>
+  <message name="IDS_HANDOFF_TAKE_OVER_TASK_LABEL" desc="Text on the handoff button when an actor is in control">
+    Take over task
+  </message>
+  <message name="IDS_HANDOFF_GIVE_TASK_BACK_LABEL" desc="[Placeholder Description]" translateable="false">
+    Give task back
+  </message>
+  <message name="IDS_HANDOFF_TAKE_OVER_TASK_A11Y_LABEL" desc="Spoken by screen readers when the handoff button is focused when an actor is in control">
+    Take over task, Gemini is currently in control
+  </message>
+  <message name="IDS_HANDOFF_GIVE_TASK_BACK_A11Y_LABEL" desc="[Placeholder Description]" translateable="false">
+    Give task back
+  </message>
+  <message name="IDS_TASK_IN_PROGRESS_TOAST_BODY" desc="Text on a toast notification that is shown when an actor is working on a task" translateable="true">
+    Your task is still in progress
+  </message>
+  <message name="IDS_ACTOR_TASK_NUDGE_CHECK_TASK_LABEL" desc="Text shown in a tab strip nudge informing the user that their task needs attention before it can proceed." translateable="true">
+    {NUM_TASKS, plural,
+      =1 {Check your task}
+      other {Check your tasks}}
+  </message>
+  <message name="IDS_ACTOR_TASK_NUDGE_TASK_COMPLETE_LABEL" desc="Text shown in a tab strip nudge informing the user that their task is done." translateable="true">
+    {NUM_TASKS, plural,
+      =1 {Task done}
+      other {Tasks done}}
+  </message>
+  <message name="IDR_ACTOR_TASK_LIST_BUBBLE_ROW_TAB_CLOSED_SUBTITLE" desc="Subtitle shown for a task in the task list bubble informing the user that the tab associated with a task no longer exists or was closed." translateable="true">
+    Tab closed
+  </message>
+  <message name="IDR_ACTOR_TASK_LIST_BUBBLE_ROW_CHECK_TASK_SUBTITLE" desc="Subtitle shown for a task in the task list bubble informing the user that the task needs attention." translateable="true">
+    Waiting for your help
+  </message>
+  <message name="IDR_ACTOR_TASK_LIST_BUBBLE_ROW_ACTING_TASK_SUBTITLE" desc="Subtitle shown for a task in the task list bubble informing the user that the task is acting." translateable="true">
+   Working on your task…
+  </message>
+  <message name="IDS_ACTOR_TASK_LIST_BUBBLE_A11Y_LABEL" desc="Text used by screenreaders for the list of tasks the user is running." translateable="true">
+    Task list
+  </message>
+  <message name="IDS_ACTOR_TASK_INDICATOR_TOOLTIP" desc="Tooltip text for the task indicator button. The button will open a bubble containing the list of tasks currently running." translateable="true">
+    Check your tasks
+  </message>
+  <message name="IDR_ACTOR_TASK_LIST_BUBBLE_ROW_PAUSED_TASK_SUBTITLE" desc="Subtitle shown for a task in the task list bubble informing the user that the task is paused." translateable="true">
+   Paused
+  </message>
+  <message name="IDR_ACTOR_TASK_LIST_BUBBLE_ROW_COMPLETED_TASK_SUBTITLE" desc="Subtitle shown for a task in the task list bubble informing the user that the task is completed." translateable="true">
+   Done
+  </message>
+  <message name="IDR_ACTOR_TASK_LIST_BUBBLE_ROW_FAILED_TASK_SUBTITLE" desc="Subtitle shown for a task in the task list bubble informing the user that the task has failed." translateable="true">
+   Something went wrong
+  </message>
+  <message name="IDS_TOOLTIP_TAB_ALERT_STATE_ACTOR_ACCESSING" desc="Extra tool tip text, when the tab's context is being shared with Gemini" translateable="true">
+    Gemini is working on your task...
+  </message>
+   <message name="IDS_TAB_AX_LABEL_ACTOR_ACCESSING" is_accessibility_with_no_ui="true" desc="Accessibility label text, when the Gemini is working on tab">
+    <ph name="WINDOW_TITLE">
+      $1<ex>Wikipedia</ex>
+    </ph> - Gemini is working on your task...
+  </message>
+  <!-- TODO(crbug.com/491585996): Make strings translatable once they are finalized -->
+  <message name="IDS_ACTOR_PIP_WORKING_STATUS" desc="Status text shown in Picture-in-Picture when the actor is actively performing a task." formatter_data="android_java" translateable="false" >
+    Working on your task…
+  </message>
+  <message name="IDS_ACTOR_PIP_PAUSED_STATUS" desc="Status text shown in Picture-in-Picture when the task has been paused by the user." formatter_data="android_java" translateable="false" >
+    Task Paused
+  </message>
+  <message name="IDS_ACTOR_PIP_NEEDS_ATTENTION_STATUS" desc="Status text shown in Picture-in-Picture when the task requires user input to continue." formatter_data="android_java" translateable="false" >
+    Needs your attention
+  </message>
+  <message name="IDS_ACTOR_PIP_COMPLETE_STATUS" desc="Status text shown in Picture-in-Picture when the actor has finished the assigned task." formatter_data="android_java" translateable="false" >
+    Task Complete
+  </message>
+
+  <!-- Android specific strings. -->
+  <message name="IDS_ACTOR_OVERLAY_SNACKBAR_MESSAGE" desc="Message shown in a snackbar when the user clicks on the actor overlay but they cannot interact with the tab until the task is paused or complete." formatter_data="android_java">
+    You cannot interact with this tab until the task is paused or complete
+  </message>
+  <message name="IDS_GLIC_BUTTON_STATUS_REVIEW" desc="Label on the Gemini entry point button when Gemini requires user attention." formatter_data="android_java">
+    Review
+  </message>
+
+  <message name="IDS_ACTOR_NOTIFICATION_TITLE_WORKING_ON_TASK" desc="Notification title when the actor is actively working on a task." formatter_data="android_java">
+   Working on your task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_TITLE_CHECK_YOUR_TASK" desc="Notification title when the actor is waiting for user input to proceed with a task." formatter_data="android_java">
+   Check your task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_TITLE_TASK_PAUSED" desc="Notification title when a task has been paused by the user or the actor." formatter_data="android_java">
+   Task paused
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_TITLE_TASK_COMPLETED" desc="Notification title when a task has finished successfully." formatter_data="android_java">
+   Task completed
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BUTTON_VIEW_TASK" desc="Label for the notification button that takes the user to the tab where the task is running." formatter_data="android_java">
+    View task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BUTTON_PAUSE_TASK" desc="Label for the notification button that pauses the currently running task." formatter_data="android_java">
+    Pause task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BUTTON_RESUME_TASK" desc="Label for the notification button that resumes a paused task." formatter_data="android_java">
+    Resume task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BODY_WORKING" desc="Notification body text when the actor is working on a task." formatter_data="android_java">
+    <ph name="TASK_TITLE">$1<ex>My Task</ex></ph>\nI’m working on your task, and will let you know if more action is needed
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BODY_USER_INPUT" desc="Notification body text when the actor is waiting for user input." formatter_data="android_java">
+    <ph name="TASK_TITLE">$1<ex>My Task</ex></ph>\nI need your help to proceed with your task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BODY_PAUSED" desc="Notification body text when the actor has paused a task." formatter_data="android_java">
+    <ph name="TASK_TITLE">$1<ex>My Task</ex></ph>\nI have paused your task
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BODY_FINISHED" desc="Notification body text when the actor has finished a task." formatter_data="android_java">
+    <ph name="TASK_TITLE">$1<ex>My Task</ex></ph>\nI was able to fulfill your request, you may view it within Chrome
+  </message>
+  <message name="IDS_ACTOR_NOTIFICATION_BODY_INTERRUPTED" desc="Notification body text when the actor has interrupted by other activityies." formatter_data="android_java">
+    <ph name="TASK_TITLE">$1<ex>My Task</ex></ph>\nI've paused your task due to other activity. You can return to chrome to view it when ready.
+  </message>
+</grit-part>

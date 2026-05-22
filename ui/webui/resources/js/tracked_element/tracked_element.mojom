@@ -1,0 +1,49 @@
+// Copyright 2025 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module tracked_element.mojom;
+
+import "ui/gfx/geometry/mojom/geometry.mojom";
+
+// Implemented by the browser. The WebUI notifies the browser of changes to
+// tracked elements, such as their visibility and bounds.
+interface TrackedElementHandler {
+  // Sets the WebUI end of the connection; used to handle requests to update
+  // the element initiated by the browser.
+  SetManager(pending_remote<TrackedElementManager> observer);
+
+  // Indicates that the ability to highlight the given element has changed.
+  TrackedElementCanHighlightChanged(
+      string native_identifier, bool can_higlight);
+
+  // Indicates that the visibility of the element that the help bubble could be
+  // anchored to has changed.
+  TrackedElementVisibilityChanged(string native_identifier,
+                                  bool visible,
+                                  gfx.mojom.RectF rect);
+
+  // Notifies that a tracked element has been activated, which will in turn be
+  // propagated through the ui::ElementTracker system as an
+  // EventType::kActivated.
+  //
+  // The ui::ElementIdentifier will be generated from `native_identifier`.
+  TrackedElementActivated(string native_identifier);
+
+  // Notifies that a custom event has occurred associated with a particular
+  // tracked element, which will in turn be propagated through the
+  // ui::ElementTracker system as an EventType::kCustomEvent.
+  //
+  // The ui::ElementIdentifier will be generated from `native_identifier` and
+  // the ui::CustomElementEventType will be generated from
+  // `custom_event_name`.
+  TrackedElementCustomEvent(string native_identifier,
+                            string custom_event_name);
+};
+
+// Implemented by WebUI. The browser asks WebUI to update elements in some way.
+interface TrackedElementManager {
+  // Notifies that an element should be highlighted/unhighlighted to
+  // help relate it to a bubble popup.
+  OnElementHighlightChanged(string native_identifier, bool highlighted);
+};

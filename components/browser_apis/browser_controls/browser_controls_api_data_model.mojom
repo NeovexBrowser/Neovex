@@ -1,0 +1,16 @@
+// Copyright 2026 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module browser_controls_api.mojom;
+
+// The event flags for the click that might affect disposition of a
+// button's behavior.
+enum ClickDispositionFlag {
+  kUnspecified = 0,
+  kMiddleMouseButton = 1,
+  kAltKeyDown = 2,
+  kMetaKeyDown = 3,
+  kShiftKeyDown = 4,
+  kControlKeyDown = 5,
+};

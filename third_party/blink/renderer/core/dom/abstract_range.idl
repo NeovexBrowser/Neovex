@@ -1,0 +1,19 @@
+// Copyright 2021 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// https://dom.spec.whatwg.org/#interface-abstractrange
+// Note: This interface diverges from the spec to support OpaqueRange
+// (crbug.com/421421332), which when the OpaqueRange feature flag is
+// enabled, returns null for startContainer/endContainer to hide internal
+// DOM structure.
+
+[
+    Exposed=Window
+] interface AbstractRange {
+    readonly attribute Node? startContainer;
+    readonly attribute unsigned long startOffset;
+    readonly attribute Node? endContainer;
+    readonly attribute unsigned long endOffset;
+    readonly attribute boolean collapsed;
+};

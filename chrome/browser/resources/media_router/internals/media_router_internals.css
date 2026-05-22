@@ -1,0 +1,54 @@
+/* Copyright 2018 The Chromium Authors
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+body {
+  font-size: large;
+}
+
+.status {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.log-message {
+  width: 50%;
+}
+
+cr-tab-box {
+  width: inherit;
+}
+
+div[slot='panel'] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 14px;
+}
+
+td,
+th {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+#button-container {
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 14px;
+  margin-inline-end: 10px;
+  padding: 5px 10px;
+}

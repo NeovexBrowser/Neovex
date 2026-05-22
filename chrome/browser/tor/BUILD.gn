@@ -1,0 +1,23 @@
+# Copyright 2024 Neovex Authors. All rights reserved.
+# NEOVEX TOR
+
+import("//build/config/features.gni")
+
+source_set("neovex_tor") {
+  sources = [
+    "tor_launcher.cc",
+    "tor_launcher.h",
+    "tor_launcher_factory.cc",
+    "tor_launcher_factory.h",
+    "tor_profile_manager.cc",
+    "tor_profile_manager.h",
+  ]
+
+  deps = [
+    "//base",
+    "//chrome/browser/profiles",
+    "//components/prefs",
+    "//components/proxy_config",
+    "//net",
+  ]
+}

@@ -1,0 +1,26 @@
+# Copyright 2024 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+assert(!is_android)
+
+import("//mojo/public/tools/bindings/mojom.gni")
+
+mojom("mojo_bindings") {
+  sources = [ "data_sharing.mojom" ]
+  public_deps = [
+    "//components/data_sharing/public/protocol:mojo_bindings",
+    "//mojo/public/mojom/base",
+  ]
+  webui_module_path = "/"
+}
+
+source_set("data_sharing") {
+  sources = [ "data_sharing_ui.h" ]
+  public_deps = [
+    ":mojo_bindings",
+    "//base",
+    "//chrome/browser/ui/webui/top_chrome",
+    "//mojo/public/cpp/bindings",
+  ]
+}

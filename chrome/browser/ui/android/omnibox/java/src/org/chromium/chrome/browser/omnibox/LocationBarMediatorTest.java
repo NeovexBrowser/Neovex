@@ -1,0 +1,2063 @@
+// Copyright 2020 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+package org.chromium.chrome.browser.omnibox;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.clearInvocations;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.util.Property;
+import android.view.ContextThemeWrapper;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.test.core.app.ApplicationProvider;
+
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+import org.robolectric.annotation.Config;
+import org.robolectric.annotation.Implementation;
+import org.robolectric.annotation.Implements;
+import org.robolectric.shadows.ShadowLooper;
+
+import org.chromium.base.UserDataHost;
+import org.chromium.base.supplier.ObservableSuppliers;
+import org.chromium.base.supplier.OneshotSupplierImpl;
+import org.chromium.base.supplier.SettableMonotonicObservableSupplier;
+import org.chromium.base.supplier.SettableNonNullObservableSupplier;
+import org.chromium.base.test.BaseRobolectricTestRunner;
+import org.chromium.base.test.RobolectricUtil;
+import org.chromium.base.test.util.Features.DisableFeatures;
+import org.chromium.base.test.util.Features.EnableFeatures;
+import org.chromium.build.BuildConfig;
+import org.chromium.chrome.browser.banners.AppMenuVerbiage;
+import org.chromium.chrome.browser.browser_controls.BrowserControlsStateProvider;
+import org.chromium.chrome.browser.browser_controls.BrowserControlsStateProvider.ControlsPosition;
+import org.chromium.chrome.browser.flags.ChromeFeatureList;
+import org.chromium.chrome.browser.layouts.toolbar.ToolbarWidthConsumer;
+import org.chromium.chrome.browser.lens.LensController;
+import org.chromium.chrome.browser.locale.LocaleManager;
+import org.chromium.chrome.browser.multiwindow.MultiInstanceManager;
+import org.chromium.chrome.browser.omnibox.fusebox.ComposeboxQueryControllerBridge;
+import org.chromium.chrome.browser.omnibox.fusebox.FuseboxCoordinator;
+import org.chromium.chrome.browser.omnibox.fusebox.FuseboxCoordinator.FuseboxState;
+import org.chromium.chrome.browser.omnibox.geo.GeolocationHeader;
+import org.chromium.chrome.browser.omnibox.status.StatusCoordinator;
+import org.chromium.chrome.browser.omnibox.suggestions.AutocompleteController;
+import org.chromium.chrome.browser.omnibox.suggestions.AutocompleteCoordinator;
+import org.chromium.chrome.browser.omnibox.suggestions.AutocompleteDelegate.AutocompleteLoadCallback;
+import org.chromium.chrome.browser.omnibox.suggestions.OmniboxLoadUrlParams;
+import org.chromium.chrome.browser.omnibox.test.R;
+import org.chromium.chrome.browser.omnibox.voice.VoiceRecognitionHandler;
+import org.chromium.chrome.browser.prefetch.settings.PreloadPagesSettingsBridge;
+import org.chromium.chrome.browser.prefetch.settings.PreloadPagesSettingsBridgeJni;
+import org.chromium.chrome.browser.prefetch.settings.PreloadPagesState;
+import org.chromium.chrome.browser.profiles.Profile;
+import org.chromium.chrome.browser.signin.services.IdentityServicesProvider;
+import org.chromium.chrome.browser.tab.Tab;
+import org.chromium.chrome.browser.tab.Tab.LoadUrlResult;
+import org.chromium.chrome.browser.tab.TabLaunchType;
+import org.chromium.chrome.browser.tab.TabObserver;
+import org.chromium.chrome.browser.tabmodel.TabModelSelector;
+import org.chromium.chrome.browser.ui.theme.BrandedColorScheme;
+import org.chromium.chrome.browser.util.ChromeAccessibilityUtil;
+import org.chromium.chrome.test.util.browser.signin.AccountManagerTestRule;
+import org.chromium.components.browser_ui.accessibility.AccessibilityFeatureMap;
+import org.chromium.components.browser_ui.accessibility.PageZoomIndicatorCoordinator;
+import org.chromium.components.browser_ui.styles.ChromeColors;
+import org.chromium.components.embedder_support.util.UrlUtilities;
+import org.chromium.components.omnibox.AutocompleteInput;
+import org.chromium.components.omnibox.AutocompleteInput.SiteSearchData;
+import org.chromium.components.omnibox.AutocompleteMatch;
+import org.chromium.components.omnibox.AutocompleteMatchBuilder;
+import org.chromium.components.omnibox.AutocompleteRequestType;
+import org.chromium.components.omnibox.OmniboxFeatureList;
+import org.chromium.components.omnibox.OmniboxFeatures;
+import org.chromium.components.omnibox.OmniboxFocusReason;
+import org.chromium.components.omnibox.OmniboxSuggestionType;
+import org.chromium.components.search_engines.TemplateUrlService;
+import org.chromium.components.signin.identitymanager.IdentityManager;
+import org.chromium.components.webapps.AddToHomescreenCoordinator;
+import org.chromium.components.webapps.AppBannerManager;
+import org.chromium.components.webapps.AppBannerManagerJni;
+import org.chromium.content_public.browser.LoadUrlParams;
+import org.chromium.content_public.browser.WebContents;
+import org.chromium.content_public.common.ResourceRequestBody;
+import org.chromium.ui.base.PageTransition;
+import org.chromium.ui.base.WindowAndroid;
+import org.chromium.ui.modaldialog.ModalDialogManager;
+import org.chromium.url.GURL;
+import org.chromium.url.JUnitTestGURLs;
+
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
+
+/** Unit tests for LocationBarMediator. */
+@RunWith(BaseRobolectricTestRunner.class)
+@Config(shadows = {LocationBarMediatorTest.ObjectAnimatorShadow.class})
+@DisableFeatures({
+    ChromeFeatureList.ADAPTIVE_BUTTON_IN_TOP_TOOLBAR_CUSTOMIZATION_V2,
+    AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR,
+})
+@EnableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+public class LocationBarMediatorTest {
+
+    @Implements(ObjectAnimator.class)
+    static class ObjectAnimatorShadow {
+        private static ObjectAnimator sUrlAnimator;
+
+        @Implementation
+        public static <T> ObjectAnimator ofFloat(
+                T target, Property<T, Float> property, float... values) {
+            return sUrlAnimator;
+        }
+
+        static void setUrlAnimator(ObjectAnimator objectAnimator) {
+            sUrlAnimator = objectAnimator;
+        }
+    }
+
+    private static final String TEST_URL = "http://www.example.org";
+
+    private static int sGeoHeaderPrimeCount;
+    private static int sGeoHeaderStopCount;
+
+    @Rule public MockitoRule mMockitoRule = MockitoJUnit.rule();
+    @Rule public AccountManagerTestRule mAccountManagerTestRule = new AccountManagerTestRule();
+
+    @Mock private LocationBarLayout mLocationBarLayout;
+    @Mock private LocationBarTablet mLocationBarTablet;
+    @Mock private TemplateUrlService mTemplateUrlService;
+    @Mock private LocationBarDataProvider mLocationBarDataProvider;
+    @Mock private OverrideUrlLoadingDelegate mOverrideUrlLoadingDelegate;
+    @Mock private LocaleManager mLocaleManager;
+    @Mock private Tab mTab;
+    @Mock private WebContents mWebContents;
+    @Mock private TabModelSelector mTabModelSelector;
+    @Mock private MultiInstanceManager mMultiInstanceManager;
+    @Mock private LocationBarEmbedder mLocationBarEmbedder;
+    @Mock private AutocompleteCoordinator mAutocompleteCoordinator;
+    @Mock private UrlBarCoordinator mUrlCoordinator;
+    @Mock private StatusCoordinator mStatusCoordinator;
+    @Mock private OmniboxPrerender.Natives mPrerenderJni;
+    @Mock private TextView mView;
+    @Mock private KeyEvent mKeyEvent;
+    @Mock private BackKeyBehaviorDelegate mOverrideBackKeyBehaviorDelegate;
+    @Mock private WindowAndroid mWindowAndroid;
+    @Mock private ObjectAnimator mUrlAnimator;
+    @Mock private View mRootView;
+    @Mock private SearchEngineUtils mSearchEngineUtils;
+    @Mock private AutocompleteLoadCallback mAutocompleteLoadCallback;
+    @Mock private LoadUrlParams mLoadUrlParams;
+    @Mock private LoadUrlResult mLoadUrlResult;
+    @Mock private ModalDialogManager mModalDialogManager;
+    @Mock private AddToHomescreenCoordinator mAddToHomescreenCoordinator;
+    @Mock private PageZoomIndicatorCoordinator mPageZoomIndicatorCoordinator;
+
+    @Mock private LensController mLensController;
+    @Mock private IdentityServicesProvider mIdentityServicesProvider;
+    @Mock private IdentityManager mIdentityManager;
+    @Mock private Profile mProfile;
+    @Mock private PreloadPagesSettingsBridge.Natives mPreloadPagesSettingsJni;
+    @Mock private LocationBarMediator.OmniboxUma mOmniboxUma;
+    @Mock private OmniboxSuggestionsDropdownEmbedderImpl mEmbedderImpl;
+    @Mock private ResourceRequestBody.Natives mResourceRequestBodyJni;
+    @Mock private BrowserControlsStateProvider mBrowserControlsStateProvider;
+    @Mock private AppBannerManager mAppBannerManager;
+    @Mock private AppBannerManager.Natives mAppBannerManagerJni;
+    @Mock private NewTabPageDelegate mNewTabPageDelegate;
+    @Mock private FuseboxCoordinator mFuseboxCoordinator;
+    @Mock private AutocompleteController mAutocompleteController;
+    @Mock private ComposeboxQueryControllerBridge mComposeboxBridge;
+
+    @Captor private ArgumentCaptor<Runnable> mRunnableCaptor;
+    @Captor private ArgumentCaptor<LoadUrlParams> mLoadUrlParamsCaptor;
+    @Captor private ArgumentCaptor<TabObserver> mTabObserverCaptor;
+
+    private Context mContext;
+    private SettableNonNullObservableSupplier<TabModelSelector> mTabModelSelectorSupplier;
+    private final SettableMonotonicObservableSupplier<Profile> mProfileSupplier =
+            ObservableSuppliers.createMonotonic();
+    private LocationBarMediator mMediator;
+    private LocationBarMediator mTabletMediator;
+    private UrlBarData mUrlBarData;
+    private boolean mIsToolbarMicEnabled;
+    private LocationBarEmbedderUiOverrides mUiOverrides;
+    private OneshotSupplierImpl<TemplateUrlService> mTemplateUrlServiceSupplier;
+    private final SettableNonNullObservableSupplier<@FuseboxState Integer> mFuseboxStateSupplier =
+            ObservableSuppliers.createNonNull(FuseboxState.EXPANDED);
+    private final UserDataHost mTabUserDataHost = new UserDataHost();
+
+    // Members capturing final state of the LocationBarLayout elements.
+    private boolean mNavigateButtonIsVisible;
+
+    @Before
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void setUp() {
+        // All lenient() mock actions below should be reevaluated at some point. There is a
+        // likelihood some of these are not needed anymore. Infrequent actions should ideally
+        // be moved to tests that actually need them.
+        // The reason we use lenient() mocks is to suppress abundant "unused action on mock"
+        // warnings being emitted any time each of the 140+ tests below is not using that
+        // action.
+        mTabModelSelectorSupplier = ObservableSuppliers.createNonNull(mTabModelSelector);
+        mContext =
+                new ContextThemeWrapper(
+                        ApplicationProvider.getApplicationContext(),
+                        R.style.Theme_BrowserUI_DayNight);
+
+        AutocompleteController.setInstanceForTesting(mAutocompleteController);
+        ComposeboxQueryControllerBridge.setInstanceForTesting(mComposeboxBridge);
+
+        mUrlBarData = UrlBarData.create(null, "text", 0, 0, "text");
+        lenient().doReturn(true).when(mSearchEngineUtils).shouldShowSearchEngineLogo();
+        SearchEngineUtils.setInstanceForTesting(mSearchEngineUtils);
+        lenient().doReturn(mUrlBarData).when(mLocationBarDataProvider).getUrlBarData();
+        lenient()
+                .doReturn(ChromeColors.getDefaultThemeColor(mContext, /* isIncognito= */ false))
+                .when(mLocationBarDataProvider)
+                .getPrimaryColor();
+        lenient().doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        lenient()
+                .doAnswer(i -> mLocationBarDataProvider.getTab().getUserDataHost())
+                .when(mLocationBarDataProvider)
+                .getUserDataHost();
+        lenient()
+                .doReturn(mNewTabPageDelegate)
+                .when(mLocationBarDataProvider)
+                .getNewTabPageDelegate();
+        lenient().doReturn(mWebContents).when(mTab).getWebContents();
+        lenient().doReturn(GURL.emptyGURL()).when(mTab).getUrl();
+        lenient().doReturn(mRootView).when(mLocationBarLayout).getRootView();
+        lenient().doReturn(true).when(mLocationBarLayout).shouldClearTextOnFocus();
+        lenient().doReturn(mRootView).when(mLocationBarTablet).getRootView();
+        lenient().doReturn(new WeakReference<>(null)).when(mWindowAndroid).getActivity();
+        OmniboxPrerenderJni.setInstanceForTesting(mPrerenderJni);
+        PreloadPagesSettingsBridgeJni.setInstanceForTesting(mPreloadPagesSettingsJni);
+        ResourceRequestBody.setNativesForTesting(mResourceRequestBodyJni);
+        lenient().doReturn(mProfile).when(mTab).getProfile();
+        lenient()
+                .doReturn(mIdentityManager)
+                .when(mIdentityServicesProvider)
+                .getIdentityManager(mProfile);
+        lenient()
+                .doReturn(ControlsPosition.TOP)
+                .when(mBrowserControlsStateProvider)
+                .getControlsPosition();
+        lenient().doReturn(mTabUserDataHost).when(mTab).getUserDataHost();
+        IdentityServicesProvider.setInstanceForTests(mIdentityServicesProvider);
+        mTemplateUrlServiceSupplier = new OneshotSupplierImpl<>();
+        mTemplateUrlServiceSupplier.set(mTemplateUrlService);
+        mUiOverrides = new LocationBarEmbedderUiOverrides();
+
+        doAnswer(i -> mNavigateButtonIsVisible = i.getArgument(0))
+                .when(mLocationBarLayout)
+                .setNavigateButtonVisibility(anyBoolean());
+
+        doReturn(mFuseboxStateSupplier).when(mFuseboxCoordinator).getFuseboxStateSupplier();
+        doReturn("").when(mUrlCoordinator).getTextWithAutocomplete();
+
+        ComposeboxQueryControllerBridge.setInstanceForTesting(mComposeboxBridge);
+
+        AppBannerManagerJni.setInstanceForTesting(mAppBannerManagerJni);
+        lenient()
+                .doReturn(mAppBannerManager)
+                .when(mAppBannerManagerJni)
+                .getJavaBannerManagerForWebContents(mWebContents);
+        mMediator =
+                new LocationBarMediator(
+                        mContext,
+                        mLocationBarLayout,
+                        mLocationBarDataProvider,
+                        mUiOverrides,
+                        mProfileSupplier,
+                        mOverrideUrlLoadingDelegate,
+                        mLocaleManager,
+                        mTemplateUrlServiceSupplier,
+                        mOverrideBackKeyBehaviorDelegate,
+                        mWindowAndroid,
+                        /* isTablet= */ false,
+                        mLensController,
+                        mOmniboxUma,
+                        () -> mIsToolbarMicEnabled,
+                        mEmbedderImpl,
+                        mTabModelSelectorSupplier,
+                        mBrowserControlsStateProvider,
+                        () -> mModalDialogManager,
+                        mPageZoomIndicatorCoordinator,
+                        mFuseboxCoordinator,
+                        mMultiInstanceManager,
+                        mLocationBarEmbedder,
+                        /* omniboxChipManager= */ null);
+        mMediator.setCoordinators(mUrlCoordinator, mAutocompleteCoordinator, mStatusCoordinator);
+        mMediator.setAddToHomescreenCoordinatorForTesting(mAddToHomescreenCoordinator);
+        ObjectAnimatorShadow.setUrlAnimator(mUrlAnimator);
+
+        mTabletMediator = createTabletMediator();
+        mProfileSupplier.set(mProfile);
+
+        sGeoHeaderPrimeCount = 0;
+        sGeoHeaderStopCount = 0;
+        GeolocationHeader.setPrimeLocationForGeoHeaderIfEnabledForTesting(
+                () -> sGeoHeaderPrimeCount++);
+        GeolocationHeader.setStopListeningForLocationUpdatesForTesting(() -> sGeoHeaderStopCount++);
+    }
+
+    private LocationBarMediator createTabletMediator() {
+        var tabletMediator =
+                new LocationBarMediator(
+                        mContext,
+                        mLocationBarTablet,
+                        mLocationBarDataProvider,
+                        mUiOverrides,
+                        mProfileSupplier,
+                        mOverrideUrlLoadingDelegate,
+                        mLocaleManager,
+                        mTemplateUrlServiceSupplier,
+                        mOverrideBackKeyBehaviorDelegate,
+                        mWindowAndroid,
+                        /* isTablet= */ true,
+                        mLensController,
+                        (tab, transition, isNtp) -> {},
+                        () -> mIsToolbarMicEnabled,
+                        mEmbedderImpl,
+                        mTabModelSelectorSupplier,
+                        mBrowserControlsStateProvider,
+                        () -> mModalDialogManager,
+                        mPageZoomIndicatorCoordinator,
+                        mFuseboxCoordinator,
+                        mMultiInstanceManager,
+                        mLocationBarEmbedder,
+                        /* omniboxChipManager= */ null);
+        tabletMediator.setCoordinators(
+                mUrlCoordinator, mAutocompleteCoordinator, mStatusCoordinator);
+        return tabletMediator;
+    }
+
+    private void updateTabletWidthConsumers(LocationBarMediator locationBarMediator) {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        locationBarMediator.getMicButtonToolbarWidthConsumer().updateVisibility(buttonWidth);
+        locationBarMediator.getLensButtonToolbarWidthConsumer().updateVisibility(buttonWidth);
+        locationBarMediator.getInstallButtonToolbarWidthConsumer().updateVisibility(buttonWidth);
+        locationBarMediator.getBookmarkButtonToolbarWidthConsumer().updateVisibility(buttonWidth);
+        locationBarMediator.getZoomButtonToolbarWidthConsumer().updateVisibility(buttonWidth);
+    }
+
+    @Test
+    public void testGetVoiceRecognitionHandler_safeToCallAfterDestroy() {
+        mMediator.onFinishNativeInitialization();
+        mMediator.destroy();
+        mMediator.getVoiceRecognitionHandler();
+    }
+
+    @Test
+    public void testOnTabLoadingNtp() {
+        mMediator.onNtpStartedLoading();
+        verify(mLocationBarLayout).onNtpStartedLoading();
+    }
+
+    @Test
+    public void testRevertChanges_focused() {
+        mMediator.onUrlFocusChange(true);
+        UrlBarData urlBarData = mock(UrlBarData.class);
+        doReturn(urlBarData).when(mLocationBarDataProvider).getUrlBarData();
+        mMediator.revertChanges();
+        verify(mUrlCoordinator)
+                .setUrlBarData(urlBarData, UrlBar.ScrollType.NO_SCROLL, UrlBarData.SELECT_ALL);
+    }
+
+    @Test
+    public void testRevertChanges_focusedNativePage() {
+        doReturn(JUnitTestGURLs.NTP_URL).when(mLocationBarDataProvider).getCurrentGurl();
+        mMediator.onUrlFocusChange(true);
+        clearInvocations(mUrlCoordinator);
+        mMediator.revertChanges();
+        verify(mUrlCoordinator)
+                .setUrlBarData(
+                        UrlBarData.EMPTY, UrlBar.ScrollType.NO_SCROLL, UrlBarData.SELECT_END);
+    }
+
+    @Test
+    public void testRevertChanges_unFocused() {
+        doReturn(JUnitTestGURLs.BLUE_1).when(mLocationBarDataProvider).getCurrentGurl();
+        mMediator.revertChanges();
+        verify(mUrlCoordinator)
+                .setUrlBarData(mUrlBarData, UrlBar.ScrollType.SCROLL_TO_TLD, UrlBarData.SELECT_ALL);
+    }
+
+    @Test
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testOnSuggestionsChanged() {
+        ArgumentCaptor<OmniboxPrerender> omniboxPrerenderCaptor =
+                ArgumentCaptor.forClass(OmniboxPrerender.class);
+        doReturn(123L).when(mPrerenderJni).init(omniboxPrerenderCaptor.capture());
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        verify(mPrerenderJni).initializeForProfile(123L, mProfile);
+
+        doReturn(PreloadPagesState.NO_PRELOADING)
+                .when(mPreloadPagesSettingsJni)
+                .getState(eq(mProfile));
+        mMediator.onSuggestionsChanged(
+                AutocompleteMatchBuilder.searchWithType(OmniboxSuggestionType.SEARCH_SUGGEST)
+                        .setDisplayText("text")
+                        .setIsSearch(true)
+                        .setAllowedToBeDefaultMatch(true)
+                        .build(),
+                true);
+        verify(mPrerenderJni, never())
+                .prerenderMaybe(anyLong(), anyString(), anyString(), anyLong(), any(), any());
+        verify(mStatusCoordinator).onDefaultMatchClassified(true);
+
+        doReturn(PreloadPagesState.STANDARD_PRELOADING)
+                .when(mPreloadPagesSettingsJni)
+                .getState(eq(mProfile));
+        GURL url = JUnitTestGURLs.RED_1;
+        doReturn(url).when(mLocationBarDataProvider).getCurrentGurl();
+        mMediator.setUrl(url, null);
+        doReturn(true).when(mLocationBarDataProvider).hasTab();
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        doReturn(456L).when(mAutocompleteCoordinator).getCurrentNativeAutocompleteResult();
+        doReturn("text").when(mUrlCoordinator).getTextWithoutAutocomplete();
+        doReturn(true).when(mUrlCoordinator).shouldAutocomplete();
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mMediator.onUrlFocusChange(true);
+
+        AutocompleteMatch defaultMatch =
+                AutocompleteMatchBuilder.searchWithType(OmniboxSuggestionType.SEARCH_SUGGEST)
+                        .setDisplayText("text")
+                        .setInlineAutocompletion("textWithAutocomplete")
+                        .setAdditionalText("additionalText")
+                        .setIsSearch(false)
+                        .setAllowedToBeDefaultMatch(true)
+                        .build();
+        mMediator.onSuggestionsChanged(defaultMatch, true);
+        verify(mPrerenderJni)
+                .prerenderMaybe(123L, "text", JUnitTestGURLs.RED_1.getSpec(), 456L, mProfile, mTab);
+        verify(mStatusCoordinator).onDefaultMatchClassified(false);
+        verify(mUrlCoordinator)
+                .setAutocompleteText("text", "textWithAutocomplete", "additionalText", null);
+
+        var state = getSession();
+        state.getAutocompleteInput().setRequestType(AutocompleteRequestType.AI_MODE);
+        mMediator.onSuggestionsChanged(defaultMatch, true);
+        verify(mStatusCoordinator, times(2)).onDefaultMatchClassified(true);
+    }
+
+    @Test
+    public void testOnSuggestionsChanged_nullMatch() {
+        doReturn("text").when(mUrlCoordinator).getTextWithoutAutocomplete();
+        doReturn(true).when(mUrlCoordinator).shouldAutocomplete();
+
+        mMediator.onSuggestionsChanged(null, false);
+        verify(mStatusCoordinator).onDefaultMatchClassified(true);
+        verify(mUrlCoordinator).setAutocompleteText("text", null, null, null);
+    }
+
+    public void testLoadUrl_base() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .build());
+
+        verify(mTab).loadUrl(mLoadUrlParamsCaptor.capture());
+        assertEquals(TEST_URL, mLoadUrlParamsCaptor.getValue().getUrl());
+        assertEquals(
+                PageTransition.TYPED | PageTransition.FROM_ADDRESS_BAR,
+                mLoadUrlParamsCaptor.getValue().getTransitionType());
+    }
+
+    @Test
+    @DisableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testLoadUrlNoPostDelayedTaskFocusTab() {
+        testLoadUrl_base();
+    }
+
+    @Test
+    @EnableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testLoadUrlPostDelayedTaskFocusTab() {
+        testLoadUrl_base();
+    }
+
+    public void testLoadUrlWithAutocompleteLoadCallback_base() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .setAutocompleteLoadCallback(mAutocompleteLoadCallback)
+                        .build());
+
+        verify(mTab).loadUrl(mLoadUrlParamsCaptor.capture());
+        assertEquals(TEST_URL, mLoadUrlParamsCaptor.getValue().getUrl());
+        assertEquals(
+                PageTransition.TYPED | PageTransition.FROM_ADDRESS_BAR,
+                mLoadUrlParamsCaptor.getValue().getTransitionType());
+
+        verify(mTab).addObserver(mTabObserverCaptor.capture());
+        mTabObserverCaptor.getValue().onLoadUrl(mTab, mLoadUrlParams, mLoadUrlResult);
+        verify(mTab).removeObserver(mTabObserverCaptor.getValue());
+        verify(mAutocompleteLoadCallback).onLoadUrl(mLoadUrlParams, mLoadUrlResult);
+    }
+
+    @Test
+    @DisableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testLoadUrlWithAutocompleteLoadCallbackNoPostDelayedTaskFocusTab() {
+        testLoadUrlWithAutocompleteLoadCallback_base();
+    }
+
+    @Test
+    @EnableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testLoadUrlWithAutocompleteLoadCallbackPostDelayedTaskFocusTab() {
+        testLoadUrlWithAutocompleteLoadCallback_base();
+    }
+
+    @Test
+    public void testLoadUrlWithPostData() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        String text = "text";
+        byte[] data = new byte[] {0, 1, 2, 3, 4};
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        doReturn(data).when(mResourceRequestBodyJni).createResourceRequestBodyFromBytes(any());
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setPostData(data)
+                        .setExtraHeaders(Map.of("Content-Type", text))
+                        .build());
+
+        verify(mTab).loadUrl(mLoadUrlParamsCaptor.capture());
+        assertEquals(TEST_URL, mLoadUrlParamsCaptor.getValue().getUrl());
+        assertEquals(
+                PageTransition.TYPED | PageTransition.FROM_ADDRESS_BAR,
+                mLoadUrlParamsCaptor.getValue().getTransitionType());
+        assertTrue(mLoadUrlParamsCaptor.getValue().getVerbatimHeaders().contains(text));
+        assertEquals(data, mLoadUrlParamsCaptor.getValue().getPostData().getEncodedNativeForm());
+    }
+
+    @Test
+    public void testLoadUrlWithExtraHeaders() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", "Bearer token123");
+        headers.put("Custom-Header", "custom-value");
+        headers.put("Content-Type", "application/json");
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setExtraHeaders(headers)
+                        .build());
+
+        verify(mTab).loadUrl(mLoadUrlParamsCaptor.capture());
+        assertEquals(TEST_URL, mLoadUrlParamsCaptor.getValue().getUrl());
+        assertEquals(
+                PageTransition.TYPED | PageTransition.FROM_ADDRESS_BAR,
+                mLoadUrlParamsCaptor.getValue().getTransitionType());
+        String verbatimHeaders = mLoadUrlParamsCaptor.getValue().getVerbatimHeaders();
+        assertTrue(verbatimHeaders.contains("Authorization: Bearer token123"));
+        assertTrue(verbatimHeaders.contains("Custom-Header: custom-value"));
+        assertTrue(verbatimHeaders.contains("Content-Type: application/json"));
+    }
+
+    @Test
+    public void testLoadUrl_NativeNotInitialized() {
+        if (BuildConfig.ENABLE_ASSERTS) {
+            try {
+                mMediator.loadUrl(
+                        new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                                .setOpenInNewTab(false)
+                                .build());
+                throw new Error("Expected an assert to be triggered.");
+            } catch (AssertionError e) {
+            }
+        }
+    }
+
+    @Test
+    public void testLoadUrl_OverrideLoadingDelegate() {
+        mMediator.onFinishNativeInitialization();
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        ArgumentCaptor<OmniboxLoadUrlParams> captor =
+                ArgumentCaptor.forClass(OmniboxLoadUrlParams.class);
+        doReturn(true)
+                .when(mOverrideUrlLoadingDelegate)
+                .willHandleLoadUrlWithPostData(any(), anyBoolean());
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .build());
+
+        verify(mOverrideUrlLoadingDelegate)
+                .willHandleLoadUrlWithPostData(captor.capture(), anyBoolean());
+
+        var params = captor.getValue();
+        assertEquals(TEST_URL, params.url);
+        assertEquals(PageTransition.TYPED, params.transitionType);
+        assertEquals(0, params.inputStartTimestamp);
+        assertNull(null, params.postData);
+        assertTrue(params.extraHeaders.isEmpty());
+        assertFalse(params.openInNewTab);
+        verify(mTab, times(0)).loadUrl(any());
+    }
+
+    @Test
+    public void testLoadUrl_openInNewTab_base() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        doReturn(false).when(mTab).isIncognito();
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(true)
+                        .build());
+
+        verify(mTabModelSelector)
+                .openNewTab(
+                        mLoadUrlParamsCaptor.capture(),
+                        eq(TabLaunchType.FROM_OMNIBOX),
+                        eq(mTab),
+                        eq(false));
+        assertEquals(TEST_URL, mLoadUrlParamsCaptor.getValue().getUrl());
+        assertEquals(
+                PageTransition.TYPED | PageTransition.FROM_ADDRESS_BAR,
+                mLoadUrlParamsCaptor.getValue().getTransitionType());
+    }
+
+    @Test
+    public void testLoadUrl_openInNewWindow() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewWindow(true)
+                        .build());
+
+        verify(mMultiInstanceManager)
+                .openUrlInOtherWindow(mLoadUrlParamsCaptor.capture(), anyInt(), eq(true), anyInt());
+        assertEquals(TEST_URL, mLoadUrlParamsCaptor.getValue().getUrl());
+        assertEquals(
+                PageTransition.TYPED | PageTransition.FROM_ADDRESS_BAR,
+                mLoadUrlParamsCaptor.getValue().getTransitionType());
+    }
+
+    @Test
+    @DisableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testLoadUrl_openInNewTabNoPostDelayedTaskFocusTab() {
+        testLoadUrl_openInNewTab_base();
+    }
+
+    @Test
+    @EnableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testLoadUrl_openInNewTabPostDelayedTaskFocusTab() {
+        testLoadUrl_openInNewTab_base();
+    }
+
+    @Test
+    public void testAllowKeyboardLearning() {
+        doReturn(false).when(mLocationBarDataProvider).isOffTheRecord();
+        assertTrue(mMediator.allowKeyboardLearning());
+
+        doReturn(true).when(mLocationBarDataProvider).isOffTheRecord();
+        assertFalse(mMediator.allowKeyboardLearning());
+    }
+
+    @Test
+    public void testGetViewForUrlBackFocus() {
+        Mockito.reset(mLocationBarDataProvider);
+        doReturn(mView).when(mTab).getView();
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        assertEquals(mView, mMediator.getViewForUrlBackFocus());
+        verify(mTab).getView();
+
+        doReturn(null).when(mLocationBarDataProvider).getTab();
+        assertNull(mMediator.getViewForUrlBackFocus());
+        verify(mLocationBarDataProvider, times(2)).getTab();
+        verify(mTab, times(1)).getView();
+    }
+
+    @Test
+    public void testOnConfigurationChanged_qwertyKeyboard() {
+        mMediator.onUrlFocusChange(true);
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        Configuration newConfig = new Configuration();
+        newConfig.keyboard = Configuration.KEYBOARD_QWERTY;
+        mMediator.onConfigurationChanged(newConfig);
+
+        verify(mUrlCoordinator, never()).clearFocus();
+    }
+
+    @Test
+    public void testOnConfigurationChanged_nonQwertyKeyboard() {
+        Configuration newConfig = new Configuration();
+        newConfig.keyboard = Configuration.KEYBOARD_NOKEYS;
+        mMediator.onConfigurationChanged(newConfig);
+        verify(mUrlCoordinator, never()).clearFocus();
+
+        mMediator.onUrlFocusChange(true);
+        mMediator.onConfigurationChanged(newConfig);
+        verify(mUrlCoordinator, never()).clearFocus();
+
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mMediator.onConfigurationChanged(newConfig);
+        verify(mUrlCoordinator).clearFocus();
+    }
+
+    // KEYCODE_BACK will not be sent from Android OS starting from T. And no feature should
+    // rely on KEYCODE_BACK to intercept back press.
+    @Test
+    public void testOnKey_autocompleteHandles() {
+        doReturn(false)
+                .when(mAutocompleteCoordinator)
+                .handleKeyEvent(KeyEvent.KEYCODE_BACK, mKeyEvent);
+        mMediator.onKey(mView, KeyEvent.KEYCODE_BACK, mKeyEvent);
+        // No-op.
+        verify(mAutocompleteCoordinator).handleKeyEvent(KeyEvent.KEYCODE_BACK, mKeyEvent);
+    }
+
+    @Test
+    public void testOnKey_back() {
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_BACK, mKeyEvent));
+
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_BACK, mKeyEvent));
+
+        verify(
+                        mOverrideBackKeyBehaviorDelegate,
+                        never().description("should not handle KEYCODE_BACK"))
+                .handleBackKeyPressed();
+    }
+
+    @Test
+    public void testOnKey_del_clearsKeyword() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        AutocompleteInput input = new AutocompleteInput();
+        input.setSiteSearchData(new SiteSearchData("keyword", "Search keyword"));
+        mMediator.beginInput(input);
+
+        doReturn("").when(mUrlCoordinator).getTextWithoutAutocomplete();
+        doReturn(KeyEvent.ACTION_DOWN).when(mKeyEvent).getAction();
+
+        assertTrue(mMediator.onKey(mView, KeyEvent.KEYCODE_DEL, mKeyEvent));
+        FuseboxSessionState state = FuseboxSessionState.from(mLocationBarDataProvider);
+        assertNull(state.getAutocompleteInput().getSiteSearchData());
+    }
+
+    @Test
+    public void testOnKey_del_withText() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        AutocompleteInput input = new AutocompleteInput();
+        input.setSiteSearchData(new SiteSearchData("keyword", "Search keyword"));
+        mMediator.beginInput(input);
+
+        doReturn("text").when(mUrlCoordinator).getTextWithoutAutocomplete();
+        doReturn(KeyEvent.ACTION_DOWN).when(mKeyEvent).getAction();
+
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_DEL, mKeyEvent));
+        assertEquals("keyword", input.getSiteSearchData().keyword);
+    }
+
+    @Test
+    public void testOnKey_del_noKeyword() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        AutocompleteInput input = new AutocompleteInput();
+        mMediator.beginInput(input);
+
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_DEL, mKeyEvent));
+        assertNull(input.getSiteSearchData());
+    }
+
+    @Test
+    public void testOnKey_escape() {
+        assertTrue(mMediator.handleEscPress());
+        verify(mUrlCoordinator)
+                .setUrlBarData(mUrlBarData, UrlBar.ScrollType.SCROLL_TO_TLD, UrlBarData.SELECT_ALL);
+    }
+
+    @Test
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testOnKey_right() {
+        doReturn(KeyEvent.KEYCODE_DPAD_RIGHT).when(mKeyEvent).getKeyCode();
+        doReturn(true).when(mKeyEvent).hasNoModifiers();
+        doReturn("a").when(mView).getText();
+        doReturn(0).when(mView).getSelectionStart();
+        doReturn(1).when(mView).getSelectionEnd();
+
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_DPAD_RIGHT, mKeyEvent));
+
+        doReturn(1).when(mView).getSelectionStart();
+        assertTrue(mMediator.onKey(mView, KeyEvent.KEYCODE_DPAD_RIGHT, mKeyEvent));
+    }
+
+    @Test
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testOnKey_leftRtl() {
+        doReturn(KeyEvent.KEYCODE_DPAD_LEFT).when(mKeyEvent).getKeyCode();
+        doReturn(true).when(mKeyEvent).hasNoModifiers();
+        doReturn("a").when(mView).getText();
+        doReturn(0).when(mView).getSelectionStart();
+        doReturn(1).when(mView).getSelectionEnd();
+        doReturn(View.LAYOUT_DIRECTION_RTL).when(mView).getLayoutDirection();
+
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_DPAD_LEFT, mKeyEvent));
+
+        doReturn(1).when(mView).getSelectionStart();
+        assertTrue(mMediator.onKey(mView, KeyEvent.KEYCODE_DPAD_LEFT, mKeyEvent));
+    }
+
+    @Test
+    public void testOnKey_unhandled() {
+        doReturn(KeyEvent.KEYCODE_BUTTON_14).when(mKeyEvent).getAction();
+        assertFalse(mMediator.onKey(mView, KeyEvent.KEYCODE_BACK, mKeyEvent));
+    }
+
+    @Test
+    public void testHandleTypingStarted_triggersFocusAnimation() {
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mMediator.onUrlFocusChange(true);
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+
+        // Typing started will emit suggestions changed.
+        mMediator.onSuggestionsChanged(null, false);
+
+        verify(mUrlCoordinator, times(2)).onUrlFocusChange(true);
+    }
+
+    @Test
+    public void testUpdateColors_lightBrandedColor() {
+        doReturn(Color.parseColor("#eaecf0" /*Light grey color*/))
+                .when(mLocationBarDataProvider)
+                .getPrimaryColor();
+
+        mMediator.updateBrandedColorScheme();
+
+        verify(mLocationBarLayout).setDeleteButtonTint(any(ColorStateList.class));
+        verify(mStatusCoordinator).setBrandedColorScheme(BrandedColorScheme.LIGHT_BRANDED_THEME);
+        verify(mAutocompleteCoordinator)
+                .updateVisualsForState(BrandedColorScheme.LIGHT_BRANDED_THEME);
+    }
+
+    @Test
+    public void testUpdateColors_darkBrandedColor() {
+        doReturn(Color.BLACK).when(mLocationBarDataProvider).getPrimaryColor();
+
+        mMediator.updateBrandedColorScheme();
+
+        verify(mLocationBarLayout).setDeleteButtonTint(any(ColorStateList.class));
+        verify(mStatusCoordinator).setBrandedColorScheme(BrandedColorScheme.DARK_BRANDED_THEME);
+        verify(mAutocompleteCoordinator)
+                .updateVisualsForState(BrandedColorScheme.DARK_BRANDED_THEME);
+    }
+
+    @Test
+    public void testUpdateColors_incognito() {
+        final int primaryColor =
+                ChromeColors.getDefaultThemeColor(mContext, /* isIncognito= */ true);
+        doReturn(primaryColor).when(mLocationBarDataProvider).getPrimaryColor();
+        doReturn(true).when(mLocationBarDataProvider).isIncognitoBranded();
+
+        mMediator.updateBrandedColorScheme();
+
+        verify(mLocationBarLayout).setDeleteButtonTint(any(ColorStateList.class));
+        verify(mStatusCoordinator).setBrandedColorScheme(BrandedColorScheme.INCOGNITO);
+        verify(mAutocompleteCoordinator).updateVisualsForState(BrandedColorScheme.INCOGNITO);
+    }
+
+    @Test
+    public void testUpdateColors_default() {
+        mMediator.updateBrandedColorScheme();
+
+        verify(mLocationBarLayout).setDeleteButtonTint(any(ColorStateList.class));
+        verify(mStatusCoordinator).setBrandedColorScheme(BrandedColorScheme.APP_DEFAULT);
+        verify(mAutocompleteCoordinator).updateVisualsForState(BrandedColorScheme.APP_DEFAULT);
+    }
+
+    @Test
+    public void testUpdateColors_setColorScheme() {
+        doReturn(Color.BLACK).when(mLocationBarDataProvider).getPrimaryColor();
+        var url = JUnitTestGURLs.BLUE_1;
+        UrlBarData urlBarData = UrlBarData.forUrl(url);
+        doReturn(urlBarData).when(mLocationBarDataProvider).getUrlBarData();
+        doReturn(url).when(mLocationBarDataProvider).getCurrentGurl();
+
+        mMediator.updateBrandedColorScheme();
+        verify(mLocationBarLayout).setDeleteButtonTint(any());
+        verify(mStatusCoordinator).setBrandedColorScheme(BrandedColorScheme.DARK_BRANDED_THEME);
+        verify(mAutocompleteCoordinator)
+                .updateVisualsForState(BrandedColorScheme.DARK_BRANDED_THEME);
+    }
+
+    @Test
+    public void testSetUrl() {
+        var url = JUnitTestGURLs.BLUE_1;
+        UrlBarData urlBarData = UrlBarData.forUrl(url);
+        mMediator.setUrl(url, urlBarData);
+
+        // Assume that the URL bar is now focused without focus animations.
+        doReturn(true).when(mUrlCoordinator).hasFocus();
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mMediator.setUrl(url, urlBarData);
+
+        // Verify that setUrl() never clears focus when the URL bar is focused without animations.
+        verify(mUrlCoordinator, never()).clearFocus();
+
+        // Verify that setUrlBarData() was invoked exactly once, after the first invocation of
+        // setUrl() when the URL bar was not focused.
+        verify(mUrlCoordinator, times(1))
+                .setUrlBarData(urlBarData, UrlBar.ScrollType.SCROLL_TO_TLD, UrlBarData.SELECT_ALL);
+    }
+
+    @Test
+    public void testBeginInput_focusedFromFakebox() {
+        mMediator.onFinishNativeInitialization();
+        mMediator.beginInput(
+                new AutocompleteInput().setFocusReason(OmniboxFocusReason.FAKE_BOX_TAP));
+        assertTrue(mMediator.didFocusUrlFromFakebox());
+        verify(mUrlCoordinator).requestFocus();
+    }
+
+    @Test
+    public void testEndInput_notFocused() {
+        mMediator.endInput();
+        verify(mUrlCoordinator).clearFocus();
+    }
+
+    @Test
+    public void testBeginInput_NtpAIMode() {
+        mMediator.onFinishNativeInitialization();
+        mMediator.setProfile(mProfile);
+
+        mMediator.beginInput(
+                new AutocompleteInput()
+                        .setFocusReason(OmniboxFocusReason.NTP_AI_MODE)
+                        .setRequestType(AutocompleteRequestType.AI_MODE));
+        verify(mUrlCoordinator).requestFocus();
+
+        ShadowLooper.runUiThreadTasksIncludingDelayedTasks();
+
+        ArgumentCaptor<FuseboxSessionState> captor =
+                ArgumentCaptor.forClass(FuseboxSessionState.class);
+        verify(mFuseboxCoordinator).beginInput(captor.capture());
+
+        assertEquals(
+                OmniboxFocusReason.NTP_AI_MODE,
+                captor.getValue().getAutocompleteInput().getFocusReason());
+    }
+
+    @Test
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testBeginInput_pastedText() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        mMediator.beginInput(new AutocompleteInput().setUserText("pastedText"));
+        ShadowLooper.runUiThreadTasksIncludingDelayedTasks();
+
+        verify(mUrlCoordinator).requestFocus();
+
+        ArgumentCaptor<FuseboxSessionState> captor =
+                ArgumentCaptor.forClass(FuseboxSessionState.class);
+        verify(mAutocompleteCoordinator).beginInput(captor.capture());
+        assertEquals("pastedText", captor.getValue().getAutocompleteInput().getUserText());
+    }
+
+    @Test
+    public void testOnUrlFocusChange() {
+        testOnUrlFocusChange(/* expectRetainOmniboxOnFocus= */ false);
+    }
+
+    @Test
+    public void testOnUrlFocusChange_shouldNotRetainOmniboxOnFocus() {
+        OmniboxFeatures.setShouldRetainOmniboxOnFocusForTesting(false);
+        testOnUrlFocusChange(/* expectRetainOmniboxOnFocus= */ false);
+    }
+
+    @Test
+    public void testOnUrlFocusChange_shouldRetainOmniboxOnFocus() {
+        OmniboxFeatures.setShouldRetainOmniboxOnFocusForTesting(true);
+        testOnUrlFocusChange(/* expectRetainOmniboxOnFocus= */ true);
+    }
+
+    @Test
+    public void testAnimateIconChanges_bottomToolbar() {
+        doReturn(ControlsPosition.BOTTOM).when(mBrowserControlsStateProvider).getControlsPosition();
+        Mockito.reset(mStatusCoordinator);
+        mMediator.onUrlFocusChange(true);
+        verify(mStatusCoordinator).setShouldAnimateIconChanges(false);
+    }
+
+    private void testOnUrlFocusChange(boolean expectRetainOmniboxOnFocus) {
+        mProfileSupplier.set(mProfile);
+        doReturn(JUnitTestGURLs.BLUE_1).when(mLocationBarDataProvider).getCurrentGurl();
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mMediator.onUrlFocusChange(true);
+
+        assertTrue(mMediator.isUrlBarFocused());
+        verify(mStatusCoordinator).setShouldAnimateIconChanges(true);
+        verify(mUrlCoordinator)
+                .setUrlBarData(
+                        any(),
+                        eq(UrlBar.ScrollType.NO_SCROLL),
+                        eq(
+                                expectRetainOmniboxOnFocus
+                                        ? UrlBarData.SELECT_ALL
+                                        : UrlBarData.SELECT_END));
+        verify(mStatusCoordinator).onUrlFocusChange(true);
+        verify(mUrlCoordinator).onUrlFocusChange(true);
+
+        mMediator.finishUrlFocusChange(true, true);
+    }
+
+    @Test
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testOnUrlFocusChange_geolocation() {
+        int primeCount = sGeoHeaderPrimeCount;
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        doReturn(true).when(mLocationBarDataProvider).hasTab();
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+
+        mMediator.onUrlFocusChange(true);
+
+        assertEquals(primeCount + 1, sGeoHeaderPrimeCount);
+    }
+
+    @Test
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testOnUrlFocusChange_geolocationPreNative() {
+        OneshotSupplierImpl<TemplateUrlService> templateUrlServiceSupplier =
+                new OneshotSupplierImpl<>();
+        mMediator =
+                new LocationBarMediator(
+                        mContext,
+                        mLocationBarLayout,
+                        mLocationBarDataProvider,
+                        mUiOverrides,
+                        mProfileSupplier,
+                        mOverrideUrlLoadingDelegate,
+                        mLocaleManager,
+                        templateUrlServiceSupplier,
+                        mOverrideBackKeyBehaviorDelegate,
+                        mWindowAndroid,
+                        /* isTablet= */ false,
+                        mLensController,
+                        mOmniboxUma,
+                        () -> mIsToolbarMicEnabled,
+                        mEmbedderImpl,
+                        mTabModelSelectorSupplier,
+                        mBrowserControlsStateProvider,
+                        () -> mModalDialogManager,
+                        mPageZoomIndicatorCoordinator,
+                        mFuseboxCoordinator,
+                        mMultiInstanceManager,
+                        mLocationBarEmbedder,
+                        /* omniboxChipManager= */ null);
+        mMediator.setCoordinators(mUrlCoordinator, mAutocompleteCoordinator, mStatusCoordinator);
+        int primeCount = sGeoHeaderPrimeCount;
+        mProfileSupplier.set(mProfile);
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        doReturn(true).when(mLocationBarDataProvider).hasTab();
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+
+        mMediator.onUrlFocusChange(true);
+
+        assertEquals(primeCount, sGeoHeaderPrimeCount);
+        templateUrlServiceSupplier.set(mTemplateUrlService);
+        RobolectricUtil.runAllBackgroundAndUi();
+        assertEquals(primeCount + 1, sGeoHeaderPrimeCount);
+    }
+
+    @Test
+    public void testOnUrlFocusChange_notFocusedTablet() {
+        mProfileSupplier.set(mProfile);
+        NewTabPageDelegate newTabPageDelegate = mock(NewTabPageDelegate.class);
+        doReturn(newTabPageDelegate).when(mLocationBarDataProvider).getNewTabPageDelegate();
+        mTabletMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        doReturn(true).when(mLocationBarDataProvider).hasTab();
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        UrlBarData urlBarData = UrlBarData.create(null, "text", 0, 0, "text");
+        doReturn(urlBarData).when(mLocationBarDataProvider).getUrlBarData();
+        mTabletMediator.onUrlFocusChange(true);
+        Mockito.reset(mStatusCoordinator);
+
+        mTabletMediator.onUrlFocusChange(false);
+
+        assertFalse(mTabletMediator.isUrlBarFocused());
+        verify(mStatusCoordinator).setShouldAnimateIconChanges(false);
+        verify(mStatusCoordinator).onUrlFocusChange(false);
+        verify(mUrlCoordinator).onUrlFocusChange(false);
+        verify(mUrlCoordinator, atLeastOnce())
+                .setUrlBarData(urlBarData, UrlBar.ScrollType.SCROLL_TO_TLD, UrlBarData.SELECT_ALL);
+    }
+
+    @Test
+    public void testHandleUrlFocusAnimation_tablet() {
+        NewTabPageDelegate newTabPageDelegate = mock(NewTabPageDelegate.class);
+        doReturn(newTabPageDelegate).when(mLocationBarDataProvider).getNewTabPageDelegate();
+        doAnswer(
+                        invocation -> {
+                            ((Rect) invocation.getArgument(0)).set(0, 0, 10, 10);
+                            return null;
+                        })
+                .when(mRootView)
+                .getLocalVisibleRect(any());
+
+        mTabletMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mTabletMediator.handleUrlFocusAnimation(true);
+
+        verify(mUrlCoordinator).onUrlFocusChange(true);
+        verify(mUrlAnimator).start();
+        verify(mUrlAnimator).setDuration(anyLong());
+        verify(mUrlAnimator).addListener(any());
+    }
+
+    @Test
+    public void testHandleUrlFocusAnimation_ntp() {
+        NewTabPageDelegate newTabPageDelegate = mock(NewTabPageDelegate.class);
+        doReturn(true).when(newTabPageDelegate).isCurrentlyVisible();
+        doReturn(newTabPageDelegate).when(mLocationBarDataProvider).getNewTabPageDelegate();
+
+        mTabletMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mTabletMediator.handleUrlFocusAnimation(true);
+
+        verify(mUrlCoordinator).onUrlFocusChange(true);
+        verify(mUrlAnimator, never()).start();
+        verify(mUrlAnimator, never()).setDuration(anyLong());
+        verify(mUrlAnimator, never()).addListener(any());
+    }
+
+    @Test
+    public void testHandleUrlFocusAnimation_phone() {
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mMediator.handleUrlFocusAnimation(true);
+
+        verify(mUrlCoordinator).onUrlFocusChange(true);
+        verify(mUrlAnimator, never()).start();
+        verify(mUrlAnimator, never()).setDuration(anyLong());
+        verify(mUrlAnimator, never()).addListener(any());
+    }
+
+    @Test
+    public void testSetUrlFocusChangeInProgress() {
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mMediator.setUrlFocusChangeInProgress(true);
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        ChromeAccessibilityUtil.get().setAccessibilityEnabledForTesting(true);
+        mMediator.beginInput(
+                new AutocompleteInput()
+                        .setUserText("text")
+                        .setFocusReason(OmniboxFocusReason.FAKE_BOX_TAP));
+        mMediator.onUrlFocusChange(true);
+        ShadowLooper.runUiThreadTasksIncludingDelayedTasks();
+
+        mMediator.setUrlFocusChangeInProgress(false);
+
+        verify(mUrlCoordinator).onUrlAnimationFinished(true);
+        verify(mUrlCoordinator).clearFocus();
+        // The first invocation of requestFocus() is from setUrlBarFocus, which we use above to set
+        // mUrlFocusedFromFakebox to true.
+        verify(mUrlCoordinator, times(2)).requestFocus();
+
+        ArgumentCaptor<FuseboxSessionState> captor =
+                ArgumentCaptor.forClass(FuseboxSessionState.class);
+        verify(mAutocompleteCoordinator, atLeastOnce()).beginInput(captor.capture());
+        assertEquals("text", captor.getValue().getAutocompleteInput().getUserText());
+    }
+
+    @Test
+    public void testMicUpdatedAfterEventTriggered() {
+        mMediator.onVoiceAvailabilityImpacted();
+        verify(mLocationBarLayout, atLeast(1)).setMicButtonVisibility(false);
+        verify(mLocationBarLayout, never()).setMicButtonVisibility(true);
+
+        Mockito.reset(mLocationBarLayout);
+        VoiceRecognitionHandler voiceRecognitionHandler = mock(VoiceRecognitionHandler.class);
+        mMediator.setVoiceRecognitionHandlerForTesting(voiceRecognitionHandler);
+        mMediator.onFinishNativeInitialization();
+        mMediator.onVoiceAvailabilityImpacted();
+
+        verify(mLocationBarLayout, atLeast(1)).setMicButtonVisibility(false);
+        verify(mLocationBarLayout, never()).setMicButtonVisibility(true);
+
+        mMediator.onUrlFocusChange(true);
+        doReturn(true).when(voiceRecognitionHandler).isVoiceSearchEnabled();
+        mMediator.onVoiceAvailabilityImpacted();
+
+        verify(mLocationBarLayout).setMicButtonVisibility(true);
+    }
+
+    @Test
+    public void testButtonVisibility_phone() {
+        // Regression test for phones: toolbar mic visibility shouldn't impact the location
+        // bar mic.
+        verifyPhoneMicButtonVisibility();
+    }
+
+    @Test
+    public void testButtonVisibility_phone_toolbarMicEnabled() {
+        // Regression test for phones: toolbar mic visibility shouldn't impact the location
+        // bar mic.
+        mIsToolbarMicEnabled = true;
+        verifyPhoneMicButtonVisibility();
+    }
+
+    private void verifyPhoneMicButtonVisibility() {
+        VoiceRecognitionHandler voiceRecognitionHandler = mock(VoiceRecognitionHandler.class);
+        mMediator.setVoiceRecognitionHandlerForTesting(voiceRecognitionHandler);
+        mMediator.onFinishNativeInitialization();
+        Mockito.reset(mLocationBarLayout);
+
+        mMediator.updateButtonVisibility();
+        verify(mLocationBarLayout).setDeleteButtonVisibility(false);
+
+        mMediator.onUrlFocusChange(true);
+        doReturn("").when(mUrlCoordinator).getTextWithAutocomplete();
+        doReturn(true).when(voiceRecognitionHandler).isVoiceSearchEnabled();
+        mMediator.updateButtonVisibility();
+        verify(mLocationBarLayout).setMicButtonVisibility(true);
+        verify(mLocationBarLayout, never()).setDeleteButtonVisibility(true);
+
+        doReturn("text").when(mUrlCoordinator).getTextWithAutocomplete();
+        mMediator.updateButtonVisibility();
+        verify(mLocationBarLayout).setDeleteButtonVisibility(true);
+    }
+
+    @Test
+    public void testMicButtonVisibility_toolbarMicDisabled_tablet() {
+        verifyMicButtonVisibilityWhenFocusChanges(true);
+    }
+
+    @Test
+    public void testMicButtonVisibility_toolbarMicEnabled_tablet() {
+        mIsToolbarMicEnabled = true;
+        verifyMicButtonVisibilityWhenFocusChanges(false);
+    }
+
+    // Sets up and executes a test for visibility of a mic button on a tablet.
+    // The mic button should not be visible if toolbar mic is visible as well.
+    private void verifyMicButtonVisibilityWhenFocusChanges(boolean shouldBeVisible) {
+        VoiceRecognitionHandler voiceRecognitionHandler = mock(VoiceRecognitionHandler.class);
+        mTabletMediator.setVoiceRecognitionHandlerForTesting(voiceRecognitionHandler);
+        mTabletMediator.onFinishNativeInitialization();
+        mTabletMediator.setShouldShowButtonsWhenUnfocusedForTablet(true);
+        mTabletMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mTabletMediator.onUrlFocusChange(true);
+        doReturn("").when(mUrlCoordinator).getTextWithAutocomplete();
+        doReturn(true).when(voiceRecognitionHandler).isVoiceSearchEnabled();
+        Mockito.reset(mLocationBarTablet);
+
+        mTabletMediator.updateButtonVisibility();
+        updateTabletWidthConsumers(mTabletMediator);
+        ArgumentCaptor<Boolean> captor = ArgumentCaptor.forClass(Boolean.class);
+        verify(mLocationBarTablet, atLeastOnce()).setMicButtonVisibility(captor.capture());
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+        assertEquals(shouldBeVisible, captor.getValue());
+    }
+
+    @Test
+    public void testLensButtonVisibility_lensDisabled_tablet() {
+        doReturn(false).when(mLensController).isLensEnabled(any());
+        verifyLensButtonVisibilityWhenFocusChanges(false, "");
+    }
+
+    @Test
+    public void testLensButtonVisibility_lensEnabled_tablet() {
+        doReturn(true).when(mLensController).isLensEnabled(any());
+        verifyLensButtonVisibilityWhenFocusChanges(true, "");
+    }
+
+    @Test
+    public void testLensButtonVisibility_lensDisabledWithInputText_tablet() {
+        doReturn(false).when(mLensController).isLensEnabled(any());
+        verifyLensButtonVisibilityWhenFocusChanges(false, "text");
+    }
+
+    @Test
+    public void testLensButtonVisibility_lensEnabledWithInputText_tablet() {
+        // Do not show lens when the omnibox already has input.
+        doReturn(true).when(mLensController).isLensEnabled(any());
+        verifyLensButtonVisibilityWhenFocusChanges(false, "text");
+    }
+
+    @Test
+    public void testLensButtonVisibility_lensEnabled_suppressedByUiOverrides() {
+        mUiOverrides.setLensEntrypointAllowed(false);
+        verifyLensButtonVisibilityWhenFocusChanges(false, "");
+    }
+
+    private void verifyLensButtonVisibilityWhenFocusChanges(
+            boolean shouldBeVisible, String inputText) {
+        mTabletMediator.resetLastCachedIsLensOnOmniboxEnabledForTesting();
+        mTabletMediator.setLensControllerForTesting(mLensController);
+        mTabletMediator.onFinishNativeInitialization();
+        mTabletMediator.setShouldShowButtonsWhenUnfocusedForTablet(true);
+        mTabletMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mTabletMediator.onUrlFocusChange(true);
+        doReturn(inputText).when(mUrlCoordinator).getTextWithAutocomplete();
+        Mockito.reset(mLocationBarTablet);
+
+        mTabletMediator.updateButtonVisibility();
+        updateTabletWidthConsumers(mTabletMediator);
+        ArgumentCaptor<Boolean> captor = ArgumentCaptor.forClass(Boolean.class);
+        verify(mLocationBarTablet, atLeastOnce()).setLensButtonVisibility(captor.capture());
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+        assertEquals(shouldBeVisible, captor.getValue());
+    }
+
+    @Test
+    public void testButtonVisibility_showMicUnfocused() {
+        VoiceRecognitionHandler voiceRecognitionHandler = mock(VoiceRecognitionHandler.class);
+        mMediator.setVoiceRecognitionHandlerForTesting(voiceRecognitionHandler);
+        mMediator.onFinishNativeInitialization();
+        mTabletMediator.setShouldShowButtonsWhenUnfocusedForTablet(false);
+        mMediator.setShouldShowMicButtonWhenUnfocusedForPhone(true);
+        doReturn(true).when(voiceRecognitionHandler).isVoiceSearchEnabled();
+
+        mMediator.updateButtonVisibility();
+        updateTabletWidthConsumers(mTabletMediator);
+        ArgumentCaptor<Boolean> captor = ArgumentCaptor.forClass(Boolean.class);
+        verify(mLocationBarLayout, atLeastOnce()).setMicButtonVisibility(captor.capture());
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+        assertTrue(captor.getValue());
+    }
+
+    @Test
+    public void testButtonVisibility_showMicUnfocused_toolbarMicDisabled_tablet() {
+        verifyMicButtonVisibilityWhenShowMicUnfocused(true);
+    }
+
+    @Test
+    public void testButtonVisibility_showMicUnfocused_suppressedByUiOverrides() {
+        mUiOverrides.setVoiceEntrypointAllowed(false);
+        verifyMicButtonVisibilityWhenShowMicUnfocused(false);
+    }
+
+    @Test
+    public void testButtonVisibility_showMicUnfocused_toolbarMicEnabled_tablet() {
+        mIsToolbarMicEnabled = true;
+        verifyMicButtonVisibilityWhenShowMicUnfocused(false);
+    }
+
+    private void verifyMicButtonVisibilityWhenShowMicUnfocused(boolean shouldBeVisible) {
+        mTabletMediator.onFinishNativeInitialization();
+        mTabletMediator.setShouldShowButtonsWhenUnfocusedForTablet(false);
+        mTabletMediator.setShouldShowMicButtonWhenUnfocusedForTesting(true);
+        VoiceRecognitionHandler voiceRecognitionHandler = mock(VoiceRecognitionHandler.class);
+        mTabletMediator.setVoiceRecognitionHandlerForTesting(voiceRecognitionHandler);
+        doReturn(true).when(voiceRecognitionHandler).isVoiceSearchEnabled();
+        Mockito.reset(mLocationBarTablet);
+
+        mTabletMediator.updateButtonVisibility();
+        updateTabletWidthConsumers(mTabletMediator);
+        ArgumentCaptor<Boolean> captor = ArgumentCaptor.forClass(Boolean.class);
+        verify(mLocationBarTablet, atLeastOnce()).setMicButtonVisibility(captor.capture());
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+        assertEquals(shouldBeVisible, captor.getValue());
+    }
+
+    @Test
+    public void testButtonVisibility_tablet() {
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mTabletMediator.onFinishNativeInitialization();
+        Mockito.reset(mLocationBarTablet);
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        mTabletMediator
+                .getBookmarkButtonToolbarWidthConsumerForTesting()
+                .updateVisibility(buttonWidth);
+        mTabletMediator.updateButtonVisibility();
+
+        verify(mLocationBarTablet).setMicButtonVisibility(false);
+        verify(mLocationBarTablet, times(2)).setBookmarkButtonVisibility(true);
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+    }
+
+    @Test
+    public void testButtonVisibility_tabletDontShowUnfocused() {
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mTabletMediator.onFinishNativeInitialization();
+        mTabletMediator.setShouldShowButtonsWhenUnfocusedForTablet(false);
+        Mockito.reset(mLocationBarTablet);
+        mTabletMediator.updateButtonVisibility();
+
+        verify(mLocationBarTablet).setMicButtonVisibility(false);
+        verify(mLocationBarTablet).setBookmarkButtonVisibility(false);
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+    }
+
+    @SuppressWarnings("DirectInvocationOnMock")
+    public void testRecordHistogramOmniboxClick_Ntp_base() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+
+        // Test clicking omnibox on {@link NewTabPage}.
+        doReturn(false)
+                .when(mOverrideUrlLoadingDelegate)
+                .willHandleLoadUrlWithPostData(any(), anyBoolean());
+
+        doReturn(true).when(mTab).isNativePage();
+        doReturn(JUnitTestGURLs.NTP_URL).when(mTab).getUrl();
+        assertTrue(UrlUtilities.isNtpUrl(mTab.getUrl()));
+        doReturn(false).when(mTab).isIncognito();
+        // Test navigating using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1)).recordNavigationOnNtp(TEST_URL, PageTransition.TYPED, true);
+        // Test searching using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.GENERATED)
+                        .setOpenInNewTab(false)
+                        .build());
+        // The time to be checked for the calling of recordNavigationOnNtp is still 1 here
+        // as we verify with the argument PageTransition.GENERATED instead.
+        verify(mOmniboxUma, times(1))
+                .recordNavigationOnNtp(TEST_URL, PageTransition.GENERATED, true);
+
+        // Test clicking omnibox on other native page.
+        // This will run the function recordNavigationOnNtp with isNtp equal to false
+        // making it unable to record the histogram.
+        doReturn(JUnitTestGURLs.BLUE_1).when(mTab).getUrl();
+        assertFalse(UrlUtilities.isNtpUrl(mTab.getUrl()));
+        // Test navigating using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1)).recordNavigationOnNtp(TEST_URL, PageTransition.TYPED, true);
+        // Test searching using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.GENERATED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1))
+                .recordNavigationOnNtp(TEST_URL, PageTransition.GENERATED, true);
+
+        // Test clicking omnibox on html/rendered web page.
+        doReturn(false).when(mTab).isNativePage();
+        // Test navigating using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1)).recordNavigationOnNtp(TEST_URL, PageTransition.TYPED, true);
+        // Test searching using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.GENERATED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1))
+                .recordNavigationOnNtp(TEST_URL, PageTransition.GENERATED, true);
+
+        // Test clicking omnibox on {@link StartSurface}.
+        doReturn(true)
+                .when(mOverrideUrlLoadingDelegate)
+                .willHandleLoadUrlWithPostData(any(), anyBoolean());
+        // Test navigating using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.TYPED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1)).recordNavigationOnNtp(TEST_URL, PageTransition.TYPED, true);
+        // Test searching using omnibox.
+        mMediator.loadUrl(
+                new OmniboxLoadUrlParams.Builder(TEST_URL, PageTransition.GENERATED)
+                        .setOpenInNewTab(false)
+                        .build());
+        verify(mOmniboxUma, times(1))
+                .recordNavigationOnNtp(TEST_URL, PageTransition.GENERATED, true);
+    }
+
+    @Test
+    @DisableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testRecordHistogramOmniboxClick_NtpNoPostDelayedTaskFocusTab() {
+        testRecordHistogramOmniboxClick_Ntp_base();
+    }
+
+    @Test
+    @EnableFeatures({OmniboxFeatureList.POST_DELAYED_TASK_FOCUS_TAB})
+    public void testRecordHistogramOmniboxClick_NtpPostDelayedTaskFocusTab() {
+        testRecordHistogramOmniboxClick_Ntp_base();
+    }
+
+    @Test
+    public void testClearUrlBarCursorWithoutFocusAnimations() {
+        // Assume that the URL bar is focused without animations on the NTP.
+        doReturn(true).when(mUrlCoordinator).hasFocus();
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+
+        mMediator.clearUrlBarCursorWithoutFocusAnimations();
+        // Verify that the omnibox focus is cleared on an exit from the NTP.
+        verify(mUrlCoordinator).clearFocus();
+    }
+
+    @Test
+    public void testOnTouchAfterFocus_triggerUrlFocusChange() {
+        mMediator.onFinishNativeInitialization();
+        doReturn("").when(mUrlCoordinator).getTextWithoutAutocomplete();
+        mMediator.addUrlFocusChangeListener(mUrlCoordinator);
+        mMediator.onUrlFocusChange(true);
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mMediator.onTouchAfterFocus();
+        verify(mUrlCoordinator, times(2)).onUrlFocusChange(true);
+    }
+
+    @Test
+    public void testOnTouchAfterFocus_notHandled() {
+        doReturn("", "hello").when(mUrlCoordinator).getTextWithoutAutocomplete();
+        // URL bar is not focused without animations.
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(false);
+        mMediator.onTouchAfterFocus();
+
+        // URL bar text is not empty.
+        mMediator.setIsUrlBarFocusedWithoutAnimationsForTesting(true);
+        mMediator.onTouchAfterFocus();
+        verify(mUrlCoordinator, never()).onUrlFocusChange(true);
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.USE_FUSED_LOCATION_PROVIDER)
+    public void testFusedLocationProvider() {
+        mProfileSupplier.set(mProfile);
+        mMediator.onFinishNativeInitialization();
+        RobolectricUtil.runAllBackgroundAndUi();
+
+        assertEquals(1, sGeoHeaderPrimeCount);
+
+        mMediator.onPauseWithNative();
+        assertEquals(1, sGeoHeaderStopCount);
+        assertEquals(1, sGeoHeaderPrimeCount);
+
+        mMediator.onResumeWithNative();
+        assertEquals(2, sGeoHeaderPrimeCount);
+        assertEquals(1, sGeoHeaderStopCount);
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.OMNIBOX_MULTIMODAL_INPUT)
+    public void navigateButtonVisibility() {
+        mMediator.onFinishNativeInitialization();
+        mMediator.setProfile(mProfile);
+        doReturn("text").when(mUrlCoordinator).getTextWithAutocomplete();
+        mMediator.onUrlFocusChange(true);
+
+        var state = getSession();
+        state.getAutocompleteInput().setRequestType(AutocompleteRequestType.SEARCH);
+        assertTrue(mNavigateButtonIsVisible);
+
+        state.getAutocompleteInput().setRequestType(AutocompleteRequestType.AI_MODE);
+        assertTrue(mNavigateButtonIsVisible);
+
+        state.getAutocompleteInput().setRequestType(AutocompleteRequestType.IMAGE_GENERATION);
+        assertTrue(mNavigateButtonIsVisible);
+    }
+
+    @Test
+    public void testDeleteButtonClicked() {
+        mMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+
+        ArgumentCaptor<FuseboxSessionState> captor =
+                ArgumentCaptor.forClass(FuseboxSessionState.class);
+        AutocompleteInput input = new AutocompleteInput().setUserText("test query");
+        mMediator.beginInput(input);
+        mMediator.onUrlFocusChange(true);
+        ShadowLooper.runUiThreadTasksIncludingDelayedTasks();
+
+        verify(mAutocompleteCoordinator, times(2)).beginInput(captor.capture());
+        assertEquals("test query", captor.getValue().getAutocompleteInput().getUserText());
+        clearInvocations(mAutocompleteCoordinator);
+
+        mMediator.deleteButtonClicked(null);
+        verify(mAutocompleteCoordinator).beginInput(captor.capture());
+        assertEquals("", captor.getValue().getAutocompleteInput().getUserText());
+        verify(mUrlCoordinator).requestAccessibilityFocus();
+    }
+
+    @Test
+    public void testInstallButtonClicked() {
+        mMediator.installButtonClicked(null);
+        verify(mAddToHomescreenCoordinator).showForAppMenu(AppMenuVerbiage.APP_MENU_OPTION_INSTALL);
+    }
+
+    @Test
+    public void testRestoringText() {
+        OmniboxFeatures.setShouldRetainOmniboxOnFocusForTesting(true);
+        doReturn(JUnitTestGURLs.NTP_URL).when(mLocationBarDataProvider).getCurrentGurl();
+        mTabletMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        RobolectricUtil.runAllBackgroundAndUi();
+
+        // Simulate typing in current tab.
+        String newText = "new text";
+        mMediator.beginInput(new AutocompleteInput().setUserText(newText));
+        ShadowLooper.runUiThreadTasks();
+
+        // Set up and switch to a different tab (we technically only need user data host).
+        UserDataHost previousTabUserDataHost = new UserDataHost();
+        doReturn(previousTabUserDataHost).when(mLocationBarDataProvider).getUserDataHost();
+        mTabletMediator.onTabChanged(null);
+
+        // Simulate typing in the other tab.
+        String previousText = "previous text";
+        mMediator.beginInput(new AutocompleteInput().setUserText(previousText));
+        ShadowLooper.runUiThreadTasks();
+
+        // Emulate a tab switch back to original tab (again, user data host suffices).
+        doReturn(mTabUserDataHost).when(mLocationBarDataProvider).getUserDataHost();
+        mTabletMediator.onTabChanged(null);
+        ShadowLooper.runUiThreadTasks();
+
+        ArgumentCaptor<FuseboxSessionState> captor =
+                ArgumentCaptor.forClass(FuseboxSessionState.class);
+        verify(mAutocompleteCoordinator, atLeastOnce()).beginInput(captor.capture());
+        assertEquals(newText, captor.getValue().getAutocompleteInput().getUserText());
+    }
+
+    @Test
+    @EnableFeatures({OmniboxFeatureList.OMNIBOX_IMPROVEMENT_FOR_LFF})
+    public void testRestoringTextAndEditingStateOnTablet() {
+        OmniboxFeatures.sOmniboxImprovementForLFFPersistEditingState.setForTesting(true);
+
+        // Recreate mediator to respect the overridden feature flag and params.
+        mTabletMediator = createTabletMediator();
+        mTabletMediator.onFinishNativeInitialization();
+        mProfileSupplier.set(mProfile);
+        RobolectricUtil.runAllBackgroundAndUi();
+
+        OmniboxFeatures.setShouldRetainOmniboxOnFocusForTesting(true);
+        NewTabPageDelegate newTabPageDelegate = mock(NewTabPageDelegate.class);
+        doReturn(newTabPageDelegate).when(mLocationBarDataProvider).getNewTabPageDelegate();
+        doReturn(JUnitTestGURLs.NTP_URL).when(mLocationBarDataProvider).getCurrentGurl();
+
+        // Prepare a state to be restored for mTab.
+        String newText = "new text";
+        final int newSelectionStart = 2;
+        final int newSelectionEnd = 6;
+        var newState = getSession();
+        newState.getAutocompleteInput().setUserText(newText);
+        newState.getAutocompleteInput().setSelection(newSelectionStart, newSelectionEnd);
+        newState.activate(mProfileSupplier, null);
+
+        Tab previousTab = Mockito.mock(Tab.class);
+        UserDataHost previousTabUserDataHost = new UserDataHost();
+        doReturn(previousTabUserDataHost).when(previousTab).getUserDataHost();
+
+        // Emulate a state where the omnibox is focused and user has typed a text.
+        doReturn(previousTab).when(mLocationBarDataProvider).getTab();
+        mTabletMediator.onUrlFocusChange(true);
+        String previousText = "previous text";
+        final int previousSelectionStart = 1;
+        final int previousSelectionEnd = 5;
+
+        // Note: input state is tracked by autocomplete.
+        var previousState = getSession();
+        previousState.getAutocompleteInput().setUserText(previousText);
+        doReturn(previousSelectionStart).when(mUrlCoordinator).getSelectionStart();
+        doReturn(previousSelectionEnd).when(mUrlCoordinator).getSelectionEnd();
+
+        // Emulate a tab switch from previousTab to mTab.
+        doReturn(mTab).when(mLocationBarDataProvider).getTab();
+        mTabletMediator.onTabChanged(previousTab);
+        mTabletMediator.onUrlChanged(true);
+
+        ArgumentCaptor<FuseboxSessionState> captor =
+                ArgumentCaptor.forClass(FuseboxSessionState.class);
+        verify(mAutocompleteCoordinator, atLeastOnce()).beginInput(captor.capture());
+        assertEquals(newText, captor.getValue().getAutocompleteInput().getUserText());
+
+        // The state for previousTab was saved.
+        assertTrue(previousState.isSessionActive());
+        assertEquals(previousText, previousState.getAutocompleteInput().getUserText());
+        assertEquals(
+                previousSelectionStart,
+                (int) previousState.getAutocompleteInput().getSelection().getLower());
+        assertEquals(
+                previousSelectionEnd,
+                (int) previousState.getAutocompleteInput().getSelection().getUpper());
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.OMNIBOX_MULTIMODAL_INPUT)
+    public void testNavigateButton_showsWhenExpandedAndFocusedWithText() {
+        mMediator.onUrlFocusChange(true);
+        mFuseboxStateSupplier.set(FuseboxState.EXPANDED);
+        doReturn("text").when(mUrlCoordinator).getTextWithAutocomplete();
+
+        mMediator.updateButtonVisibility();
+        assertTrue(mNavigateButtonIsVisible);
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.OMNIBOX_MULTIMODAL_INPUT)
+    public void testNavigateButton_hidesWhenExpandedAndFocusedWithoutText() {
+        mMediator.onUrlFocusChange(true);
+        mFuseboxStateSupplier.set(FuseboxState.EXPANDED);
+        doReturn("").when(mUrlCoordinator).getTextWithAutocomplete();
+
+        mMediator.updateButtonVisibility();
+        assertFalse(mNavigateButtonIsVisible);
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.OMNIBOX_MULTIMODAL_INPUT)
+    public void testNavigateButton_hidesWhenCompact() {
+        mMediator.onUrlFocusChange(true);
+        mFuseboxStateSupplier.set(FuseboxState.COMPACT);
+        doReturn("text").when(mUrlCoordinator).getTextWithAutocomplete();
+
+        mMediator.updateButtonVisibility();
+        assertFalse(mNavigateButtonIsVisible);
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.OMNIBOX_MULTIMODAL_INPUT)
+    public void testNavigateButton_hidesWhenNotFocused() {
+        mMediator.onUrlFocusChange(false);
+        mFuseboxStateSupplier.set(FuseboxState.EXPANDED);
+        doReturn("text").when(mUrlCoordinator).getTextWithAutocomplete();
+
+        mMediator.updateButtonVisibility();
+        assertFalse(mNavigateButtonIsVisible);
+    }
+
+    @Test
+    @EnableFeatures(OmniboxFeatureList.OMNIBOX_MULTIMODAL_INPUT)
+    public void testNavigateButton_visibilityUpdatesOnFuseboxStateChange() {
+        mMediator.onUrlFocusChange(true);
+        doReturn("text").when(mUrlCoordinator).getTextWithAutocomplete();
+        mFuseboxStateSupplier.set(FuseboxState.COMPACT);
+        mMediator.updateButtonVisibility();
+        assertFalse(mNavigateButtonIsVisible);
+
+        mFuseboxStateSupplier.set(FuseboxState.EXPANDED);
+        assertTrue(mNavigateButtonIsVisible);
+    }
+
+    @Test
+    public void testInstallButton_visibleIfInstallable() {
+        doReturn(true).when(mAppBannerManagerJni).isProbablyPromotable(mWebContents);
+        mMediator.onUrlFocusChange(false);
+        mMediator.setUrlFocusChangeInProgress(false);
+
+        Mockito.reset(mLocationBarLayout, mLocationBarEmbedder);
+
+        mMediator.onInstallabilityUpdated(mAppBannerManager);
+        verify(mLocationBarLayout).setInstallButtonVisibility(true);
+        verify(mLocationBarEmbedder).onWidthConsumerVisibilityChanged();
+    }
+
+    @Test
+    public void testInstallButton_invisibleIfNotInstallable() {
+        doReturn(false).when(mAppBannerManagerJni).isProbablyPromotable(mWebContents);
+        Mockito.reset(mLocationBarLayout, mLocationBarEmbedder);
+
+        mMediator.onInstallabilityUpdated(mAppBannerManager);
+        verify(mLocationBarLayout).setInstallButtonVisibility(false);
+        verify(mLocationBarEmbedder).onWidthConsumerVisibilityChanged();
+    }
+
+    @Test
+    public void testInstallButton_invisibleOmniboxIsFocused() {
+        mMediator.onUrlFocusChange(true);
+        mMediator.setUrlFocusChangeInProgress(false);
+
+        Mockito.reset(mLocationBarLayout, mLocationBarEmbedder);
+
+        mMediator.onInstallabilityUpdated(mAppBannerManager);
+        verify(mLocationBarLayout).setInstallButtonVisibility(false);
+        verify(mLocationBarEmbedder).onWidthConsumerVisibilityChanged();
+    }
+
+    @Test
+    public void testHintZeroSuggestRefresh_nullTab() {
+        doReturn(null).when(mLocationBarDataProvider).getTab();
+        mMediator.hintZeroSuggestRefresh();
+        verify(mAutocompleteCoordinator).prefetchZeroSuggestResults(null);
+    }
+
+    @Test
+    @EnableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    public void testZoomButtonClicked() {
+        mMediator.onFinishNativeInitialization();
+        doReturn(mWebContents).when(mTab).getWebContents();
+        mMediator.zoomButtonClicked(null);
+        verify(mPageZoomIndicatorCoordinator).show(mWebContents);
+    }
+
+    @Test
+    @EnableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    public void testShouldShowZoomButton_featureEnabledAndNotDefaultZoom() {
+        mMediator.onFinishNativeInitialization();
+        verify(mLocationBarLayout, never()).setZoomButtonVisibility(true);
+    }
+
+    @Test
+    @EnableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    public void testShouldShowZoomButton_featureEnabledAndDefaultZoom() {
+        mMediator.onFinishNativeInitialization();
+        verify(mLocationBarLayout, never()).setZoomButtonVisibility(false);
+    }
+
+    @Test
+    @DisableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    public void testShouldShowZoomButton_featureDisabled() {
+        mMediator.onFinishNativeInitialization();
+        verify(mLocationBarLayout, never()).setZoomButtonVisibility(false);
+    }
+
+    @Test
+    @EnableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    public void testShouldShowZoomButton_nullWebContents() {
+        mMediator.onFinishNativeInitialization();
+        verify(mLocationBarLayout, never()).setZoomButtonVisibility(false);
+    }
+
+    @Test
+    @EnableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    @DisableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+    public void testUpdateZoomButtonVisibility_popupShowing() {
+        mTabletMediator.onFinishNativeInitialization();
+        doReturn(mWebContents).when(mTab).getWebContents();
+        when(mPageZoomIndicatorCoordinator.isZoomLevelDefault()).thenReturn(false);
+        mTabletMediator.updateZoomButtonVisibilityForTesting();
+
+        verify(mLocationBarTablet, atLeastOnce()).setZoomButtonVisibility(true);
+        verify(mLocationBarEmbedder, atLeastOnce()).onWidthConsumerVisibilityChanged();
+    }
+
+    @Test
+    @EnableFeatures(AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR)
+    @DisableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+    public void testUpdateZoomButtonVisibility_hideButton() {
+        mMediator.onFinishNativeInitialization();
+        Mockito.clearInvocations(mLocationBarEmbedder);
+
+        mMediator.updateZoomButtonVisibilityForTesting();
+        verify(mLocationBarLayout).setZoomButtonVisibility(false);
+        verify(mLocationBarEmbedder).onWidthConsumerVisibilityChanged();
+    }
+
+    @Test
+    @EnableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+    public void testMicButtonToolbarWidthConsumer() {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        assertFalse(mTabletMediator.shouldShowMicButton());
+
+        VoiceRecognitionHandler voiceRecognitionHandler = mock(VoiceRecognitionHandler.class);
+        mTabletMediator.setVoiceRecognitionHandlerForTesting(voiceRecognitionHandler);
+        mTabletMediator.onFinishNativeInitialization();
+        mTabletMediator.setShouldShowButtonsWhenUnfocusedForTablet(true);
+        doReturn(true).when(voiceRecognitionHandler).isVoiceSearchEnabled();
+        mTabletMediator.onUrlFocusChange(true);
+
+        assertTrue(mTabletMediator.shouldShowMicButton());
+
+        ToolbarWidthConsumer micButtonConsumer = mTabletMediator.getMicButtonToolbarWidthConsumer();
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        micButtonConsumer.updateVisibility(buttonWidth);
+        verify(mLocationBarTablet).setMicButtonVisibility(true);
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        micButtonConsumer.updateVisibility(0);
+        verify(mLocationBarTablet).setMicButtonVisibility(false);
+        Mockito.clearInvocations(mLocationBarTablet);
+    }
+
+    @Test
+    @EnableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+    public void testLensButtonToolbarWidthConsumer() {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        assertFalse(mTabletMediator.shouldShowLensButton());
+
+        mTabletMediator.onFinishNativeInitialization();
+        mTabletMediator.resetLastCachedIsLensOnOmniboxEnabledForTesting();
+        doReturn(true).when(mLensController).isLensEnabled(any());
+        mUiOverrides.setLensEntrypointAllowed(true);
+        mTabletMediator.setLensControllerForTesting(mLensController);
+        mTabletMediator.onUrlFocusChange(true);
+
+        assertTrue(mTabletMediator.shouldShowLensButton());
+
+        ToolbarWidthConsumer lensButtonConsumer =
+                mTabletMediator.getLensButtonToolbarWidthConsumer();
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        lensButtonConsumer.updateVisibility(buttonWidth);
+        verify(mLocationBarTablet).setLensButtonVisibility(true);
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        lensButtonConsumer.updateVisibility(0);
+        verify(mLocationBarTablet).setLensButtonVisibility(false);
+        Mockito.clearInvocations(mLocationBarTablet);
+    }
+
+    @Test
+    @EnableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+    public void testBookmarkButtonToolbarWidthConsumer() {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        mTabletMediator.onFinishNativeInitialization();
+        assertTrue(mTabletMediator.shouldShowBookmarkButton());
+
+        ToolbarWidthConsumer bookmarkButtonConsumer =
+                mTabletMediator.getBookmarkButtonToolbarWidthConsumer();
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        bookmarkButtonConsumer.updateVisibility(buttonWidth);
+        assertTrue(mTabletMediator.shouldShowBookmarkButton());
+        verify(mLocationBarTablet).setBookmarkButtonVisibility(true);
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        bookmarkButtonConsumer.updateVisibility(0);
+        verify(mLocationBarTablet).setBookmarkButtonVisibility(false);
+        Mockito.clearInvocations(mLocationBarTablet);
+    }
+
+    @Test
+    @EnableFeatures(ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR)
+    public void testInstallButtonToolbarWidthConsumer() {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        mTabletMediator.onFinishNativeInitialization();
+        assertFalse(mTabletMediator.shouldShowInstallButton());
+
+        doReturn(true).when(mAppBannerManagerJni).isProbablyPromotable(mWebContents);
+        assertTrue(mTabletMediator.shouldShowInstallButton());
+
+        ToolbarWidthConsumer installButtonConsumer =
+                mTabletMediator.getInstallButtonToolbarWidthConsumer();
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        installButtonConsumer.updateVisibility(buttonWidth);
+        verify(mLocationBarTablet).setInstallButtonVisibility(true);
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        installButtonConsumer.updateVisibility(0);
+        verify(mLocationBarTablet).setInstallButtonVisibility(false);
+        Mockito.clearInvocations(mLocationBarTablet);
+    }
+
+    @Test
+    @EnableFeatures({
+        ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR,
+        AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR
+    })
+    public void testZoomButtonToolbarWidthConsumer_notVisible() {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        mTabletMediator.onFinishNativeInitialization();
+        when(mPageZoomIndicatorCoordinator.isZoomLevelDefault()).thenReturn(true);
+        assertFalse(mTabletMediator.shouldShowZoomButton());
+
+        ToolbarWidthConsumer zoomButtonConsumer =
+                mTabletMediator.getZoomButtonToolbarWidthConsumer();
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        zoomButtonConsumer.updateVisibility(buttonWidth);
+        verify(mLocationBarTablet).setZoomButtonVisibility(false);
+        Mockito.clearInvocations(mLocationBarTablet);
+
+        zoomButtonConsumer.updateVisibility(0);
+        verify(mLocationBarTablet).setZoomButtonVisibility(false);
+        Mockito.clearInvocations(mLocationBarTablet);
+    }
+
+    @Test
+    @EnableFeatures({
+        ChromeFeatureList.TOOLBAR_TABLET_RESIZE_REFACTOR,
+        AccessibilityFeatureMap.ANDROID_ZOOM_INDICATOR
+    })
+    public void testZoomButtonToolbarWidthConsumer() {
+        int buttonWidth =
+                mContext.getResources()
+                        .getDimensionPixelSize(R.dimen.location_bar_action_icon_width);
+        mTabletMediator.onFinishNativeInitialization();
+        when(mPageZoomIndicatorCoordinator.isZoomLevelDefault()).thenReturn(false);
+        assertTrue(mTabletMediator.shouldShowZoomButton());
+
+        ToolbarWidthConsumer zoomButtonConsumer =
+                mTabletMediator.getZoomButtonToolbarWidthConsumer();
+        Mockito.clearInvocations(mLocationBarTablet, mLocationBarEmbedder);
+
+        zoomButtonConsumer.updateVisibility(buttonWidth);
+        verify(mLocationBarTablet).setZoomButtonVisibility(true);
+        verify(mLocationBarEmbedder, never()).onWidthConsumerVisibilityChanged();
+        Mockito.clearInvocations(mLocationBarTablet, mLocationBarEmbedder);
+
+        zoomButtonConsumer.updateVisibility(0);
+        verify(mLocationBarTablet).setZoomButtonVisibility(false);
+        verify(mLocationBarEmbedder, never()).onWidthConsumerVisibilityChanged();
+        Mockito.clearInvocations(mLocationBarTablet, mLocationBarEmbedder);
+    }
+
+    private FuseboxSessionState getSession() {
+        return FuseboxSessionState.from(mLocationBarDataProvider);
+    }
+}

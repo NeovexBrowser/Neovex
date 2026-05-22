@@ -1,0 +1,327 @@
+// Copyright 2017 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+package org.chromium.ui.base;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.content.ClipboardManager;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.os.PersistableBundle;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
+import android.widget.TextView;
+
+import androidx.annotation.StringRes;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
+import org.robolectric.annotation.Config;
+import org.robolectric.shadows.ShadowToast;
+
+import org.chromium.base.ContextUtils;
+import org.chromium.base.test.BaseRobolectricTestRunner;
+import org.chromium.base.test.RobolectricUtil;
+import org.chromium.ui.R;
+import org.chromium.ui.widget.ToastManager;
+import org.chromium.url.GURL;
+import org.chromium.url.JUnitTestGURLs;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/** Tests logic in the Clipboard class. */
+@RunWith(BaseRobolectricTestRunner.class)
+@Config(manifest = Config.NONE)
+public class ClipboardTest {
+    private static final String PLAIN_TEXT = "plain";
+    private static final String HTML_TEXT = "<span style=\"color: red;\">HTML</span>";
+    private Uri mTempImageUri;
+
+    @Before
+    public void setup() {
+        mTempImageUri = Uri.parse("content://tmp/test/image.jpg");
+        ClipboardImpl.setSkipImageMimeTypeCheckForTesting(true);
+    }
+
+    @After
+    public void tearDown() {
+        ToastManager.resetForTesting();
+        ShadowToast.reset();
+        Clipboard.resetForTesting();
+    }
+
+    @Test
+    public void testClipDataToHtmlText() {
+        Clipboard clipboard = Clipboard.getInstance();
+
+        // HTML text
+        ClipData html = ClipData.newHtmlText("html", PLAIN_TEXT, HTML_TEXT);
+        assertEquals(HTML_TEXT, clipboard.clipDataToHtmlText(html));
+
+        // Plain text without span
+        ClipData plainTextNoSpan = ClipData.newPlainText("plain", PLAIN_TEXT);
+        assertNull(clipboard.clipDataToHtmlText(plainTextNoSpan));
+
+        // Plain text with span
+        SpannableString spanned = new SpannableString(PLAIN_TEXT);
+        spanned.setSpan(new RelativeSizeSpan(2f), 0, 5, 0);
+        ClipData plainTextSpan = ClipData.newPlainText("plain", spanned);
+        assertNotNull(clipboard.clipDataToHtmlText(plainTextSpan));
+
+        // Intent
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("*/*");
+        ClipData intentClip = ClipData.newIntent("intent", intent);
+        assertNull(clipboard.clipDataToHtmlText(intentClip));
+    }
+
+    @Test
+    public void testClipboardSetImage() {
+        Clipboard clipboard = Clipboard.getInstance();
+
+        // simple set a null, check if there is no crash.
+        clipboard.setImageUri(null);
+        RobolectricUtil.runAllBackgroundAndUi();
+        assertNull(clipboard.getImageUri());
+
+        // Set actually data.
+        clipboard.setImageUri(mTempImageUri);
+        RobolectricUtil.runAllBackgroundAndUi();
+        assertEquals(mTempImageUri, clipboard.getImageUri());
+    }
+
+    @Test
+    public void testClipboardCopyUrlToClipboard() {
+        Clipboard clipboard = Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        ((ClipboardImpl) clipboard).overrideClipboardManagerForTesting(clipboardManager);
+
+        GURL url = JUnitTestGURLs.SEARCH_URL;
+        clipboard.copyUrlToClipboard(url);
+
+        ArgumentCaptor<ClipData> clipCaptor = ArgumentCaptor.forClass(ClipData.class);
+        verify(clipboardManager).setPrimaryClip(clipCaptor.capture());
+        assertEquals("url", clipCaptor.getValue().getDescription().getLabel());
+        assertEquals(url.getSpec(), clipCaptor.getValue().getItemAt(0).getText());
+    }
+
+    @Test
+    public void testClipboardCopyUrlToClipboardNoException() {
+        Clipboard clipboard = Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        ((ClipboardImpl) clipboard).overrideClipboardManagerForTesting(clipboardManager);
+
+        doThrow(SecurityException.class).when(clipboardManager).setPrimaryClip(any(ClipData.class));
+        GURL url = JUnitTestGURLs.SEARCH_URL;
+        clipboard.copyUrlToClipboard(url);
+
+        ArgumentCaptor<ClipData> clipCaptor = ArgumentCaptor.forClass(ClipData.class);
+        verify(clipboardManager).setPrimaryClip(clipCaptor.capture());
+        assertEquals("url", clipCaptor.getValue().getDescription().getLabel());
+        assertEquals(url.getSpec(), clipCaptor.getValue().getItemAt(0).getText());
+    }
+
+    @Test
+    public void testHasCoercedTextCanGetUrl() {
+        Clipboard clipboard = Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        ((ClipboardImpl) clipboard).overrideClipboardManagerForTesting(clipboardManager);
+
+        ClipDescription clipDescription =
+                new ClipDescription("url", new String[] {"text/x-moz-url"});
+        when(clipboardManager.getPrimaryClipDescription()).thenReturn(clipDescription);
+
+        assertTrue(clipboard.hasCoercedText());
+    }
+
+    @Test
+    public void testClipboardGetFilenames() {
+        Clipboard clipboard = Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        ((ClipboardImpl) clipboard).overrideClipboardManagerForTesting(clipboardManager);
+
+        ClipData clipData = ClipData.newPlainText("label", "text");
+        when(clipboardManager.getPrimaryClip()).thenReturn(clipData);
+        assertFalse(clipboard.hasFilenames());
+        assertEquals(0, clipboard.getFilenames().length);
+
+        ContentResolver cr = ContextUtils.getApplicationContext().getContentResolver();
+        String file1 = "content://tmp/test/file1.jpg";
+        String file2 = "content://tmp/test/file2.txt";
+        clipData = ClipData.newUri(cr, "label", Uri.parse(file1));
+        when(clipboardManager.getPrimaryClip()).thenReturn(clipData);
+        assertTrue(clipboard.hasFilenames());
+        String[][] filenames = clipboard.getFilenames();
+        assertEquals(1, filenames.length);
+        assertEquals(2, filenames[0].length);
+        assertEquals("content://tmp/test/file1.jpg", filenames[0][0]);
+        assertEquals("", filenames[0][1]);
+
+        clipData = ClipData.newPlainText("label", "text");
+        clipData.addItem(new ClipData.Item(Uri.parse(file1)));
+        clipData.addItem(new ClipData.Item(Uri.parse(file2)));
+        when(clipboardManager.getPrimaryClip()).thenReturn(clipData);
+        assertTrue(clipboard.hasFilenames());
+        filenames = clipboard.getFilenames();
+        assertEquals(2, filenames.length);
+        assertEquals(2, filenames[0].length);
+        assertEquals("content://tmp/test/file1.jpg", filenames[0][0]);
+        assertEquals("", filenames[0][1]);
+        assertEquals(2, filenames[1].length);
+        assertEquals("content://tmp/test/file2.txt", filenames[1][0]);
+        assertEquals("", filenames[1][1]);
+    }
+
+    @Test
+    public void testClipboardSetFilenames() {
+        Clipboard clipboard = Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        ((ClipboardImpl) clipboard).overrideClipboardManagerForTesting(clipboardManager);
+
+        String file1 = "content://tmp/test/file1.jpg";
+        String file2 = "content://tmp/test/file2.txt";
+        clipboard.setFilenames(new String[] {file1, file2});
+
+        ArgumentCaptor<ClipData> clipCaptor = ArgumentCaptor.forClass(ClipData.class);
+        verify(clipboardManager).setPrimaryClip(clipCaptor.capture());
+        assertEquals(2, clipCaptor.getValue().getItemCount());
+        assertEquals(file1, clipCaptor.getValue().getItemAt(0).getUri().toString());
+        assertEquals(file2, clipCaptor.getValue().getItemAt(1).getUri().toString());
+    }
+
+    @Test
+    public void testSetClipboardTextWithCustomData() {
+        ClipboardImpl clipboard = (ClipboardImpl) Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        clipboard.overrideClipboardManagerForTesting(clipboardManager);
+
+        Map<String, String> textData = new HashMap<>();
+        textData.put(ClipDescription.MIMETYPE_TEXT_PLAIN, PLAIN_TEXT);
+        textData.put(ClipDescription.MIMETYPE_TEXT_HTML, HTML_TEXT);
+        final String customDataMimeType = ClipboardImpl.CHROME_WEB_CUSTOM_DATA_MIME_TYPE;
+        final String customDataValue = "custom data";
+        textData.put(customDataMimeType, customDataValue);
+
+        clipboard.setClipboardText(textData);
+
+        ArgumentCaptor<ClipData> clipCaptor = ArgumentCaptor.forClass(ClipData.class);
+        verify(clipboardManager).setPrimaryClip(clipCaptor.capture());
+        ClipData clipData = clipCaptor.getValue();
+        assertNotNull(clipData);
+
+        ClipDescription description = clipData.getDescription();
+        PersistableBundle extras = description.getExtras();
+
+        assertTrue(
+                "Missing HTML MIME type",
+                description.hasMimeType(ClipDescription.MIMETYPE_TEXT_HTML));
+        assertTrue(
+                "Missing custom MIME type: " + customDataMimeType,
+                description.hasMimeType(customDataMimeType));
+
+        assertEquals(PLAIN_TEXT, clipData.getItemAt(0).getText().toString());
+        assertEquals(HTML_TEXT, clipData.getItemAt(0).getHtmlText());
+
+        assertEquals(2, clipData.getItemCount());
+        assertEquals("", clipData.getItemAt(1).getText().toString());
+        assertNotNull(extras);
+        assertEquals(customDataValue, extras.getString(customDataMimeType));
+
+        when(clipboardManager.getPrimaryClip()).thenReturn(clipData);
+        when(clipboardManager.getPrimaryClipDescription()).thenReturn(description);
+        assertEquals(customDataValue, clipboard.getCustomClipData(customDataMimeType));
+    }
+
+    @Test
+    public void testSetClipboardTextPlainTextData() {
+        ClipboardImpl clipboard = (ClipboardImpl) Clipboard.getInstance();
+        ClipboardManager clipboardManager = Mockito.mock(ClipboardManager.class);
+        clipboard.overrideClipboardManagerForTesting(clipboardManager);
+
+        Map<String, String> textData = new HashMap<>();
+        textData.put(ClipDescription.MIMETYPE_TEXT_PLAIN, PLAIN_TEXT);
+
+        clipboard.setClipboardText(textData);
+
+        ArgumentCaptor<ClipData> clipCaptor = ArgumentCaptor.forClass(ClipData.class);
+        verify(clipboardManager).setPrimaryClip(clipCaptor.capture());
+        ClipData clipData = clipCaptor.getValue();
+
+        assertEquals(1, clipData.getItemCount());
+        assertEquals(PLAIN_TEXT, clipData.getItemAt(0).getText().toString());
+        assertNull(clipData.getItemAt(0).getHtmlText());
+    }
+
+    @Test
+    @Config(shadows = ShadowToast.class)
+    public void setTextWithNotification() {
+        Clipboard.getInstance().setText("label", "text", false);
+        RobolectricUtil.runAllBackgroundAndUi();
+        assertNull(ShadowToast.getLatestToast());
+
+        Clipboard.getInstance().setText("label", "text", true);
+        RobolectricUtil.runAllBackgroundAndUi();
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
+            assertNotNull(ShadowToast.getLatestToast());
+            assertTextFromLatestToast(R.string.copied);
+        } else {
+            assertNull(ShadowToast.getLatestToast());
+        }
+    }
+
+    @Test
+    @Config(shadows = ShadowToast.class)
+    public void setImageWithNotification() {
+        Clipboard.getInstance().setImageUri(mTempImageUri, false);
+        RobolectricUtil.runAllBackgroundAndUi();
+        assertNull(ShadowToast.getLatestToast());
+
+        Clipboard.getInstance().setImageUri(mTempImageUri, true);
+        RobolectricUtil.runAllBackgroundAndUi();
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
+            assertNotNull(ShadowToast.getLatestToast());
+            assertTextFromLatestToast(R.string.image_copied);
+        } else {
+            assertNull(ShadowToast.getLatestToast());
+        }
+    }
+
+    @Test
+    @Config(shadows = ShadowToast.class)
+    public void setImageWithFailedNotification() {
+        Clipboard.getInstance().setImageUri(null, false);
+        RobolectricUtil.runAllBackgroundAndUi();
+        assertNotNull(ShadowToast.getLatestToast());
+        assertTextFromLatestToast(R.string.copy_to_clipboard_failure_message);
+    }
+
+    private void assertTextFromLatestToast(@StringRes int strRes) {
+        TextView textView = (TextView) ShadowToast.getLatestToast().getView();
+        String actualText = textView == null ? "" : textView.getText().toString();
+
+        assertEquals(
+                "Text for toast shown does not match.",
+                ContextUtils.getApplicationContext().getString(strRes),
+                actualText);
+    }
+}

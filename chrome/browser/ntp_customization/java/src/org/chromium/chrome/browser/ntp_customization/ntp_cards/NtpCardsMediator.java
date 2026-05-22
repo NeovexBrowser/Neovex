@@ -1,0 +1,219 @@
+// Copyright 2025 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+package org.chromium.chrome.browser.ntp_customization.ntp_cards;
+
+import static org.chromium.build.NullUtil.assumeNonNull;
+import static org.chromium.chrome.browser.magic_stack.HomeModulesUtils.getSettingsPreferenceKey;
+import static org.chromium.chrome.browser.magic_stack.HomeModulesUtils.getTitleForModuleType;
+import static org.chromium.chrome.browser.magic_stack.HomeModulesUtils.updateBooleanUserPrefs;
+import static org.chromium.chrome.browser.ntp_customization.NtpCustomizationViewProperties.ALL_NTP_CARDS_SWITCH_ON_CHECKED_CHANGE_LISTENER;
+import static org.chromium.chrome.browser.ntp_customization.NtpCustomizationViewProperties.BACK_PRESS_HANDLER;
+import static org.chromium.chrome.browser.ntp_customization.NtpCustomizationViewProperties.IS_ALL_NTP_CARDS_SWITCH_CHECKED;
+import static org.chromium.chrome.browser.ntp_customization.NtpCustomizationViewProperties.IS_ALL_NTP_CARDS_SWITCH_VISIBLE;
+import static org.chromium.chrome.browser.ntp_customization.NtpCustomizationViewProperties.IS_MODULE_LIST_EDITABLE;
+import static org.chromium.chrome.browser.ntp_customization.NtpCustomizationViewProperties.LIST_CONTAINER_VIEW_DELEGATE;
+
+import android.content.Context;
+import android.view.View;
+import android.widget.CompoundButton;
+
+import androidx.annotation.VisibleForTesting;
+
+import org.jni_zero.internal.Nullable;
+
+import org.chromium.base.Log;
+import org.chromium.build.annotations.NullMarked;
+import org.chromium.chrome.browser.flags.ChromeFeatureList;
+import org.chromium.chrome.browser.magic_stack.HomeModulesConfigManager;
+import org.chromium.chrome.browser.magic_stack.ModuleDelegate.ModuleType;
+import org.chromium.chrome.browser.magic_stack.ModuleRegistry;
+import org.chromium.chrome.browser.ntp_customization.BottomSheetDelegate;
+import org.chromium.chrome.browser.ntp_customization.ListContainerViewDelegate;
+import org.chromium.chrome.browser.ntp_customization.NtpCustomizationMetricsUtils;
+import org.chromium.chrome.browser.preferences.ChromePreferenceKeys;
+import org.chromium.chrome.browser.preferences.Pref;
+import org.chromium.chrome.browser.profiles.Profile;
+import org.chromium.ui.modelutil.PropertyModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
+
+/**
+ * A mediator class that manages navigation between bottom sheets and manages the container view on
+ * the NTP cards bottom sheet.
+ */
+@NullMarked
+public class NtpCardsMediator {
+
+    private static final String TAG = "XplatSyncedSetup";
+
+    // LINT.IfChange(HomeModuleTypes)
+    public static final Map<Integer, String> MODULE_TYPE_TO_USER_PREFS_KEY =
+            Map.of(
+                    ModuleType.SINGLE_TAB, Pref.TAB_RESUMPTION_HOME_MODULE_ENABLED,
+                    ModuleType.PRICE_CHANGE, Pref.PRICE_TRACKING_HOME_MODULE_ENABLED,
+                    ModuleType.SAFETY_HUB, Pref.SAFETY_CHECK_HOME_MODULE_ENABLED,
+                    // We only need one "Chrome Tips" module.
+                    ModuleType.DEFAULT_BROWSER_PROMO, Pref.TIPS_HOME_MODULE_ENABLED);
+    // LINT.ThenChange()
+
+    private final PropertyModel mContainerPropertyModel;
+    private final PropertyModel mBottomSheetPropertyModel;
+    private final PropertyModel mNtpCardsPropertyModel;
+    private final Supplier<@Nullable Profile> mProfileSupplier;
+    private final @Nullable ModuleRegistry mModuleRegistry;
+    private final boolean mIsHomeModulePrefRefactorEnabled;
+
+    public NtpCardsMediator(
+            PropertyModel containerPropertyModel,
+            PropertyModel bottomSheetPropertyModel,
+            PropertyModel ntpCardsPropertyModel,
+            BottomSheetDelegate delegate,
+            Supplier<@Nullable Profile> profileSupplier,
+            @Nullable ModuleRegistry moduleRegistry) {
+        mContainerPropertyModel = containerPropertyModel;
+        mBottomSheetPropertyModel = bottomSheetPropertyModel;
+        mNtpCardsPropertyModel = ntpCardsPropertyModel;
+        mProfileSupplier = profileSupplier;
+        mModuleRegistry = moduleRegistry;
+        mIsHomeModulePrefRefactorEnabled =
+                ChromeFeatureList.isEnabled(ChromeFeatureList.HOME_MODULE_PREF_REFACTOR);
+
+        mContainerPropertyModel.set(LIST_CONTAINER_VIEW_DELEGATE, createListDelegate());
+        // Hides the back button when the NTP Cards bottom sheet is displayed standalone.
+        mBottomSheetPropertyModel.set(
+                BACK_PRESS_HANDLER,
+                delegate.shouldShowAlone() ? null : v -> delegate.backPressOnCurrentBottomSheet());
+
+        mNtpCardsPropertyModel.set(
+                ALL_NTP_CARDS_SWITCH_ON_CHECKED_CHANGE_LISTENER,
+                (compoundButton, isChecked) -> {
+                    NtpCustomizationMetricsUtils.recordAllCardsToggledInConfiguration(isChecked);
+                    HomeModulesConfigManager.getInstance().setPrefAllCardsEnabled(isChecked);
+                });
+
+        boolean isAllCardsSwitchChecked =
+                HomeModulesConfigManager.getInstance().getPrefAllCardsSwitchChecked();
+        mNtpCardsPropertyModel.set(IS_ALL_NTP_CARDS_SWITCH_CHECKED, isAllCardsSwitchChecked);
+        mNtpCardsPropertyModel.set(
+                IS_ALL_NTP_CARDS_SWITCH_VISIBLE, mIsHomeModulePrefRefactorEnabled);
+        updateModuleListEditability(isAllCardsSwitchChecked);
+    }
+
+    private void updateModuleListEditability(boolean isAllCardsSwitchChecked) {
+        // The module list are editable if:
+        // 1. The all cards switch is hidden (allowing individual control by default);
+        // 2. If all cards switch is visible, whether the module list can be editable is consistent
+        // with whether the all-card-switch is toggled on.
+        mNtpCardsPropertyModel.set(
+                IS_MODULE_LIST_EDITABLE,
+                !mIsHomeModulePrefRefactorEnabled || isAllCardsSwitchChecked);
+    }
+
+    /** Returns {@link ListContainerViewDelegate} that defines the content of each list item. */
+    @VisibleForTesting
+    ListContainerViewDelegate createListDelegate() {
+        final HomeModulesConfigManager homeModulesConfigManager =
+                HomeModulesConfigManager.getInstance();
+        return new ListContainerViewDelegate() {
+            @Override
+            public List<Integer> getListItems() {
+                return mModuleRegistry != null
+                        ? mModuleRegistry.getModuleListShownInSettings()
+                        : new ArrayList<>();
+            }
+
+            @Override
+            public String getListItemTitle(int type, Context context) {
+                return getTitleForModuleType(type, context);
+            }
+
+            @Override
+            public @Nullable String getListItemSubtitle(int type, Context context) {
+                return null;
+            }
+
+            @Override
+            public View.@Nullable OnClickListener getListener(int type) {
+                return null;
+            }
+
+            @Override
+            public @Nullable Integer getTrailingIcon(int type) {
+                return null;
+            }
+
+            @Override
+            public @Nullable Integer getTrailingIconDescriptionResId(int type) {
+                return null;
+            }
+
+            @Override
+            public boolean isListItemChecked(int type) {
+                return homeModulesConfigManager.getPrefModuleTypeEnabled(type);
+            }
+
+            @Override
+            public CompoundButton.OnCheckedChangeListener getOnCheckedChangeListener(int type) {
+                return (button, newValue) -> {
+                    homeModulesConfigManager.setPrefModuleTypeEnabled(type, newValue);
+                    NtpCustomizationMetricsUtils.recordModuleToggledInBottomSheet(type, newValue);
+                };
+            }
+        };
+    }
+
+    @VisibleForTesting
+    void updateUserPrefs() {
+        if (!ChromeFeatureList.isEnabled(ChromeFeatureList.HOME_MODULE_PREF_REFACTOR)) {
+            if (ChromeFeatureList.isEnabled(
+                    ChromeFeatureList.CROSS_DEVICE_PREF_TRACKER_EXTRA_LOGS)) {
+                Log.i(
+                        TAG,
+                        "NtpCardsMediator:updateUserPrefs - HomeModulePrefRefactor was off, return"
+                                + " early");
+            }
+            return;
+        }
+
+        @Nullable Profile profile = mProfileSupplier.get();
+        if (profile == null) {
+            if (ChromeFeatureList.isEnabled(
+                    ChromeFeatureList.CROSS_DEVICE_PREF_TRACKER_EXTRA_LOGS)) {
+                Log.i(
+                        TAG,
+                        "NtpCardsMediatorupdateUserPrefs - profile supplier gave null profile,"
+                                + " return early");
+            }
+            return; // Return if profile not ready yet
+        }
+
+        updateBooleanUserPrefs(
+                ChromePreferenceKeys.HOME_MODULE_CARDS_ENABLED,
+                Pref.MAGIC_STACK_HOME_MODULE_ENABLED,
+                profile);
+        for (@ModuleType int moduleType : MODULE_TYPE_TO_USER_PREFS_KEY.keySet()) {
+            updateBooleanUserPrefs(
+                    getSettingsPreferenceKey(moduleType),
+                    assumeNonNull(MODULE_TYPE_TO_USER_PREFS_KEY.get(moduleType)),
+                    profile);
+        }
+    }
+
+    /** Reacts to a configuration change of the "all NTP cards" toggle. */
+    void onAllCardsConfigChanged(boolean isEnabled) {
+        mNtpCardsPropertyModel.set(IS_ALL_NTP_CARDS_SWITCH_CHECKED, isEnabled);
+        updateModuleListEditability(isEnabled);
+    }
+
+    /** Clears the back press handler and click listeners of NTP cards bottom sheet. */
+    void destroy() {
+        mBottomSheetPropertyModel.set(BACK_PRESS_HANDLER, null);
+        mContainerPropertyModel.set(LIST_CONTAINER_VIEW_DELEGATE, null);
+        updateUserPrefs();
+    }
+}

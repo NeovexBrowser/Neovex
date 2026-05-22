@@ -1,0 +1,14 @@
+// Copyright 2024 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// === CUSTOM THEME: Simple < chevron for back button ===
+CANVAS_DIMENSIONS, 20,
+FILL_RULE_NONZERO,
+MOVE_TO, 12.5, 4,
+LINE_TO, 6.5, 10,
+LINE_TO, 12.5, 16,
+R_LINE_TO, 1.5, -1.5,
+LINE_TO, 9.5, 10,
+LINE_TO, 14, 5.5,
+CLOSE

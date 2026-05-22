@@ -1,0 +1,184 @@
+    <style include="cr-hidden-style cr-icons cr-nav-menu-item-style">
+      :host {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5px;
+        padding-top: 8px;
+        height: 100%;
+      }
+
+      :host * {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* Center the navigation div vertically via auto margins */
+      [role="navigation"] {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      #menu {
+        color: #e0e0e8;
+        display: flex;
+        flex-direction: column;
+        min-width: fit-content;
+        gap: 4px;
+      }
+
+      #extensionsLink > .cr-icon {
+        height: var(--cr-icon-size);
+        margin-inline-end: 14px;
+        width: var(--cr-icon-size);
+      }
+
+      .menu-separator {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 6px;
+        margin-top: 6px;
+      }
+
+      /* === Glassmorphism nav items === */
+      .cr-nav-menu-item {
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(20px) saturate(1.2) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(1.2) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 14px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin: 2px 6px !important;
+        padding: 10px 20px !important;
+        transition: all 0.2s ease !important;
+        --iron-icon-fill-color: rgba(255, 255, 255, 0.4) !important;
+      }
+
+      .cr-nav-menu-item:hover {
+        background: rgba(255, 255, 255, 0.10) !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        --iron-icon-fill-color: rgba(255, 255, 255, 0.7) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .cr-nav-menu-item[selected] {
+        background: rgba(124, 140, 255, 0.15) !important;
+        border-color: rgba(124, 140, 255, 0.3) !important;
+        color: #a0adff !important;
+        --iron-icon-fill-color: #a0adff !important;
+        box-shadow: 0 2px 20px rgba(124, 140, 255, 0.1);
+      }
+
+      .cr-nav-menu-item cr-icon,
+      .cr-nav-menu-item iron-icon {
+        --cr-icon-ripple-size: 20px !important;
+      }
+    </style>
+
+    <div role="navigation">
+      <cr-menu-selector id="menu" selectable="a:not(#extensionsLink)"
+          attr-for-selected="href" on-iron-activate="onSelectorActivate_"
+          on-click="onLinkClick_" selected-attribute="selected">
+
+        <a role="menuitem" id="autofill" href="/autofill"
+            on-click="onAutofillClick_"
+            class="cr-nav-menu-item"
+            hidden="[[!showAutofillMenuItem_(
+                enableYourSavedInfoSettingsPage_,
+                pageVisibility_.yourSavedInfo, pageVisibility_.autofill)]]">
+          <cr-icon icon="settings:assignment"></cr-icon>
+          $i18n{autofillPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+        <a role="menuitem" href="/privacy"
+            hidden="[[!pageVisibility_.privacy]]"
+            class="cr-nav-menu-item">
+          <cr-icon icon="settings:security"></cr-icon>
+          $i18n{privacyPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+        <a role="menuitem" id="performance" href="/performance"
+            class="cr-nav-menu-item"
+            hidden="[[!pageVisibility_.performance]]">
+          <cr-icon icon="settings:navigation-performance"></cr-icon>
+          $i18n{performancePageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+
+        <a role="menuitem" href="/search" class="cr-nav-menu-item">
+          <cr-icon icon="settings:search"></cr-icon>
+          $i18n{searchPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+<if expr="not is_chromeos">
+        <a role="menuitem" id="defaultBrowser" class="cr-nav-menu-item"
+          href="/defaultBrowser"
+          hidden="[[!pageVisibility_.defaultBrowser]]">
+          <cr-icon icon="settings:web"></cr-icon>
+          $i18n{defaultBrowser}
+          <cr-ripple></cr-ripple>
+        </a>
+</if>
+        <a role="menuitem" id="onStartup" href="/onStartup"
+            class="cr-nav-menu-item"
+            hidden="[[!pageVisibility_.onStartup]]">
+          <cr-icon icon="settings:power-settings"></cr-icon>
+          $i18n{onStartup}
+          <cr-ripple></cr-ripple>
+        </a>
+        <div class="menu-separator"></div>
+        <a role="menuitem" id="languages" href="/languages"
+            class="cr-nav-menu-item"
+            hidden="[[!pageVisibility_.languages]]">
+          <cr-icon icon="settings:navigation-language"></cr-icon>
+          $i18n{languagesPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+        <a role="menuitem" id="downloads" href="/downloads"
+            class="cr-nav-menu-item"
+            hidden="[[!pageVisibility_.downloads]]">
+          <cr-icon icon="settings:download"></cr-icon>
+          $i18n{downloadsPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+        <a role="menuitem" id="accessibility" href="/accessibility"
+            class="cr-nav-menu-item"
+            hidden="[[!pageVisibility_.a11y]]">
+          <cr-icon icon="settings:accessibility"></cr-icon>
+          $i18n{a11yPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+<if expr="not is_chromeos">
+        <a role="menuitem" id="system" href="/system" class="cr-nav-menu-item"
+            hidden="[[!pageVisibility_.system]]">
+          <cr-icon icon="settings:system"></cr-icon>
+          $i18n{systemPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+</if>
+        <a role="menuitem" id="reset" href="/reset"
+            hidden="[[!pageVisibility_.reset]]" class="cr-nav-menu-item">
+          <cr-icon icon="settings:restore"></cr-icon>
+          $i18n{resetPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+        <div hidden="[[hideBottomMenuSeparator_(pageVisibility_)]]"
+            class="menu-separator"></div>
+        <a role="menuitem" id="extensionsLink" class="cr-nav-menu-item"
+            href="chrome://extensions" target="_blank"
+            hidden="[[!pageVisibility_.extensions]]"
+            on-click="onExtensionsLinkClick_"
+            title="$i18n{extensionsLinkTooltip}">
+          <cr-icon icon="settings:extension"></cr-icon>
+          <span>$i18n{extensionsPageTitle}</span>
+          <div class="cr-icon icon-external"></div>
+          <cr-ripple></cr-ripple>
+        </a>
+        <a role="menuitem" id="about-menu" href="/help"
+            class="cr-nav-menu-item">
+          <cr-icon icon="cr:chrome-product"></cr-icon>
+          $i18n{aboutPageTitle}
+          <cr-ripple></cr-ripple>
+        </a>
+      </cr-menu-selector>
+    </div>

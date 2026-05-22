@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="resources/testharness-adapter.js"></script>
+</head>
+<body>
+<script type="module">
+import {GeolocationMock} from './resources/geolocation-mock.js';
+
+const mock = new GeolocationMock();
+const mockCoords = {accuracy: 100,
+                    latitude: 51.478,
+                    longitude: -0.166,
+                    altitude: null,
+                    altitudeAccuracy: null,
+                    heading: null,
+                    speed: null};
+
+[
+  {precise: true, approximate: true},
+  {precise: false, approximate: true}
+].forEach(({precise, approximate}) => {
+    promise_test(async () => {
+    mock.setGeolocationPermission(precise, approximate);
+    mock.setGeolocationPosition(mockCoords.latitude,
+                                mockCoords.longitude,
+                                mockCoords.accuracy);
+
+    const position = await new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+          resolve,
+          (e) => reject(new Error(`Error callback invoked unexpectedly: ${e.message}`)));
+    });
+
+    assert_object_equals(position.coords.toJSON(), mockCoords);
+
+    const timestamp = position.timestamp;
+    const expectedPosition = {timestamp, coords: mockCoords};
+    if (internals.runtimeFlags.approximateGeolocationWebVisibleAPIEnabled) {
+      expectedPosition.accuracyMode = precise ? 'precise' : 'approximate';
+    }
+    assert_object_equals(position.toJSON(), expectedPosition);
+  }, `Tests toJSON() on GeolocationPosition and GeolocationCoordinates with precise: ${precise}, approximate: ${approximate}.`);
+});
+</script>
+</body>
+</html>

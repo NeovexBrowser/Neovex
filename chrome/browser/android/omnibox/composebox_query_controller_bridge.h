@@ -1,0 +1,120 @@
+// Copyright 2025 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#ifndef CHROME_BROWSER_ANDROID_OMNIBOX_COMPOSEBOX_QUERY_CONTROLLER_BRIDGE_H_
+#define CHROME_BROWSER_ANDROID_OMNIBOX_COMPOSEBOX_QUERY_CONTROLLER_BRIDGE_H_
+
+#include <jni.h>
+
+#include <memory>
+
+#include "base/android/jni_string.h"
+#include "base/functional/callback_forward.h"
+#include "base/memory/weak_ptr.h"
+#include "chrome/browser/profiles/profile.h"
+#include "components/contextual_search/contextual_search_session_handle.h"
+#include "components/contextual_search/input_state_model.h"
+#include "components/contextual_search/internal/composebox_query_controller.h"
+#include "components/lens/proto/server/lens_overlay_response.pb.h"
+#include "third_party/jni_zero/jni_zero.h"
+
+namespace content {
+class WebContents;
+}  //  namespace content
+
+namespace optimization_guide::proto {
+class PageContext;
+}  // namespace optimization_guide::proto
+
+class Profile;
+class GURL;
+
+class ComposeboxQueryControllerBridge
+    : public ComposeboxQueryController::ContextUploadStatusObserver {
+ public:
+  explicit ComposeboxQueryControllerBridge(
+      Profile* profile,
+      const base::android::JavaRef<jobject>& java_obj);
+  ~ComposeboxQueryControllerBridge() override;
+  void Destroy(JNIEnv* env);
+  void NotifySessionStarted(JNIEnv* env);
+  void NotifySessionAbandoned(JNIEnv* env);
+  base::android::ScopedJavaLocalRef<jobject> AddFile(
+      JNIEnv* env,
+      const std::string& file_name,
+      const std::string& file_type,
+      const jni_zero::JavaRef<jobject>& file_data);
+  base::android::ScopedJavaLocalRef<jobject> AddTabContext(
+      JNIEnv* env,
+      content::WebContents* web_contents);
+  base::android::ScopedJavaLocalRef<jobject> AddTabContextFromCache(
+      JNIEnv* env,
+      long tab_id);
+  void GetAimUrl(JNIEnv* env,
+                 GURL url,
+                 const base::android::JavaRef<jobject>& j_callback);
+  void GetImageGenerationUrl(JNIEnv* env,
+                             GURL url,
+                             const base::android::JavaRef<jobject>& j_callback);
+
+  // Builds the URL to use for a navigation, supplementing the passed in URL
+  // with additional parameters. This will do things such as include the current
+  // tool (image gen, deep search, etc). The input state will be polled for this
+  // information. This reduces client side knowledge of how to use tools (and
+  // soon models), as the information of what parameters to add is coming from
+  // the server.
+  void GetAimUrlFromInputState(
+      JNIEnv* env,
+      GURL url,
+      const base::android::JavaRef<jobject>& j_callback);
+  void RemoveAttachment(JNIEnv* env, const std::string& token);
+  bool IsFuseboxEligible(JNIEnv* env);
+  bool IsPdfUploadEligible(JNIEnv* env);
+  bool IsCreateImagesEligible(JNIEnv* env);
+  void SetActiveTool(JNIEnv* env, omnibox::ToolMode tool_mode);
+  void SetActiveModel(JNIEnv* env, omnibox::ModelMode model_mode);
+
+  std::unique_ptr<lens::proto::LensOverlaySuggestInputs>
+  CreateLensOverlaySuggestInputs() const;
+
+  // ComposeboxQueryController::ContextUploadStatusObserver:
+  void OnContextUploadStatusChanged(
+      const base::UnguessableToken& context_token,
+      lens::MimeType mime_type,
+      contextual_search::ContextUploadStatus context_upload_status,
+      const std::optional<contextual_search::ContextUploadErrorType>&
+          error_type) override;
+
+  size_t GetAttachmentCount() const;
+
+  base::WeakPtr<ComposeboxQueryControllerBridge> AsWeakPtr();
+
+ private:
+  void OnGetTabPageContext(
+      JNIEnv* env,
+      const base::UnguessableToken& context_token,
+      std::unique_ptr<lens::ContextualInputData> page_content_data);
+  void OnGetPageContentFromCache(
+      JNIEnv* env,
+      const base::UnguessableToken& context_token,
+      std::optional<optimization_guide::proto::PageContext> page_context);
+  void OnInputStateChanged(const contextual_search::InputState& state);
+
+  std::unique_ptr<ComposeboxQueryController::CreateSearchUrlRequestInfo>
+  CreateSearchUrlRequestInfoFromUrl(GURL url);
+  contextual_search::ContextualSearchContextController* query_controller()
+      const {
+    return session_handle_->GetController();
+  }
+
+  raw_ptr<Profile> profile_;
+  std::unique_ptr<contextual_search::ContextualSearchSessionHandle>
+      session_handle_;
+  std::unique_ptr<contextual_search::InputStateModel> input_state_model_;
+  base::CallbackListSubscription input_state_subscription_;
+  base::android::ScopedJavaGlobalRef<jobject> java_obj_;
+  base::WeakPtrFactory<ComposeboxQueryControllerBridge> weak_ptr_factory_{this};
+};
+
+#endif  // CHROME_BROWSER_ANDROID_OMNIBOX_COMPOSEBOX_QUERY_CONTROLLER_BRIDGE_H_

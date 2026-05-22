@@ -1,0 +1,109 @@
+// Copyright 2021 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+package org.chromium.content.browser.accessibility;
+
+import android.util.Pair;
+import android.view.View;
+
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+
+import org.jni_zero.CalledByNative;
+import org.jni_zero.JNINamespace;
+
+import org.chromium.base.AconfigFlaggedApiDelegate;
+import org.chromium.base.ThreadUtils;
+import org.chromium.build.annotations.NullMarked;
+import org.chromium.build.annotations.Nullable;
+import org.chromium.ui.accessibility.AccessibilityNodeInfoCompatDumper;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/** Utility class for common actions involving AccessibilityNodeInfo objects. */
+@JNINamespace("content")
+@NullMarked
+public final class AccessibilityNodeInfoUtils {
+    private AccessibilityNodeInfoUtils() {}
+
+    @CalledByNative
+    public static <K> Map<K, int[][]> createTextAttributeRangesMap() {
+        return new HashMap<K, int[][]>();
+    }
+
+    @CalledByNative
+    public static void setTextAttributeRangesMapFloatValue(
+            Map<Float, int[][]> map, float value, int[] starts, int[] ends) {
+        setTextAttributeRangesMapValue(map, value, starts, ends);
+    }
+
+    @CalledByNative
+    public static void setTextAttributeRangesMapIntValue(
+            Map<Integer, int[][]> map, int value, int[] starts, int[] ends) {
+        setTextAttributeRangesMapValue(map, value, starts, ends);
+    }
+
+    @CalledByNative
+    public static void setTextAttributeRangesMapStringValue(
+            Map<String, int[][]> map, String value, int[] starts, int[] ends) {
+        setTextAttributeRangesMapValue(map, value, starts, ends);
+    }
+
+    public static <T> void setTextAttributeRangesMapValue(
+            Map<T, int[][]> map, T value, int[] starts, int[] ends) {
+        if (map == null || value == null || starts == null || ends == null) {
+            return;
+        }
+        map.put(value, new int[][] {starts, ends});
+    }
+
+    /**
+     * Helper method to perform a custom toString on a given AccessibilityNodeInfo object.
+     *
+     * @param wcax WebContentsAccessibilityImpl object.
+     * @param node Object to create a toString for
+     * @return String Custom toString result for the given object
+     */
+    public static String toString(
+            WebContentsAccessibilityImpl wcax,
+            @Nullable AccessibilityNodeInfoCompat node,
+            boolean includeScreenSizeDependentAttributes) {
+        if (node == null) return "";
+
+        StringBuilder builder =
+                new StringBuilder(
+                        AccessibilityNodeInfoCompatDumper.toString(
+                                node, includeScreenSizeDependentAttributes));
+
+        AconfigFlaggedApiDelegate delegate = AconfigFlaggedApiDelegate.getInstance();
+        if (delegate != null) {
+            Integer nodeId = Integer.parseInt(node.getUniqueId());
+            Integer ancestorNodeId = nodeId;
+
+            while (ancestorNodeId != View.NO_ID) {
+                final int finalAncestorId = ancestorNodeId;
+                AccessibilityNodeInfoCompat ancestor =
+                        ThreadUtils.runOnUiThreadBlocking(
+                                () -> wcax.createAccessibilityNodeInfo(finalAncestorId));
+                if (ancestor == null) {
+                    break;
+                }
+                Pair<Integer, Integer> startPosition = delegate.getExtendedSelectionStart(ancestor);
+                Pair<Integer, Integer> endPosition = delegate.getExtendedSelectionEnd(ancestor);
+                if (startPosition != null || endPosition != null) {
+                    if (startPosition != null && startPosition.first.equals(nodeId)) {
+                        builder.append(" extendedSelectionStart:").append(startPosition.second);
+                    }
+                    if (endPosition != null && endPosition.first.equals(nodeId)) {
+                        builder.append(" extendedSelectionEnd:").append(endPosition.second);
+                    }
+                    break;
+                }
+                ancestorNodeId = wcax.getParentIdForTesting(ancestorNodeId); // IN-TEST
+            }
+        }
+
+        return builder.toString();
+    }
+}

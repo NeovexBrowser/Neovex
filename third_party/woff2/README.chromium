@@ -1,0 +1,19 @@
+Name: woff2
+URL: https://github.com/google/woff2
+Version: f83a17739086a433be544eb16258b1c4f64a35f9
+Revision: f83a17739086a433be544eb16258b1c4f64a35f9
+Update Mechanism: Manual
+License: MIT
+License File: LICENSE
+Security Critical: yes
+Shipped: yes
+
+Description:
+The reference implementation of the WOFF 2.0 web font compression
+format (http://www.w3.org/TR/WOFF2/).
+
+Local Modifications:
+
+- BUILD.gn: Added.
+- Add `#include <stdint.h>` to `include/woff2/output.h`.
+  This should be removed if https://github.com/google/woff2/pull/176 is merged.

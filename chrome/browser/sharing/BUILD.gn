@@ -1,0 +1,30 @@
+# Copyright 2020 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/buildflag_header.gni")
+import("//components/sharing_message/buildflags.gni")
+
+buildflag_header("buildflags") {
+  header = "buildflags.h"
+  flags = [ "ENABLE_DISCOVERY=$enable_discovery" ]
+}
+
+source_set("sharing") {
+  sources = [
+    "sharing_message_bridge_factory.cc",
+    "sharing_message_bridge_factory.h",
+    "sharing_service_factory.h",
+  ]
+  public_deps = [
+    "//base",
+    "//chrome/browser/profiles:profile",
+    "//components/keyed_service/core",
+  ]
+  deps = [
+    "//chrome/common:channel_info",
+    "//components/sharing_message",
+    "//components/sync/base",
+    "//components/sync/model",
+  ]
+}
