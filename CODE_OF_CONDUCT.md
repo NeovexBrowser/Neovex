@@ -1,198 +1,198 @@
-# \# Neovex Code of Conduct
+\# Neovex Code of Conduct
 
-# 
 
-# Neovex is committed to building a safe, open, and high-signal community for everyone. This code applies to all Neovex spaces including repositories, issue trackers, discussions, chats, events, and any related communication channels.
 
-# 
+Neovex is committed to building a safe, open, and high-signal community for everyone. This code applies to all Neovex spaces including repositories, issue trackers, discussions, chats, events, and any related communication channels.
 
-# In short, community interaction should be:
 
-# 
 
-# \- respectful and constructive  
+In short, community interaction should be:
 
-# \- focused on Neovex, its tools, and its ecosystem  
 
-# \- about ideas and work, not people  
 
-# 
+\- respectful and constructive  
 
-# \---
+\- focused on Neovex, its tools, and its ecosystem  
 
-# 
+\- about ideas and work, not people  
 
-# \## Be respectful and constructive
 
-# 
 
-# Treat everyone with basic respect, even when opinions differ.
+\---
 
-# 
 
-# \- Keep discussions productive and grounded  
 
-# \- Critique ideas, not individuals  
+\## Be respectful and constructive
 
-# \- Assume good intent where possible  
 
-# \- Remember: people come from different backgrounds, skill levels, and time zones  
 
-# 
+Treat everyone with basic respect, even when opinions differ.
 
-# Disagreement is fine. Disrespect is not.
 
-# 
 
-# \---
+\- Keep discussions productive and grounded  
 
-# 
+\- Critique ideas, not individuals  
 
-# \## Stay focused
+\- Assume good intent where possible  
 
-# 
+\- Remember: people come from different backgrounds, skill levels, and time zones  
 
-# Neovex spaces exist to build and improve Neovex.
 
-# 
 
-# \- Keep conversations relevant  
+Disagreement is fine. Disrespect is not.
 
-# \- Avoid derailment or repeated off-topic posting  
 
-# \- Don’t use community channels for personal disputes  
 
-# 
+\---
 
-# If something doesn’t fit, redirect it or move it elsewhere.
 
-# 
 
-# \---
+\## Stay focused
 
-# 
 
-# \## No harassment or toxic behavior
 
-# 
+Neovex spaces exist to build and improve Neovex.
 
-# We do not tolerate:
 
-# 
 
-# \- harassment, insults, or targeted abuse  
+\- Keep conversations relevant  
 
-# \- intimidation or threats  
+\- Avoid derailment or repeated off-topic posting  
 
-# \- repeated unwanted contact  
+\- Don’t use community channels for personal disputes  
 
-# \- sexual harassment or inappropriate content  
 
-# \- hate speech or discriminatory language  
 
-# \- doxxing or sharing private information  
+If something doesn’t fit, redirect it or move it elsewhere.
 
-# \- encouraging self-harm or violence  
 
-# \- deliberate disruption of discussions or workflows  
 
-# 
+\---
 
-# One-time mistakes can be corrected. Repeated behavior won’t be.
 
-# 
 
-# \---
+\## No harassment or toxic behavior
 
-# 
 
-# \## Use AI responsibly
 
-# 
+We do not tolerate:
 
-# AI tools can help with coding, debugging, and ideas, but:
 
-# 
 
-# \- you are responsible for what you submit  
+\- harassment, insults, or targeted abuse  
 
-# \- don’t use AI to harass, impersonate, or mislead others  
+\- intimidation or threats  
 
-# \- don’t outsource human interaction in a way that removes accountability  
+\- repeated unwanted contact  
 
-# \- if someone responds to you, respond yourself  
+\- sexual harassment or inappropriate content  
 
-# 
+\- hate speech or discriminatory language  
 
-# \---
+\- doxxing or sharing private information  
 
-# 
+\- encouraging self-harm or violence  
 
-# \## Speak up early
+\- deliberate disruption of discussions or workflows  
 
-# 
 
-# If something feels off:
 
-# 
+One-time mistakes can be corrected. Repeated behavior won’t be.
 
-# \- address it directly and calmly if safe  
 
-# \- or report it to moderators/admins  
 
-# \- escalation is okay if the issue continues  
+\---
 
-# 
 
-# Reports will be handled as confidentially as possible.
 
-# 
+\## Use AI responsibly
 
-# \---
 
-# 
 
-# \## Consequences
+AI tools can help with coding, debugging, and ideas, but:
 
-# 
 
-# Violations may result in:
 
-# 
+\- you are responsible for what you submit  
 
-# \- warning or request to correct behavior  
+\- don’t use AI to harass, impersonate, or mislead others  
 
-# \- temporary restriction from Neovex spaces  
+\- don’t outsource human interaction in a way that removes accountability  
 
-# \- loss of access or contributor privileges  
+\- if someone responds to you, respond yourself  
 
-# \- permanent ban from current and future Neovex communities  
 
-# 
 
-# Enforcement is at moderator discretion based on severity and pattern of behavior.
+\---
 
-# 
 
-# \---
 
-# 
+\## Speak up early
 
-# \## Acknowledgements
 
-# 
 
-# This code is inspired by widely used open-source community standards, adapted for Neovex.
+If something feels off:
 
-# 
 
-# \---
 
-# 
+\- address it directly and calmly if safe  
 
-# \## License
+\- or report it to moderators/admins  
 
-# 
+\- escalation is okay if the issue continues  
 
-# This Code of Conduct is available under CC0 (public domain).
+
+
+Reports will be handled as confidentially as possible.
+
+
+
+\---
+
+
+
+\## Consequences
+
+
+
+Violations may result in:
+
+
+
+\- warning or request to correct behavior  
+
+\- temporary restriction from Neovex spaces  
+
+\- loss of access or contributor privileges  
+
+\- permanent ban from current and future Neovex communities  
+
+
+
+Enforcement is at moderator discretion based on severity and pattern of behavior.
+
+
+
+\---
+
+
+
+\## Acknowledgements
+
+
+
+This code is inspired by widely used open-source community standards, adapted for Neovex.
+
+
+
+\---
+
+
+
+\## License
+
+
+
+This Code of Conduct is available under CC0 (public domain).
 
