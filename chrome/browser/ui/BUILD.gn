@@ -702,9 +702,12 @@ static_library("ui") {
     "//ui/strings",
     "//ui/webui",
     "//v8:v8_version",
+    "//chrome/browser/neovex/update:neovex_update",
   ]
 
-  allow_circular_includes_from = []
+  allow_circular_includes_from = [
+    "//chrome/browser/neovex/update:neovex_update",
+  ]
 
   if (is_android) {
     sources += [ "//chrome/browser/ui/android/browser_navigator_android.cc" ]

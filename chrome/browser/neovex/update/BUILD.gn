@@ -1,0 +1,21 @@
+source_set("neovex_update") {
+  sources = [
+    "neovex_auto_updater.h",
+    "neovex_auto_updater.cc",
+    "neovex_update_checker.h",
+    "neovex_update_checker.cc",
+    "neovex_update_notification.h",
+    "neovex_update_notification.cc",
+  ]
+  deps = [
+    "//base",
+    "//chrome/browser/profiles",
+    
+    "//components/prefs",
+    "//components/version_info",
+    "//content/public/browser",
+    "//net",
+    "//services/network/public/cpp",
+    
+  ]
+}

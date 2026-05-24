@@ -4,6 +4,9 @@
 
 #include "chrome/browser/ui/browser.h"
 
+#include "chrome/browser/neovex/update/neovex_update_checker.h"
+#include "chrome/browser/neovex/update/neovex_auto_updater.h" // NEOVEX UPDATE
+
 #include <stddef.h>
 
 #include <algorithm>
@@ -1297,6 +1300,9 @@ void Browser::DidBecomeInactive() {
 }
 
 void Browser::OnWindowClosing() {
+  // NEOVEX AUTOUPDATE: Apply update on exit if ready
+  neovex::NeovexAutoUpdater::GetInstance()->ApplyUpdateIfReady();
+
   // There may be situations where async tasks, such as
   // UnloadController::ProcessPendingTabs, may call into OnWindowClosing() after
   // deletion has already been scheduled and closed notifications have been
@@ -1948,6 +1954,9 @@ void Browser::OnWindowDidShow() {
     return;
   }
   window_has_shown_ = true;
+
+  // NEOVEX UPDATE: Check for updates on startup
+  neovex::NeovexUpdateChecker::GetInstance()->CheckForUpdates();
 
   startup_metric_utils::GetBrowser().RecordBrowserWindowDisplay(
       base::TimeTicks::Now());
