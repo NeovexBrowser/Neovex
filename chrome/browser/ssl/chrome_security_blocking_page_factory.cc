@@ -81,9 +81,8 @@ EnterpriseManaged g_is_enterprise_managed_for_testing =
 // CaptivePortalBlockingPage to be invoked when the user has pressed the
 // connect button.
 void OpenLoginPage(content::WebContents* web_contents) {
-#if !BUILDFLAG(ENABLE_CAPTIVE_PORTAL_DETECTION)
-  // OpenLoginTabForWebContents() is not available on Android (the only
-  // platform on which captive portal detection is not enabled). Simply open
+#if BUILDFLAG(IS_ANDROID)
+  // OpenLoginTabForWebContents() is not available on Android. Simply open
   // the platform's portal detection URL in a new tab.
   const std::string url = security_interstitials::GetCaptivePortalServerUrl(
       base::android::AttachCurrentThread());
@@ -91,10 +90,12 @@ void OpenLoginPage(content::WebContents* web_contents) {
                                 WindowOpenDisposition::NEW_FOREGROUND_TAB,
                                 ui::PAGE_TRANSITION_LINK, false);
   web_contents->OpenURL(params, /*navigation_handle_callback=*/{});
-#else
+#elif BUILDFLAG(ENABLE_CAPTIVE_PORTAL_DETECTION)
   ChromeSecurityBlockingPageFactory::OpenLoginTabForWebContents(web_contents,
                                                                 true);
-#endif  // !BUILDFLAG(ENABLE_CAPTIVE_PORTAL_DETECTION)
+#else
+  // Captive portal detection is disabled on desktop.
+#endif
 }
 
 std::unique_ptr<ContentMetricsHelper> CreateMetricsHelperAndStartRecording(

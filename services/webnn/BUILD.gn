@@ -173,13 +173,13 @@ component("webnn_service") {
       deps += [ "//third_party/litert" ]
     }
 
-    if (build_tflite_with_xnnpack) {
-      deps += [ "//third_party/xnnpack" ]
-    }
-
     if (enable_ml_internal) {
       deps += [ "//services/on_device_model/ml" ]
     }
+  }
+
+  if (build_tflite_with_xnnpack) {
+    deps += [ "//third_party/xnnpack" ]
   }
 
   if (is_win) {

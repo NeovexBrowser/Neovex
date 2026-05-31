@@ -71,7 +71,7 @@ std::unique_ptr<install_static::PrimaryInstallDetails> MakeInstallDetails(
   // - the GoogleUpdateIsMachine=1 environment variable.
   // In all three cases the value is sussed out in InitialPreferences
   // initialization.
-  bool system_level = false;
+  bool system_level = true;
   initial_preferences.GetBool(installer::initial_preferences::kSystemLevel,
                               &system_level);
   details->set_system_level(system_level);

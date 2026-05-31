@@ -4,6 +4,9 @@
 
 #include "chrome/browser/prefs/browser_prefs.h"
 
+// NEOVEX OPT PRIVACY: Include for cookie control pref names.
+#include "components/content_settings/core/common/pref_names.h"
+
 #include <array>
 #include <optional>
 #include <string>
@@ -1746,6 +1749,19 @@ void RegisterLocalState(PrefRegistrySimple* registry) {
       policy::policy_prefs::kLocalNetworkAccessPermissionsPolicyDefaultEnabled,
       false);
 
+  // NEOVEX OPT DEGOOGLE: Disable tracking, keep useful features
+  registry->SetDefaultPrefValue(
+      prefs::kSearchSuggestEnabled, base::Value(false));
+  registry->SetDefaultPrefValue(
+      prefs::kEnableDoNotTrack, base::Value(true));
+  // Keep Safe Browsing ON unlike ungoogled chromium
+  // Keep extensions ON
+  // Keep crash reporting preference as is
+
+  // NEOVEX OPT DEBLOAT: Disable background mode and network prediction
+  registry->SetDefaultPrefValue(
+      prefs::kBackgroundModeEnabled, base::Value(false));
+
   // This is intentionally last.
   RegisterLocalStatePrefsForMigration(registry);
 }
@@ -2245,6 +2261,20 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
 #endif  // BUILDFLAG(IS_ANDROID)
 
   registry->RegisterBooleanPref(prefs::kStaticStorageQuotaEnabled, false);
+
+  // NEOVEX OPT PRIVACY: Brave-style privacy defaults.
+  // Block third party cookies by default like Brave.
+  registry->SetDefaultPrefValue(
+      prefs::kCookieControlsMode,
+      base::Value(1));  // Block third party
+  // Enable HTTPS upgrades by default.
+  registry->SetDefaultPrefValue(
+      prefs::kHttpsOnlyModeEnabled, base::Value(true));
+
+  // NEOVEX OPT DEBLOAT: Disable network prediction by default.
+  registry->SetDefaultPrefValue(
+      "net.network_prediction_options",
+      base::Value(2));  // Disable network prediction
 }
 
 void RegisterUserProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {

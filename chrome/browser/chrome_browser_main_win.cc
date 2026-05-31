@@ -735,31 +735,8 @@ void ChromeBrowserMainPartsWin::PostBrowserStart() {
 // static
 void ChromeBrowserMainPartsWin::RegisterApplicationRestart(
     const base::CommandLine& parsed_command_line) {
-  base::ScopedNativeLibrary library(base::FilePath(L"kernel32.dll"));
-  // Get the function pointer for RegisterApplicationRestart.
-  RegisterApplicationRestartProc register_application_restart =
-      reinterpret_cast<RegisterApplicationRestartProc>(
-          library.GetFunctionPointer("RegisterApplicationRestart"));
-  if (!register_application_restart) {
-    LOG(WARNING) << "Cannot find RegisterApplicationRestart in kernel32.dll";
-    return;
-  }
-  // Restart Chrome if the computer is restarted as the result of an update.
-  // This could be extended to handle crashes, hangs, and patches.
-  const auto command_line_string =
-      GetRestartCommandLine(parsed_command_line).GetCommandLineString();
-  HRESULT hr = register_application_restart(
-      command_line_string.c_str(),
-      RESTART_NO_CRASH | RESTART_NO_HANG | RESTART_NO_PATCH);
-  if (FAILED(hr)) {
-    if (hr == E_INVALIDARG) {
-      LOG(WARNING) << "Command line too long for RegisterApplicationRestart: "
-                   << command_line_string;
-    } else {
-      LOG(WARNING) << "RegisterApplicationRestart failed. hr: " << hr
-                   << ", command_line: " << command_line_string;
-    }
-  }
+  // NEOVEX: Disable launch on Windows startup.
+  return;
 }
 
 // static

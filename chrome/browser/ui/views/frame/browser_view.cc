@@ -4061,9 +4061,11 @@ bool BrowserView::ShouldShowWindowTitle() const {
   }
 #elif BUILDFLAG(IS_WIN)
   // On Windows in touch mode we display a window title.
+#if BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
   if (WebUITabStripContainerView::UseTouchableTabStrip(browser())) {
     return true;
   }
+#endif  // BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
 #endif
 
   return browser_->SupportsWindowFeature(

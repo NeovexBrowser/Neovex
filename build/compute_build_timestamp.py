@@ -130,7 +130,10 @@ def main():
         offset = int(patch_line[6:])
   else:
     build_date = GetUnofficialBuildDate(build_date)
-  print(offset + int(calendar.timegm(build_date.utctimetuple())))
+  timestamp = offset + int(calendar.timegm(build_date.utctimetuple()))
+  if timestamp < 0:
+    timestamp = 0
+  print(timestamp)
   return 0
 
 

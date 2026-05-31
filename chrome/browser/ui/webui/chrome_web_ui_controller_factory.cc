@@ -406,9 +406,10 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::GetFaviconResourceBytes(
   }
 
 #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-  if (page_url.host() == chrome::kChromeUIWhatsNewHost) {
-    return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
-  }
+  // NEOVEX OPT DEBLOAT: Disable chrome://whats-new (Google promo page).
+  // if (page_url.host() == chrome::kChromeUIWhatsNewHost) {
+  //   return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
+  // }
 #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 
   // Bookmarks are part of NTP on Android.

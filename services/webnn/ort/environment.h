@@ -91,7 +91,7 @@ class Environment : public base::subtle::RefCountedThreadSafeBase {
   static base::expected<scoped_refptr<Environment>, std::string> Create(
       const gpu::GpuFeatureInfo& gpu_feature_info,
       const base::flat_map<std::string, mojom::EpPackageInfoPtr>&
-          ep_package_info_map);
+          ep_package_info_map) EXCLUSIVE_LOCKS_REQUIRED(GetLock());
 
   ~Environment();
 

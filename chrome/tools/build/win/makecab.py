@@ -156,7 +156,8 @@ def WriteCab(output_file, input_file, cab_stored_filename, input_size,
     )  # Followed by szFile, the file's name.
     assert output_file.tell() == cffile_offset
     mtime = datetime.datetime.fromtimestamp(input_mtimestamp)
-    date = (mtime.year - 1980) << 9 | mtime.month << 5 | mtime.day
+    year = max(1980, mtime.year)
+    date = (year - 1980) << 9 | mtime.month << 5 | mtime.day
     # TODO(thakis): hour seems to be off by 1 from makecab.exe (DST?)
     time = mtime.hour << 11 | mtime.minute << 5 | int(mtime.second / 2)
     output_file.write(struct.pack(CFFILE, input_size, 0, 0, date, time, 0))

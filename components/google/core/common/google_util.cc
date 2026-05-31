@@ -297,6 +297,9 @@ bool IsYoutubeDomainUrl(const GURL& url,
 }
 
 bool IsGoogleAssociatedDomainUrl(const GURL& url) {
+  // NEOVEX OPT DEGOOGLE: Disable X-Chrome-Connected headers to Google
+  // tracking/ad infrastructure (doubleclick, googlesyndication, etc.).
+  // Keep Google and YouTube domain checks for functionality.
   if (IsGoogleDomainUrl(url, ALLOW_SUBDOMAIN, ALLOW_NON_STANDARD_PORTS)) {
     return true;
   }
@@ -305,40 +308,23 @@ bool IsGoogleAssociatedDomainUrl(const GURL& url) {
     return true;
   }
 
-  // Some domains don't have international TLD extensions, so testing for them
-  // is very straightforward.
-  static auto kSuffixesToSetHeadersFor = std::to_array<const char*>({
-      ".android.com",
-      ".doubleclick.com",
-      ".doubleclick.net",
-      ".ggpht.com",
-      ".googleadservices.com",
-      ".googleapis.com",
-      ".googlesyndication.com",
-      ".googleusercontent.com",
-      ".googlevideo.com",
-      ".gstatic.com",
-      ".litepages.googlezip.net",
-      ".youtubekids.com",
-      ".ytimg.com",
-  });
+  // Only keep googleapis.com and gstatic.com (needed for Safe Browsing,
+  // extensions, fonts, etc.). Block all other tracking/ad domains.
   const std::string_view host(url.host());
-  for (auto* i : kSuffixesToSetHeadersFor) {
+  static auto kAllowedSuffixes = std::to_array<const char*>({
+      ".googleapis.com",
+      ".gstatic.com",
+      ".googleusercontent.com",
+  });
+  for (auto* i : kAllowedSuffixes) {
     if (base::EndsWith(host, i, base::CompareCase::INSENSITIVE_ASCII)) {
       return true;
     }
   }
 
-  // Exact hostnames in lowercase to set headers for.
-  static auto kHostsToSetHeadersFor = std::to_array<const char*>({
-      "googleweblight.com",
-  });
-  for (auto* i : kHostsToSetHeadersFor) {
-    if (base::EqualsCaseInsensitiveASCII(host, i)) {
-      return true;
-    }
-  }
-
+  // NEOVEX OPT DEGOOGLE: Block tracking domains:
+  // doubleclick.com, doubleclick.net, googleadservices.com,
+  // googlesyndication.com, googlevideo.com, ytimg.com, etc.
   return false;
 }
 

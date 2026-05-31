@@ -34,31 +34,16 @@ bool GetBrand(std::string* brand) {
     return true;
   }
 
-  // Cache brand code value, since it is queried a lot and registry queries are
-  // slow enough to actually affect top-level metrics like
-  // Omnibox.CharTypedToRepaintLatency.
-  static const base::NoDestructor<std::optional<std::string>> brand_code(
-      []() -> std::optional<std::string> {
-        std::wstring brandw;
-        if (!GoogleUpdateSettings::GetBrand(&brandw)) {
-          return std::nullopt;
-        }
-        return base::WideToASCII(brandw);
-      }());
-  if (!brand_code->has_value()) {
-    return false;
-  }
-  brand->assign(**brand_code);
+  // NEOVEX OPT DEGOOGLE: Return empty brand to disable RLZ tracking.
+  // RLZ is a pure Google tracking token with zero user benefit.
+  brand->clear();
   return true;
 }
 
 bool GetReactivationBrand(std::string* brand) {
-  std::wstring brandw;
-  bool ret = GoogleUpdateSettings::GetReactivationBrand(&brandw);
-  if (ret) {
-    brand->assign(base::WideToASCII(brandw));
-  }
-  return ret;
+  // NEOVEX OPT DEGOOGLE: Disable reactivation brand tracking.
+  brand->clear();
+  return true;
 }
 
 #elif !BUILDFLAG(IS_MAC)
@@ -85,12 +70,9 @@ bool GetReactivationBrand(std::string* brand) {
 #endif
 
 bool GetRlzBrand(std::string* brand) {
-#if BUILDFLAG(IS_CHROMEOS)
-  brand->assign(google_brand::chromeos::GetRlzBrand());
+  // NEOVEX OPT DEGOOGLE: Disable RLZ brand tracking entirely.
+  brand->clear();
   return true;
-#else
-  return GetBrand(brand);
-#endif
 }
 
 bool IsOrganic(const std::string& brand) {

@@ -499,6 +499,36 @@ ProcessExitResult RunSetup(const Configuration& configuration,
   // on to setup.exe
   AppendCommandLineFlags(configuration.command_line(), &cmd_line);
 
+  if (configuration.is_system_level()) {
+    const wchar_t* search = cmd_line.get();
+    bool has_system_level = false;
+    size_t search_len = SafeStrLen(search, cmd_line.capacity());
+    for (size_t i = 0; i + 14 <= search_len; ++i) {
+      if (search[i] == L'-' && search[i+1] == L'-') {
+        bool match = true;
+        const wchar_t* target = L"system-level";
+        for (size_t j = 0; j < 12; ++j) {
+          wchar_t a = search[i + 2 + j];
+          wchar_t b = target[j];
+          if (a >= L'A' && a <= L'Z') a += (L'a' - L'A');
+          if (a != b) {
+            match = false;
+            break;
+          }
+        }
+        if (match) {
+          has_system_level = true;
+          break;
+        }
+      }
+    }
+    if (!has_system_level) {
+      if (!cmd_line.append(L" --system-level")) {
+        return ProcessExitResult(COMMAND_STRING_OVERFLOW);
+      }
+    }
+  }
+
   return RunProcessAndWait(setup_exe.get(), cmd_line.get(),
                            RUN_SETUP_FAILED_FILE_NOT_FOUND,
                            RUN_SETUP_FAILED_PATH_NOT_FOUND,

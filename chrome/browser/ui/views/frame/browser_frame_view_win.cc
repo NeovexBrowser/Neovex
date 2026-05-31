@@ -25,7 +25,9 @@
 #include "chrome/browser/ui/views/frame/browser_view.h"
 #include "chrome/browser/ui/views/frame/minimize_button_metrics_win.h"
 #include "chrome/browser/ui/views/frame/tab_strip_region_view.h"
+#if BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
 #include "chrome/browser/ui/views/frame/webui_tab_strip_container_view.h"
+#endif  // BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
 #include "chrome/browser/ui/views/tabs/new_tab_button.h"
 #include "chrome/browser/ui/views/tabs/tab.h"
 #include "chrome/browser/ui/views/tabs/tab_strip.h"
@@ -178,9 +180,10 @@ BrowserFrameViewWin::BrowserFrameViewWin(BrowserWidget* widget,
                      .Build());
   }
 
-  bool supports_title =
-      supports_title_bar ||
-      WebUITabStripContainerView::SupportsTouchableTabStrip(browser);
+  bool supports_title = supports_title_bar;
+#if BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
+  supports_title = supports_title || WebUITabStripContainerView::SupportsTouchableTabStrip(browser);
+#endif  // BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
 
   // If this is a web app window, the window title will be part of the
   // BrowserView and thus we don't need to create another one here.
@@ -519,8 +522,12 @@ bool BrowserFrameViewWin::IsMaximized() const {
 }
 
 bool BrowserFrameViewWin::IsWebUITabStrip() const {
+#if BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
   return WebUITabStripContainerView::UseTouchableTabStrip(
       GetBrowserView()->browser());
+#else
+  return false;
+#endif  // BUILDFLAG(ENABLE_WEBUI_TAB_STRIP)
 }
 
 ///////////////////////////////////////////////////////////////////////////////

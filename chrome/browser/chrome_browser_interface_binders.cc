@@ -291,6 +291,7 @@ void BindNetworkHintsHandler(
 }
 
 #if BUILDFLAG(ENABLE_SPEECH_SERVICE)
+#if BUILDFLAG(ENABLE_BROWSER_SPEECH_SERVICE) || BUILDFLAG(IS_CHROMEOS)
 void BindSpeechRecognitionContextHandler(
     content::RenderFrameHost* frame_host,
     mojo::PendingReceiver<media::mojom::SpeechRecognitionContext> receiver) {
@@ -305,11 +306,10 @@ void BindSpeechRecognitionContextHandler(
   auto* factory = SpeechRecognitionServiceFactory::GetForProfile(profile);
 #elif BUILDFLAG(IS_CHROMEOS)
   auto* factory = CrosSpeechRecognitionServiceFactory::GetForProfile(profile);
-#else
-#error "No speech recognition service factory on this platform."
 #endif
   factory->BindSpeechRecognitionContext(std::move(receiver));
 }
+#endif  // BUILDFLAG(ENABLE_BROWSER_SPEECH_SERVICE) || BUILDFLAG(IS_CHROMEOS)
 
 void BindSpeechRecognitionClientBrowserInterfaceHandler(
     content::RenderFrameHost* frame_host,
@@ -532,8 +532,10 @@ void PopulateChromeFrameBinders(
       &BindOnDeviceSpeechRecognitionHandler);
 
 #if BUILDFLAG(ENABLE_SPEECH_SERVICE)
+#if BUILDFLAG(ENABLE_BROWSER_SPEECH_SERVICE) || BUILDFLAG(IS_CHROMEOS)
   map->Add<media::mojom::SpeechRecognitionContext>(
       &BindSpeechRecognitionContextHandler);
+#endif
   map->Add<media::mojom::SpeechRecognitionClientBrowserInterface>(
       &BindSpeechRecognitionClientBrowserInterfaceHandler);
   map->Add<media::mojom::SpeechRecognitionRecognizerClient>(

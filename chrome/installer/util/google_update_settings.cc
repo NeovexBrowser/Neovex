@@ -189,6 +189,7 @@ bool GetUpdatePolicyFromDword(
 }
 #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
 
+#if 0
 // Returns the stats consent tristate held in the registry keys given by the two
 // functions |state_key_fn_ptr| and |state_medium_key_fn_ptr|. The state is read
 // from the ClientState key in HKCU for user-level installs, and from either the
@@ -226,6 +227,8 @@ google_update::Tristate GetCollectStatsConsentImpl(
   return value == google_update::TRISTATE_TRUE ? google_update::TRISTATE_TRUE
                                                : google_update::TRISTATE_FALSE;
 }
+#endif
+
 
 }  // namespace
 
@@ -242,10 +245,10 @@ GoogleUpdateSettings::CollectStatsConsentTaskRunner() {
 }
 
 bool GoogleUpdateSettings::GetCollectStatsConsent() {
-  return GetCollectStatsConsentImpl(
-             &install_static::GetClientStateKeyPath,
-             &install_static::GetClientStateMediumKeyPath) ==
-         google_update::TRISTATE_TRUE;
+  // NEOVEX OPT DEGOOGLE: Always decline stats collection.
+  // This disables usage stats reporting to Google only.
+  // Update checks and Safe Browsing are NOT affected by this.
+  return false;
 }
 
 bool GoogleUpdateSettings::SetCollectStatsConsent(bool consented) {

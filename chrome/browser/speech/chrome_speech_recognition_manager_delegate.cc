@@ -128,6 +128,7 @@ void ChromeSpeechRecognitionManagerDelegate::BindSpeechRecognitionContext(
         recognition_receiver,
     const std::string& language) {
 #if BUILDFLAG(ENABLE_SPEECH_SERVICE)
+#if BUILDFLAG(ENABLE_BROWSER_SPEECH_SERVICE) || BUILDFLAG(IS_CHROMEOS)
   DCHECK_CURRENTLY_ON(BrowserThread::IO);
   content::GetUIThreadTaskRunner({})->PostTask(
       FROM_HERE,
@@ -143,8 +144,6 @@ void ChromeSpeechRecognitionManagerDelegate::BindSpeechRecognitionContext(
             auto* profile = ProfileManager::GetPrimaryUserProfile();
             auto* factory =
                 CrosSpeechRecognitionServiceFactory::GetForProfile(profile);
-#else
-#error "No speech recognition service factory on this platform."
 #endif  // BUILDFLAG(ENABLE_BROWSER_SPEECH_SERVICE)
             if (factory) {
               factory->BindSpeechRecognitionContext(std::move(receiver));
@@ -156,6 +155,7 @@ void ChromeSpeechRecognitionManagerDelegate::BindSpeechRecognitionContext(
             }
           },
           language, std::move(recognition_receiver)));
+#endif  // BUILDFLAG(ENABLE_BROWSER_SPEECH_SERVICE) || BUILDFLAG(IS_CHROMEOS)
 #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
 }
 #endif  // !BUILDFLAG(IS_ANDROID)
