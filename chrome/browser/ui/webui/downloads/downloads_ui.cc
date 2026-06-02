@@ -65,6 +65,9 @@ namespace {
 content::WebUIDataSource* CreateAndAddDownloadsUIHTMLSource(Profile* profile) {
   content::WebUIDataSource* source = content::WebUIDataSource::CreateAndAdd(
       profile, chrome::kChromeUIDownloadsHost);
+  // NEOVEX DOWNLOADS: neovex_downloads.css and neovex_downloads.js are
+  // registered as static_files in the resources BUILD.gn and loaded
+  // from downloads.html to provide the category sidebar overlay.
   webui::SetupWebUIDataSource(source, kDownloadsResources,
                               IDR_DOWNLOADS_DOWNLOADS_HTML);
 

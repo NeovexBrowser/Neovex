@@ -13,6 +13,9 @@ build_webui("build") {
     "downloads.html",
     "images/incognito_marker.svg",
     "images/no_downloads.svg",
+    # NEOVEX DOWNLOADS: Category sidebar overlay files
+    "neovex_downloads.css",
+    "neovex_downloads.js",
   ]
 
   ts_files = [

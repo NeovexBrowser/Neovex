@@ -1,0 +1,205 @@
+/* NEOVEX DOWNLOADS: Category sidebar and grid overlay */
+
+/* ===== Layout: sidebar + main content ===== */
+body {
+  display: flex !important;
+  flex-direction: row !important;
+  overflow: hidden !important;
+}
+
+/* Glassmorphism sidebar exactly like settings page */
+#neovex-sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow-y: auto;
+  z-index: 10;
+  height: 100vh;
+  position: relative;
+  flex-shrink: 0;
+  order: -1;
+}
+
+#neovex-sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#neovex-sidebar .sidebar-header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+#neovex-sidebar .sidebar-header .logo-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(170, 255, 0, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#neovex-sidebar .category-list {
+  padding: 8px 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+#neovex-sidebar .category-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 1px 8px;
+  transition: all 0.2s ease;
+  color: #888;
+  font-size: 13px;
+  font-weight: 450;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+#neovex-sidebar .category-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #c0c0c0;
+}
+
+#neovex-sidebar .category-item.active {
+  background: rgba(170, 255, 0, 0.08);
+  color: #AAFF00;
+  border-color: rgba(170, 255, 0, 0.15);
+}
+
+#neovex-sidebar .category-item .cat-icon {
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+#neovex-sidebar .category-item .cat-count {
+  margin-left: auto;
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 7px;
+  border-radius: 10px;
+  color: #555;
+  font-weight: 500;
+  min-width: 16px;
+  text-align: center;
+}
+
+#neovex-sidebar .category-item.active .cat-count {
+  background: rgba(170, 255, 0, 0.12);
+  color: #AAFF00;
+}
+
+/* Sidebar footer */
+#neovex-sidebar .sidebar-footer {
+  padding: 12px 10px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#neovex-sidebar .sidebar-footer button {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #888;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 450;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+#neovex-sidebar .sidebar-footer button:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #c0c0c0;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Main content area (the existing downloads-manager) ===== */
+downloads-manager {
+  flex: 1 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ===== Active category title badge ===== */
+#neovex-cat-badge {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin: 12px 24px 0;
+  background: rgba(170, 255, 0, 0.06);
+  border: 1px solid rgba(170, 255, 0, 0.12);
+  border-radius: 8px;
+  color: #AAFF00;
+  font-size: 12px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+#neovex-cat-badge.visible {
+  display: inline-flex;
+}
+
+#neovex-cat-badge .badge-icon {
+  font-size: 13px;
+}
+
+#neovex-cat-badge .badge-clear {
+  margin-left: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+  font-size: 11px;
+}
+
+#neovex-cat-badge .badge-clear:hover {
+  opacity: 1;
+}
+
+/* ===== Scrollbar ===== */
+#neovex-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+#neovex-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#neovex-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+
+#neovex-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Animation for showing/hiding items ===== */
+downloads-manager {
+  --neovex-item-transition: opacity 0.2s ease, transform 0.2s ease;
+}
