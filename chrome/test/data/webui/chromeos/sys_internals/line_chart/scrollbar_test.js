@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {Scrollbar} from 'chrome://sys-internals/line_chart/scrollbar.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {Scrollbar} from 'neovex://sys-internals/line_chart/scrollbar.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {assertCloseTo} from '../test_util.js';
 

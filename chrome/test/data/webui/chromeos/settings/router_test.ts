@@ -7,11 +7,11 @@
  * Suite of tests for the Router singleton.
  */
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {Router} from 'chrome://os-settings/os_settings.js';
-import {createRouterForTesting, routesMojom} from 'chrome://os-settings/os_settings.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {Router} from 'neovex://os-settings/os_settings.js';
+import {createRouterForTesting, routesMojom} from 'neovex://os-settings/os_settings.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('Router', () => {
   let router: Router;

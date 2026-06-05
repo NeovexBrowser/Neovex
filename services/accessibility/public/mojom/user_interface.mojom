@@ -57,7 +57,7 @@ interface UserInterface {
     DarkenScreen(bool darken);
 
     // Opens a specified ChromeOS settings subpage. For example, to open a page
-    // with the url 'chrome://settings/manageAccessibility/tts', pass in the
+    // with the url 'neovex://settings/manageAccessibility/tts', pass in the
     // substring 'manageAccessibility/tts'.
     OpenSettingsSubpage(string subpage);
 

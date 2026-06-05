@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Destination, DestinationStore, LocalDestinationInfo, PrintPreviewDestinationDialogCrosElement, PrintPreviewDestinationListItemElement} from 'chrome://print/print_preview.js';
-import {DESTINATION_DIALOG_CROS_LOADING_TIMER_IN_MS, GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl} from 'chrome://print/print_preview.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import type {Destination, DestinationStore, LocalDestinationInfo, PrintPreviewDestinationDialogCrosElement, PrintPreviewDestinationListItemElement} from 'neovex://print/print_preview.js';
+import {DESTINATION_DIALOG_CROS_LOADING_TIMER_IN_MS, GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl} from 'neovex://print/print_preview.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {MockTimer} from 'neovex://webui-test/mock_timer.js';
 
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';
 import {NativeLayerStub} from './native_layer_stub.js';

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://unexportable-keys-internals/app.js';
+import 'neovex://unexportable-keys-internals/app.js';
 
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import type {UnexportableKeysInternalsAppElement} from 'chrome://unexportable-keys-internals/app.js';
-import {UnexportableKeysInternalsBrowserProxyImpl} from 'chrome://unexportable-keys-internals/browser_proxy.js';
-import type {UnexportableKeysInternalsBrowserProxy} from 'chrome://unexportable-keys-internals/browser_proxy.js';
-import type {PageHandlerInterface, UnexportableKeyId, UnexportableKeyInfo} from 'chrome://unexportable-keys-internals/unexportable_keys_internals.mojom-webui.js';
-import {PageCallbackRouter} from 'chrome://unexportable-keys-internals/unexportable_keys_internals.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import type {UnexportableKeysInternalsAppElement} from 'neovex://unexportable-keys-internals/app.js';
+import {UnexportableKeysInternalsBrowserProxyImpl} from 'neovex://unexportable-keys-internals/browser_proxy.js';
+import type {UnexportableKeysInternalsBrowserProxy} from 'neovex://unexportable-keys-internals/browser_proxy.js';
+import type {PageHandlerInterface, UnexportableKeyId, UnexportableKeyInfo} from 'neovex://unexportable-keys-internals/unexportable_keys_internals.mojom-webui.js';
+import {PageCallbackRouter} from 'neovex://unexportable-keys-internals/unexportable_keys_internals.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 class TestPageHandler extends TestBrowserProxy implements PageHandlerInterface {
   private keys_: UnexportableKeyInfo[] = [];

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/new_tab_page.js';
+import 'neovex://new-tab-page/new_tab_page.js';
 
-import {SearchboxBrowserProxy} from 'chrome://new-tab-page/new_tab_page.js';
-import type {SearchboxMatchElement} from 'chrome://new-tab-page/new_tab_page.js';
-import {createAutocompleteMatch} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {NavigationPredictor} from 'chrome://resources/mojo/components/omnibox/browser/omnibox.mojom-webui.js';
-import {SelectionLineState} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertArrayEquals, assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {SearchboxBrowserProxy} from 'neovex://new-tab-page/new_tab_page.js';
+import type {SearchboxMatchElement} from 'neovex://new-tab-page/new_tab_page.js';
+import {createAutocompleteMatch} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {NavigationPredictor} from 'neovex://resources/mojo/components/omnibox/browser/omnibox.mojom-webui.js';
+import {SelectionLineState} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertArrayEquals, assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestSearchboxBrowserProxy} from './test_searchbox_browser_proxy.js';
 

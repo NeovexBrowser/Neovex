@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {ArrayDataModel, ChangeEvent, PermutationEvent} from '../../../common/js/array_data_model.js';
 import {boolAttrSetter, crInjectTypeAndInit, type PropertyChangeEvent} from '../../../common/js/cr_ui.js';

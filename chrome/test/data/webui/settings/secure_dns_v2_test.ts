@@ -8,17 +8,17 @@
  */
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SecureDnsInputElement, SettingsSecureDnsV2Element, SecurityPageFeatureRowElement} from 'chrome://settings/lazy_load.js';
-import {SecureDnsV2ResolverType} from 'chrome://settings/lazy_load.js';
-import type {ResolverOption, SettingsToggleButtonElement} from 'chrome://settings/settings.js';
-import {PrivacyPageBrowserProxyImpl, loadTimeData, SecureDnsMode, SecureDnsUiManagementMode} from 'chrome://settings/settings.js';
-import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SecureDnsInputElement, SettingsSecureDnsV2Element, SecurityPageFeatureRowElement} from 'neovex://settings/lazy_load.js';
+import {SecureDnsV2ResolverType} from 'neovex://settings/lazy_load.js';
+import type {ResolverOption, SettingsToggleButtonElement} from 'neovex://settings/settings.js';
+import {PrivacyPageBrowserProxyImpl, loadTimeData, SecureDnsMode, SecureDnsUiManagementMode} from 'neovex://settings/settings.js';
+import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestPrivacyPageBrowserProxy} from './test_privacy_page_browser_proxy.js';
 

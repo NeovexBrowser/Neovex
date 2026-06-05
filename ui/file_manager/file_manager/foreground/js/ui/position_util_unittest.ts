@@ -5,8 +5,8 @@
 // clang-format off
 import {AnchorType, positionPopupAroundElement, positionPopupAtPoint} from './position_util.js';
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 // clang-format on
 
 let anchor: HTMLElement;

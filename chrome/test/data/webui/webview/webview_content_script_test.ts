@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('WebviewContentScriptTest', function() {
   const REQUEST_TO_COMM_CHANNEL_1 = 'connect';

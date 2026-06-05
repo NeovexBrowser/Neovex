@@ -6,7 +6,7 @@
  * @fileoverview Fake implementation of NearbyShareSettings for testing.
  */
 
-import {DataUsage, DeviceNameValidationResult, FastInitiationNotificationState, Visibility} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import {DataUsage, DeviceNameValidationResult, FastInitiationNotificationState, Visibility} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
 
 /**
  * Fake implementation of NearbyShareSettingsInterface

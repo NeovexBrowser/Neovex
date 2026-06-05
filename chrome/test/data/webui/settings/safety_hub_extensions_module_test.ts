@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {SettingsSafetyHubExtensionsModuleElement} from 'chrome://settings/lazy_load.js';
-import {SafetyHubEvent} from 'chrome://settings/lazy_load.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {SettingsPluralStringProxyImpl, OpenWindowProxyImpl} from 'chrome://settings/settings.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {SettingsSafetyHubExtensionsModuleElement} from 'neovex://settings/lazy_load.js';
+import {SafetyHubEvent} from 'neovex://settings/lazy_load.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {SettingsPluralStringProxyImpl, OpenWindowProxyImpl} from 'neovex://settings/settings.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
 // clang-format on
 
 suite('CrSettingsSafetyHubExtensionsTest', function() {
@@ -65,6 +65,6 @@ suite('CrSettingsSafetyHubExtensionsTest', function() {
     // to the extensions page.
     testElement.$.reviewButton.click();
     const url = await openWindowProxy.whenCalled('openUrl');
-    assertEquals('chrome://extensions', url);
+    assertEquals('neovex://extensions', url);
   });
 });

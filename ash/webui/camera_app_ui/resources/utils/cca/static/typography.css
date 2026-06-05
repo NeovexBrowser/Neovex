@@ -2,7 +2,7 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
-/* This file is a static copy of chrome://theme/typography.css and is only used
+/* This file is a static copy of neovex://theme/typography.css and is only used
  * by cca.py local dev server. */
 :root {
   color-scheme: light dark;

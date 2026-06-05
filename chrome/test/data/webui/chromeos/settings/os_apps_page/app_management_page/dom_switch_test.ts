@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {AppManagementDomSwitchElement} from 'chrome://os-settings/lazy_load.js';
-import type {DomBind} from 'chrome://resources/polymer/v3_0/polymer/lib/elements/dom-bind.js';
-import {html} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {AppManagementDomSwitchElement} from 'neovex://os-settings/lazy_load.js';
+import type {DomBind} from 'neovex://resources/polymer/v3_0/polymer/lib/elements/dom-bind.js';
+import {html} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('<app-management-dom-switch>', () => {
   let domSwitch: AppManagementDomSwitchElement;

@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 /** @fileoverview Test suite for AppManagementFileHandlingItem. */
-import 'chrome://app-settings/file_handling_item.js';
+import 'neovex://app-settings/file_handling_item.js';
 
-import type {FileHandlingItemElement} from 'chrome://app-settings/file_handling_item.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {FileHandlingItemElement} from 'neovex://app-settings/file_handling_item.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createTestApp, TestAppManagementBrowserProxy} from './app_management_test_support.js';
 

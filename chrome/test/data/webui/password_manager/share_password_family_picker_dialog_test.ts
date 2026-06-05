@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://password-manager/password_manager.js';
+import 'neovex://password-manager/password_manager.js';
 
-import {SyncBrowserProxyImpl} from 'chrome://password-manager/password_manager.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {SyncBrowserProxyImpl} from 'neovex://password-manager/password_manager.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestSyncBrowserProxy} from './test_sync_browser_proxy.js';
 import {makeRecipientInfo} from './test_util.js';
@@ -39,7 +39,7 @@ suite('SharePasswordFamilyPickerDialogTest', function() {
     const expectedTitle = 'test.com';
     syncProxy.accountInfo = {
       email: 'test@gmail.com',
-      avatarImage: 'chrome://image-url/',
+      avatarImage: 'neovex://image-url/',
     };
 
     const dialog =

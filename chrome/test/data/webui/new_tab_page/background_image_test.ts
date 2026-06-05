@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {BackgroundManager} from 'chrome://new-tab-page/new_tab_page.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {BackgroundManager} from 'neovex://new-tab-page/new_tab_page.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {createBackgroundImage} from './test_support.js';
 
-// Tests the chrome://new-tab-page/custom_background_image?url=... endpoint.
+// Tests the neovex://new-tab-page/custom_background_image?url=... endpoint.
 
 suite('NewTabPageBackgroundImageTest', () => {
   test('IframeLoadsAndSendsBackLoadedMessage', async () => {

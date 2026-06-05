@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {ClearBrowsingDataBrowserProxy, ClearBrowsingDataResult, TimePeriod, UpdateSyncStateEvent} from 'chrome://settings/lazy_load.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {ClearBrowsingDataBrowserProxy, ClearBrowsingDataResult, TimePeriod, UpdateSyncStateEvent} from 'neovex://settings/lazy_load.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 // clang-format on
 

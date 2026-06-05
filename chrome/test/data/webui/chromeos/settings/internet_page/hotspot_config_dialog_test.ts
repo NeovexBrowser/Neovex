@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {HotspotConfigDialogElement} from 'chrome://os-settings/os_settings.js';
-import {Router, routes, WiFiSecurityType} from 'chrome://os-settings/os_settings.js';
-import {setHotspotConfigForTesting} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.js';
-import {HotspotAllowStatus, HotspotState, SetHotspotConfigResult, WiFiBand, WiFiSecurityMode} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {FakeHotspotConfig} from 'chrome://resources/ash/common/hotspot/fake_hotspot_config.js';
-import type {NetworkConfigInputElement} from 'chrome://resources/ash/common/network/network_config_input.js';
-import type {NetworkConfigSelectElement} from 'chrome://resources/ash/common/network/network_config_select.js';
-import type {NetworkPasswordInputElement} from 'chrome://resources/ash/common/network/network_password_input.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {HotspotConfigDialogElement} from 'neovex://os-settings/os_settings.js';
+import {Router, routes, WiFiSecurityType} from 'neovex://os-settings/os_settings.js';
+import {setHotspotConfigForTesting} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.js';
+import {HotspotAllowStatus, HotspotState, SetHotspotConfigResult, WiFiBand, WiFiSecurityMode} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {FakeHotspotConfig} from 'neovex://resources/ash/common/hotspot/fake_hotspot_config.js';
+import type {NetworkConfigInputElement} from 'neovex://resources/ash/common/network/network_config_input.js';
+import type {NetworkConfigSelectElement} from 'neovex://resources/ash/common/network/network_config_select.js';
+import type {NetworkPasswordInputElement} from 'neovex://resources/ash/common/network/network_password_input.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 suite('<hotspot-config-dialog>', () => {
   let hotspotConfigDialog: HotspotConfigDialogElement;

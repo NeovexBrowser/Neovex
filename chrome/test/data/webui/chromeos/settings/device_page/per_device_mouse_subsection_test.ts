@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
-import 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import 'neovex://os-settings/lazy_load.js';
+import 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
 
-import type {SettingsPerDeviceMouseSubsectionElement} from 'chrome://os-settings/lazy_load.js';
-import {PerDeviceSubsectionHeaderElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrLinkRowElement, CrToggleElement, Mouse, SettingsDropdownMenuElement, SettingsSliderElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {FakeInputDeviceSettingsProvider, fakeMice, fakeMice2, PolicyStatus, Router, routes, setInputDeviceSettingsProviderForTesting} from 'chrome://os-settings/os_settings.js';
-import type {BluetoothBatteryIconPercentageElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_battery_icon_percentage.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsPerDeviceMouseSubsectionElement} from 'neovex://os-settings/lazy_load.js';
+import {PerDeviceSubsectionHeaderElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrLinkRowElement, CrToggleElement, Mouse, SettingsDropdownMenuElement, SettingsSliderElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {FakeInputDeviceSettingsProvider, fakeMice, fakeMice2, PolicyStatus, Router, routes, setInputDeviceSettingsProviderForTesting} from 'neovex://os-settings/os_settings.js';
+import type {BluetoothBatteryIconPercentageElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_battery_icon_percentage.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 const MOUSE_ACCELERATION_SETTING_ID = 408;
 

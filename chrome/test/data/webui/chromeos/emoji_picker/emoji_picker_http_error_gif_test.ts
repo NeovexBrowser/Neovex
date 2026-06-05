@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {EmojiSearch} from 'chrome://emoji-picker/emoji_picker.js';
-import {EmojiPickerApiProxy, TRENDING_GROUP_ID} from 'chrome://emoji-picker/emoji_picker.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {EmojiSearch} from 'neovex://emoji-picker/emoji_picker.js';
+import {EmojiPickerApiProxy, TRENDING_GROUP_ID} from 'neovex://emoji-picker/emoji_picker.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {initialiseEmojiPickerForTest, waitForCondition} from './emoji_picker_test_util.js';
 import {TestEmojiPickerApiProxyError} from './test_emoji_picker_offline_api_proxy.js';

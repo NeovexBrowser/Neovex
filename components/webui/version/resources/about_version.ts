@@ -8,16 +8,16 @@
 
 // clang-format off
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 // </if>
 
 import '/strings.m.js';
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 // <if expr="is_chromeos or is_win">
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
 // </if>
 // clang-format on
 

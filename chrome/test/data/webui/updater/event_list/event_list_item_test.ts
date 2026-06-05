@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/event_list/event_list_item.js';
-import 'chrome://updater/enterprise_policy_table/enterprise_policy_table.js';
+import 'neovex://updater/event_list/event_list_item.js';
+import 'neovex://updater/enterprise_policy_table/enterprise_policy_table.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {MergedHistoryEvent, MergedInstallEvent, MergedUpdaterProcessEvent, PersistedDataEvent, PolicySet, Scope} from 'chrome://updater/event_history.js';
-import {localizeEventType, UpdaterProcessMap} from 'chrome://updater/event_history.js';
-import type {EventListItemElement} from 'chrome://updater/event_list/event_list_item.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {MergedHistoryEvent, MergedInstallEvent, MergedUpdaterProcessEvent, PersistedDataEvent, PolicySet, Scope} from 'neovex://updater/event_history.js';
+import {localizeEventType, UpdaterProcessMap} from 'neovex://updater/event_history.js';
+import type {EventListItemElement} from 'neovex://updater/event_list/event_list_item.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('EventListItemElement', () => {
   let item: EventListItemElement;

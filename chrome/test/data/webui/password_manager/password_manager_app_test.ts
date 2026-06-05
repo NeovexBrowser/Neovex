@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://password-manager/password_manager.js';
+import 'neovex://password-manager/password_manager.js';
 
-import type {PasswordManagerAppElement} from 'chrome://password-manager/password_manager.js';
-import {OpenWindowProxyImpl, Page, PasswordManagerImpl, Router, UrlParam} from 'chrome://password-manager/password_manager.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {PasswordManagerAppElement} from 'neovex://password-manager/password_manager.js';
+import {OpenWindowProxyImpl, Page, PasswordManagerImpl, Router, UrlParam} from 'neovex://password-manager/password_manager.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';
 import {createCredentialGroup, createPasswordEntry, makePasswordManagerPrefs} from './test_util.js';

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FakeObservables} from 'chrome://resources/ash/common/fake_observables.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {FakeObservables} from 'neovex://resources/ash/common/fake_observables.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
 
-import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('fakeObservablesTestSuite', () => {
   let observables = null;

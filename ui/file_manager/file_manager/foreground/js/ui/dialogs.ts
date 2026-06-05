@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {isRTL} from 'chrome://resources/ash/common/util.js';
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {isRTL} from 'neovex://resources/ash/common/util.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
 
 export class BaseDialog {
   /**
@@ -222,7 +222,7 @@ export class BaseDialog {
     const iframes = doc.querySelectorAll('iframe');
     for (let i = 0; i < iframes.length; i++) {
       // Some iframes have an undefined contentDocument for security reasons,
-      // such as chrome://terms (which is used in the chromeos OOBE screens).
+      // such as neovex://terms (which is used in the chromeos OOBE screens).
       const iframe = iframes[i]!;
       let contentDoc;
       try {

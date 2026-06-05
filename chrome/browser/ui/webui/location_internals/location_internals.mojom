@@ -6,12 +6,12 @@ module mojom;
 
 import "services/device/public/mojom/geolocation_internals.mojom";
 
-// Interface for chrome://location-internals to bind
+// Interface for neovex://location-internals to bind
 // device.mojom.GeolocationInternals interface. It has to be created from
 // device.mojom.DeviceService to make sure the same singleton is being accessed
 // from WebUI.
 interface LocationInternalsHandler {
-  // Method for chrome://location-internals to bind GeolocationInternals
+  // Method for neovex://location-internals to bind GeolocationInternals
   // interface.
   BindInternalsInterface(
       pending_receiver<device.mojom.GeolocationInternals> receiver);

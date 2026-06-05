@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {SharedDictionaryView} from 'chrome://net-internals/shared_dictionary_view.js';
-import {$} from 'chrome://resources/js/util.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {SharedDictionaryView} from 'neovex://net-internals/shared_dictionary_view.js';
+import {$} from 'neovex://resources/js/util.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {switchToView} from './test_util.js';
 

@@ -13,7 +13,7 @@ import {
   LitElement,
   ReactiveController,
   ReactiveControllerHost,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {
   batch,

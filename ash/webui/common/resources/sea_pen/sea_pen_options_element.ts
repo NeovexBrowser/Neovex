@@ -7,14 +7,14 @@
  * template placeholder.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {IronA11yKeysElement} from 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
-import {afterNextRender, Debouncer, PolymerElement, timeOut} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {IronA11yKeysElement} from 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import {afterNextRender, Debouncer, PolymerElement, timeOut} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SeaPenOption} from './constants.js';
 import type {SeaPenTemplateChip} from './sea_pen_generated.mojom-webui.js';

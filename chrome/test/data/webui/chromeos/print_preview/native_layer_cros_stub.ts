@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {LocalDestinationInfo, NativeLayerCros, PrinterSetupResponse, PrinterStatus, PrintServersConfig} from 'chrome://print/print_preview.js';
-import {NativeLayerCrosImpl, PrinterStatusReason, PrinterStatusSeverity} from 'chrome://print/print_preview.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {LocalDestinationInfo, NativeLayerCros, PrinterSetupResponse, PrinterStatus, PrintServersConfig} from 'neovex://print/print_preview.js';
+import {NativeLayerCrosImpl, PrinterStatusReason, PrinterStatusSeverity} from 'neovex://print/print_preview.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export function setNativeLayerCrosInstance(): NativeLayerCrosStub {
   const instance = new NativeLayerCrosStub();

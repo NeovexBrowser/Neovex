@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsAudioElement} from 'chrome://os-settings/lazy_load.js';
-import {AudioAndCaptionsPageBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {CrToggleElement, DevicePageBrowserProxyImpl, Router, routes} from 'chrome://os-settings/os_settings.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsAudioElement} from 'neovex://os-settings/lazy_load.js';
+import {AudioAndCaptionsPageBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {CrToggleElement, DevicePageBrowserProxyImpl, Router, routes} from 'neovex://os-settings/os_settings.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestAudioAndCaptionsPageBrowserProxy} from './test_audio_and_captions_page_browser_proxy.js';
 import {TestDevicePageBrowserProxy} from './test_device_page_browser_proxy.js';

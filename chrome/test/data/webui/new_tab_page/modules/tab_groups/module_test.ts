@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {IconContainerElement, TabGroupsModuleElement} from 'chrome://new-tab-page/lazy_load.js';
-import {COLOR_NEW_TAB_PAGE_MODULE_TAB_GROUPS_DOT_PREFIX, COLOR_NEW_TAB_PAGE_MODULE_TAB_GROUPS_PREFIX, colorIdToString, NTPPluralStringProxyImpl, tabGroupsDescriptor, TabGroupsProxyImpl} from 'chrome://new-tab-page/lazy_load.js';
-import {Color} from 'chrome://new-tab-page/tab_group_types.mojom-webui.js';
-import {PageHandlerRemote} from 'chrome://new-tab-page/tab_groups.mojom-webui.js';
-import type {TabGroup} from 'chrome://new-tab-page/tab_groups.mojom-webui.js';
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {IconContainerElement, TabGroupsModuleElement} from 'neovex://new-tab-page/lazy_load.js';
+import {COLOR_NEW_TAB_PAGE_MODULE_TAB_GROUPS_DOT_PREFIX, COLOR_NEW_TAB_PAGE_MODULE_TAB_GROUPS_PREFIX, colorIdToString, NTPPluralStringProxyImpl, tabGroupsDescriptor, TabGroupsProxyImpl} from 'neovex://new-tab-page/lazy_load.js';
+import {Color} from 'neovex://new-tab-page/tab_group_types.mojom-webui.js';
+import {PageHandlerRemote} from 'neovex://new-tab-page/tab_groups.mojom-webui.js';
+import type {TabGroup} from 'neovex://new-tab-page/tab_groups.mojom-webui.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {installMock} from '../../test_support.js';
 

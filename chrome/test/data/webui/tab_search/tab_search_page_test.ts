@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://tab-search.top-chrome/tab_search.js';
+import 'neovex://tab-search.top-chrome/tab_search.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {MetricsReporterImpl} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
-import type {ProfileData, RecentlyClosedTab, Tab, TabSearchItemElement, TabSearchPageElement} from 'chrome://tab-search.top-chrome/tab_search.js';
-import {SEARCH_QUERY_MAX_LENGTH, TabGroupColor, TabSearchApiProxyImpl} from 'chrome://tab-search.top-chrome/tab_search.js';
-import {assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {MockedMetricsReporter} from 'chrome://webui-test/mocked_metrics_reporter.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {MetricsReporterImpl} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
+import type {ProfileData, RecentlyClosedTab, Tab, TabSearchItemElement, TabSearchPageElement} from 'neovex://tab-search.top-chrome/tab_search.js';
+import {SEARCH_QUERY_MAX_LENGTH, TabGroupColor, TabSearchApiProxyImpl} from 'neovex://tab-search.top-chrome/tab_search.js';
+import {assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {MockedMetricsReporter} from 'neovex://webui-test/mocked_metrics_reporter.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createProfileData, createTab, generateSampleDataFromSiteNames, generateSampleRecentlyClosedTabs, generateSampleRecentlyClosedTabsFromSiteNames, generateSampleTabsFromSiteNames, SAMPLE_RECENTLY_CLOSED_DATA, SAMPLE_WINDOW_HEIGHT, sampleToken} from './tab_search_test_data.js';
 import {initLoadTimeDataWithDefaults} from './tab_search_test_helper.js';

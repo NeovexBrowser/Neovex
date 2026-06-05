@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {BrowserProxy, PageCallbackRouter, PageHandlerRemote} from 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
-import type {PageRemote} from 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {BrowserProxy, PageCallbackRouter, PageHandlerRemote} from 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
+import type {PageRemote} from 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 class TestAimBrowserProxy {
   callbackRouter: PageCallbackRouter;

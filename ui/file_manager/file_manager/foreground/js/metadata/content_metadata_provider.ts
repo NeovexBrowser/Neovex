@@ -4,7 +4,7 @@
 
 import {ImageLoaderClient} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/image_loader_client.js';
 import {createForUrl, type LoadImageResponse, LoadImageResponseStatus} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/load_image_request.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
 
 import {getContentMetadata, getContentMimeType} from '../../../common/js/api.js';
 import {unwrapEntry} from '../../../common/js/entry_utils.js';

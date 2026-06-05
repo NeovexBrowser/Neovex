@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {DomainSecurityPolicyView} from 'chrome://net-internals/domain_security_policy_view.js';
-import {$} from 'chrome://resources/js/util.js';
-import {assertEquals, assertLE, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {DomainSecurityPolicyView} from 'neovex://net-internals/domain_security_policy_view.js';
+import {$} from 'neovex://resources/js/util.js';
+import {assertEquals, assertLE, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {Task, TaskQueue} from './task_queue.js';
 import {switchToView} from './test_util.js';

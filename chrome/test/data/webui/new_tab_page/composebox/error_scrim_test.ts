@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ErrorScrimElement} from 'chrome://new-tab-page/lazy_load.js';
-import type{CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {ErrorScrimElement} from 'neovex://new-tab-page/lazy_load.js';
+import type{CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('NewTabPageErrorScrimTest', () => {
   let errorScrimElement: ErrorScrimElement;

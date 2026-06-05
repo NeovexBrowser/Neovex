@@ -3,18 +3,18 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PaymentsManagerImpl} from 'chrome://settings/lazy_load.js';
-import {CardBenefitsUserAction, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PaymentsManagerImpl} from 'neovex://settings/lazy_load.js';
+import {CardBenefitsUserAction, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
 
 import type {TestPaymentsManager} from './autofill_fake_data.js';
 import {createCreditCardEntry, STUB_USER_ACCOUNT_INFO} from './autofill_fake_data.js';
 import {createPaymentsSection, getDefaultExpectations, getLocalAndServerCreditCardListItems, getCardRowShadowRoot} from './payments_section_utils.js';
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 // clang-format on
 
 suite('PaymentsSectionCardRows', function() {
@@ -284,7 +284,7 @@ suite('PaymentsSectionCardRows', function() {
     assertTrue(!!cardImage);
     assertTrue(isVisible(cardImage));
     assertEquals(
-        'chrome://theme/IDR_AUTOFILL_CC_GENERIC 1x, chrome://theme/IDR_AUTOFILL_CC_GENERIC@2x 2x',
+        'neovex://theme/IDR_AUTOFILL_CC_GENERIC 1x, neovex://theme/IDR_AUTOFILL_CC_GENERIC@2x 2x',
         cardImage.srcset);
   });
 

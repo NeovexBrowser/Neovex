@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {CrPolicyIndicatorElement, CrToggleElement, HotspotSummaryItemElement, LocalizedLinkElement} from 'chrome://os-settings/os_settings.js';
-import {Router, routes} from 'chrome://os-settings/os_settings.js';
-import {setHotspotConfigForTesting} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.js';
-import type {CrosHotspotConfigInterface, CrosHotspotConfigObserverInterface, CrosHotspotConfigObserverRemote} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {HotspotAllowStatus, HotspotControlResult, HotspotState, WiFiSecurityMode} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {FakeHotspotConfig} from 'chrome://resources/ash/common/hotspot/fake_hotspot_config.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrPolicyIndicatorElement, CrToggleElement, HotspotSummaryItemElement, LocalizedLinkElement} from 'neovex://os-settings/os_settings.js';
+import {Router, routes} from 'neovex://os-settings/os_settings.js';
+import {setHotspotConfigForTesting} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.js';
+import type {CrosHotspotConfigInterface, CrosHotspotConfigObserverInterface, CrosHotspotConfigObserverRemote} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {HotspotAllowStatus, HotspotControlResult, HotspotState, WiFiSecurityMode} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {FakeHotspotConfig} from 'neovex://resources/ash/common/hotspot/fake_hotspot_config.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('<hotspot-summary-item>', () => {
   let hotspotSummaryItem: HotspotSummaryItemElement;

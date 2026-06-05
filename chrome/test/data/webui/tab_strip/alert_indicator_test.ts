@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://tab-strip.top-chrome/alert_indicator.js';
+import 'neovex://tab-strip.top-chrome/alert_indicator.js';
 
-import type {AlertIndicatorElement} from 'chrome://tab-strip.top-chrome/alert_indicator.js';
-import {assertEquals, assertFalse, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import type {AlertIndicatorElement} from 'neovex://tab-strip.top-chrome/alert_indicator.js';
+import {assertEquals, assertFalse, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('AlertIndicator', () => {
   let alertIndicatorElement: AlertIndicatorElement;

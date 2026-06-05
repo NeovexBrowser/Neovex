@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {BaseRowMixin} from 'chrome://os-settings/os_settings.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNull} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {BaseRowMixin} from 'neovex://os-settings/os_settings.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNull} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {clearBody} from '../../utils.js';
 
@@ -18,7 +18,7 @@ suite('SettingsBaseRowMixin', () => {
   const label = 'test label';
   const sublabel = 'test sublabel';
   const icon = 'test icon';
-  const learnMoreUrl = 'chrome://os-settings/test';
+  const learnMoreUrl = 'neovex://os-settings/test';
   const ariaLabel = 'test aria label';
   const ariaDescription = 'test aria description';
 

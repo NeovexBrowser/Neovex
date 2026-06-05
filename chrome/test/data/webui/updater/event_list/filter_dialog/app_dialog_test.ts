@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {AppDialogElement} from 'chrome://updater/event_list/filter_dialog/app_dialog.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {AppDialogElement} from 'neovex://updater/event_list/filter_dialog/app_dialog.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('AppDialogElement', () => {
   let filterApp: AppDialogElement;

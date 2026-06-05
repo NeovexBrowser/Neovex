@@ -16,7 +16,7 @@ import type {ApnProperties, CrosNetworkConfigInterface} from '//resources/mojo/c
 import {ApnState, ApnType} from '//resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
 import {PortalState} from '//resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {getTemplate} from './apn_list_item.html.js';
 import type {ApnEventData} from './cellular_utils.js';

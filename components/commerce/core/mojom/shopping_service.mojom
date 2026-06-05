@@ -80,7 +80,7 @@ enum UserFeedback {
 };
 
 // Used by surfaces like the price tracking section in side panel,
-// chrome://history etc, to communicate with C++-side handler.
+// neovex://history etc, to communicate with C++-side handler.
 interface ShoppingServiceHandlerFactory {
   // The WebUI calls this method when the page is first initialized.
   CreateShoppingServiceHandler(

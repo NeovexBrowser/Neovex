@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/updater_state/updater_state.js';
+import 'neovex://updater/updater_state/updater_state.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import {BrowserProxyImpl} from 'chrome://updater/browser_proxy.js';
-import type {UpdaterStateElement} from 'chrome://updater/updater_state/updater_state.js';
-import type {EnterpriseCompanionState, UpdaterState} from 'chrome://updater/updater_ui.mojom-webui.js';
-import {PageHandlerRemote} from 'chrome://updater/updater_ui.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import {BrowserProxyImpl} from 'neovex://updater/browser_proxy.js';
+import type {UpdaterStateElement} from 'neovex://updater/updater_state/updater_state.js';
+import type {EnterpriseCompanionState, UpdaterState} from 'neovex://updater/updater_ui.mojom-webui.js';
+import {PageHandlerRemote} from 'neovex://updater/updater_ui.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('UpdaterStateElement', () => {
   let element: UpdaterStateElement;

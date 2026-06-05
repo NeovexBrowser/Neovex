@@ -2,29 +2,29 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/strings.m.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://diagnostics/strings.m.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
 
-import type {BatteryStatusCardElement} from 'chrome://diagnostics/battery_status_card.js';
-import {CellularInfoElement} from 'chrome://diagnostics/cellular_info.js';
-import type {ConnectivityCardElement} from 'chrome://diagnostics/connectivity_card.js';
-import type {CpuCardElement} from 'chrome://diagnostics/cpu_card.js';
-import {DataPointElement} from 'chrome://diagnostics/data_point.js';
-import type {DiagnosticsCardElement} from 'chrome://diagnostics/diagnostics_card.js';
-import {EthernetInfoElement} from 'chrome://diagnostics/ethernet_info.js';
-import type {MemoryCardElement} from 'chrome://diagnostics/memory_card.js';
-import type {NetworkInfoElement} from 'chrome://diagnostics/network_info.js';
-import {PercentBarChartElement} from 'chrome://diagnostics/percent_bar_chart.js';
-import {RealtimeCpuChartElement} from 'chrome://diagnostics/realtime_cpu_chart.js';
-import {RoutineResultEntryElement} from 'chrome://diagnostics/routine_result_entry.js';
-import {RoutineResultListElement} from 'chrome://diagnostics/routine_result_list.js';
-import {RoutineSectionElement} from 'chrome://diagnostics/routine_section.js';
-import {WifiInfoElement} from 'chrome://diagnostics/wifi_info.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {BatteryStatusCardElement} from 'neovex://diagnostics/battery_status_card.js';
+import {CellularInfoElement} from 'neovex://diagnostics/cellular_info.js';
+import type {ConnectivityCardElement} from 'neovex://diagnostics/connectivity_card.js';
+import type {CpuCardElement} from 'neovex://diagnostics/cpu_card.js';
+import {DataPointElement} from 'neovex://diagnostics/data_point.js';
+import type {DiagnosticsCardElement} from 'neovex://diagnostics/diagnostics_card.js';
+import {EthernetInfoElement} from 'neovex://diagnostics/ethernet_info.js';
+import type {MemoryCardElement} from 'neovex://diagnostics/memory_card.js';
+import type {NetworkInfoElement} from 'neovex://diagnostics/network_info.js';
+import {PercentBarChartElement} from 'neovex://diagnostics/percent_bar_chart.js';
+import {RealtimeCpuChartElement} from 'neovex://diagnostics/realtime_cpu_chart.js';
+import {RoutineResultEntryElement} from 'neovex://diagnostics/routine_result_entry.js';
+import {RoutineResultListElement} from 'neovex://diagnostics/routine_result_list.js';
+import {RoutineSectionElement} from 'neovex://diagnostics/routine_section.js';
+import {WifiInfoElement} from 'neovex://diagnostics/wifi_info.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 /**
  * Helper function for getting a data-point element.

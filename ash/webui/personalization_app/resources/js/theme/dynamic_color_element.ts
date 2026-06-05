@@ -6,19 +6,19 @@
  * @fileoverview This component displays the dynamic color options.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
-import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
+import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {hexColorToSkColor} from 'chrome://resources/js/color_utils.js';
-import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
-import type {IronA11yKeysElement} from 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {hexColorToSkColor} from 'neovex://resources/js/color_utils.js';
+import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import type {IronA11yKeysElement} from 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
 
 import {ColorScheme} from '../../color_scheme.mojom-webui.js';
 import type {SampleColorScheme} from '../../personalization_app.mojom-webui.js';

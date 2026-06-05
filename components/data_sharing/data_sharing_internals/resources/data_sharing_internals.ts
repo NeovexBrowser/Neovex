@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
-import type {Time} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
+import type {Time} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
 
 import {DataSharingInternalsBrowserProxy} from './data_sharing_internals_browser_proxy.js';
 import type {GroupData, GroupMember} from './group_data.mojom-webui.js';

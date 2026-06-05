@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksPageState, NodeMap} from 'chrome://bookmarks/bookmarks.js';
-import {createEmptyState, removeBookmark, Store, StoreClientMixinLit} from 'chrome://bookmarks/bookmarks.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {BookmarksPageState, NodeMap} from 'neovex://bookmarks/bookmarks.js';
+import {createEmptyState, removeBookmark, Store, StoreClientMixinLit} from 'neovex://bookmarks/bookmarks.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestStore} from './test_store.js';
 import {createFolder, createItem, getAllFoldersOpenState, testTree} from './test_util.js';

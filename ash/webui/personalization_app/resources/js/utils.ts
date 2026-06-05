@@ -6,7 +6,7 @@
  * @fileoverview Utility functions to be used throughout personalization app.
  */
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {AmbientModeAlbum, GooglePhotosAlbum} from './../personalization_app.mojom-webui.js';
 import {BacklightColor, BLUE_COLOR, GREEN_COLOR, INDIGO_COLOR, PURPLE_COLOR, RED_COLOR, WHITE_COLOR, YELLOW_COLOR} from './../personalization_app.mojom-webui.js';

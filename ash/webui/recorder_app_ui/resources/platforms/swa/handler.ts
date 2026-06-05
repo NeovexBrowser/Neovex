@@ -12,9 +12,9 @@ import '/strings.m.js';
 import {
   ColorChangeUpdater,
 } from
-  'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {nothing} from 'chrome://resources/mwc/lit/index.js';
+  'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {nothing} from 'neovex://resources/mwc/lit/index.js';
 
 import {NoArgStringName} from '../../core/i18n.js';
 import {InternalMicInfo} from '../../core/microphone_manager.js';

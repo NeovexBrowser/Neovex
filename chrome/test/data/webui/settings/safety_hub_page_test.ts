@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {CardInfo, SettingsSafetyHubPageElement} from 'chrome://settings/lazy_load.js';
-import { CardState, ContentSettingsTypes, SafeBrowsingSetting, SafetyHubBrowserProxyImpl, SafetyHubEvent, PermissionsRevocationType } from 'chrome://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {CrSettingsPrefs, LifetimeBrowserProxyImpl, MetricsBrowserProxyImpl, PasswordManagerImpl, PasswordManagerPage, Router, routes, SafetyHubModuleType, SafetyHubSurfaces} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {CardInfo, SettingsSafetyHubPageElement} from 'neovex://settings/lazy_load.js';
+import { CardState, ContentSettingsTypes, SafeBrowsingSetting, SafetyHubBrowserProxyImpl, SafetyHubEvent, PermissionsRevocationType } from 'neovex://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {CrSettingsPrefs, LifetimeBrowserProxyImpl, MetricsBrowserProxyImpl, PasswordManagerImpl, PasswordManagerPage, Router, routes, SafetyHubModuleType, SafetyHubSurfaces} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {TestLifetimeBrowserProxy} from './test_lifetime_browser_proxy.js';
 import {TestSafetyHubBrowserProxy} from './test_safety_hub_browser_proxy.js';
@@ -20,7 +20,7 @@ import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 
 // <if expr="not is_chromeos">
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 // </if>
 // clang-format on
 

@@ -10,6 +10,6 @@ module viz.mojom;
 // When GPU context is lost, terminate GPU process on IO thread to make sure
 // GPU log messages are sent to browser process as much as possible.
 interface GpuLogging {
-  // Record GPU process log messages. The messages are shown on chrome://gpu.
+  // Record GPU process log messages. The messages are shown on neovex://gpu.
   RecordLogMessage(int32 severity, string header, string message);
 };

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-print/js/summary_panel.js';
+import 'neovex://os-print/js/summary_panel.js';
 
-import {CapabilitiesManager} from 'chrome://os-print/js/data/capabilities_manager.js';
-import {PreviewTicketManager} from 'chrome://os-print/js/data/preview_ticket_manager.js';
-import {PRINT_REQUEST_FINISHED_EVENT, PRINT_REQUEST_STARTED_EVENT, PrintTicketManager} from 'chrome://os-print/js/data/print_ticket_manager.js';
-import {SummaryPanelController} from 'chrome://os-print/js/summary_panel_controller.js';
-import {createCustomEvent} from 'chrome://os-print/js/utils/event_utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CapabilitiesManager} from 'neovex://os-print/js/data/capabilities_manager.js';
+import {PreviewTicketManager} from 'neovex://os-print/js/data/preview_ticket_manager.js';
+import {PRINT_REQUEST_FINISHED_EVENT, PRINT_REQUEST_STARTED_EVENT, PrintTicketManager} from 'neovex://os-print/js/data/print_ticket_manager.js';
+import {SummaryPanelController} from 'neovex://os-print/js/summary_panel_controller.js';
+import {createCustomEvent} from 'neovex://os-print/js/utils/event_utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {resetDataManagersAndProviders} from './test_utils.js';
 

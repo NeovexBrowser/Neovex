@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extensions-code-section. */
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import type {ExtensionsCodeSectionElement} from 'chrome://extensions/extensions.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ExtensionsCodeSectionElement} from 'neovex://extensions/extensions.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('ExtensionCodeSectionTest', function() {
   let codeSection: ExtensionsCodeSectionElement;

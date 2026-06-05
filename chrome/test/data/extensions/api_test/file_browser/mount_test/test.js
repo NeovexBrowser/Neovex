@@ -119,8 +119,8 @@ var expectedProvidedVolume = {
   profile: {profileId: '', displayName: '', isCurrentProfile: true},
   diskFileSystemType: '',
   iconSet: {
-    icon16x16Url: 'chrome://resources/testing-provider-id-16.jpg',
-    icon32x32Url: 'chrome://resources/testing-provider-id-32.jpg'
+    icon16x16Url: 'neovex://resources/testing-provider-id-16.jpg',
+    icon32x32Url: 'neovex://resources/testing-provider-id-32.jpg'
   },
   driveLabel: '',
   hidden: false

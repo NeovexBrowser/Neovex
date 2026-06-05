@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksFolderNodeElement, FolderOpenState, NodeMap} from 'chrome://bookmarks/bookmarks.js';
-import {normalizeNodes, ROOT_NODE_ID} from 'chrome://bookmarks/bookmarks.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {BookmarksFolderNodeElement, FolderOpenState, NodeMap} from 'neovex://bookmarks/bookmarks.js';
+import {normalizeNodes, ROOT_NODE_ID} from 'neovex://bookmarks/bookmarks.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 /**
  * Replace the current body of the test with a new element.

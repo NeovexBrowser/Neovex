@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://skills/skills_dialog_app.js';
+import 'neovex://skills/skills_dialog_app.js';
 
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import type {Skill} from 'chrome://skills/skill.mojom-webui.js';
-import {SkillsDialogType, SkillSource} from 'chrome://skills/skill.mojom-webui.js';
-import {DialogHandlerRemote} from 'chrome://skills/skills.mojom-webui.js';
-import {MAX_NAME_CHAR_COUNT, MAX_PROMPT_CHAR_COUNT, WindowProxyImpl} from 'chrome://skills/skills_dialog_app.js';
-import type {SkillsDialogAppElement, WindowProxy} from 'chrome://skills/skills_dialog_app.js';
-import {SkillsDialogBrowserProxy} from 'chrome://skills/skills_dialog_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import type {Skill} from 'neovex://skills/skill.mojom-webui.js';
+import {SkillsDialogType, SkillSource} from 'neovex://skills/skill.mojom-webui.js';
+import {DialogHandlerRemote} from 'neovex://skills/skills.mojom-webui.js';
+import {MAX_NAME_CHAR_COUNT, MAX_PROMPT_CHAR_COUNT, WindowProxyImpl} from 'neovex://skills/skills_dialog_app.js';
+import type {SkillsDialogAppElement, WindowProxy} from 'neovex://skills/skills_dialog_app.js';
+import {SkillsDialogBrowserProxy} from 'neovex://skills/skills_dialog_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 class TestWindowProxy implements WindowProxy {
   private callback_: Function|null = null;

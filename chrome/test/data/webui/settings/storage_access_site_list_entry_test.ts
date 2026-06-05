@@ -5,13 +5,13 @@
 /** @fileoverview Suite of tests for storage-access-site-list-entry. */
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import type {CrExpandButtonElement, StorageAccessStaticSiteListEntry, StorageAccessSiteException, StorageAccessSiteListEntryElement} from 'chrome://settings/lazy_load.js';
-import {ContentSetting, ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertDeepEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {loadTimeData} from 'chrome://settings/settings.js';
+import type {CrExpandButtonElement, StorageAccessStaticSiteListEntry, StorageAccessSiteException, StorageAccessSiteListEntryElement} from 'neovex://settings/lazy_load.js';
+import {ContentSetting, ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertDeepEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import {createStorageAccessSiteException, createStorageAccessEmbeddingException} from './test_util.js';

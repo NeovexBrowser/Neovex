@@ -6,7 +6,7 @@
  * @fileoverview This component displays toast notifications to the user.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
 
 import {dismissErrorAction} from './personalization_actions.js';
 import type {PersonalizationStateError} from './personalization_state.js';

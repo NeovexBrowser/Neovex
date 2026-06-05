@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import './keyboard_icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
 
-import {I18nBehavior, I18nBehaviorInterface} from 'chrome://resources/ash/common/i18n_behavior.js';
-import {html, mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nBehavior, I18nBehaviorInterface} from 'neovex://resources/ash/common/i18n_behavior.js';
+import {html, mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './keyboard_key.html.js';
 

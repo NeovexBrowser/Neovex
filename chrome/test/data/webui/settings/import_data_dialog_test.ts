@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {dashToCamelCase, flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {BrowserProfile, ImportDataBrowserProxy, SettingsCheckboxElement, SettingsImportDataDialogElement} from 'chrome://settings/lazy_load.js';
-import {ImportDataBrowserProxyImpl, ImportDataStatus} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {dashToCamelCase, flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {BrowserProfile, ImportDataBrowserProxy, SettingsCheckboxElement, SettingsImportDataDialogElement} from 'neovex://settings/lazy_load.js';
+import {ImportDataBrowserProxyImpl, ImportDataStatus} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 // clang-format on
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Test page for Chrome OS register form that is hosted at OEM partner site
-     and is loaded in chrome://register host page -->
+     and is loaded in neovex://register host page -->
 <html><head>
 <title>Registration test form</title>
 <style>
@@ -18,7 +18,7 @@
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', load);
-var hostUrl = 'chrome://register';
+var hostUrl = 'neovex://register';
 
 window.addEventListener('message', processMessage);
 
@@ -38,7 +38,7 @@ function load() {
 
 function processMessage(e) {
   // TODO(nkostylev): e.origin is passed as null and not checked.
-  // Probably because it's served from chrome:// scheme.
+  // Probably because it's served from neovex:// scheme.
   if (e.data.domain != hostUrl) {
     registration(false);
     return;

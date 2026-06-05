@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/os_settings.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {OsSettingsAddItemsDialogElement, SettingsLiveCaptionElement} from 'chrome://os-settings/lazy_load.js';
-import {CaptionsBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import {CrSettingsPrefs} from 'chrome://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertStringContains, assertStringExcludes, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {OsSettingsAddItemsDialogElement, SettingsLiveCaptionElement} from 'neovex://os-settings/lazy_load.js';
+import {CaptionsBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import {CrSettingsPrefs} from 'neovex://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertStringContains, assertStringExcludes, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

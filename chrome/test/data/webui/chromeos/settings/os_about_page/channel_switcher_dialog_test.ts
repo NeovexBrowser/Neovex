@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsChannelSwitcherDialogElement} from 'chrome://os-settings/lazy_load.js';
-import {AboutPageBrowserProxyImpl, BrowserChannel} from 'chrome://os-settings/os_settings.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsChannelSwitcherDialogElement} from 'neovex://os-settings/lazy_load.js';
+import {AboutPageBrowserProxyImpl, BrowserChannel} from 'neovex://os-settings/os_settings.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

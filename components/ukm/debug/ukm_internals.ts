@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 
 // </if>
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 interface Metric {
   name: string;

@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 import {assert} from '//resources/js/assert.js';
-import {CapabilitiesManager} from 'chrome://os-print/js/data/capabilities_manager.js';
-import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DestinationManager} from 'chrome://os-print/js/data/destination_manager.js';
-import {PreviewTicketManager} from 'chrome://os-print/js/data/preview_ticket_manager.js';
-import {PRINT_REQUEST_FINISHED_EVENT, PRINT_TICKET_MANAGER_SESSION_INITIALIZED, PrintTicketManager} from 'chrome://os-print/js/data/print_ticket_manager.js';
-import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
-import {resetProvidersForTesting} from 'chrome://os-print/js/utils/mojo_data_providers.js';
-import {type Destination, PrinterStatusReason, PrinterType} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
-import type {MockTimer} from 'chrome://webui-test/mock_timer.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CapabilitiesManager} from 'neovex://os-print/js/data/capabilities_manager.js';
+import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DestinationManager} from 'neovex://os-print/js/data/destination_manager.js';
+import {PreviewTicketManager} from 'neovex://os-print/js/data/preview_ticket_manager.js';
+import {PRINT_REQUEST_FINISHED_EVENT, PRINT_TICKET_MANAGER_SESSION_INITIALIZED, PrintTicketManager} from 'neovex://os-print/js/data/print_ticket_manager.js';
+import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
+import {resetProvidersForTesting} from 'neovex://os-print/js/utils/mojo_data_providers.js';
+import {type Destination, PrinterStatusReason, PrinterType} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
+import type {MockTimer} from 'neovex://webui-test/mock_timer.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 // Counter for unique destination IDs.
 let destinationIdCounter = 0;

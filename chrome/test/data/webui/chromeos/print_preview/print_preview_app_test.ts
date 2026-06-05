@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {NativeInitialSettings, PrintPreviewAppElement} from 'chrome://print/print_preview.js';
-import {DuplexMode, NativeLayerImpl, PluginProxyImpl} from 'chrome://print/print_preview.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {NativeInitialSettings, PrintPreviewAppElement} from 'neovex://print/print_preview.js';
+import {DuplexMode, NativeLayerImpl, PluginProxyImpl} from 'neovex://print/print_preview.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';
 

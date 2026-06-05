@@ -293,7 +293,7 @@ interface BluetoothDiscoveryDelegate {
 //
 // Clients include:
 // * Ash system UI; implemented in C++ as part of the browser process
-// * WebUI such as chrome://os-settings; implemented in JS as part of renderer
+// * WebUI such as neovex://os-settings; implemented in JS as part of renderer
 //   processes
 interface CrosBluetoothConfig {
   // Invokes OnPropertiesUpdated() with initial set of properties when observer

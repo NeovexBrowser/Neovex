@@ -87,7 +87,7 @@ chrome.test.getConfig(function(config) {
           });
         }
       });
-      chrome.tabs.create({url: 'chrome://version'});
+      chrome.tabs.create({url: 'neovex://version'});
     },
   ]);
 });

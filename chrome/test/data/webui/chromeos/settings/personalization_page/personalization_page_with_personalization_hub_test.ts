@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {SettingsPersonalizationPageElement} from 'chrome://os-settings/os_settings.js';
-import {PersonalizationHubBrowserProxyImpl} from 'chrome://os-settings/os_settings.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsPersonalizationPageElement} from 'neovex://os-settings/os_settings.js';
+import {PersonalizationHubBrowserProxyImpl} from 'neovex://os-settings/os_settings.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {TestPersonalizationHubBrowserProxy} from './test_personalization_hub_browser_proxy.js';
 

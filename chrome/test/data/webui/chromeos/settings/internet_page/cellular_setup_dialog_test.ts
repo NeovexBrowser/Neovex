@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {OsSettingsCellularSetupDialogElement} from 'chrome://os-settings/os_settings.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {OsSettingsCellularSetupDialogElement} from 'neovex://os-settings/os_settings.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('<os-settings-cellular-setup-dialog>', () => {
   test('Dialog opened on attach', (done) => {

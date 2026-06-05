@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {css} from 'chrome://resources/mwc/lit/index.js';
+import {css} from 'neovex://resources/mwc/lit/index.js';
 
 /**
  * Maximum number of the speaker colors before the color starts cycling.

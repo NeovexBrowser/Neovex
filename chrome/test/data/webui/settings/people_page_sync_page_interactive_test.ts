@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrInputElement, SettingsSyncPageElement} from 'chrome://settings/lazy_load.js';
-import {Router, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement, SettingsSyncPageElement} from 'neovex://settings/lazy_load.js';
+import {Router, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestSyncBrowserProxy} from './test_sync_browser_proxy.js';
 

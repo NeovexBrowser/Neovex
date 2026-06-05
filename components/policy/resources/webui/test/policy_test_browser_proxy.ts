@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 // </if>
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 /**
  * Must be kept in sync with the C++ enums of the same names (see

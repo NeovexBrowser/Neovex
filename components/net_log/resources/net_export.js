@@ -4,13 +4,13 @@
 
 
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 
 // </if>
 
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
-import {$} from 'chrome://resources/js/util.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
+import {$} from 'neovex://resources/js/util.js';
 
 /**
  * Main entry point called once the page has loaded.

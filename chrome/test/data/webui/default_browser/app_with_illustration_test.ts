@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://default-browser-modal/app.js';
+import 'neovex://default-browser-modal/app.js';
 
-import type {DefaultBrowserModalAppElement} from 'chrome://default-browser-modal/app.js';
-import {BrowserProxy} from 'chrome://default-browser-modal/browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {DefaultBrowserModalAppElement} from 'neovex://default-browser-modal/app.js';
+import {BrowserProxy} from 'neovex://default-browser-modal/browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestDefaultBrowserBrowserProxy} from './test_browser_proxy.js';
 

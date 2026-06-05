@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://customize-chrome-side-panel.top-chrome/theme_snapshot.js';
+import 'neovex://customize-chrome-side-panel.top-chrome/theme_snapshot.js';
 
-import type {CustomizeChromePageRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromeApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
-import type {ThemeSnapshotElement} from 'chrome://customize-chrome-side-panel.top-chrome/theme_snapshot.js';
-import {CustomizeThemeType} from 'chrome://customize-chrome-side-panel.top-chrome/theme_snapshot.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CustomizeChromePageRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromeApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
+import type {ThemeSnapshotElement} from 'neovex://customize-chrome-side-panel.top-chrome/theme_snapshot.js';
+import {CustomizeThemeType} from 'neovex://customize-chrome-side-panel.top-chrome/theme_snapshot.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {$$, createBackgroundImage, createTheme, installMock} from './test_support.js';
 
@@ -45,7 +45,7 @@ suite('ThemeSnapshotTest', () => {
     // Arrange.
     createThemeSnapshotElement();
     const theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
     theme.backgroundImage.title = 'foo';
 
     // Act.
@@ -70,7 +70,7 @@ suite('ThemeSnapshotTest', () => {
         $$(themeSnapshotElement,
            '.snapshot-container #customThemeTitle')!.textContent.trim());
     assertEquals(
-        'chrome://theme/foo',
+        'neovex://theme/foo',
         $$<HTMLImageElement>(
             themeSnapshotElement, '.snapshot-container img')!.src);
   });
@@ -107,7 +107,7 @@ suite('ThemeSnapshotTest', () => {
     // Arrange.
     createThemeSnapshotElement();
     const theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
     theme.backgroundImage.isUploadedImage = true;
 
     // Act.
@@ -181,7 +181,7 @@ suite('ThemeSnapshotTest', () => {
         // Arrange.
         createThemeSnapshotElement();
         const theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+        theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
         theme.backgroundImage.title = 'foo';
         callbackRouterRemote.setTheme(theme);
         await callbackRouterRemote.$.flushForTesting();
@@ -203,7 +203,7 @@ suite('ThemeSnapshotTest', () => {
         // Arrange.
         createThemeSnapshotElement();
         const theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+        theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
         theme.backgroundImage.isUploadedImage = true;
         callbackRouterRemote.setTheme(theme);
         await callbackRouterRemote.$.flushForTesting();

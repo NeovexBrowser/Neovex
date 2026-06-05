@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/new_tab_page.js';
+import 'neovex://new-tab-page/new_tab_page.js';
 
-import type {SearchboxElement, SearchboxIconElement, SearchboxMatchElement} from 'chrome://new-tab-page/new_tab_page.js';
-import {$$, BrowserProxyImpl, MetricsReporterImpl, SearchboxBrowserProxy} from 'chrome://new-tab-page/new_tab_page.js';
-import {createAutocompleteMatch, createAutocompleteResultForTesting, createSearchMatchForTesting} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PageMetricsCallbackRouter} from 'chrome://resources/js/metrics_reporter.mojom-webui.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {NavigationPredictor} from 'chrome://resources/mojo/components/omnibox/browser/omnibox.mojom-webui.js';
-import type {AutocompleteMatch} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {RenderType, SideType} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {SearchboxElement, SearchboxIconElement, SearchboxMatchElement} from 'neovex://new-tab-page/new_tab_page.js';
+import {$$, BrowserProxyImpl, MetricsReporterImpl, SearchboxBrowserProxy} from 'neovex://new-tab-page/new_tab_page.js';
+import {createAutocompleteMatch, createAutocompleteResultForTesting, createSearchMatchForTesting} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PageMetricsCallbackRouter} from 'neovex://resources/js/metrics_reporter.mojom-webui.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {NavigationPredictor} from 'neovex://resources/mojo/components/omnibox/browser/omnibox.mojom-webui.js';
+import type {AutocompleteMatch} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {RenderType, SideType} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {assertStyle} from './searchbox_test_utils.js';
 import {TestSearchboxBrowserProxy} from './test_searchbox_browser_proxy.js';
@@ -199,7 +199,7 @@ suite('SearchboxTest', () => {
       iconElement: SearchboxIconElement, url: string) {
     assertStyle(
         iconElement.$.icon, '-webkit-mask-image',
-        `url("chrome://new-tab-page/${url}")`);
+        `url("neovex://new-tab-page/${url}")`);
     assertStyle(iconElement.$.icon, 'background-image', 'none');
   }
 
@@ -332,11 +332,11 @@ suite('SearchboxTest', () => {
         {
           selector: '#voiceSearchButton',
           iconUrl:
-              'url("chrome://resources/cr_components/searchbox/icons/mic.svg")',
+              'url("neovex://resources/cr_components/searchbox/icons/mic.svg")',
         },
         {
           selector: '#lensSearchButton',
-          iconUrl: 'url("chrome://resources/cr_components/searchbox/icons/' +
+          iconUrl: 'url("neovex://resources/cr_components/searchbox/icons/' +
               'camera.svg")',
         },
       ];
@@ -2049,7 +2049,7 @@ suite('SearchboxTest', () => {
       actions: [{
         hint: 'Clear Browsing History',
         suggestionContents: '',
-        iconPath: 'chrome://theme/current-channel-logo',
+        iconPath: 'neovex://theme/current-channel-logo',
         a11yLabel: '',
       }],
       fillIntoEdit: 'clear browsing history',
@@ -2898,7 +2898,7 @@ suite('SearchboxTest', () => {
         actionIconCustom, 'background-image', 'url("data:image/random")');
     assertStyle(
         actionIconStandard, '-webkit-mask-image',
-        'url("chrome://new-tab-page/icon.png")');
+        'url("neovex://new-tab-page/icon.png")');
   });
 
   //============================================================================
@@ -2912,7 +2912,7 @@ suite('SearchboxTest', () => {
       actions: [{
         hint: 'Clear Browsing History',
         suggestionContents: '',
-        iconPath: 'chrome://theme/current-channel-logo',
+        iconPath: 'neovex://theme/current-channel-logo',
         a11yLabel: '',
       }],
     })];
@@ -2957,13 +2957,13 @@ suite('SearchboxTest', () => {
           {
             hint: 'Clear Browsing History',
             suggestionContents: '',
-            iconPath: 'chrome://theme/current-channel-logo',
+            iconPath: 'neovex://theme/current-channel-logo',
             a11yLabel: '',
           },
           {
             hint: 'Tab Switch',
             suggestionContents: '',
-            iconPath: 'chrome://theme/current-channel-logo',
+            iconPath: 'neovex://theme/current-channel-logo',
             a11yLabel: '',
           },
         ],

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-print/js/utils/validation_utils.js';
+import 'neovex://os-print/js/utils/validation_utils.js';
 
-import {PDF_DESTINATION} from 'chrome://os-print/js/data/destination_constants.js';
-import {DestinationManager} from 'chrome://os-print/js/data/destination_manager.js';
-import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
-import {isValidDestination} from 'chrome://os-print/js/utils/validation_utils.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {PDF_DESTINATION} from 'neovex://os-print/js/data/destination_constants.js';
+import {DestinationManager} from 'neovex://os-print/js/data/destination_manager.js';
+import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
+import {isValidDestination} from 'neovex://os-print/js/utils/validation_utils.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {createTestDestination, resetDataManagersAndProviders} from './test_utils.js';
 

@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://settings/settings.js';
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/settings.js';
+import 'neovex://settings/lazy_load.js';
 
 // clang-format off
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import type {SettingsAutofillSectionElement, SettingsPaymentsSectionElement} from 'chrome://settings/lazy_load.js';
-import {AutofillManagerImpl, PaymentsManagerImpl} from 'chrome://settings/lazy_load.js';
-import type {CrLinkRowElement, SettingsAutofillPageElement, SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {AutofillSettingsReferrer, CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, PasswordManagerImpl, PasswordManagerPage, resetRouterForTesting, SettingsPluralStringProxyImpl} from 'chrome://settings/settings.js';
-import {assertEquals, assertDeepEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsAutofillSectionElement, SettingsPaymentsSectionElement} from 'neovex://settings/lazy_load.js';
+import {AutofillManagerImpl, PaymentsManagerImpl} from 'neovex://settings/lazy_load.js';
+import type {CrLinkRowElement, SettingsAutofillPageElement, SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {AutofillSettingsReferrer, CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, PasswordManagerImpl, PasswordManagerPage, resetRouterForTesting, SettingsPluralStringProxyImpl} from 'neovex://settings/settings.js';
+import {assertEquals, assertDeepEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
 
 import {AutofillManagerExpectations, createAddressEntry, createCreditCardEntry, createIbanEntry, createPayOverTimeIssuerEntry, PaymentsManagerExpectations, STUB_USER_ACCOUNT_INFO, TestAutofillManager, TestPaymentsManager} from './autofill_fake_data.js';
 import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';

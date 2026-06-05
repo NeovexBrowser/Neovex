@@ -4,17 +4,17 @@
 
 // These test suites test the certificate-manager v2 component.
 
-import 'chrome://certificate-manager/certificate_manager.js';
+import 'neovex://certificate-manager/certificate_manager.js';
 
-import type {CertificateManagerElement} from 'chrome://certificate-manager/certificate_manager.js';
-import type {CertManagementMetadata} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
-import type {CertificatePasswordDialogElement} from 'chrome://certificate-manager/certificate_password_dialog.js';
-import {CertificatesBrowserProxy} from 'chrome://certificate-manager/certificates_browser_proxy.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CertificateManagerElement} from 'neovex://certificate-manager/certificate_manager.js';
+import type {CertManagementMetadata} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
+import type {CertificatePasswordDialogElement} from 'neovex://certificate-manager/certificate_password_dialog.js';
+import {CertificatesBrowserProxy} from 'neovex://certificate-manager/certificates_browser_proxy.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 // <if expr="is_win or is_macosx">
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 // </if>
 
 import {TestCertificateManagerProxy} from './certificate_manager_test_support.js';

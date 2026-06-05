@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://accessory-update/update_card.js';
+import 'neovex://accessory-update/update_card.js';
 
-import {fakeCriticalFirmwareUpdate, fakeFirmwareUpdate} from 'chrome://accessory-update/fake_data.js';
-import type {FirmwareUpdate} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
-import type {UpdateCardElement} from 'chrome://accessory-update/update_card.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {fakeCriticalFirmwareUpdate, fakeFirmwareUpdate} from 'neovex://accessory-update/fake_data.js';
+import type {FirmwareUpdate} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
+import type {UpdateCardElement} from 'neovex://accessory-update/update_card.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('UpdateCardTest', () => {
   let updateCardElement: UpdateCardElement|null = null;

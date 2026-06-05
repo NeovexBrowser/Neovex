@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {SettingsBluetoothPairingDialogElement} from 'chrome://os-settings/os_settings.js';
-import {setBluetoothConfigForTesting} from 'chrome://resources/ash/common/bluetooth/cros_bluetooth_config.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeBluetoothConfig} from 'chrome://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {SettingsBluetoothPairingDialogElement} from 'neovex://os-settings/os_settings.js';
+import {setBluetoothConfigForTesting} from 'neovex://resources/ash/common/bluetooth/cros_bluetooth_config.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeBluetoothConfig} from 'neovex://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('<os-settings-bluetooth-pairing-dialog>', () => {
   let bluetoothPairingDialog: SettingsBluetoothPairingDialogElement;

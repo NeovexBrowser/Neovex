@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/updater_state/enterprise_companion_state_card.js';
+import 'neovex://updater/updater_state/enterprise_companion_state_card.js';
 
-import {BrowserProxyImpl} from 'chrome://updater/browser_proxy.js';
-import type {EnterpriseCompanionStateCardElement} from 'chrome://updater/updater_state/enterprise_companion_state_card.js';
-import {PageHandlerRemote, ShowDirectoryTarget} from 'chrome://updater/updater_ui.mojom-webui.js';
-import {assertArrayEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {BrowserProxyImpl} from 'neovex://updater/browser_proxy.js';
+import type {EnterpriseCompanionStateCardElement} from 'neovex://updater/updater_state/enterprise_companion_state_card.js';
+import {PageHandlerRemote, ShowDirectoryTarget} from 'neovex://updater/updater_ui.mojom-webui.js';
+import {assertArrayEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('EnterpriseCompanionStateCardElement', () => {
   let item: EnterpriseCompanionStateCardElement;

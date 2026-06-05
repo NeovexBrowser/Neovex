@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import 'neovex://resources/ash/common/cr_elements/cr_menu_selector/cr_menu_selector.js';
 
-import type {CrMenuSelector} from 'chrome://resources/ash/common/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {keyDownOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrMenuSelector} from 'neovex://resources/ash/common/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {keyDownOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 
 suite('CrMenuSelectorFocusTest', () => {

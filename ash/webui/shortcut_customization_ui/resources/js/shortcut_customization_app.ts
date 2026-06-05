@@ -8,22 +8,22 @@ import './shortcuts_page.js';
 import '/strings.m.js';
 import './search/search_box.js';
 import '../css/shortcut_customization_shared.css.js';
-import 'chrome://resources/ash/common/navigation_view_panel.js';
-import 'chrome://resources/ash/common/page_toolbar.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'neovex://resources/ash/common/navigation_view_panel.js';
+import 'neovex://resources/ash/common/page_toolbar.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
 
-import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {CrToolbarSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {FindShortcutMixin} from 'chrome://resources/ash/common/cr_elements/find_shortcut_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import type {NavigationViewPanelElement} from 'chrome://resources/ash/common/navigation_view_panel.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {CrToolbarSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {FindShortcutMixin} from 'neovex://resources/ash/common/cr_elements/find_shortcut_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import type {NavigationViewPanelElement} from 'neovex://resources/ash/common/navigation_view_panel.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {AcceleratorsUpdatedObserverInterface, PolicyUpdatedObserverInterface} from '../mojom-webui/shortcut_customization.mojom-webui.js';
 import {AcceleratorsUpdatedObserverReceiver, PolicyUpdatedObserverReceiver, UserAction} from '../mojom-webui/shortcut_customization.mojom-webui.js';
@@ -41,7 +41,7 @@ import type {AcceleratorInfo, AcceleratorSource, MojoAcceleratorConfig, MojoLayo
 import {AcceleratorConfigResult} from './shortcut_types.js';
 import {getAcceleratorId, getCategoryNameStringId, isCustomizationAllowed} from './shortcut_utils.js';
 
-const keyboardSettingsLink = 'chrome://os-settings/per-device-keyboard'
+const keyboardSettingsLink = 'neovex://os-settings/per-device-keyboard'
 
 export interface ShortcutCustomizationAppElement {
   $: {
@@ -147,9 +147,9 @@ export class ShortcutCustomizationAppElement extends
       // `cros_styles.css` with `theme/colors.css` directly in `index.html`.
       // Also add `theme/typography.css` to `index.html`.
       document.querySelector('link[href*=\'cros_styles.css\']')
-          ?.setAttribute('href', 'chrome://theme/colors.css?sets=legacy,sys');
+          ?.setAttribute('href', 'neovex://theme/colors.css?sets=legacy,sys');
       const typographyLink = document.createElement('link');
-      typographyLink.href = 'chrome://theme/typography.css';
+      typographyLink.href = 'neovex://theme/typography.css';
       typographyLink.rel = 'stylesheet';
       document.head.appendChild(typographyLink);
       document.body.classList.add('jelly-enabled');

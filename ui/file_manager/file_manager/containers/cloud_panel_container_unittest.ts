@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
 
 import {waitUntil} from '../common/js/test_error_reporting.js';
 import {updateBulkPinProgress} from '../state/ducks/bulk_pinning.js';

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
-import 'chrome://scanning/multi_page_checkbox.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://scanning/multi_page_checkbox.js';
 
-import {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {MultiPageCheckboxElement} from 'chrome://scanning/multi_page_checkbox.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {MultiPageCheckboxElement} from 'neovex://scanning/multi_page_checkbox.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('multiPageCheckboxTest', function() {
   let multiPageCheckbox: MultiPageCheckboxElement|null = null;

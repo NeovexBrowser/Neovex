@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {ConfirmationPageElement} from 'chrome://os-feedback/confirmation_page.js';
-import {FakeFeedbackServiceProvider} from 'chrome://os-feedback/fake_feedback_service_provider.js';
-import {FeedbackFlowState} from 'chrome://os-feedback/feedback_flow.js';
-import {setFeedbackServiceProviderForTesting} from 'chrome://os-feedback/mojo_interface_provider.js';
-import {FeedbackAppPostSubmitAction, SendReportStatus} from 'chrome://os-feedback/os_feedback_ui.mojom-webui.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {ConfirmationPageElement} from 'neovex://os-feedback/confirmation_page.js';
+import {FakeFeedbackServiceProvider} from 'neovex://os-feedback/fake_feedback_service_provider.js';
+import {FeedbackFlowState} from 'neovex://os-feedback/feedback_flow.js';
+import {setFeedbackServiceProviderForTesting} from 'neovex://os-feedback/mojo_interface_provider.js';
+import {FeedbackAppPostSubmitAction, SendReportStatus} from 'neovex://os-feedback/os_feedback_ui.mojom-webui.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 const ONLINE_TITLE = 'Thanks for your feedback';
 const OFFLINE_TITLE = 'You\'re offline. Feedback will be sent later.';

@@ -6,7 +6,7 @@ import {
   css,
   LitElement,
   PropertyDeclarations,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {assertExists} from '../../assert.js';
 import {preloadedImages} from '../../preload_images.js';

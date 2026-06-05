@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {fakeMyFilesVolumeId} from '../../background/js/mock_volume_manager.js';
 import type {MockFileSystem} from '../../common/js/mock_entry.js';

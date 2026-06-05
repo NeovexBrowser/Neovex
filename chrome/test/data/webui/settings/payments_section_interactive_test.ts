@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrButtonElement} from 'chrome://settings/settings.js';
-import {loadTimeData, MetricsBrowserProxyImpl} from 'chrome://settings/settings.js';
-import type {CrInputElement, SettingsCreditCardEditDialogElement, SettingsIbanEditDialogElement, SettingsPaymentsSectionElement} from 'chrome://settings/lazy_load.js';
-import {PaymentsManagerImpl} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished, whenAttributeIs} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'neovex://settings/settings.js';
+import {loadTimeData, MetricsBrowserProxyImpl} from 'neovex://settings/settings.js';
+import type {CrInputElement, SettingsCreditCardEditDialogElement, SettingsIbanEditDialogElement, SettingsPaymentsSectionElement} from 'neovex://settings/lazy_load.js';
+import {PaymentsManagerImpl} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished, whenAttributeIs} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {createCreditCardEntry, createIbanEntry, TestPaymentsManager} from './autofill_fake_data.js';
 import {verifyBooleanHistogramRecorded} from './payments_section_utils.js';

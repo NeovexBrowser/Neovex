@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://accessory-update/peripheral_updates_list.js';
+import 'neovex://accessory-update/peripheral_updates_list.js';
 
-import {fakeFirmwareUpdates} from 'chrome://accessory-update/fake_data.js';
-import {FakeUpdateProvider} from 'chrome://accessory-update/fake_update_provider.js';
-import type {FirmwareUpdate} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
-import {setUpdateProviderForTesting} from 'chrome://accessory-update/mojo_interface_provider.js';
-import type {PeripheralUpdateListElement} from 'chrome://accessory-update/peripheral_updates_list.js';
-import type {UpdateCardElement} from 'chrome://accessory-update/update_card.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {fakeFirmwareUpdates} from 'neovex://accessory-update/fake_data.js';
+import {FakeUpdateProvider} from 'neovex://accessory-update/fake_update_provider.js';
+import type {FirmwareUpdate} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
+import {setUpdateProviderForTesting} from 'neovex://accessory-update/mojo_interface_provider.js';
+import type {PeripheralUpdateListElement} from 'neovex://accessory-update/peripheral_updates_list.js';
+import type {UpdateCardElement} from 'neovex://accessory-update/update_card.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('PeripheralUpdatesListTest', () => {
   let peripheralUpdateListElement: PeripheralUpdateListElement|null = null;

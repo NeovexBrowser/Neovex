@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
-import {populateFakeShimlessRmaService, setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
-import type {ShimlessCustomElementType} from 'chrome://shimless-rma/shimless_rma.js';
-import {StateComponentMapping} from 'chrome://shimless-rma/shimless_rma.js';
-import {assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
+import {populateFakeShimlessRmaService, setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
+import type {ShimlessCustomElementType} from 'neovex://shimless-rma/shimless_rma.js';
+import {StateComponentMapping} from 'neovex://shimless-rma/shimless_rma.js';
+import {assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('allInputsDisabledTest', function() {
   const INPUT_TYPES =

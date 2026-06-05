@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {GifSubcategoryData, PaginatedGifResponses, VisualContent} from 'chrome://emoji-picker/emoji_picker.js';
-import {EmojiPickerApiProxy, Status} from 'chrome://emoji-picker/emoji_picker.js';
+import type {GifSubcategoryData, PaginatedGifResponses, VisualContent} from 'neovex://emoji-picker/emoji_picker.js';
+import {EmojiPickerApiProxy, Status} from 'neovex://emoji-picker/emoji_picker.js';
 
 export class TestEmojiPickerApiProxyError extends EmojiPickerApiProxy {
   status: Status = Status.kHttpOk;

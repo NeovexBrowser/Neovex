@@ -7,12 +7,12 @@
  */
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import type {StorageAccessStaticSiteListEntry, StorageAccessStaticSiteListEntryElement} from 'chrome://settings/lazy_load.js';
-import {ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertTrue, assertFalse} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {StorageAccessStaticSiteListEntry, StorageAccessStaticSiteListEntryElement} from 'neovex://settings/lazy_load.js';
+import {ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertTrue, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 // clang-format on

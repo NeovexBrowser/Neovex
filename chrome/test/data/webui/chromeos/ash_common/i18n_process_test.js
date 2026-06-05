@@ -16,7 +16,7 @@ I18nProcessTest.prototype = {
   __proto__: testing.Test.prototype,
 
   /** @override */
-  browsePreload: 'chrome://dummyurl/',
+  browsePreload: 'neovex://dummyurl/',
 
   /**
    * The mocha adapter assumes all tests are async.
@@ -69,7 +69,7 @@ TEST_F('I18nProcessTest', 'All', function() {
 
     test('attributes', async function() {
       const {assertNotEquals, assertTrue, assertEquals} =
-          await import('chrome://webui-test/chai_assert.js');
+          await import('neovex://webui-test/chai_assert.js');
       assertNotEquals('', document.title);
       assertTrue(document.body.hasAttribute('type'));
       assertTrue(document.querySelector('span').textContent.length > 5);
@@ -78,7 +78,7 @@ TEST_F('I18nProcessTest', 'All', function() {
 
     test('fragment', async function() {
       const {assertNotEquals, assertTrue} =
-          await import('chrome://webui-test/chai_assert.js');
+          await import('neovex://webui-test/chai_assert.js');
       const span = document.createElement('span');
       span.setAttribute('i18n-content', 'content');
 
@@ -97,7 +97,7 @@ TEST_F('I18nProcessTest', 'All', function() {
     });
 
     test('rerun', async function() {
-      const {assertTrue} = await import('chrome://webui-test/chai_assert.js');
+      const {assertTrue} = await import('neovex://webui-test/chai_assert.js');
       document.body.removeAttribute('type');
       i18nTemplate.process(document, loadTimeData);
       assertTrue(document.body.hasAttribute('type'));
@@ -105,7 +105,7 @@ TEST_F('I18nProcessTest', 'All', function() {
 
     test('templates', async function() {
       const {assertNotEquals} =
-          await import('chrome://webui-test/chai_assert.js');
+          await import('neovex://webui-test/chai_assert.js');
       const outerDocFrag = document.querySelector('template').content;
       const innerDocFrag = outerDocFrag.querySelector('template').content;
       assertNotEquals('', innerDocFrag.querySelector('div').textContent);

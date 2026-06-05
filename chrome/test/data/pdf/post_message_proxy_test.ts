@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {PdfViewerElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 const viewer = document.body.querySelector<PdfViewerElement>('#viewer')!;
 

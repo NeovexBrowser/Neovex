@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://chrome-urls/app.js';
+import 'neovex://chrome-urls/app.js';
 
-import type {ChromeUrlsAppElement} from 'chrome://chrome-urls/app.js';
-import {INTERNAL_DEBUG_PAGES_HASH} from 'chrome://chrome-urls/app.js';
-import {BrowserProxyImpl} from 'chrome://chrome-urls/browser_proxy.js';
-import type {WebuiUrlInfo} from 'chrome://chrome-urls/chrome_urls.mojom-webui.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {assertEquals, assertFalse, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ChromeUrlsAppElement} from 'neovex://chrome-urls/app.js';
+import {INTERNAL_DEBUG_PAGES_HASH} from 'neovex://chrome-urls/app.js';
+import {BrowserProxyImpl} from 'neovex://chrome-urls/browser_proxy.js';
+import type {WebuiUrlInfo} from 'neovex://chrome-urls/chrome_urls.mojom-webui.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {assertEquals, assertFalse, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestChromeUrlsBrowserProxy} from './test_chrome_urls_browser_proxy.js';
 
 suite('ChromeUrlsAppTest', function() {
-  const commandUrls: Url[] = ['chrome://kill/', 'chrome://crash/'];
+  const commandUrls: Url[] = ['neovex://kill/', 'neovex://crash/'];
 
   let app: ChromeUrlsAppElement;
   let browserProxy: TestChromeUrlsBrowserProxy;
@@ -44,22 +44,22 @@ suite('ChromeUrlsAppTest', function() {
     assertEquals(3, webuiItems.length);
 
     // Enabled URLs should be linked.
-    // Special case for chrome://chrome-urls, see crbug.com/411626175
+    // Special case for neovex://chrome-urls, see crbug.com/411626175
     const chromeUrlsLink = webuiItems[0]!.querySelector('a');
     assertTrue(!!chromeUrlsLink);
     const location = window.location.href;
     assertEquals(`${location}#`, chromeUrlsLink.href);
-    assertEquals('chrome://chrome-urls', chromeUrlsLink.textContent);
+    assertEquals('neovex://chrome-urls', chromeUrlsLink.textContent);
 
     const link = webuiItems[1]!.querySelector('a');
     assertTrue(!!link);
-    assertEquals('chrome://settings/', link.href);
-    assertEquals('chrome://settings', link.textContent);
+    assertEquals('neovex://settings/', link.href);
+    assertEquals('neovex://settings', link.textContent);
 
     // Disabled URLs are not linked, but still display the address.
     const noLink = webuiItems[2]!.querySelector('a');
     assertFalse(!!noLink);
-    assertEquals('chrome://bookmarks', webuiItems[2]!.textContent);
+    assertEquals('neovex://bookmarks', webuiItems[2]!.textContent);
   }
 
   function assertHeadings(internalsSection: boolean) {
@@ -76,9 +76,9 @@ suite('ChromeUrlsAppTest', function() {
 
   test('Fetches and displays URL list', async () => {
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://chrome-urls/', enabled: true, internal: false},
-      {url: 'chrome://settings/', enabled: true, internal: false},
-      {url: 'chrome://bookmarks/', enabled: false, internal: false},
+      {url: 'neovex://chrome-urls/', enabled: true, internal: false},
+      {url: 'neovex://settings/', enabled: true, internal: false},
+      {url: 'neovex://bookmarks/', enabled: false, internal: false},
     ];
     await finishSetup(webuiUrls);
 
@@ -101,10 +101,10 @@ suite('ChromeUrlsAppTest', function() {
 
   test('Correctly displays internal URLs when disabled', async () => {
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://chrome-urls/', enabled: true, internal: false},
-      {url: 'chrome://settings/', enabled: true, internal: false},
-      {url: 'chrome://bookmarks/', enabled: false, internal: false},
-      {url: 'chrome://webui-gallery/', enabled: true, internal: true},
+      {url: 'neovex://chrome-urls/', enabled: true, internal: false},
+      {url: 'neovex://settings/', enabled: true, internal: false},
+      {url: 'neovex://bookmarks/', enabled: false, internal: false},
+      {url: 'neovex://webui-gallery/', enabled: true, internal: true},
     ];
     await finishSetup(webuiUrls);
 
@@ -115,7 +115,7 @@ suite('ChromeUrlsAppTest', function() {
 
     const internalItems = lists[1]!.querySelectorAll('li');
     assertEquals(1, internalItems.length);
-    assertEquals('chrome://webui-gallery', internalItems[0]!.textContent);
+    assertEquals('neovex://webui-gallery', internalItems[0]!.textContent);
     assertFalse(!!internalItems[0]!.querySelector('a'));
 
     const message = app.shadowRoot.querySelector('#debug-pages-description');
@@ -129,10 +129,10 @@ suite('ChromeUrlsAppTest', function() {
 
   test('Correctly displays internal URLs when enabled', async () => {
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://chrome-urls/', enabled: true, internal: false},
-      {url: 'chrome://settings/', enabled: true, internal: false},
-      {url: 'chrome://bookmarks/', enabled: false, internal: false},
-      {url: 'chrome://webui-gallery/', enabled: true, internal: true},
+      {url: 'neovex://chrome-urls/', enabled: true, internal: false},
+      {url: 'neovex://settings/', enabled: true, internal: false},
+      {url: 'neovex://bookmarks/', enabled: false, internal: false},
+      {url: 'neovex://webui-gallery/', enabled: true, internal: true},
     ];
     await finishSetup(webuiUrls, /*internalDebuggingUisEnabled=*/ true);
 
@@ -145,8 +145,8 @@ suite('ChromeUrlsAppTest', function() {
     assertEquals(1, internalItems.length);
     const link = internalItems[0]!.querySelector('a');
     assertTrue(!!link);
-    assertEquals('chrome://webui-gallery/', link.href);
-    assertEquals('chrome://webui-gallery', link.textContent);
+    assertEquals('neovex://webui-gallery/', link.href);
+    assertEquals('neovex://webui-gallery', link.textContent);
 
     const message = app.shadowRoot.querySelector('#debug-pages-description');
     assertTrue(!!message);
@@ -159,9 +159,9 @@ suite('ChromeUrlsAppTest', function() {
 
   test('Toggle debug UIs enabled', async () => {
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://settings/', enabled: true, internal: false},
-      {url: 'chrome://bookmarks/', enabled: false, internal: false},
-      {url: 'chrome://webui-gallery/', enabled: true, internal: true},
+      {url: 'neovex://settings/', enabled: true, internal: false},
+      {url: 'neovex://bookmarks/', enabled: false, internal: false},
+      {url: 'neovex://webui-gallery/', enabled: true, internal: true},
     ];
     await finishSetup(webuiUrls);
 
@@ -171,7 +171,7 @@ suite('ChromeUrlsAppTest', function() {
     // No links since debug pages are disabled.
     let internalItems = lists[1]!.querySelectorAll('li');
     assertEquals(1, internalItems.length);
-    assertEquals('chrome://webui-gallery', internalItems[0]!.textContent);
+    assertEquals('neovex://webui-gallery', internalItems[0]!.textContent);
     assertFalse(!!internalItems[0]!.querySelector('a'));
 
     // Message is set to 'disabled' and button is to enable the pages.
@@ -211,11 +211,11 @@ suite('ChromeUrlsAppTest', function() {
 
   test('Enable debug UI redirects', async () => {
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://webui-gallery/', enabled: false, internal: true},
+      {url: 'neovex://webui-gallery/', enabled: false, internal: true},
     ];
     await finishSetup(webuiUrls);
 
-    const host = 'chrome://webui-gallery/foo/?param=bar';
+    const host = 'neovex://webui-gallery/foo/?param=bar';
     window.history.replaceState(
         {}, '', `/?host=${host}#${INTERNAL_DEBUG_PAGES_HASH}`);
     const button = app.shadowRoot.querySelector('cr-button');
@@ -232,12 +232,12 @@ suite('ChromeUrlsAppTest', function() {
 
   test('Enable debug UI bad host', async () => {
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://webui-gallery/', enabled: false, internal: true},
+      {url: 'neovex://webui-gallery/', enabled: false, internal: true},
     ];
     await finishSetup(webuiUrls);
 
     window.history.replaceState(
-        {}, '', `/?host=chrome://bad-host.com#${INTERNAL_DEBUG_PAGES_HASH}`);
+        {}, '', `/?host=neovex://bad-host.com#${INTERNAL_DEBUG_PAGES_HASH}`);
     const button = app.shadowRoot.querySelector('cr-button');
     assertTrue(!!button);
 
@@ -264,20 +264,20 @@ suite('ChromeUrlsAppTest', function() {
     window.history.replaceState({}, '', `/#${INTERNAL_DEBUG_PAGES_HASH}`);
     window.dispatchEvent(new CustomEvent('popstate'));
     const webuiUrls: WebuiUrlInfo[] = [
-      {url: 'chrome://settings/', enabled: true, internal: false},
-      {url: 'chrome://extensions/', enabled: true, internal: false},
-      {url: 'chrome://downloads/', enabled: true, internal: false},
-      {url: 'chrome://print/', enabled: true, internal: false},
-      {url: 'chrome://history/', enabled: true, internal: false},
-      {url: 'chrome://new-tab-page/', enabled: true, internal: false},
-      {url: 'chrome://whats-new/', enabled: true, internal: false},
-      {url: 'chrome://bookmarks/', enabled: false, internal: false},
-      {url: 'chrome://test-1/', enabled: false, internal: false},
-      {url: 'chrome://test-2/', enabled: false, internal: false},
-      {url: 'chrome://test-3/', enabled: false, internal: false},
-      {url: 'chrome://test-4/', enabled: false, internal: false},
-      {url: 'chrome://test-5/', enabled: false, internal: false},
-      {url: 'chrome://webui-gallery/', enabled: true, internal: true},
+      {url: 'neovex://settings/', enabled: true, internal: false},
+      {url: 'neovex://extensions/', enabled: true, internal: false},
+      {url: 'neovex://downloads/', enabled: true, internal: false},
+      {url: 'neovex://print/', enabled: true, internal: false},
+      {url: 'neovex://history/', enabled: true, internal: false},
+      {url: 'neovex://new-tab-page/', enabled: true, internal: false},
+      {url: 'neovex://whats-new/', enabled: true, internal: false},
+      {url: 'neovex://bookmarks/', enabled: false, internal: false},
+      {url: 'neovex://test-1/', enabled: false, internal: false},
+      {url: 'neovex://test-2/', enabled: false, internal: false},
+      {url: 'neovex://test-3/', enabled: false, internal: false},
+      {url: 'neovex://test-4/', enabled: false, internal: false},
+      {url: 'neovex://test-5/', enabled: false, internal: false},
+      {url: 'neovex://webui-gallery/', enabled: true, internal: true},
     ];
     await finishSetup(webuiUrls);
 

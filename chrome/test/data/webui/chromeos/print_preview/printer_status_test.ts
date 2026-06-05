@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewDestinationDropdownCrosElement, PrintPreviewDestinationSelectCrosElement} from 'chrome://print/print_preview.js';
-import {Destination, DestinationOrigin, Error, NativeLayerCrosImpl, NativeLayerImpl, PrinterStatusReason, PrinterStatusSeverity, State} from 'chrome://print/print_preview.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {MockController} from 'chrome://webui-test/mock_controller.js';
-import {waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {PrintPreviewDestinationDropdownCrosElement, PrintPreviewDestinationSelectCrosElement} from 'neovex://print/print_preview.js';
+import {Destination, DestinationOrigin, Error, NativeLayerCrosImpl, NativeLayerImpl, PrinterStatusReason, PrinterStatusSeverity, State} from 'neovex://print/print_preview.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {MockController} from 'neovex://webui-test/mock_controller.js';
+import {waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {NativeLayerCrosStub} from './native_layer_cros_stub.js';
 import {NativeLayerStub} from './native_layer_stub.js';
@@ -314,7 +314,7 @@ suite('PrinterStatusTest', function() {
           assertTrue(destinationEulaWrapper.hidden);
 
           destinationSelect.set(
-              'destination.eulaUrl', 'chrome://os-credits/eula');
+              'destination.eulaUrl', 'neovex://os-credits/eula');
           assertFalse(destinationEulaWrapper.hidden);
 
           destinationSelect.destination = destinationWithErrorStatus;

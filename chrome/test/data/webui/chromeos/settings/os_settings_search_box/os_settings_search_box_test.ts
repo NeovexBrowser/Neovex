@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {CrToolbarSearchFieldElement, IronDropdownElement, IronListElement, OsSettingsSearchBoxElement, ToolbarElement} from 'chrome://os-settings/os_settings.js';
-import {OpenWindowProxyImpl, OsSettingsSearchBoxBrowserProxyImpl, personalizationSearchMojom, Router, routes, routesMojom, searchMojom, searchResultIconMojom, setPersonalizationSearchHandlerForTesting, setSettingsSearchHandlerForTesting, settingMojom, setUserActionRecorderForTesting} from 'chrome://os-settings/os_settings.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrToolbarSearchFieldElement, IronDropdownElement, IronListElement, OsSettingsSearchBoxElement, ToolbarElement} from 'neovex://os-settings/os_settings.js';
+import {OpenWindowProxyImpl, OsSettingsSearchBoxBrowserProxyImpl, personalizationSearchMojom, Router, routes, routesMojom, searchMojom, searchResultIconMojom, setPersonalizationSearchHandlerForTesting, setSettingsSearchHandlerForTesting, settingMojom, setUserActionRecorderForTesting} from 'neovex://os-settings/os_settings.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {FakeMetricsPrivate} from '../fake_metrics_private.js';
 import {FakePersonalizationSearchHandler} from '../fake_personalization_search_handler.js';
@@ -406,7 +406,7 @@ suite('<os-settings-search-box>', () => {
           selectedOsRow.$.searchResultContainer.dispatchEvent(enterEvent);
 
           assertEquals(
-              'chrome://personalization/test',
+              'neovex://personalization/test',
               await openWindowProxy.whenCalled('openUrl'));
         });
 
@@ -428,7 +428,7 @@ suite('<os-settings-search-box>', () => {
           selectedOsRow.$.searchResultContainer.click();
 
           assertEquals(
-              'chrome://personalization/test',
+              'neovex://personalization/test',
               await openWindowProxy.whenCalled('openUrl'));
         });
 

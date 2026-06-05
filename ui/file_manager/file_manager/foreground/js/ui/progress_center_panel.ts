@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
 
 import type {ProgressCenterItem} from '../../../common/js/progress_center_common.js';
 import {PolicyErrorType, type ProgressItemExtraButton, ProgressItemState, ProgressItemType} from '../../../common/js/progress_center_common.js';

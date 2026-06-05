@@ -10,7 +10,7 @@ import {ColorChangeUpdater} from '//resources/cr_components/color_change_listene
 import {assert} from '//resources/js/assert.js';
 
 /* The host of trusted parent page. */
-const OS_FEEDBACK_TRUSTED_ORIGIN = 'chrome://os-feedback';
+const OS_FEEDBACK_TRUSTED_ORIGIN = 'neovex://os-feedback';
 
 function initialize() {
   /* The help-content custom element. */

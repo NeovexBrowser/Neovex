@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsEditDictionaryPageElement} from 'chrome://settings/lazy_load.js';
-import {LanguagesBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {CrSettingsPrefs} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsEditDictionaryPageElement} from 'neovex://settings/lazy_load.js';
+import {LanguagesBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {CrSettingsPrefs} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {FakeLanguageSettingsPrivate} from './fake_language_settings_private.js';
 import {TestLanguagesBrowserProxy} from './test_languages_browser_proxy.js';

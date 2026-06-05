@@ -5,10 +5,10 @@
 import '//resources/ash/common/cr_elements/localized_link/localized_link.js';
 
 import type {LocalizedLinkElement} from '//resources/ash/common/cr_elements/localized_link/localized_link.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
 
 suite('localized_link', function() {
   let localizedStringWithLink: LocalizedLinkElement|null;

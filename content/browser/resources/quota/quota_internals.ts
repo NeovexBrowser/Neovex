@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 
-import type {Time} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import type {Time} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
 
 import type {BucketTableEntry} from './quota_internals.mojom-webui.js';
 import type {RetrieveBucketsTableResult} from './quota_internals_browser_proxy.js';

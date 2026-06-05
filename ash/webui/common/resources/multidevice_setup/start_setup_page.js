@@ -10,12 +10,12 @@ import './pausable_lottie.js';
 import '//resources/ash/common/cr.m.js';
 import '//resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '//resources/polymer/v3_0/iron-media-query/iron-media-query.js';
-import 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
 
 import {loadTimeData} from '//resources/ash/common/load_time_data.m.js';
 import {WebUIListenerBehavior} from '//resources/ash/common/web_ui_listener_behavior.js';
 import {Polymer} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {ConnectivityStatus} from 'chrome://resources/mojo/chromeos/ash/services/device_sync/public/mojom/device_sync.mojom-webui.js';
+import {ConnectivityStatus} from 'neovex://resources/mojo/chromeos/ash/services/device_sync/public/mojom/device_sync.mojom-webui.js';
 
 import {MojoInterfaceProvider, MojoInterfaceProviderImpl} from './mojo_api.js';
 import {MultiDeviceSetupDelegate} from './multidevice_setup_delegate.js';
@@ -29,7 +29,7 @@ import {UiPageContainerBehavior} from './ui_page_container_behavior.js';
  * @type {string}
  */
 const MULTIDEVICE_ANIMATION_JELLY_URL =
-    'chrome://resources/ash/common/multidevice_setup/multidevice_setup_animation.json';
+    'neovex://resources/ash/common/multidevice_setup/multidevice_setup_animation.json';
 
 Polymer({
   _template: getTemplate(),

@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/settings.js';
-import 'chrome://webui-test/cr_elements/cr_policy_strings.js';
+import 'neovex://settings/settings.js';
+import 'neovex://webui-test/cr_elements/cr_policy_strings.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {loadTimeData} from 'chrome://settings/settings.js';
-import type {ChooserException, ChooserExceptionListElement, RawChooserException, RawSiteException, SiteException} from 'chrome://settings/lazy_load.js';
-import {ChooserType, ContentSettingsTypes, SiteSettingSource, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
+import type {ChooserException, ChooserExceptionListElement, RawChooserException, RawSiteException, SiteException} from 'neovex://settings/lazy_load.js';
+import {ChooserType, ContentSettingsTypes, SiteSettingSource, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import type {SiteSettingsPref} from './test_util.js';

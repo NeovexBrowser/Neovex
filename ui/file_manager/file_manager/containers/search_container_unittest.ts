@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {EntryLocation} from '../background/js/entry_location_impl.js';
 import type {VolumeManager} from '../background/js/volume_manager.js';

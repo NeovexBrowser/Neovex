@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PageMetricsCallbackRouter} from 'chrome://resources/js/metrics_reporter.mojom-webui.js';
-import {BrowserProxyImpl} from 'chrome://resources/js/metrics_reporter/browser_proxy.js';
-import type {MetricsReporter} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
-import {MetricsReporterImpl} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {PageMetricsCallbackRouter} from 'neovex://resources/js/metrics_reporter.mojom-webui.js';
+import {BrowserProxyImpl} from 'neovex://resources/js/metrics_reporter/browser_proxy.js';
+import type {MetricsReporter} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
+import {MetricsReporterImpl} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
 
 suite('MetricsReporterTest', function() {
   const DELTA_TIME: bigint = 1000n;

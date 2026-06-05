@@ -3,17 +3,17 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {LanguageHelper, SettingsAddLanguagesDialogElement, SettingsLanguagesPageElement} from 'chrome://settings/lazy_load.js';
-import {LanguagesBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import type {SettingsCheckboxListEntryElement, CrActionMenuElement, CrButtonElement} from 'chrome://settings/settings.js';
-import {CrSettingsPrefs, loadTimeData, convertLanguageCodeForTranslate} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertGE, assertGT, assertLT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {LanguageHelper, SettingsAddLanguagesDialogElement, SettingsLanguagesPageElement} from 'neovex://settings/lazy_load.js';
+import {LanguagesBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import type {SettingsCheckboxListEntryElement, CrActionMenuElement, CrButtonElement} from 'neovex://settings/settings.js';
+import {CrSettingsPrefs, loadTimeData, convertLanguageCodeForTranslate} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertGE, assertGT, assertLT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
 
 import type {FakeLanguageSettingsPrivate} from './fake_language_settings_private.js';
 import {getFakeLanguagePrefs} from './fake_language_settings_private.js';

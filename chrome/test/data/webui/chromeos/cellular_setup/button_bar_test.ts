@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/cellular_setup/button_bar.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/cellular_setup/button_bar.js';
 
-import type {ButtonBarElement} from 'chrome://resources/ash/common/cellular_setup/button_bar.js';
-import {ButtonState} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {ButtonBarElement} from 'neovex://resources/ash/common/cellular_setup/button_bar.js';
+import {ButtonState} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('CellularSetupButtonBarTest', function() {
   let buttonBar: ButtonBarElement;

@@ -8,7 +8,7 @@ import './file_system_access_transfer_token.mojom-lite.js';
 import './url.mojom-lite.js';
 
 import {assertCast, MessagePipe} from '//system_apps/message_pipe.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
 
 import * as error_reporter from './error_reporter.js';
 import type {DeleteFileMessage, EditInPhotosMessage, FileContext, IsFileArcWritableMessage, IsFileBrowserWritableMessage, LoadFilesMessage, NavigateMessage, NotifyCurrentFileMessage, OpenAllowedFileMessage, OpenAllowedFileResponse, OpenFilesWithPickerMessage, OverwriteFileMessage, OverwriteViaFilePickerResponse, RenameFileMessage, RequestSaveFileMessage, RequestSaveFileResponse, SaveAsMessage, SaveAsResponse} from './message_types.js';
@@ -150,7 +150,7 @@ let currentDirectoryHandle: FileSystemDirectoryHandle|null = null;
 
 /**
  * Map of file tokens. Persists across new launch requests from the file
- * manager when chrome://media-app has not been closed.
+ * manager when neovex://media-app has not been closed.
  */
 const tokenMap = new Map<number, FileSystemFileHandle>();
 

@@ -20,7 +20,7 @@ import type {ApnProperties, ManagedCellularProperties} from '//resources/mojo/ch
 import {ApnSource, ApnState} from '//resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
 import type {PortalState} from '//resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
 import {afterNextRender, PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
 
 import type {ApnDetailDialog} from './apn_detail_dialog.js';
 import {getTemplate} from './apn_list.html.js';

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {MdDialog} from 'chrome://resources/mwc/@material/web/dialog/dialog.js';
+import {MdDialog} from 'neovex://resources/mwc/@material/web/dialog/dialog.js';
 import {
   DialogAnimation,
-} from 'chrome://resources/mwc/@material/web/dialog/internal/animations.js';
-import {css, PropertyValues} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/@material/web/dialog/internal/animations.js';
+import {css, PropertyValues} from 'neovex://resources/mwc/lit/index.js';
 
 /**
  * A dialog with ChromeOS specific style.

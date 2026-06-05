@@ -238,7 +238,7 @@ interface WallpaperObserver {
 };
 
 // Provides APIs to retrieve Wallpaper information. This API is exposed only to
-// the Personalization App (chrome://personalization). It is a mojom wrapper for
+// the Personalization App (neovex://personalization). It is a mojom wrapper for
 // APIs found in |backdrop_wallpaper.proto| and |WallpaperController| APIs to
 // change the user's wallpaper in Ash.
 interface WallpaperProvider {
@@ -499,7 +499,7 @@ struct DefaultUserImage {
   // The title of the image to display to the user.
   mojo_base.mojom.String16 title;
 
-  // A url to display the image. Typically |chrome://theme/IDR_LOGIN_DEFAULT_X|.
+  // A url to display the image. Typically |neovex://theme/IDR_LOGIN_DEFAULT_X|.
   url.mojom.Url url;
 
   // Additional information about the source of the avatar.
@@ -548,7 +548,7 @@ interface UserImageObserver {
 };
 
 // Provides APIs to view information about the current user. This API is exposed
-// only to the Personalization App (chrome://personalization), and is
+// only to the Personalization App (neovex://personalization), and is
 // implemented by |PersonalizationAppUserProviderImpl| in chrome.
 interface UserProvider {
   // Binds an observer for the current user's device image.

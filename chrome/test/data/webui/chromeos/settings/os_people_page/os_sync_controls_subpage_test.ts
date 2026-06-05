@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {OsSyncControlsSubpageElement, OsSyncPrefs} from 'chrome://os-settings/lazy_load.js';
-import {OsSyncBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {CrRadioButtonElement, CrToggleElement} from 'chrome://os-settings/os_settings.js';
-import {Router, routes} from 'chrome://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {OsSyncControlsSubpageElement, OsSyncPrefs} from 'neovex://os-settings/lazy_load.js';
+import {OsSyncBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {CrRadioButtonElement, CrToggleElement} from 'neovex://os-settings/os_settings.js';
+import {Router, routes} from 'neovex://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestOsSyncBrowserProxy} from './test_os_sync_browser_proxy.js';
 

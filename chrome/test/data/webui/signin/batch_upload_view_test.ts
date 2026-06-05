@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://batch-upload/batch_upload.js';
+import 'neovex://batch-upload/batch_upload.js';
 
 import type {CrButtonElement} from '//resources/cr_elements/cr_button/cr_button.js';
 import type {CrCheckboxElement} from '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
 import {assert} from '//resources/js/assert.js';
-import {BatchUploadBrowserProxyImpl} from 'chrome://batch-upload/batch_upload.js';
-import type {BatchUploadAppElement, BatchUploadData, DataContainer, DataItem, DataSectionElement, PageRemote} from 'chrome://batch-upload/batch_upload.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGT, assertLT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {BatchUploadBrowserProxyImpl} from 'neovex://batch-upload/batch_upload.js';
+import type {BatchUploadAppElement, BatchUploadData, DataContainer, DataItem, DataSectionElement, PageRemote} from 'neovex://batch-upload/batch_upload.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGT, assertLT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestBatchUploadBrowserProxy} from './test_batch_upload_browser_proxy.js';
 
@@ -29,13 +29,13 @@ suite('BatchUploadViewTest', function() {
     // Create passwords section.
     const password1: DataItem = {
       id: 1,
-      iconUrl: 'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
+      iconUrl: 'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
       title: 'password1',
       subtitle: 'username1',
     };
     const password2: DataItem = {
       id: 2,
-      iconUrl: 'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
+      iconUrl: 'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
       title: 'password2',
       subtitle: 'username2',
     };

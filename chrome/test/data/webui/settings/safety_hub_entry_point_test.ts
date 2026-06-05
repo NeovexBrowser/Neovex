@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import type {SettingsSafetyHubEntryPointElement} from 'chrome://settings/lazy_load.js';
-import {SafetyHubBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {Router, routes} from 'chrome://settings/settings.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsSafetyHubEntryPointElement} from 'neovex://settings/lazy_load.js';
+import {SafetyHubBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {Router, routes} from 'neovex://settings/settings.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {TestSafetyHubBrowserProxy} from './test_safety_hub_browser_proxy.js';
 

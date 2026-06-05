@@ -4,11 +4,11 @@
 
 /** @fileoverview Suite of tests for extension-load-error. */
 
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import type {LoadErrorElement} from 'chrome://extensions/extensions.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {LoadErrorElement} from 'neovex://extensions/extensions.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 import {isElementVisible} from './test_util.js';

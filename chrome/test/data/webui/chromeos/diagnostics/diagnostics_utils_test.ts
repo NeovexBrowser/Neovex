@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/strings.m.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/strings.m.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {convertKibToGibDecimalString, getNetworkCardTitle, getRoutineGroups, getSignalStrength, getSubnetMaskFromRoutingPrefix, setDisplayStateInTitleForTesting} from 'chrome://diagnostics/diagnostics_utils.js';
-import {NetworkType} from 'chrome://diagnostics/network_health_provider.mojom-webui.js';
-import type {RoutineGroup} from 'chrome://diagnostics/routine_group.js';
-import {RoutineType} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {convertKibToGibDecimalString, getNetworkCardTitle, getRoutineGroups, getSignalStrength, getSubnetMaskFromRoutingPrefix, setDisplayStateInTitleForTesting} from 'neovex://diagnostics/diagnostics_utils.js';
+import {NetworkType} from 'neovex://diagnostics/network_health_provider.mojom-webui.js';
+import type {RoutineGroup} from 'neovex://diagnostics/routine_group.js';
+import {RoutineType} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('diagnosticsUtilsTestSuite', function() {
   test('ProperlyConvertsKibToGib', () => {

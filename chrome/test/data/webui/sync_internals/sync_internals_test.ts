@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrTreeElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
-import {getAboutInfoForTest} from 'chrome://sync-internals/about.js';
-import {setAllNodesForTest} from 'chrome://sync-internals/chrome_sync.js';
-import {setupSyncResultsListForTest} from 'chrome://sync-internals/search.js';
-import {assertEquals, assertFalse, assertGE, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {CrTreeElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {getAboutInfoForTest} from 'neovex://sync-internals/about.js';
+import {setAllNodesForTest} from 'neovex://sync-internals/chrome_sync.js';
+import {setupSyncResultsListForTest} from 'neovex://sync-internals/search.js';
+import {assertEquals, assertFalse, assertGE, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 /**
  * Checks aboutInfo's details section for the specified field.

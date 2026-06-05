@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import type {SettingsPrivacyGuidePageElement} from 'chrome://settings/lazy_load.js';
-import {PrivacyGuideStep} from 'chrome://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, PrivacyGuideStepsEligibleAndReached, Router, routes, SignedInState, SyncBrowserProxyImpl} from 'chrome://settings/settings.js';
-import {assertTrue, assertNotReached} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsPrivacyGuidePageElement} from 'neovex://settings/lazy_load.js';
+import {PrivacyGuideStep} from 'neovex://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, PrivacyGuideStepsEligibleAndReached, Router, routes, SignedInState, SyncBrowserProxyImpl} from 'neovex://settings/settings.js';
+import {assertTrue, assertNotReached} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {createPrivacyGuidePageForTest, clickNextOnWelcomeStep, setParametersForCookiesStep, setParametersForHistorySyncStep, setParametersForSafeBrowsingStep, setupPrivacyGuidePageForTest, setupSync, shouldShowCookiesCard, shouldShowHistorySyncCard, shouldShowSafeBrowsingCard} from './privacy_guide_test_util.js';
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';

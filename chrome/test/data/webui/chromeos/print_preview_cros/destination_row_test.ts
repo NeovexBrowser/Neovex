@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-print/js/destination_row_controller.js';
+import 'neovex://os-print/js/destination_row_controller.js';
 
-import {PDF_DESTINATION} from 'chrome://os-print/js/data/destination_constants.js';
-import {DestinationRowElement} from 'chrome://os-print/js/destination_row.js';
-import type {DestinationRowController} from 'chrome://os-print/js/destination_row_controller.js';
-import type {Destination} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {PDF_DESTINATION} from 'neovex://os-print/js/data/destination_constants.js';
+import {DestinationRowElement} from 'neovex://os-print/js/destination_row.js';
+import type {DestinationRowController} from 'neovex://os-print/js/destination_row_controller.js';
+import type {Destination} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {createTestDestination, resetDataManagersAndProviders} from './test_utils.js';
 

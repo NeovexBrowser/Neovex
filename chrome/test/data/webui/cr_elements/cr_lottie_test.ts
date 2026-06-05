@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/cr_elements/cr_lottie/cr_lottie.js';
+import 'neovex://resources/cr_elements/cr_lottie/cr_lottie.js';
 
-import type {CrLottieElement} from 'chrome://resources/cr_elements/cr_lottie/cr_lottie.js';
-import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type { MockMethod} from 'chrome://webui-test/mock_controller.js';
-import {MockController} from 'chrome://webui-test/mock_controller.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrLottieElement} from 'neovex://resources/cr_elements/cr_lottie/cr_lottie.js';
+import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type { MockMethod} from 'neovex://webui-test/mock_controller.js';
+import {MockController} from 'neovex://webui-test/mock_controller.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr-lottie. */
@@ -18,13 +18,13 @@ suite('cr_lottie_test', function() {
    * A URL that produces a sample solid green json lottie animation.
    */
   const SAMPLE_LOTTIE_GREEN: string =
-      'chrome://webui-test/cr_elements/cr_lottie_green.json';
+      'neovex://webui-test/cr_elements/cr_lottie_green.json';
 
   /**
    * A URL that produces a sample solid blue json lottie animation.
    */
   const SAMPLE_LOTTIE_BLUE: string =
-      'chrome://webui-test/cr_elements/cr_lottie_blue.json';
+      'neovex://webui-test/cr_elements/cr_lottie_blue.json';
 
   /**
    * A green pixel as returned by samplePixel.

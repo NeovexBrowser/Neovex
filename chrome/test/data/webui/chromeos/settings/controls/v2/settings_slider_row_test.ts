@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {SettingsRowElement, SettingsSliderV2Element} from 'chrome://os-settings/os_settings.js';
-import {SettingsSliderRowElement} from 'chrome://os-settings/os_settings.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsRowElement, SettingsSliderV2Element} from 'neovex://os-settings/os_settings.js';
+import {SettingsSliderRowElement} from 'neovex://os-settings/os_settings.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {clearBody} from '../../utils.js';
 

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {fakeFirmwareUpdates} from 'chrome://accessory-update/fake_data.js';
-import {FakeUpdateProvider} from 'chrome://accessory-update/fake_update_provider.js';
-import type {UpdateObserverRemote} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertDeepEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {fakeFirmwareUpdates} from 'neovex://accessory-update/fake_data.js';
+import {FakeUpdateProvider} from 'neovex://accessory-update/fake_update_provider.js';
+import type {UpdateObserverRemote} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertDeepEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('FakeUpdateProviderTest', () => {
   let provider: FakeUpdateProvider|null = null;

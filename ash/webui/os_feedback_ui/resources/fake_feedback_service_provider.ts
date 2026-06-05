@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FakeMethodResolver} from 'chrome://resources/ash/common/fake_method_resolver.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {FakeMethodResolver} from 'neovex://resources/ash/common/fake_method_resolver.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {FeedbackAppExitPath, FeedbackAppHelpContentOutcome, FeedbackAppPostSubmitAction, FeedbackAppPreSubmitAction, FeedbackContext, FeedbackServiceProviderInterface, Report} from './os_feedback_ui.mojom-webui.js';
 import {SendReportStatus} from './os_feedback_ui.mojom-webui.js';

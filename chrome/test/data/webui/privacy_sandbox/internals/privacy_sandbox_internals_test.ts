@@ -2,29 +2,29 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://privacy-sandbox-internals/expandable_json_viewer.js';
-import 'chrome://privacy-sandbox-internals/internals_page.js';
-import 'chrome://privacy-sandbox-internals/mojo_timestamp.js';
-import 'chrome://privacy-sandbox-internals/mojo_timedelta.js';
-import 'chrome://privacy-sandbox-internals/pref_display.js';
-import 'chrome://privacy-sandbox-internals/text_copy_button.js';
-import 'chrome://privacy-sandbox-internals/value_display.js';
+import 'neovex://privacy-sandbox-internals/expandable_json_viewer.js';
+import 'neovex://privacy-sandbox-internals/internals_page.js';
+import 'neovex://privacy-sandbox-internals/mojo_timestamp.js';
+import 'neovex://privacy-sandbox-internals/mojo_timedelta.js';
+import 'neovex://privacy-sandbox-internals/pref_display.js';
+import 'neovex://privacy-sandbox-internals/text_copy_button.js';
+import 'neovex://privacy-sandbox-internals/value_display.js';
 
-import type {CrFrameListElement} from 'chrome://privacy-sandbox-internals/cr_frame_list.js';
-import type {ExpandableJsonViewerElement} from 'chrome://privacy-sandbox-internals/expandable_json_viewer.js';
-import type {InternalsPage} from 'chrome://privacy-sandbox-internals/internals_page.js';
-import type {PrefDisplayElement} from 'chrome://privacy-sandbox-internals/pref_display.js';
-import type {PrivacySandboxInternalsPrefGroup, PrivacySandboxInternalsPrefPageConfig} from 'chrome://privacy-sandbox-internals/pref_page.js';
-import type {PrivacySandboxInternalsPref} from 'chrome://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
-import {PrivacySandboxInternalsBrowserProxy} from 'chrome://privacy-sandbox-internals/privacy_sandbox_internals_browser_proxy.js';
-import {Router} from 'chrome://privacy-sandbox-internals/router.js';
-import type {TextCopyButton} from 'chrome://privacy-sandbox-internals/text_copy_button.js';
-import type {ValueDisplayElement} from 'chrome://privacy-sandbox-internals/value_display.js';
-import {defaultLogicalFn, timestampLogicalFn} from 'chrome://privacy-sandbox-internals/value_display.js';
-import type {DictionaryValue, ListValue, Value} from 'chrome://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {MockTimer} from 'chrome://webui-test/mock_timer.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrFrameListElement} from 'neovex://privacy-sandbox-internals/cr_frame_list.js';
+import type {ExpandableJsonViewerElement} from 'neovex://privacy-sandbox-internals/expandable_json_viewer.js';
+import type {InternalsPage} from 'neovex://privacy-sandbox-internals/internals_page.js';
+import type {PrefDisplayElement} from 'neovex://privacy-sandbox-internals/pref_display.js';
+import type {PrivacySandboxInternalsPrefGroup, PrivacySandboxInternalsPrefPageConfig} from 'neovex://privacy-sandbox-internals/pref_page.js';
+import type {PrivacySandboxInternalsPref} from 'neovex://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
+import {PrivacySandboxInternalsBrowserProxy} from 'neovex://privacy-sandbox-internals/privacy_sandbox_internals_browser_proxy.js';
+import {Router} from 'neovex://privacy-sandbox-internals/router.js';
+import type {TextCopyButton} from 'neovex://privacy-sandbox-internals/text_copy_button.js';
+import type {ValueDisplayElement} from 'neovex://privacy-sandbox-internals/value_display.js';
+import {defaultLogicalFn, timestampLogicalFn} from 'neovex://privacy-sandbox-internals/value_display.js';
+import type {DictionaryValue, ListValue, Value} from 'neovex://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {MockTimer} from 'neovex://webui-test/mock_timer.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestPrivacySandboxInternalsBrowserProxy} from './test_privacy_sandbox_internals_browser_proxy.js';
 

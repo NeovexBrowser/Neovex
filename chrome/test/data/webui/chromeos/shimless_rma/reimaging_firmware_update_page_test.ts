@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shimless-rma/shimless_rma.js';
+import 'neovex://shimless-rma/shimless_rma.js';
 
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
-import {UpdateRoFirmwarePage} from 'chrome://shimless-rma/reimaging_firmware_update_page.js';
-import {ShimlessRma} from 'chrome://shimless-rma/shimless_rma.js';
-import type {StateResult} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {UpdateRoFirmwareStatus} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {assertEquals, assertFalse} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
+import {UpdateRoFirmwarePage} from 'neovex://shimless-rma/reimaging_firmware_update_page.js';
+import {ShimlessRma} from 'neovex://shimless-rma/shimless_rma.js';
+import type {StateResult} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {UpdateRoFirmwareStatus} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {assertEquals, assertFalse} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 suite('reimagingFirmwareUpdatePageTest', function() {
   // ShimlessRma is needed to handle the 'transition-state' event used when

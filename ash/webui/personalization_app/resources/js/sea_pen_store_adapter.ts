@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {SeaPenActions} from 'chrome://resources/ash/common/sea_pen/sea_pen_actions.js';
-import {SeaPenActionName} from 'chrome://resources/ash/common/sea_pen/sea_pen_actions.js';
-import type {SeaPenState} from 'chrome://resources/ash/common/sea_pen/sea_pen_state.js';
-import type {SeaPenStoreInterface} from 'chrome://resources/ash/common/sea_pen/sea_pen_store.js';
-import {setSeaPenStore} from 'chrome://resources/ash/common/sea_pen/sea_pen_store.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import type {DeferredAction, StoreObserver} from 'chrome://resources/js/store.js';
+import type {SeaPenActions} from 'neovex://resources/ash/common/sea_pen/sea_pen_actions.js';
+import {SeaPenActionName} from 'neovex://resources/ash/common/sea_pen/sea_pen_actions.js';
+import type {SeaPenState} from 'neovex://resources/ash/common/sea_pen/sea_pen_state.js';
+import type {SeaPenStoreInterface} from 'neovex://resources/ash/common/sea_pen/sea_pen_store.js';
+import {setSeaPenStore} from 'neovex://resources/ash/common/sea_pen/sea_pen_store.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import type {DeferredAction, StoreObserver} from 'neovex://resources/js/store.js';
 
 import {beginLoadSelectedImageAction, setFullscreenStateAction} from './personalization_app.js';
 import type {PersonalizationState} from './personalization_state.js';

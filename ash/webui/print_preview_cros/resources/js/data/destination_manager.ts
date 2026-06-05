@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import {EventTracker} from '//resources/js/event_tracker.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {createCustomEvent} from '../utils/event_utils.js';
 import {getDestinationProvider} from '../utils/mojo_data_providers.js';

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {OsSettingsPersonalizationOptionsElement} from 'chrome://os-settings/lazy_load.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible} from 'chrome://webui-test/test_util.js';
+import type {OsSettingsPersonalizationOptionsElement} from 'neovex://os-settings/lazy_load.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible} from 'neovex://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

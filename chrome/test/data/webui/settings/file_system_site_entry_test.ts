@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {FileSystemGrant, OriginFileSystemGrants} from 'chrome://settings/lazy_load.js';
-import {FileSystemSiteEntryElement, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {CrSettingsPrefs, loadTimeData, Router, routes} from 'chrome://settings/settings.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {FileSystemGrant, OriginFileSystemGrants} from 'neovex://settings/lazy_load.js';
+import {FileSystemSiteEntryElement, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {CrSettingsPrefs, loadTimeData, Router, routes} from 'neovex://settings/settings.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 

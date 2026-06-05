@@ -43,7 +43,7 @@ chrome.test.runTests([
   },
   // Create a new tab.
   function testTabCreate1() {
-    var expectedUrl = 'chrome://version/';
+    var expectedUrl = 'neovex://version/';
     createTabUtil(expectedUrl, function(tabData) {
       chrome.test.assertEq(expectedUrl, tabData.url);
       tabProps.push(tabData);
@@ -62,7 +62,7 @@ chrome.test.runTests([
   },
   // Create another new tab.
   function testTabCreate2() {
-    var expectedUrl = 'chrome://version/';
+    var expectedUrl = 'neovex://version/';
     createTabUtil(expectedUrl, function(tabData) {
       chrome.test.assertEq(expectedUrl, tabData.url);
       tabProps.push(tabData);

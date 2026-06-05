@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
 
 import {XfBase} from '../../widgets/xf_base.js';
 

@@ -7,14 +7,14 @@
  * current user.
  */
 
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
 
-import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {IronA11yAnnouncer} from 'chrome://resources/polymer/v3_0/iron-a11y-announcer/iron-a11y-announcer.js';
+import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {IronA11yAnnouncer} from 'neovex://resources/polymer/v3_0/iron-a11y-announcer/iron-a11y-announcer.js';
 
 import type {UserImage, UserInfo} from '../../personalization_app.mojom-webui.js';
 import {Paths, PersonalizationRouterElement} from '../personalization_router_element.js';
@@ -161,7 +161,7 @@ export class UserPreviewElement extends WithPersonalizationStore {
       return '';
     }
     assert(
-        !url.startsWith('chrome://image/'), 'The url should not be sanitized');
+        !url.startsWith('neovex://image/'), 'The url should not be sanitized');
     return `background-image: url('${
         getAvatarUrl(url, /*staticEncode=*/ true)}')`;
   }

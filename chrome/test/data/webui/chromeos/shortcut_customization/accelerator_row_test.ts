@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shortcut-customization/js/accelerator_row.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://shortcut-customization/js/accelerator_row.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {ShortcutInputKeyElement} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
-import type {AcceleratorRowElement} from 'chrome://shortcut-customization/js/accelerator_row.js';
-import {fakeAcceleratorConfig, fakeLayoutInfo} from 'chrome://shortcut-customization/js/fake_data.js';
-import {AcceleratorSource, AcceleratorState, LayoutStyle, Modifier, TextAcceleratorPartType} from 'chrome://shortcut-customization/js/shortcut_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {ShortcutInputKeyElement} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
+import type {AcceleratorRowElement} from 'neovex://shortcut-customization/js/accelerator_row.js';
+import {fakeAcceleratorConfig, fakeLayoutInfo} from 'neovex://shortcut-customization/js/fake_data.js';
+import {AcceleratorSource, AcceleratorState, LayoutStyle, Modifier, TextAcceleratorPartType} from 'neovex://shortcut-customization/js/shortcut_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {createTextAcceleratorInfo, createUserAcceleratorInfo} from './shortcut_customization_test_util.js';
 

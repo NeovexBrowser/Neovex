@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/new_tab_page.js';
+import 'neovex://new-tab-page/new_tab_page.js';
 
-import {SearchboxBrowserProxy} from 'chrome://new-tab-page/new_tab_page.js';
-import type {SearchboxIconElement} from 'chrome://new-tab-page/new_tab_page.js';
-import {createAutocompleteMatch} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {SearchboxBrowserProxy} from 'neovex://new-tab-page/new_tab_page.js';
+import type {SearchboxIconElement} from 'neovex://new-tab-page/new_tab_page.js';
+import {createAutocompleteMatch} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestSearchboxBrowserProxy} from './test_searchbox_browser_proxy.js';
 
@@ -144,7 +144,7 @@ suite('CrComponentsSearchboxIconTest', () => {
     assertTrue(!!vectorIcon);
     assertEquals(
         window.getComputedStyle(vectorIcon).webkitMaskImage,
-        `url("chrome://new-tab-page/${match.iconPath}")`);
+        `url("neovex://new-tab-page/${match.iconPath}")`);
 
     const faviconImage = icon.$.faviconImage;
     assertTrue(!!faviconImage);
@@ -179,7 +179,7 @@ suite('CrComponentsSearchboxIconTest', () => {
     assertTrue(!!vectorIcon);
     assertEquals(
         window.getComputedStyle(vectorIcon).webkitMaskImage,
-        `url("chrome://new-tab-page/${match.iconPath}")`);
+        `url("neovex://new-tab-page/${match.iconPath}")`);
 
     const faviconImage = icon.$.faviconImage;
     assertTrue(!!faviconImage);

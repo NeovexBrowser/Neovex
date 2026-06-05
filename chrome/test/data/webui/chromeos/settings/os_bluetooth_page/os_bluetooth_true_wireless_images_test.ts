@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsBluetoothTrueWirelessImagesElement} from 'chrome://os-settings/lazy_load.js';
-import {BatteryType} from 'chrome://resources/ash/common/bluetooth/bluetooth_types.js';
-import {DeviceConnectionState} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {createDefaultBluetoothDevice} from 'chrome://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsBluetoothTrueWirelessImagesElement} from 'neovex://os-settings/lazy_load.js';
+import {BatteryType} from 'neovex://resources/ash/common/bluetooth/bluetooth_types.js';
+import {DeviceConnectionState} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {createDefaultBluetoothDevice} from 'neovex://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('<os-settings-bluetooth-true-wireless-images>', () => {
   let bluetoothTrueWirelessImages: SettingsBluetoothTrueWirelessImagesElement;

@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {keyDownOn, keyUpOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrSliderElement,SettingsSliderElement} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {keyDownOn, keyUpOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrSliderElement,SettingsSliderElement} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for settings-slider. */

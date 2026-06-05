@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {GetOauthTokenStatus, ParentAccessParams, ParentAccessResult, ParentAccessServerMessage, ParentAccessUiHandlerInterface} from 'chrome://parent-access/parent_access_ui.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {GetOauthTokenStatus, ParentAccessParams, ParentAccessResult, ParentAccessServerMessage, ParentAccessUiHandlerInterface} from 'neovex://parent-access/parent_access_ui.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestParentAccessUiHandler extends TestBrowserProxy implements
     ParentAccessUiHandlerInterface {

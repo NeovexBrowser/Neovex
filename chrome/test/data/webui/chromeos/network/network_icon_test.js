@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/network/network_icon.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/network/network_icon.js';
 
-import {HotspotState} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {ActivationStateType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {HotspotState} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {ActivationStateType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('NetworkIconTest', function() {
   /** @type {!NetworkList|undefined} */

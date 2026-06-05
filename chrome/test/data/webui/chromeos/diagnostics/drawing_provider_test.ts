@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/strings.m.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/strings.m.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {CanvasDrawingProvider} from 'chrome://diagnostics/drawing_provider.js';
-import {constructRgba, DESTINATION_OVER, LINE_CAP, LINE_WIDTH, lookupCssVariableValue, MARK_COLOR, MARK_OPACITY, MARK_RADIUS, TRAIL_COLOR, TRAIL_MAX_OPACITY} from 'chrome://diagnostics/drawing_provider_utils.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'chrome://webui-test/mock_controller.js';
+import {CanvasDrawingProvider} from 'neovex://diagnostics/drawing_provider.js';
+import {constructRgba, DESTINATION_OVER, LINE_CAP, LINE_WIDTH, lookupCssVariableValue, MARK_COLOR, MARK_OPACITY, MARK_RADIUS, TRAIL_COLOR, TRAIL_MAX_OPACITY} from 'neovex://diagnostics/drawing_provider_utils.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'neovex://webui-test/mock_controller.js';
 
 /**
  * FakeCanvasCtx class mocks various html Canvas API methods to make it easy to

@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/network/network_siminfo.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/network/network_siminfo.js';
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import type {NetworkSiminfoElement} from 'chrome://resources/ash/common/network/network_siminfo.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {SimLockDialogsElement} from 'chrome://resources/ash/common/network/sim_lock_dialogs.js';
-import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
-import type {GlobalPolicy} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {InhibitReason, SuppressionType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import type {NetworkSiminfoElement} from 'neovex://resources/ash/common/network/network_siminfo.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {SimLockDialogsElement} from 'neovex://resources/ash/common/network/sim_lock_dialogs.js';
+import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
+import type {GlobalPolicy} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {InhibitReason, SuppressionType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 suite('NetworkSiminfoTest', () => {
   let simInfo: NetworkSiminfoElement;

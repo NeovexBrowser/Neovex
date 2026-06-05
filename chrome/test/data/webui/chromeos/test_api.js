@@ -409,7 +409,7 @@ const errors = [];
  * URL to dummy WebUI page for testing framework.
  * @type {string}
  */
-const DUMMY_URL = 'chrome://DummyURL';
+const DUMMY_URL = 'neovex://DummyURL';
 
 /**
  * Resets test state by clearing |errors| and |testIsDone| flags.

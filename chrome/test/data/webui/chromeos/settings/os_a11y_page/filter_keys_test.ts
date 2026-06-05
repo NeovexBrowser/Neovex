@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsKeyboardAndTextInputPageElement} from 'chrome://os-settings/lazy_load.js';
-import type {SettingsPrefsElement, SettingsSliderElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs, Router, routes} from 'chrome://os-settings/os_settings.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsKeyboardAndTextInputPageElement} from 'neovex://os-settings/lazy_load.js';
+import type {SettingsPrefsElement, SettingsSliderElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs, Router, routes} from 'neovex://os-settings/os_settings.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 // TODO(https://issuetracker.google.com/378556940): Merge tests with
 // keyboard_and_text_input_page_test.ts once feature is enabled by default.

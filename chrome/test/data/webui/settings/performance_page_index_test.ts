@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://settings/settings.js';
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/settings.js';
+import 'neovex://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {SettingsPerformancePageIndexElement} from 'chrome://settings/settings.js';
-import {CrSettingsPrefs, PerformanceBrowserProxyImpl, Router, routes} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {SettingsPerformancePageIndexElement} from 'neovex://settings/settings.js';
+import {CrSettingsPrefs, PerformanceBrowserProxyImpl, Router, routes} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestPerformanceBrowserProxy} from './test_performance_browser_proxy.js';
 

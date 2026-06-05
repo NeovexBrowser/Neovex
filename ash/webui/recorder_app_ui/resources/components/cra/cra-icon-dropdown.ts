@@ -4,8 +4,8 @@
 
 import {
   IconDropdown,
-} from 'chrome://resources/cros_components/icon_dropdown/icon-dropdown.js';
-import {css} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/cros_components/icon_dropdown/icon-dropdown.js';
+import {css} from 'neovex://resources/mwc/lit/index.js';
 
 export class CraIconDropdown extends IconDropdown {
   static override styles = [

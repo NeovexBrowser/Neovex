@@ -69,7 +69,7 @@ enum DeviceBoundSessionDeletionReason {
   kFailedToRestoreKey = 1,  // Could not restore key from disk.
   kFailedToUnwrapKey = 2,  // Could not unwrap a key loaded from disk.
   kStoragePartitionCleared = 3,  // Site data is being cleared due to the Clear-Site-Data header.
-  kClearBrowsingData = 4,  // Site data is being cleared by the user on chrome://settings/clearBrowsingData.
+  kClearBrowsingData = 4,  // Site data is being cleared by the user on neovex://settings/clearBrowsingData.
   kServerRequested = 5,  // Server explicitly requested termination.
   kInvalidSessionParams = 6,  // Refresh provided invalid params.
   kRefreshFatalError = 7,  // Fatal error during refresh.

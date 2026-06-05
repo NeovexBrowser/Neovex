@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/searchbox/searchbox_input.js';
+import 'neovex://resources/cr_components/searchbox/searchbox_input.js';
 
-import type {SearchboxIconElement} from 'chrome://resources/cr_components/searchbox/searchbox_icon.js';
-import type {SearchboxInputElement} from 'chrome://resources/cr_components/searchbox/searchbox_input.js';
-import {createAutocompleteMatch, createSearchMatchForTesting, SearchboxBrowserProxy} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {AutocompleteMatch} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {SearchboxIconElement} from 'neovex://resources/cr_components/searchbox/searchbox_icon.js';
+import type {SearchboxInputElement} from 'neovex://resources/cr_components/searchbox/searchbox_input.js';
+import {createAutocompleteMatch, createSearchMatchForTesting, SearchboxBrowserProxy} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {AutocompleteMatch} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {assertStyle} from './searchbox_test_utils.js';
 import {TestSearchboxBrowserProxy} from './test_searchbox_browser_proxy.js';
@@ -59,7 +59,7 @@ suite('SearchboxInputTest', () => {
     assertTrue(!!icon);
     assertStyle(
         icon.$.icon, '-webkit-mask-image',
-        `url("chrome://new-tab-page/${url}")`);
+        `url("neovex://new-tab-page/${url}")`);
     assertStyle(icon.$.icon, 'background-image', 'none');
   }
 

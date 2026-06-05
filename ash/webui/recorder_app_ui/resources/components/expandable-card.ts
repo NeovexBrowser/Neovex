@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cros_components/accordion/accordion.js';
-import 'chrome://resources/cros_components/accordion/accordion_item.js';
-import 'chrome://resources/cros_components/checkbox/checkbox.js';
+import 'neovex://resources/cros_components/accordion/accordion.js';
+import 'neovex://resources/cros_components/accordion/accordion_item.js';
+import 'neovex://resources/cros_components/checkbox/checkbox.js';
 import './cra/cra-icon-button.js';
 import './cra/cra-icon.js';
 
 import {
   Checkbox as CrosCheckbox,
-} from 'chrome://resources/cros_components/checkbox/checkbox.js';
+} from 'neovex://resources/cros_components/checkbox/checkbox.js';
 import {
   css,
   CSSResultGroup,
   html,
   PropertyDeclarations,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {ReactiveLitElement} from '../core/reactive/lit.js';
 import {assertInstanceof} from '../core/utils/assert.js';

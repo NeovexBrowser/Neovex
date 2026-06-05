@@ -4,7 +4,7 @@
 
 import 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 
-import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
 
 import {getCurrentPage, getRequiredElement} from './test_util.js';
 

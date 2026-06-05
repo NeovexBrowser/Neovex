@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {dispatchPropertyChange} from 'chrome://resources/ash/common/cr_deprecated.js';
+import {dispatchPropertyChange} from 'neovex://resources/ash/common/cr_deprecated.js';
 
 
 export type PropertyChangeEvent<T> = Event&{

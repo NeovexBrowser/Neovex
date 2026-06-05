@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {HistoryAppElement, HistoryEntry, HistoryListElement} from 'chrome://history/history.js';
-import {BrowserServiceImpl} from 'chrome://history/history.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {HistoryAppElement, HistoryEntry, HistoryListElement} from 'neovex://history/history.js';
+import {BrowserServiceImpl} from 'neovex://history/history.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestBrowserService} from './test_browser_service.js';
 import {createHistoryEntry, createHistoryInfo} from './test_util.js';

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/theme_color_picker/check_mark_wrapper.js';
+import 'neovex://resources/cr_components/theme_color_picker/check_mark_wrapper.js';
 
-import type {CheckMarkWrapperElement} from 'chrome://resources/cr_components/theme_color_picker/check_mark_wrapper.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CheckMarkWrapperElement} from 'neovex://resources/cr_components/theme_color_picker/check_mark_wrapper.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('CheckMarkWrapperTest', () => {
   let checkMarkWrapperElement: CheckMarkWrapperElement;

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PageCallbackRouter} from 'chrome://settings/lazy_load.js';
-import type {BatchUploadPromoProxy, PageHandlerInterface, PageRemote} from 'chrome://settings/lazy_load.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {PageCallbackRouter} from 'neovex://settings/lazy_load.js';
+import type {BatchUploadPromoProxy, PageHandlerInterface, PageRemote} from 'neovex://settings/lazy_load.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestBatchUploadPromoHandler extends TestBrowserProxy implements
     PageHandlerInterface {

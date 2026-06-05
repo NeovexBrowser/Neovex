@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://password-manager/password_manager.js';
+import 'neovex://password-manager/password_manager.js';
 
-import type {Route} from 'chrome://password-manager/password_manager.js';
-import {CheckupSubpage, Page, RouteObserverMixin, Router, UrlParam} from 'chrome://password-manager/password_manager.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {Route} from 'neovex://password-manager/password_manager.js';
+import {CheckupSubpage, Page, RouteObserverMixin, Router, UrlParam} from 'neovex://password-manager/password_manager.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 const TestElementBase = RouteObserverMixin(PolymerElement);
 class TestElement extends TestElementBase {

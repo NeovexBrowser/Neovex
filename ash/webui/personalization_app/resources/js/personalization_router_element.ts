@@ -7,15 +7,15 @@
  * parameters to display sections of the personalization SWA.
  */
 
-import 'chrome://resources/polymer/v3_0/iron-location/iron-location.js';
-import 'chrome://resources/polymer/v3_0/iron-location/iron-query-params.js';
+import 'neovex://resources/polymer/v3_0/iron-location/iron-location.js';
+import 'neovex://resources/polymer/v3_0/iron-location/iron-query-params.js';
 
-import {assert} from 'chrome://resources/ash/common/assert.js';
-import {isManagedSeaPenEnabled, isSeaPenEnabled} from 'chrome://resources/ash/common/sea_pen/load_time_booleans.js';
-import type {SeaPenQueryParams} from 'chrome://resources/ash/common/sea_pen/sea_pen_router_element.js';
-import {maybeDoPageTransition} from 'chrome://resources/ash/common/sea_pen/transition.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'neovex://resources/ash/common/assert.js';
+import {isManagedSeaPenEnabled, isSeaPenEnabled} from 'neovex://resources/ash/common/sea_pen/load_time_booleans.js';
+import type {SeaPenQueryParams} from 'neovex://resources/ash/common/sea_pen/sea_pen_router_element.js';
+import {maybeDoPageTransition} from 'neovex://resources/ash/common/sea_pen/transition.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {GooglePhotosAlbum, WallpaperCollection} from '../personalization_app.mojom-webui.js';
 import {TopicSource} from '../personalization_app.mojom-webui.js';

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewDestinationListItemElement} from 'chrome://print/print_preview.js';
-import {Destination, DestinationOrigin, getTrustedHTML, NativeLayerCrosImpl, PrinterStatusReason, PrinterStatusSeverity} from 'chrome://print/print_preview.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {MockController} from 'chrome://webui-test/mock_controller.js';
-import {waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {PrintPreviewDestinationListItemElement} from 'neovex://print/print_preview.js';
+import {Destination, DestinationOrigin, getTrustedHTML, NativeLayerCrosImpl, PrinterStatusReason, PrinterStatusSeverity} from 'neovex://print/print_preview.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {MockController} from 'neovex://webui-test/mock_controller.js';
+import {waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {NativeLayerCrosStub} from './native_layer_cros_stub.js';
 import {FakeMediaQueryList} from './print_preview_test_utils.js';

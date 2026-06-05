@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
 import './xf_icon.js';
 
 import {css, customElement, html, ifDefined, property, type PropertyValues, query, state, styleMap, XfBase} from './xf_base.js';

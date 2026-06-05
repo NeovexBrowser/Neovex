@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
 
-import type {CrPageSelectorElement} from 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrPageSelectorElement} from 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('cr-page-selector', () => {
   let element: CrPageSelectorElement;

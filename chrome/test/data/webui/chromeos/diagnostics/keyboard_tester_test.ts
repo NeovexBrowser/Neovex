@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/keyboard_tester.js';
-import 'chrome://diagnostics/strings.m.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/keyboard_tester.js';
+import 'neovex://diagnostics/strings.m.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {BottomLeftLayout, BottomRightLayout, ConnectionType, MechanicalLayout, NumberPadPresence, NumpadLayout, PhysicalLayout, TopRightKey} from 'chrome://diagnostics/input.mojom-webui.js';
-import {KeyEventType} from 'chrome://diagnostics/input_data_provider.mojom-webui.js';
-import type {KeyboardTesterElement} from 'chrome://diagnostics/keyboard_tester.js';
-import {KeyboardDiagramElement, TopRightKey as DiagramTopRightKey} from 'chrome://resources/ash/common/keyboard_diagram.js';
-import {KeyboardKeyState} from 'chrome://resources/ash/common/keyboard_key.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
-import {MockTimer} from 'chrome://webui-test/mock_timer.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {BottomLeftLayout, BottomRightLayout, ConnectionType, MechanicalLayout, NumberPadPresence, NumpadLayout, PhysicalLayout, TopRightKey} from 'neovex://diagnostics/input.mojom-webui.js';
+import {KeyEventType} from 'neovex://diagnostics/input_data_provider.mojom-webui.js';
+import type {KeyboardTesterElement} from 'neovex://diagnostics/keyboard_tester.js';
+import {KeyboardDiagramElement, TopRightKey as DiagramTopRightKey} from 'neovex://resources/ash/common/keyboard_diagram.js';
+import {KeyboardKeyState} from 'neovex://resources/ash/common/keyboard_key.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
+import {MockTimer} from 'neovex://webui-test/mock_timer.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('keyboardTesterTestSuite', function() {
   let keyboardTesterElement: KeyboardTesterElement|null = null;

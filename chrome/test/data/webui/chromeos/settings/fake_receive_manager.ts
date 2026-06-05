@@ -6,8 +6,8 @@
  * @fileoverview Fake implementation of ReceiveManagerInterface for testing.
  */
 
-import {nearbyShareMojom} from 'chrome://os-settings/os_settings.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {nearbyShareMojom} from 'neovex://os-settings/os_settings.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 type ReceiveObserverInterface = nearbyShareMojom.ReceiveObserverInterface;
 type ReceiveManagerInterface = nearbyShareMojom.ReceiveManagerInterface;

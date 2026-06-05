@@ -5,7 +5,7 @@
 /**
  * @fileoverview Utility functions to be used for theme related components.
  */
-import {hexColorToSkColor} from 'chrome://resources/js/color_utils.js';
+import {hexColorToSkColor} from 'neovex://resources/js/color_utils.js';
 
 import {ColorScheme} from '../../color_scheme.mojom-webui.js';
 

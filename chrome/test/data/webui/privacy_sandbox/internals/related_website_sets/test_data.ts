@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
 
-import type {GetRelatedWebsiteSetsResponse, RelatedWebsiteSet} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
-import {SiteType} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import type {GetRelatedWebsiteSetsResponse, RelatedWebsiteSet} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import {SiteType} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
 
 export const SAMPLE_RELATED_WEBSITE_SET: RelatedWebsiteSet = {
   primarySite: 'set1-primary.example',

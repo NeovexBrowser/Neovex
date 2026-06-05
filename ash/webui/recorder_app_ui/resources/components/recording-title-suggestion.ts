@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cros_components/badge/badge.js';
-import 'chrome://resources/cros_components/chip/chip.js';
+import 'neovex://resources/cros_components/badge/badge.js';
+import 'neovex://resources/cros_components/chip/chip.js';
 import './cra/cra-icon.js';
 import './cra/cra-icon-button.js';
 import './genai-error.js';
@@ -11,7 +11,7 @@ import './genai-feedback-buttons.js';
 import './genai-placeholder.js';
 import './spoken-message.js';
 
-import {Chip} from 'chrome://resources/cros_components/chip/chip.js';
+import {Chip} from 'neovex://resources/cros_components/chip/chip.js';
 import {
   createRef,
   css,
@@ -20,7 +20,7 @@ import {
   nothing,
   PropertyDeclarations,
   ref,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

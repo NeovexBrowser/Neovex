@@ -12,7 +12,7 @@ import '//resources/polymer/v3_0/iron-icon/iron-icon.js';
 
 import type {ApnProperties} from '//resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
 import {mixinBehaviors, PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {I18nMixin, I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin, I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
 
 import {getTemplate} from './apn_selection_dialog_list_item.html.js';
 import {getApnDisplayName} from './cellular_utils.js';

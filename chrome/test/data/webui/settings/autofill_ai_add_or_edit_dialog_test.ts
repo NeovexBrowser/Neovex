@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {loadTimeData} from 'chrome://settings/settings.js';
-import type {CrButtonElement, CrInputElement, SettingsAutofillAiAddOrEditDialogElement} from 'chrome://settings/lazy_load.js';
-import {EntityDataManagerProxyImpl} from 'chrome://settings/lazy_load.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
+import type {CrButtonElement, CrInputElement, SettingsAutofillAiAddOrEditDialogElement} from 'neovex://settings/lazy_load.js';
+import {EntityDataManagerProxyImpl} from 'neovex://settings/lazy_load.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestEntityDataManagerProxy} from './test_entity_data_manager_proxy.js';
 // clang-format on

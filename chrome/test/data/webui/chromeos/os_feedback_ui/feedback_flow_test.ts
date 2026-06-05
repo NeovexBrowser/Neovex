@@ -2,32 +2,32 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-feedback/confirmation_page.js';
-import 'chrome://os-feedback/search_page.js';
-import 'chrome://os-feedback/share_data_page.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://os-feedback/confirmation_page.js';
+import 'neovex://os-feedback/search_page.js';
+import 'neovex://os-feedback/share_data_page.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {ConfirmationPageElement} from 'chrome://os-feedback/confirmation_page.js';
-import {fakeFeedbackContext, fakeFeedbackContextWithoutLinkedCrossDevicePhone, fakeInternalUserFeedbackContext, fakePngData, fakeSearchResponse} from 'chrome://os-feedback/fake_data.js';
-import {FakeFeedbackServiceProvider} from 'chrome://os-feedback/fake_feedback_service_provider.js';
-import {FakeHelpContentProvider} from 'chrome://os-feedback/fake_help_content_provider.js';
-import type {FeedbackFlowButtonClickEvent, FeedbackFlowElement} from 'chrome://os-feedback/feedback_flow.js';
-import {AdditionalContextQueryParam, FeedbackFlowState} from 'chrome://os-feedback/feedback_flow.js';
-import {OS_FEEDBACK_TRUSTED_ORIGIN} from 'chrome://os-feedback/help_content.js';
-import {setFeedbackServiceProviderForTesting, setHelpContentProviderForTesting} from 'chrome://os-feedback/mojo_interface_provider.js';
-import type {FeedbackContext} from 'chrome://os-feedback/os_feedback_ui.mojom-webui.js';
-import {FeedbackAppExitPath, FeedbackAppHelpContentOutcome, FeedbackAppPreSubmitAction, SendReportStatus} from 'chrome://os-feedback/os_feedback_ui.mojom-webui.js';
-import {SearchPageElement} from 'chrome://os-feedback/search_page.js';
-import type {ShareDataPageElement} from 'chrome://os-feedback/share_data_page.js';
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {ConfirmationPageElement} from 'neovex://os-feedback/confirmation_page.js';
+import {fakeFeedbackContext, fakeFeedbackContextWithoutLinkedCrossDevicePhone, fakeInternalUserFeedbackContext, fakePngData, fakeSearchResponse} from 'neovex://os-feedback/fake_data.js';
+import {FakeFeedbackServiceProvider} from 'neovex://os-feedback/fake_feedback_service_provider.js';
+import {FakeHelpContentProvider} from 'neovex://os-feedback/fake_help_content_provider.js';
+import type {FeedbackFlowButtonClickEvent, FeedbackFlowElement} from 'neovex://os-feedback/feedback_flow.js';
+import {AdditionalContextQueryParam, FeedbackFlowState} from 'neovex://os-feedback/feedback_flow.js';
+import {OS_FEEDBACK_TRUSTED_ORIGIN} from 'neovex://os-feedback/help_content.js';
+import {setFeedbackServiceProviderForTesting, setHelpContentProviderForTesting} from 'neovex://os-feedback/mojo_interface_provider.js';
+import type {FeedbackContext} from 'neovex://os-feedback/os_feedback_ui.mojom-webui.js';
+import {FeedbackAppExitPath, FeedbackAppHelpContentOutcome, FeedbackAppPreSubmitAction, SendReportStatus} from 'neovex://os-feedback/os_feedback_ui.mojom-webui.js';
+import {SearchPageElement} from 'neovex://os-feedback/search_page.js';
+import type {ShareDataPageElement} from 'neovex://os-feedback/share_data_page.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('FeedbackFlowTestSuite', () => {
   let page: FeedbackFlowElement;
@@ -302,7 +302,7 @@ suite('FeedbackFlowTestSuite', () => {
     assertTrue(!!screenshotImg);
     assertTrue(!!screenshotImg.src);
     // Verify that the src of the screenshot image is set.
-    assertTrue(screenshotImg.src.startsWith('blob:chrome://os-feedback/'));
+    assertTrue(screenshotImg.src.startsWith('blob:neovex://os-feedback/'));
     // Verify that click continue after viewing helpcontent will emit the
     // correct metric.
     verifyHelpContentOutcomeMetricCalled(
@@ -930,7 +930,7 @@ suite('FeedbackFlowTestSuite', () => {
 
         // Set the pageUrl in fake feedback context back to its origin value
         // because it's overwritten by the page_url passed from the app.
-        fakeFeedbackContext.pageUrl = 'chrome://tab/';
+        fakeFeedbackContext.pageUrl = 'neovex://tab/';
       });
 
   // Test that the extra diagnostics gets set, and pageUrl uses the one passed
@@ -1141,7 +1141,7 @@ suite('FeedbackFlowTestSuite', () => {
   test('UpdatesCSSUrl_TrustedUi', async () => {
     /*@type {HTMLLinkElement}*/
     const link = document.createElement('link');
-    const disabledUrl = 'chrome://resources/chromeos/colors/cros_styles.css';
+    const disabledUrl = 'neovex://resources/chromeos/colors/cros_styles.css';
     link.href = disabledUrl;
     document.head.appendChild(link);
 
@@ -1192,7 +1192,7 @@ suite('FeedbackFlowTestSuite', () => {
             '"settingsSearchDoNotRecordMetrics": true, ' +
             '"hasLinkedCrossDevicePhone": true, ' +
             '"isInternalAccount": true, ' +
-            '"pageUrl":"chrome://flags/",' +
+            '"pageUrl":"neovex://flags/",' +
             '"systemInformation":[' +
             '  {' +
             '    "key": "EXTRA_DIAGNOSTICS",' +
@@ -1210,7 +1210,7 @@ suite('FeedbackFlowTestSuite', () => {
     const feedbackContext = getFeedbackContext();
     assertEquals('Login', feedbackContext.categoryTag);
     assertEquals('fake extra log data', feedbackContext.extraDiagnostics);
-    assertEquals('chrome://flags/', feedbackContext.pageUrl!);
+    assertEquals('neovex://flags/', feedbackContext.pageUrl!);
     assertEquals(
         '{"fake key1":"fake value1"}', feedbackContext.autofillMetadata);
     assertTrue(feedbackContext.fromAutofill);

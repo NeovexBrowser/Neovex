@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
 
 import type {EntryLocation} from '../../background/js/entry_location_impl.js';
 import type {FilesAppEntry} from '../../common/js/files_app_entry_types.js';

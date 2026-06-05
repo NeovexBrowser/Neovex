@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {UnitLabel} from 'chrome://sys-internals/line_chart/unit_label.js';
-import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {UnitLabel} from 'neovex://sys-internals/line_chart/unit_label.js';
+import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {assertCloseTo} from '../test_util.js';
 

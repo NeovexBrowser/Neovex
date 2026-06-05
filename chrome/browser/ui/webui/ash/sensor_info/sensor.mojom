@@ -43,7 +43,7 @@ interface PageHandlerFactory {
   CreatePageHandler(pending_receiver<PageHandler> handler);
 };
 
-// Called from TS side of chrome://sensor-info (Renderer -> Browser)
+// Called from TS side of neovex://sensor-info (Renderer -> Browser)
 interface PageHandler {
   // Starts writing SensorUpdates to file.
   StartRecordingUpdate();

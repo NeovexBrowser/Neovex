@@ -294,7 +294,7 @@ interface DeviceSync {
           (NetworkRequestResult result_code,
            array<DeviceActivityStatus>? device_activity_statuses);
 
-  // Functions below are implemented for chrome://proximity-auth page, which is
+  // Functions below are implemented for neovex://proximity-auth page, which is
   // intended for debugging purposes only.
   // TODO(khorimoto): Determine whether a new, debug-only interface should be
   //                  refactored out of DeviceSync.

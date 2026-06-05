@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {GraduationUiHandlerInterface, ProfileInfo} from 'chrome://graduation/mojom/graduation_ui.mojom-webui.js';
-import {AuthResult, GraduationScreen} from 'chrome://graduation/mojom/graduation_ui.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {GraduationUiHandlerInterface, ProfileInfo} from 'neovex://graduation/mojom/graduation_ui.mojom-webui.js';
+import {AuthResult, GraduationScreen} from 'neovex://graduation/mojom/graduation_ui.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestGraduationUiHandler extends TestBrowserProxy implements
     GraduationUiHandlerInterface {

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/cellular_setup/psim_flow_ui.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/cellular_setup/psim_flow_ui.js';
 
-import {ButtonState} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
-import {setCellularSetupRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import type {PsimFlowUiElement} from 'chrome://resources/ash/common/cellular_setup/psim_flow_ui.js';
-import {FAILED_PSIM_SETUP_DURATION_METRIC_NAME, PsimPageName, PsimSetupFlowResult, PsimUiState, SUCCESSFUL_PSIM_SETUP_DURATION_METRIC_NAME} from 'chrome://resources/ash/common/cellular_setup/psim_flow_ui.js';
-import type {ActivationDelegateRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/cellular_setup.mojom-webui.js';
-import {ActivationResult, CarrierPortalStatus} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/cellular_setup.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {ButtonState} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
+import {setCellularSetupRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import type {PsimFlowUiElement} from 'neovex://resources/ash/common/cellular_setup/psim_flow_ui.js';
+import {FAILED_PSIM_SETUP_DURATION_METRIC_NAME, PsimPageName, PsimSetupFlowResult, PsimUiState, SUCCESSFUL_PSIM_SETUP_DURATION_METRIC_NAME} from 'neovex://resources/ash/common/cellular_setup/psim_flow_ui.js';
+import type {ActivationDelegateRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/cellular_setup.mojom-webui.js';
+import {ActivationResult, CarrierPortalStatus} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/cellular_setup.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {FakeCellularSetupDelegate} from './fake_cellular_setup_delegate.js';
 import {FakeCarrierPortalHandlerRemote, FakeCellularSetupRemote} from './fake_cellular_setup_remote.js';

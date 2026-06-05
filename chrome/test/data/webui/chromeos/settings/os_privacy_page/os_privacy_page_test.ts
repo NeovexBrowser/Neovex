@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PrivacyHubBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {CrDialogElement, CrRadioGroupElement, OsSettingsPrivacyPageElement, SettingsToggleButtonElement, SyncBrowserProxy} from 'chrome://os-settings/os_settings.js';
-import {createRouterForTesting, GeolocationAccessLevel, PageStatus, PeripheralDataAccessBrowserProxyImpl, Router, routes, SecureDnsMode, settingMojom, SyncBrowserProxyImpl} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {PrivacyHubBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {CrDialogElement, CrRadioGroupElement, OsSettingsPrivacyPageElement, SettingsToggleButtonElement, SyncBrowserProxy} from 'neovex://os-settings/os_settings.js';
+import {createRouterForTesting, GeolocationAccessLevel, PageStatus, PeripheralDataAccessBrowserProxyImpl, Router, routes, SecureDnsMode, settingMojom, SyncBrowserProxyImpl} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {FakeMetricsPrivate} from '../fake_metrics_private.js';
 import {FakeQuickUnlockPrivate} from '../fake_quick_unlock_private.js';

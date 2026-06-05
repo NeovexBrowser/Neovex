@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SettingsAiTabOrganizationSubpageElement} from 'chrome://settings/lazy_load.js';
-import {AiEnterpriseFeaturePrefName, AiPageActions} from 'chrome://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {AiPageTabOrganizationInteractions, CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, ModelExecutionEnterprisePolicyValue} from 'chrome://settings/settings.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {SettingsAiTabOrganizationSubpageElement} from 'neovex://settings/lazy_load.js';
+import {AiEnterpriseFeaturePrefName, AiPageActions} from 'neovex://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {AiPageTabOrganizationInteractions, CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, ModelExecutionEnterprisePolicyValue} from 'neovex://settings/settings.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 

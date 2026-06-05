@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {MultitaskingSettingsCardElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {MultitaskingSettingsCardElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('<multitasking-settings-card>', () => {
   let multitaskingSettingsCard: MultitaskingSettingsCardElement;

@@ -6,8 +6,8 @@
  * @fileoverview This is a table column representation
  */
 
-import {dispatchPropertyChange} from 'chrome://resources/ash/common/cr_deprecated.js';
-import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
+import {dispatchPropertyChange} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
 
 import {jsSetter} from '../../../../common/js/cr_ui.js';
 

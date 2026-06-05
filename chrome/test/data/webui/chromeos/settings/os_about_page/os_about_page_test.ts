@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/os_settings.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {CrButtonElement, IronIconElement, OsAboutPageElement, userActionRecorderMojom} from 'chrome://os-settings/os_settings.js';
-import {AboutPageBrowserProxyImpl, BrowserChannel, LifetimeBrowserProxyImpl, Router, routes, settingMojom, setUserActionRecorderForTesting, UpdateStatus} from 'chrome://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {CrButtonElement, IronIconElement, OsAboutPageElement, userActionRecorderMojom} from 'neovex://os-settings/os_settings.js';
+import {AboutPageBrowserProxyImpl, BrowserChannel, LifetimeBrowserProxyImpl, Router, routes, settingMojom, setUserActionRecorderForTesting, UpdateStatus} from 'neovex://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {FakeUserActionRecorder} from '../fake_user_action_recorder.js';
 import {TestLifetimeBrowserProxy} from '../test_os_lifetime_browser_proxy.js';
@@ -30,9 +30,9 @@ suite('<os-about-page> AllBuilds', () => {
   let userActionRecorder: UserActionRecorderInterface;
 
   const SPINNER_ICON_LIGHT_MODE =
-      'chrome://resources/images/throbber_small.svg';
+      'neovex://resources/images/throbber_small.svg';
   const SPINNER_ICON_DARK_MODE =
-      'chrome://resources/images/throbber_small_dark.svg';
+      'neovex://resources/images/throbber_small_dark.svg';
 
   setup(() => {
     loadTimeData.overrideValues({

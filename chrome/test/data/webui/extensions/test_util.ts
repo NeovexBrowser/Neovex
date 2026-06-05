@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /** @fileoverview Common utilities for extension ui tests. */
-import type {ItemDelegate} from 'chrome://extensions/extensions.js';
-import {createDummyExtensionInfo} from 'chrome://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeChromeEvent} from 'chrome://webui-test/fake_chrome_event.js';
-import {MockController, MockMethod} from 'chrome://webui-test/mock_controller.js';
-import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ItemDelegate} from 'neovex://extensions/extensions.js';
+import {createDummyExtensionInfo} from 'neovex://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeChromeEvent} from 'neovex://webui-test/fake_chrome_event.js';
+import {MockController, MockMethod} from 'neovex://webui-test/mock_controller.js';
+import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 /** A mock to test that clicking on an element calls a specific method. */
 export class ClickMock {
@@ -201,7 +201,7 @@ export function createExtensionInfo(
 
   // Modify some dummy properties for testing.
   dummy.description = 'This is an extension';
-  dummy.iconUrl = 'chrome://extension-icon/' + id + '/24/0';
+  dummy.iconUrl = 'neovex://extension-icon/' + id + '/24/0';
   dummy.id = id;
   dummy.incognitoAccess = {isEnabled: true, isActive: false};
   dummy.name = 'Wonderful Extension';

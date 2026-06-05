@@ -6,12 +6,12 @@ import './graduation_error.js';
 import './graduation_offline.js';
 import './graduation_takeout_ui.js';
 import './graduation_welcome.js';
-import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
 
-import type {CrViewManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {AuthResult} from '../mojom/graduation_ui.mojom-webui.js';
 import {GraduationScreen} from '../mojom/graduation_ui.mojom-webui.js';

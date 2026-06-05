@@ -194,7 +194,7 @@ export class NetworkHealthSummaryElement extends
    * Returns a URL for the network's settings page.
    */
   private getNetworkUrl_(network: Network): string {
-    return 'chrome://os-settings/networkDetail?guid=' + network.guid;
+    return 'neovex://os-settings/networkDetail?guid=' + network.guid;
   }
 
   /**

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BatteryStatus, DevicePageBrowserProxy, IdleBehavior, LidClosedBehavior, NoteAppInfo, OptimizedChargingStrategy} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {BatteryStatus, DevicePageBrowserProxy, IdleBehavior, LidClosedBehavior, NoteAppInfo, OptimizedChargingStrategy} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestDevicePageBrowserProxy extends TestBrowserProxy implements
     DevicePageBrowserProxy {

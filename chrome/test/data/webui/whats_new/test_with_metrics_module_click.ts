@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 window.onload = function() {
   assertTrue(!!window.top);
@@ -20,5 +20,5 @@ window.onload = function() {
           order: '1',
         },
       },
-      'chrome://whats-new/');
+      'neovex://whats-new/');
 };

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsTextToSpeechSubpageElement} from 'chrome://os-settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs, Router, routes} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsTextToSpeechSubpageElement} from 'neovex://os-settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs, Router, routes} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('<settings-text-to-speech-subpage>', function() {
   let page: SettingsTextToSpeechSubpageElement;

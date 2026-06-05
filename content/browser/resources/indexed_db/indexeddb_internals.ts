@@ -4,9 +4,9 @@
 
 import './database.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
-import {render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {BucketId} from './bucket_id.mojom-webui.js';
 import type {IndexedDbDatabase} from './database.js';

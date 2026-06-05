@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AmbientModeAlbum, AmbientObserverInterface, AmbientObserverRemote, AmbientProviderInterface} from 'chrome://personalization/js/personalization_app.js';
-import {AmbientTheme, TemperatureUnit, TopicSource} from 'chrome://personalization/js/personalization_app.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {AmbientModeAlbum, AmbientObserverInterface, AmbientObserverRemote, AmbientProviderInterface} from 'neovex://personalization/js/personalization_app.js';
+import {AmbientTheme, TemperatureUnit, TopicSource} from 'neovex://personalization/js/personalization_app.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestAmbientProvider extends TestBrowserProxy implements
     AmbientProviderInterface {
@@ -78,10 +78,10 @@ export class TestAmbientProvider extends TestBrowserProxy implements
   ];
 
   ambientThemePreviews = {
-    [AmbientTheme.kSlideshow]: 'chrome://1.png',
-    [AmbientTheme.kFeelTheBreeze]: 'chrome://2.png',
-    [AmbientTheme.kFloatOnBy]: 'chrome://3.png',
-    [AmbientTheme.kVideo]: 'chrome://4.png',
+    [AmbientTheme.kSlideshow]: 'neovex://1.png',
+    [AmbientTheme.kFeelTheBreeze]: 'neovex://2.png',
+    [AmbientTheme.kFloatOnBy]: 'neovex://3.png',
+    [AmbientTheme.kVideo]: 'neovex://4.png',
   };
 
   constructor() {

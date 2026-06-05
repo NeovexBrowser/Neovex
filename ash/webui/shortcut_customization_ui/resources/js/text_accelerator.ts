@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 
-import type {ShortcutInputKeyElement} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
-import {KeyInputState} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {IronIconElement} from 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {ShortcutInputKeyElement} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
+import {KeyInputState} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {IronIconElement} from 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AcceleratorLookupManager} from './accelerator_lookup_manager.js';
 import type {AcceleratorSource, TextAcceleratorPart} from './shortcut_types.js';

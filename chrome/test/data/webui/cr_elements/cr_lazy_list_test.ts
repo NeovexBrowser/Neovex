@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
+import 'neovex://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
 
-import type {CrLazyListElement} from 'chrome://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {CrLitElement, css, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrLazyListElement} from 'neovex://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {CrLitElement, css, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 const SAMPLE_HEIGHT_VIEWPORT_ITEM_COUNT = 6;
 const SAMPLE_ITEM_HEIGHT = 56;

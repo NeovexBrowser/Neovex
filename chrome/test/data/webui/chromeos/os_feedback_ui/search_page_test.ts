@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-feedback/search_page.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://os-feedback/search_page.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {fakeEmptySearchResponse, fakeFeedbackContext, fakeInternalUserFeedbackContext, fakeLoginFlowFeedbackContext, fakeSearchResponse} from 'chrome://os-feedback/fake_data.js';
-import {FakeHelpContentProvider} from 'chrome://os-feedback/fake_help_content_provider.js';
-import type {FeedbackFlowButtonClickEvent} from 'chrome://os-feedback/feedback_flow.js';
-import {FeedbackFlowState} from 'chrome://os-feedback/feedback_flow.js';
-import {setHelpContentProviderForTesting} from 'chrome://os-feedback/mojo_interface_provider.js';
-import {domainQuestions, questionnaireBegin} from 'chrome://os-feedback/questionnaire.js';
-import type {SearchPageElement} from 'chrome://os-feedback/search_page.js';
-import {OS_FEEDBACK_UNTRUSTED_ORIGIN} from 'chrome://os-feedback/search_page.js';
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {fakeEmptySearchResponse, fakeFeedbackContext, fakeInternalUserFeedbackContext, fakeLoginFlowFeedbackContext, fakeSearchResponse} from 'neovex://os-feedback/fake_data.js';
+import {FakeHelpContentProvider} from 'neovex://os-feedback/fake_help_content_provider.js';
+import type {FeedbackFlowButtonClickEvent} from 'neovex://os-feedback/feedback_flow.js';
+import {FeedbackFlowState} from 'neovex://os-feedback/feedback_flow.js';
+import {setHelpContentProviderForTesting} from 'neovex://os-feedback/mojo_interface_provider.js';
+import {domainQuestions, questionnaireBegin} from 'neovex://os-feedback/questionnaire.js';
+import type {SearchPageElement} from 'neovex://os-feedback/search_page.js';
+import {OS_FEEDBACK_UNTRUSTED_ORIGIN} from 'neovex://os-feedback/search_page.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('searchPageTestSuite', () => {
   let page: SearchPageElement;

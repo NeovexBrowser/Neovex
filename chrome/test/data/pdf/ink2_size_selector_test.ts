@@ -4,8 +4,8 @@
 
 import type {InkSizeSelectorElement, SelectableIconButtonElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import {PEN_SIZES} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {assertSelectedSize, getSizeButtons} from './test_util.js';
 

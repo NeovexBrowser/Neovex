@@ -4,19 +4,19 @@
 
 // These test suites test the local-certs-section component.
 
-import 'chrome://certificate-manager/local_certs_section.js';
+import 'neovex://certificate-manager/local_certs_section.js';
 
 import {PluralStringProxyImpl} from '//resources/js/plural_string_proxy.js';
-import type {CertManagementMetadata} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
-import {CertificatesBrowserProxy} from 'chrome://certificate-manager/certificates_browser_proxy.js';
-import type {LocalCertsSectionElement} from 'chrome://certificate-manager/local_certs_section.js';
-import {assertEquals, assertNull} from 'chrome://webui-test/chai_assert.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CertManagementMetadata} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
+import {CertificatesBrowserProxy} from 'neovex://certificate-manager/certificates_browser_proxy.js';
+import type {LocalCertsSectionElement} from 'neovex://certificate-manager/local_certs_section.js';
+import {assertEquals, assertNull} from 'neovex://webui-test/chai_assert.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 // <if expr="not is_chromeos">
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 // </if>
 
 import {TestCertificateManagerProxy} from './certificate_manager_test_support.js';

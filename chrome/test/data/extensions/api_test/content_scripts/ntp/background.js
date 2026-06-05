@@ -4,12 +4,12 @@
 
 // The NTP may take different forms, depending on the OS.
 var newTabUrls = [
-  'chrome://newtab/',
+  'neovex://newtab/',
   'chrome-native://newtab/',
 ];
 
 function testExecuteScriptInNewTab() {
-  // Create a new tab to chrome://newtab and wait for the loading to complete.
+  // Create a new tab to neovex://newtab and wait for the loading to complete.
   // Then, try to inject a script into that tab. The injection should fail.
   chrome.tabs.onUpdated.addListener(function listener(tabId, changeInfo, tab) {
     if (!newTabUrls.includes(tab.url) || changeInfo.status != 'complete') {
@@ -21,12 +21,12 @@ function testExecuteScriptInNewTab() {
       const lastErrorMessage = chrome.runtime.lastError.message;
       chrome.test.assertTrue(
           lastErrorMessage.indexOf('Cannot access contents of') != -1 ||
-              lastErrorMessage.indexOf('Cannot access a chrome:// URL') != -1,
+              lastErrorMessage.indexOf('Cannot access a neovex:// URL') != -1,
           lastErrorMessage);
       chrome.test.succeed();
     });
   });
-  chrome.tabs.create({url: 'chrome://newtab'});
+  chrome.tabs.create({url: 'neovex://newtab'});
 }
 
 chrome.test.sendMessage('ready', function() {

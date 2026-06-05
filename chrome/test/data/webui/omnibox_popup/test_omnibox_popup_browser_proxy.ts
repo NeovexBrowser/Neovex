@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {OmniboxPopupPageCallbackRouter, OmniboxPopupPageHandlerRemote} from 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
-import type {OmniboxPopupPageRemote} from 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {OmniboxPopupPageCallbackRouter, OmniboxPopupPageHandlerRemote} from 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
+import type {OmniboxPopupPageRemote} from 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
 
 export class TestOmniboxPopupBrowserProxy {
   callbackRouter: OmniboxPopupPageCallbackRouter;

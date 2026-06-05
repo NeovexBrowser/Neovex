@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FilterDialogElement} from 'chrome://updater/event_list/filter_dialog/filter_dialog.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {whenCheck} from 'chrome://webui-test/test_util.js';
+import {FilterDialogElement} from 'neovex://updater/event_list/filter_dialog/filter_dialog.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {whenCheck} from 'neovex://webui-test/test_util.js';
 
 suite('FilterDialogElement', () => {
   let filterDialog: FilterDialogElement;

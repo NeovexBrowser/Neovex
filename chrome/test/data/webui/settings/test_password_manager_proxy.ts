@@ -5,8 +5,8 @@
 /** @fileoverview Test implementation of PasswordManagerProxy. */
 
 // clang-format off
-import type {PasswordCheckReferrer, PasswordManagerProxy, PasswordManagerPage} from 'chrome://settings/settings.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {PasswordCheckReferrer, PasswordManagerProxy, PasswordManagerPage} from 'neovex://settings/settings.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 // clang-format on
 

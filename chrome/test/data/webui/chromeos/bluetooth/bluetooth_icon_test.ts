@@ -1,12 +1,12 @@
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://resources/ash/common/bluetooth/bluetooth_icon.js';
+import 'neovex://resources/ash/common/bluetooth/bluetooth_icon.js';
 
 import type {IronIconElement} from '//resources/polymer/v3_0/iron-icon/iron-icon.js';
-import type {SettingsBluetoothIconElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_icon.js';
-import {AudioOutputCapability, DeviceConnectionState, DeviceType} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsBluetoothIconElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_icon.js';
+import {AudioOutputCapability, DeviceConnectionState, DeviceType} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertEquals, assertFalse, assertTrue} from '../chai_assert.js';
 

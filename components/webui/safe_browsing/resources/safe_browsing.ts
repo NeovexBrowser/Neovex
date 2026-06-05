@@ -2,16 +2,16 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
-import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 // <if expr="is_ios">
 // TODO(crbug.com/41173939): Remove this once injected by web. -->
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 
 // </if>
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
-import {$} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
+import {$} from 'neovex://resources/js/util.js';
 
 // Type definitions for custom types used through the file.
 type TailoredVerdictOverrideFormElements =

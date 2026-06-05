@@ -5,7 +5,7 @@
 /**
  * @fileoverview Wrapper and closure type annotations for LoadTimeData. Do not
  * use in TypeScript code; instead use load_time_data.ts directly by importing
- * 'chrome://resources/js/load_time_data.js'.
+ * 'neovex://resources/js/load_time_data.js'.
  */
 
 import {loadTimeData as crLoadTimeData} from '//resources/js/load_time_data.js';

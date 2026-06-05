@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/lazy_load.js';
+import 'neovex://new-tab-page/lazy_load.js';
 
-import {NtpPromoProxyImpl} from 'chrome://new-tab-page/lazy_load.js';
-import type {NtpPromoProxy} from 'chrome://new-tab-page/lazy_load.js';
-import {NtpPromoClientCallbackRouter} from 'chrome://new-tab-page/ntp_promo.mojom-webui.js';
-import type {NtpPromoClientRemote, NtpPromoHandlerInterface} from 'chrome://new-tab-page/ntp_promo.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {NtpPromoProxyImpl} from 'neovex://new-tab-page/lazy_load.js';
+import type {NtpPromoProxy} from 'neovex://new-tab-page/lazy_load.js';
+import {NtpPromoClientCallbackRouter} from 'neovex://new-tab-page/ntp_promo.mojom-webui.js';
+import type {NtpPromoClientRemote, NtpPromoHandlerInterface} from 'neovex://new-tab-page/ntp_promo.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestNtpPromoHandler extends TestBrowserProxy implements
     NtpPromoHandlerInterface {

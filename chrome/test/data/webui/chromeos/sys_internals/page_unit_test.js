@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getDiffAndUpdateCounter, getDiffPerSecAndUpdateCounter, getValueWithUnit, toPercentageString} from 'chrome://sys-internals/index.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {getDiffAndUpdateCounter, getDiffPerSecAndUpdateCounter, getValueWithUnit, toPercentageString} from 'neovex://sys-internals/index.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {assertCloseTo, MEMORY_UNITS} from './test_util.js';
 

@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 // </if>
 
-import 'chrome://resources/js/action_link.js';
+import 'neovex://resources/js/action_link.js';
 import '/strings.m.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {appendParam, getRequiredElement} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {appendParam, getRequiredElement} from 'neovex://resources/js/util.js';
 
 /* Id for tracking automatic refresh of crash list.  */
 let refreshCrashListId: number|undefined = undefined;

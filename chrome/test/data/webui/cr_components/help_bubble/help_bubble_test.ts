@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/help_bubble/help_bubble.js';
+import 'neovex://resources/cr_components/help_bubble/help_bubble.js';
 
 import type {CrButtonElement} from '//resources/cr_elements/cr_button/cr_button.js';
-import type {HelpBubbleDismissedEvent, HelpBubbleTimedOutEvent} from 'chrome://resources/cr_components/help_bubble/help_bubble.js';
-import {HELP_BUBBLE_DISMISSED_EVENT, HELP_BUBBLE_TIMED_OUT_EVENT, HelpBubbleElement} from 'chrome://resources/cr_components/help_bubble/help_bubble.js';
-import type {HelpBubbleButtonParams} from 'chrome://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
-import {HelpBubbleArrowPosition} from 'chrome://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {HelpBubbleDismissedEvent, HelpBubbleTimedOutEvent} from 'neovex://resources/cr_components/help_bubble/help_bubble.js';
+import {HELP_BUBBLE_DISMISSED_EVENT, HELP_BUBBLE_TIMED_OUT_EVENT, HelpBubbleElement} from 'neovex://resources/cr_components/help_bubble/help_bubble.js';
+import type {HelpBubbleButtonParams} from 'neovex://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
+import {HelpBubbleArrowPosition} from 'neovex://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 interface WaitForSuccessParams {
   retryIntervalMs: number;

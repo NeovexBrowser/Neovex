@@ -6,7 +6,7 @@ chrome.test.runTests([
   function openChromeUrl() {
     // The app is loaded as a component, so it should be able to load
     // chrome:-scheme URLs.
-    chrome.app.window.create('chrome://version', (win) => {
+    chrome.app.window.create('neovex://version', (win) => {
       // The returned `win` here is null because it's inaccessible (by design)
       // by the Chrome app. But there should be no last error, signaling that
       // the call succeeded. The C++ will verify the presence of the opened tab

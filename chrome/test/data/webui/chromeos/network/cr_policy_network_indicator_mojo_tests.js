@@ -4,12 +4,12 @@
 
 /** @fileoverview Suite of tests for cr_policy-network-indicator-mojo. */
 
-import 'chrome://resources/ash/common/network/cr_policy_network_indicator_mojo.js';
-import 'chrome://webui-test/chromeos/network/cr_policy_strings.js';
+import 'neovex://resources/ash/common/network/cr_policy_network_indicator_mojo.js';
+import 'neovex://webui-test/chromeos/network/cr_policy_strings.js';
 
-import {PolicySource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {PolicySource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('cr-policy-network-indicator-mojo', function() {
   /** @type {!CrPolicyNetworkIndicatorMojoElement|undefined} */

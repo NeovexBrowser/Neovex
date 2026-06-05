@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
+import 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
 
-import {SortOrder, ViewType} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
-import type {BookmarksTreeNode} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
-import {BookmarksApiProxyImpl} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks_api_proxy.js';
-import type {PowerBookmarkRowElement} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmark_row.js';
-import {NESTED_BOOKMARKS_BASE_MARGIN, NESTED_BOOKMARKS_MARGIN_PER_DEPTH} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmark_row.js';
-import type {PowerBookmarksListElement} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
-import {PageCallbackRouter} from 'chrome://resources/cr_components/commerce/price_tracking.mojom-webui.js';
-import {PriceTrackingBrowserProxyImpl} from 'chrome://resources/cr_components/commerce/price_tracking_browser_proxy.js';
-import {PageImageServiceBrowserProxy} from 'chrome://resources/cr_components/page_image_service/browser_proxy.js';
-import {PageImageServiceHandlerRemote} from 'chrome://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {SortOrder, ViewType} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
+import type {BookmarksTreeNode} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
+import {BookmarksApiProxyImpl} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks_api_proxy.js';
+import type {PowerBookmarkRowElement} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmark_row.js';
+import {NESTED_BOOKMARKS_BASE_MARGIN, NESTED_BOOKMARKS_MARGIN_PER_DEPTH} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmark_row.js';
+import type {PowerBookmarksListElement} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
+import {PageCallbackRouter} from 'neovex://resources/cr_components/commerce/price_tracking.mojom-webui.js';
+import {PriceTrackingBrowserProxyImpl} from 'neovex://resources/cr_components/commerce/price_tracking_browser_proxy.js';
+import {PageImageServiceBrowserProxy} from 'neovex://resources/cr_components/page_image_service/browser_proxy.js';
+import {PageImageServiceHandlerRemote} from 'neovex://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createTestBookmarks, getBookmarks, getPowerBookmarksRowElement, getPowerBookmarksRowItemElement, initializeUi} from './power_bookmarks_list_test_util.js';
 import {TestBookmarksApiProxy} from './test_bookmarks_api_proxy.js';

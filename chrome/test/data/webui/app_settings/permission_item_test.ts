@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 /** @fileoverview Test suite for app-manageemnt-permission-item. */
-import 'chrome://app-settings/permission_item.js';
+import 'neovex://app-settings/permission_item.js';
 
-import type {PermissionItemElement} from 'chrome://app-settings/permission_item.js';
-import {TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
-import {getPermissionValueBool} from 'chrome://resources/cr_components/app_management/util.js';
-import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {PermissionItemElement} from 'neovex://app-settings/permission_item.js';
+import {TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
+import {getPermissionValueBool} from 'neovex://resources/cr_components/app_management/util.js';
+import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createTestApp, TestAppManagementBrowserProxy} from './app_management_test_support.js';
 

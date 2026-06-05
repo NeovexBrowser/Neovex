@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 import type {CwtKeyInfo} from './private_metrics.js';
 
 /**
- * @fileoverview A helper object used by the chrome://metrics-internals page to
+ * @fileoverview A helper object used by the neovex://metrics-internals page to
  * interact with the browser.
  */
 

@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {FontsBrowserProxy, FontsData,SettingsAppearanceFontsPageElement} from 'chrome://settings/lazy_load.js';
-import {FontsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {FontsBrowserProxy, FontsData,SettingsAppearanceFontsPageElement} from 'neovex://settings/lazy_load.js';
+import {FontsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 // clang-format on
 

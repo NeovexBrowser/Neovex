@@ -4,8 +4,8 @@
 
 import {ViewerSaveControlsMixin} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {CrActionMenuElement, CrIconButtonElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 const SaveRequestType = chrome.pdfViewerPrivate.SaveRequestType;
 type SaveRequestType = chrome.pdfViewerPrivate.SaveRequestType;

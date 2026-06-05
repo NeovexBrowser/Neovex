@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shimless-rma/shimless_rma.js';
+import 'neovex://shimless-rma/shimless_rma.js';
 
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {DISABLE_ALL_BUTTONS, ENABLE_ALL_BUTTONS} from 'chrome://shimless-rma/events.js';
-import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
-import {OnboardingUpdatePageElement} from 'chrome://shimless-rma/onboarding_update_page.js';
-import {OsUpdateOperation, UpdateErrorCode} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {DISABLE_ALL_BUTTONS, ENABLE_ALL_BUTTONS} from 'neovex://shimless-rma/events.js';
+import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
+import {OnboardingUpdatePageElement} from 'neovex://shimless-rma/onboarding_update_page.js';
+import {OsUpdateOperation, UpdateErrorCode} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('onboardingUpdatePageTest', function() {
   let component: OnboardingUpdatePageElement|null = null;

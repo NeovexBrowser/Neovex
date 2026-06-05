@@ -4,8 +4,8 @@
 
 import type {NavigatorDelegate, PdfNavigator} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import {OpenPdfParamsParser, PdfNavigatorImpl, WindowOpenDisposition} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 import {getZoomableViewport, MockDocumentDimensions, MockElement, MockSizer, MockViewportChangedCallback} from './test_util.js';
 
@@ -281,7 +281,7 @@ chrome.test.runTests([
     // From non-file: to file:
     await doNavigationUrlTests(url, 'file:///bar.pdf', undefined);
 
-    await doNavigationUrlTests(url, 'chrome://version', undefined);
+    await doNavigationUrlTests(url, 'neovex://version', undefined);
 
     await doNavigationUrlTests(
         url, 'javascript://this-is-not-a-document.pdf', undefined);

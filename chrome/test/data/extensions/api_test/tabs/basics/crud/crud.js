@@ -13,7 +13,7 @@ let isAndroid;
 // This has subtly different behavior on different platforms.
 function smellsLikeNewTabPage(url, title) {
   const ntpUrls = [
-      'chrome://newtab/',
+      'neovex://newtab/',
       'chrome-native://newtab/',
   ];
   chrome.test.assertTrue(ntpUrls.includes(url),

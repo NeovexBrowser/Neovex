@@ -1,20 +1,20 @@
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://shortcut-customization/js/shortcuts_page.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://shortcut-customization/js/shortcuts_page.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
-import {AcceleratorRowElement} from 'chrome://shortcut-customization/js/accelerator_row.js';
-import {createFakeMojoAccelInfo, createFakeMojoLayoutInfo} from 'chrome://shortcut-customization/js/fake_data.js';
-import type {MojoAcceleratorConfig, MojoLayoutInfo} from 'chrome://shortcut-customization/js/shortcut_types.js';
-import {AcceleratorCategory, AcceleratorSource, AcceleratorSubcategory} from 'chrome://shortcut-customization/js/shortcut_types.js';
-import {SHORTCUTS_APP_URL} from 'chrome://shortcut-customization/js/shortcut_utils.js';
-import type {ShortcutsPageElement} from 'chrome://shortcut-customization/js/shortcuts_page.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
+import {AcceleratorRowElement} from 'neovex://shortcut-customization/js/accelerator_row.js';
+import {createFakeMojoAccelInfo, createFakeMojoLayoutInfo} from 'neovex://shortcut-customization/js/fake_data.js';
+import type {MojoAcceleratorConfig, MojoLayoutInfo} from 'neovex://shortcut-customization/js/shortcut_types.js';
+import {AcceleratorCategory, AcceleratorSource, AcceleratorSubcategory} from 'neovex://shortcut-customization/js/shortcut_types.js';
+import {SHORTCUTS_APP_URL} from 'neovex://shortcut-customization/js/shortcut_utils.js';
+import type {ShortcutsPageElement} from 'neovex://shortcut-customization/js/shortcuts_page.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 function initShortcutsPageElement(category: AcceleratorCategory):
     ShortcutsPageElement {

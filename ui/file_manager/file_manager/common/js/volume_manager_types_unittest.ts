@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {MockFileEntry, MockFileSystem} from './mock_entry.js';
 import {getRootTypeFromVolumeType, getVolumeTypeFromRootType, isRecentArcEntry, RootType, RootTypesForUMA, VolumeType} from './volume_manager_types.js';

@@ -67,7 +67,7 @@ function pageUrl(letter) {
 chrome.test.runTests([
   // Open some pages, so that we can try to close them.
   function setupLetterPages() {
-    var pages = ["chrome://newtab/", pageUrl('a'), pageUrl('b'),
+    var pages = ["neovex://newtab/", pageUrl('a'), pageUrl('b'),
                    pageUrl('c'), pageUrl('d'), pageUrl('e')];
     setupWindow(pages, pass(function(winId, tabIds) {
       firstWindowId = winId;
@@ -76,7 +76,7 @@ chrome.test.runTests([
       moveTabIds['c'] = tabIds[3];
       moveTabIds['d'] = tabIds[4];
       moveTabIds['e'] = tabIds[5];
-      createWindow(["chrome://newtab/"], {}, pass(function(winId, tabIds) {
+      createWindow(["neovex://newtab/"], {}, pass(function(winId, tabIds) {
         secondWindowId = winId;
       }));
       chrome.tabs.query({windowId:firstWindowId}, pass(function(tabs) {

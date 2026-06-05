@@ -6,8 +6,8 @@
  * @fileoverview This implements a table header.
  */
 
-import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {jsSetter} from '../../../../common/js/cr_ui.js';
 

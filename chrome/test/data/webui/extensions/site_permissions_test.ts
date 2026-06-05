@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extension-site-permissions. */
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import type {ExtensionsSitePermissionsElement} from 'chrome://extensions/extensions.js';
-import {navigation, Page, Service} from 'chrome://extensions/extensions.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ExtensionsSitePermissionsElement} from 'neovex://extensions/extensions.js';
+import {navigation, Page, Service} from 'neovex://extensions/extensions.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 import {testVisible} from './test_util.js';

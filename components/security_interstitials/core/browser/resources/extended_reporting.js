@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {SecurityInterstitialCommandId, sendCommand} from 'chrome://interstitials/common/resources/interstitial_common.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {SecurityInterstitialCommandId, sendCommand} from 'neovex://interstitials/common/resources/interstitial_common.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 // Other constants defined in security_interstitial_page.h.
 const SB_BOX_CHECKED = 'boxchecked';

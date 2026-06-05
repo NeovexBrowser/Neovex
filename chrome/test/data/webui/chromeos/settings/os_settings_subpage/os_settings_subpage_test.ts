@@ -1,11 +1,11 @@
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {OsSettingsSubpageElement, SettingsCardElement} from 'chrome://os-settings/os_settings.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {OsSettingsSubpageElement, SettingsCardElement} from 'neovex://os-settings/os_settings.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('<os-settings-subpage>', () => {
   suite('multiCard property', () => {

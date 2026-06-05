@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewModelElement} from 'chrome://print/print_preview.js';
-import {ColorModeRestriction, Destination, DestinationOrigin, DuplexModeRestriction, Margins, PinModeRestriction, Size} from 'chrome://print/print_preview.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {PrintPreviewModelElement} from 'neovex://print/print_preview.js';
+import {ColorModeRestriction, Destination, DestinationOrigin, DuplexModeRestriction, Margins, PinModeRestriction, Size} from 'neovex://print/print_preview.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {getCddTemplate} from './print_preview_test_utils.js';
 

@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extensions-detail-view. */
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import type {ErrorPageDelegate, ExtensionsErrorPageElement} from 'chrome://extensions/extensions.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ErrorPageDelegate, ExtensionsErrorPageElement} from 'neovex://extensions/extensions.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createExtensionInfo, MockItemDelegate} from './test_util.js';
 

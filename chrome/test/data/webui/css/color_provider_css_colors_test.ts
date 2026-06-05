@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('ColorProviderCSSColorsTest', function() {
   let link: HTMLLinkElement;
@@ -19,7 +19,7 @@ suite('ColorProviderCSSColorsTest', function() {
   test(
       'test ui side and chrome side color provider colors added to css stylesheet',
       function(done) {
-        link.href = 'chrome://theme/colors.css?sets=ui,chrome';
+        link.href = 'neovex://theme/colors.css?sets=ui,chrome';
         link.onload = function() {
           const style = getComputedStyle(document.body);
           // Check that we are able to query for a ui/ side color.
@@ -39,7 +39,7 @@ suite('ColorProviderCSSColorsTest', function() {
       });
 
   test('test fetching ui color set only', function(done) {
-    link.href = 'chrome://theme/colors.css?sets=ui';
+    link.href = 'neovex://theme/colors.css?sets=ui';
     link.onload = function() {
       const style = getComputedStyle(document.body);
       // Check that we are able to query for a ui/ side color.
@@ -58,7 +58,7 @@ suite('ColorProviderCSSColorsTest', function() {
   });
 
   test('test fetching color set with generate_rgb_vars=true', function(done) {
-    link.href = 'chrome://theme/colors.css?sets=ui&generate_rgb_vars=true';
+    link.href = 'neovex://theme/colors.css?sets=ui&generate_rgb_vars=true';
     link.onload = function() {
       const style = getComputedStyle(document.body);
       assertNotEquals('', style.getPropertyValue('--color-accent-rgb'));
@@ -70,7 +70,7 @@ suite('ColorProviderCSSColorsTest', function() {
   });
 
   test('test fetching color set with generate_rgb_vars=false', function(done) {
-    link.href = 'chrome://theme/colors.css?sets=ui&generate_rgb_vars=false';
+    link.href = 'neovex://theme/colors.css?sets=ui&generate_rgb_vars=false';
     link.onload = function() {
       const style = getComputedStyle(document.body);
       assertEquals('', style.getPropertyValue('--color-accent-rgb'));
@@ -84,7 +84,7 @@ suite('ColorProviderCSSColorsTest', function() {
   test(
       'test fetching color set with invalid generate_rgb_vars value',
       function(done) {
-        link.href = 'chrome://theme/colors.css?sets=ui&generate_rgb_vars=asdf';
+        link.href = 'neovex://theme/colors.css?sets=ui&generate_rgb_vars=asdf';
         link.onload = function() {
           const style = getComputedStyle(document.body);
           // generate_rgb_vars when not provided with a explicitly truthy value

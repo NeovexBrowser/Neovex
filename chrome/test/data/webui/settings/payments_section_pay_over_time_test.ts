@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {loadTimeData, OpenWindowProxyImpl} from 'chrome://settings/settings.js';
-import type {SettingsToggleButtonElement} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
-import type {SettingsPayOverTimeIssuerListEntryElement} from 'chrome://settings/lazy_load.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {loadTimeData, OpenWindowProxyImpl} from 'neovex://settings/settings.js';
+import type {SettingsToggleButtonElement} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
+import type {SettingsPayOverTimeIssuerListEntryElement} from 'neovex://settings/lazy_load.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {createPayOverTimeIssuerEntry} from './autofill_fake_data.js';
 import {createPaymentsSection} from './payments_section_utils.js';

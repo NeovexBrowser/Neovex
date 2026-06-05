@@ -7,18 +7,18 @@
  * wallpapers.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
 import './sea_pen.css.js';
 import './sea_pen_icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 
-import {AnchorAlignment} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {WallpaperGridItemSelectedEvent} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {AnchorAlignment} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {WallpaperGridItemSelectedEvent} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SeaPenImageId} from './constants.js';
 import {isSeaPenTextInputEnabled} from './load_time_booleans.js';

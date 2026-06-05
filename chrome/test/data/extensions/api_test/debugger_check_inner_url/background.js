@@ -42,7 +42,7 @@ chrome.test.getConfig(config => chrome.test.runTests([
 
     await new Promise(resolve =>
         chrome.debugger.sendCommand(subframeDebuggee, 'Page.navigate', {
-            url: 'blob:chrome://non-existent/'}, resolve));
+            url: 'blob:neovex://non-existent/'}, resolve));
 
     chrome.test.assertLastError(DETACHED_WHILE_HANDLING);
 

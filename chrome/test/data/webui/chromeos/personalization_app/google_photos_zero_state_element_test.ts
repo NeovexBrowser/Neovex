@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://personalization/strings.m.js';
+import 'neovex://personalization/strings.m.js';
 
-import {GooglePhotosTab, GooglePhotosZeroStateElement} from 'chrome://personalization/js/personalization_app.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {GooglePhotosTab, GooglePhotosZeroStateElement} from 'neovex://personalization/js/personalization_app.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {initElement} from './personalization_app_test_utils.js';
 

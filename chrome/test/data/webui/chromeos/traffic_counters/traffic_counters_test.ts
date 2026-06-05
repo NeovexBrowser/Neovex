@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://network/strings.m.js';
-import 'chrome://resources/ash/common/traffic_counters/traffic_counters.js';
+import 'neovex://network/strings.m.js';
+import 'neovex://resources/ash/common/traffic_counters/traffic_counters.js';
 
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {NetworkHealthContainerElement} from 'chrome://resources/ash/common/network_health/network_health_container.js';
-import type {TrafficCountersElement} from 'chrome://resources/ash/common/traffic_counters/traffic_counters.js';
-import {ConnectionStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {NetworkHealthContainerElement} from 'neovex://resources/ash/common/network_health/network_health_container.js';
+import type {TrafficCountersElement} from 'neovex://resources/ash/common/traffic_counters/traffic_counters.js';
+import {ConnectionStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {assertEquals, assertFalse, assertTrue} from '../chai_assert.js';
 import {FakeNetworkConfig} from '../fake_network_config_mojom.js';

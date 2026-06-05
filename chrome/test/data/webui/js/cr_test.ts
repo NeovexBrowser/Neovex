@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {WebUiListener} from 'chrome://resources/js/cr.js';
-import {addWebUiListener, removeWebUiListener, sendWithPromise, webUIListenerCallback, webUIResponse} from 'chrome://resources/js/cr.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {WebUiListener} from 'neovex://resources/js/cr.js';
+import {addWebUiListener, removeWebUiListener, sendWithPromise, webUIListenerCallback, webUIResponse} from 'neovex://resources/js/cr.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 /** Name of the chrome.send() message to be used in tests. */
 const CHROME_SEND_NAME: string = 'echoMessage';

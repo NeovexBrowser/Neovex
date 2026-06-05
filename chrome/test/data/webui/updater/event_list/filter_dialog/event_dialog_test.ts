@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import type {CrCheckboxElement} from '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import {EventDialogElement} from 'chrome://updater/event_list/filter_dialog/event_dialog.js';
-import {assertEquals, assertGE, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {EventDialogElement} from 'neovex://updater/event_list/filter_dialog/event_dialog.js';
+import {assertEquals, assertGE, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('EventDialogElement', () => {
   let filterEvent: EventDialogElement;

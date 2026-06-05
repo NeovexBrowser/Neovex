@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {AutofillManagerProxy, PaymentsManagerProxy, PersonalDataChangedListener} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {AutofillManagerProxy, PaymentsManagerProxy, PersonalDataChangedListener} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 // clang-format on
 
@@ -101,7 +101,7 @@ export function createCreditCardEntry(
     expirationYear:
         (now.getFullYear() + Math.floor(Math.random() * 5) + 1).toString(),
     network: `${card}_network`,
-    imageSrc: 'chrome://theme/IDR_AUTOFILL_CC_GENERIC',
+    imageSrc: 'neovex://theme/IDR_AUTOFILL_CC_GENERIC',
     metadata: {
       isLocal: true,
       summaryLabel: hasIdentifier ? `My Credit Card` : networkAndLastFour,
@@ -140,8 +140,8 @@ export function createPayOverTimeIssuerEntry():
     issuerId: 'issuer1',
     instrumentId: '123456',
     displayName: 'Issuer1',
-    imageSrc: 'chrome://theme/IDR_AUTOFILL_METADATA_BNPL_GENERIC',
-    imageSrcDark: 'chrome://theme/IDR_AUTOFILL_METADATA_BNPL_GENERIC',
+    imageSrc: 'neovex://theme/IDR_AUTOFILL_METADATA_BNPL_GENERIC',
+    imageSrcDark: 'neovex://theme/IDR_AUTOFILL_METADATA_BNPL_GENERIC',
   };
 }
 

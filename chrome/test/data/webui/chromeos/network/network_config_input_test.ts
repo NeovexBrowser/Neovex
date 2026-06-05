@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/network/network_config_input.js';
+import 'neovex://resources/ash/common/network/network_config_input.js';
 
-import type {NetworkConfigInputElement} from 'chrome://resources/ash/common/network/network_config_input.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {keyEventOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import type {NetworkConfigInputElement} from 'neovex://resources/ash/common/network/network_config_input.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {keyEventOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
 
 suite('NetworkConfigInputTest', function() {
   let configInput: NetworkConfigInputElement;

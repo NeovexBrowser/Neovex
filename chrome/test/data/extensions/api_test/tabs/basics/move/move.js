@@ -5,7 +5,7 @@
 var firstWindowId;
 var secondWindowId;
 var moveTabIds = {};
-var kChromeUINewTabURL = "chrome://newtab/";
+var kChromeUINewTabURL = "neovex://newtab/";
 
 var newTabUrls = [
   kChromeUINewTabURL,

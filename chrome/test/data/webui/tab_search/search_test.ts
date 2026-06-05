@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {SearchOptions} from 'chrome://tab-search.top-chrome/tab_search.js';
-import {search, getHostname, getTitle, TabData, TabItemType} from 'chrome://tab-search.top-chrome/tab_search.js';
-import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {SearchOptions} from 'neovex://tab-search.top-chrome/tab_search.js';
+import {search, getHostname, getTitle, TabData, TabItemType} from 'neovex://tab-search.top-chrome/tab_search.js';
+import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {createTab} from './tab_search_test_data.js';
 
@@ -395,13 +395,13 @@ suite('FuzzySearchTest', () => {
         [
           new TabData(
               createTab({title: 'New tab'}), TabItemType.OPEN_TAB,
-              'chrome://tab-search'),
+              'neovex://tab-search'),
           new TabData(
-              createTab({title: 'chrome://tab-search'}), TabItemType.OPEN_TAB,
-              'chrome://tab-search'),
+              createTab({title: 'neovex://tab-search'}), TabItemType.OPEN_TAB,
+              'neovex://tab-search'),
           new TabData(
-              createTab({title: 'chrome://tab-search'}), TabItemType.OPEN_TAB,
-              'chrome://tab-search'),
+              createTab({title: 'neovex://tab-search'}), TabItemType.OPEN_TAB,
+              'neovex://tab-search'),
         ],
         options, [2, 1, 0]);
   });

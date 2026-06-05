@@ -12,7 +12,7 @@ GEN('#include "content/public/test/browser_test.h"');
 this.BorealisInstallerBrowserTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'chrome://borealis-installer/';
+    return 'neovex://borealis-installer/';
   }
 };
 
@@ -28,7 +28,7 @@ function registerTest(testName, module, caseName) {
   this[className] = class extends BorealisInstallerBrowserTest {
     /** @override */
     get browsePreload() {
-      return `chrome://borealis-installer/test_loader.html?` +
+      return `neovex://borealis-installer/test_loader.html?` +
           `module=chromeos/borealis_installer/${module}`;
     }
   };

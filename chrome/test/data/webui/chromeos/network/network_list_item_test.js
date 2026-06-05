@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/network/network_list_item.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/network/network_list_item.js';
 
-import {CellularSetupPageName} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
-import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import {NetworkList} from 'chrome://resources/ash/common/network/network_list_types.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {ActivationStateType, CrosNetworkConfigRemote, InhibitReason, SecurityType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, NetworkType, OncSource, PortalState} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeESimManagerRemote} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CellularSetupPageName} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
+import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import {NetworkList} from 'neovex://resources/ash/common/network/network_list_types.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {ActivationStateType, CrosNetworkConfigRemote, InhibitReason, SecurityType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, NetworkType, OncSource, PortalState} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeESimManagerRemote} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('NetworkListItemTest', function() {
   /** @type {!NetworkListItem|undefined} */

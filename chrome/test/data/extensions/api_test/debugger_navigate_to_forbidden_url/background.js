@@ -20,7 +20,7 @@ chrome.test.runTests([
         }));
     const result = await new Promise(resolve =>
       chrome.debugger.sendCommand(debuggee, 'Page.navigate', {
-          url: 'chrome://version'
+          url: 'neovex://version'
       }, resolve));
     chrome.test.assertLastError(DETACHED_WHILE_HANDLING);
     chrome.test.succeed();

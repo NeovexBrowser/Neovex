@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
 
-import type {CrToolbarSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {CrToolbarSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr-toolbar-search-field. */

@@ -37,7 +37,7 @@ interface PageHandlerFactory {
                     pending_receiver<PageHandler> handler);
 };
 
-// Called from TS side of chrome://enterprise-reporting (Renderer -> Browser)
+// Called from TS side of neovex://enterprise-reporting (Renderer -> Browser)
 interface PageHandler {
   // Records debug state.
   RecordDebugState(bool state);
@@ -49,7 +49,7 @@ interface PageHandler {
   GetErpHistoryData() => (ErpHistoryData history_data);
 };
 
-// Called from C++ side of chrome://enterprise-reporting. (Browser -> Renderer)
+// Called from C++ side of neovex://enterprise-reporting. (Browser -> Renderer)
 interface Page {
   // Provide the reporting page with new DBus call history.
   SetErpHistoryData(ErpHistoryData history_data);

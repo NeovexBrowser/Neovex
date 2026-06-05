@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://bluetooth-pairing/strings.m.js';
+import 'neovex://bluetooth-pairing/strings.m.js';
 import './fake_bluetooth_config.js';
-import 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_confirm_code_page.js';
+import 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_confirm_code_page.js';
 
-import type {SettingsBluetoothPairingConfirmCodePageElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_confirm_code_page.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsBluetoothPairingConfirmCodePageElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_confirm_code_page.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {assertEquals, assertTrue} from '../chai_assert.js';
 import {eventToPromise} from '../test_util.js';

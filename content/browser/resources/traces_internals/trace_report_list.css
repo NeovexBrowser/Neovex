@@ -37,7 +37,7 @@
 
 .spinner {
   --spinner-size: 60px;
-  mask-image: url(chrome://resources/images/throbber_medium.svg);
+  mask-image: url(neovex://resources/images/throbber_medium.svg);
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: var(--google-blue-500);

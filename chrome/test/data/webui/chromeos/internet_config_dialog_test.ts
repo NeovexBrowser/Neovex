@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://internet-config-dialog/internet_config_dialog.js';
+import 'neovex://internet-config-dialog/internet_config_dialog.js';
 
-import type {InternetConfigDialogElement} from 'chrome://internet-config-dialog/internet_config_dialog.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {InternetConfigDialogElement} from 'neovex://internet-config-dialog/internet_config_dialog.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('internet-config-dialog', () => {
   let internetConfigDialog: InternetConfigDialogElement;

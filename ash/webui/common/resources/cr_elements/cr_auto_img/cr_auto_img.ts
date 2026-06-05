@@ -5,8 +5,8 @@
 /**
  * @fileoverview <cr-auto-img> is a specialized <img> that facilitates embedding
  * images into WebUIs via its auto-src attribute. <cr-auto-img> automatically
- * determines if the image is local (e.g. data: or chrome://) or external (e.g.
- * https://), and embeds the image directly or via the chrome://image data
+ * determines if the image is local (e.g. data: or neovex://) or external (e.g.
+ * https://), and embeds the image directly or via the neovex://image data
  * source accordingly. Usage:
  *
  *   1. In C++ register |SanitizedImageSource| for your WebUI.
@@ -38,7 +38,7 @@
  *      <img is="cr-auto-img" auto-src="https://foo.com/bar.png"
  *          static-encode encode-type="webp">
  *
- * NOTE: Since <cr-auto-img> may use the chrome://image data source some images
+ * NOTE: Since <cr-auto-img> may use the neovex://image data source some images
  * may be transcoded to PNG.
  *
  * Forked from ui/webui/resources/cr_elements/cr_auto_img/cr_auto_img.ts
@@ -87,7 +87,7 @@ export class CrAutoImgElement extends HTMLImageElement {
 
     if (!url || url.protocol === 'chrome-untrusted:') {
       // Loading chrome-untrusted:// directly kills the renderer process.
-      // Loading chrome-untrusted:// via the chrome://image data source
+      // Loading chrome-untrusted:// via the neovex://image data source
       // results in a broken image.
       this.removeAttribute('src');
       return;
@@ -98,11 +98,11 @@ export class CrAutoImgElement extends HTMLImageElement {
     }
     if (!this.hasAttribute(IS_GOOGLE_PHOTOS) &&
         !this.hasAttribute(STATIC_ENCODE) && !this.hasAttribute(ENCODE_TYPE)) {
-      this.src = 'chrome://image?' + url.href;
+      this.src = 'neovex://image?' + url.href;
       return;
     }
 
-    this.src = `chrome://image?url=${encodeURIComponent(url.href)}`;
+    this.src = `neovex://image?url=${encodeURIComponent(url.href)}`;
     if (this.hasAttribute(IS_GOOGLE_PHOTOS)) {
       this.src += `&isGooglePhotos=true`;
     }

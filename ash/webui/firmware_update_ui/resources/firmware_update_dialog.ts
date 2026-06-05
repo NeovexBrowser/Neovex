@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import 'chrome://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
-import 'chrome://resources/polymer/v3_0/paper-progress/paper-progress.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import 'neovex://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
+import 'neovex://resources/polymer/v3_0/paper-progress/paper-progress.js';
 import './firmware_shared.css.js';
 import './firmware_shared_fonts.css.js';
 import './firmware_update.mojom-webui.js';
 import '/strings.m.js';
 
-import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {DeviceRequest, DeviceRequestObserverInterface, FirmwareUpdate, InstallationProgress, InstallControllerRemote, UpdateProgressObserverInterface} from './firmware_update.mojom-webui.js';
 import {DeviceRequestId, DeviceRequestKind, DeviceRequestObserverReceiver, UpdateProgressObserverReceiver, UpdateState} from './firmware_update.mojom-webui.js';

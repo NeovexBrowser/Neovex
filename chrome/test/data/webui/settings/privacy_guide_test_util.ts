@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {SettingsPrivacyGuidePageElement, ThirdPartyCookieBlockingSetting} from 'chrome://settings/lazy_load.js';
-import {ContentSetting, CookieControlsMode, PrivacyGuideStep, SafeBrowsingSetting} from 'chrome://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {loadTimeData, Router, routes, SignedInState, StatusAction} from 'chrome://settings/settings.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {SettingsPrivacyGuidePageElement, ThirdPartyCookieBlockingSetting} from 'neovex://settings/lazy_load.js';
+import {ContentSetting, CookieControlsMode, PrivacyGuideStep, SafeBrowsingSetting} from 'neovex://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {loadTimeData, Router, routes, SignedInState, StatusAction} from 'neovex://settings/settings.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {getSyncAllPrefs} from './sync_test_util.js';
 import type {TestSyncBrowserProxy} from './test_sync_browser_proxy.js';

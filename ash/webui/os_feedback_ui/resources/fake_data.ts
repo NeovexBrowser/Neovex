@@ -78,7 +78,7 @@ export const fakeFeedbackContext: FeedbackContext = {
   settingsSearchDoNotRecordMetrics: true,
   hasLinkedCrossDevicePhone: false,
   isInternalAccount: false,
-  pageUrl: 'chrome://tab/',
+  pageUrl: 'neovex://tab/',
   traceId: 1,
   wifiDebugLogsAllowed: false,
 };
@@ -121,7 +121,7 @@ export const fakeInternalUserFeedbackContext: FeedbackContext = {
   settingsSearchDoNotRecordMetrics: false,
   hasLinkedCrossDevicePhone: true,
   isInternalAccount: true,
-  pageUrl: 'chrome://tab/',
+  pageUrl: 'neovex://tab/',
   traceId: 1,
   wifiDebugLogsAllowed: false,
 };
@@ -136,7 +136,7 @@ export const fakeFeedbackContextWithoutLinkedCrossDevicePhone:
       settingsSearchDoNotRecordMetrics: false,
       hasLinkedCrossDevicePhone: false,
       isInternalAccount: true,
-      pageUrl: 'chrome://tab/',
+      pageUrl: 'neovex://tab/',
       traceId: 1,
       wifiDebugLogsAllowed: false,
     };
@@ -150,7 +150,7 @@ export const fakeFeedbackContextWithExtraDiagnostics: FeedbackContext = {
   settingsSearchDoNotRecordMetrics: false,
   hasLinkedCrossDevicePhone: false,
   isInternalAccount: true,
-  pageUrl: 'chrome://tab/',
+  pageUrl: 'neovex://tab/',
   traceId: 1,
   wifiDebugLogsAllowed: false,
 };

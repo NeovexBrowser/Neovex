@@ -98,7 +98,7 @@ function overrideSwitchToKeyset() {
     var success = switcher.apply(this, arguments);
     if (success) {
       // The first resize call forces resizing of the keyboard window.
-      // The second resize call forces a clean layout for chrome://keyboard.
+      // The second resize call forces a clean layout for neovex://keyboard.
       controller.resize(false);
       controller.resize(true);
       var settings = controller.model_.settings;

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-print/js/print_preview_cros_app.js';
+import 'neovex://os-print/js/print_preview_cros_app.js';
 
-import {PrintPreviewCrosAppElement} from 'chrome://os-print/js/print_preview_cros_app.js';
-import {assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {PrintPreviewCrosAppElement} from 'neovex://os-print/js/print_preview_cros_app.js';
+import {assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {resetDataManagersAndProviders} from './test_utils.js';
 

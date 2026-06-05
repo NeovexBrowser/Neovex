@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {LanguageSettingsMetricsProxy, LanguageSettingsActionType, LanguageSettingsPageImpressionType} from 'chrome://settings/lazy_load.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {LanguageSettingsMetricsProxy, LanguageSettingsActionType, LanguageSettingsPageImpressionType} from 'neovex://settings/lazy_load.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 // clang-format on
 

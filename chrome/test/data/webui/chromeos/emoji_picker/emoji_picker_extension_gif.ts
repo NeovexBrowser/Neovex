@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {EmojiPickerApp} from 'chrome://emoji-picker/emoji_picker.js';
-import {EMOJI_IMG_BUTTON_CLICK, EmojiPickerApiProxy, TRENDING_GROUP_ID} from 'chrome://emoji-picker/emoji_picker.js';
-import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {EmojiPickerApp} from 'neovex://emoji-picker/emoji_picker.js';
+import {EMOJI_IMG_BUTTON_CLICK, EmojiPickerApiProxy, TRENDING_GROUP_ID} from 'neovex://emoji-picker/emoji_picker.js';
+import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {assertEmojiImageAlt, initialiseEmojiPickerForTest, isGroupButtonActive, timeout, waitForCondition, waitWithTimeout} from './emoji_picker_test_util.js';
 import {TestEmojiPickerApiProxy} from './test_emoji_picker_api_proxy.js';

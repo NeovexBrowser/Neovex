@@ -4,8 +4,8 @@
 
 import './policy_test_table.js';
 
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 import type {PolicyInfo} from './policy_test_browser_proxy.js';
 import {LevelNamesToValues, PolicyLevel, PolicyScope, PolicySource, PolicyTestBrowserProxy, ScopeNamesToValues, SourceNamesToValues} from './policy_test_browser_proxy.js';
@@ -92,7 +92,7 @@ function applyPoliciesFromFile(jsonFile: File) {
           // object format is used.
           const policies = JSON.parse(reader.result as string);
           if (policies.constructor === Array) {
-            // Exported from chrome://policy/test. Add row for each policy.
+            // Exported from neovex://policy/test. Add row for each policy.
             policies.forEach((policy: Omit<PolicyInfo, 'namespace'>) => {
               // Old exports didn't have the 'namespace' property, and only
               // support Chrome policies. Populate it with 'chrome' by default,
@@ -103,7 +103,7 @@ function applyPoliciesFromFile(jsonFile: File) {
               });
             });
           } else {
-            // Exported from chrome://policy.
+            // Exported from neovex://policy.
             const policiesObj = {
               chrome: policies.policyValues.chrome.policies,
               ...Object.fromEntries(

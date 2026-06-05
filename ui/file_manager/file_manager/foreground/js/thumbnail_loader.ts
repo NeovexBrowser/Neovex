@@ -5,7 +5,7 @@
 import {ImageLoaderClient} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/image_loader_client.js';
 import type {ImageTransformParam} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/image_orientation.js';
 import {createRequest, LoadImageResponse, LoadImageResponseStatus} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/load_image_request.js';
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
 
 import {getMediaType, isImage, isPDF, isRaw, isVideo} from '../../common/js/file_type.js';
 import type {FilesAppEntry} from '../../common/js/files_app_entry_types.js';

@@ -4,7 +4,7 @@
 
 /* #css_wrapper_metadata_start
  * #type=style-lit
- * #import=chrome://resources/cr_elements/cr_shared_vars.css.js
+ * #import=neovex://resources/cr_elements/cr_shared_vars.css.js
  * #scheme=relative
  * #css_wrapper_metadata_end */
 
@@ -183,7 +183,7 @@ button {
 
 #search {
   background: var(--input-background)
-      url(chrome://resources/images/icon_search.svg) no-repeat 8px 50%;
+      url(neovex://resources/images/icon_search.svg) no-repeat 8px 50%;
   border: 1px solid transparent;
   border-radius: 3px;
   box-sizing: border-box;
@@ -199,7 +199,7 @@ button {
 
 @media (prefers-color-scheme: dark) {
   #search {
-    background-image: url(chrome://resources/images/dark/icon_search.svg);
+    background-image: url(neovex://resources/images/dark/icon_search.svg);
   }
 
   #search::placeholder {
@@ -231,7 +231,7 @@ button {
 .clear-search-icon {
   background: var(--secondary-color);
   border: 0;
-  mask-image: url(chrome://resources/images/icon_cancel.svg);
+  mask-image: url(neovex://resources/images/icon_cancel.svg);
   mask-size: 20px;
   height: 100%;
   width: 100%;
@@ -326,7 +326,7 @@ cr-tabs {
 
 <if expr="is_chromeos">
 #os-flags-link-container {
-  background-image: url(chrome://resources/images/os_flags_app_icon.svg);
+  background-image: url(neovex://resources/images/os_flags_app_icon.svg);
 }
 </if>
 

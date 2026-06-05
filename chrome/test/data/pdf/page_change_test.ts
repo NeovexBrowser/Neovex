@@ -4,8 +4,8 @@
 
 import type {PdfViewerElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import {FormFieldFocusType} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import type {ModifiersParam} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import type {ModifiersParam} from 'neovex://webui-test/keyboard_mock_interactions.js';
 
 import {getCurrentPage} from './test_util.js';
 

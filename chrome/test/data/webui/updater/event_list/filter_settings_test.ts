@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {UpdaterProcessMap} from 'chrome://updater/event_history.js';
-import type {AppCommandStartEvent, InstallStartEvent, MergedUpdateEvent, MergedUpdaterProcessEvent, Scope, UninstallStartEvent, UpdateEndEvent, UpdateStartEvent} from 'chrome://updater/event_history.js';
-import {applyFilterSettings, createDefaultFilterSettings, createEmptyFilterSettings} from 'chrome://updater/event_list/filter_settings.js';
-import {assertArrayEquals, assertDeepEquals, assertEquals, assertNull} from 'chrome://webui-test/chai_assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {UpdaterProcessMap} from 'neovex://updater/event_history.js';
+import type {AppCommandStartEvent, InstallStartEvent, MergedUpdateEvent, MergedUpdaterProcessEvent, Scope, UninstallStartEvent, UpdateEndEvent, UpdateStartEvent} from 'neovex://updater/event_history.js';
+import {applyFilterSettings, createDefaultFilterSettings, createEmptyFilterSettings} from 'neovex://updater/event_list/filter_settings.js';
+import {assertArrayEquals, assertDeepEquals, assertEquals, assertNull} from 'neovex://webui-test/chai_assert.js';
 
 function createInstallStartEvent(
     uptime: number, appId: string = 'test-app'): InstallStartEvent {

@@ -7,9 +7,9 @@
  * and/or have non-trivial logic.
  */
 
-import type {SelectItemsAction} from 'chrome://bookmarks/bookmarks.js';
-import {ROOT_NODE_ID, selectFolder, selectItem} from 'chrome://bookmarks/bookmarks.js';
-import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {SelectItemsAction} from 'neovex://bookmarks/bookmarks.js';
+import {ROOT_NODE_ID, selectFolder, selectItem} from 'neovex://bookmarks/bookmarks.js';
+import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {TestStore} from './test_store.js';
 import {createFolder, createItem, testTree} from './test_util.js';

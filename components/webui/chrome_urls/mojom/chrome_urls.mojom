@@ -7,7 +7,7 @@ module chrome_urls.mojom;
 import "url/mojom/url.mojom";
 
 struct WebuiUrlInfo {
-  // The WebUI's scheme + host, e.g. chrome://settings
+  // The WebUI's scheme + host, e.g. neovex://settings
   url.mojom.Url url;
   // Whether the WebUI is enabled.
   bool enabled;
@@ -16,10 +16,10 @@ struct WebuiUrlInfo {
 };
 
 struct ChromeUrlsData {
-  // Information about URLs for chrome:// WebUI pages. WebUI pages include
-  // chrome://settings, chrome://extensions, chrome://history, etc.
+  // Information about URLs for neovex:// WebUI pages. WebUI pages include
+  // neovex://settings, neovex://extensions, neovex://history, etc.
   array<WebuiUrlInfo> webui_urls;
-  // chrome:// URLs corresponding to commands (not UIs), e.g. chrome://kill
+  // neovex:// URLs corresponding to commands (not UIs), e.g. neovex://kill
   array<url.mojom.Url> command_urls;
   // Whether internal debugging WebUIs are enabled.
   bool internal_debugging_uis_enabled;

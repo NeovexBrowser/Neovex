@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {Category, EmojiPickerApiProxy} from 'chrome://emoji-picker/emoji_picker.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {Category, EmojiPickerApiProxy} from 'neovex://emoji-picker/emoji_picker.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {initialiseEmojiPickerForTest} from './emoji_picker_test_util.js';
 

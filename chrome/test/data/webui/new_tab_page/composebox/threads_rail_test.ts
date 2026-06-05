@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ThreadsRailElement} from 'chrome://new-tab-page/lazy_load.js';
-import {ComposeboxWindowProxy} from 'chrome://new-tab-page/lazy_load.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import type {ThreadsRailElement} from 'neovex://new-tab-page/lazy_load.js';
+import {ComposeboxWindowProxy} from 'neovex://new-tab-page/lazy_load.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
 
 import {installMock} from '../test_support.js';
 

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FilterCategory} from 'chrome://updater/event_list/filter_bar.js';
-import {TypeDialogElement} from 'chrome://updater/event_list/filter_dialog/type_dialog.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {FilterCategory} from 'neovex://updater/event_list/filter_bar.js';
+import {TypeDialogElement} from 'neovex://updater/event_list/filter_dialog/type_dialog.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('TypeDialogElement', () => {
   let filterType: TypeDialogElement;

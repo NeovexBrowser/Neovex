@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
 
-import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {MockTimer} from 'neovex://webui-test/mock_timer.js';
 // clang-format on
 
 suite('cr-toast', function() {

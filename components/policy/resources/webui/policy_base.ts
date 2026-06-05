@@ -3,19 +3,19 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'chrome://resources/js/action_link.js';
+import 'neovex://resources/js/action_link.js';
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 // </if>
 
 import './status_box.js';
 import './policy_table.js';
 import './policy_promotion.js';
 
-import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 import {BrowserProxy} from './browser_proxy.js';
 import type {PolicyPageHandlerInterface} from './policy.mojom-webui.js';
@@ -264,7 +264,7 @@ export class Page {
         '[role="menuitem"]');
 
     document.getElementById('view-logs')?.addEventListener('click', () => {
-      window.location.href = 'chrome://policy/logs';
+      window.location.href = 'neovex://policy/logs';
     });
 
     // Close dropdown if user clicks anywhere on page.

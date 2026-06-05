@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import type {SettingsSafetyHubModuleElement} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {loadTimeData} from 'chrome://settings/settings.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsSafetyHubModuleElement} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 // clang-format on
 
 function waitUntilVisible(element: HTMLElement, intervalMs: number = 10) {

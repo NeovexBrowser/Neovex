@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {Query, SeaPenImageId, SeaPenOption, SeaPenTemplate} from './constants.js';
 import {getSeaPenTemplates, parseTemplateText, QUERY} from './constants.js';
@@ -200,7 +200,7 @@ export function getTemplateIdFromString(templateId: string): SeaPenTemplateId|
  * Checks whether the origin of the URL from Personalization App.
  */
 export function isPersonalizationApp(): boolean {
-  return window.location.origin === 'chrome://personalization';
+  return window.location.origin === 'neovex://personalization';
 }
 
 /** Returns true if this event is a user action to select an item. */

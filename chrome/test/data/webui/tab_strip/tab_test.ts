@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://tab-strip.top-chrome/tab.js';
+import 'neovex://tab-strip.top-chrome/tab.js';
 
-import {getFavicon} from 'chrome://resources/js/icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {TabElement} from 'chrome://tab-strip.top-chrome/tab.js';
-import type {Tab} from 'chrome://tab-strip.top-chrome/tab_strip.mojom-webui.js';
-import {TabNetworkState} from 'chrome://tab-strip.top-chrome/tabs.mojom-webui.js';
-import {CloseTabAction, TabsApiProxyImpl} from 'chrome://tab-strip.top-chrome/tabs_api_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {getFavicon} from 'neovex://resources/js/icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {TabElement} from 'neovex://tab-strip.top-chrome/tab.js';
+import type {Tab} from 'neovex://tab-strip.top-chrome/tab_strip.mojom-webui.js';
+import {TabNetworkState} from 'neovex://tab-strip.top-chrome/tabs.mojom-webui.js';
+import {CloseTabAction, TabsApiProxyImpl} from 'neovex://tab-strip.top-chrome/tabs_api_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {createTab, TestTabsApiProxy} from './test_tabs_api_proxy.js';
 

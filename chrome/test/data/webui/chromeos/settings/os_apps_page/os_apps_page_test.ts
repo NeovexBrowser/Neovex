@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/lazy_load.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {SettingsAndroidAppsSubpageElement} from 'chrome://os-settings/lazy_load.js';
-import {ParentalControlsDialogAction} from 'chrome://os-settings/lazy_load.js';
-import type {CrDialogElement, CrLinkRowElement, OsSettingsAppsPageElement, OsSettingsRoutes} from 'chrome://os-settings/os_settings.js';
-import {AndroidAppsBrowserProxyImpl, createRouterForTesting, Router, routes, routesMojom, setAppNotificationProviderForTesting, setAppParentalControlsProviderForTesting, settingMojom} from 'chrome://os-settings/os_settings.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsAndroidAppsSubpageElement} from 'neovex://os-settings/lazy_load.js';
+import {ParentalControlsDialogAction} from 'neovex://os-settings/lazy_load.js';
+import type {CrDialogElement, CrLinkRowElement, OsSettingsAppsPageElement, OsSettingsRoutes} from 'neovex://os-settings/os_settings.js';
+import {AndroidAppsBrowserProxyImpl, createRouterForTesting, Router, routes, routesMojom, setAppNotificationProviderForTesting, setAppParentalControlsProviderForTesting, settingMojom} from 'neovex://os-settings/os_settings.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {FakeMetricsPrivate} from '../fake_metrics_private.js';
 import {clearBody, hasStringProperty} from '../utils.js';

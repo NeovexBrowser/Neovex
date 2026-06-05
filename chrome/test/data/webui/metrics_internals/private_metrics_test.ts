@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://metrics-internals/app.js';
+import 'neovex://metrics-internals/app.js';
 
-import {MetricsInternalsBrowserProxyImpl} from 'chrome://metrics-internals/browser_proxy.js';
-import type {FieldTrialState, HashNameMap, KeyValue, MetricsInternalsBrowserProxy, SeedType} from 'chrome://metrics-internals/browser_proxy.js';
-import type {CwtKeyInfo, PrivateMetricsAppElement} from 'chrome://metrics-internals/private_metrics.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {MetricsInternalsBrowserProxyImpl} from 'neovex://metrics-internals/browser_proxy.js';
+import type {FieldTrialState, HashNameMap, KeyValue, MetricsInternalsBrowserProxy, SeedType} from 'neovex://metrics-internals/browser_proxy.js';
+import type {CwtKeyInfo, PrivateMetricsAppElement} from 'neovex://metrics-internals/private_metrics.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 function wait(): Promise<void> {
   return new Promise(resolve => {

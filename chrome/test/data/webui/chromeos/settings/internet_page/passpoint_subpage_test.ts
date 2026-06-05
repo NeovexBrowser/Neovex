@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsPasspointSubpageElement} from 'chrome://os-settings/lazy_load.js';
-import {Router, routes} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/ash/common/assert.js';
-import {MojoConnectivityProvider} from 'chrome://resources/ash/common/connectivity/mojo_connectivity_provider.js';
-import type {PasspointSubscription} from 'chrome://resources/ash/common/connectivity/passpoint.mojom-webui.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {AppType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CertificateType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
-import {FakePasspointService} from 'chrome://webui-test/chromeos/fake_passpoint_service_mojom.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {SettingsPasspointSubpageElement} from 'neovex://os-settings/lazy_load.js';
+import {Router, routes} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/ash/common/assert.js';
+import {MojoConnectivityProvider} from 'neovex://resources/ash/common/connectivity/mojo_connectivity_provider.js';
+import type {PasspointSubscription} from 'neovex://resources/ash/common/connectivity/passpoint.mojom-webui.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {AppType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CertificateType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
+import {FakePasspointService} from 'neovex://webui-test/chromeos/fake_passpoint_service_mojom.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {FakePageHandler} from '../app_management/fake_page_handler.js';
 import {setupFakeHandler} from '../app_management/test_util.js';

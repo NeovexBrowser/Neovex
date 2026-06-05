@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {waitForElementUpdate} from '../common/js/unittest_util.js';
 import {customElement, html, XfBase} from '../widgets/xf_base.js';

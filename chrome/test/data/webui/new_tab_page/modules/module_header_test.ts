@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ModuleHeaderElementV2} from 'chrome://new-tab-page/lazy_load.js';
-import {$$} from 'chrome://new-tab-page/new_tab_page.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {ModuleHeaderElementV2} from 'neovex://new-tab-page/lazy_load.js';
+import {$$} from 'neovex://new-tab-page/new_tab_page.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('ModuleHeaderV2', () => {
   let moduleHeader: ModuleHeaderElementV2;

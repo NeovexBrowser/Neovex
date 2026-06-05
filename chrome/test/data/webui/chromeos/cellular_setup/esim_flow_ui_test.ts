@@ -2,30 +2,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/cellular_setup/esim_flow_ui.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/cellular_setup/esim_flow_ui.js';
 
 import type {IronPagesElement} from '//resources/polymer/v3_0/iron-pages/iron-pages.js';
-import type {ActivationCodePageElement} from 'chrome://resources/ash/common/cellular_setup/activation_code_page.js';
-import {ButtonState} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
-import type {ConfirmationCodePageElement} from 'chrome://resources/ash/common/cellular_setup/confirmation_code_page.js';
-import type {EsimFlowUiElement} from 'chrome://resources/ash/common/cellular_setup/esim_flow_ui.js';
-import {EsimPageName, EsimSetupFlowResult, FAILED_ESIM_SETUP_DURATION_METRIC_NAME, SUCCESSFUL_ESIM_SETUP_DURATION_METRIC_NAME} from 'chrome://resources/ash/common/cellular_setup/esim_flow_ui.js';
-import type {FinalPageElement} from 'chrome://resources/ash/common/cellular_setup/final_page.js';
-import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import type {ProfileDiscoveryConsentPageElement} from 'chrome://resources/ash/common/cellular_setup/profile_discovery_consent_page.js';
-import type {ProfileDiscoveryListItemElement} from 'chrome://resources/ash/common/cellular_setup/profile_discovery_list_item.js';
-import type {ProfileDiscoveryListPageElement} from 'chrome://resources/ash/common/cellular_setup/profile_discovery_list_page.js';
-import type {SetupLoadingPageElement} from 'chrome://resources/ash/common/cellular_setup/setup_loading_page.js';
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
-import {ESimOperationResult, ProfileInstallResult} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {ConnectionStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import {assertEquals, assertFalse, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {ActivationCodePageElement} from 'neovex://resources/ash/common/cellular_setup/activation_code_page.js';
+import {ButtonState} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
+import type {ConfirmationCodePageElement} from 'neovex://resources/ash/common/cellular_setup/confirmation_code_page.js';
+import type {EsimFlowUiElement} from 'neovex://resources/ash/common/cellular_setup/esim_flow_ui.js';
+import {EsimPageName, EsimSetupFlowResult, FAILED_ESIM_SETUP_DURATION_METRIC_NAME, SUCCESSFUL_ESIM_SETUP_DURATION_METRIC_NAME} from 'neovex://resources/ash/common/cellular_setup/esim_flow_ui.js';
+import type {FinalPageElement} from 'neovex://resources/ash/common/cellular_setup/final_page.js';
+import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import type {ProfileDiscoveryConsentPageElement} from 'neovex://resources/ash/common/cellular_setup/profile_discovery_consent_page.js';
+import type {ProfileDiscoveryListItemElement} from 'neovex://resources/ash/common/cellular_setup/profile_discovery_list_item.js';
+import type {ProfileDiscoveryListPageElement} from 'neovex://resources/ash/common/cellular_setup/profile_discovery_list_page.js';
+import type {SetupLoadingPageElement} from 'neovex://resources/ash/common/cellular_setup/setup_loading_page.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
+import {ESimOperationResult, ProfileInstallResult} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {ConnectionStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import {assertEquals, assertFalse, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakeNetworkConfig} from '../fake_network_config_mojom.js';
 

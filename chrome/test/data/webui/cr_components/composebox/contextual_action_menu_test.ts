@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/strings.m.js';
-import 'chrome://resources/cr_components/composebox/contextual_action_menu.js';
+import 'neovex://new-tab-page/strings.m.js';
+import 'neovex://resources/cr_components/composebox/contextual_action_menu.js';
 
-import type {ContextualActionMenuElement} from 'chrome://resources/cr_components/composebox/contextual_action_menu.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {InputType, ModelMode, ToolMode} from 'chrome://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {$$, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ContextualActionMenuElement} from 'neovex://resources/cr_components/composebox/contextual_action_menu.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {InputType, ModelMode, ToolMode} from 'neovex://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {$$, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createInputState} from './composebox_test_utils.js';
 

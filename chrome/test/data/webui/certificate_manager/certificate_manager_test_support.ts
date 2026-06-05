@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ActionResult, CertificateManagerPageHandlerInterface, CertificateManagerPageRemote, CertificateSource, CertManagementMetadata, SummaryCertInfo} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
-import {CertificateManagerPageCallbackRouter} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {ActionResult, CertificateManagerPageHandlerInterface, CertificateManagerPageRemote, CertificateSource, CertManagementMetadata, SummaryCertInfo} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
+import {CertificateManagerPageCallbackRouter} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 class FakePageHandler extends TestBrowserProxy implements
     CertificateManagerPageHandlerInterface {

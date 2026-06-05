@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ComposeboxFileCarouselElement} from 'chrome://new-tab-page/lazy_load.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {ComposeboxFileCarouselElement} from 'neovex://new-tab-page/lazy_load.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createComposeboxFile} from './test_support.js';
 

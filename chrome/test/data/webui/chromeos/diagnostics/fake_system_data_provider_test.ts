@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {fakeBatteryChargeStatus, fakeBatteryHealth, fakeBatteryInfo, fakeBatteryInfo2, fakeCpuUsage, fakeMemoryUsage} from 'chrome://diagnostics/fake_data.js';
-import {FakeSystemDataProvider} from 'chrome://diagnostics/fake_system_data_provider.js';
-import type {BatteryChargeStatus, BatteryChargeStatusObserverRemote, BatteryHealth, BatteryHealthObserverRemote, BatteryInfo, CpuUsage, CpuUsageObserverRemote, DeviceCapabilities, MemoryUsage, MemoryUsageObserverRemote, SystemInfo, VersionInfo} from 'chrome://diagnostics/system_data_provider.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertDeepEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {fakeBatteryChargeStatus, fakeBatteryHealth, fakeBatteryInfo, fakeBatteryInfo2, fakeCpuUsage, fakeMemoryUsage} from 'neovex://diagnostics/fake_data.js';
+import {FakeSystemDataProvider} from 'neovex://diagnostics/fake_system_data_provider.js';
+import type {BatteryChargeStatus, BatteryChargeStatusObserverRemote, BatteryHealth, BatteryHealthObserverRemote, BatteryInfo, CpuUsage, CpuUsageObserverRemote, DeviceCapabilities, MemoryUsage, MemoryUsageObserverRemote, SystemInfo, VersionInfo} from 'neovex://diagnostics/system_data_provider.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertDeepEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('fakeSystemDataProviderTestSuite', function() {
   let provider: FakeSystemDataProvider|null = null;

@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shimless-rma/shimless_rma.js';
+import 'neovex://shimless-rma/shimless_rma.js';
 
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {fakeComponentsForRepairStateTest} from 'chrome://shimless-rma/fake_data.js';
-import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
-import {OnboardingSelectComponentsPageElement} from 'chrome://shimless-rma/onboarding_select_components_page.js';
-import {RepairComponentChip} from 'chrome://shimless-rma/repair_component_chip.js';
-import {ShimlessRma} from 'chrome://shimless-rma/shimless_rma.js';
-import type {Component, StateResult} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {ComponentRepairStatus} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {fakeComponentsForRepairStateTest} from 'neovex://shimless-rma/fake_data.js';
+import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
+import {OnboardingSelectComponentsPageElement} from 'neovex://shimless-rma/onboarding_select_components_page.js';
+import {RepairComponentChip} from 'neovex://shimless-rma/repair_component_chip.js';
+import {ShimlessRma} from 'neovex://shimless-rma/shimless_rma.js';
+import type {Component, StateResult} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {ComponentRepairStatus} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 suite('onboardingSelectComponentsPageTest', function() {
   let component: OnboardingSelectComponentsPageElement|null = null;

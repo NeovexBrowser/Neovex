@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {KerberosAccount, KerberosAddAccountDialogElement} from 'chrome://os-settings/lazy_load.js';
-import {KerberosAccountsBrowserProxyImpl, KerberosConfigErrorCode, KerberosErrorType} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement, CrCheckboxElement, CrDialogElement, CrInputElement, CrTextareaElement} from 'chrome://os-settings/os_settings.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {KerberosAccount, KerberosAddAccountDialogElement} from 'neovex://os-settings/lazy_load.js';
+import {KerberosAccountsBrowserProxyImpl, KerberosConfigErrorCode, KerberosErrorType} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement, CrCheckboxElement, CrDialogElement, CrInputElement, CrTextareaElement} from 'neovex://os-settings/os_settings.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {AccountIndex, TEST_KERBEROS_ACCOUNTS, TestKerberosAccountsBrowserProxy} from './test_kerberos_accounts_browser_proxy.js';
 

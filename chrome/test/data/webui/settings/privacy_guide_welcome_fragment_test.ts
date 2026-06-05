@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {loadTimeData} from 'chrome://settings/settings.js';
-import type {PrivacyGuideWelcomeFragmentElement} from 'chrome://settings/lazy_load.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
+import type {PrivacyGuideWelcomeFragmentElement} from 'neovex://settings/lazy_load.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 // clang-format on
 

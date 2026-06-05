@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {LanguageHelper, OsSettingsAddItemsDialogElement, OsSettingsInputPageElement, SettingsLanguagesElement} from 'chrome://os-settings/lazy_load.js';
-import {InputsShortcutReminderState, LanguagesBrowserProxyImpl, LanguagesMetricsProxyImpl, LanguagesPageInteraction} from 'chrome://os-settings/lazy_load.js';
-import type {CrCheckboxElement, IronListElement, SettingsPrefsElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {AcceleratorAction, CrSettingsPrefs, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
-import type {StandardAcceleratorProperties} from 'chrome://resources/ash/common/shortcut_input_ui/accelerator_info.mojom-webui.js';
-import {VKey} from 'chrome://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
-import {FakeAcceleratorFetcher} from 'chrome://resources/ash/common/shortcut_input_ui/fake_accelerator_fetcher.js';
-import {Modifier} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {AcceleratorKeyState} from 'chrome://resources/mojo/ui/base/accelerators/mojom/accelerator.mojom-webui.js';
-import {keyDownOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertGT, assertNotEquals, assertNull, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
-import {fakeDataBind, flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {LanguageHelper, OsSettingsAddItemsDialogElement, OsSettingsInputPageElement, SettingsLanguagesElement} from 'neovex://os-settings/lazy_load.js';
+import {InputsShortcutReminderState, LanguagesBrowserProxyImpl, LanguagesMetricsProxyImpl, LanguagesPageInteraction} from 'neovex://os-settings/lazy_load.js';
+import type {CrCheckboxElement, IronListElement, SettingsPrefsElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {AcceleratorAction, CrSettingsPrefs, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
+import type {StandardAcceleratorProperties} from 'neovex://resources/ash/common/shortcut_input_ui/accelerator_info.mojom-webui.js';
+import {VKey} from 'neovex://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
+import {FakeAcceleratorFetcher} from 'neovex://resources/ash/common/shortcut_input_ui/fake_accelerator_fetcher.js';
+import {Modifier} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {AcceleratorKeyState} from 'neovex://resources/mojo/ui/base/accelerators/mojom/accelerator.mojom-webui.js';
+import {keyDownOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertGT, assertNotEquals, assertNull, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
+import {fakeDataBind, flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import type {FakeLanguageSettingsPrivate} from '../fake_language_settings_private.js';
 import {getFakeLanguagePrefs} from '../fake_language_settings_private.js';
@@ -181,7 +181,7 @@ suite('<os-settings-input-page>', () => {
       button.click();
       const router = Router.getInstance();
       assertEquals(
-          'chrome://os-settings/osLanguages/inputMethodOptions',
+          'neovex://os-settings/osLanguages/inputMethodOptions',
           router.currentRoute.getAbsolutePath());
       assertEquals(
           '_comp_ime_jkghodnilhceideoidjikpgommlajknkxkb:us::eng',
@@ -1185,7 +1185,7 @@ suite('<os-settings-input-page>', () => {
       editDictionarySubpageTrigger.click();
       const router = Router.getInstance();
       assertEquals(
-          'chrome://os-settings/osLanguages/editDictionary',
+          'neovex://os-settings/osLanguages/editDictionary',
           router.currentRoute.getAbsolutePath());
     });
   });

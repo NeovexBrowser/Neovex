@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {AppNotificationRowElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrToggleElement} from 'chrome://os-settings/os_settings.js';
-import {appNotificationHandlerMojom, setAppNotificationProviderForTesting} from 'chrome://os-settings/os_settings.js';
-import type {Permission} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {createBoolPermission, getBoolPermissionValue, isBoolValue} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {AppNotificationRowElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrToggleElement} from 'neovex://os-settings/os_settings.js';
+import {appNotificationHandlerMojom, setAppNotificationProviderForTesting} from 'neovex://os-settings/os_settings.js';
+import type {Permission} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {createBoolPermission, getBoolPermissionValue, isBoolValue} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {clearBody} from '../../utils.js';
 

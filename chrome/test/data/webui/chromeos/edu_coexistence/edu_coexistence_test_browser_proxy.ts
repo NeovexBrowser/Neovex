@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {EduCoexistenceBrowserProxy} from 'chrome://chrome-signin/edu_coexistence/edu_coexistence_browser_proxy.js';
-import type {EduCoexistenceParams} from 'chrome://chrome-signin/edu_coexistence/edu_coexistence_controller.js';
-import type {AuthCompletedCredentials} from 'chrome://chrome-signin/gaia_auth_host/authenticator.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {EduCoexistenceBrowserProxy} from 'neovex://chrome-signin/edu_coexistence/edu_coexistence_browser_proxy.js';
+import type {EduCoexistenceParams} from 'neovex://chrome-signin/edu_coexistence/edu_coexistence_controller.js';
+import type {AuthCompletedCredentials} from 'neovex://chrome-signin/gaia_auth_host/authenticator.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 const DEFAULT_COEXISTENCE_PARAMS = {
   url: 'https://foo.example.com/supervision/coexistence/intro',

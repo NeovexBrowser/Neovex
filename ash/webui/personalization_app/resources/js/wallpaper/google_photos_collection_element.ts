@@ -7,14 +7,14 @@
  * collection.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
 import './google_photos_zero_state_element.js';
 
-import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {GooglePhotosAlbum, GooglePhotosPhoto, WallpaperProviderInterface} from '../../personalization_app.mojom-webui.js';
 import {GooglePhotosEnablementState} from '../../personalization_app.mojom-webui.js';

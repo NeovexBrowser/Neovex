@@ -9,7 +9,7 @@
  */
 import '/strings.m.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {Flag} from '../flag.js';
 import {I18nString} from '../i18n_string.js';

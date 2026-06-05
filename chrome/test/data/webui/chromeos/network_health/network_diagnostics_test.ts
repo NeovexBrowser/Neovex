@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://connectivity-diagnostics/strings.m.js';
-import 'chrome://resources/ash/common/network_health/network_diagnostics.js';
-import 'chrome://resources/ash/common/network_health/network_diagnostics_types.js';
-import 'chrome://resources/ash/common/network_health/routine_group.js';
+import 'neovex://connectivity-diagnostics/strings.m.js';
+import 'neovex://resources/ash/common/network_health/network_diagnostics.js';
+import 'neovex://resources/ash/common/network_health/network_diagnostics_types.js';
+import 'neovex://resources/ash/common/network_health/routine_group.js';
 
-import {setNetworkDiagnosticsServiceForTesting} from 'chrome://resources/ash/common/network_health/mojo_interface_provider.js';
-import type {NetworkDiagnosticsElement} from 'chrome://resources/ash/common/network_health/network_diagnostics.js';
-import {Icons} from 'chrome://resources/ash/common/network_health/network_diagnostics_types.js';
-import type {NetworkHealthContainerElement} from 'chrome://resources/ash/common/network_health/network_health_container.js';
-import type {RoutineGroupElement} from 'chrome://resources/ash/common/network_health/routine_group.js';
-import {RoutineVerdict} from 'chrome://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {setNetworkDiagnosticsServiceForTesting} from 'neovex://resources/ash/common/network_health/mojo_interface_provider.js';
+import type {NetworkDiagnosticsElement} from 'neovex://resources/ash/common/network_health/network_diagnostics.js';
+import {Icons} from 'neovex://resources/ash/common/network_health/network_diagnostics_types.js';
+import type {NetworkHealthContainerElement} from 'neovex://resources/ash/common/network_health/network_health_container.js';
+import type {RoutineGroupElement} from 'neovex://resources/ash/common/network_health/routine_group.js';
+import {RoutineVerdict} from 'neovex://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {assertEquals, assertFalse, assertGT, assertNotReached, assertTrue} from '../chai_assert.js';
 import {isVisible} from '../test_util.js';

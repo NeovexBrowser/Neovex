@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/mwc/@material/web/focus/md-focus-ring.js';
-import 'chrome://resources/mwc/@material/web/progress/circular-progress.js';
+import 'neovex://resources/mwc/@material/web/focus/md-focus-ring.js';
+import 'neovex://resources/mwc/@material/web/progress/circular-progress.js';
 import './cra/cra-button.js';
 import './cra/cra-icon.js';
 import './settings-row.js';
@@ -15,7 +15,7 @@ import {
   nothing,
   PropertyDeclarations,
   PropertyValues,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {ModelState} from '../core/on_device_model/types.js';

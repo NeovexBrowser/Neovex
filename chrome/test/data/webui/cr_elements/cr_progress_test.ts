@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_progress/cr_progress.js';
+import 'neovex://resources/cr_elements/cr_progress/cr_progress.js';
 
-import type {CrProgressElement} from 'chrome://resources/cr_elements/cr_progress/cr_progress.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {CrProgressElement} from 'neovex://resources/cr_elements/cr_progress/cr_progress.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('cr-progress', function() {
   let progress: CrProgressElement;

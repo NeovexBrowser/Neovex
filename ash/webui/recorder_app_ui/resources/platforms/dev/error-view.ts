@@ -8,7 +8,7 @@ import {
   LitElement,
   nothing,
   PropertyDeclarations,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import * as localStorage from '../../core/utils/local_storage.js';
 import {ValidationError} from '../../core/utils/schema.js';

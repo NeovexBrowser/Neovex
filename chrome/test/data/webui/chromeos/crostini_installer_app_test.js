@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://crostini-installer/app.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://crostini-installer/app.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {BrowserProxy} from 'chrome://crostini-installer/browser_proxy.js';
-import {PageCallbackRouter} from 'chrome://crostini-installer/crostini_installer.mojom-webui.js';
-import {InstallerError, InstallerState} from 'chrome://crostini-installer/crostini_types.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {BrowserProxy} from 'neovex://crostini-installer/browser_proxy.js';
+import {PageCallbackRouter} from 'neovex://crostini-installer/crostini_installer.mojom-webui.js';
+import {InstallerError, InstallerState} from 'neovex://crostini-installer/crostini_types.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 class FakePageHandler extends TestBrowserProxy {
   constructor() {

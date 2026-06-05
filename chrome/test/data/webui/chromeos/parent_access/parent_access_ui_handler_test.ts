@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {ParentAccessServerMessageType, ParentAccessUiHandler} from 'chrome://parent-access/parent_access_ui.mojom-webui.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {ParentAccessServerMessageType, ParentAccessUiHandler} from 'neovex://parent-access/parent_access_ui.mojom-webui.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('ParentAccessUiHandlerTest', function() {
   const parentAccessUiHandler = ParentAccessUiHandler.getRemote();

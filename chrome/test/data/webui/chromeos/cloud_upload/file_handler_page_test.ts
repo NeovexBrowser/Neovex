@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://cloud-upload/file_handler_page.js';
+import 'neovex://cloud-upload/file_handler_page.js';
 
-import type {DialogTask} from 'chrome://cloud-upload/cloud_upload.mojom-webui.js';
-import {UserAction} from 'chrome://cloud-upload/cloud_upload.mojom-webui.js';
-import {CloudUploadBrowserProxy} from 'chrome://cloud-upload/cloud_upload_browser_proxy.js';
-import type {AccordionTopCardElement} from 'chrome://cloud-upload/file_handler_card.js';
-import type {FileHandlerPageElement} from 'chrome://cloud-upload/file_handler_page.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {DialogTask} from 'neovex://cloud-upload/cloud_upload.mojom-webui.js';
+import {UserAction} from 'neovex://cloud-upload/cloud_upload.mojom-webui.js';
+import {CloudUploadBrowserProxy} from 'neovex://cloud-upload/cloud_upload_browser_proxy.js';
+import type {AccordionTopCardElement} from 'neovex://cloud-upload/file_handler_card.js';
+import type {FileHandlerPageElement} from 'neovex://cloud-upload/file_handler_page.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import type {ProxyOptions} from './cloud_upload_test_browser_proxy.js';
 import {CloudUploadTestBrowserProxy} from './cloud_upload_test_browser_proxy.js';

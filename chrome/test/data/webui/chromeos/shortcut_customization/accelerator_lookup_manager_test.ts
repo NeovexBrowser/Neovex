@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
-import {fakeAcceleratorConfig, fakeAmbientConfig, fakeLayoutInfo} from 'chrome://shortcut-customization/js/fake_data.js';
-import {FakeShortcutProvider} from 'chrome://shortcut-customization/js/fake_shortcut_provider.js';
-import {AcceleratorCategory, AcceleratorSource, AcceleratorSubcategory, MetaKey} from 'chrome://shortcut-customization/js/shortcut_types.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
+import {fakeAcceleratorConfig, fakeAmbientConfig, fakeLayoutInfo} from 'neovex://shortcut-customization/js/fake_data.js';
+import {FakeShortcutProvider} from 'neovex://shortcut-customization/js/fake_shortcut_provider.js';
+import {AcceleratorCategory, AcceleratorSource, AcceleratorSubcategory, MetaKey} from 'neovex://shortcut-customization/js/shortcut_types.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('acceleratorLookupManagerTest', function() {
   let provider: FakeShortcutProvider|null = null;

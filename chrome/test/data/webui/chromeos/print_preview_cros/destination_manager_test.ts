@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-print/js/data/destination_manager.js';
+import 'neovex://os-print/js/data/destination_manager.js';
 
-import {PDF_DESTINATION} from 'chrome://os-print/js/data/destination_constants.js';
-import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DESTINATION_MANAGER_DESTINATIONS_CHANGED, DESTINATION_MANAGER_SESSION_INITIALIZED, DESTINATION_MANAGER_STATE_CHANGED, DestinationManager, DestinationManagerState} from 'chrome://os-print/js/data/destination_manager.js';
-import type {DestinationProviderComposite} from 'chrome://os-print/js/data/destination_provider_composite.js';
-import {PRINT_TICKET_MANAGER_SESSION_INITIALIZED, PRINT_TICKET_MANAGER_TICKET_CHANGED, PrintTicketManager} from 'chrome://os-print/js/data/print_ticket_manager.js';
-import type {FakeDestinationProvider} from 'chrome://os-print/js/fakes/fake_destination_provider.js';
-import {GET_LOCAL_DESTINATIONS_METHOD, OBSERVE_DESTINATION_CHANGES_METHOD} from 'chrome://os-print/js/fakes/fake_destination_provider.js';
-import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
-import {createCustomEvent} from 'chrome://os-print/js/utils/event_utils.js';
-import {getDestinationProvider} from 'chrome://os-print/js/utils/mojo_data_providers.js';
-import type {Destination} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
-import {PrinterStatusReason, PrinterType} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
-import {MockTimer} from 'chrome://webui-test/mock_timer.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {PDF_DESTINATION} from 'neovex://os-print/js/data/destination_constants.js';
+import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DESTINATION_MANAGER_DESTINATIONS_CHANGED, DESTINATION_MANAGER_SESSION_INITIALIZED, DESTINATION_MANAGER_STATE_CHANGED, DestinationManager, DestinationManagerState} from 'neovex://os-print/js/data/destination_manager.js';
+import type {DestinationProviderComposite} from 'neovex://os-print/js/data/destination_provider_composite.js';
+import {PRINT_TICKET_MANAGER_SESSION_INITIALIZED, PRINT_TICKET_MANAGER_TICKET_CHANGED, PrintTicketManager} from 'neovex://os-print/js/data/print_ticket_manager.js';
+import type {FakeDestinationProvider} from 'neovex://os-print/js/fakes/fake_destination_provider.js';
+import {GET_LOCAL_DESTINATIONS_METHOD, OBSERVE_DESTINATION_CHANGES_METHOD} from 'neovex://os-print/js/fakes/fake_destination_provider.js';
+import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
+import {createCustomEvent} from 'neovex://os-print/js/utils/event_utils.js';
+import {getDestinationProvider} from 'neovex://os-print/js/utils/mojo_data_providers.js';
+import type {Destination} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
+import {PrinterStatusReason, PrinterType} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
+import {MockTimer} from 'neovex://webui-test/mock_timer.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {createTestDestination, resetDataManagersAndProviders} from './test_utils.js';
 

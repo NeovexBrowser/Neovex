@@ -9,7 +9,7 @@
 // then displayed as suggested help content.
 //
 // The high level design is outlined below:
-// -[A] The input textbox is hosted in trusted context (chrome://os-feedback).
+// -[A] The input textbox is hosted in trusted context (neovex://os-feedback).
 // -[B] The online search is implemented in the browser process (c++).
 // -[C] The help content is hosted in untrusted context (chrome-untrusted://).
 // -[D] The untrusted context [C] is embedded in [A] inside an iframe.
@@ -62,7 +62,7 @@ struct SearchResponse {
 };
 
 // Interface for searching for help contents. Implemented in the browser
-// process. The interface is called from WebUI chrome://os-feedback.
+// process. The interface is called from WebUI neovex://os-feedback.
 interface HelpContentProvider {
   // [E] Returns top max_result help contents from online search.
   GetHelpContents(SearchRequest request) => (SearchResponse response);
@@ -242,7 +242,7 @@ interface FeedbackServiceProvider {
   OpenDiagnosticsApp();
   // Open Explore app.
   OpenExploreApp();
-  // Open metrics dialog (which displays chrome://histograms).
+  // Open metrics dialog (which displays neovex://histograms).
   OpenMetricsDialog();
   // Open system info dialog (which displays the system logs
   // to be sent with the report if the user has opted in).

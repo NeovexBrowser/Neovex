@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
-import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
 
-import type {CrTreeElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
-import type {CrTreeItemElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
-import { SELECTED_ATTR} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrTreeElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import type {CrTreeItemElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import { SELECTED_ATTR} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 // clang-format on
 

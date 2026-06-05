@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {FakeSystemRoutineController} from 'chrome://diagnostics/fake_system_routine_controller.js';
-import {ExecutionProgress, ResultStatusItem, RoutineListExecutor} from 'chrome://diagnostics/routine_list_executor.js';
-import type {PowerRoutineResult, RoutineResultInfo} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
-import {RoutineType, StandardRoutineResult} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {FakeSystemRoutineController} from 'neovex://diagnostics/fake_system_routine_controller.js';
+import {ExecutionProgress, ResultStatusItem, RoutineListExecutor} from 'neovex://diagnostics/routine_list_executor.js';
+import type {PowerRoutineResult, RoutineResultInfo} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
+import {RoutineType, StandardRoutineResult} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('fakeRoutineListExecutorTestSuite', function() {
   let controller: FakeSystemRoutineController|null = null;

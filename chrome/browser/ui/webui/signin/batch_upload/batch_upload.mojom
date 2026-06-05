@@ -48,7 +48,7 @@ struct BatchUploadData {
   array<DataContainer> data_containers;
 };
 
-// Called from TS side of chrome://batch-upload (Renderer -> Browser)
+// Called from TS side of neovex://batch-upload (Renderer -> Browser)
 interface PageHandler {
   // Updates the native view of the dialog based on the current `height` of the
   // web content view. Height of the content view is dynamic and may increase or
@@ -65,7 +65,7 @@ interface PageHandler {
   Close();
 };
 
-// Called from C++ side of chrome://batch-upload. (Browser -> Renderer)
+// Called from C++ side of neovex://batch-upload. (Browser -> Renderer)
 interface Page {
   // Sending the Batch Upload data to be displayed in the web content view;
   // - Account Information

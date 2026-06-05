@@ -10,7 +10,7 @@ import "ash/webui/sample_system_web_app_ui/mojom/sample_system_web_app_shared_ui
 // browser), and creating the parent/child communication interfaces.
 interface UntrustedPageInterfacesFactory {
   // Passes the chrome-untrusted:// page's remote and receiver to the embedding
-  // chrome:// parent frame to establish the communication.
+  // neovex:// parent frame to establish the communication.
   CreateParentPage(
     pending_remote<ChildUntrustedPage> child_page,
     pending_receiver<ParentTrustedPage> parent_page

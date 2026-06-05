@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import {AnnotationMode, PluginController} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {getNewTestBeforeUnloadProxy} from './test_before_unload_proxy.js';
 import {setUpTestPdfViewerPrivateProxy} from './test_pdf_viewer_private_proxy.js';

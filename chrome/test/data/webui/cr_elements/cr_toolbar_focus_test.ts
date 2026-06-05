@@ -5,11 +5,11 @@
 /** @fileoverview Suite of tests for cr-toolbar. */
 
 // clang-format off
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
 
-import type {CrToolbarElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrToolbarElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-toolbar', function() {

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://print/print_preview.js';
+import 'neovex://print/print_preview.js';
 
-import type {MediaSizeCapability, PrintPreviewMediaSizeSettingsElement} from 'chrome://print/print_preview.js';
-import {assertDeepEquals, assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
+import type {MediaSizeCapability, PrintPreviewMediaSizeSettingsElement} from 'neovex://print/print_preview.js';
+import {assertDeepEquals, assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
 
 import {getCddTemplate} from './print_preview_test_utils.js';
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsMultideviceFeatureItemElement, SettingsMultideviceFeatureToggleElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrToggleElement, LocalizedLinkElement} from 'chrome://os-settings/os_settings.js';
-import {MultiDeviceFeature, MultiDeviceFeatureState, MultiDeviceSettingsMode, PhoneHubFeatureAccessProhibitedReason, PhoneHubFeatureAccessStatus, Route, Router, routes} from 'chrome://os-settings/os_settings.js';
-import type {IronIconElement} from 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {SettingsMultideviceFeatureItemElement, SettingsMultideviceFeatureToggleElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrToggleElement, LocalizedLinkElement} from 'neovex://os-settings/os_settings.js';
+import {MultiDeviceFeature, MultiDeviceFeatureState, MultiDeviceSettingsMode, PhoneHubFeatureAccessProhibitedReason, PhoneHubFeatureAccessStatus, Route, Router, routes} from 'neovex://os-settings/os_settings.js';
+import type {IronIconElement} from 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('<settings-multidevice-feature-item>', () => {
   let featureItem: SettingsMultideviceFeatureItemElement;

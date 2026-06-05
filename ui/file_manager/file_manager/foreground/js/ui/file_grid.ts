@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertInstanceof} from 'chrome://resources/ash/common/assert.js';
-import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
-import {isRTL} from 'chrome://resources/ash/common/util.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {assertInstanceof} from 'neovex://resources/ash/common/assert.js';
+import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {isRTL} from 'neovex://resources/ash/common/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {VolumeManager} from '../../../background/js/volume_manager.js';
 import {RateLimiter} from '../../../common/js/async_util.js';

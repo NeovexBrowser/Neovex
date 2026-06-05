@@ -2212,7 +2212,7 @@ function testLoadAbortIllegalChromeURL() {
     embedder.test.assertEq('about:blank', webview.src);
     embedder.test.succeed();
   });
-  webview.src = 'chrome://newtab';
+  webview.src = 'neovex://newtab';
   document.body.appendChild(webview);
 }
 

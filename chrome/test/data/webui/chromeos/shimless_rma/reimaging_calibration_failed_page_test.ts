@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shimless-rma/shimless_rma.js';
+import 'neovex://shimless-rma/shimless_rma.js';
 
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CalibrationComponentChipElement} from 'chrome://shimless-rma/calibration_component_chip.js';
-import {DISABLE_NEXT_BUTTON} from 'chrome://shimless-rma/events.js';
-import {fakeCalibrationComponentsWithFails, fakeCalibrationComponentsWithoutFails} from 'chrome://shimless-rma/fake_data.js';
-import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
-import {ReimagingCalibrationFailedPage} from 'chrome://shimless-rma/reimaging_calibration_failed_page.js';
-import type {CalibrationComponentStatus, StateResult} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {CalibrationStatus, ComponentType} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CalibrationComponentChipElement} from 'neovex://shimless-rma/calibration_component_chip.js';
+import {DISABLE_NEXT_BUTTON} from 'neovex://shimless-rma/events.js';
+import {fakeCalibrationComponentsWithFails, fakeCalibrationComponentsWithoutFails} from 'neovex://shimless-rma/fake_data.js';
+import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
+import {ReimagingCalibrationFailedPage} from 'neovex://shimless-rma/reimaging_calibration_failed_page.js';
+import type {CalibrationComponentStatus, StateResult} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {CalibrationStatus, ComponentType} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 // TODO(crbug.com/40214914): Add a non-flaky test for keyboard navigation.
 suite('reimagingCalibrationFailedPageTest', function() {

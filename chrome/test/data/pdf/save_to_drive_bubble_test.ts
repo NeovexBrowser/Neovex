@@ -6,7 +6,7 @@ import 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.j
 
 import {SaveToDriveBubbleRequestType, SaveToDriveState} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {ViewerSaveToDriveBubbleElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 function createBubbleElement(): ViewerSaveToDriveBubbleElement {
   document.body.innerHTML = window.trustedTypes!.emptyHTML;

@@ -4,10 +4,10 @@
 
 import type {CrButtonElement} from '//resources/cr_elements/cr_button/cr_button.js';
 import type {CrCheckboxElement} from '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {FilterBarElement} from 'chrome://updater/event_list/filter_bar.js';
-import {assertDeepEquals, assertEquals, assertNotEquals, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {FilterBarElement} from 'neovex://updater/event_list/filter_bar.js';
+import {assertDeepEquals, assertEquals, assertNotEquals, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('FilterBarElement', () => {
   let filterBar: FilterBarElement;

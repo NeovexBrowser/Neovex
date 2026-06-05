@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_ripple/cr_ripple.js';
+import 'neovex://resources/cr_elements/cr_ripple/cr_ripple.js';
 
-import type {CrRippleElement} from 'chrome://resources/cr_elements/cr_ripple/cr_ripple.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {CrRippleElement} from 'neovex://resources/cr_elements/cr_ripple/cr_ripple.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('CrRipple', function() {
   let ripple: CrRippleElement;

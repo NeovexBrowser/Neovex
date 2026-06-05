@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {FileSystemMetadataProvider} from './file_system_metadata_provider.js';
 import type {MetadataKey} from './metadata_item.js';

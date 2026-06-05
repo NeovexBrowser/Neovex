@@ -6,11 +6,11 @@
  * @fileoverview Tests for the passkeys subpage.
  */
 
-import type {CrInputElement, Passkey, PasskeysBrowserProxy, SettingsPasskeysSubpageElement} from 'chrome://settings/lazy_load.js';
-import {PasskeysBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {CrInputElement, Passkey, PasskeysBrowserProxy, SettingsPasskeysSubpageElement} from 'neovex://settings/lazy_load.js';
+import {PasskeysBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 class TestPasskeysBrowserProxy extends TestBrowserProxy implements
     PasskeysBrowserProxy {

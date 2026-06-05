@@ -13,7 +13,7 @@ import {
   html,
   nothing,
   ref,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {usePlatformHandler} from '../core/lit/context.js';
 import {ModelState} from '../core/on_device_model/types.js';

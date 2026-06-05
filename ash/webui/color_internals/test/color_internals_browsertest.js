@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for chrome://color-internals/
+ * @fileoverview Test suite for neovex://color-internals/
  */
 
 GEN('#include "content/public/test/browser_test.h"');
 
-const HOST_ORIGIN = 'chrome://color-internals';
+const HOST_ORIGIN = 'neovex://color-internals';
 
 // TODO:(crbug.com/1262025): We should avoid using `var`.
 //
@@ -26,10 +26,10 @@ var ColorInternalsUIBrowserTest = class extends testing.Test {
   }
 };
 
-// Tests that chrome://color-internals loads successfully.
+// Tests that neovex://color-internals loads successfully.
 TEST_F('ColorInternalsUIBrowserTest', 'HasChromeSchemeURL', async () => {
-  await import('chrome://webui-test/chromeos/mojo_webui_test_support.js');
-  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
+  await import('neovex://webui-test/chromeos/mojo_webui_test_support.js');
+  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
   assertEquals(document.location.origin, HOST_ORIGIN);
   testDone();
 });
@@ -37,16 +37,16 @@ TEST_F('ColorInternalsUIBrowserTest', 'HasChromeSchemeURL', async () => {
 // Tests that the table body has been constructed properly and has had token
 // rows added into it.
 TEST_F('ColorInternalsUIBrowserTest', 'BuildsTokenTable', async () => {
-  await import('chrome://webui-test/chromeos/mojo_webui_test_support.js');
-  const {assertNotEquals} = await import('chrome://webui-test/chai_assert.js');
+  await import('neovex://webui-test/chromeos/mojo_webui_test_support.js');
+  const {assertNotEquals} = await import('neovex://webui-test/chai_assert.js');
   const table = document.querySelector('table');
   assertNotEquals(table.tBodies[0].rows.length, 0);
   testDone();
 });
 
 TEST_F('ColorInternalsUIBrowserTest', 'DisplaysWallpaperColors', async () => {
-  await import('chrome://webui-test/chromeos/mojo_webui_test_support.js');
-  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
+  await import('neovex://webui-test/chromeos/mojo_webui_test_support.js');
+  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
   // Wait for initial load to finish to reduce flakiness.
   await new Promise(async (resolve) => {
     const block = document.getElementById('wallpaper-block');

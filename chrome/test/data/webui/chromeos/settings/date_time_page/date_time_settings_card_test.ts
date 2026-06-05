@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {DateTimeSettingsCardElement, TimezoneSelectorElement} from 'chrome://os-settings/lazy_load.js';
-import {TimeZoneAutoDetectMethod} from 'chrome://os-settings/lazy_load.js';
-import type {CrLinkRowElement, PrefsState, SettingsDropdownMenuElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs, DateTimeBrowserProxy, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import type {DateTimeSettingsCardElement, TimezoneSelectorElement} from 'neovex://os-settings/lazy_load.js';
+import {TimeZoneAutoDetectMethod} from 'neovex://os-settings/lazy_load.js';
+import type {CrLinkRowElement, PrefsState, SettingsDropdownMenuElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs, DateTimeBrowserProxy, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestDateTimeBrowserProxy} from './test_date_time_browser_proxy.js';
 

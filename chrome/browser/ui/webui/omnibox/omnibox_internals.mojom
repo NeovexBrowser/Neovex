@@ -119,10 +119,10 @@ struct OmniboxResponse {
 enum AutocompleteControllerType {
   // The autocomplete controller for the real omnibox in the location bar.
   kBrowser = 0,
-  // The autocomplete controller used by chrome://omnibox to support customized
+  // The autocomplete controller used by neovex://omnibox to support customized
   // inputs without messing with the location bar omnibox.
   kDebug = 1,
-  // The autocomplete controller used by chrome://omnibox/ml that forces off ML
+  // The autocomplete controller used by neovex://omnibox/ml that forces off ML
   // scoring.
   kMlDisabledDebug = 2,
 };

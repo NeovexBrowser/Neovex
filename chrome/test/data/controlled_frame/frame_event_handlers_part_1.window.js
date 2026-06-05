@@ -42,7 +42,7 @@ const FrameEventsPart1 = [
     trigger: async (controlledframe) => {
       await new Promise((resolve, reject) => {
         controlledframe.addEventListener('loadabort', resolve, {once: true});
-        controlledframe.src = 'chrome://flags';
+        controlledframe.src = 'neovex://flags';
       });
     },
     // Resets the <controlledframe> because this test case changes the 'src'

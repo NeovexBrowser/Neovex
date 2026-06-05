@@ -58,7 +58,7 @@ interface Page {
   OnEventOccurred(string name);
 
   // Called when the embedded chrome-untrusted:// page wants to bind Mojo
-  // interfaces for communicating with the chrome:// page.
+  // interfaces for communicating with the neovex:// page.
   CreateParentPage(
     pending_remote<ChildUntrustedPage> child_untrusted_page,
     pending_receiver<ParentTrustedPage> parent_trusted_page);

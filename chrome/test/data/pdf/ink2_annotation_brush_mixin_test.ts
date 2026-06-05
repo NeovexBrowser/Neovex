@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import {AnnotationBrushType, hexToColor, HIGHLIGHTER_COLORS, HIGHLIGHTER_SIZES, Ink2Manager, InkAnnotationBrushMixin, PEN_COLORS, PEN_SIZES} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {setGetAnnotationBrushReply, setupTestMockPluginForInk} from './test_util.js';
 

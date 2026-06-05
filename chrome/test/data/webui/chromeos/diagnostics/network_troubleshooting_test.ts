@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/strings.m.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
-import 'chrome://diagnostics/network_troubleshooting.js';
+import 'neovex://diagnostics/strings.m.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/network_troubleshooting.js';
 
-import type {TroubleshootingInfo} from 'chrome://diagnostics/diagnostics_types.js';
-import type {NetworkTroubleshootingElement} from 'chrome://diagnostics/network_troubleshooting.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertFalse} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {TroubleshootingInfo} from 'neovex://diagnostics/diagnostics_types.js';
+import type {NetworkTroubleshootingElement} from 'neovex://diagnostics/network_troubleshooting.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertFalse} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

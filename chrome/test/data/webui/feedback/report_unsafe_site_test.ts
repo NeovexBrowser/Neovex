@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://feedback/report_unsafe_site/report_unsafe_site_app.js';
+import 'neovex://feedback/report_unsafe_site/report_unsafe_site_app.js';
 
-import {PageHandlerRemote} from 'chrome://feedback/report_unsafe_site.mojom-webui.js';
-import type {ReportUnsafeSiteBrowserProxy} from 'chrome://feedback/report_unsafe_site/report_unsafe_site_browser_proxy.js';
-import {ReportUnsafeSiteBrowserProxyImpl} from 'chrome://feedback/report_unsafe_site/report_unsafe_site_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {PageHandlerRemote} from 'neovex://feedback/report_unsafe_site.mojom-webui.js';
+import type {ReportUnsafeSiteBrowserProxy} from 'neovex://feedback/report_unsafe_site/report_unsafe_site_browser_proxy.js';
+import {ReportUnsafeSiteBrowserProxyImpl} from 'neovex://feedback/report_unsafe_site/report_unsafe_site_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 class TestReportUnsafeSiteBrowserProxy implements ReportUnsafeSiteBrowserProxy {
   private handler: TestMock<PageHandlerRemote>&PageHandlerRemote;

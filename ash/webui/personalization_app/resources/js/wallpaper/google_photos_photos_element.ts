@@ -6,17 +6,17 @@
  * @fileoverview Polymer element that displays Google Photos photos.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import 'chrome://resources/polymer/v3_0/iron-scroll-threshold/iron-scroll-threshold.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/polymer/v3_0/iron-scroll-threshold/iron-scroll-threshold.js';
 
-import type {WallpaperGridItemSelectedEvent} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import type {IronScrollThresholdElement} from 'chrome://resources/polymer/v3_0/iron-scroll-threshold/iron-scroll-threshold.js';
-import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {WallpaperGridItemSelectedEvent} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import type {IronScrollThresholdElement} from 'neovex://resources/polymer/v3_0/iron-scroll-threshold/iron-scroll-threshold.js';
+import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {CurrentWallpaper, GooglePhotosPhoto, WallpaperProviderInterface} from '../../personalization_app.mojom-webui.js';
 import {WallpaperType} from '../../personalization_app.mojom-webui.js';

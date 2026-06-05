@@ -2,32 +2,32 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://internet-detail-dialog/internet_detail_dialog.js';
+import 'neovex://internet-detail-dialog/internet_detail_dialog.js';
 
-import type {InternetDetailDialogElement} from 'chrome://internet-detail-dialog/internet_detail_dialog.js';
-import type {InternetDetailDialogBrowserProxy} from 'chrome://internet-detail-dialog/internet_detail_dialog_browser_proxy.js';
-import {InternetDetailDialogBrowserProxyImpl} from 'chrome://internet-detail-dialog/internet_detail_dialog_browser_proxy.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import type {ApnListElement} from 'chrome://resources/ash/common/network/apn_list.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkApnListElement} from 'chrome://resources/ash/common/network/network_apnlist.js';
-import type {NetworkChooseMobileElement} from 'chrome://resources/ash/common/network/network_choose_mobile.js';
-import type {NetworkIpConfigElement} from 'chrome://resources/ash/common/network/network_ip_config.js';
-import type {NetworkNameserversElement} from 'chrome://resources/ash/common/network/network_nameservers.js';
-import type {NetworkPropertyListMojoElement} from 'chrome://resources/ash/common/network/network_property_list_mojo.js';
-import type {NetworkProxyElement} from 'chrome://resources/ash/common/network/network_proxy.js';
-import type {NetworkSiminfoElement} from 'chrome://resources/ash/common/network/network_siminfo.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {ApnProperties, GlobalPolicy, SIMInfo} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ApnAuthenticationType, ApnIpType, ApnSource, ApnState, ApnType, InhibitReason, MAX_NUM_CUSTOM_APNS} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, DeviceStateType, NetworkType, OncSource, PortalState} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {IronCollapseElement} from 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {InternetDetailDialogElement} from 'neovex://internet-detail-dialog/internet_detail_dialog.js';
+import type {InternetDetailDialogBrowserProxy} from 'neovex://internet-detail-dialog/internet_detail_dialog_browser_proxy.js';
+import {InternetDetailDialogBrowserProxyImpl} from 'neovex://internet-detail-dialog/internet_detail_dialog_browser_proxy.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import type {ApnListElement} from 'neovex://resources/ash/common/network/apn_list.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkApnListElement} from 'neovex://resources/ash/common/network/network_apnlist.js';
+import type {NetworkChooseMobileElement} from 'neovex://resources/ash/common/network/network_choose_mobile.js';
+import type {NetworkIpConfigElement} from 'neovex://resources/ash/common/network/network_ip_config.js';
+import type {NetworkNameserversElement} from 'neovex://resources/ash/common/network/network_nameservers.js';
+import type {NetworkPropertyListMojoElement} from 'neovex://resources/ash/common/network/network_property_list_mojo.js';
+import type {NetworkProxyElement} from 'neovex://resources/ash/common/network/network_proxy.js';
+import type {NetworkSiminfoElement} from 'neovex://resources/ash/common/network/network_siminfo.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {ApnProperties, GlobalPolicy, SIMInfo} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ApnAuthenticationType, ApnIpType, ApnSource, ApnState, ApnType, InhibitReason, MAX_NUM_CUSTOM_APNS} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, DeviceStateType, NetworkType, OncSource, PortalState} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {IronCollapseElement} from 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 import {FakeNetworkConfig} from './fake_network_config_mojom.js';
 
@@ -90,12 +90,12 @@ suite('internet-detail-dialog', () => {
   teardown(function() {
     // If a previous test was run with Jelly, the css needs to be removed.
     const old_elements =
-        document.querySelectorAll('link[href*=\'chrome://theme/colors.css\']');
+        document.querySelectorAll('link[href*=\'neovex://theme/colors.css\']');
     old_elements.forEach(function(node) {
       node.remove();
     });
     assertFalse(
-        !!document.querySelector('link[href*=\'chrome://theme/colors.css\']'));
+        !!document.querySelector('link[href*=\'neovex://theme/colors.css\']'));
 
     document.body.classList.remove('jelly-enabled');
   });

@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsPaymentsSectionElement, SettingsCreditCardListEntryElement, SettingsIbanListEntryElement} from 'chrome://settings/lazy_load.js';
-import {PaymentsManagerImpl} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue, assertLT} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, whenAttributeIs} from 'chrome://webui-test/test_util.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsPaymentsSectionElement, SettingsCreditCardListEntryElement, SettingsIbanListEntryElement} from 'neovex://settings/lazy_load.js';
+import {PaymentsManagerImpl} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue, assertLT} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, whenAttributeIs} from 'neovex://webui-test/test_util.js';
 // <if expr="is_win or is_macosx">
-import {loadTimeData} from 'chrome://settings/settings.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
 
 // </if>
 

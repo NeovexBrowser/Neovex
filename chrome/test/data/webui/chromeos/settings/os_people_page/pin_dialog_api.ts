@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CrButtonElement} from 'chrome://os-settings/os_settings.js';
-import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {CrButtonElement} from 'neovex://os-settings/os_settings.js';
+import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {hasBooleanProperty, hasStringProperty, retry, sleep} from '../utils.js';
 

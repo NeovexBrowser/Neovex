@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 /**
- * Typescript for user_actions.html, served from chrome://user-actions/
+ * Typescript for user_actions.html, served from neovex://user-actions/
  * This is used to debug user actions recording. It displays a live
  * stream of all user action events that occur in chromium while the
- * chrome://user-actions/ page is open.
+ * neovex://user-actions/ page is open.
  */
 
 import {addWebUiListener} from '//resources/js/cr.js';

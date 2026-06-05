@@ -5,8 +5,8 @@
 import './xf_button.js';
 import './xf_circular_progress.js';
 
-import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import type {IronIconElement} from 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import type {IronIconElement} from 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 
 import {str} from '../../common/js/translations.js';
 

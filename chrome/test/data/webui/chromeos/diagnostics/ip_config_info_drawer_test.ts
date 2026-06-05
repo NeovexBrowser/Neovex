@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/ip_config_info_drawer.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/ip_config_info_drawer.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {DiagnosticsBrowserProxyImpl} from 'chrome://diagnostics/diagnostics_browser_proxy.js';
-import type {CellularNetwork, EthernetNetwork, WiFiNetwork} from 'chrome://diagnostics/diagnostics_types.js';
-import {fakeEthernetNetwork, fakeWifiNetwork, fakeWifiNetworkEmptyNameServers, fakeWifiNetworkMultipleNameServers, fakeWifiNetworkNoNameServers} from 'chrome://diagnostics/fake_data.js';
-import type {IpConfigInfoDrawerElement} from 'chrome://diagnostics/ip_config_info_drawer.js';
-import type {Network} from 'chrome://diagnostics/network_health_provider.mojom-webui.js';
-import type {CrExpandButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {DiagnosticsBrowserProxyImpl} from 'neovex://diagnostics/diagnostics_browser_proxy.js';
+import type {CellularNetwork, EthernetNetwork, WiFiNetwork} from 'neovex://diagnostics/diagnostics_types.js';
+import {fakeEthernetNetwork, fakeWifiNetwork, fakeWifiNetworkEmptyNameServers, fakeWifiNetworkMultipleNameServers, fakeWifiNetworkNoNameServers} from 'neovex://diagnostics/fake_data.js';
+import type {IpConfigInfoDrawerElement} from 'neovex://diagnostics/ip_config_info_drawer.js';
+import type {Network} from 'neovex://diagnostics/network_health_provider.mojom-webui.js';
+import type {CrExpandButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 import {TestDiagnosticsBrowserProxy} from './test_diagnostics_browser_proxy.js';

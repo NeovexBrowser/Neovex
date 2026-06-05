@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsInputMethodOptionsPageElement} from 'chrome://os-settings/lazy_load.js';
-import {CrSettingsPrefs, Router, routes} from 'chrome://os-settings/os_settings.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsInputMethodOptionsPageElement} from 'neovex://os-settings/lazy_load.js';
+import {CrSettingsPrefs, Router, routes} from 'neovex://os-settings/os_settings.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakeLanguageHelper, FIRST_PARTY_INPUT_METHOD_ID_PREFIX} from './fake_language_helper.js';
 

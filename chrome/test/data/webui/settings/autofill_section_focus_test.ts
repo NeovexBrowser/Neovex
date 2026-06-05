@@ -3,17 +3,17 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {AutofillManagerImpl} from 'chrome://settings/lazy_load.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {AutofillManagerImpl} from 'neovex://settings/lazy_load.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import type {TestAutofillManager} from './autofill_fake_data.js';
 import {createAddressEntry} from './autofill_fake_data.js';
 import {createAutofillSection, deleteAddress} from './autofill_section_test_utils.js';
 
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 // clang-format on
 
 suite('AutofillSectionFocusTest', function() {

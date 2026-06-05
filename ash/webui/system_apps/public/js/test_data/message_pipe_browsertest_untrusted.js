@@ -6,7 +6,7 @@ import {MessagePipe} from '../message_pipe.js';
 
 /** A pipe through which we can send messages to the parent frame. */
 const parentMessagePipe =
-    new MessagePipe('chrome://system-app-test', window.parent);
+    new MessagePipe('neovex://system-app-test', window.parent);
 
 /**
  * Tells the test driver the guest test message handlers are installed. This

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://print/print_preview.js';
+import 'neovex://print/print_preview.js';
 
-import type {LabelledDpiCapability, PrintPreviewDpiSettingsElement, PrintPreviewModelElement} from 'chrome://print/print_preview.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
+import type {LabelledDpiCapability, PrintPreviewDpiSettingsElement, PrintPreviewModelElement} from 'neovex://print/print_preview.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
 
 import {getCddTemplate} from './print_preview_test_utils.js';
 

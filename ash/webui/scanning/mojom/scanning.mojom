@@ -130,7 +130,7 @@ enum ScanResult {
 };
 
 // Observer interface used to send remote updates about an in-progress scan job
-// to the Scan app (chrome://scanning) receiver. When the corresponding scan job
+// to the Scan app (neovex://scanning) receiver. When the corresponding scan job
 // is complete, the remote and receiver are disconnected.
 interface ScanJobObserver {
   // Called when the progress percent of the page currently being scanned
@@ -161,7 +161,7 @@ interface ScanJobObserver {
 
 // Interface used to obtain information about and interact with connected
 // scanners. It is implemented in the browser and exposed to the Scan app
-// (chrome://scanning).
+// (neovex://scanning).
 interface ScanService {
   // Returns the connected scanners. Obtaining a scanner's capabilities is
   // implemented in a separate method to minimize the amount of time clients

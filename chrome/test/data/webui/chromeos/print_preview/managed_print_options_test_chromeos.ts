@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ColorOption, DuplexOption, PrintPreviewModelElement} from 'chrome://print/print_preview.js';
-import {Destination, DestinationOrigin} from 'chrome://print/print_preview.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertGE, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {IPP_PRINT_QUALITY, ManagedPrintOptionsDuplexType, ManagedPrintOptionsQualityType} from 'chrome://print/print_preview.js';
-import type {DestinationOptionalParams, ManagedPrintOptions} from 'chrome://print/print_preview.js';
+import type {ColorOption, DuplexOption, PrintPreviewModelElement} from 'neovex://print/print_preview.js';
+import {Destination, DestinationOrigin} from 'neovex://print/print_preview.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertGE, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {IPP_PRINT_QUALITY, ManagedPrintOptionsDuplexType, ManagedPrintOptionsQualityType} from 'neovex://print/print_preview.js';
+import type {DestinationOptionalParams, ManagedPrintOptions} from 'neovex://print/print_preview.js';
 
 import {
   getCddTemplate,

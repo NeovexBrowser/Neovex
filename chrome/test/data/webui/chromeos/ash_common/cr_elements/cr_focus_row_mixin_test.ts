@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {FocusRowMixin} from 'chrome://resources/ash/common/cr_elements/focus_row_mixin.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {down, pressAndReleaseKeyOn, up} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {assertFalse, assertTrue, assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {FocusRowMixin} from 'neovex://resources/ash/common/cr_elements/focus_row_mixin.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {down, pressAndReleaseKeyOn, up} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {assertFalse, assertTrue, assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 // clang-format on
 

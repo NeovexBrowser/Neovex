@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {AppProtocolEntry, HandlerEntry, ProtocolEntry, ProtocolHandlersElement} from 'chrome://settings/lazy_load.js';
-import {SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {AppProtocolEntry, HandlerEntry, ProtocolEntry, ProtocolHandlersElement} from 'neovex://settings/lazy_load.js';
+import {SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 // clang-format on

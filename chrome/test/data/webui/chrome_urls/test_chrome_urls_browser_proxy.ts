@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BrowserProxy} from 'chrome://chrome-urls/browser_proxy.js';
-import {PageCallbackRouter} from 'chrome://chrome-urls/chrome_urls.mojom-webui.js';
-import type {ChromeUrlsData, PageHandlerInterface, PageRemote} from 'chrome://chrome-urls/chrome_urls.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {BrowserProxy} from 'neovex://chrome-urls/browser_proxy.js';
+import {PageCallbackRouter} from 'neovex://chrome-urls/chrome_urls.mojom-webui.js';
+import type {ChromeUrlsData, PageHandlerInterface, PageRemote} from 'neovex://chrome-urls/chrome_urls.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 /**
  * Test version of the PageHandler used to verify calls to the browser from
@@ -39,7 +39,7 @@ export class TestPageHandler extends TestBrowserProxy implements
 }
 
 /**
- * Test version of the BrowserProxy used in connecting chrome://chrome-urls to
+ * Test version of the BrowserProxy used in connecting neovex://chrome-urls to
  * the browser on start up.
  */
 export class TestChromeUrlsBrowserProxy implements BrowserProxy {

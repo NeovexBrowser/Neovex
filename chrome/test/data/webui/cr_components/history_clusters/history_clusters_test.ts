@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://history/strings.m.js';
+import 'neovex://history/strings.m.js';
 
-import {BrowserProxyImpl} from 'chrome://resources/cr_components/history_clusters/browser_proxy.js';
-import {HistoryClustersElement} from 'chrome://resources/cr_components/history_clusters/clusters.js';
-import type {Cluster, RawVisitData, URLVisit} from 'chrome://resources/cr_components/history_clusters/history_cluster_types.mojom-webui.js';
-import type {PageRemote, QueryResult} from 'chrome://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'chrome://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
-import {PageImageServiceBrowserProxy} from 'chrome://resources/cr_components/page_image_service/browser_proxy.js';
-import {ClientId as PageImageServiceClientId, PageImageServiceHandlerRemote} from 'chrome://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {BrowserProxyImpl} from 'neovex://resources/cr_components/history_clusters/browser_proxy.js';
+import {HistoryClustersElement} from 'neovex://resources/cr_components/history_clusters/clusters.js';
+import type {Cluster, RawVisitData, URLVisit} from 'neovex://resources/cr_components/history_clusters/history_cluster_types.mojom-webui.js';
+import type {PageRemote, QueryResult} from 'neovex://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'neovex://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
+import {PageImageServiceBrowserProxy} from 'neovex://resources/cr_components/page_image_service/browser_proxy.js';
+import {ClientId as PageImageServiceClientId, PageImageServiceHandlerRemote} from 'neovex://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 let handler: TestMock<PageHandlerRemote>&PageHandlerRemote;
 let callbackRouterRemote: PageRemote;
@@ -413,11 +413,11 @@ suite('HistoryClustersFocusTest', () => {
   const visit1 = getTestVisit(
       {url: 'www.chromium.org', visitTime: {internalValue: BigInt(1)}});
   const visit2 = getTestVisit({
-    url: 'chrome://extensions',
+    url: 'neovex://extensions',
     visitTime: {internalValue: BigInt(2)},
   });
   const visit3 = getTestVisit(
-      {url: 'chrome://settings', visitTime: {internalValue: BigInt(3)}});
+      {url: 'neovex://settings', visitTime: {internalValue: BigInt(3)}});
   const cluster1: Cluster = getTestCluster(BigInt(111), [visit1]);
   const cluster2: Cluster = getTestCluster(BigInt(222), [visit2]);
   const cluster3: Cluster = getTestCluster(BigInt(333), [visit3]);
@@ -538,7 +538,7 @@ suite('HistoryClustersFocusTest', () => {
 
     // If history-clusters isn't active, scrolling doesn't load more. In prod
     // code this value is only set if the clusters are not visible (e.g. not
-    // the active tab in the chrome://history UI).
+    // the active tab in the neovex://history UI).
     assertGT(
         scrollTarget.scrollHeight,
         scrollTarget.offsetHeight + scrollTarget.scrollTop + 500);

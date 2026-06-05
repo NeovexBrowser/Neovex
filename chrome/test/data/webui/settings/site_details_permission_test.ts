@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://webui-test/cr_elements/cr_policy_strings.js';
+import 'neovex://webui-test/cr_elements/cr_policy_strings.js';
 
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SiteDetailsPermissionElement} from 'chrome://settings/lazy_load.js';
-import {ChooserType, ContentSetting, ContentSettingsTypes, SiteSettingSource, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SiteDetailsPermissionElement} from 'neovex://settings/lazy_load.js';
+import {ChooserType, ContentSetting, ContentSettingsTypes, SiteSettingSource, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import type {SiteSettingsPref} from './test_util.js';
@@ -323,7 +323,7 @@ suite('SiteDetailsPermission', function() {
   });
 
   test('info string correct for allowlisted source', function() {
-    const origin = 'chrome://test';
+    const origin = 'neovex://test';
     testElement.category = ContentSettingsTypes.NOTIFICATIONS;
     testElement.$.details.hidden = false;
     testElement.site = createRawSiteException(origin, {
@@ -340,7 +340,7 @@ suite('SiteDetailsPermission', function() {
   });
 
   test('info string correct for system block', async function() {
-    const origin = 'chrome://test';
+    const origin = 'neovex://test';
     const categoryList = [
       ContentSettingsTypes.CAMERA,
       ContentSettingsTypes.MIC,

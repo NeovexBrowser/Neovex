@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/updater_state/updater_state_card.js';
+import 'neovex://updater/updater_state/updater_state_card.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {BrowserProxyImpl} from 'chrome://updater/browser_proxy.js';
-import {SCOPES} from 'chrome://updater/event_history.js';
-import {formatDateLong} from 'chrome://updater/tools.js';
-import type {UpdaterStateCardElement} from 'chrome://updater/updater_state/updater_state_card.js';
-import {PageHandlerRemote, ShowDirectoryTarget} from 'chrome://updater/updater_ui.mojom-webui.js';
-import {assertArrayEquals, assertEquals, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {BrowserProxyImpl} from 'neovex://updater/browser_proxy.js';
+import {SCOPES} from 'neovex://updater/event_history.js';
+import {formatDateLong} from 'neovex://updater/tools.js';
+import type {UpdaterStateCardElement} from 'neovex://updater/updater_state/updater_state_card.js';
+import {PageHandlerRemote, ShowDirectoryTarget} from 'neovex://updater/updater_ui.mojom-webui.js';
+import {assertArrayEquals, assertEquals, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('UpdaterStateCardElement', () => {
   let item: UpdaterStateCardElement;

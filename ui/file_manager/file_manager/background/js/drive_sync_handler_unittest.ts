@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {installMockChrome} from '../../common/js/mock_chrome.js';
 import {MockMetadataModel} from '../../foreground/js/metadata/mock_metadata.js';

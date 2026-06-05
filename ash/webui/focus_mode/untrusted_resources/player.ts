@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-const TRUSTED_ORIGIN = 'chrome://focus-mode-media';
+const TRUSTED_ORIGIN = 'neovex://focus-mode-media';
 
 interface Track {
   // The URL of the audio data.

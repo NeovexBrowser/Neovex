@@ -4,7 +4,7 @@
 
 import {AnnotationBrushType, UserAction} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {InkBrushSelectorElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {getBrush, setupMockMetricsPrivate} from './test_util.js';
 

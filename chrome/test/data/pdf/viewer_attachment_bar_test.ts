@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {ViewerAttachmentBarElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/elements/viewer_attachment_bar.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 function createAttachmentBar(): ViewerAttachmentBarElement {
   document.body.innerHTML = '';

@@ -1592,7 +1592,7 @@ interface NetworkContext {
       => (X509Certificate verified_cert);
 
   // Adds explicitly-specified data as if it was processed from an
-  // HSTS header. Used by tests and implementation of chrome://net-internals.
+  // HSTS header. Used by tests and implementation of neovex://net-internals.
   AddHSTS(string host, mojo_base.mojom.Time expiry, bool include_subdomains)
       => ();
 

@@ -5,8 +5,8 @@
 import '/strings.m.js';
 import './connectors_tabs.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {getTemplate} from './app.html.js';
 

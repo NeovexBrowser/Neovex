@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getFavicon, getFaviconForPageURL, getFaviconUrl, type GetFaviconUrlParams, getFileIconUrl} from 'chrome://resources/js/icon.js';
-import {isAndroid, isChromeOS, isLinux, isMac, isWindows} from 'chrome://resources/js/platform.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {getFavicon, getFaviconForPageURL, getFaviconUrl, type GetFaviconUrlParams, getFileIconUrl} from 'neovex://resources/js/icon.js';
+import {isAndroid, isChromeOS, isLinux, isMac, isWindows} from 'neovex://resources/js/platform.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('IconTest', function() {
   for (const isSyncedUrlForHistoryUi of [true, false]) {
@@ -79,14 +79,14 @@ suite('IconTest', function() {
 
     function getExpectedImageSet(size: number): string {
       const expectedDesktop = 'image-set(' +
-          `url("chrome://favicon2/?size=${size}&scaleFactor=1x&pageUrl=` +
+          `url("neovex://favicon2/?size=${size}&scaleFactor=1x&pageUrl=` +
           encodeURIComponent(url) + '&allowGoogleServerFallback=0") 1x, ' +
-          `url("chrome://favicon2/?size=${size}&scaleFactor=2x&pageUrl=` +
+          `url("neovex://favicon2/?size=${size}&scaleFactor=2x&pageUrl=` +
           encodeURIComponent(url) + '&allowGoogleServerFallback=0") 2x)';
       const expectedOther = 'image-set(' +
-          `url("chrome://favicon2/?size=${size}&scaleFactor=1x&pageUrl=` +
+          `url("neovex://favicon2/?size=${size}&scaleFactor=1x&pageUrl=` +
           encodeURIComponent(url) + '&allowGoogleServerFallback=0") 1x, ' +
-          `url("chrome://favicon2/?size=${size}&` +
+          `url("neovex://favicon2/?size=${size}&` +
           `scaleFactor=${window.devicePixelRatio}x&pageUrl=` +
           encodeURIComponent(url) + '&allowGoogleServerFallback=0") ' +
           `${window.devicePixelRatio}x)`;
@@ -117,14 +117,14 @@ suite('IconTest', function() {
   test('GetFavicon', function() {
     const url = 'http://foo.com/foo.ico';
     const expectedDesktop = 'image-set(' +
-        'url("chrome://favicon2/?size=16&scaleFactor=1x&iconUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=1x&iconUrl=' +
         encodeURIComponent('http://foo.com/foo.ico') + '") 1x, ' +
-        'url("chrome://favicon2/?size=16&scaleFactor=2x&iconUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=2x&iconUrl=' +
         encodeURIComponent('http://foo.com/foo.ico') + '") 2x)';
     const expectedOther = 'image-set(' +
-        'url("chrome://favicon2/?size=16&scaleFactor=1x&iconUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=1x&iconUrl=' +
         encodeURIComponent('http://foo.com/foo.ico') + '") 1x, ' +
-        'url("chrome://favicon2/?size=16&' +
+        'url("neovex://favicon2/?size=16&' +
         `scaleFactor=${window.devicePixelRatio}x&iconUrl=` +
         encodeURIComponent('http://foo.com/foo.ico') + '") ' +
         `${window.devicePixelRatio}x)`;
@@ -139,7 +139,7 @@ suite('IconTest', function() {
   test('GetFileIconUrl', function() {
     assertEquals(
         getFileIconUrl('file path'),
-        'chrome://fileicon/?path=file+path&scale=' + window.devicePixelRatio +
+        'neovex://fileicon/?path=file+path&scale=' + window.devicePixelRatio +
             'x');
   });
 });

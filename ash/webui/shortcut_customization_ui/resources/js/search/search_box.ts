@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
 import './search_result_row.js';
-import 'chrome://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import {CrToolbarSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {IronDropdownElement} from 'chrome://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
-import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import {CrToolbarSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {IronDropdownElement} from 'neovex://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
+import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SearchResultsAvailabilityObserverInterface} from '../../mojom-webui/search.mojom-webui.js';
 import {SearchResultsAvailabilityObserverReceiver} from '../../mojom-webui/search.mojom-webui.js';

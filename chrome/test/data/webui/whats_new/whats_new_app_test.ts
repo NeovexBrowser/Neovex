@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://whats-new/whats_new_app.js';
+import 'neovex://whats-new/whats_new_app.js';
 
-import {CommandHandlerRemote} from 'chrome://resources/js/browser_command.mojom-webui.js';
-import {BrowserCommandProxy} from 'chrome://resources/js/browser_command/browser_command_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
-import {formatModuleName} from 'chrome://whats-new/format_module_name.js';
-import type {DebugInfo} from 'chrome://whats-new/types.js';
-import {ModulePosition, ScrollDepth} from 'chrome://whats-new/whats_new.mojom-webui.js';
-import {WhatsNewProxyImpl} from 'chrome://whats-new/whats_new_proxy.js';
+import {CommandHandlerRemote} from 'neovex://resources/js/browser_command.mojom-webui.js';
+import {BrowserCommandProxy} from 'neovex://resources/js/browser_command/browser_command_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {formatModuleName} from 'neovex://whats-new/format_module_name.js';
+import type {DebugInfo} from 'neovex://whats-new/types.js';
+import {ModulePosition, ScrollDepth} from 'neovex://whats-new/whats_new.mojom-webui.js';
+import {WhatsNewProxyImpl} from 'neovex://whats-new/whats_new_proxy.js';
 
 import {TestWhatsNewBrowserProxy} from './test_whats_new_browser_proxy.js';
 
-const whatsNewURL = 'chrome://webui-test/whats_new/test.html';
+const whatsNewURL = 'neovex://webui-test/whats_new/test.html';
 
 declare const window: Window&{
   chromeWhatsNew: {
@@ -28,9 +28,9 @@ declare const window: Window&{
 
 function getUrlForFixture(filename: string, query?: string): string {
   if (query) {
-    return `chrome://webui-test/whats_new/${filename}.html?${query}`;
+    return `neovex://webui-test/whats_new/${filename}.html?${query}`;
   }
-  return `chrome://webui-test/whats_new/${filename}.html`;
+  return `neovex://webui-test/whats_new/${filename}.html`;
 }
 
 suite('WhatsNewAppTest', function() {

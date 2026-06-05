@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksItemElement, BookmarksListElement} from 'chrome://bookmarks/bookmarks.js';
-import {BookmarkManagerApiProxyImpl, Command} from 'chrome://bookmarks/bookmarks.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import type {ModifiersParam} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {BookmarksItemElement, BookmarksListElement} from 'neovex://bookmarks/bookmarks.js';
+import {BookmarkManagerApiProxyImpl, Command} from 'neovex://bookmarks/bookmarks.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import type {ModifiersParam} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestBookmarkManagerApiProxy} from './test_bookmark_manager_api_proxy.js';
 import {TestCommandManager} from './test_command_manager.js';

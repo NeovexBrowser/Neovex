@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shortcut-customization/js/bottom_nav_content.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://shortcut-customization/js/bottom_nav_content.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {ShortcutsBottomNavContentElement} from 'chrome://shortcut-customization/js/bottom_nav_content.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {ShortcutsBottomNavContentElement} from 'neovex://shortcut-customization/js/bottom_nav_content.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 export function initBottomNavContentElement():
     ShortcutsBottomNavContentElement {

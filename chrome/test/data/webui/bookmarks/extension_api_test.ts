@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // Bookmark Manager API test for Chrome.
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 const bookmarkManager = chrome.bookmarkManagerPrivate;
 

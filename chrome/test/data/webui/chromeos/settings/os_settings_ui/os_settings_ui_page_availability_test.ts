@@ -11,15 +11,15 @@
  *   since the `os-settings-ui` element is very large.
  */
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import {AccountManagerBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {MainPageContainerElement, OsSettingsMainElement, OsSettingsUiElement, PageDisplayerElement} from 'chrome://os-settings/os_settings.js';
-import {createRouterForTesting, CrSettingsPrefs, Router, routesMojom} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {AccountManagerBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {MainPageContainerElement, OsSettingsMainElement, OsSettingsUiElement, PageDisplayerElement} from 'neovex://os-settings/os_settings.js';
+import {createRouterForTesting, CrSettingsPrefs, Router, routesMojom} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestAccountManagerBrowserProxy} from '../os_people_page/test_account_manager_browser_proxy.js';
 

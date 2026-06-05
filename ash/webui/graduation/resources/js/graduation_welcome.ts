@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
 import '/strings.m.js';
 
-import {convertImageSequenceToPng} from 'chrome://resources/ash/common/cr_picture/png.js';
-import {getImage} from 'chrome://resources/js/icon.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {convertImageSequenceToPng} from 'neovex://resources/ash/common/cr_picture/png.js';
+import {getImage} from 'neovex://resources/js/icon.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ScreenSwitchEvents} from './graduation_app.js';
 import {getGraduationUiHandler} from './graduation_ui_handler.js';

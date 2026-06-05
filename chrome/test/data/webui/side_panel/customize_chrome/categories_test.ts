@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://customize-chrome-side-panel.top-chrome/categories.js';
+import 'neovex://customize-chrome-side-panel.top-chrome/categories.js';
 
-import type {CategoriesElement} from 'chrome://customize-chrome-side-panel.top-chrome/categories.js';
-import {CHANGE_CHROME_THEME_CLASSIC_ELEMENT_ID, CHROME_THEME_COLLECTION_ELEMENT_ID} from 'chrome://customize-chrome-side-panel.top-chrome/categories.js';
-import {CustomizeChromeAction, NtpImageType} from 'chrome://customize-chrome-side-panel.top-chrome/common.js';
-import type {BackgroundCollection, CustomizeChromePageRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromeApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
-import {WindowProxy} from 'chrome://customize-chrome-side-panel.top-chrome/window_proxy.js';
-import type {CrAutoImgElement} from 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CategoriesElement} from 'neovex://customize-chrome-side-panel.top-chrome/categories.js';
+import {CHANGE_CHROME_THEME_CLASSIC_ELEMENT_ID, CHROME_THEME_COLLECTION_ELEMENT_ID} from 'neovex://customize-chrome-side-panel.top-chrome/categories.js';
+import {CustomizeChromeAction, NtpImageType} from 'neovex://customize-chrome-side-panel.top-chrome/common.js';
+import type {BackgroundCollection, CustomizeChromePageRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromeApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
+import {WindowProxy} from 'neovex://customize-chrome-side-panel.top-chrome/window_proxy.js';
+import type {CrAutoImgElement} from 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {$$, createBackgroundImage, createTheme, installMock} from './test_support.js';
 
@@ -377,7 +377,7 @@ suite('CategoriesTest', () => {
         $$<HTMLImageElement>(
             categoriesElement,
             '#classicChromeTile #cornerNewTabPageTile #cornerNewTabPage')!.src,
-        'chrome://customize-chrome-side-panel.top-chrome/icons/' +
+        'neovex://customize-chrome-side-panel.top-chrome/icons/' +
             'corner_new_tab_page.svg');
   });
 

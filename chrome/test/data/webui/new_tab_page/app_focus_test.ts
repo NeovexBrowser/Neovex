@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/new_tab_page.js';
+import 'neovex://new-tab-page/new_tab_page.js';
 
-import {CustomizeButtonsDocumentCallbackRouter, CustomizeButtonsHandlerRemote} from 'chrome://new-tab-page/customize_buttons.mojom-webui.js';
-import type {Module} from 'chrome://new-tab-page/lazy_load.js';
-import {ComposeboxProxyImpl, ModuleRegistry} from 'chrome://new-tab-page/lazy_load.js';
-import type {AppElement, SearchboxElement} from 'chrome://new-tab-page/new_tab_page.js';
-import {$$, BackgroundManager, CustomizeButtonsProxy, NewTabPageProxy, SearchboxBrowserProxy, WindowProxy} from 'chrome://new-tab-page/new_tab_page.js';
-import type {PageRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {PageHandlerRemote as SearchboxPageHandlerRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {CustomizeButtonsDocumentCallbackRouter, CustomizeButtonsHandlerRemote} from 'neovex://new-tab-page/customize_buttons.mojom-webui.js';
+import type {Module} from 'neovex://new-tab-page/lazy_load.js';
+import {ComposeboxProxyImpl, ModuleRegistry} from 'neovex://new-tab-page/lazy_load.js';
+import type {AppElement, SearchboxElement} from 'neovex://new-tab-page/new_tab_page.js';
+import {$$, BackgroundManager, CustomizeButtonsProxy, NewTabPageProxy, SearchboxBrowserProxy, WindowProxy} from 'neovex://new-tab-page/new_tab_page.js';
+import type {PageRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {PageHandlerRemote as SearchboxPageHandlerRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {assertStyle, createTheme, installMock} from './test_support.js';
 

@@ -8,8 +8,8 @@
  * implementation for testing.
  */
 
-import 'chrome://resources/mojo/mojo/public/js/bindings.js';
-import 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import 'neovex://resources/mojo/mojo/public/js/bindings.js';
+import 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {SeaPenProviderInterface} from './sea_pen.mojom-webui.js';
 import {SeaPenProvider} from './sea_pen.mojom-webui.js';

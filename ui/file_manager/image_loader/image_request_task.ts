@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getFileTypeForName} from 'chrome://file-manager/common/js/file_types_base.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {getFileTypeForName} from 'neovex://file-manager/common/js/file_types_base.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {ImageCache} from './cache.js';
 import {resizeAndCrop, shouldProcess} from './image_loader_util.js';

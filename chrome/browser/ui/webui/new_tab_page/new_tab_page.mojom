@@ -31,7 +31,7 @@ struct BackgroundImage {
   url.mojom.Url url;
   // URL to a higher res background image. Can point to untrusted content.
   url.mojom.Url? url_2x;
-  // URL to a logo of the theme. Has chrome:// scheme.
+  // URL to a logo of the theme. Has neovex:// scheme.
   url.mojom.Url? attribution_url;
   // CSS styling properties set on the background image.
   string? size;
@@ -308,6 +308,6 @@ interface Page {
   // Called when the NTP footer is shown or hidden.
   FooterVisibilityUpdated(bool visible);
   // Called when the embedded chrome-untrusted:// document wants to bind Mojo
-  // interfaces for communicating with the chrome:// document.
+  // interfaces for communicating with the neovex:// document.
   ConnectToParentDocument(pending_remote<MicrosoftAuthUntrustedDocument> child_untrusted_document_remote);
 };

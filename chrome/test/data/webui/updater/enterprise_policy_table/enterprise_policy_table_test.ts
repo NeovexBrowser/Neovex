@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/enterprise_policy_table/enterprise_policy_table.js';
+import 'neovex://updater/enterprise_policy_table/enterprise_policy_table.js';
 
-import type {EnterprisePolicyTableElement} from 'chrome://updater/enterprise_policy_table/enterprise_policy_table.js';
-import {loadTimeData} from 'chrome://updater/i18n_setup.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {EnterprisePolicyTableElement} from 'neovex://updater/enterprise_policy_table/enterprise_policy_table.js';
+import {loadTimeData} from 'neovex://updater/i18n_setup.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('EnterprisePolicyTableTest', () => {
   let element: EnterprisePolicyTableElement;

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://graduation/js/graduation_takeout_ui.js';
-import 'chrome://graduation/strings.m.js';
+import 'neovex://graduation/js/graduation_takeout_ui.js';
+import 'neovex://graduation/strings.m.js';
 
-import {ScreenSwitchEvents} from 'chrome://graduation/js/graduation_app.js';
-import {GraduationTakeoutUi, WebviewReloadHelper} from 'chrome://graduation/js/graduation_takeout_ui.js';
-import {AuthResult} from 'chrome://graduation/mojom/graduation_ui.mojom-webui.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {PaperSpinnerLiteElement} from 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {ScreenSwitchEvents} from 'neovex://graduation/js/graduation_app.js';
+import {GraduationTakeoutUi, WebviewReloadHelper} from 'neovex://graduation/js/graduation_takeout_ui.js';
+import {AuthResult} from 'neovex://graduation/mojom/graduation_ui.mojom-webui.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {PaperSpinnerLiteElement} from 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 let graduationUi: GraduationTakeoutUi;
 

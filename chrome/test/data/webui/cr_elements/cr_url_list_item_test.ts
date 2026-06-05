@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
 
-import type {CrUrlListItemElement} from 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import {CrUrlListItemSize} from 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import type {CrUrlListItemElement} from 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import {CrUrlListItemSize} from 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
 
 suite('CrUrlListItemTest', () => {
   let element: CrUrlListItemElement;

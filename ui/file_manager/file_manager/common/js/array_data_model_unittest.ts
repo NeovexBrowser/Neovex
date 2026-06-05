@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertArrayEquals, assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assertArrayEquals, assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {ArrayDataModel, type ChangeEvent, type PermutationEvent, type SpliceEvent} from './array_data_model.js';
 

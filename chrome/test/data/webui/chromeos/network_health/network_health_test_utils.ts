@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {RoutineCallSource} from 'chrome://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
-import type {RoutineResult, RoutineVerdict} from 'chrome://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
+import {RoutineCallSource} from 'neovex://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
+import type {RoutineResult, RoutineVerdict} from 'neovex://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
 /**
  * Removes any prefixed URL from a icon image path
  */

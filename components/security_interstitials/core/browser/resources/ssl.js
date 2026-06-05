@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {HIDDEN_CLASS} from 'chrome://interstitials/common/resources/interstitial_common.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {HIDDEN_CLASS} from 'neovex://interstitials/common/resources/interstitial_common.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 /**
  * This appends a piece of debugging information to the end of the warning.

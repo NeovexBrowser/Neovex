@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {NetworkDeviceInfoDialogElement} from 'chrome://os-settings/lazy_load.js';
-import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import type {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {ESimManagerRemote, EuiccRemote, QRCode} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {FakeEuicc} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {FakeESimManagerRemote} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {NetworkDeviceInfoDialogElement} from 'neovex://os-settings/lazy_load.js';
+import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import type {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {ESimManagerRemote, EuiccRemote, QRCode} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {FakeEuicc} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {FakeESimManagerRemote} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakeCanvasContext} from '../fake_canvas_context.js';
 

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
+import 'neovex://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
 
-import type {CrInfiniteListElement} from 'chrome://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertLT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrInfiniteListElement} from 'neovex://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertLT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 const SAMPLE_HEIGHT_VIEWPORT_ITEM_COUNT = 6;
 const SAMPLE_ITEM_HEIGHT = 56;

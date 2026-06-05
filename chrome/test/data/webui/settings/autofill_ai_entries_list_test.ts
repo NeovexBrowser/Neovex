@@ -3,18 +3,18 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {assertEquals, assertFalse, assertGE, assertTrue, assertDeepEquals} from 'chrome://webui-test/chai_assert.js';
-import {CrSettingsPrefs, ModelExecutionEnterprisePolicyValue, loadTimeData} from 'chrome://settings/settings.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {OpenWindowProxyImpl} from 'chrome://settings/settings.js';
-import type {CrButtonElement, SettingsAutofillAiEntriesListElement, SettingsSimpleConfirmationDialogElement, SettingsAutofillAiAddOrEditDialogElement} from 'chrome://settings/lazy_load.js';
-import {AiEnterpriseFeaturePrefName, EntityDataManagerProxyImpl} from 'chrome://settings/lazy_load.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {assertEquals, assertFalse, assertGE, assertTrue, assertDeepEquals} from 'neovex://webui-test/chai_assert.js';
+import {CrSettingsPrefs, ModelExecutionEnterprisePolicyValue, loadTimeData} from 'neovex://settings/settings.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {OpenWindowProxyImpl} from 'neovex://settings/settings.js';
+import type {CrButtonElement, SettingsAutofillAiEntriesListElement, SettingsSimpleConfirmationDialogElement, SettingsAutofillAiAddOrEditDialogElement} from 'neovex://settings/lazy_load.js';
+import {AiEnterpriseFeaturePrefName, EntityDataManagerProxyImpl} from 'neovex://settings/lazy_load.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
 
 import {TestEntityDataManagerProxy} from './test_entity_data_manager_proxy.js';
 // clang-format on

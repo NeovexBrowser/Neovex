@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PageHandlerRemote, PrivacySandboxInternalsPref} from 'chrome://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
-import type {PrivacySandboxInternalsBrowserProxy} from 'chrome://privacy-sandbox-internals/privacy_sandbox_internals_browser_proxy.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {PageHandlerRemote, PrivacySandboxInternalsPref} from 'neovex://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
+import type {PrivacySandboxInternalsBrowserProxy} from 'neovex://privacy-sandbox-internals/privacy_sandbox_internals_browser_proxy.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestPrivacySandboxInternalsPageHandler extends TestBrowserProxy {
   private prefs_: PrivacySandboxInternalsPref[] = [];

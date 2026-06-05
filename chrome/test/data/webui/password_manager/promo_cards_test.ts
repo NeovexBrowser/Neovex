@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://password-manager/password_manager.js';
+import 'neovex://password-manager/password_manager.js';
 
-import type {PasswordsSectionElement} from 'chrome://password-manager/password_manager.js';
-import {Page, PasswordManagerImpl, PromoCardsProxyImpl, Router, SyncBrowserProxyImpl, UrlParam} from 'chrome://password-manager/password_manager.js';
-import {BatchUploadPasswordsEntryPoint} from 'chrome://password-manager/password_manager.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {PasswordsSectionElement} from 'neovex://password-manager/password_manager.js';
+import {Page, PasswordManagerImpl, PromoCardsProxyImpl, Router, SyncBrowserProxyImpl, UrlParam} from 'neovex://password-manager/password_manager.js';
+import {BatchUploadPasswordsEntryPoint} from 'neovex://password-manager/password_manager.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';
 import {TestPromoCardsProxy} from './test_promo_cards_browser_proxy.js';
@@ -65,7 +65,7 @@ suite('PasswordsSectionTest', function() {
     const shownImage = promoCardElement.shadowRoot!.querySelector('img');
     assertTrue(!!shownImage);
     assertEquals(
-        'chrome://password-manager/images/test_promo.svg', shownImage.src);
+        'neovex://password-manager/images/test_promo.svg', shownImage.src);
 
     // Click close button.
     promoCardElement.$.closeButton.click();

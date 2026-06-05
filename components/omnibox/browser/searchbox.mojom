@@ -247,7 +247,7 @@ struct PlaceholderConfig {
 };
 
 // Browser-side handler for requests from WebUI page. The web pages that embed
-// searchboxes which communicate with this interface are chrome://new-tab-page
+// searchboxes which communicate with this interface are neovex://new-tab-page
 // and two chrome-untrusted://lens pages.
 interface PageHandler {
   // The SearchboxBrowserProxy singleton calls this when it's first initialized.

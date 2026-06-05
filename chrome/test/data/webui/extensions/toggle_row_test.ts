@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import type {ExtensionsToggleRowElement} from 'chrome://extensions/extensions.js';
-import {getTrustedHTML} from 'chrome://extensions/extensions.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {ExtensionsToggleRowElement} from 'neovex://extensions/extensions.js';
+import {getTrustedHTML} from 'neovex://extensions/extensions.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('extensions-toggle-row', function() {
   let row: ExtensionsToggleRowElement;

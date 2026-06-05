@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
 
-import type {CrTreeItemElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import type {File} from 'chrome://resources/mojo/mojo/public/mojom/base/file.mojom-webui.js';
-import type {ReadOnlyBuffer} from 'chrome://resources/mojo/mojo/public/mojom/base/read_only_buffer.mojom-webui.js';
-import type {UsbInternalsAppElement} from 'chrome://usb-internals/app.js';
-import {setSetupFn} from 'chrome://usb-internals/app.js';
-import type {UsbClaimInterfaceResult, UsbControlTransferParams, UsbDeviceClientRemote, UsbDeviceInfo, UsbDeviceInterface, UsbDevicePendingReceiver, UsbIsochronousPacket, UsbOpenDeviceResult, UsbTransferDirection} from 'chrome://usb-internals/usb_device.mojom-webui.js';
-import {UsbControlTransferRecipient, UsbControlTransferType, UsbDeviceReceiver, UsbOpenDeviceSuccess, UsbTransferStatus} from 'chrome://usb-internals/usb_device.mojom-webui.js';
-import type {UsbInternalsPageHandlerInterface} from 'chrome://usb-internals/usb_internals.mojom-webui.js';
-import {UsbInternalsPageHandler, UsbInternalsPageHandlerReceiver} from 'chrome://usb-internals/usb_internals.mojom-webui.js';
-import type {UsbDeviceManagerInterface, UsbDeviceManagerPendingReceiver} from 'chrome://usb-internals/usb_manager.mojom-webui.js';
-import {UsbDeviceManagerReceiver} from 'chrome://usb-internals/usb_manager.mojom-webui.js';
-import type {UsbDeviceManagerTestPendingReceiver} from 'chrome://usb-internals/usb_manager_test.mojom-webui.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrTreeItemElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import type {File} from 'neovex://resources/mojo/mojo/public/mojom/base/file.mojom-webui.js';
+import type {ReadOnlyBuffer} from 'neovex://resources/mojo/mojo/public/mojom/base/read_only_buffer.mojom-webui.js';
+import type {UsbInternalsAppElement} from 'neovex://usb-internals/app.js';
+import {setSetupFn} from 'neovex://usb-internals/app.js';
+import type {UsbClaimInterfaceResult, UsbControlTransferParams, UsbDeviceClientRemote, UsbDeviceInfo, UsbDeviceInterface, UsbDevicePendingReceiver, UsbIsochronousPacket, UsbOpenDeviceResult, UsbTransferDirection} from 'neovex://usb-internals/usb_device.mojom-webui.js';
+import {UsbControlTransferRecipient, UsbControlTransferType, UsbDeviceReceiver, UsbOpenDeviceSuccess, UsbTransferStatus} from 'neovex://usb-internals/usb_device.mojom-webui.js';
+import type {UsbInternalsPageHandlerInterface} from 'neovex://usb-internals/usb_internals.mojom-webui.js';
+import {UsbInternalsPageHandler, UsbInternalsPageHandlerReceiver} from 'neovex://usb-internals/usb_internals.mojom-webui.js';
+import type {UsbDeviceManagerInterface, UsbDeviceManagerPendingReceiver} from 'neovex://usb-internals/usb_manager.mojom-webui.js';
+import {UsbDeviceManagerReceiver} from 'neovex://usb-internals/usb_manager.mojom-webui.js';
+import type {UsbDeviceManagerTestPendingReceiver} from 'neovex://usb-internals/usb_manager_test.mojom-webui.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 class FakePageHandlerRemote extends TestBrowserProxy implements
     UsbInternalsPageHandlerInterface {

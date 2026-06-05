@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 const viewer = document.body.querySelector('pdf-viewer')!;
 

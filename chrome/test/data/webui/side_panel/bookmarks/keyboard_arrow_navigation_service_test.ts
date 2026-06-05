@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {KeyArrowNavigationService} from 'chrome://bookmarks-side-panel.top-chrome/keyboard_arrow_navigation_service.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {KeyArrowNavigationService} from 'neovex://bookmarks-side-panel.top-chrome/keyboard_arrow_navigation_service.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('KeyArrowNavigationServiceTest', () => {
   let service: KeyArrowNavigationService;

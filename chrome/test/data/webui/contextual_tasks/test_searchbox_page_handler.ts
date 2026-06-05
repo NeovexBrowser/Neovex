@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import type {PageHandler as SearchboxPageHandler} from '//resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestSearchboxPageHandler extends TestBrowserProxy implements
     SearchboxPageHandler {

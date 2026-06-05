@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {NetworkStateProperties as Network} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {NetworkStateProperties as Network} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
 
 import type {CalibrationComponentStatus, Component, StateResult} from './shimless_rma.mojom-webui.js';
 import {CalibrationStatus, ComponentRepairStatus, ComponentType, RmadErrorCode, State} from './shimless_rma.mojom-webui.js';

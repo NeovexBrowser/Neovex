@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://customize-chrome-side-panel.top-chrome/strings.m.js';
+import 'neovex://customize-chrome-side-panel.top-chrome/strings.m.js';
 
-import {CustomizeColorSchemeModeBrowserProxy} from 'chrome://resources/cr_components/customize_color_scheme_mode/browser_proxy.js';
-import type {ColorSchemeModeOption} from 'chrome://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.js';
-import {colorSchemeModeOptions, CustomizeColorSchemeModeElement} from 'chrome://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.js';
-import type {ColorSchemeMode, CustomizeColorSchemeModeClientRemote} from 'chrome://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.mojom-webui.js';
-import {CustomizeColorSchemeModeClientCallbackRouter, CustomizeColorSchemeModeHandlerRemote} from 'chrome://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.mojom-webui.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {CustomizeColorSchemeModeBrowserProxy} from 'neovex://resources/cr_components/customize_color_scheme_mode/browser_proxy.js';
+import type {ColorSchemeModeOption} from 'neovex://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.js';
+import {colorSchemeModeOptions, CustomizeColorSchemeModeElement} from 'neovex://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.js';
+import type {ColorSchemeMode, CustomizeColorSchemeModeClientRemote} from 'neovex://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.mojom-webui.js';
+import {CustomizeColorSchemeModeClientCallbackRouter, CustomizeColorSchemeModeHandlerRemote} from 'neovex://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.mojom-webui.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('CrComponentsCustomizeColorSchemeModeTest', () => {
   let handler: TestMock<CustomizeColorSchemeModeHandlerRemote>&

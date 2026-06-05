@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/js/action_link.js';
+import 'neovex://resources/js/action_link.js';
 import './policy_conflict.js';
 import '/strings.m.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {Conflict} from './policy_conflict.js';
 import {getTemplate} from './policy_row.html.js';

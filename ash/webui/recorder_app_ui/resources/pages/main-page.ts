@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/mwc/@material/web/iconbutton/filled-icon-button.js';
+import 'neovex://resources/mwc/@material/web/iconbutton/filled-icon-button.js';
 import '../components/cra/cra-icon-button.js';
 import '../components/cra/cra-icon-dropdown.js';
 import '../components/cra/cra-icon.js';
@@ -24,7 +24,7 @@ import {
   html,
   nothing,
   ref,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {CraIconButton} from '../components/cra/cra-icon-button.js';
 import {DeleteRecordingDialog} from '../components/delete-recording-dialog.js';

@@ -5,7 +5,7 @@
 // TODO(cambickel): Move this code into a shared location, and update Settings
 // search code to use it.
 
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
 
 /**
  * Returns the HTML for the given description based on the query text.

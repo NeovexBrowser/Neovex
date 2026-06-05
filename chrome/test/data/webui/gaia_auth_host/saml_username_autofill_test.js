@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {maybeAutofillUsername} from 'chrome://chrome-signin/gaia_auth_host/saml_username_autofill.js';
-import {appendParam} from 'chrome://resources/js/util.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {maybeAutofillUsername} from 'neovex://chrome-signin/gaia_auth_host/saml_username_autofill.js';
+import {appendParam} from 'neovex://resources/js/util.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 const IDP_URL_FOR_TESTS = 'https://login.corp.example.com/example';
 const IDP_URL_FOR_TESTS_WITH_PARAMETER =

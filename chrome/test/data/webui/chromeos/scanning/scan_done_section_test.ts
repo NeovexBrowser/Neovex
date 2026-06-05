@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
-import 'chrome://scanning/scan_done_section.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://scanning/scan_done_section.js';
 
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import type {ScanDoneSectionElement} from 'chrome://scanning/scan_done_section.js';
-import {FileType} from 'chrome://scanning/scanning.mojom-webui.js';
-import {ScanningBrowserProxyImpl} from 'chrome://scanning/scanning_browser_proxy.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/chromeos/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import type {ScanDoneSectionElement} from 'neovex://scanning/scan_done_section.js';
+import {FileType} from 'neovex://scanning/scanning.mojom-webui.js';
+import {ScanningBrowserProxyImpl} from 'neovex://scanning/scanning_browser_proxy.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/chromeos/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {TestScanningBrowserProxy} from './test_scanning_browser_proxy.js';
 

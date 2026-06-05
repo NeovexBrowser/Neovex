@@ -4,7 +4,7 @@
 
 /** @fileoverview Contains fake implementations of mojo interfaces. */
 
-import {DiscoveryObserverRemote, SelectShareTargetResult, ShareTargetListenerRemote, StartDiscoveryResult, TransferUpdateListenerPendingReceiver, TransferUpdateListenerRemote} from 'chrome://nearby/shared/nearby_share.mojom-webui.js';
+import {DiscoveryObserverRemote, SelectShareTargetResult, ShareTargetListenerRemote, StartDiscoveryResult, TransferUpdateListenerPendingReceiver, TransferUpdateListenerRemote} from 'neovex://nearby/shared/nearby_share.mojom-webui.js';
 
 import {TestBrowserProxy} from '../test_browser_proxy.js';
 

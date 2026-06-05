@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {TrackedElementManager} from 'chrome://resources/js/tracked_element/tracked_element_manager.js';
-import type {TrackedElementProxy} from 'chrome://resources/js/tracked_element/tracked_element_proxy.js';
-import {TrackedElementProxyImpl} from 'chrome://resources/js/tracked_element/tracked_element_proxy.js';
-import type {RectF} from 'chrome://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
-import type {TrackedElementHandlerInterface, TrackedElementManagerRemote} from 'chrome://resources/mojo/ui/webui/resources/js/tracked_element/tracked_element.mojom-webui.js';
-import {TrackedElementManagerCallbackRouter} from 'chrome://resources/mojo/ui/webui/resources/js/tracked_element/tracked_element.mojom-webui.js';
-import {assertArrayEquals, assertDeepEquals, assertEquals, assertFalse, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {TrackedElementManager} from 'neovex://resources/js/tracked_element/tracked_element_manager.js';
+import type {TrackedElementProxy} from 'neovex://resources/js/tracked_element/tracked_element_proxy.js';
+import {TrackedElementProxyImpl} from 'neovex://resources/js/tracked_element/tracked_element_proxy.js';
+import type {RectF} from 'neovex://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
+import type {TrackedElementHandlerInterface, TrackedElementManagerRemote} from 'neovex://resources/mojo/ui/webui/resources/js/tracked_element/tracked_element.mojom-webui.js';
+import {TrackedElementManagerCallbackRouter} from 'neovex://resources/mojo/ui/webui/resources/js/tracked_element/tracked_element.mojom-webui.js';
+import {assertArrayEquals, assertDeepEquals, assertEquals, assertFalse, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 class MockTrackedElementHandler extends TestBrowserProxy implements
     TrackedElementHandlerInterface {

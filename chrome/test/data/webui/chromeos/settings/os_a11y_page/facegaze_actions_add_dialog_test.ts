@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {FaceGazeAddActionDialogElement} from 'chrome://os-settings/lazy_load.js';
-import {AddDialogPage, AssignedKeyCombo, ComplexActions, FaceGazeCommandPair, setShortcutInputProviderForTesting} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement, CrSliderElement, IronListElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs, FaceGazeSubpageBrowserProxyImpl, Router, routes} from 'chrome://os-settings/os_settings.js';
-import {FacialGesture} from 'chrome://resources/ash/common/accessibility/facial_gestures.js';
-import {MacroName} from 'chrome://resources/ash/common/accessibility/macro_names.js';
-import {VKey} from 'chrome://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
-import {FakeShortcutInputProvider} from 'chrome://resources/ash/common/shortcut_input_ui/fake_shortcut_input_provider.js';
-import type {ShortcutInputElement} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input.js';
-import {Modifier} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {FaceGazeAddActionDialogElement} from 'neovex://os-settings/lazy_load.js';
+import {AddDialogPage, AssignedKeyCombo, ComplexActions, FaceGazeCommandPair, setShortcutInputProviderForTesting} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement, CrSliderElement, IronListElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs, FaceGazeSubpageBrowserProxyImpl, Router, routes} from 'neovex://os-settings/os_settings.js';
+import {FacialGesture} from 'neovex://resources/ash/common/accessibility/facial_gestures.js';
+import {MacroName} from 'neovex://resources/ash/common/accessibility/macro_names.js';
+import {VKey} from 'neovex://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
+import {FakeShortcutInputProvider} from 'neovex://resources/ash/common/shortcut_input_ui/fake_shortcut_input_provider.js';
+import type {ShortcutInputElement} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input.js';
+import {Modifier} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

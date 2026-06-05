@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://personalization/strings.m.js';
+import 'neovex://personalization/strings.m.js';
 
-import type {WallpaperCollection, WallpaperImage} from 'chrome://personalization/js/personalization_app.js';
-import {emptyState, GooglePhotosEnablementState, kDefaultImageSymbol, Paths, PersonalizationRouterElement, WallpaperActionName, WallpaperCollectionsElement, WallpaperGridItemElement} from 'chrome://personalization/js/personalization_app.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
+import type {WallpaperCollection, WallpaperImage} from 'neovex://personalization/js/personalization_app.js';
+import {emptyState, GooglePhotosEnablementState, kDefaultImageSymbol, Paths, PersonalizationRouterElement, WallpaperActionName, WallpaperCollectionsElement, WallpaperGridItemElement} from 'neovex://personalization/js/personalization_app.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
 
 import {baseSetup, createSvgDataUrl, initElement, teardownElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';
@@ -176,7 +176,7 @@ suite('WallpaperCollectionsElementTest', function() {
     assertTrue(!!localTile, 'local tile is present');
 
     assertDeepEquals(
-        ['chrome://personalization/images/no_images.svg'], localTile.src,
+        ['neovex://personalization/images/no_images.svg'], localTile.src,
         'no local images present');
 
     assertEquals(

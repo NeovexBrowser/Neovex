@@ -7,25 +7,25 @@
  * SeaPen wallpapers.
  */
 
-import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
-import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
-import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
-import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
+import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
 import './sea_pen.css.js';
 import './sea_pen_icons.html.js';
 import './sea_pen_suggestions_element.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
-import 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/polymer/v3_0/iron-iconset-svg/iron-iconset-svg.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
+import 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/polymer/v3_0/iron-iconset-svg/iron-iconset-svg.js';
 
-import type {CrTextareaElement} from 'chrome://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
-import type {LottieRenderer} from 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {parseHtmlSubset} from 'chrome://resources/js/parse_html_subset.js';
-import {beforeNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrTextareaElement} from 'neovex://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
+import type {LottieRenderer} from 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {parseHtmlSubset} from 'neovex://resources/js/parse_html_subset.js';
+import {beforeNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {QUERY, SEA_PEN_SAMPLES} from './constants.js';
 import {isSeaPenTextInputEnabled} from './load_time_booleans.js';

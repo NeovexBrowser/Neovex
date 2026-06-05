@@ -4,9 +4,9 @@
 
 import './state_banner.js';
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {crInjectTypeAndInit} from '../../../../common/js/cr_ui.js';
 import {waitUntil} from '../../../../common/js/test_error_reporting.js';
@@ -72,7 +72,7 @@ export function testStateBannerDefaults() {
 /**
  * Test that extra buttons with a ChromeOS settings href utilise the
  * chrome.fileManagerPrivate.openSettingsSubpage appropriately. The prefix
- * chrome://os-settings/ should be stripped and the subpage passed through.
+ * neovex://os-settings/ should be stripped and the subpage passed through.
  */
 export async function testChromeOsSettingsLink() {
   const mockSettingsSubpage = mockOpenSettingsSubpage();
@@ -81,7 +81,7 @@ export async function testChromeOsSettingsLink() {
     <state-banner>
       <span slot="text">Banner title</span>
       <button slot="extra-button"
-          href="chrome://os-settings/test/settings/subpage">
+          href="neovex://os-settings/test/settings/subpage">
         Test Button
       </button>
     </state-banner>
@@ -94,15 +94,15 @@ export async function testChromeOsSettingsLink() {
 
 /**
  * Test that a href with no subpage, still calls visitURL as there is no
- * internal method to make the chrome://os-settings/ page appear except for
+ * internal method to make the neovex://os-settings/ page appear except for
  * link capturing.
  */
 export async function testChromeOsSettingsNoSubpageLink() {
-  const osSettingsLink = 'chrome://os-settings/';
+  const osSettingsLink = 'neovex://os-settings/';
   document.body.innerHTML = getTrustedHTML`
     <state-banner>
       <span slot="text">Banner title</span>
-      <button slot="extra-button" href="chrome://os-settings/">
+      <button slot="extra-button" href="neovex://os-settings/">
         Test Button
       </button>
     </state-banner>

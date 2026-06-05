@@ -8,19 +8,19 @@
  * keyboard backlight and zone customization section.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
-import 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
 import './color_icon_element.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
-import type {IronA11yKeysElement} from 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import type {IronA11yKeysElement} from 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
 
 import type {CurrentBacklightState} from '../../personalization_app.mojom-webui.js';
 import {BacklightColor} from '../../personalization_app.mojom-webui.js';

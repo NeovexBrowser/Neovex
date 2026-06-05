@@ -3,14 +3,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/composebox/composebox_lens_search.js';
+import 'neovex://resources/cr_components/composebox/composebox_lens_search.js';
 
-import type {ComposeboxLensSearchElement} from 'chrome://resources/cr_components/composebox/composebox_lens_search.js';
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {$$, eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ComposeboxLensSearchElement} from 'neovex://resources/cr_components/composebox/composebox_lens_search.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {$$, eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 
 suite('ComposeboxLensSearch', () => {

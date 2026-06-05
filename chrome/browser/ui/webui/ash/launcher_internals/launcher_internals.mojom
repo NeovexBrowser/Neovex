@@ -33,7 +33,7 @@ struct Result {
 };
 
 // Interface for creating internals page handlers. Implemented by the WebUI
-// controller and used by chrome://launcher-internals.
+// controller and used by neovex://launcher-internals.
 interface PageHandlerFactory {
   // Creates a page handler that observes the launcher and updates the
   // internals page.

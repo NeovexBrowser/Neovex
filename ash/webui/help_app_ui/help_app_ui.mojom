@@ -67,7 +67,7 @@ enum SettingsComponent {
   TOUCHPAD_SIMULATE_RIGHT_CLICK = 13,
 };
 
-// Browser interface for chrome://help-app to bootstrap a connection.
+// Browser interface for neovex://help-app to bootstrap a connection.
 interface PageHandlerFactory {
   // Create a page handler which exposes interfaces implemented in the browser
   // process to the renderer process via |handler|.
@@ -75,7 +75,7 @@ interface PageHandlerFactory {
 };
 
 // An interface implemented in the browser process that is exposed to the
-// renderer process for chrome://help-app.
+// renderer process for neovex://help-app.
 interface PageHandler {
   // Opens the chrome feedback dialog.
   OpenFeedbackDialog() => (string? error_message);

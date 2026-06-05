@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_searchable_drop_down/cr_searchable_drop_down.js';
+import 'neovex://resources/ash/common/cr_elements/cr_searchable_drop_down/cr_searchable_drop_down.js';
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import type {CrSearchableDropDownElement} from 'chrome://resources/ash/common/cr_elements/cr_searchable_drop_down/cr_searchable_drop_down.js';
-import {keyDownOn, move} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import type {CrSearchableDropDownElement} from 'neovex://resources/ash/common/cr_elements/cr_searchable_drop_down/cr_searchable_drop_down.js';
+import {keyDownOn, move} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 // clang-format on
 
 suite('cr-searchable-drop-down', function() {

@@ -3,20 +3,20 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/lazy_load.js';
+import 'neovex://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {SettingsSafetyHubUnusedSitePermissionsModuleElement, UnusedSitePermissions} from 'chrome://settings/lazy_load.js';
-import {ContentSettingsTypes, SafetyHubBrowserProxyImpl, SafetyHubEvent, PermissionsRevocationType} from 'chrome://settings/lazy_load.js';
-import {MetricsBrowserProxyImpl, resetRouterForTesting, Router, routes, SafetyCheckUnusedSitePermissionsModuleInteractions as Interactions, SettingsPluralStringProxyImpl} from 'chrome://settings/settings.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SettingsSafetyHubUnusedSitePermissionsModuleElement, UnusedSitePermissions} from 'neovex://settings/lazy_load.js';
+import {ContentSettingsTypes, SafetyHubBrowserProxyImpl, SafetyHubEvent, PermissionsRevocationType} from 'neovex://settings/lazy_load.js';
+import {MetricsBrowserProxyImpl, resetRouterForTesting, Router, routes, SafetyCheckUnusedSitePermissionsModuleInteractions as Interactions, SettingsPluralStringProxyImpl} from 'neovex://settings/settings.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 import {TestSafetyHubBrowserProxy} from './test_safety_hub_browser_proxy.js';

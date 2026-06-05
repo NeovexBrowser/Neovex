@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // This tests loading the Certificate Manager V2 from the
-// chrome://certificate-manager URL
+// neovex://certificate-manager URL
 
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('CertificateManager', () => {
   test('element check', () => {

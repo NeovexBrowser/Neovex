@@ -7,7 +7,7 @@
  * the ambient mode settings.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
 import './albums_subpage_element.js';
 import './ambient_preview_small_element.js';
 import './ambient_theme_list_element.js';
@@ -15,8 +15,8 @@ import './ambient_weather_element.js';
 import './toggle_row_element.js';
 import './topic_source_list_element.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {AmbientModeAlbum, AmbientTheme, TemperatureUnit} from '../../personalization_app.mojom-webui.js';
 import {TopicSource} from '../../personalization_app.mojom-webui.js';

@@ -4,8 +4,8 @@
 
 import './xf_nudge.js';
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals, assertGT, assertLT, assertThrows, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals, assertGT, assertLT, assertThrows, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 import {NudgeDirection, XfNudge} from './xf_nudge.js';
 

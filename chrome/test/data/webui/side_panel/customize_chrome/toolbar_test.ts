@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar/toolbar.js';
+import 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar/toolbar.js';
 
-import {ActionId, CategoryId} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
-import type {Action, Category, CustomizeToolbarClientRemote, CustomizeToolbarHandlerInterface} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
-import {CustomizeToolbarClientCallbackRouter, CustomizeToolbarHandlerRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
-import {CustomizeToolbarApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar/customize_toolbar_api_proxy.js';
-import type {ToolbarElement} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar/toolbar.js';
-import {WindowProxy} from 'chrome://customize-chrome-side-panel.top-chrome/window_proxy.js';
-import {assertEquals, assertFalse, assertGE, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {ActionId, CategoryId} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
+import type {Action, Category, CustomizeToolbarClientRemote, CustomizeToolbarHandlerInterface} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
+import {CustomizeToolbarClientCallbackRouter, CustomizeToolbarHandlerRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
+import {CustomizeToolbarApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar/customize_toolbar_api_proxy.js';
+import type {ToolbarElement} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar/toolbar.js';
+import {WindowProxy} from 'neovex://customize-chrome-side-panel.top-chrome/window_proxy.js';
+import {assertEquals, assertFalse, assertGE, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {installMock} from './test_support.js';
 

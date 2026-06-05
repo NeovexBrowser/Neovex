@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import {CrSettingsPrefs} from 'chrome://settings/settings.js';
-import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
-import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
+import {CrSettingsPrefs} from 'neovex://settings/settings.js';
+import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
+import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
 
 import {prefsTestCases} from './settings_prefs_test_cases.js';
 

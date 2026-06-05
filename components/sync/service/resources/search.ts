@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_splitter/cr_splitter.js';
+import 'neovex://resources/cr_elements/cr_splitter/cr_splitter.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {decorateQuickQueryControls, SyncSearchManager} from './sync_search.js';
 

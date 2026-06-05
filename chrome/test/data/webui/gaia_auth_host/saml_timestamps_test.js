@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {decodeTimestamp} from 'chrome://chrome-signin/gaia_auth_host/saml_timestamps.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {decodeTimestamp} from 'neovex://chrome-signin/gaia_auth_host/saml_timestamps.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 const ROUNDTRIP_DATA = [
   '1980-01-01',

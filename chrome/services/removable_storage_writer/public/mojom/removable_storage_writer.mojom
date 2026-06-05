@@ -18,7 +18,7 @@ const sandbox.mojom.Sandbox kRemovableStorageWriterSandbox
 // storage devices. On Windows requires elevation to access the disk directly.
 [ServiceSandbox=kRemovableStorageWriterSandbox]
 interface RemovableStorageWriter {
-  const string kTestDevice = "chrome://test-removable-storage-writer";
+  const string kTestDevice = "neovex://test-removable-storage-writer";
 
   // Writes the content of the source file to the target. The target file is
   // restricted to removable drives by the utility process.

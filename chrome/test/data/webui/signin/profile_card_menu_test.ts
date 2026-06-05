@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://profile-picker/profile_picker.js';
+import 'neovex://profile-picker/profile_picker.js';
 
-import type {ProfileCardMenuElement, ProfileState, Statistics, StatisticsResult} from 'chrome://profile-picker/profile_picker.js';
-import {ManageProfilesBrowserProxyImpl} from 'chrome://profile-picker/profile_picker.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {assertEquals, assertFalse, assertNotEquals, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ProfileCardMenuElement, ProfileState, Statistics, StatisticsResult} from 'neovex://profile-picker/profile_picker.js';
+import {ManageProfilesBrowserProxyImpl} from 'neovex://profile-picker/profile_picker.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {assertEquals, assertFalse, assertNotEquals, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestManageProfilesBrowserProxy} from './test_manage_profiles_browser_proxy.js';
 

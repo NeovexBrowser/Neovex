@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/theme_color_picker/theme_color.js';
+import 'neovex://resources/cr_components/theme_color_picker/theme_color.js';
 
-import type {ThemeColorElement} from 'chrome://resources/cr_components/theme_color_picker/theme_color.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {hasStyle, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ThemeColorElement} from 'neovex://resources/cr_components/theme_color_picker/theme_color.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {hasStyle, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 
 suite('CrComponentsThemeColorTest', () => {

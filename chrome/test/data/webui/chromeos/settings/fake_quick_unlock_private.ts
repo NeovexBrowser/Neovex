@@ -6,7 +6,7 @@
  * @fileoverview Fake implementation of chrome.quickUnlockPrivate for testing.
  */
 
-import {FakeChromeEvent} from 'chrome://webui-test/fake_chrome_event.js';
+import {FakeChromeEvent} from 'neovex://webui-test/fake_chrome_event.js';
 
 /**
  * A couple weak pins to use for testing.

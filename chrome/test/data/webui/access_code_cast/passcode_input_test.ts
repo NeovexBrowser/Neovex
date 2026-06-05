@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://access-code-cast/passcode_input/passcode_input.js';
+import 'neovex://access-code-cast/passcode_input/passcode_input.js';
 
-import type {PasscodeInputElement} from 'chrome://access-code-cast/passcode_input/passcode_input.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {PasscodeInputElement} from 'neovex://access-code-cast/passcode_input/passcode_input.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('PasscodeInputElementTest', () => {
   let c2cInput: PasscodeInputElement;

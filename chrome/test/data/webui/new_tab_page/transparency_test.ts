@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {checkTransparency, isBMP, isPNG, isWebP} from 'chrome://new-tab-page/new_tab_page.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {checkTransparency, isBMP, isPNG, isWebP} from 'neovex://new-tab-page/new_tab_page.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {OPAQUE_BMP_FILE, OPAQUE_PNG_FILE, OPAQUE_WEBP_FILE, TRANSPARENT_BMP_FILE, TRANSPARENT_PNG_FILE, TRANSPARENT_WEBP_FILE} from './transparency_test_support.js';
 

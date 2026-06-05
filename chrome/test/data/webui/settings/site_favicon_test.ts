@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import type {SiteFaviconElement} from 'chrome://settings/settings.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {SiteFaviconElement} from 'neovex://settings/settings.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('SiteFavicon', function() {
   let siteFavicon: SiteFaviconElement;
@@ -23,17 +23,17 @@ suite('SiteFavicon', function() {
 
   function formExpected(url: string): string {
     return 'image-set(' +
-        'url("chrome://favicon2/?size=16&scaleFactor=1x&pageUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=1x&pageUrl=' +
         encodeURIComponent(url) + '&allowGoogleServerFallback=0") 1x, ' +
-        'url("chrome://favicon2/?size=16&scaleFactor=2x&pageUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=2x&pageUrl=' +
         encodeURIComponent(url) + '&allowGoogleServerFallback=0") 2x)';
   }
 
   function formExpectedForIcon(url: string): string {
     return 'image-set(' +
-        'url("chrome://favicon2/?size=16&scaleFactor=1x&iconUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=1x&iconUrl=' +
         encodeURIComponent(url) + '") 1x, ' +
-        'url("chrome://favicon2/?size=16&scaleFactor=2x&iconUrl=' +
+        'url("neovex://favicon2/?size=16&scaleFactor=2x&iconUrl=' +
         encodeURIComponent(url) + '") 2x)';
   }
 
@@ -76,16 +76,16 @@ suite('SiteFavicon', function() {
   });
 
   test('icon path', function() {
-    const iconPath = 'chrome://theme/IDR_GOOGLE_COM_PNG';
+    const iconPath = 'neovex://theme/IDR_GOOGLE_COM_PNG';
     siteFavicon.iconPath = iconPath;
-    assertIconEquals('url("chrome://theme/IDR_GOOGLE_COM_PNG")');
+    assertIconEquals('url("neovex://theme/IDR_GOOGLE_COM_PNG")');
   });
 
   test('icon path with url', function() {
-    const iconPath = 'chrome://theme/IDR_GOOGLE_COM_PNG';
+    const iconPath = 'neovex://theme/IDR_GOOGLE_COM_PNG';
     const url = 'www.google.com';
     siteFavicon.iconPath = iconPath;
     siteFavicon.url = url;
-    assertIconEquals('url("chrome://theme/IDR_GOOGLE_COM_PNG")');
+    assertIconEquals('url("neovex://theme/IDR_GOOGLE_COM_PNG")');
   });
 });

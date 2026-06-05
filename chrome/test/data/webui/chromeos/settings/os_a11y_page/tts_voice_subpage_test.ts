@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsTtsVoiceSubpageElement} from 'chrome://os-settings/lazy_load.js';
-import type {TtsVoiceSubpageBrowserProxy} from 'chrome://os-settings/os_settings.js';
-import {Router, routes, TtsVoiceSubpageBrowserProxyImpl} from 'chrome://os-settings/os_settings.js';
-import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {SettingsTtsVoiceSubpageElement} from 'neovex://os-settings/lazy_load.js';
+import type {TtsVoiceSubpageBrowserProxy} from 'neovex://os-settings/os_settings.js';
+import {Router, routes, TtsVoiceSubpageBrowserProxyImpl} from 'neovex://os-settings/os_settings.js';
+import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 class TestTtsSubpageBrowserProxy extends TestBrowserProxy implements
     TtsVoiceSubpageBrowserProxy {

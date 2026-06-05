@@ -20,9 +20,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  // The C++ test creates a tab at chrome://version as a signal to the
+  // The C++ test creates a tab at neovex://version as a signal to the
   // extension to update the menu item.
-  if (tab.url != 'chrome://version/')
+  if (tab.url != 'neovex://version/')
    return;
   chrome.contextMenus.update(
       menuId, {title: 'Extension Item Updated'},

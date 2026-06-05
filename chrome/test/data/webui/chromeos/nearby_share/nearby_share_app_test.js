@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://nearby/app.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
-import 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import 'neovex://nearby/app.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
 
-import {setContactManagerForTesting} from 'chrome://nearby/shared/nearby_contact_manager.js';
-import {setNearbyShareSettingsForTesting} from 'chrome://nearby/shared/nearby_share_settings.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {setContactManagerForTesting} from 'neovex://nearby/shared/nearby_contact_manager.js';
+import {setNearbyShareSettingsForTesting} from 'neovex://nearby/shared/nearby_share_settings.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {assertEquals, assertFalse, assertTrue} from '../chai_assert.js';
 

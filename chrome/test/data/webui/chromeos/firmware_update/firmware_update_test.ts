@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://accessory-update/firmware_update_app.js';
+import 'neovex://accessory-update/firmware_update_app.js';
 
-import {fakeFirmwareUpdates} from 'chrome://accessory-update/fake_data.js';
-import {FakeUpdateController} from 'chrome://accessory-update/fake_update_controller.js';
-import {FakeUpdateProvider} from 'chrome://accessory-update/fake_update_provider.js';
-import {UpdateState} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
-import type {FirmwareUpdate} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
-import type {FirmwareUpdateAppElement} from 'chrome://accessory-update/firmware_update_app.js';
-import {FirmwareUpdateDialogElement} from 'chrome://accessory-update/firmware_update_dialog.js';
-import {getUpdateProvider, setUpdateControllerForTesting, setUpdateProviderForTesting} from 'chrome://accessory-update/mojo_interface_provider.js';
-import type {UpdateCardElement} from 'chrome://accessory-update/update_card.js';
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {fakeFirmwareUpdates} from 'neovex://accessory-update/fake_data.js';
+import {FakeUpdateController} from 'neovex://accessory-update/fake_update_controller.js';
+import {FakeUpdateProvider} from 'neovex://accessory-update/fake_update_provider.js';
+import {UpdateState} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
+import type {FirmwareUpdate} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
+import type {FirmwareUpdateAppElement} from 'neovex://accessory-update/firmware_update_app.js';
+import {FirmwareUpdateDialogElement} from 'neovex://accessory-update/firmware_update_dialog.js';
+import {getUpdateProvider, setUpdateControllerForTesting, setUpdateProviderForTesting} from 'neovex://accessory-update/mojo_interface_provider.js';
+import type {UpdateCardElement} from 'neovex://accessory-update/update_card.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('FirmwareUpdateAppTest', () => {
   let page: FirmwareUpdateAppElement|null = null;

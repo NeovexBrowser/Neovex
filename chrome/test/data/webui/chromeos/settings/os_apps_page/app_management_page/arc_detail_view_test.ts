@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {AppManagementArcDetailViewElement} from 'chrome://os-settings/lazy_load.js';
-import {MediaDevicesProxy} from 'chrome://os-settings/lazy_load.js';
-import type {AppManagementReadOnlyPermissionItemElement, CrButtonElement, LocalizedLinkElement} from 'chrome://os-settings/os_settings.js';
-import {AppManagementStore, GeolocationAccessLevel, updateSelectedAppId} from 'chrome://os-settings/os_settings.js';
-import {AppType, PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
-import {createBoolPermission, createTriStatePermission} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {getPermissionValueBool} from 'chrome://resources/cr_components/app_management/util.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {AppManagementArcDetailViewElement} from 'neovex://os-settings/lazy_load.js';
+import {MediaDevicesProxy} from 'neovex://os-settings/lazy_load.js';
+import type {AppManagementReadOnlyPermissionItemElement, CrButtonElement, LocalizedLinkElement} from 'neovex://os-settings/os_settings.js';
+import {AppManagementStore, GeolocationAccessLevel, updateSelectedAppId} from 'neovex://os-settings/os_settings.js';
+import {AppType, PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
+import {createBoolPermission, createTriStatePermission} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {getPermissionValueBool} from 'neovex://resources/cr_components/app_management/util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakePageHandler} from '../../app_management/fake_page_handler.js';
 import {addFakeSensor, getPermissionCrToggleByType, getPermissionItemByType, isHidden, isHiddenByDomIf, replaceBody, replaceStore, setupFakeHandler} from '../../app_management/test_util.js';

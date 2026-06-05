@@ -6,8 +6,8 @@ import '/strings.m.js';
 import './policy_precedence_row.js';
 import './policy_row.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 import type {Policy, PolicyRowElement} from './policy_row.js';
 import {getTemplate} from './policy_table.html.js';

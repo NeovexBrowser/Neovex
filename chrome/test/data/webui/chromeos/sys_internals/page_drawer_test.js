@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {$} from 'chrome://resources/js/util.js';
-import {closeDrawer, initialize, openDrawer, promiseResolvers} from 'chrome://sys-internals/index.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {$} from 'neovex://resources/js/util.js';
+import {closeDrawer, initialize, openDrawer, promiseResolvers} from 'neovex://sys-internals/index.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('Page_Drawer', function() {
   suiteSetup('Wait for the page initialize.', function() {

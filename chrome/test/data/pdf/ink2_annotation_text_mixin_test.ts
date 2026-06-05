@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import {hexToColor, Ink2Manager, InkAnnotationTextMixin, TEXT_COLORS, TEXT_SIZES, TextAlignment, TextStyle, TextTypeface} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {assertDeepEquals, setupTestMockPluginForInk} from './test_util.js';
 

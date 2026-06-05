@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
 
 import {str, strf} from '../../../../common/js/translations.js';
 import {isNullOrUndefined} from '../../../../common/js/util.js';

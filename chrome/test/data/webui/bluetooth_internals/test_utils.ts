@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {AdapterReceiver, ConnectResult, GattServiceRemote} from 'chrome://bluetooth-internals/adapter.mojom-webui.js';
-import type {AdapterInfo, AdapterObserver, GattServiceObserver} from 'chrome://bluetooth-internals/adapter.mojom-webui.js';
-import {BluetoothInternalsHandlerReceiver} from 'chrome://bluetooth-internals/bluetooth_internals.mojom-webui.js';
-import {DeviceCallbackRouter} from 'chrome://bluetooth-internals/device.mojom-webui.js';
-import type {DeviceInfo, ServiceInfo} from 'chrome://bluetooth-internals/device.mojom-webui.js';
-import type {UUID} from 'chrome://bluetooth-internals/uuid.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {AdapterReceiver, ConnectResult, GattServiceRemote} from 'neovex://bluetooth-internals/adapter.mojom-webui.js';
+import type {AdapterInfo, AdapterObserver, GattServiceObserver} from 'neovex://bluetooth-internals/adapter.mojom-webui.js';
+import {BluetoothInternalsHandlerReceiver} from 'neovex://bluetooth-internals/bluetooth_internals.mojom-webui.js';
+import {DeviceCallbackRouter} from 'neovex://bluetooth-internals/device.mojom-webui.js';
+import type {DeviceInfo, ServiceInfo} from 'neovex://bluetooth-internals/device.mojom-webui.js';
+import type {UUID} from 'neovex://bluetooth-internals/uuid.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
 // <if expr="is_chromeos">
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
 // </if>
 
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 /**
- * A BluetoothInternalsHandler for the chrome://bluetooth-internals
+ * A BluetoothInternalsHandler for the neovex://bluetooth-internals
  * page. Provides a fake BluetoothInternalsHandler::GetAdapter
  * implementation and acts as a root of all Test* classes by containing an
  * adapter member.
@@ -143,7 +143,7 @@ export class TestBluetoothInternalsHandler extends TestBrowserProxy {
 
 /**
  * A Adapter implementation for the
- * chrome://bluetooth-internals page.
+ * neovex://bluetooth-internals page.
  */
 export class TestAdapter extends TestBrowserProxy {
   receiver: AdapterReceiver;
@@ -252,7 +252,7 @@ export class TestAdapter extends TestBrowserProxy {
 
 /**
  * A Device implementation for the
- * chrome://bluetooth-internals page. Remotes are returned by a
+ * neovex://bluetooth-internals page. Remotes are returned by a
  * TestAdapter which provides the DeviceInfo.
  */
 export class TestDevice extends TestBrowserProxy {

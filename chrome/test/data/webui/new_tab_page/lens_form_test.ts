@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/new_tab_page.js';
+import 'neovex://new-tab-page/new_tab_page.js';
 
-import type {LensFormElement} from 'chrome://new-tab-page/lazy_load.js';
-import {LensErrorType, LensSubmitType} from 'chrome://new-tab-page/lazy_load.js';
-import {assertEquals, assertFalse, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {LensFormElement} from 'neovex://new-tab-page/lazy_load.js';
+import {LensErrorType, LensSubmitType} from 'neovex://new-tab-page/lazy_load.js';
+import {assertEquals, assertFalse, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('LensFormTest', () => {
   let lensForm: LensFormElement;

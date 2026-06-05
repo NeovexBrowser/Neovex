@@ -4,15 +4,15 @@
 
 /** @fileoverview Test suite for dynamic-color-element component.  */
 
-import 'chrome://personalization/strings.m.js';
+import 'neovex://personalization/strings.m.js';
 
-import type {SetColorSchemeAction, SetSampleColorSchemesAction, SetStaticColorAction} from 'chrome://personalization/js/personalization_app.js';
-import {ColorScheme, DynamicColorElement, emptyState, ThemeActionName, ThemeObserver} from 'chrome://personalization/js/personalization_app.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {hexColorToSkColor} from 'chrome://resources/js/color_utils.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {SetColorSchemeAction, SetSampleColorSchemesAction, SetStaticColorAction} from 'neovex://personalization/js/personalization_app.js';
+import {ColorScheme, DynamicColorElement, emptyState, ThemeActionName, ThemeObserver} from 'neovex://personalization/js/personalization_app.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import {hexColorToSkColor} from 'neovex://resources/js/color_utils.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {baseSetup, dispatchKeydown, getActiveElement, initElement, teardownElement, waitForActiveElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';

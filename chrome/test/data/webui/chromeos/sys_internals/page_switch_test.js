@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {$} from 'chrome://resources/js/util.js';
-import {PAGE_HASH} from 'chrome://sys-internals/constants.js';
-import {handleUpdateData, initialize, isInfoPage, lineChart, promiseResolvers} from 'chrome://sys-internals/index.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {$} from 'neovex://resources/js/util.js';
+import {PAGE_HASH} from 'neovex://sys-internals/constants.js';
+import {handleUpdateData, initialize, isInfoPage, lineChart, promiseResolvers} from 'neovex://sys-internals/index.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {getTestData} from './test_util.js';
 

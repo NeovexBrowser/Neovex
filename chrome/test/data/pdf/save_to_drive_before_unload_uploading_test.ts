@@ -4,7 +4,7 @@
 
 import 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {getNewTestBeforeUnloadProxy} from './test_before_unload_proxy.js';
 import {setUpTestPdfViewerPrivateProxy} from './test_pdf_viewer_private_proxy.js';

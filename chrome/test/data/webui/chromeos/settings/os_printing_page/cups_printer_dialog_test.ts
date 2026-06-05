@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AddPrinterManuallyDialogElement, AddPrinterManufacturerModelDialogElement, SettingsCupsAddPrinterDialogElement, SettingsCupsEditPrinterDialogElement, SettingsCupsPrintersElement} from 'chrome://os-settings/lazy_load.js';
-import {CupsPrintersBrowserProxyImpl, PrinterSetupResult} from 'chrome://os-settings/lazy_load.js';
-import type {CrInputElement, CrSearchableDropDownElement} from 'chrome://os-settings/os_settings.js';
-import {Router, routes} from 'chrome://os-settings/os_settings.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {keyEventOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import type {DomIf} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {AddPrinterManuallyDialogElement, AddPrinterManufacturerModelDialogElement, SettingsCupsAddPrinterDialogElement, SettingsCupsEditPrinterDialogElement, SettingsCupsPrintersElement} from 'neovex://os-settings/lazy_load.js';
+import {CupsPrintersBrowserProxyImpl, PrinterSetupResult} from 'neovex://os-settings/lazy_load.js';
+import type {CrInputElement, CrSearchableDropDownElement} from 'neovex://os-settings/os_settings.js';
+import {Router, routes} from 'neovex://os-settings/os_settings.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {keyEventOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import type {DomIf} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakeMetricsPrivate} from '../fake_metrics_private.js';
 
@@ -484,7 +484,7 @@ suite('CupsAddPrinterDialogTests', () => {
     button.click();
     flush();
 
-    const expectedEulaLink = 'chrome://os-credits/#google';
+    const expectedEulaLink = 'neovex://os-credits/#google';
     const expectedManufacturer = 'Google';
     const expectedModel = 'printer';
     const expectedModel2 = 'newPrinter';

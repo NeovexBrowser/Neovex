@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import {AnnotationMode, PluginController, PluginControllerEventType, UserAction} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {setupMockMetricsPrivate, setupTestMockPluginForInk} from './test_util.js';
 

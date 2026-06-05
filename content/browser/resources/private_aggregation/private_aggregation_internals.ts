@@ -4,7 +4,7 @@
 
 import './private_aggregation_internals_table.js';
 
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
 
 import type {AggregatableReportRequestID, ObserverInterface, WebUIAggregatableReport} from './private_aggregation_internals.mojom-webui.js';
 import {Factory as PrivateAggregationInternalsFactory, HandlerRemote as PrivateAggregationInternalsHandlerRemote, ObserverReceiver, ReportStatus} from './private_aggregation_internals.mojom-webui.js';

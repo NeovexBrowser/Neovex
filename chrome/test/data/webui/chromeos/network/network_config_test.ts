@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/network/network_config.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/network/network_config.js';
 
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkConfigElement} from 'chrome://resources/ash/common/network/network_config.js';
-import type {NetworkConfigInputElement} from 'chrome://resources/ash/common/network/network_config_input.js';
-import type {NetworkConfigSelectElement} from 'chrome://resources/ash/common/network/network_config_select.js';
-import type {NetworkConfigToggleElement} from 'chrome://resources/ash/common/network/network_config_toggle.js';
-import type {NetworkPasswordInputElement} from 'chrome://resources/ash/common/network/network_password_input.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {ConfigProperties, EAPConfigProperties, GlobalPolicy, ManagedEAPProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {SecurityType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType, OncSource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkConfigElement} from 'neovex://resources/ash/common/network/network_config.js';
+import type {NetworkConfigInputElement} from 'neovex://resources/ash/common/network/network_config_input.js';
+import type {NetworkConfigSelectElement} from 'neovex://resources/ash/common/network/network_config_select.js';
+import type {NetworkConfigToggleElement} from 'neovex://resources/ash/common/network/network_config_toggle.js';
+import type {NetworkPasswordInputElement} from 'neovex://resources/ash/common/network/network_password_input.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {ConfigProperties, EAPConfigProperties, GlobalPolicy, ManagedEAPProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {SecurityType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType, OncSource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakeNetworkConfig} from '../fake_network_config_mojom.js';
 

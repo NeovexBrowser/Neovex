@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
 
 import type {VolumeInfo} from '../../background/js/volume_info.js';
 import {queryRequiredElement} from '../../common/js/dom_utils.js';

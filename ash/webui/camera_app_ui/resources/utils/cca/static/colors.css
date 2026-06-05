@@ -2,7 +2,7 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
-/* This file is a static copy of chrome://theme/colors.css?sets=ref,sys with
+/* This file is a static copy of neovex://theme/colors.css?sets=ref,sys with
  * the default wallpaper and color scheme, and is only used by cca.py local dev
  * server. */
 html:not(#z) {

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/app_list/app_list.js';
+import 'neovex://updater/app_list/app_list.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {AppListElement} from 'chrome://updater/app_list/app_list.js';
-import {assertEquals, assertFalse, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {AppListElement} from 'neovex://updater/app_list/app_list.js';
+import {assertEquals, assertFalse, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('AppListElement', () => {
   let element: AppListElement;

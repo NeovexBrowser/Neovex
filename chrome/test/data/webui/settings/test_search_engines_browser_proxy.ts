@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SearchEngine, SearchEnginesBrowserProxy, SearchEnginesInfo, SearchEnginesInteractions, ChoiceMadeLocation} from 'chrome://settings/settings.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {SearchEngine, SearchEnginesBrowserProxy, SearchEnginesInfo, SearchEnginesInteractions, ChoiceMadeLocation} from 'neovex://settings/settings.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 // clang-format on
 
@@ -143,7 +143,7 @@ export function createSampleOmniboxExtension(): SearchEngine {
     displayName: 'Omnibox extension displayName',
     iconPath: 'images/foo.png',
     extension: {
-      icon: 'chrome://extension-icon/some-extension-icon',
+      icon: 'neovex://extension-icon/some-extension-icon',
       id: 'dummyextensionid',
       name: 'Omnibox extension',
       canBeDisabled: false,

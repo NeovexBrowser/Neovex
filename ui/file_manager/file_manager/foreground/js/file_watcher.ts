@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {AsyncQueue} from '../../common/js/async_util.js';
 import {isFakeEntry, unwrapEntry} from '../../common/js/entry_utils.js';

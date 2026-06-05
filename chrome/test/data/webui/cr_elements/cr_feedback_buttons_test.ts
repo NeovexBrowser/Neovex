@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
+import 'neovex://resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
 
-import type {CrFeedbackButtonsElement} from 'chrome://resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
-import {CrFeedbackOption} from 'chrome://resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrFeedbackButtonsElement} from 'neovex://resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
+import {CrFeedbackOption} from 'neovex://resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('CrFeedbackButtonsTest', () => {
   let element: CrFeedbackButtonsElement;

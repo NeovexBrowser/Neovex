@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for chrome://eche-app.
+ * @fileoverview Test suite for neovex://eche-app.
  */
 
 GEN('#include "ash/constants/ash_features.h"');
 GEN('#include "content/public/test/browser_test.h"');
 
-const HOST_ORIGIN = 'chrome://eche-app';
+const HOST_ORIGIN = 'neovex://eche-app';
 const GUEST_ORIGIN = 'chrome-untrusted://eche-app';
 
 // js2gtest fixtures require var here (https://crbug.com/1033337).
@@ -31,16 +31,16 @@ function queryIFrame() {
   return /** @type{!HTMLIFrameElement} */ (document.querySelector('iframe'));
 }
 
-// Tests that chrome://eche-app goes somewhere instead of
+// Tests that neovex://eche-app goes somewhere instead of
 // 404ing or crashing.
 TEST_F('EcheAppUIBrowserTest', 'HasChromeSchemeURL', async () => {
-  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
+  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
   assertEquals(document.title, 'Eche');
   assertEquals(document.location.origin, HOST_ORIGIN);
   testDone();
 });
 
-// Tests that chrome://eche-app is allowed to frame
+// Tests that neovex://eche-app is allowed to frame
 // chrome-untrusted://eche-app. The URL is set in the html. If that URL can't
 // load, test this fails like JS ERROR: "Refused to frame '...' because it
 // violates the following Content Security Policy directive: "frame-src
@@ -49,7 +49,7 @@ TEST_F('EcheAppUIBrowserTest', 'HasChromeSchemeURL', async () => {
 // (failure detected in content/public/test/no_renderer_crashes_assertion.cc).
 // Flaky. See crbug.com/1242355,
 TEST_F('EcheAppUIBrowserTest', 'GuestCanLoad', async () => {
-  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
+  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
   const guest = queryIFrame();
 
   assertEquals(document.location.origin, HOST_ORIGIN);

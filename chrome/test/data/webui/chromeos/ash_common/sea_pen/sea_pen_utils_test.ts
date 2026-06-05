@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {isImageDataUrl, isNonEmptyFilePath, isUrl} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isImageDataUrl, isNonEmptyFilePath, isUrl} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('isImageDataUrlTest', function() {
   test('invalid types', function() {

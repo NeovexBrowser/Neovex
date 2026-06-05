@@ -5,7 +5,7 @@
 // TODO: b/338544996 - This is an implementation of the cros-tooltip component
 // that is not available in cros-component. Upstream this.
 
-import {css, html, LitElement} from 'chrome://resources/mwc/lit/index.js';
+import {css, html, LitElement} from 'neovex://resources/mwc/lit/index.js';
 
 export class CraTooltip extends LitElement {
   static override styles = css`

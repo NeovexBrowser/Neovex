@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {FPS, IS_HIDPI, IS_MOBILE} from './constants.js';
 import type {Dimensions} from './dimensions.js';

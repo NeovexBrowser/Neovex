@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsBluetoothChangeDeviceNameDialogElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrInputElement} from 'chrome://os-settings/os_settings.js';
-import {getDeviceNameUnsafe} from 'chrome://resources/ash/common/bluetooth/bluetooth_utils.js';
-import {setBluetoothConfigForTesting} from 'chrome://resources/ash/common/bluetooth/cros_bluetooth_config.js';
-import {DeviceConnectionState} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import type {PairedBluetoothDeviceProperties} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {createDefaultBluetoothDevice, FakeBluetoothConfig} from 'chrome://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsBluetoothChangeDeviceNameDialogElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrInputElement} from 'neovex://os-settings/os_settings.js';
+import {getDeviceNameUnsafe} from 'neovex://resources/ash/common/bluetooth/bluetooth_utils.js';
+import {setBluetoothConfigForTesting} from 'neovex://resources/ash/common/bluetooth/cros_bluetooth_config.js';
+import {DeviceConnectionState} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import type {PairedBluetoothDeviceProperties} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {createDefaultBluetoothDevice, FakeBluetoothConfig} from 'neovex://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 suite('<os-settings-bluetooth-change-device-name-dialog>', () => {
   let bluetoothDeviceChangeNameDialog:

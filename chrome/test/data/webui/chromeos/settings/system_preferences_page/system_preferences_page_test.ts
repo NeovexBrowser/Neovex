@@ -7,14 +7,14 @@
  * Browser tests for the System preferences page.
  */
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import type {OsSettingsRoutes, Route, SettingsSystemPreferencesPageElement} from 'chrome://os-settings/os_settings.js';
-import {createRouterForTesting, ensureLazyLoaded, OneDriveBrowserProxy, OsSettingsSubpageElement, Router, routes} from 'chrome://os-settings/os_settings.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {OsSettingsRoutes, Route, SettingsSystemPreferencesPageElement} from 'neovex://os-settings/os_settings.js';
+import {createRouterForTesting, ensureLazyLoaded, OneDriveBrowserProxy, OsSettingsSubpageElement, Router, routes} from 'neovex://os-settings/os_settings.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {OneDriveTestBrowserProxy} from '../os_files_page/one_drive_test_browser_proxy.js';
 

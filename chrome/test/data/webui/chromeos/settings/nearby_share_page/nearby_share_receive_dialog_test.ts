@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {NearbyShareReceiveDialogElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrCardRadioButtonElement, CrDialogElement, NearbyProgressElement} from 'chrome://os-settings/os_settings.js';
-import {setContactManagerForTesting, setNearbyShareSettingsForTesting, setReceiveManagerForTesting} from 'chrome://os-settings/os_settings.js';
-import {DataUsage, FastInitiationNotificationState, Visibility} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeContactManager} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
-import {FakeNearbyShareSettings} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isChildVisible, isVisible} from 'chrome://webui-test/test_util.js';
+import type {NearbyShareReceiveDialogElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrCardRadioButtonElement, CrDialogElement, NearbyProgressElement} from 'neovex://os-settings/os_settings.js';
+import {setContactManagerForTesting, setNearbyShareSettingsForTesting, setReceiveManagerForTesting} from 'neovex://os-settings/os_settings.js';
+import {DataUsage, FastInitiationNotificationState, Visibility} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeContactManager} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
+import {FakeNearbyShareSettings} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isChildVisible, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {FakeReceiveManager} from '../fake_receive_manager.js';
 

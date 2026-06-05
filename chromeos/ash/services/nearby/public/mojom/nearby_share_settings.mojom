@@ -172,7 +172,7 @@ struct ContactRecord {
 // updates.
 //
 // This interface is implemented in a shared Polymer component that is used in
-// two WebUIs: chrome://nearby and chrome://os-settings.
+// two WebUIs: neovex://nearby and neovex://os-settings.
 interface DownloadContactsObserver {
   // Notifies the observer that contacts have been downloaded successfully and
   // gives the most recent allowed contact ids at the same time.

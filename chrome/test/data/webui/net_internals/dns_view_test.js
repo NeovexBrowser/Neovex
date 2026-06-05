@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {DnsView} from 'chrome://net-internals/dns_view.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {$} from 'chrome://resources/js/util.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {DnsView} from 'neovex://net-internals/dns_view.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {$} from 'neovex://resources/js/util.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {switchToView} from './test_util.js';
 

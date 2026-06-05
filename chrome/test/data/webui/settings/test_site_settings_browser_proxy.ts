@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {assert} from 'chrome://resources/js/assert.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {StorageAccessSiteException, AppProtocolEntry, ChooserType, HandlerEntry, OriginFileSystemGrants, ProtocolEntry, RawChooserException, RawSiteException, RecentSitePermissions, SiteGroup, SiteSettingsBrowserProxy, ZoomLevelEntry} from 'chrome://settings/lazy_load.js';
-import {ContentSetting, ContentSettingsTypes, SiteSettingSource} from 'chrome://settings/lazy_load.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {StorageAccessSiteException, AppProtocolEntry, ChooserType, HandlerEntry, OriginFileSystemGrants, ProtocolEntry, RawChooserException, RawSiteException, RecentSitePermissions, SiteGroup, SiteSettingsBrowserProxy, ZoomLevelEntry} from 'neovex://settings/lazy_load.js';
+import {ContentSetting, ContentSettingsTypes, SiteSettingSource} from 'neovex://settings/lazy_load.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 import type {SiteSettingsPref} from './test_util.js';
 
-import {loadTimeData} from 'chrome://settings/settings.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
 
 import {createOriginInfo, createSiteGroup,createSiteSettingsPrefs, getContentSettingsTypeFromChooserType} from './test_util.js';
 // clang-format on

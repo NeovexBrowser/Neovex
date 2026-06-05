@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Keyboard, SixPackKeyInfo} from 'chrome://os-settings/os_settings.js';
-import {fakeGraphicsTabletButtonActions, fakeGraphicsTablets, FakeInputDeviceSettingsProvider, fakeKeyboards, fakeMice, fakeMouseButtonActions, fakePointingSticks, fakeStyluses, fakeTouchpads, MetaKey, ModifierKey, SixPackShortcutModifier} from 'chrome://os-settings/os_settings.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {Keyboard, SixPackKeyInfo} from 'neovex://os-settings/os_settings.js';
+import {fakeGraphicsTabletButtonActions, fakeGraphicsTablets, FakeInputDeviceSettingsProvider, fakeKeyboards, fakeMice, fakeMouseButtonActions, fakePointingSticks, fakeStyluses, fakeTouchpads, MetaKey, ModifierKey, SixPackShortcutModifier} from 'neovex://os-settings/os_settings.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('FakeInputDeviceSettings', () => {
   let provider: FakeInputDeviceSettingsProvider;

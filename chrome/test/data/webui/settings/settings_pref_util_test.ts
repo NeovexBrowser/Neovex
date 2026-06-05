@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {prefToString, stringToPrefValue} from 'chrome://settings/settings.js';
-import {assertEquals, assertNotReached} from 'chrome://webui-test/chai_assert.js';
+import {prefToString, stringToPrefValue} from 'neovex://settings/settings.js';
+import {assertEquals, assertNotReached} from 'neovex://webui-test/chai_assert.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for Settings.PrefUtil. */

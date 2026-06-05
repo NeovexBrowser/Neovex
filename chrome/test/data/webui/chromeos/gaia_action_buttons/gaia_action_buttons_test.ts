@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://chrome-signin/gaia_action_buttons/gaia_action_buttons.js';
+import 'neovex://chrome-signin/gaia_action_buttons/gaia_action_buttons.js';
 
 import type {CrButtonElement} from '//resources/ash/common/cr_elements/cr_button/cr_button.js';
 import {NativeEventTarget} from '//resources/ash/common/event_target.js';
-import type {GaiaActionButtonsElement} from 'chrome://chrome-signin/gaia_action_buttons/gaia_action_buttons.js';
-import type {Authenticator} from 'chrome://chrome-signin/gaia_auth_host/authenticator.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {GaiaActionButtonsElement} from 'neovex://chrome-signin/gaia_action_buttons/gaia_action_buttons.js';
+import type {Authenticator} from 'neovex://chrome-signin/gaia_auth_host/authenticator.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 
 const primaryActionLabel = 'fakePrimaryActionLabel';

@@ -5,13 +5,13 @@
 /* Suite of tests verifying the PDF viewer as served by Print Preview's data
  * source works as expected. */
 
-import 'chrome://print/pdf/pdf_print_wrapper.js';
+import 'neovex://print/pdf/pdf_print_wrapper.js';
 
-import type {PdfViewerPrintElement} from 'chrome://print/pdf/pdf_print_wrapper.js';
-import {pdfCreateOutOfProcessPlugin} from 'chrome://print/pdf/pdf_scripting_api.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {PdfViewerPrintElement} from 'neovex://print/pdf/pdf_print_wrapper.js';
+import {pdfCreateOutOfProcessPlugin} from 'neovex://print/pdf/pdf_scripting_api.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('PdfViewerTest', function() {
   setup(function() {
@@ -21,7 +21,7 @@ suite('PdfViewerTest', function() {
   test('Basic', async () => {
     const plugin = pdfCreateOutOfProcessPlugin(
         'chrome-untrusted://print/test.pdf',
-        'chrome://print/pdf/index_print.html');
+        'neovex://print/pdf/index_print.html');
 
     const loaded = eventToPromise('load', plugin);
     document.body.appendChild(plugin);

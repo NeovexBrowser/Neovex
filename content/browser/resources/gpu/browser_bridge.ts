@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
 
 export interface ClientInfo {
   angle_commit_id: string;

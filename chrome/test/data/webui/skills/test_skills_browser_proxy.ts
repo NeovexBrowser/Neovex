@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PageHandlerRemote, SkillsPageCallbackRouter} from 'chrome://skills/skills.mojom-webui.js';
-import type {SkillsPageRemote} from 'chrome://skills/skills.mojom-webui.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {PageHandlerRemote, SkillsPageCallbackRouter} from 'neovex://skills/skills.mojom-webui.js';
+import type {SkillsPageRemote} from 'neovex://skills/skills.mojom-webui.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
 
 export class TestSkillsBrowserProxy {
   handler: TestMock<PageHandlerRemote>&PageHandlerRemote;

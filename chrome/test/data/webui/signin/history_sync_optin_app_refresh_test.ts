@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://history-sync-optin/history_sync_optin_app_refresh.js';
+import 'neovex://history-sync-optin/history_sync_optin_app_refresh.js';
 
-import {HistorySyncOptInBrowserProxyImpl} from 'chrome://history-sync-optin/browser_proxy.js';
-import {ScreenMode} from 'chrome://history-sync-optin/history_sync_optin.mojom-webui.js';
-import type {HistorySyncOptinAppRefreshElement} from 'chrome://history-sync-optin/history_sync_optin_app_refresh.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {HistorySyncOptInBrowserProxyImpl} from 'neovex://history-sync-optin/browser_proxy.js';
+import {ScreenMode} from 'neovex://history-sync-optin/history_sync_optin.mojom-webui.js';
+import type {HistorySyncOptinAppRefreshElement} from 'neovex://history-sync-optin/history_sync_optin_app_refresh.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 import {TestHistorySyncOptInBrowserProxy} from './test_history_sync_optin_browser_proxy.js';
 import type {CrButtonElement} from '//resources/cr_elements/cr_button/cr_button.js';
 

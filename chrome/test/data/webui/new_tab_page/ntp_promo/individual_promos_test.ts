@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/lazy_load.js';
+import 'neovex://new-tab-page/lazy_load.js';
 import './ntp_promo_test_common.js';
 
-import type {IndividualPromosElement} from 'chrome://new-tab-page/lazy_load.js';
-import {getTrustedHTML} from 'chrome://new-tab-page/new_tab_page.js';
-import type {Promo} from 'chrome://new-tab-page/ntp_promo.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {IndividualPromosElement} from 'neovex://new-tab-page/lazy_load.js';
+import {getTrustedHTML} from 'neovex://new-tab-page/new_tab_page.js';
+import type {Promo} from 'neovex://new-tab-page/ntp_promo.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestNtpPromoProxy} from './ntp_promo_test_common.js';
 

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsGuestOsSharedPathsElement} from 'chrome://os-settings/lazy_load.js';
-import {GuestOsBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement, CrDialogElement} from 'chrome://os-settings/os_settings.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {SettingsGuestOsSharedPathsElement} from 'neovex://os-settings/lazy_load.js';
+import {GuestOsBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement, CrDialogElement} from 'neovex://os-settings/os_settings.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestGuestOsBrowserProxy} from './test_guest_os_browser_proxy.js';
 

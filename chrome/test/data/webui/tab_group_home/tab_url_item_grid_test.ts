@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://tab-group-home/url_item_grid/url_item_grid.js';
+import 'neovex://tab-group-home/url_item_grid/url_item_grid.js';
 
-import {ItemEventType} from 'chrome://tab-group-home/url_item_grid/url_item_delegate.js';
-import type {UrlItem, UrlItemDelegate} from 'chrome://tab-group-home/url_item_grid/url_item_delegate.js';
-import type {UrlItemGridElement} from 'chrome://tab-group-home/url_item_grid/url_item_grid.js';
-import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {ItemEventType} from 'neovex://tab-group-home/url_item_grid/url_item_delegate.js';
+import type {UrlItem, UrlItemDelegate} from 'neovex://tab-group-home/url_item_grid/url_item_delegate.js';
+import type {UrlItemGridElement} from 'neovex://tab-group-home/url_item_grid/url_item_grid.js';
+import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 export class TestUrlItemDelegate extends TestBrowserProxy implements
     UrlItemDelegate {

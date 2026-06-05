@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {JSTime, TimeDelta} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {PageCallbackRouter} from 'chrome://whats-new/whats_new.mojom-webui.js';
-import type {ModulePosition, PageHandlerInterface, ScrollDepth} from 'chrome://whats-new/whats_new.mojom-webui.js';
-import type {WhatsNewProxy} from 'chrome://whats-new/whats_new_proxy.js';
+import type {JSTime, TimeDelta} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {PageCallbackRouter} from 'neovex://whats-new/whats_new.mojom-webui.js';
+import type {ModulePosition, PageHandlerInterface, ScrollDepth} from 'neovex://whats-new/whats_new.mojom-webui.js';
+import type {WhatsNewProxy} from 'neovex://whats-new/whats_new_proxy.js';
 
 /**
  * Test version of the WhatsNewPageHandler used to verify calls to the

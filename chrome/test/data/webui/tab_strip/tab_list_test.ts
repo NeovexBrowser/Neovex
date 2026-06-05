@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://tab-strip.top-chrome/tab_list.js';
+import 'neovex://tab-strip.top-chrome/tab_list.js';
 
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import type {TabElement} from 'chrome://tab-strip.top-chrome/tab.js';
-import type {TabGroupElement} from 'chrome://tab-strip.top-chrome/tab_group.js';
-import type {TabListElement} from 'chrome://tab-strip.top-chrome/tab_list.js';
-import {setScrollAnimationEnabledForTesting} from 'chrome://tab-strip.top-chrome/tab_list.js';
-import type {PageRemote, Tab} from 'chrome://tab-strip.top-chrome/tab_strip.mojom-webui.js';
-import {TabsApiProxyImpl} from 'chrome://tab-strip.top-chrome/tabs_api_proxy.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import type {TabElement} from 'neovex://tab-strip.top-chrome/tab.js';
+import type {TabGroupElement} from 'neovex://tab-strip.top-chrome/tab_group.js';
+import type {TabListElement} from 'neovex://tab-strip.top-chrome/tab_list.js';
+import {setScrollAnimationEnabledForTesting} from 'neovex://tab-strip.top-chrome/tab_list.js';
+import type {PageRemote, Tab} from 'neovex://tab-strip.top-chrome/tab_strip.mojom-webui.js';
+import {TabsApiProxyImpl} from 'neovex://tab-strip.top-chrome/tabs_api_proxy.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {createTab, TestTabsApiProxy} from './test_tabs_api_proxy.js';
 

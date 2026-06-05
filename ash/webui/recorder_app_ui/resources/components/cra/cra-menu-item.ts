@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {MenuItem} from 'chrome://resources/cros_components/menu/menu_item.js';
-import {PropertyValues} from 'chrome://resources/mwc/lit/index.js';
+import {MenuItem} from 'neovex://resources/cros_components/menu/menu_item.js';
+import {PropertyValues} from 'neovex://resources/mwc/lit/index.js';
 
 export class CraMenuItem extends MenuItem {
   // TODO(pihsun): Remove this once the upstream fix is merged and pulled in

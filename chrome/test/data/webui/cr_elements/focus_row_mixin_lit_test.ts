@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {FocusRowMixinLit} from 'chrome://resources/cr_elements/focus_row_mixin_lit.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {down, up} from 'chrome://webui-test/mouse_mock_interactions.js';
-import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {html, CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
-import {assertFalse, assertTrue, assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {FocusRowMixinLit} from 'neovex://resources/cr_elements/focus_row_mixin_lit.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {down, up} from 'neovex://webui-test/mouse_mock_interactions.js';
+import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {html, CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {assertFalse, assertTrue, assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 // clang-format on
 

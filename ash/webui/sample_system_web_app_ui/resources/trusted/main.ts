@@ -21,7 +21,7 @@ declare global {
 
 const workerUrlPolicy = window.trustedTypes!.createPolicy('worker-js-static', {
   createScriptURL: (_ignored: string) =>
-      'chrome://sample-system-web-app/worker.js',
+      'neovex://sample-system-web-app/worker.js',
 });
 
 // Currently TypeScript doesn't support trusted types so cast TrustedScriptURL

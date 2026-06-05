@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ReadLaterEntriesByStatus, Window} from 'chrome://read-later.top-chrome/reading_list.mojom-webui.js';
-import {PageCallbackRouter} from 'chrome://read-later.top-chrome/reading_list.mojom-webui.js';
-import type {ReadingListApiProxy} from 'chrome://read-later.top-chrome/reading_list_api_proxy.js';
-import type {ClickModifiers} from 'chrome://resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {ReadLaterEntriesByStatus, Window} from 'neovex://read-later.top-chrome/reading_list.mojom-webui.js';
+import {PageCallbackRouter} from 'neovex://read-later.top-chrome/reading_list.mojom-webui.js';
+import type {ReadingListApiProxy} from 'neovex://read-later.top-chrome/reading_list_api_proxy.js';
+import type {ClickModifiers} from 'neovex://resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestReadingListApiProxy extends TestBrowserProxy implements
     ReadingListApiProxy {

@@ -4,7 +4,7 @@
 
 import 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createBookmarksForTest} from './test_util.js';
 

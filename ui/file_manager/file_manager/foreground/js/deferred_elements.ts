@@ -6,12 +6,12 @@
  * @fileoverview Elements not used in the first painting of the app.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
 import '../../widgets/xf_bulk_pinning_dialog.js';
 import '../../widgets/xf_cloud_panel.js';
 import '../../widgets/xf_conflict_dialog.js';

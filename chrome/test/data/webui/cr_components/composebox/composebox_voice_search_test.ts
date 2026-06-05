@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/strings.m.js';
-import 'chrome://resources/cr_components/composebox/composebox.js';
-import 'chrome://resources/cr_components/composebox/composebox_voice_search.js';
+import 'neovex://new-tab-page/strings.m.js';
+import 'neovex://resources/cr_components/composebox/composebox.js';
+import 'neovex://resources/cr_components/composebox/composebox_voice_search.js';
 
-import type {ComposeboxElement} from 'chrome://resources/cr_components/composebox/composebox.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'chrome://resources/cr_components/composebox/composebox.mojom-webui.js';
-import {ComposeboxProxyImpl} from 'chrome://resources/cr_components/composebox/composebox_proxy.js';
-import type {ComposeboxVoiceSearchElement} from 'chrome://resources/cr_components/composebox/composebox_voice_search.js';
-import {WindowProxy} from 'chrome://resources/cr_components/composebox/window_proxy.js';
-import type {AudioWaveElement} from 'chrome://resources/cr_components/search/audio_wave.js';
-import {GlowAnimationState} from 'chrome://resources/cr_components/search/constants.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {$$, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ComposeboxElement} from 'neovex://resources/cr_components/composebox/composebox.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'neovex://resources/cr_components/composebox/composebox.mojom-webui.js';
+import {ComposeboxProxyImpl} from 'neovex://resources/cr_components/composebox/composebox_proxy.js';
+import type {ComposeboxVoiceSearchElement} from 'neovex://resources/cr_components/composebox/composebox_voice_search.js';
+import {WindowProxy} from 'neovex://resources/cr_components/composebox/window_proxy.js';
+import type {AudioWaveElement} from 'neovex://resources/cr_components/search/audio_wave.js';
+import {GlowAnimationState} from 'neovex://resources/cr_components/search/constants.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {$$, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {assertStyle, installMock} from './composebox_test_utils.js';
 

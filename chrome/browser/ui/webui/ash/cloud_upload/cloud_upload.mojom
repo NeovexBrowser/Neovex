@@ -108,7 +108,7 @@ interface PageHandlerFactory {
 // are implemented in the browser process.
 interface PageHandler {
   // Returns arguments passed to the dialog on creation. Might return nothing if
-  // called outside of a normal flow (say, when opening chrome://cloud-upload
+  // called outside of a normal flow (say, when opening neovex://cloud-upload
   // directly in the browser).
   GetDialogArgs() => (DialogArgs? args);
 

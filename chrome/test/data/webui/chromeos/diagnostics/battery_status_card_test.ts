@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/battery_status_card.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/battery_status_card.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {BatteryStatusCardElement} from 'chrome://diagnostics/battery_status_card.js';
-import {getDiagnosticsIcon} from 'chrome://diagnostics/diagnostics_utils.js';
-import {fakeBatteryChargeStatus, fakeBatteryChargeStatus2, fakeBatteryChargeStatus3, fakeBatteryHealth, fakeBatteryHealth2, fakeBatteryHealth3, fakeBatteryInfo} from 'chrome://diagnostics/fake_data.js';
-import {FakeSystemDataProvider} from 'chrome://diagnostics/fake_system_data_provider.js';
-import {setSystemDataProviderForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
-import {RoutineSectionElement} from 'chrome://diagnostics/routine_section.js';
-import type {BatteryChargeStatus, BatteryHealth, BatteryInfo} from 'chrome://diagnostics/system_data_provider.mojom-webui.js';
-import {ExternalPowerSource} from 'chrome://diagnostics/system_data_provider.mojom-webui.js';
-import {RoutineType} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isChildVisible, isVisible} from 'chrome://webui-test/test_util.js';
+import type {BatteryStatusCardElement} from 'neovex://diagnostics/battery_status_card.js';
+import {getDiagnosticsIcon} from 'neovex://diagnostics/diagnostics_utils.js';
+import {fakeBatteryChargeStatus, fakeBatteryChargeStatus2, fakeBatteryChargeStatus3, fakeBatteryHealth, fakeBatteryHealth2, fakeBatteryHealth3, fakeBatteryInfo} from 'neovex://diagnostics/fake_data.js';
+import {FakeSystemDataProvider} from 'neovex://diagnostics/fake_system_data_provider.js';
+import {setSystemDataProviderForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
+import {RoutineSectionElement} from 'neovex://diagnostics/routine_section.js';
+import type {BatteryChargeStatus, BatteryHealth, BatteryInfo} from 'neovex://diagnostics/system_data_provider.mojom-webui.js';
+import {ExternalPowerSource} from 'neovex://diagnostics/system_data_provider.mojom-webui.js';
+import {RoutineType} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isChildVisible, isVisible} from 'neovex://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

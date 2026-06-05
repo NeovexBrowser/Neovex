@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
 
 import {getTemplate} from './policy_precedence_row.html.js';
 

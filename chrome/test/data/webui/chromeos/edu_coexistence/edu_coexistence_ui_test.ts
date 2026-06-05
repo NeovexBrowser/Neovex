@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://chrome-signin/edu_coexistence/edu_coexistence_ui.js';
+import 'neovex://chrome-signin/edu_coexistence/edu_coexistence_ui.js';
 
-import {EduCoexistenceBrowserProxyImpl} from 'chrome://chrome-signin/edu_coexistence/edu_coexistence_browser_proxy.js';
-import type {EduCoexistenceButton} from 'chrome://chrome-signin/edu_coexistence/edu_coexistence_button.js';
-import {EduCoexistenceUi} from 'chrome://chrome-signin/edu_coexistence/edu_coexistence_ui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {EduCoexistenceBrowserProxyImpl} from 'neovex://chrome-signin/edu_coexistence/edu_coexistence_browser_proxy.js';
+import type {EduCoexistenceButton} from 'neovex://chrome-signin/edu_coexistence/edu_coexistence_button.js';
+import {EduCoexistenceUi} from 'neovex://chrome-signin/edu_coexistence/edu_coexistence_ui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestEduCoexistenceBrowserProxy} from './edu_coexistence_test_browser_proxy.js';
 

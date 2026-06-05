@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {parseTemplateText} from 'chrome://resources/ash/common/sea_pen/constants.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {parseTemplateText} from 'neovex://resources/ash/common/sea_pen/constants.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('parseTemplateTextTest', function() {
   test('empty template text', function() {

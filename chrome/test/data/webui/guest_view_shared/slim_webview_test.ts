@@ -6,8 +6,8 @@ import '//glic/shared/guest_view/slim_webview.js';
 import '//glic/strings.m.js';
 
 import {loadTimeData} from '//resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('SlimWebViewTest', function() {
   test('LoadEvents', async function() {

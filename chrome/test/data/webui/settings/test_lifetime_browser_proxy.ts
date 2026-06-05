@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {LifetimeBrowserProxy} from 'chrome://settings/settings.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {LifetimeBrowserProxy} from 'neovex://settings/settings.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 /**
  * A test version of LifetimeBrowserProxy.

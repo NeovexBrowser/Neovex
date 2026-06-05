@@ -4,8 +4,8 @@
 
 import './transaction_table.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import type {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import type {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
 
 import type {BucketClientInfo} from './bucket_client_info.mojom-webui.js';
 import {getTemplate} from './database.html.js';

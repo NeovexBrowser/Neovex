@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsCustomizeMouseButtonsSubpageElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrToggleElement, FakeInputDeviceSettingsProvider, Mouse} from 'chrome://os-settings/os_settings.js';
-import {fakeMice, fakeMouseButtonActions, getInputDeviceSettingsProvider, PolicyStatus, Router, routes, setupFakeInputDeviceSettingsProvider} from 'chrome://os-settings/os_settings.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsCustomizeMouseButtonsSubpageElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrToggleElement, FakeInputDeviceSettingsProvider, Mouse} from 'neovex://os-settings/os_settings.js';
+import {fakeMice, fakeMouseButtonActions, getInputDeviceSettingsProvider, PolicyStatus, Router, routes, setupFakeInputDeviceSettingsProvider} from 'neovex://os-settings/os_settings.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('<settings-customize-mouse-buttons-subpage>', () => {
   let page: SettingsCustomizeMouseButtonsSubpageElement;

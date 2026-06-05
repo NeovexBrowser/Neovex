@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://graduation/js/graduation_app.js';
+import 'neovex://graduation/js/graduation_app.js';
 
-import {GraduationApp, Screens, ScreenSwitchEvents} from 'chrome://graduation/js/graduation_app.js';
-import {resetGraduationHandlerForTesting, setGraduationUiHandlerForTesting} from 'chrome://graduation/js/graduation_ui_handler.js';
-import {AuthResult, GraduationScreen} from 'chrome://graduation/mojom/graduation_ui.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {GraduationApp, Screens, ScreenSwitchEvents} from 'neovex://graduation/js/graduation_app.js';
+import {resetGraduationHandlerForTesting, setGraduationUiHandlerForTesting} from 'neovex://graduation/js/graduation_ui_handler.js';
+import {AuthResult, GraduationScreen} from 'neovex://graduation/mojom/graduation_ui.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {TestGraduationUiHandler} from './test_graduation_ui_handler.js';
 

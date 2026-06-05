@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://bluetooth-pairing/strings.m.js';
-import 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_enter_code_page.js';
+import 'neovex://bluetooth-pairing/strings.m.js';
+import 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_enter_code_page.js';
 
-import type {SettingsBluetoothPairingEnterCodeElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_enter_code_page.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsBluetoothPairingEnterCodeElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_enter_code_page.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertEquals, assertTrue} from '../chai_assert.js';
 

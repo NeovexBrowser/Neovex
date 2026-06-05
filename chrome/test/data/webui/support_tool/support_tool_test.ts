@@ -7,21 +7,21 @@
  * executed by support_tool_browsertest.js.
  */
 
-import 'chrome://support-tool/support_tool.js';
-import 'chrome://support-tool/url_generator.js';
+import 'neovex://support-tool/support_tool.js';
+import 'neovex://support-tool/url_generator.js';
 
-import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {BrowserProxy, DataCollectorItem, IssueDetails, PiiDataItem, SupportTokenGenerationResult} from 'chrome://support-tool/browser_proxy.js';
-import {BrowserProxyImpl} from 'chrome://support-tool/browser_proxy.js';
-import type {DataExportResult, SupportToolElement} from 'chrome://support-tool/support_tool.js';
-import {SupportToolPageIndex} from 'chrome://support-tool/support_tool.js';
-import type {UrlGeneratorElement} from 'chrome://support-tool/url_generator.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {BrowserProxy, DataCollectorItem, IssueDetails, PiiDataItem, SupportTokenGenerationResult} from 'neovex://support-tool/browser_proxy.js';
+import {BrowserProxyImpl} from 'neovex://support-tool/browser_proxy.js';
+import type {DataExportResult, SupportToolElement} from 'neovex://support-tool/support_tool.js';
+import {SupportToolPageIndex} from 'neovex://support-tool/support_tool.js';
+import type {UrlGeneratorElement} from 'neovex://support-tool/url_generator.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 const EMAIL_ADDRESSES: string[] =
     ['testemail1@test.com', 'testemail2@test.com'];
@@ -61,7 +61,7 @@ const PII_ITEMS: PiiDataItem[] = [
     piiTypeDescription: 'URL',
     piiType: 2,
     detectedData: [
-      'chrome://resources/f?user=bar',
+      'neovex://resources/f?user=bar',
       'chrome-extension://nkoccljplnhpfnfiajclkommnmllphnl/foobar.js?bar=x',
       'http://tets.com',
     ],
@@ -358,7 +358,7 @@ suite('UrlGeneratorTest', function() {
     await microtasksFinished();
     // Ensure the button is enabled after we select at least one data collector.
     assertFalse(copyLinkButton.disabled, 'link button is now not disabled');
-    const expectedToken = 'chrome://support-tool/?case_id=test123&module=jekhh';
+    const expectedToken = 'neovex://support-tool/?case_id=test123&module=jekhh';
     // Set the expected result of URL generation to successful.
     const expectedResult: SupportTokenGenerationResult = {
       success: true,

@@ -45,8 +45,8 @@ const makeBadSchemeCheck = function(test, badURL) {
 // pseudo-scheme fires loadabort and doesn't cause a crash.
 
 promise_test(async (test) => {
-  return makeBadSchemeCheck(test, 'chrome://abc123/');
-}, "Verify bad scheme chrome:// aborts, does not load");
+  return makeBadSchemeCheck(test, 'neovex://abc123/');
+}, "Verify bad scheme neovex:// aborts, does not load");
 
 promise_test(async (test) => {
   return makeBadSchemeCheck(test, 'chrome-extension://abc123/');

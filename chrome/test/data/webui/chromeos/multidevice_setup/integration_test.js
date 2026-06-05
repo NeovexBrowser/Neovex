@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://multidevice-setup/strings.m.js';
-import 'chrome://resources/ash/common/multidevice_setup/multidevice_setup.js';
+import 'neovex://multidevice-setup/strings.m.js';
+import 'neovex://resources/ash/common/multidevice_setup/multidevice_setup.js';
 
-import {FakeMojoService} from 'chrome://resources/ash/common/multidevice_setup/fake_mojo_service.js';
-import {BrowserProxyImpl} from 'chrome://resources/ash/common/multidevice_setup/multidevice_setup_browser_proxy.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeQuickUnlockPrivate} from 'chrome://webui-test/chromeos/settings/fake_quick_unlock_private.js';
-import {waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {FakeMojoService} from 'neovex://resources/ash/common/multidevice_setup/fake_mojo_service.js';
+import {BrowserProxyImpl} from 'neovex://resources/ash/common/multidevice_setup/multidevice_setup_browser_proxy.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeQuickUnlockPrivate} from 'neovex://webui-test/chromeos/settings/fake_quick_unlock_private.js';
+import {waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {eventToPromise} from '../test_util.js';
 

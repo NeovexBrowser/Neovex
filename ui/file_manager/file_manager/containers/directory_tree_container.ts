@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {isRTL} from 'chrome://resources/ash/common/util.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {isRTL} from 'neovex://resources/ash/common/util.js';
 
 import {maybeShowTooltip} from '../common/js/dom_utils.js';
 import {canHaveSubDirectories, isGrandRootEntryInDrive, isInsideDrive, isMyFilesFileData, isOneDrive, isOneDriveId, isRecentFileData, isTrashFileData, isVolumeFileData, shouldSupportDriveSpecificIcons} from '../common/js/entry_utils.js';

@@ -1,25 +1,25 @@
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://shortcut-customization/js/search/search_box.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://shortcut-customization/js/search/search_box.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {CrToolbarSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {IronDropdownElement} from 'chrome://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
-import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
-import {CycleTabsTextSearchResult, fakeAcceleratorConfig, fakeLayoutInfo, fakeSearchResults, TakeScreenshotSearchResult} from 'chrome://shortcut-customization/js/fake_data.js';
-import {FakeShortcutSearchHandler} from 'chrome://shortcut-customization/js/search/fake_shortcut_search_handler.js';
-import type {SearchBoxElement} from 'chrome://shortcut-customization/js/search/search_box.js';
-import {SearchResultRowElement} from 'chrome://shortcut-customization/js/search/search_result_row.js';
-import {setShortcutSearchHandlerForTesting} from 'chrome://shortcut-customization/js/search/shortcut_search_handler.js';
-import type {MojoSearchResult} from 'chrome://shortcut-customization/js/shortcut_types.js';
-import {AcceleratorState} from 'chrome://shortcut-customization/js/shortcut_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {CrToolbarSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {IronDropdownElement} from 'neovex://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
+import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
+import {CycleTabsTextSearchResult, fakeAcceleratorConfig, fakeLayoutInfo, fakeSearchResults, TakeScreenshotSearchResult} from 'neovex://shortcut-customization/js/fake_data.js';
+import {FakeShortcutSearchHandler} from 'neovex://shortcut-customization/js/search/fake_shortcut_search_handler.js';
+import type {SearchBoxElement} from 'neovex://shortcut-customization/js/search/search_box.js';
+import {SearchResultRowElement} from 'neovex://shortcut-customization/js/search/search_result_row.js';
+import {setShortcutSearchHandlerForTesting} from 'neovex://shortcut-customization/js/search/shortcut_search_handler.js';
+import type {MojoSearchResult} from 'neovex://shortcut-customization/js/shortcut_types.js';
+import {AcceleratorState} from 'neovex://shortcut-customization/js/shortcut_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('searchBoxTest', function() {
   let searchBoxElement: SearchBoxElement|null = null;

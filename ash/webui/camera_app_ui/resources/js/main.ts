@@ -7,7 +7,7 @@ import './lit/components/index.js';
 import {
   ColorChangeUpdater,
 } from
-    'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+    'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
 
 import {
   getDefaultWindowSize,
@@ -277,7 +277,7 @@ async function setupDynamicColor(): Promise<void> {
   // TODO(pihsun): Check if there's way to override color scheme earlier before
   // HTML load, so the CSS can be put into .html file instead of being injected
   // by JS.
-  await loadCSS('chrome://theme/colors.css?sets=ref,sys');
+  await loadCSS('neovex://theme/colors.css?sets=ref,sys');
 }
 
 async function setupMultiWindowHandling(

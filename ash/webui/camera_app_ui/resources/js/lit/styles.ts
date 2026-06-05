@@ -4,7 +4,7 @@
 
 import {
   css,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 // Using :where selector here so the default style always have 0 specificity and
 // can be overridden by each component.

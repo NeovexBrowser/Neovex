@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {NtpExtension, OnStartupBrowserProxy, SettingsOnStartupPageElement} from 'chrome://settings/settings.js';
-import {OnStartupBrowserProxyImpl} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {NtpExtension, OnStartupBrowserProxy, SettingsOnStartupPageElement} from 'neovex://settings/settings.js';
+import {OnStartupBrowserProxyImpl} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 // <if expr="is_win">
-import {loadTimeData} from 'chrome://settings/settings.js';
-import type {SettingsToggleButtonElement} from 'chrome://settings/settings.js';
+import {loadTimeData} from 'neovex://settings/settings.js';
+import type {SettingsToggleButtonElement} from 'neovex://settings/settings.js';
 // </if>
 
 // clang-format on

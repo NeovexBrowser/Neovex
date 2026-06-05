@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsPrivacyHubMicrophoneSubpage} from 'chrome://os-settings/lazy_load.js';
-import {MediaDevicesProxy, PrivacyHubBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {appPermissionHandlerMojom, CrLinkRowElement, CrToggleElement, PaperTooltipElement} from 'chrome://os-settings/os_settings.js';
-import {Router, setAppPermissionProviderForTesting} from 'chrome://os-settings/os_settings.js';
-import {PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {DomRepeat} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {SettingsPrivacyHubMicrophoneSubpage} from 'neovex://os-settings/lazy_load.js';
+import {MediaDevicesProxy, PrivacyHubBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {appPermissionHandlerMojom, CrLinkRowElement, CrToggleElement, PaperTooltipElement} from 'neovex://os-settings/os_settings.js';
+import {Router, setAppPermissionProviderForTesting} from 'neovex://os-settings/os_settings.js';
+import {PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {DomRepeat} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {FakeMediaDevices} from '../fake_media_devices.js';
 

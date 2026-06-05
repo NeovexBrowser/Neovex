@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PageCallbackRouter} from 'chrome://contextual-tasks/contextual_tasks.mojom-webui.js';
-import type {ComposeboxPosition, ContextInfo, IconType, PageHandlerInterface, PageInterface, PageRemote} from 'chrome://contextual-tasks/contextual_tasks.mojom-webui.js';
-import type {BrowserProxy} from 'chrome://contextual-tasks/contextual_tasks_browser_proxy.js';
-import type {PostMessageHandler} from 'chrome://contextual-tasks/post_message_handler.js';
-import type {PageHandler as ComposeboxPageHandler, PageHandlerFactory as ComposeboxPageHandlerFactory} from 'chrome://resources/cr_components/composebox/composebox.mojom-webui.js';
-import type {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
-import type {Uuid} from 'chrome://resources/mojo/mojo/public/mojom/base/uuid.mojom-webui.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {PageCallbackRouter} from 'neovex://contextual-tasks/contextual_tasks.mojom-webui.js';
+import type {ComposeboxPosition, ContextInfo, IconType, PageHandlerInterface, PageInterface, PageRemote} from 'neovex://contextual-tasks/contextual_tasks.mojom-webui.js';
+import type {BrowserProxy} from 'neovex://contextual-tasks/contextual_tasks_browser_proxy.js';
+import type {PostMessageHandler} from 'neovex://contextual-tasks/post_message_handler.js';
+import type {PageHandler as ComposeboxPageHandler, PageHandlerFactory as ComposeboxPageHandlerFactory} from 'neovex://resources/cr_components/composebox/composebox.mojom-webui.js';
+import type {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import type {Uuid} from 'neovex://resources/mojo/mojo/public/mojom/base/uuid.mojom-webui.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 import {TestSearchboxPageHandler} from './test_searchbox_page_handler.js';
 import {HANDSHAKE_RESPONSE_BYTES} from './test_utils.js';

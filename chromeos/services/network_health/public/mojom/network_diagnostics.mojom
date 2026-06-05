@@ -52,7 +52,7 @@ enum RoutineCallSource {
   [Default] kUnknown,
   // Routine was called from the Diagnostics page in the Settings UI.
   kDiagnosticsUI,
-  // Routine was called from the Network Health tab in chrome://network.
+  // Routine was called from the Network Health tab in neovex://network.
   kChromeNetworkPage,
   // Routine was called from cros_healthd.
   kCrosHealthd,

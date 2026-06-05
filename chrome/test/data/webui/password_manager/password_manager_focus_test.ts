@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://password-manager/password_manager.js';
+import 'neovex://password-manager/password_manager.js';
 
-import {CheckupSubpage, Page, PasswordManagerImpl, Router} from 'chrome://password-manager/password_manager.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {CheckupSubpage, Page, PasswordManagerImpl, Router} from 'neovex://password-manager/password_manager.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';
 import {createCredentialGroup, createPasswordEntry, makeInsecureCredential, makePasswordCheckStatus} from './test_util.js';

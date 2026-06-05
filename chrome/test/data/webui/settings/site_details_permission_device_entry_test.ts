@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://webui-test/cr_elements/cr_policy_strings.js';
+import 'neovex://webui-test/cr_elements/cr_policy_strings.js';
 
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SiteDetailsPermissionDeviceEntryElement} from 'chrome://settings/lazy_load.js';
-import {ChooserType, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SiteDetailsPermissionDeviceEntryElement} from 'neovex://settings/lazy_load.js';
+import {ChooserType, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import {createChooserException, createSiteException} from './test_util.js';

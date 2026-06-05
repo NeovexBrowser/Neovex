@@ -31,7 +31,7 @@ a {
 }
 
 .icon-generic {
-  /* Can't access chrome://theme/IDR_ERROR_NETWORK_GENERIC from an untrusted
+  /* Can't access neovex://theme/IDR_ERROR_NETWORK_GENERIC from an untrusted
    * renderer process, so embed the resource manually. */
   content: image-set(
       url(../../resources/default_100_percent/neterror/error_network_generic.png) 1x,

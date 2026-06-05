@@ -1,15 +1,15 @@
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://privacy-sandbox-internals/content_setting_pattern_source.js';
+import 'neovex://privacy-sandbox-internals/content_setting_pattern_source.js';
 
-import type {ContentSettingPatternSourceElement} from 'chrome://privacy-sandbox-internals/content_setting_pattern_source.js';
-import type {ContentSettingPatternSource, RuleMetaData} from 'chrome://privacy-sandbox-internals/content_settings.mojom-webui.js';
-import {SessionModel} from 'chrome://privacy-sandbox-internals/content_settings_enums.mojom-webui.js';
-import type {PageHandlerInterface} from 'chrome://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
-import {PageHandler} from 'chrome://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
-import type {Value} from 'chrome://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {ContentSettingPatternSourceElement} from 'neovex://privacy-sandbox-internals/content_setting_pattern_source.js';
+import type {ContentSettingPatternSource, RuleMetaData} from 'neovex://privacy-sandbox-internals/content_settings.mojom-webui.js';
+import {SessionModel} from 'neovex://privacy-sandbox-internals/content_settings_enums.mojom-webui.js';
+import type {PageHandlerInterface} from 'neovex://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
+import {PageHandler} from 'neovex://privacy-sandbox-internals/privacy_sandbox_internals.mojom-webui.js';
+import type {Value} from 'neovex://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('ContentSettingsElementTest', function() {
   let pageHandler: PageHandlerInterface;

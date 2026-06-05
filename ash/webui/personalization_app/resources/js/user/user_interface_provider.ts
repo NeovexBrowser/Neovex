@@ -8,7 +8,7 @@
  * implementation for testing.
  */
 
-import 'chrome://resources/mojo/mojo/public/js/bindings.js';
+import 'neovex://resources/mojo/mojo/public/js/bindings.js';
 
 import type {UserProviderInterface} from '../../personalization_app.mojom-webui.js';
 import {UserProvider} from '../../personalization_app.mojom-webui.js';

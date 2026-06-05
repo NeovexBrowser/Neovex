@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsPrivacyHubGeolocationAdvancedSubpage} from 'chrome://os-settings/lazy_load.js';
-import type {SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {Router, routes} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {SettingsPrivacyHubGeolocationAdvancedSubpage} from 'neovex://os-settings/lazy_load.js';
+import type {SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {Router, routes} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('<settings-privacy-hub-geolocation-advanced-subpage>', () => {
   let page: SettingsPrivacyHubGeolocationAdvancedSubpage;

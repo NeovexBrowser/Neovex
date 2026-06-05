@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://customize-chrome-side-panel.top-chrome/appearance.js';
+import 'neovex://customize-chrome-side-panel.top-chrome/appearance.js';
 
-import type {AppearanceElement} from 'chrome://customize-chrome-side-panel.top-chrome/appearance.js';
-import {CustomizeChromeAction} from 'chrome://customize-chrome-side-panel.top-chrome/common.js';
-import type {CustomizeChromePageRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote, NewTabPageType} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromeApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
-import type {HoverButtonElement} from 'chrome://customize-chrome-side-panel.top-chrome/hover_button.js';
-import type {ManagedDialogElement} from 'chrome://resources/cr_components/managed_dialog/managed_dialog.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {AppearanceElement} from 'neovex://customize-chrome-side-panel.top-chrome/appearance.js';
+import {CustomizeChromeAction} from 'neovex://customize-chrome-side-panel.top-chrome/common.js';
+import type {CustomizeChromePageRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote, NewTabPageType} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromeApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
+import type {HoverButtonElement} from 'neovex://customize-chrome-side-panel.top-chrome/hover_button.js';
+import type {ManagedDialogElement} from 'neovex://resources/cr_components/managed_dialog/managed_dialog.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {$$, assertNotStyle, assertStyle, createBackgroundImage, createTheme, createThirdPartyThemeInfo, installMock} from './test_support.js';
 
@@ -59,7 +59,7 @@ suite('AppearanceTest', () => {
 
   test('classic chrome button shows with background image', async () => {
     const theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
     callbackRouterRemote.setTheme(theme);
     await callbackRouterRemote.$.flushForTesting();
@@ -78,7 +78,7 @@ suite('AppearanceTest', () => {
 
   test('classic chrome button sets theme to classic chrome', async () => {
     const theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
     callbackRouterRemote.setTheme(theme);
     await callbackRouterRemote.$.flushForTesting();
@@ -105,7 +105,7 @@ suite('AppearanceTest', () => {
 
     // Set non-classic chrome theme.
     let theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
     callbackRouterRemote.setTheme(theme);
     await callbackRouterRemote.$.flushForTesting();
@@ -151,7 +151,7 @@ suite('AppearanceTest', () => {
 
     // Set non-classic chrome theme.
     theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
     callbackRouterRemote.setTheme(theme);
     await callbackRouterRemote.$.flushForTesting();
@@ -178,7 +178,7 @@ suite('AppearanceTest', () => {
       async () => {
         // Arrange.
         let theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+        theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
         callbackRouterRemote.setTheme(theme);
         await callbackRouterRemote.$.flushForTesting();
@@ -204,7 +204,7 @@ suite('AppearanceTest', () => {
       async () => {
         // Arrange.
         let theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+        theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
         callbackRouterRemote.setTheme(theme);
         await callbackRouterRemote.$.flushForTesting();
@@ -272,7 +272,7 @@ suite('AppearanceTest', () => {
   test('shows managed name and description', async () => {
     // Arrange.
     const theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
     callbackRouterRemote.setTheme(theme);
     // Set any non-1P WebUI NTP type.
     callbackRouterRemote.attachedTabStateUpdated(
@@ -391,7 +391,7 @@ suite('AppearanceTest', () => {
                 const theme = createTheme();
                 if (showClassicChromeButton) {
                   theme.backgroundImage =
-                      createBackgroundImage('chrome://theme/foo');
+                      createBackgroundImage('neovex://theme/foo');
                 }
 
                 callbackRouterRemote.setTheme(theme);
@@ -537,7 +537,7 @@ suite('AppearanceTest', () => {
 
     test('Clicking set to classic Chrome button sets metric', async () => {
       const theme = createTheme();
-      theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+      theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
 
       callbackRouterRemote.setTheme(theme);
       await callbackRouterRemote.$.flushForTesting();
@@ -671,7 +671,7 @@ suite('AppearanceTest', () => {
       test(`classic chrome button NTP type ${t}`, async () => {
         // Arrange.
         const theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
+        theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
         callbackRouterRemote.setTheme(theme);
         callbackRouterRemote.attachedTabStateUpdated(t);
         await microtasksFinished();

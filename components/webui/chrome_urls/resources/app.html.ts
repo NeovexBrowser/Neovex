@@ -13,7 +13,7 @@ export function getHtml(this: ChromeUrlsAppElement) {
 <ul>
   ${this.webuiUrlInfos_.map(info => html`
     ${this.isChromeUrlsUrl_(info) ?
-      html`<li><a href="#">chrome://chrome-urls</a></li>` :
+      html`<li><a href="#">neovex://chrome-urls</a></li>` :
       html`${info.enabled ?
         html`<li><a href="${info.url}">${info.url}</a></li>` :
         html`<li>${info.url}</li>`

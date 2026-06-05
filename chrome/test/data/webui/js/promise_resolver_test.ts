@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('PromiseResolverTest', function() {
   test('resolves', function(done) {

@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {DynamicColorElement, GooglePhotosAlbumsElement, GooglePhotosCollectionElement, GooglePhotosSharedAlbumDialogElement, PersonalizationThemeElement, SeaPenFeedbackElement, SeaPenImagesElement, SeaPenRecentWallpapersElement, SeaPenTemplateQueryElement, WallpaperCollectionsElement, WallpaperImagesElement} from 'chrome://personalization/js/personalization_app.js';
-import {getThemeProvider, PersonalizationRouterElement, SeaPenFreeformElement, SeaPenInputQueryElement, SeaPenPaths, SeaPenRouterElement, SeaPenSamplesElement, setTransitionsEnabled, WallpaperGridItemElement} from 'chrome://personalization/js/personalization_app.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {SeaPenTemplateId} from 'chrome://resources/ash/common/sea_pen/sea_pen_generated.mojom-webui.js';
-import {assertInstanceof} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
-import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGT, assertLE, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {DynamicColorElement, GooglePhotosAlbumsElement, GooglePhotosCollectionElement, GooglePhotosSharedAlbumDialogElement, PersonalizationThemeElement, SeaPenFeedbackElement, SeaPenImagesElement, SeaPenRecentWallpapersElement, SeaPenTemplateQueryElement, WallpaperCollectionsElement, WallpaperImagesElement} from 'neovex://personalization/js/personalization_app.js';
+import {getThemeProvider, PersonalizationRouterElement, SeaPenFreeformElement, SeaPenInputQueryElement, SeaPenPaths, SeaPenRouterElement, SeaPenSamplesElement, setTransitionsEnabled, WallpaperGridItemElement} from 'neovex://personalization/js/personalization_app.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {SeaPenTemplateId} from 'neovex://resources/ash/common/sea_pen/sea_pen_generated.mojom-webui.js';
+import {assertInstanceof} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGT, assertLE, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 /**
- * @fileoverview E2E test suite for chrome://personalization.
+ * @fileoverview E2E test suite for neovex://personalization.
  */
 
-const ROOT_PAGE = 'chrome://personalization/';
+const ROOT_PAGE = 'neovex://personalization/';
 const DEFAULT_WALLPAPER_NAME = 'Default Wallpaper';
 
 /**
@@ -86,7 +86,7 @@ suite('main page', () => {
     setTransitionsEnabled(false);
   });
 
-  // Tests that chrome://personalization loads the page and various contents
+  // Tests that neovex://personalization loads the page and various contents
   // without javascript errors or a 404 or crash. Displays user preview,
   // wallpaper preview, ambient preview, and dynamic color controls.
 
@@ -272,7 +272,7 @@ suite('wallpaper subpage', () => {
     clickWallpaperPreviewLink();
   });
 
-  // Tests that chrome://personalization/wallpaper runs js file and that it
+  // Tests that neovex://personalization/wallpaper runs js file and that it
   // goes somewhere instead of 404ing or crashing.
   test('has wallpaper subpage url', () => {
     const title = document.querySelector('head > title');

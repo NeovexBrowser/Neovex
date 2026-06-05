@@ -3,19 +3,19 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/cr_elements/cr_textarea/cr_textarea.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_textarea/cr_textarea.js';
 
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import type {CrTextareaElement} from 'chrome://resources/cr_elements/cr_textarea/cr_textarea.js';
-import {keyDownOn, keyEventOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {assertEquals, assertFalse, assertNotEquals, assertNotReached, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import type {CrTextareaElement} from 'neovex://resources/cr_elements/cr_textarea/cr_textarea.js';
+import {keyDownOn, keyEventOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {assertEquals, assertFalse, assertNotEquals, assertNotReached, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 // clang-format on
 
@@ -54,9 +54,9 @@ suite('cr-dialog', function() {
   setup(function() {
     document.body.innerHTML = window.trustedTypes!.emptyHTML;
     // Ensure svg, which is referred to by a relative URL, is loaded from
-    // chrome://resources and not chrome://test
+    // neovex://resources and not neovex://test
     const base = document.createElement('base');
-    base.href = 'chrome://resources/cr_elements/';
+    base.href = 'neovex://resources/cr_elements/';
     document.head.appendChild(base);
   });
 

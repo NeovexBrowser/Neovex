@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {AppManagementStore} from 'chrome://os-settings/os_settings.js';
-import type {App, ExtensionAppPermissionMessage, PageHandlerInterface, PageHandlerRemote, PageRemote, Permission, RunOnOsLoginMode} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType, InstallReason, InstallSource, PageHandlerReceiver, PermissionType, TriState, WindowMode} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {createBoolPermission, createTriStatePermission, getTriStatePermissionValue} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {AppManagementStore} from 'neovex://os-settings/os_settings.js';
+import type {App, ExtensionAppPermissionMessage, PageHandlerInterface, PageHandlerRemote, PageRemote, Permission, RunOnOsLoginMode} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType, InstallReason, InstallSource, PageHandlerReceiver, PermissionType, TriState, WindowMode} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {createBoolPermission, createTriStatePermission, getTriStatePermissionValue} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
 
 type AppConfig = Partial<App>;
 type PermissionMap = Partial<Record<PermissionType, Permission>>;

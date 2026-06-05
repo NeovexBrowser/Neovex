@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://updater/app.js';
+import 'neovex://updater/app.js';
 
-import type {UpdaterAppElement} from 'chrome://updater/app.js';
-import {BrowserProxyImpl} from 'chrome://updater/browser_proxy.js';
-import {PageHandlerRemote} from 'chrome://updater/updater_ui.mojom-webui.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {UpdaterAppElement} from 'neovex://updater/app.js';
+import {BrowserProxyImpl} from 'neovex://updater/browser_proxy.js';
+import {PageHandlerRemote} from 'neovex://updater/updater_ui.mojom-webui.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('UpdaterAppElement', () => {
   let element: UpdaterAppElement;

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
-import {$} from 'chrome://resources/js/util.js';
+import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
+import {$} from 'neovex://resources/js/util.js';
 
 import {createIceCandidateGrid, updateIceCandidateGrid} from './candidate_grid.js';
 import {MAX_STATS_DATA_POINT_BUFFER_SIZE} from './data_series.js';

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/os_settings.js';
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/os_settings.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsGoogleDriveSubpageElement} from 'chrome://os-settings/lazy_load.js';
-import {SettingsRadioGroupElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement} from 'chrome://os-settings/os_settings.js';
-import {SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {SettingsGoogleDriveSubpageElement} from 'neovex://os-settings/lazy_load.js';
+import {SettingsRadioGroupElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement} from 'neovex://os-settings/os_settings.js';
+import {SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {PasswordSettingsApi} from './os_people_page/password_settings_api.js';
 import {PinSettingsApi} from './os_people_page/pin_settings_api.js';

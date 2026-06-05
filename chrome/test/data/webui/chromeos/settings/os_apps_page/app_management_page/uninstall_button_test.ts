@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 /** @fileoverview Test suite for app-management-uninstall-button. */
-import 'chrome://os-settings/os_settings.js';
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/os_settings.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {AppManagementUninstallButtonElement} from 'chrome://os-settings/lazy_load.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {InstallReason} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {AppManagementUninstallButtonElement} from 'neovex://os-settings/lazy_load.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {InstallReason} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import type {FakePageHandler} from '../../app_management/fake_page_handler.js';
 import {createApp, setupFakeHandler} from '../../app_management/test_util.js';

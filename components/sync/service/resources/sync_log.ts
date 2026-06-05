@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
 
 interface LogEntry {
   submodule: string;

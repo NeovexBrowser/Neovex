@@ -7,8 +7,8 @@ module ash.auth.mojom;
 // This module defines interfaces to query properties of and configure
 // authentication factors. The interfaces are implemented by services running
 // on ash-chrome and intended to be consumed by the following webuis:
-// * chrome://os-settings
-// * chrome://oobe
+// * neovex://os-settings
+// * neovex://oobe
 //
 // Since both the service implementations and the clients are part of
 // ash-chrome, the interfaces are not guaranteed to remain stable between
@@ -59,8 +59,8 @@ interface FactorObserver {
 // An interface to query generic properties of how authentication factors are
 // configured. Served from chrome ash, intended to be consumed by the following
 // webuis:
-// * chrome://os-settings
-// * chrome://oobe
+// * neovex://os-settings
+// * neovex://oobe
 interface AuthFactorConfig {
   // Registers an observer that is called whenever authentication factor
   // configuration changes.
@@ -103,8 +103,8 @@ enum ConfigureResult {
 
 // Interface for methods specific to recovery authentication. Served from chrome
 // ash, intended to be consumed by the following webuis:
-// * chrome://os-settings
-// * chrome://oobe
+// * neovex://os-settings
+// * neovex://oobe
 interface RecoveryFactorEditor {
   // Enables or disables recovery authentication. Clients must not attempt to
   // enable recovery if recovery is not editable. Enabling recovery when it is
@@ -126,8 +126,8 @@ enum PinComplexity {
 
 // Interface for methods specific to pin authentication. Served from chrome
 // ash, intended to be consumed by the following webuis:
-// * chrome://os-settings
-// * chrome://oobe
+// * neovex://os-settings
+// * neovex://oobe
 interface PinFactorEditor {
   // Set the user pin to the desired value.
   SetPin(string auth_token, string pin) => (ConfigureResult result);
@@ -157,8 +157,8 @@ enum PasswordComplexity {
 // Interface for methods specific to password authentication. Served from chrome
 // ash, intended to be consumed by the following trusted webuis:
 //
-// * chrome://os-settings
-// * chrome://oobe
+// * neovex://os-settings
+// * neovex://oobe
 //
 // The chrome ash implementation calls into the cryptohomed system daemon via
 // the UserDataAuth.proto Dbus API to affect the desired changes to the user's

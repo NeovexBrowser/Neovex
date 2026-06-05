@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://profile-picker/lazy_load.js';
+import 'neovex://profile-picker/lazy_load.js';
 
-import type {ProfileSwitchElement} from 'chrome://profile-picker/lazy_load.js';
-import type {ProfileState} from 'chrome://profile-picker/profile_picker.js';
-import {ManageProfilesBrowserProxyImpl} from 'chrome://profile-picker/profile_picker.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ProfileSwitchElement} from 'neovex://profile-picker/lazy_load.js';
+import type {ProfileState} from 'neovex://profile-picker/profile_picker.js';
+import {ManageProfilesBrowserProxyImpl} from 'neovex://profile-picker/profile_picker.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestManageProfilesBrowserProxy} from './test_manage_profiles_browser_proxy.js';
 

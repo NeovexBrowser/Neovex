@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {DataSeries} from 'chrome://sys-internals/line_chart/data_series.js';
-import {Menu} from 'chrome://sys-internals/line_chart/menu.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {DataSeries} from 'neovex://sys-internals/line_chart/data_series.js';
+import {Menu} from 'neovex://sys-internals/line_chart/menu.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('LineChart_Menu', function() {
   test('Menu integration test', function() {

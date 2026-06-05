@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_loading_gradient/cr_loading_gradient.js';
+import 'neovex://resources/cr_elements/cr_loading_gradient/cr_loading_gradient.js';
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('CrLoadingGradientElement', () => {
   test('AssignsUniqueIds', async () => {

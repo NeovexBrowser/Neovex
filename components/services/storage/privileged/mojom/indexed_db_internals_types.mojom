@@ -13,7 +13,7 @@ import "services/network/public/mojom/schemeful_site.mojom";
 import "url/mojom/origin.mojom";
 
 // These types hold IndexedDB metadata. This information is displayed in
-// chrome://indexeddb-internals for debugging.
+// neovex://indexeddb-internals for debugging.
 
 struct IdbOriginMetadata {
   url.mojom.Origin origin;

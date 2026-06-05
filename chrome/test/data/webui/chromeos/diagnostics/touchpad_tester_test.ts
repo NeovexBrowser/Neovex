@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/strings.m.js';
-import 'chrome://diagnostics/touchpad_tester.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/strings.m.js';
+import 'neovex://diagnostics/touchpad_tester.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {fakeTouchDevices} from 'chrome://diagnostics/fake_data.js';
-import {TouchpadTesterElement} from 'chrome://diagnostics/touchpad_tester.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {fakeTouchDevices} from 'neovex://diagnostics/fake_data.js';
+import {TouchpadTesterElement} from 'neovex://diagnostics/touchpad_tester.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
-import {MockController} from 'chrome://webui-test/mock_controller.js';
-import {isChildVisible, isVisible} from 'chrome://webui-test/test_util.js';
+import {MockController} from 'neovex://webui-test/mock_controller.js';
+import {isChildVisible, isVisible} from 'neovex://webui-test/test_util.js';
 
 import {assertElementContainsText} from './diagnostics_test_utils.js';
 

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {NativeInitialSettings, PrintPreviewAppElement, SerializedSettings, Settings, SettingsMixinInterface} from 'chrome://print/print_preview.js';
-import {getInstance, MarginsType, NativeLayerImpl, PluginProxyImpl, ScalingType} from 'chrome://print/print_preview.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import type {NativeInitialSettings, PrintPreviewAppElement, SerializedSettings, Settings, SettingsMixinInterface} from 'neovex://print/print_preview.js';
+import {getInstance, MarginsType, NativeLayerImpl, PluginProxyImpl, ScalingType} from 'neovex://print/print_preview.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';
 

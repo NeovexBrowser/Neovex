@@ -6,8 +6,8 @@
  * @fileoverview Utility functions to be used for ambient mode.
  */
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import {AmbientTheme, TopicSource} from '../../personalization_app.mojom-webui.js';
 

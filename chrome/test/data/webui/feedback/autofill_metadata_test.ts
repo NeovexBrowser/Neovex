@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://feedback/autofill_metadata_app.js';
-import 'chrome://feedback/strings.m.js';
+import 'neovex://feedback/autofill_metadata_app.js';
+import 'neovex://feedback/strings.m.js';
 
-import type {AutofillMetadataAppElement} from 'chrome://feedback/autofill_metadata_app.js';
-import {FeedbackBrowserProxyImpl} from 'chrome://feedback/js/feedback_browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {AutofillMetadataAppElement} from 'neovex://feedback/autofill_metadata_app.js';
+import {FeedbackBrowserProxyImpl} from 'neovex://feedback/js/feedback_browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestFeedbackBrowserProxy} from './test_feedback_browser_proxy.js';
 

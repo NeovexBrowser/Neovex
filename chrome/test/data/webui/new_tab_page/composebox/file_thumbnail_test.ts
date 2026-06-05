@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ComposeboxFileThumbnailElement} from 'chrome://new-tab-page/lazy_load.js';
-import {ContextUploadStatus} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {ComposeboxFileThumbnailElement} from 'neovex://new-tab-page/lazy_load.js';
+import {ContextUploadStatus} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createComposeboxFile} from './test_support.js';
 

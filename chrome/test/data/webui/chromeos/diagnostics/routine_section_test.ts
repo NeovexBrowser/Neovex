@@ -2,29 +2,29 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/routine_section.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/routine_section.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {createRoutine} from 'chrome://diagnostics/diagnostics_utils.js';
-import {FakeSystemRoutineController} from 'chrome://diagnostics/fake_system_routine_controller.js';
-import {setSystemRoutineControllerForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
-import {RoutineGroup} from 'chrome://diagnostics/routine_group.js';
-import type {ResultStatusItem} from 'chrome://diagnostics/routine_list_executor.js';
-import {ExecutionProgress, TestSuiteStatus} from 'chrome://diagnostics/routine_list_executor.js';
-import type {RoutineResultEntryElement} from 'chrome://diagnostics/routine_result_entry.js';
-import {getRoutineType} from 'chrome://diagnostics/routine_result_entry.js';
-import type {RoutineResultListElement} from 'chrome://diagnostics/routine_result_list.js';
-import type {RoutineSectionElement} from 'chrome://diagnostics/routine_section.js';
-import {RoutineType, StandardRoutineResult} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
-import type {TextBadgeElement} from 'chrome://diagnostics/text_badge.js';
-import {BadgeType} from 'chrome://diagnostics/text_badge.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import {createRoutine} from 'neovex://diagnostics/diagnostics_utils.js';
+import {FakeSystemRoutineController} from 'neovex://diagnostics/fake_system_routine_controller.js';
+import {setSystemRoutineControllerForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
+import {RoutineGroup} from 'neovex://diagnostics/routine_group.js';
+import type {ResultStatusItem} from 'neovex://diagnostics/routine_list_executor.js';
+import {ExecutionProgress, TestSuiteStatus} from 'neovex://diagnostics/routine_list_executor.js';
+import type {RoutineResultEntryElement} from 'neovex://diagnostics/routine_result_entry.js';
+import {getRoutineType} from 'neovex://diagnostics/routine_result_entry.js';
+import type {RoutineResultListElement} from 'neovex://diagnostics/routine_result_list.js';
+import type {RoutineSectionElement} from 'neovex://diagnostics/routine_section.js';
+import {RoutineType, StandardRoutineResult} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
+import type {TextBadgeElement} from 'neovex://diagnostics/text_badge.js';
+import {BadgeType} from 'neovex://diagnostics/text_badge.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
-import 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import 'neovex://os-settings/lazy_load.js';
+import 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
 
-import {KeyCombinationInputDialogElement} from 'chrome://os-settings/lazy_load.js';
-import type {KeyEvent} from 'chrome://os-settings/os_settings.js';
-import {fakeMice, Vkey} from 'chrome://os-settings/os_settings.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {KeyCombinationInputDialogElement} from 'neovex://os-settings/lazy_load.js';
+import type {KeyEvent} from 'neovex://os-settings/os_settings.js';
+import {fakeMice, Vkey} from 'neovex://os-settings/os_settings.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 suite('<key-combination-input-dialog>', () => {
   let dialog: KeyCombinationInputDialogElement;

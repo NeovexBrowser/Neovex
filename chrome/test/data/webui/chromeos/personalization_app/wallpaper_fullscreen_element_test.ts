@@ -4,13 +4,13 @@
 
 /** @fileoverview Test suite for wallpaper-fullscreen component.  */
 
-import 'chrome://personalization/strings.m.js';
+import 'neovex://personalization/strings.m.js';
 
-import type {CurrentWallpaper, DisplayableImage, GooglePhotosPhoto, WallpaperImage} from 'chrome://personalization/js/personalization_app.js';
-import {DailyRefreshType, FullscreenPreviewState, OnlineImageType, setFullscreenStateAction, setShouldWaitForFullscreenOpacityTransitionsForTesting, WallpaperActionName, WallpaperFullscreenElement, WallpaperLayout, WallpaperObserver, WallpaperType} from 'chrome://personalization/js/personalization_app.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {CurrentWallpaper, DisplayableImage, GooglePhotosPhoto, WallpaperImage} from 'neovex://personalization/js/personalization_app.js';
+import {DailyRefreshType, FullscreenPreviewState, OnlineImageType, setFullscreenStateAction, setShouldWaitForFullscreenOpacityTransitionsForTesting, WallpaperActionName, WallpaperFullscreenElement, WallpaperLayout, WallpaperObserver, WallpaperType} from 'neovex://personalization/js/personalization_app.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {baseSetup, initElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';

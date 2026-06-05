@@ -5,4 +5,4 @@
 /**
  * @const {string}
  */
-const FILES_APP_SWA_ORIGIN = 'chrome://file-manager';
+const FILES_APP_SWA_ORIGIN = 'neovex://file-manager';

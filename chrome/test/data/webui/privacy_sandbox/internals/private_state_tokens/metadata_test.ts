@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
+import 'neovex://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
 
-import type {CrIconButtonElement, PrivateStateTokensMetadataElement} from 'chrome://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
-import {assertArrayEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {$$, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrIconButtonElement, PrivateStateTokensMetadataElement} from 'neovex://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
+import {assertArrayEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {$$, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {dummyMetadata} from './test_data.js';
 
@@ -42,6 +42,6 @@ suite('MetadataTest', () => {
     backButton.click();
     const url = window.location.href;
     assertEquals(
-        'chrome://privacy-sandbox-internals/private-state-tokens', url);
+        'neovex://privacy-sandbox-internals/private-state-tokens', url);
   });
 });

@@ -5,7 +5,7 @@
 import {ChildUntrustedPageReceiver, ParentTrustedPageRemote} from './sample_system_web_app_shared_ui.mojom-webui.js';
 import {UntrustedPageInterfacesFactory} from './sample_system_web_app_untrusted_ui.mojom-webui.js';
 
-export const PARENT_PAGE_ORIGIN = 'chrome://sample-system-web-app';
+export const PARENT_PAGE_ORIGIN = 'neovex://sample-system-web-app';
 
 /**
  * Implements ChildUntrustedPage interface to handle requests from the parent

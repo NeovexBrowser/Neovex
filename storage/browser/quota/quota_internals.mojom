@@ -20,7 +20,7 @@ struct BucketTableEntry {
 };
 
 // Interface for controlling Quota Internals.
-// Hosted on "chrome://quota-internals" for WebUI content::QuotaInternalsUI.
+// Hosted on "neovex://quota-internals" for WebUI content::QuotaInternalsUI.
 interface QuotaInternalsHandler {
     // Returns the total disk space, available disk space,
     // and temporary pool size, which is then converted to bytes

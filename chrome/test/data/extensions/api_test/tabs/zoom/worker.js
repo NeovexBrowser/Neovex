@@ -6,7 +6,7 @@
 // (because it is native UI) does not crash the browser.
 async function testNoCrashOnNativeUiTab() {
   // Create a tab that uses native UI, not WebUI, on Android.
-  const tab = await chrome.tabs.create({url: 'chrome://downloads'});
+  const tab = await chrome.tabs.create({url: 'neovex://downloads'});
   chrome.test.assertNoLastError();
 
   // Trying to check zoom level should fail but not crash.

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import type {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {EventTracker} from 'neovex://resources/js/event_tracker.js';
 
 import {CAPABILITIES_MANAGER_ACTIVE_DESTINATION_CAPS_LOADING, CAPABILITIES_MANAGER_ACTIVE_DESTINATION_CAPS_READY, CapabilitiesManager} from './data/capabilities_manager.js';
 import {PREVIEW_REQUEST_FINISHED_EVENT, PREVIEW_REQUEST_STARTED_EVENT, PreviewTicketManager} from './data/preview_ticket_manager.js';

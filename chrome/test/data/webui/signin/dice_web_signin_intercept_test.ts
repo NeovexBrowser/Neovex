@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_app.js';
+import 'neovex://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_app.js';
 
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import type {DiceWebSigninInterceptAppElement} from 'chrome://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_app.js';
-import type {InterceptionParameters} from 'chrome://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
-import {DiceWebSigninInterceptBrowserProxyImpl} from 'chrome://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isChildVisible, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import type {DiceWebSigninInterceptAppElement} from 'neovex://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_app.js';
+import type {InterceptionParameters} from 'neovex://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
+import {DiceWebSigninInterceptBrowserProxyImpl} from 'neovex://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isChildVisible, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestDiceWebSigninInterceptBrowserProxy} from './test_dice_web_signin_intercept_browser_proxy.js';
 
-const AVATAR_URL_1: string = 'chrome://theme/IDR_PROFILE_AVATAR_1';
-const AVATAR_URL_2: string = 'chrome://theme/IDR_PROFILE_AVATAR_2';
+const AVATAR_URL_1: string = 'neovex://theme/IDR_PROFILE_AVATAR_1';
+const AVATAR_URL_2: string = 'neovex://theme/IDR_PROFILE_AVATAR_2';
 const AVATAR_BADGE_SOURCE: string = 'cr:domain';
 
 const BASE_PARAMETERS: InterceptionParameters = {

@@ -59,7 +59,7 @@ interface NewTabFooterHandler {
   // to |UpdateNtpExtensionName|. If that call did not determine a valid ID,
   // this opens the extension settings page.
   OpenExtensionOptionsPageWithFallback();
-  // Opens the chrome://management page.
+  // Opens the neovex://management page.
   OpenManagementPage();
   // Opens url in the current tab.
   OpenUrlInCurrentTab(url.mojom.Url url);

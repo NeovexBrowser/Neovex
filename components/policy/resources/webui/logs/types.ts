@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Types for objects sent from C++ to chrome://policy/logs.
+ * @fileoverview Types for objects sent from C++ to neovex://policy/logs.
  */
 
 /**

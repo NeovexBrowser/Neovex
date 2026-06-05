@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {LoadTimeDataRaw} from 'chrome://resources/js/load_time_data.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
-import {html, render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {LoadTimeDataRaw} from 'neovex://resources/js/load_time_data.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {html, render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {HIDDEN_CLASS} from './constants.js';
 import {Runner} from './dino_game/offline.js';
@@ -34,7 +34,7 @@ interface ErrorPageController {
 }
 
 interface TemplateData {
-  // Properties that exist in both error pages and chrome://dino.
+  // Properties that exist in both error pages and neovex://dino.
   errorCode: string;
   heading: {
     msg: string,
@@ -42,7 +42,7 @@ interface TemplateData {
   iconClass: string;
 
   // Properties that exist only when there is an actual error and not when
-  // visiting chrome://dino directly.
+  // visiting neovex://dino directly.
   details?: string;
   hideDetails?: string;
   suggestionsDetails?: Array<{header: string, body: string}>;

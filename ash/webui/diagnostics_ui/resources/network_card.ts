@@ -9,9 +9,9 @@ import './ip_config_info_drawer.js';
 import './network_info.js';
 import './network_troubleshooting.js';
 
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {TroubleshootingInfo} from './diagnostics_types.js';
 import {filterNameServers, formatMacAddress, getNetworkCardTitle, getNetworkState, getNetworkType, isConnectedOrOnline, isNetworkMissingNameServers} from './diagnostics_utils.js';
@@ -21,7 +21,7 @@ import type {Network, NetworkHealthProviderInterface} from './network_health_pro
 import {NetworkState, NetworkStateObserverReceiver, NetworkType} from './network_health_provider.mojom-webui.js';
 
 const BASE_SUPPORT_URL = 'https://support.google.com/chromebook?p=diagnostics_';
-const SETTINGS_URL = 'chrome://os-settings/';
+const SETTINGS_URL = 'neovex://os-settings/';
 
 /**
  * Represents the state of the network troubleshooting banner.

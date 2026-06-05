@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shopping-insights-side-panel.top-chrome/app.js';
+import 'neovex://shopping-insights-side-panel.top-chrome/app.js';
 
-import {PageCallbackRouter} from 'chrome://resources/cr_components/commerce/price_tracking.mojom-webui.js';
-import type {PageRemote} from 'chrome://resources/cr_components/commerce/price_tracking.mojom-webui.js';
-import {PriceTrackingBrowserProxyImpl} from 'chrome://resources/cr_components/commerce/price_tracking_browser_proxy.js';
-import type {BookmarkProductInfo, ProductInfo} from 'chrome://resources/cr_components/commerce/shared.mojom-webui.js';
-import type {PriceInsightsInfo} from 'chrome://resources/cr_components/commerce/shopping_service.mojom-webui.js';
-import {PriceInsightsInfo_PriceBucket} from 'chrome://resources/cr_components/commerce/shopping_service.mojom-webui.js';
-import {ShoppingServiceBrowserProxyImpl} from 'chrome://resources/cr_components/commerce/shopping_service_browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {PriceTrackingSection} from 'chrome://shopping-insights-side-panel.top-chrome/price_tracking_section.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {PageCallbackRouter} from 'neovex://resources/cr_components/commerce/price_tracking.mojom-webui.js';
+import type {PageRemote} from 'neovex://resources/cr_components/commerce/price_tracking.mojom-webui.js';
+import {PriceTrackingBrowserProxyImpl} from 'neovex://resources/cr_components/commerce/price_tracking_browser_proxy.js';
+import type {BookmarkProductInfo, ProductInfo} from 'neovex://resources/cr_components/commerce/shared.mojom-webui.js';
+import type {PriceInsightsInfo} from 'neovex://resources/cr_components/commerce/shopping_service.mojom-webui.js';
+import {PriceInsightsInfo_PriceBucket} from 'neovex://resources/cr_components/commerce/shopping_service.mojom-webui.js';
+import {ShoppingServiceBrowserProxyImpl} from 'neovex://resources/cr_components/commerce/shopping_service_browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {PriceTrackingSection} from 'neovex://shopping-insights-side-panel.top-chrome/price_tracking_section.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
 
 suite('PriceTrackingSectionTest', () => {
   let priceTrackingSection: PriceTrackingSection;

@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SearchManager} from 'chrome://settings/settings.js';
-import {getSearchManager, getTrustedHTML as getTrustedStaticHtml, showBubble} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import type {SearchManager} from 'neovex://settings/settings.js';
+import {getSearchManager, getTrustedHTML as getTrustedStaticHtml, showBubble} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
 
 // clang-format on
 

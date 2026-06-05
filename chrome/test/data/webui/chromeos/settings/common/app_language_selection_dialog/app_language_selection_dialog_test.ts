@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {AppLanguageSelectionDialogElement, AppLanguageSelectionItemElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement, CrSearchFieldElement, IronListElement} from 'chrome://os-settings/os_settings.js';
-import {AppLanguageSelectionDialogEntryPoint, AppManagementStore} from 'chrome://os-settings/os_settings.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {AppLanguageSelectionDialogElement, AppLanguageSelectionItemElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement, CrSearchFieldElement, IronListElement} from 'neovex://os-settings/os_settings.js';
+import {AppLanguageSelectionDialogEntryPoint, AppManagementStore} from 'neovex://os-settings/os_settings.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import type {FakePageHandler} from '../../app_management/fake_page_handler.js';
 import {isHidden, setupFakeHandler} from '../../app_management/test_util.js';

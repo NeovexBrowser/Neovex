@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
 
 import {
   CrCheckboxElement,
-} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
 import {
   CrDialogElement,
-} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
 import {
   createRef,
   css,
@@ -19,7 +19,7 @@ import {
   LitElement,
   nothing,
   ref,
-} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/mwc/lit/index.js';
 
 import {assertExists} from '../../assert.js';
 import {I18nString} from '../../i18n_string.js';

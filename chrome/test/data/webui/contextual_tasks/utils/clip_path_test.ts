@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getNonOccludedClipPath} from 'chrome://contextual-tasks/utils/clip_path.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {getNonOccludedClipPath} from 'neovex://contextual-tasks/utils/clip_path.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 function assertClipPathEquals(expected: string, actual: string) {
   assertEquals(expected.replace(/\s/g, ''), actual.replace(/\s/g, ''));

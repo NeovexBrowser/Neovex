@@ -7,11 +7,11 @@
  * selected for daily refresh is shared with other Google Photos accounts.
  */
 
-import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
 
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {isGooglePhotosSharedAlbumsEnabled} from '../load_time_booleans.js';
 

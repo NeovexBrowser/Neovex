@@ -5,9 +5,9 @@
 import '//resources/cr_components/localized_link/localized_link.js';
 
 import type {LocalizedLinkElement} from '//resources/cr_components/localized_link/localized_link.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
 
 suite('localized_link', function() {
   let localizedStringWithLink: LocalizedLinkElement|null;

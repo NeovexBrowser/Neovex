@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {HIDDEN_CLASS} from '../constants.js';
 
@@ -136,7 +136,7 @@ enum RunnerEvents {
 
 let runnerInstance: Runner|null = null;
 
-const ARCADE_MODE_URL: string = 'chrome://dino/';
+const ARCADE_MODE_URL: string = 'neovex://dino/';
 
 const RESOURCE_POSTFIX: string = 'offline-resources-';
 

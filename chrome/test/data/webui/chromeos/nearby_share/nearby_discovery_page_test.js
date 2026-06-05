@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://nearby/nearby_discovery_page.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://nearby/nearby_discovery_page.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {setDiscoveryManagerForTesting} from 'chrome://nearby/discovery_manager.js';
-import {SelectShareTargetResult, ShareTargetListenerRemote, StartDiscoveryResult} from 'chrome://nearby/shared/nearby_share.mojom-webui.js';
-import {ShareType} from 'chrome://nearby/shared/nearby_share_share_type.mojom-webui.js';
-import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {ShareTargetType} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_target_types.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {keyEventOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {setDiscoveryManagerForTesting} from 'neovex://nearby/discovery_manager.js';
+import {SelectShareTargetResult, ShareTargetListenerRemote, StartDiscoveryResult} from 'neovex://nearby/shared/nearby_share.mojom-webui.js';
+import {ShareType} from 'neovex://nearby/shared/nearby_share_share_type.mojom-webui.js';
+import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {ShareTargetType} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_target_types.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {keyEventOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
 
 import {assertEquals, assertFalse, assertNotEquals, assertTrue} from '../chai_assert.js';
 import {isVisible} from '../test_util.js';

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://settings/settings.js';
+import 'neovex://settings/settings.js';
 
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrCollapseElement, SettingsRadioGroupElement} from 'chrome://settings/lazy_load.js';
-import type {SettingsMemoryPageElement} from 'chrome://settings/settings.js';
-import {MEMORY_SAVER_MODE_AGGRESSIVENESS_PREF, MEMORY_SAVER_MODE_PREF, MemorySaverModeAggressiveness, MemorySaverModeState, PerformanceMetricsProxyImpl} from 'chrome://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrCollapseElement, SettingsRadioGroupElement} from 'neovex://settings/lazy_load.js';
+import type {SettingsMemoryPageElement} from 'neovex://settings/settings.js';
+import {MEMORY_SAVER_MODE_AGGRESSIVENESS_PREF, MEMORY_SAVER_MODE_PREF, MemorySaverModeAggressiveness, MemorySaverModeState, PerformanceMetricsProxyImpl} from 'neovex://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestPerformanceMetricsProxy} from './test_performance_metrics_proxy.js';
 

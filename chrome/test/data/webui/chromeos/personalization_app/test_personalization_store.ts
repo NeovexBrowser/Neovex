@@ -7,9 +7,9 @@
  * and manipulate state.
  */
 
-import type {Actions, PersonalizationState} from 'chrome://personalization/js/personalization_app.js';
-import {emptyState, PersonalizationStore, reduce} from 'chrome://personalization/js/personalization_app.js';
-import {TestStore} from 'chrome://webui-test/test_store.js';
+import type {Actions, PersonalizationState} from 'neovex://personalization/js/personalization_app.js';
+import {emptyState, PersonalizationStore, reduce} from 'neovex://personalization/js/personalization_app.js';
+import {TestStore} from 'neovex://webui-test/test_store.js';
 
 /**
  * Records actions and states observed during a test run. A Personalization App

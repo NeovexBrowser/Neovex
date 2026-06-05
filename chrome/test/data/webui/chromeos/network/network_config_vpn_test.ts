@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/strings.m.js';
-import 'chrome://resources/ash/common/network/network_config.js';
+import 'neovex://os-settings/strings.m.js';
+import 'neovex://resources/ash/common/network/network_config.js';
 
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkConfigElement} from 'chrome://resources/ash/common/network/network_config.js';
-import type {NetworkConfigInputElement} from 'chrome://resources/ash/common/network/network_config_input.js';
-import type {NetworkConfigSelectElement} from 'chrome://resources/ash/common/network/network_config_select.js';
-import type {NetworkPasswordInputElement} from 'chrome://resources/ash/common/network/network_password_input.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {ManagedIPConfigProperties, ManagedIPSecProperties, ManagedL2TPProperties, ManagedString, ManagedWireGuardProperties, NetworkCertificate} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {VpnType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType, PolicySource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkConfigElement} from 'neovex://resources/ash/common/network/network_config.js';
+import type {NetworkConfigInputElement} from 'neovex://resources/ash/common/network/network_config_input.js';
+import type {NetworkConfigSelectElement} from 'neovex://resources/ash/common/network/network_config_select.js';
+import type {NetworkPasswordInputElement} from 'neovex://resources/ash/common/network/network_password_input.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {ManagedIPConfigProperties, ManagedIPSecProperties, ManagedL2TPProperties, ManagedString, ManagedWireGuardProperties, NetworkCertificate} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {VpnType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType, PolicySource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 import {FakeNetworkConfig} from '../fake_network_config_mojom.js';
 

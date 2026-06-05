@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'chrome://resources/js/ios/web_ui.js';
+import 'neovex://resources/js/ios/web_ui.js';
 // </if>
 
 import '/strings.m.js';
 
 import {html, render} from '//resources/lit/v3_0/lit.rollup.js';
-import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 interface CookieInfo {
   email: string;

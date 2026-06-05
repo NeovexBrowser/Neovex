@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
 
 import {type CurrentDirectory, PropStatus} from '../state/state.js';
 import {getEmptyState, getStore} from '../state/store.js';
@@ -29,7 +29,7 @@ export function testPathWithSlash(done: () => void) {
   const store = getStore();
   store.init(getEmptyState());
   const currentDirectory: CurrentDirectory = {
-    key: 'filesystem:chrome://file-manager/external/aaa/bbb',
+    key: 'filesystem:neovex://file-manager/external/aaa/bbb',
     status: PropStatus.SUCCESS,
     rootType: undefined,
     pathComponents: [

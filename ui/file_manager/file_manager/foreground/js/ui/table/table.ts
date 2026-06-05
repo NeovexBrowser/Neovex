@@ -6,8 +6,8 @@
  * @fileoverview This implements a table control.
  */
 
-import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {type ArrayDataModel} from '../../../../common/js/array_data_model.js';
 import {boolAttrSetter, convertToKebabCase, crInjectTypeAndInit} from '../../../../common/js/cr_ui.js';

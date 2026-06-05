@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewHeaderElement} from 'chrome://print/print_preview.js';
-import {Destination, DestinationOrigin, GooglePromotedDestinationId, PrintPreviewPluralStringProxyImpl, State} from 'chrome://print/print_preview.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
+import type {PrintPreviewHeaderElement} from 'neovex://print/print_preview.js';
+import {Destination, DestinationOrigin, GooglePromotedDestinationId, PrintPreviewPluralStringProxyImpl, State} from 'neovex://print/print_preview.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
 
 suite('HeaderTest', function() {
   let header: PrintPreviewHeaderElement;
@@ -82,7 +82,7 @@ suite('HeaderTest', function() {
       assertEquals('printPreviewPageSummaryLabel', messageName);
       assertEquals(1, itemCount);
     }
-    // Verify the chrome://print case of a zero length document does not show
+    // Verify the neovex://print case of a zero length document does not show
     // the summary.
     header.sheetCount = 0;
     assertEquals('', summary.textContent);

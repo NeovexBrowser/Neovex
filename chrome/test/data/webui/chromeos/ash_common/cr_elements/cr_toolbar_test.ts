@@ -5,13 +5,13 @@
 /** @fileoverview Suite of tests for cr-toolbar. */
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar.js';
 
-import type {CrToolbarElement} from 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {CrToolbarElement} from 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-toolbar', function() {

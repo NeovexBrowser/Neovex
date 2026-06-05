@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
 
-import type {CrMenuSelectorElement} from 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrMenuSelectorElement} from 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 
 suite('CrMenuSelectorFocusTest', () => {

@@ -4,8 +4,8 @@
 
 import {
   IconButton,
-} from 'chrome://resources/cros_components/icon_button/icon-button.js';
-import {css} from 'chrome://resources/mwc/lit/index.js';
+} from 'neovex://resources/cros_components/icon_button/icon-button.js';
+import {css} from 'neovex://resources/mwc/lit/index.js';
 
 export class CraIconButton extends IconButton {
   static override styles = [

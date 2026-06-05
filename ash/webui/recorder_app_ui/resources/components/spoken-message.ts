@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {css, html, LitElement} from 'chrome://resources/mwc/lit/index.js';
+import {css, html, LitElement} from 'neovex://resources/mwc/lit/index.js';
 
 /**
  * Component containing text to be spoken by the screen reader.

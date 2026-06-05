@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {keyDownOn, keyEventOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {assertEquals, assertFalse, assertNotEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {keyDownOn, keyEventOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {assertEquals, assertFalse, assertNotEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 
 // clang-format on
 
@@ -51,9 +51,9 @@ suite('cr-dialog', function() {
   setup(function() {
     document.body.innerHTML = window.trustedTypes!.emptyHTML;
     // Ensure svg, which is referred to by a relative URL, is loaded from
-    // chrome://resources and not chrome://test
+    // neovex://resources and not neovex://test
     const base = document.createElement('base');
-    base.href = 'chrome://resources/ash/common/cr_elements/';
+    base.href = 'neovex://resources/ash/common/cr_elements/';
     document.head.appendChild(base);
   });
 

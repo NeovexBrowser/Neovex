@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-const parentMessagePipe = new MessagePipe('chrome://eche-app', window.parent);
+const parentMessagePipe = new MessagePipe('neovex://eche-app', window.parent);
 
 let signalingCallback = null;
 parentMessagePipe.registerHandler(Message.SEND_SIGNAL, async (message) => {

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 function getExpectedFontFamily(expectingSystemFont: boolean): string {
   if (!expectingSystemFont) {
@@ -83,7 +83,7 @@ suite('TextDefaults', function() {
 
   test('text_defaults.css', function() {
     return testFontFamily(
-        'chrome://resources/css/text_defaults.css',
+        'neovex://resources/css/text_defaults.css',
         true /*expectingSystemFont*/);
   });
 
@@ -94,6 +94,6 @@ suite('TextDefaults', function() {
     // </if>
 
     return testFontFamily(
-        'chrome://resources/css/text_defaults_md.css', expectingSystemFont);
+        'neovex://resources/css/text_defaults_md.css', expectingSystemFont);
   });
 });

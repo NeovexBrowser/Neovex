@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for chrome://office-fallback. Tests the entire page
+ * @fileoverview Test suite for neovex://office-fallback. Tests the entire page
  * instead of individual components.
  */
 
@@ -14,7 +14,7 @@ GEN('#include "content/public/test/browser_test.h"');
 
 var OfficeFallbackAppBrowserTest = class extends PolymerTest {
   get browsePreload() {
-    return 'chrome://office-fallback/test_loader.html?module=chromeos/' +
+    return 'neovex://office-fallback/test_loader.html?module=chromeos/' +
         'office_fallback/office_fallback_app_test.js';
   }
 

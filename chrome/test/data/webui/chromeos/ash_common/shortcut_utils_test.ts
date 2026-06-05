@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input.js';
+import 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input.js';
 
-import {VKey} from 'chrome://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
-import type {ShortcutLabelProperties} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {createInputKeyParts, KeyInputState, MetaKey, Modifier} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {AcceleratorKeyState} from 'chrome://resources/mojo/ui/base/accelerators/mojom/accelerator.mojom-webui.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {VKey} from 'neovex://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
+import type {ShortcutLabelProperties} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {createInputKeyParts, KeyInputState, MetaKey, Modifier} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {AcceleratorKeyState} from 'neovex://resources/mojo/ui/base/accelerators/mojom/accelerator.mojom-webui.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('ShortcutUtils', function() {
   test('createInputKeyParts', async () => {

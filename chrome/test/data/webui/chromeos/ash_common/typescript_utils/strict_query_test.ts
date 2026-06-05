@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assertEquals, assertThrows} from 'chrome://webui-test/chai_assert.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assertEquals, assertThrows} from 'neovex://webui-test/chai_assert.js';
 
 const initSectionElement = (): HTMLElement => {
   const sectionElement = document.createElement('section');

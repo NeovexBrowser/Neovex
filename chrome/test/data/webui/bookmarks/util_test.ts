@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ACCOUNT_HEADING_NODE_ID, canEditNode, canReorderChildren, getDefaultSelectedFolder, getDescendants, isRootNode, isRootOrChildOfRoot, LOCAL_HEADING_NODE_ID, removeIdsFromObject, removeIdsFromSet, ROOT_NODE_ID} from 'chrome://bookmarks/bookmarks.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {ACCOUNT_HEADING_NODE_ID, canEditNode, canReorderChildren, getDefaultSelectedFolder, getDescendants, isRootNode, isRootOrChildOfRoot, LOCAL_HEADING_NODE_ID, removeIdsFromObject, removeIdsFromSet, ROOT_NODE_ID} from 'neovex://bookmarks/bookmarks.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {TestStore} from './test_store.js';
 import {createFolder, createItem, normalizeIterable, testTree} from './test_util.js';

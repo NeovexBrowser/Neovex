@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {$} from 'chrome://resources/js/util.js';
+import {$} from 'neovex://resources/js/util.js';
 import * as SDPUtils from './sdp_utils.js';
 
 const MAX_NUMBER_OF_STATE_CHANGES_DISPLAYED = 10;

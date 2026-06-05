@@ -157,16 +157,16 @@ interface GlicPreloadHandler {
   PrepareForClient() => (PrepareForClientResult result);
 };
 
-// Factory for GlicPreloadHandler used in chrome://glic.
+// Factory for GlicPreloadHandler used in neovex://glic.
 interface GlicPreloadHandlerFactory {
-  // Creates the GlicPreloadHandler for chrome://glic.
+  // Creates the GlicPreloadHandler for neovex://glic.
   CreatePreloadHandler(pending_receiver<GlicPreloadHandler> receiver,
                        pending_remote<PreloadPage> page);
 };
 
-// Factory for PageHandler used in chrome://glic.
+// Factory for PageHandler used in neovex://glic.
 interface PageHandlerFactory {
-  // Creates the PageHandler for chrome://glic.
+  // Creates the PageHandler for neovex://glic.
   CreatePageHandler(
       pending_receiver<PageHandler> receiver, pending_remote<Page> page);
 };
@@ -328,9 +328,9 @@ interface InternalsPageHandler {
                      url.mojom.Url web_continuity_originating_host_url);
 };
 
-// Factory for InternalsPageHandler used in chrome://glic/internals.
+// Factory for InternalsPageHandler used in neovex://glic/internals.
 interface InternalsPageHandlerFactory {
-  // Creates the InternalsPageHandler for chrome://glic/internals.
+  // Creates the InternalsPageHandler for neovex://glic/internals.
   CreateInternalsPageHandler(
       pending_receiver<InternalsPageHandler> receiver);
 };

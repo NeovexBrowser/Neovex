@@ -15,7 +15,7 @@ struct IdbPartitionMetadata {
   array<IdbOriginMetadata> origin_list;
 };
 
-// This interface defines "chrome://indexeddb-internals" access to the IDB
+// This interface defines "neovex://indexeddb-internals" access to the IDB
 // backend. Implemented by IndexedDBInternalsUI.
 interface IdbInternalsHandler {
   // Returns an array of 'IdbPartitionMetadata's or an error message. Each

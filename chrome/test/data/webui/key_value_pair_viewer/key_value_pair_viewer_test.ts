@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://system/shared/key_value_pair_viewer/key_value_pair_viewer.js';
-import 'chrome://system/strings.m.js';
+import 'neovex://system/shared/key_value_pair_viewer/key_value_pair_viewer.js';
+import 'neovex://system/strings.m.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {COLLAPSE_THRESHOLD} from 'chrome://system/shared/key_value_pair_viewer/key_value_pair_entry.js';
-import type {KeyValuePairEntry, KeyValuePairEntryElement} from 'chrome://system/shared/key_value_pair_viewer/key_value_pair_entry.js';
-import type {KeyValuePairViewerElement} from 'chrome://system/shared/key_value_pair_viewer/key_value_pair_viewer.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {COLLAPSE_THRESHOLD} from 'neovex://system/shared/key_value_pair_viewer/key_value_pair_entry.js';
+import type {KeyValuePairEntry, KeyValuePairEntryElement} from 'neovex://system/shared/key_value_pair_viewer/key_value_pair_entry.js';
+import type {KeyValuePairViewerElement} from 'neovex://system/shared/key_value_pair_viewer/key_value_pair_viewer.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
 
 export const ENTRIES: KeyValuePairEntry[] = [
   {key: 'CHROME VERSION', value: '1.2.3.4'},

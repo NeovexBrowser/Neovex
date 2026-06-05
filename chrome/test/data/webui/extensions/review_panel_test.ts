@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extensions-review-panel. */
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import type {ExtensionsReviewPanelElement} from 'chrome://extensions/extensions.js';
-import {PluralStringProxyImpl} from 'chrome://extensions/extensions.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ExtensionsReviewPanelElement} from 'neovex://extensions/extensions.js';
+import {PluralStringProxyImpl} from 'neovex://extensions/extensions.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createExtensionInfo, MockItemDelegate} from './test_util.js';
 

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {FakeNetworkHealthProvider} from 'chrome://diagnostics/fake_network_health_provider.js';
-import {FakeSystemDataProvider} from 'chrome://diagnostics/fake_system_data_provider.js';
-import {FakeSystemRoutineController} from 'chrome://diagnostics/fake_system_routine_controller.js';
-import {getNetworkHealthProvider, getSystemDataProvider, getSystemRoutineController, setNetworkHealthProviderForTesting, setSystemDataProviderForTesting, setSystemRoutineControllerForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
-import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {FakeNetworkHealthProvider} from 'neovex://diagnostics/fake_network_health_provider.js';
+import {FakeSystemDataProvider} from 'neovex://diagnostics/fake_system_data_provider.js';
+import {FakeSystemRoutineController} from 'neovex://diagnostics/fake_system_routine_controller.js';
+import {getNetworkHealthProvider, getSystemDataProvider, getSystemRoutineController, setNetworkHealthProviderForTesting, setSystemDataProviderForTesting, setSystemRoutineControllerForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
+import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('fakeMojoProviderTestSuite', function() {
   test('SettingGettingTestProvider', () => {

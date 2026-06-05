@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {Menu} from 'chrome://resources/cros_components/menu/menu.js';
-import {css} from 'chrome://resources/mwc/lit/index.js';
+import {Menu} from 'neovex://resources/cros_components/menu/menu.js';
+import {css} from 'neovex://resources/mwc/lit/index.js';
 
 export class CraMenu extends Menu {
   static override styles = [

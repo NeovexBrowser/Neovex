@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://new-tab-page/strings.m.js';
-import 'chrome://resources/cr_components/composebox/composebox.js';
+import 'neovex://new-tab-page/strings.m.js';
+import 'neovex://resources/cr_components/composebox/composebox.js';
 
-import type {ComposeboxFile} from 'chrome://resources/cr_components/composebox/common.js';
-import type {ComposeboxElement} from 'chrome://resources/cr_components/composebox/composebox.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'chrome://resources/cr_components/composebox/composebox.mojom-webui.js';
-import {ComposeboxProxyImpl} from 'chrome://resources/cr_components/composebox/composebox_proxy.js';
-import {ContextUploadStatus, ModelMode, ToolMode as ComposeboxToolMode} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import type {InputState} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import {WindowProxy} from 'chrome://resources/cr_components/composebox/window_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {TabInfo} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {TestMock} from 'chrome://webui-test/test_mock.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ComposeboxFile} from 'neovex://resources/cr_components/composebox/common.js';
+import type {ComposeboxElement} from 'neovex://resources/cr_components/composebox/composebox.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'neovex://resources/cr_components/composebox/composebox.mojom-webui.js';
+import {ComposeboxProxyImpl} from 'neovex://resources/cr_components/composebox/composebox_proxy.js';
+import {ContextUploadStatus, ModelMode, ToolMode as ComposeboxToolMode} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import type {InputState} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import {WindowProxy} from 'neovex://resources/cr_components/composebox/window_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {TabInfo} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {TestMock} from 'neovex://webui-test/test_mock.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {createInputState, installMock} from './composebox_test_utils.js';
 

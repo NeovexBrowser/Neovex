@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
+import 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
 
-import {OmniboxPopupBrowserProxy, SearchboxBrowserProxy} from 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
-import type {OmniboxPopupAppElement} from 'chrome://omnibox-popup.top-chrome/omnibox_popup.js';
-import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {SelectionDirection, SelectionLineState, SelectionStep} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {WindowOpenDisposition} from 'chrome://resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {OmniboxPopupBrowserProxy, SearchboxBrowserProxy} from 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
+import type {OmniboxPopupAppElement} from 'neovex://omnibox-popup.top-chrome/omnibox_popup.js';
+import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {SelectionDirection, SelectionLineState, SelectionStep} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {WindowOpenDisposition} from 'neovex://resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestOmniboxPopupBrowserProxy} from './test_omnibox_popup_browser_proxy.js';
 import {TestSearchboxBrowserProxy} from './test_searchbox_browser_proxy.js';

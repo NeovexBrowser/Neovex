@@ -58,7 +58,7 @@ interface IndexedDBControl {
   // Forcibly closes all connections to all databases within the bucket.
   ForceClose(storage.mojom.BucketId bucket_id, ForceCloseReason reason) => ();
 
-  // Called by chrome://indexeddb-internals to download all of the indexeddb
+  // Called by neovex://indexeddb-internals to download all of the indexeddb
   // data for a particular bucket.  This creates a zip file at
   // `zip_path` using the temporary directory `temp_path` which needs to be
   // cleaned up after the user downloads the file.
@@ -67,7 +67,7 @@ interface IndexedDBControl {
           mojo_base.mojom.FilePath temp_path,
           mojo_base.mojom.FilePath zip_path);
 
-  // Called by chrome://indexeddb-internals to populate its page details. Gets
+  // Called by neovex://indexeddb-internals to populate its page details. Gets
   // all buckets across all origins.
   GetAllBucketsDetails()
       => (bool incognito, array<IdbOriginMetadata> details);

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://chrome-signin/inline_login_app.js';
+import 'neovex://chrome-signin/inline_login_app.js';
 
-import type {InlineLoginAppElement} from 'chrome://chrome-signin/inline_login_app.js';
-import {View} from 'chrome://chrome-signin/inline_login_app.js';
-import {InlineLoginBrowserProxyImpl} from 'chrome://chrome-signin/inline_login_browser_proxy.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {InlineLoginAppElement} from 'neovex://chrome-signin/inline_login_app.js';
+import {View} from 'neovex://chrome-signin/inline_login_app.js';
+import {InlineLoginBrowserProxyImpl} from 'neovex://chrome-signin/inline_login_browser_proxy.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {fakeAuthenticationData, fakeAuthenticationDataWithEmail, TestAuthenticator, TestInlineLoginBrowserProxy} from './inline_login_test_util.js';
 

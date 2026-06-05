@@ -7,21 +7,21 @@
  * wallpapers.
  */
 
-import 'chrome://resources/ash/common/personalization/common.css.js';
-import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
-import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
+import 'neovex://resources/ash/common/personalization/common.css.js';
+import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
 import './sea_pen.css.js';
 import './sea_pen_icons.html.js';
 import './surface_effects/sparkle_placeholder.js';
-import 'chrome://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
 import './sea_pen_error_element.js';
 import './sea_pen_feedback_element.js';
 import './sea_pen_image_loading_element.js';
 import './sea_pen_zero_state_svg_element.js';
 
-import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Query, SeaPenImageId} from './constants.js';
 import {QUERY} from './constants.js';

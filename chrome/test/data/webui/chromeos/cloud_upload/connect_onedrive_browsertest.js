@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for chrome://cloud-upload/connect_onedrive.js.
+ * @fileoverview Test suite for neovex://cloud-upload/connect_onedrive.js.
  */
 
 GEN_INCLUDE(['//chrome/test/data/webui/chromeos/polymer_browser_test_base.js']);
@@ -13,7 +13,7 @@ GEN('#include "content/public/test/browser_test.h"');
 
 var ConnectOneDriveTest = class extends PolymerTest {
   get browsePreload() {
-    return 'chrome://cloud-upload/test_loader.html?module=chromeos/' +
+    return 'neovex://cloud-upload/test_loader.html?module=chromeos/' +
         'cloud_upload/connect_onedrive_test.js';
   }
 

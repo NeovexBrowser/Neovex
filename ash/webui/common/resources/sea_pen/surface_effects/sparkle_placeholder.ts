@@ -6,9 +6,9 @@
  * @fileoverview Polymer element that displays a sparkle effect.
  */
 
-import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {Sparkle} from './sparkle.js';
 import {parseCssColor} from './utils.js';

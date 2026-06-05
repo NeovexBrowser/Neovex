@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {fakeCellularNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakeWifiNetwork} from 'chrome://diagnostics/fake_data.js';
-import {FakeNetworkHealthProvider} from 'chrome://diagnostics/fake_network_health_provider.js';
-import type {Network, NetworkListObserverRemote, NetworkStateObserverRemote} from 'chrome://diagnostics/network_health_provider.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {fakeCellularNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakeWifiNetwork} from 'neovex://diagnostics/fake_data.js';
+import {FakeNetworkHealthProvider} from 'neovex://diagnostics/fake_network_health_provider.js';
+import type {Network, NetworkListObserverRemote, NetworkStateObserverRemote} from 'neovex://diagnostics/network_health_provider.mojom-webui.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
 
 suite('fakeNetworkHealthProviderTestSuite', function() {
   let provider: FakeNetworkHealthProvider|null = null;

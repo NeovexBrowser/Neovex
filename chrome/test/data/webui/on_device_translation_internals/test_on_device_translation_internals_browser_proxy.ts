@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PageHandlerInterface, PageRemote} from 'chrome://on-device-translation-internals/on_device_translation_internals.mojom-webui.js';
-import {PageCallbackRouter} from 'chrome://on-device-translation-internals/on_device_translation_internals.mojom-webui.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {PageHandlerInterface, PageRemote} from 'neovex://on-device-translation-internals/on_device_translation_internals.mojom-webui.js';
+import {PageCallbackRouter} from 'neovex://on-device-translation-internals/on_device_translation_internals.mojom-webui.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 export class TestOnDeviceTranslationInternalsBrowserProxy {
   callbackRouter: PageCallbackRouter;

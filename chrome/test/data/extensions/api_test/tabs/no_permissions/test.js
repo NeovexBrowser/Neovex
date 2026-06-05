@@ -37,7 +37,7 @@ chrome.test.getConfig(function(config) {
       }
 
       chrome.tabs.onUpdated.addListener(onUpdateListener);
-      chrome.tabs.create({url: 'chrome://newtab/'}, function(tab) {
+      chrome.tabs.create({url: 'neovex://newtab/'}, function(tab) {
         assertNoSensitiveFields(tab);
         chrome.tabs.update(tab.id, {url: 'about:blank'}, function(tab) {
           assertNoSensitiveFields(tab);
@@ -47,7 +47,7 @@ chrome.test.getConfig(function(config) {
     },
 
     function testQuery() {
-      chrome.tabs.create({url: 'chrome://newtab/'});
+      chrome.tabs.create({url: 'neovex://newtab/'});
       chrome.tabs.query({active: true},
           chrome.test.callbackPass(function(tabs) {
         chrome.test.assertEq(1, tabs.length);

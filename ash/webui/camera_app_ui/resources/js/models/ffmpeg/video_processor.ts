@@ -331,7 +331,7 @@ class FfmpegVideoProcessor {
       locateFile: (file: string) => {
         assert(file === 'ffmpeg.wasm');
         // util.expandPath can't be used here since util includes
-        // load_time_data, which includes file under chrome://, but this file
+        // load_time_data, which includes file under neovex://, but this file
         // is in chrome-untrusted://.
         // TODO(pihsun): Separate util into multiple files so we can include
         // expandPath here.

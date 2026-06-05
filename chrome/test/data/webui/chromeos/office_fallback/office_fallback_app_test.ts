@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://office-fallback/office_fallback_dialog.js';
+import 'neovex://office-fallback/office_fallback_dialog.js';
 
-import {DialogChoice, PageHandlerRemote} from 'chrome://office-fallback/office_fallback.mojom-webui.js';
-import {OfficeFallbackBrowserProxy} from 'chrome://office-fallback/office_fallback_browser_proxy.js';
-import type {OfficeFallbackElement} from 'chrome://office-fallback/office_fallback_dialog.js';
-import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {DialogChoice, PageHandlerRemote} from 'neovex://office-fallback/office_fallback.mojom-webui.js';
+import {OfficeFallbackBrowserProxy} from 'neovex://office-fallback/office_fallback_browser_proxy.js';
+import type {OfficeFallbackElement} from 'neovex://office-fallback/office_fallback_dialog.js';
+import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
 
 interface ProxyArgs {
   titleText: string;

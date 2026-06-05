@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://connectivity-diagnostics/strings.m.js';
-import 'chrome://resources/ash/common/network_health/routine_group.js';
+import 'neovex://connectivity-diagnostics/strings.m.js';
+import 'neovex://resources/ash/common/network_health/routine_group.js';
 
-import type {Routine, RoutineResponse} from 'chrome://resources/ash/common/network_health/network_diagnostics_types.js';
-import {Icons} from 'chrome://resources/ash/common/network_health/network_diagnostics_types.js';
-import type {RoutineGroupElement} from 'chrome://resources/ash/common/network_health/routine_group.js';
-import {RoutineVerdict} from 'chrome://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {Routine, RoutineResponse} from 'neovex://resources/ash/common/network_health/network_diagnostics_types.js';
+import {Icons} from 'neovex://resources/ash/common/network_health/network_diagnostics_types.js';
+import type {RoutineGroupElement} from 'neovex://resources/ash/common/network_health/routine_group.js';
+import {RoutineVerdict} from 'neovex://resources/mojo/chromeos/services/network_health/public/mojom/network_diagnostics.mojom-webui.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {createResult, getIconFromSrc} from './network_health_test_utils.js';
 

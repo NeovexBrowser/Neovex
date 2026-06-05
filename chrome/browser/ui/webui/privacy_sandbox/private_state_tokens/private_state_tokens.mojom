@@ -9,7 +9,7 @@ struct IssuerTokenCount {
 };
 
 // Provides access to browser-side private state tokens data for
-// chrome://privacy-sandbox-internals/private-state-tokens
+// neovex://privacy-sandbox-internals/private-state-tokens
 interface PrivateStateTokensPageHandler {
   // Returns an array of issuer origin and the count of tokens issued by them.
   GetIssuerTokenCounts() => (

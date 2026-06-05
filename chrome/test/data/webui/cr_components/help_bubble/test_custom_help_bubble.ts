@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CustomHelpBubbleHandlerInterface} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
-import {CustomHelpBubbleUserAction} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
-import {CustomHelpBubbleProxyImpl} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble_proxy.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CustomHelpBubbleHandlerInterface} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
+import {CustomHelpBubbleUserAction} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
+import {CustomHelpBubbleProxyImpl} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble_proxy.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getHtml} from './test_custom_help_bubble.html.js';
 

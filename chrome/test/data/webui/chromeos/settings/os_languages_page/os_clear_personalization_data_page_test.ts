@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {OsSettingsClearPersonalizedDataDialogElement} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs} from 'chrome://os-settings/os_settings.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
+import type {OsSettingsClearPersonalizedDataDialogElement} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs} from 'neovex://os-settings/os_settings.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
 
 suite('<os-settings-japanese-clear-ime-data-dialog>', () => {
   function getFakePrefs() {

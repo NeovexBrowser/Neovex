@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getCss as getCrScrollableCss} from 'chrome://resources/cr_elements/cr_scrollable_lit.css.js';
-import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {getCss as getCrScrollableCss} from 'neovex://resources/cr_elements/cr_scrollable_lit.css.js';
+import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 class TestDummyElement extends CrLitElement {
   static get is() {

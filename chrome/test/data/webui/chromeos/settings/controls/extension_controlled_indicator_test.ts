@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type { ExtensionControlledIndicatorElement} from 'chrome://os-settings/os_settings.js';
-import {OpenWindowProxyImpl, ExtensionControlBrowserProxyImpl} from 'chrome://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type { ExtensionControlledIndicatorElement} from 'neovex://os-settings/os_settings.js';
+import {OpenWindowProxyImpl, ExtensionControlBrowserProxyImpl} from 'neovex://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
 
 import {TestExtensionControlBrowserProxy} from '../test_extension_control_browser_proxy.js';
 import {clearBody} from '../utils.js';
@@ -58,7 +58,7 @@ suite('extension controlled indicator', function() {
     assertTrue(!!button);
     button.click();
     const url = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(url, `chrome://extensions/?id=${indicator.extensionId}`);
+    assertEquals(url, `neovex://extensions/?id=${indicator.extensionId}`);
   });
 
   test('tapping disable button invokes browser proxy', async function() {

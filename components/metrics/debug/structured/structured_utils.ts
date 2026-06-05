@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 /**
  * Key-Value pair for the summary and metrics table.
@@ -89,7 +89,7 @@ export function updateStructuredMetricsEvents(
     searchParams: SearchParams|null, eventTemplate: HTMLTemplateElement,
     detailsTemplate: HTMLTemplateElement,
     kvTemplate: HTMLTemplateElement): void {
-  // If chrome://metrics-internal is opened on Windows, Mac, or Linux and
+  // If neovex://metrics-internal is opened on Windows, Mac, or Linux and
   // Structured Metrics is disabled, we should do nothing.
   if (events === null) {
     return;

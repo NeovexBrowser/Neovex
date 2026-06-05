@@ -6,8 +6,8 @@ import 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.j
 
 import type {PdfViewerElement, PdfViewerPrivateProxy} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import {PdfViewerPrivateProxyImpl} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {FakeChromeEvent} from 'chrome://webui-test/fake_chrome_event.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {FakeChromeEvent} from 'neovex://webui-test/fake_chrome_event.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 const SaveToDriveStatus = chrome.pdfViewerPrivate.SaveToDriveStatus;
 const SaveToDriveErrorType = chrome.pdfViewerPrivate.SaveToDriveErrorType;

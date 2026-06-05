@@ -4,14 +4,14 @@
 
 /** @fileoverview Suite of tests for the OS Settings ui for hats. */
 
-import 'chrome://os-settings/os_settings.js';
+import 'neovex://os-settings/os_settings.js';
 
-import {AccountManagerBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
-import type {CrToolbarSearchFieldElement, OsSettingsSearchBoxElement, OsSettingsUiElement} from 'chrome://os-settings/os_settings.js';
-import {CrSettingsPrefs, OsSettingsHatsBrowserProxyImpl} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {AccountManagerBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
+import type {CrToolbarSearchFieldElement, OsSettingsSearchBoxElement, OsSettingsUiElement} from 'neovex://os-settings/os_settings.js';
+import {CrSettingsPrefs, OsSettingsHatsBrowserProxyImpl} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {TestAccountManagerBrowserProxy} from '../os_people_page/test_account_manager_browser_proxy.js';
 import {clearBody} from '../utils.js';

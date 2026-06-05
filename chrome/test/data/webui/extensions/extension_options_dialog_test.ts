@@ -7,11 +7,11 @@
  * These are run as part of interactive_ui_tests.
  */
 
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('ExtensionOptionsDialogTest', () => {
   test('show options dialog', async () => {

@@ -909,7 +909,7 @@ body.check-select #read-only-indicator {
 }
 
 .spinner {
-  background: url(chrome://resources/images/throbber_small.svg) center/100%
+  background: url(neovex://resources/images/throbber_small.svg) center/100%
       no-repeat;
   height: 16px;
   left: 50%;
@@ -1534,7 +1534,7 @@ li[renaming=''] .filename-label {
 
 /* The managed icon in the details list for DLP restricted files. */
 .dlp-managed-icon {
-  -webkit-mask-image: url(chrome://resources/images/business.svg);
+  -webkit-mask-image: url(neovex://resources/images/business.svg);
 }
 
 /* The encrypted icon in the details list for Google Drive CSE files. */
@@ -2075,8 +2075,8 @@ list.autocomplete-suggestions > [lead] {
 
 .error-dialog-frame .error-dialog-img {
   background-image: image-set(
-    url(chrome://theme/IDR_ERROR_NETWORK_GENERIC) 1x,
-    url(chrome://theme/IDR_ERROR_NETWORK_GENERIC@2x) 2x);
+    url(neovex://theme/IDR_ERROR_NETWORK_GENERIC) 1x,
+    url(neovex://theme/IDR_ERROR_NETWORK_GENERIC@2x) 2x);
   background-position: center;
   background-repeat: no-repeat;
   height: 40px;

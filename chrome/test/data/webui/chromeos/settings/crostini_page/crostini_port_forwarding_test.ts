@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {ContainerInfo, ContainerSelectElement, CrostiniPortForwardingElement, CrostiniPortSetting} from 'chrome://os-settings/lazy_load.js';
-import {CrostiniBrowserProxyImpl, VmType} from 'chrome://os-settings/lazy_load.js';
-import type {CrInputElement, CrToastElement, CrToggleElement} from 'chrome://os-settings/os_settings.js';
-import {Router, routes} from 'chrome://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {ContainerInfo, ContainerSelectElement, CrostiniPortForwardingElement, CrostiniPortSetting} from 'neovex://os-settings/lazy_load.js';
+import {CrostiniBrowserProxyImpl, VmType} from 'neovex://os-settings/lazy_load.js';
+import type {CrInputElement, CrToastElement, CrToggleElement} from 'neovex://os-settings/os_settings.js';
+import {Router, routes} from 'neovex://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import {TestCrostiniBrowserProxy} from './test_crostini_browser_proxy.js';
 

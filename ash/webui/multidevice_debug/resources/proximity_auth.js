@@ -3,7 +3,7 @@
  * found in the LICENSE file.
  */
 
-import {EventTypeForDebugging, MultiDeviceSetup} from 'chrome://resources/mojo/chromeos/ash/services/multidevice_setup/public/mojom/multidevice_setup.mojom-webui.js';
+import {EventTypeForDebugging, MultiDeviceSetup} from 'neovex://resources/mojo/chromeos/ash/services/multidevice_setup/public/mojom/multidevice_setup.mojom-webui.js';
 
 import {Logs} from './logs.js';
 import {WebUI} from './webui.js';

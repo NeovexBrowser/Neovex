@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertInstanceof} from 'chrome://resources/js/assert.js';
-import type {PaperRippleElement} from 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import {assertInstanceof} from 'neovex://resources/js/assert.js';
+import type {PaperRippleElement} from 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
 
 import {Menu} from './menu.js';
 import {MenuItem, type MenuItemActivationEvent} from './menu_item.js';

@@ -229,7 +229,7 @@ chrome.test.runTests([
   },
 
   function newSpecificPage() {
-    runNewPageTest('/json/new?chrome://version/', "chrome://version/");
+    runNewPageTest('/json/new?neovex://version/', "neovex://version/");
   },
 
   function newDefaultPage() {

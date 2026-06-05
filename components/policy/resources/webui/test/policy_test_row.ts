@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 import '/strings.m.js';
 
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
 
 import type {PolicyInfo, PolicySchema, PresetAtrributes} from './policy_test_browser_proxy.js';
 import {LevelNamesToValues, PolicyLevel, PolicyScope, PolicySource, Presets, ScopeNamesToValues, SourceNamesToValues} from './policy_test_browser_proxy.js';

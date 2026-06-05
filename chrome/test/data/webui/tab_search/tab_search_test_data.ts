@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Token} from 'chrome://resources/mojo/mojo/public/mojom/base/token.mojom-webui.js';
-import type {ProfileData, RecentlyClosedTab, Tab, Window} from 'chrome://tab-search.top-chrome/tab_search.js';
-import {TabAlertState} from 'chrome://tab-search.top-chrome/tab_search.js';
+import type {Token} from 'neovex://resources/mojo/mojo/public/mojom/base/token.mojom-webui.js';
+import type {ProfileData, RecentlyClosedTab, Tab, Window} from 'neovex://tab-search.top-chrome/tab_search.js';
+import {TabAlertState} from 'neovex://tab-search.top-chrome/tab_search.js';
 
 export const SAMPLE_WINDOW_HEIGHT: number = 448;
 

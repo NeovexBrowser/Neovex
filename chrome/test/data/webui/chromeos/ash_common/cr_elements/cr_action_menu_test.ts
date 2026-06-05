@@ -3,20 +3,20 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
 
-import type { CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import {AnchorAlignment} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {keyDownOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
-import {getTrustedHTML as getTrustedStaticHtml} from 'chrome://resources/js/static_types.js';
+import type { CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import {AnchorAlignment} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {keyDownOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
+import {getTrustedHTML as getTrustedStaticHtml} from 'neovex://resources/js/static_types.js';
 // clang-format on
 
 /**

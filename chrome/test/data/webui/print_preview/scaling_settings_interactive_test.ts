@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://print/print_preview.js';
+import 'neovex://print/print_preview.js';
 
-import type {PrintPreviewModelElement, PrintPreviewScalingSettingsElement} from 'chrome://print/print_preview.js';
-import {ScalingType} from 'chrome://print/print_preview.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {PrintPreviewModelElement, PrintPreviewScalingSettingsElement} from 'neovex://print/print_preview.js';
+import {ScalingType} from 'neovex://print/print_preview.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {selectOption} from './print_preview_test_utils.js';
 

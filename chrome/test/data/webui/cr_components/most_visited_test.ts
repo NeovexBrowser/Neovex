@@ -3,20 +3,20 @@
 // found in the LICENSE file.
 
 import {TileSource} from '//resources/mojo/components/ntp_tiles/tile_source.mojom-webui.js';
-import {MostVisitedBrowserProxy} from 'chrome://resources/cr_components/most_visited/browser_proxy.js';
-import {MAX_TILES_FOR_CUSTOM_LINKS, MostVisitedElement} from 'chrome://resources/cr_components/most_visited/most_visited.js';
-import type {MostVisitedPageRemote, MostVisitedTile} from 'chrome://resources/cr_components/most_visited/most_visited.mojom-webui.js';
-import {MostVisitedPageCallbackRouter, MostVisitedPageHandlerRemote} from 'chrome://resources/cr_components/most_visited/most_visited.mojom-webui.js';
-import {MostVisitedWindowProxy} from 'chrome://resources/cr_components/most_visited/window_proxy.js';
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {TextDirection} from 'chrome://resources/mojo/mojo/public/mojom/base/text_direction.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {MostVisitedBrowserProxy} from 'neovex://resources/cr_components/most_visited/browser_proxy.js';
+import {MAX_TILES_FOR_CUSTOM_LINKS, MostVisitedElement} from 'neovex://resources/cr_components/most_visited/most_visited.js';
+import type {MostVisitedPageRemote, MostVisitedTile} from 'neovex://resources/cr_components/most_visited/most_visited.mojom-webui.js';
+import {MostVisitedPageCallbackRouter, MostVisitedPageHandlerRemote} from 'neovex://resources/cr_components/most_visited/most_visited.mojom-webui.js';
+import {MostVisitedWindowProxy} from 'neovex://resources/cr_components/most_visited/window_proxy.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {TextDirection} from 'neovex://resources/mojo/mojo/public/mojom/base/text_direction.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {$$, assertStyle, keydown} from './most_visited_test_support.js';
 
@@ -1142,7 +1142,7 @@ suite('Modification', () => {
 
     test('chrome is not a valid scheme', async () => {
       assertTrue(saveButton.disabled);
-      inputUrl.value = 'chrome://url';
+      inputUrl.value = 'neovex://url';
       await inputUrl.updateComplete;
       assertFalse(inputUrl.invalid);
       await leaveUrlInput();

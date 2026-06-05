@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://history/strings.m.js';
-import 'chrome://resources/cr_components/history_clusters/cluster.js';
+import 'neovex://history/strings.m.js';
+import 'neovex://resources/cr_components/history_clusters/cluster.js';
 
-import {BrowserProxyImpl} from 'chrome://resources/cr_components/history_clusters/browser_proxy.js';
-import type {ClusterElement} from 'chrome://resources/cr_components/history_clusters/cluster.js';
-import type {Cluster, RawVisitData, URLVisit} from 'chrome://resources/cr_components/history_clusters/history_cluster_types.mojom-webui.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'chrome://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {BrowserProxyImpl} from 'neovex://resources/cr_components/history_clusters/browser_proxy.js';
+import type {ClusterElement} from 'neovex://resources/cr_components/history_clusters/cluster.js';
+import type {Cluster, RawVisitData, URLVisit} from 'neovex://resources/cr_components/history_clusters/history_cluster_types.mojom-webui.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'neovex://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 let handler: TestMock<PageHandlerRemote>&PageHandlerRemote;
 

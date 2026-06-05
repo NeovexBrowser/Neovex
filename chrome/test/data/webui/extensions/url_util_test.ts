@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://extensions/extensions.js';
+import 'neovex://extensions/extensions.js';
 
-import {getFaviconUrl} from 'chrome://extensions/extensions.js';
-import {isAndroid} from 'chrome://resources/js/platform.js';
-import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {getFaviconUrl} from 'neovex://extensions/extensions.js';
+import {isAndroid} from 'neovex://resources/js/platform.js';
+import {assertEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('UrlUtilTest', function() {
   function getExpectedImageSet(url: string): string {
     const scale = isAndroid ? window.devicePixelRatio : 2;
     return 'image-set(' +
-        'url("chrome://favicon2/?size=20&scaleFactor=1x&pageUrl=' +
+        'url("neovex://favicon2/?size=20&scaleFactor=1x&pageUrl=' +
         encodeURIComponent(url) + '&allowGoogleServerFallback=0") 1x, ' +
-        `url("chrome://favicon2/?size=20&scaleFactor=${scale}x&pageUrl=` +
+        `url("neovex://favicon2/?size=20&scaleFactor=${scale}x&pageUrl=` +
         encodeURIComponent(url) + `&allowGoogleServerFallback=0") ${scale}x)`;
   }
 

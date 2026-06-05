@@ -7,7 +7,7 @@
  * Pen introduction dialog for Wallpaper app.
  */
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './sea_pen_introduction_svg_element.html.js';
 import {isPersonalizationApp} from './sea_pen_utils.js';

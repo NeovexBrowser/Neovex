@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ExtensionsHostPermissionsToggleListElement, ExtensionsToggleRowElement} from 'chrome://extensions/extensions.js';
-import {UserAction} from 'chrome://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {ExtensionsHostPermissionsToggleListElement, ExtensionsToggleRowElement} from 'neovex://extensions/extensions.js';
+import {UserAction} from 'neovex://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 

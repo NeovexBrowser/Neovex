@@ -33,7 +33,7 @@ function registerTest(testName, module, caseName) {
   this[className] = class extends NearbyBrowserTest {
     /** @override */
     get browsePreload() {
-      return `chrome://nearby/test_loader.html?module=chromeos/nearby_share/${
+      return `neovex://nearby/test_loader.html?module=chromeos/nearby_share/${
           module}`;
     }
   };

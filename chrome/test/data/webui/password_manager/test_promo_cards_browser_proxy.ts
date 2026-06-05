@@ -4,8 +4,8 @@
 
 /** @fileoverview Test implementation of PromoCardsProxy. */
 
-import type {PromoCard, PromoCardsProxy} from 'chrome://password-manager/password_manager.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {PromoCard, PromoCardsProxy} from 'neovex://password-manager/password_manager.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 /**
  * Test implementation

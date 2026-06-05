@@ -26,7 +26,7 @@ chrome.test.runTests([
       'http://www.allowed-domain.com/document.pdf',
       'file://www.allowed-domain.com/document.pdf',
       'data:,www.allowed-domain.com%2Fdocument.pdf',
-      'chrome://www.allowed-domain.com/document.pdf',
+      'neovex://www.allowed-domain.com/document.pdf',
       'javascript://www.allowed-domain.com/document.pdf',
       'invalid-scheme://www.allowed-domain.com/document.pdf'
     ];

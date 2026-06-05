@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://apps/app_list.js';
-import 'chrome://apps/app_item.js';
-import 'chrome://apps/deprecated_apps_link.js';
+import 'neovex://apps/app_list.js';
+import 'neovex://apps/app_item.js';
+import 'neovex://apps/deprecated_apps_link.js';
 
-import type {AppInfo, PageRemote} from 'chrome://apps/app_home.mojom-webui.js';
-import {AppType, RunOnOsLoginMode} from 'chrome://apps/app_home.mojom-webui.js';
-import type {AppHomeEmptyPageElement} from 'chrome://apps/app_home_empty_page.js';
-import {AppHomeUserAction} from 'chrome://apps/app_home_utils.js';
-import type {AppListElement} from 'chrome://apps/app_list.js';
-import {BrowserProxy} from 'chrome://apps/browser_proxy.js';
-import type {DeprecatedAppsLinkElement} from 'chrome://apps/deprecated_apps_link.js';
-import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {AppInfo, PageRemote} from 'neovex://apps/app_home.mojom-webui.js';
+import {AppType, RunOnOsLoginMode} from 'neovex://apps/app_home.mojom-webui.js';
+import type {AppHomeEmptyPageElement} from 'neovex://apps/app_home_empty_page.js';
+import {AppHomeUserAction} from 'neovex://apps/app_home_utils.js';
+import type {AppListElement} from 'neovex://apps/app_list.js';
+import {BrowserProxy} from 'neovex://apps/browser_proxy.js';
+import type {DeprecatedAppsLinkElement} from 'neovex://apps/deprecated_apps_link.js';
+import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import type {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestAppHomeBrowserProxy} from './test_app_home_browser_proxy.js';
 
@@ -58,7 +58,7 @@ suite('AppListTest', () => {
           id: 'ahfgeienlihckogmohjhadlkjgocpleb',
           startUrl: 'https://test.google.com/testapp1',
           name: 'Test App 1',
-          iconUrl: 'chrome://app-icon/ahfgeienlihckogmohjhadlkjgocpleb/128/1',
+          iconUrl: 'neovex://app-icon/ahfgeienlihckogmohjhadlkjgocpleb/128/1',
 
           mayShowRunOnOsLoginMode: true,
           mayToggleRunOnOsLoginMode: true,
@@ -73,7 +73,7 @@ suite('AppListTest', () => {
           id: 'ahfgeienlihckogmotestdlkjgocpleb',
           startUrl: 'https://test.google.com/testapp2',
           name: 'Test App 2',
-          iconUrl: 'chrome://app-icon/ahfgeienlihckogmotestdlkjgocpleb/128/1',
+          iconUrl: 'neovex://app-icon/ahfgeienlihckogmotestdlkjgocpleb/128/1',
 
           mayShowRunOnOsLoginMode: false,
           mayToggleRunOnOsLoginMode: false,
@@ -91,7 +91,7 @@ suite('AppListTest', () => {
       id: 'mmfbcljfglbokpmkimbfghdkjmjhdgbg',
       startUrl: 'https://test.google.com/testapp3',
       name: 'A Test App 3',
-      iconUrl: 'chrome://app-icon/mmfbcljfglbokpmkimbfghdkjmjhdgbg/128/1',
+      iconUrl: 'neovex://app-icon/mmfbcljfglbokpmkimbfghdkjmjhdgbg/128/1',
 
       mayShowRunOnOsLoginMode: false,
       mayToggleRunOnOsLoginMode: false,
@@ -106,7 +106,7 @@ suite('AppListTest', () => {
       id: 'mplpmdejoamenolpcojgegminhcnmibo',
       startUrl: 'https://test.google.com/deprecated_app',
       name: 'Deprecated App',
-      iconUrl: 'chrome://extension-icon/mplpmdejoamenolpcojgegminhcnmibo/128/1',
+      iconUrl: 'neovex://extension-icon/mplpmdejoamenolpcojgegminhcnmibo/128/1',
 
       mayShowRunOnOsLoginMode: false,
       mayToggleRunOnOsLoginMode: false,
@@ -123,7 +123,7 @@ suite('AppListTest', () => {
       startUrl:
           'isolated-app://amoiebz32b7o24tilu257xne2yf3nkblkploanxzm7ebeglseqpfeaacai',
       name: 'IWA',
-      iconUrl: 'chrome://app-icon/bfeileggdikbmggaogebloieaiejgdie/128/1',
+      iconUrl: 'neovex://app-icon/bfeileggdikbmggaogebloieaiejgdie/128/1',
 
       mayShowRunOnOsLoginMode: true,
       mayToggleRunOnOsLoginMode: true,

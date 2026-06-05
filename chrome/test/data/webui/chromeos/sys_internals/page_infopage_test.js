@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {$} from 'chrome://resources/js/util.js';
-import {handleUpdateData, lineChart, updateInfoPage} from 'chrome://sys-internals/index.js';
-import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {$} from 'neovex://resources/js/util.js';
+import {handleUpdateData, lineChart, updateInfoPage} from 'neovex://sys-internals/index.js';
+import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 import {getTestData} from './test_util.js';
 

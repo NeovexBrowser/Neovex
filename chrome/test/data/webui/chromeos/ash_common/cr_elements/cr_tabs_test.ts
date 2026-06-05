@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
+import 'neovex://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
 
-import type {CrTabsElement} from 'chrome://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
-import {keyDownOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import type {CrTabsElement} from 'neovex://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
+import {keyDownOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
 // clang-format on
 
 suite('cr_tabs_test', function() {
@@ -19,7 +19,7 @@ suite('cr_tabs_test', function() {
     document.body.innerHTML = window.trustedTypes!.emptyHTML;
     tabs = document.createElement('cr-tabs');
     tabs.tabNames = ['tab1', 'tab2', 'tab3'];
-    tabs.tabIcons = ['chrome://icon1.png'];
+    tabs.tabIcons = ['neovex://icon1.png'];
     document.body.appendChild(tabs);
     return flushTasks();
   });

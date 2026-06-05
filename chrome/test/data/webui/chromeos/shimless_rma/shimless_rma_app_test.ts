@@ -2,28 +2,28 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://shimless-rma/shimless_rma.js';
+import 'neovex://shimless-rma/shimless_rma.js';
 
-import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import {CLICK_EXIT_BUTTON, DISABLE_NEXT_BUTTON, FATAL_HARDWARE_ERROR, OPEN_LOGS_DIALOG, SET_NEXT_BUTTON_LABEL, TRANSITION_STATE} from 'chrome://shimless-rma/events.js';
-import {fakeCalibrationComponentsWithFails, fakeStates} from 'chrome://shimless-rma/fake_data.js';
-import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
-import {OnboardingLandingPage} from 'chrome://shimless-rma/onboarding_landing_page.js';
-import {OnboardingSelectComponentsPageElement} from 'chrome://shimless-rma/onboarding_select_components_page.js';
-import {ButtonState, ShimlessRma} from 'chrome://shimless-rma/shimless_rma.js';
-import type {StateResult} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {RmadErrorCode, State} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
-import {disableAllButtons, enableAllButtons} from 'chrome://shimless-rma/shimless_rma_util.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
+import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import {CLICK_EXIT_BUTTON, DISABLE_NEXT_BUTTON, FATAL_HARDWARE_ERROR, OPEN_LOGS_DIALOG, SET_NEXT_BUTTON_LABEL, TRANSITION_STATE} from 'neovex://shimless-rma/events.js';
+import {fakeCalibrationComponentsWithFails, fakeStates} from 'neovex://shimless-rma/fake_data.js';
+import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
+import {OnboardingLandingPage} from 'neovex://shimless-rma/onboarding_landing_page.js';
+import {OnboardingSelectComponentsPageElement} from 'neovex://shimless-rma/onboarding_select_components_page.js';
+import {ButtonState, ShimlessRma} from 'neovex://shimless-rma/shimless_rma.js';
+import type {StateResult} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {RmadErrorCode, State} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
+import {disableAllButtons, enableAllButtons} from 'neovex://shimless-rma/shimless_rma_util.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
 
 suite('shimlessRMAAppTest', function() {
   let component: ShimlessRma|null = null;

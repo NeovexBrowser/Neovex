@@ -6,7 +6,7 @@ const workerUrlPolicy: TrustedTypePolicy =
     window.trustedTypes!.createPolicy('worker-js-static', {
       createHTML: () => '',
       createScriptURL: (_ignored: string) => {
-        return 'chrome://sample-system-web-app/worker.js';
+        return 'neovex://sample-system-web-app/worker.js';
       },
       createScript: () => '',
     });

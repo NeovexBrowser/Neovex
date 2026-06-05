@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {SettingsSmartPrivacySubpage} from 'chrome://os-settings/lazy_load.js';
-import type {IronCollapseElement} from 'chrome://os-settings/os_settings.js';
-import {Router} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {SettingsSmartPrivacySubpage} from 'neovex://os-settings/lazy_load.js';
+import type {IronCollapseElement} from 'neovex://os-settings/os_settings.js';
+import {Router} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('<settings-smart-privacy-subpage>', () => {
   let smartPrivacySubpage: SettingsSmartPrivacySubpage;

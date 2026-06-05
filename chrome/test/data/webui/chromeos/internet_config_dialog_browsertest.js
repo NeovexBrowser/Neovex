@@ -9,7 +9,7 @@ GEN('#include "content/public/test/browser_test.h"');
 var InternetConfigDialogBrowserTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'chrome://internet-config-dialog/test_loader.html?module=chromeos/internet_config_dialog_test.js';
+    return 'neovex://internet-config-dialog/test_loader.html?module=chromeos/internet_config_dialog_test.js';
   }
 };
 TEST_F('InternetConfigDialogBrowserTest', 'All', function() {

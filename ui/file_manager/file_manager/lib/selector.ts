@@ -7,7 +7,7 @@
  * SelectorEmitter helper class that allows selectors to be efficiently updated.
  */
 
-import type {ReactiveController, ReactiveControllerHost} from 'chrome://resources/mwc/lit/index.js';
+import type {ReactiveController, ReactiveControllerHost} from 'neovex://resources/mwc/lit/index.js';
 
 import {isDebugStoreEnabled} from './base_store.js';
 

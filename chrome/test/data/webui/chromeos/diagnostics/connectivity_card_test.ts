@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://diagnostics/connectivity_card.js';
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://diagnostics/connectivity_card.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {ConnectivityCardElement} from 'chrome://diagnostics/connectivity_card.js';
-import {DiagnosticsNetworkIconElement} from 'chrome://diagnostics/diagnostics_network_icon.js';
-import type {CellularNetwork, EthernetNetwork, WiFiNetwork} from 'chrome://diagnostics/diagnostics_types.js';
-import {fakeCellularNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakeWifiNetwork} from 'chrome://diagnostics/fake_data.js';
-import {FakeNetworkHealthProvider} from 'chrome://diagnostics/fake_network_health_provider.js';
-import {FakeSystemRoutineController} from 'chrome://diagnostics/fake_system_routine_controller.js';
-import {IpConfigInfoDrawerElement} from 'chrome://diagnostics/ip_config_info_drawer.js';
-import {setNetworkHealthProviderForTesting, setSystemRoutineControllerForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
-import {RoutineGroup} from 'chrome://diagnostics/routine_group.js';
-import {TestSuiteStatus} from 'chrome://diagnostics/routine_list_executor.js';
-import {RoutineType, StandardRoutineResult} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
-import {isVisible} from 'chrome://webui-test/test_util.js';
+import type {ConnectivityCardElement} from 'neovex://diagnostics/connectivity_card.js';
+import {DiagnosticsNetworkIconElement} from 'neovex://diagnostics/diagnostics_network_icon.js';
+import type {CellularNetwork, EthernetNetwork, WiFiNetwork} from 'neovex://diagnostics/diagnostics_types.js';
+import {fakeCellularNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakeWifiNetwork} from 'neovex://diagnostics/fake_data.js';
+import {FakeNetworkHealthProvider} from 'neovex://diagnostics/fake_network_health_provider.js';
+import {FakeSystemRoutineController} from 'neovex://diagnostics/fake_system_routine_controller.js';
+import {IpConfigInfoDrawerElement} from 'neovex://diagnostics/ip_config_info_drawer.js';
+import {setNetworkHealthProviderForTesting, setSystemRoutineControllerForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
+import {RoutineGroup} from 'neovex://diagnostics/routine_group.js';
+import {TestSuiteStatus} from 'neovex://diagnostics/routine_list_executor.js';
+import {RoutineType, StandardRoutineResult} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {isVisible} from 'neovex://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

@@ -4,15 +4,15 @@
 
 /** @fileoverview Suite of tests for cr-shortcut-input. */
 
-import 'chrome://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
-import 'chrome://extensions/strings.m.js';
+import 'neovex://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
+import 'neovex://extensions/strings.m.js';
 
-import type {CrShortcutInputElement} from 'chrome://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import type {Modifier} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {keyDownOn, keyUpOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {CrShortcutInputElement} from 'neovex://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {Modifier} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {keyDownOn, keyUpOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 suite('CrShortcutInputTest', function() {
   let input: CrShortcutInputElement;

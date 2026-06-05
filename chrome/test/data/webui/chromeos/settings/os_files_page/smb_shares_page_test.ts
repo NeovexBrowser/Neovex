@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://os-settings/lazy_load.js';
+import 'neovex://os-settings/lazy_load.js';
 
-import type {AddSmbShareDialogElement, SettingsSmbSharesPageElement, SmbBrowserProxy} from 'chrome://os-settings/lazy_load.js';
-import {SmbBrowserProxyImpl, SmbMountResult} from 'chrome://os-settings/lazy_load.js';
-import type {CrButtonElement, CrInputElement} from 'chrome://os-settings/os_settings.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import type {AddSmbShareDialogElement, SettingsSmbSharesPageElement, SmbBrowserProxy} from 'neovex://os-settings/lazy_load.js';
+import {SmbBrowserProxyImpl, SmbMountResult} from 'neovex://os-settings/lazy_load.js';
+import type {CrButtonElement, CrInputElement} from 'neovex://os-settings/os_settings.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
 
 class TestSmbBrowserProxy extends TestBrowserProxy implements SmbBrowserProxy {
   smbMountResult = SmbMountResult.SUCCESS;

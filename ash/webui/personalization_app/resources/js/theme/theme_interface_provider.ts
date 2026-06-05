@@ -8,8 +8,8 @@
  * mojom data and mocking out the implementation for testing.
  */
 
-import 'chrome://resources/mojo/mojo/public/js/bindings.js';
-import 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import 'neovex://resources/mojo/mojo/public/js/bindings.js';
+import 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {ThemeProviderInterface} from '../../personalization_app.mojom-webui.js';
 import {ThemeProvider} from '../../personalization_app.mojom-webui.js';

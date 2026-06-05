@@ -6,7 +6,7 @@
 // and functioning correctly in WebUI. The tests here do not make any assertions
 // but instead trigger the API calls which are then verified by the C++ test.
 
-import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {assertTrue} from 'neovex://webui-test/chai_assert.js';
 
 suite('ChromeHistogramsTest', () => {
   test('All', () => {

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {assertNotEquals} from 'neovex://webui-test/chai_assert.js';
 
 suite('ColorProviderCSSColorsTest', function() {
   let link: HTMLLinkElement;
@@ -17,7 +17,7 @@ suite('ColorProviderCSSColorsTest', function() {
   });
 
   test('test fetching chromeos color sets', function(done) {
-    link.href = 'chrome://theme/colors.css?sets=ref,sys,legacy';
+    link.href = 'neovex://theme/colors.css?sets=ref,sys,legacy';
     link.onload = function() {
       const style = getComputedStyle(document.body);
       // Check that we are able to query for a cros.ref color.

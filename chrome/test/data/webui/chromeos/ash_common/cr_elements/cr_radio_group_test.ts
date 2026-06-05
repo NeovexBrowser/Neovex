@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
 
-import type {CrRadioButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import type {CrRadioGroupElement} from 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {CrRadioButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import type {CrRadioGroupElement} from 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 suite('cr-radio-group', () => {
   let radioGroup: CrRadioGroupElement;

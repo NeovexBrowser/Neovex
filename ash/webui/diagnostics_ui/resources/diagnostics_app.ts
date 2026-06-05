@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/navigation_view_panel.js';
-import 'chrome://resources/ash/common/page_toolbar.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/navigation_view_panel.js';
+import 'neovex://resources/ash/common/page_toolbar.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import './diagnostics_sticky_banner.js';
 import './diagnostics_shared.css.js';
 import './input_list.js';
@@ -13,15 +13,15 @@ import './network_list.js';
 import '/strings.m.js';
 import './system_page.js';
 
-import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import type {SelectorItem} from 'chrome://resources/ash/common/navigation_selector.js';
-import type {NavigationViewPanelElement} from 'chrome://resources/ash/common/navigation_view_panel.js';
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import type {SelectorItem} from 'neovex://resources/ash/common/navigation_selector.js';
+import type {NavigationViewPanelElement} from 'neovex://resources/ash/common/navigation_view_panel.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './diagnostics_app.html.js';
 import {DiagnosticsBrowserProxyImpl} from './diagnostics_browser_proxy.js';

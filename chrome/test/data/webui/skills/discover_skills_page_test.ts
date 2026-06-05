@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://skills/discover_skills_page.js';
+import 'neovex://skills/discover_skills_page.js';
 
 import type {CrToastElement} from '//resources/cr_elements/cr_toast/cr_toast.js';
-import {CrRouter} from 'chrome://resources/js/cr_router.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import type {DiscoverSkillsPageElement} from 'chrome://skills/discover_skills_page.js';
-import type {Skill} from 'chrome://skills/skill.mojom-webui.js';
-import {SkillSource} from 'chrome://skills/skill.mojom-webui.js';
-import {SkillsManagementAction, SkillsManagementPage} from 'chrome://skills/skill_metrics.mojom-webui.js';
-import {SkillsPageBrowserProxy} from 'chrome://skills/skills_page_browser_proxy.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {CrRouter} from 'neovex://resources/js/cr_router.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import type {DiscoverSkillsPageElement} from 'neovex://skills/discover_skills_page.js';
+import type {Skill} from 'neovex://skills/skill.mojom-webui.js';
+import {SkillSource} from 'neovex://skills/skill.mojom-webui.js';
+import {SkillsManagementAction, SkillsManagementPage} from 'neovex://skills/skill_metrics.mojom-webui.js';
+import {SkillsPageBrowserProxy} from 'neovex://skills/skills_page_browser_proxy.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 import {TestSkillsBrowserProxy} from './test_skills_browser_proxy.js';
 

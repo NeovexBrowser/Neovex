@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
 
-import {FindShortcutManager, FindShortcutMixin} from 'chrome://resources/ash/common/cr_elements/find_shortcut_mixin.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertThrows, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {FindShortcutManager, FindShortcutMixin} from 'neovex://resources/ash/common/cr_elements/find_shortcut_mixin.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertThrows, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 // clang-format on
 

@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://bluetooth-pairing/strings.m.js';
-import 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_ui.js';
+import 'neovex://bluetooth-pairing/strings.m.js';
+import 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_ui.js';
 
-import type {SettingsBluetoothPairingConfirmCodePageElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_confirm_code_page.js';
-import type {SettingsBluetoothPairingDeviceSelectionPageElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_device_selection_page.js';
-import type {SettingsBluetoothPairingEnterCodeElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_enter_code_page.js';
-import type {SettingsBluetoothRequestCodePageElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_request_code_page.js';
-import type {SettingsBluetoothPairingUiElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_ui.js';
-import type {SettingsBluetoothSpinnerPageElement} from 'chrome://resources/ash/common/bluetooth/bluetooth_spinner_page.js';
-import {PairingAuthType} from 'chrome://resources/ash/common/bluetooth/bluetooth_types.js';
-import {setBluetoothConfigForTesting} from 'chrome://resources/ash/common/bluetooth/cros_bluetooth_config.js';
-import {AudioOutputCapability, BluetoothSystemState, DeviceConnectionState, DeviceType} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import type {BluetoothDeviceProperties} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {SettingsBluetoothPairingConfirmCodePageElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_confirm_code_page.js';
+import type {SettingsBluetoothPairingDeviceSelectionPageElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_device_selection_page.js';
+import type {SettingsBluetoothPairingEnterCodeElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_enter_code_page.js';
+import type {SettingsBluetoothRequestCodePageElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_request_code_page.js';
+import type {SettingsBluetoothPairingUiElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_ui.js';
+import type {SettingsBluetoothSpinnerPageElement} from 'neovex://resources/ash/common/bluetooth/bluetooth_spinner_page.js';
+import {PairingAuthType} from 'neovex://resources/ash/common/bluetooth/bluetooth_types.js';
+import {setBluetoothConfigForTesting} from 'neovex://resources/ash/common/bluetooth/cros_bluetooth_config.js';
+import {AudioOutputCapability, BluetoothSystemState, DeviceConnectionState, DeviceType} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import type {BluetoothDeviceProperties} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {assertEquals, assertFalse, assertTrue} from '../chai_assert.js';
 import {eventToPromise} from '../test_util.js';

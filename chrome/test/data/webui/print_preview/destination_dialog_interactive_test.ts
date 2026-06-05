@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewDestinationDialogElement} from 'chrome://print/print_preview.js';
-import {NativeLayerImpl, State} from 'chrome://print/print_preview.js';
-import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import type {PrintPreviewDestinationDialogElement} from 'neovex://print/print_preview.js';
+import {NativeLayerImpl, State} from 'neovex://print/print_preview.js';
+import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise} from 'neovex://webui-test/test_util.js';
 
 import {NativeLayerStub} from './native_layer_stub.js';
 import {setupTestListenerElement} from './print_preview_test_utils.js';

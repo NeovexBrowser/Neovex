@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
-import 'chrome://nearby/shared/nearby_page_template.js';
+import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'neovex://nearby/shared/nearby_page_template.js';
 
-import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
 
 import {assertEquals, assertFalse, assertTrue} from '../../chai_assert.js';
 import {isChildVisible} from '../../test_util.js';

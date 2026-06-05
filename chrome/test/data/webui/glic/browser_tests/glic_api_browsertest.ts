@@ -115,7 +115,7 @@ class ApiTests extends ApiTestFixtureBase {
   async testCreateTabFailsWithUnsupportedScheme() {
     assertDefined(this.host.createTab);
 
-    this.assertCreateTabFails('chrome://settings');
+    this.assertCreateTabFails('neovex://settings');
     this.assertCreateTabFails('ftps://www.google.com');
     this.assertCreateTabFails('chrome-extension://www.google.com');
     this.assertCreateTabFails('mailto:user@google.com');

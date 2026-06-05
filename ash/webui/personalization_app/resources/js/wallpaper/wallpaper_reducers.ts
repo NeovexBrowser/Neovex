@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FullscreenPreviewState} from 'chrome://resources/ash/common/personalization/wallpaper_state.js';
-import type {SeaPenActions} from 'chrome://resources/ash/common/sea_pen/sea_pen_actions.js';
-import {SeaPenActionName} from 'chrome://resources/ash/common/sea_pen/sea_pen_actions.js';
-import {seaPenReducer} from 'chrome://resources/ash/common/sea_pen/sea_pen_reducer.js';
-import type {SeaPenState} from 'chrome://resources/ash/common/sea_pen/sea_pen_state.js';
-import {isImageDataUrl, isNonEmptyArray, isNonEmptyFilePath, isUrl} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import {FullscreenPreviewState} from 'neovex://resources/ash/common/personalization/wallpaper_state.js';
+import type {SeaPenActions} from 'neovex://resources/ash/common/sea_pen/sea_pen_actions.js';
+import {SeaPenActionName} from 'neovex://resources/ash/common/sea_pen/sea_pen_actions.js';
+import {seaPenReducer} from 'neovex://resources/ash/common/sea_pen/sea_pen_reducer.js';
+import type {SeaPenState} from 'neovex://resources/ash/common/sea_pen/sea_pen_state.js';
+import {isImageDataUrl, isNonEmptyArray, isNonEmptyFilePath, isUrl} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
 
 import type {WallpaperCollection} from '../../personalization_app.mojom-webui.js';
 import type {Actions} from '../personalization_actions.js';

@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://history/strings.m.js';
-import 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
+import 'neovex://history/strings.m.js';
+import 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
 
 import {HistoryResultType} from '//resources/cr_components/history/constants.js';
 import {CrFeedbackOption} from '//resources/cr_elements/cr_feedback_buttons/cr_feedback_buttons.js';
 import {getFaviconForPageURL} from '//resources/js/icon.js';
-import {HistoryEmbeddingsBrowserProxyImpl} from 'chrome://resources/cr_components/history_embeddings/browser_proxy.js';
-import type {HistoryEmbeddingsElement} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
-import {AnswerStatus, PageHandlerRemote, UserFeedback} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
-import type {SearchQuery, SearchResult, SearchResultItem} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestMock} from 'chrome://webui-test/test_mock.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {HistoryEmbeddingsBrowserProxyImpl} from 'neovex://resources/cr_components/history_embeddings/browser_proxy.js';
+import type {HistoryEmbeddingsElement} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
+import {AnswerStatus, PageHandlerRemote, UserFeedback} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
+import type {SearchQuery, SearchResult, SearchResultItem} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 [true, false].forEach((enableAnswers) => {
   const suitSuffix = enableAnswers ? 'enabled' : 'disabled';

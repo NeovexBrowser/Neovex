@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://intro/default_browser/app_refresh.js';
+import 'neovex://intro/default_browser/app_refresh.js';
 
-import type {AppRefreshElement} from 'chrome://intro/default_browser/app_refresh.js';
-import type {DefaultBrowserBrowserProxy} from 'chrome://intro/default_browser/browser_proxy.js';
-import {DefaultBrowserBrowserProxyImpl} from 'chrome://intro/default_browser/browser_proxy.js';
-import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
-import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import type {AppRefreshElement} from 'neovex://intro/default_browser/app_refresh.js';
+import type {DefaultBrowserBrowserProxy} from 'neovex://intro/default_browser/browser_proxy.js';
+import {DefaultBrowserBrowserProxyImpl} from 'neovex://intro/default_browser/browser_proxy.js';
+import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
+import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'neovex://webui-test/test_util.js';
 
 class TestDefaultBrowserBrowserProxy extends TestBrowserProxy implements
     DefaultBrowserBrowserProxy {

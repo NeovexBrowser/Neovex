@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {App, PageHandlerInterface, PageRemote, Permission, RunOnOsLoginMode, WindowMode} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {PageCallbackRouter} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import type {App, PageHandlerInterface, PageRemote, Permission, RunOnOsLoginMode, WindowMode} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {PageCallbackRouter} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
 
 export class FakePageHandler implements PageHandlerInterface {
   private app_: App;
