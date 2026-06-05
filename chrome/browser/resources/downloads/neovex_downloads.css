@@ -1,13 +1,10 @@
 /* NEOVEX DOWNLOADS: Category sidebar and grid overlay */
-
-/* ===== Layout: sidebar + main content ===== */
 body {
   display: flex !important;
   flex-direction: row !important;
   overflow: hidden !important;
 }
 
-/* Glassmorphism sidebar exactly like settings page */
 #neovex-sidebar {
   width: 230px;
   min-width: 230px;
@@ -37,7 +34,7 @@ body {
 #neovex-sidebar .sidebar-header h1 {
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   margin: 0;
   letter-spacing: 0.3px;
 }
@@ -82,7 +79,7 @@ body {
 
 #neovex-sidebar .category-item.active {
   background: rgba(170, 255, 0, 0.08);
-  color: #AAFF00;
+  color: #AF0;
   border-color: rgba(170, 255, 0, 0.15);
 }
 
@@ -107,10 +104,9 @@ body {
 
 #neovex-sidebar .category-item.active .cat-count {
   background: rgba(170, 255, 0, 0.12);
-  color: #AAFF00;
+  color: #AF0;
 }
 
-/* Sidebar footer */
 #neovex-sidebar .sidebar-footer {
   padding: 12px 10px 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -138,14 +134,12 @@ body {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* ===== Main content area (the existing downloads-manager) ===== */
 downloads-manager {
   flex: 1 !important;
   min-width: 0 !important;
   overflow: hidden !important;
 }
 
-/* ===== Active category title badge ===== */
 #neovex-cat-badge {
   display: none;
   align-items: center;
@@ -155,7 +149,7 @@ downloads-manager {
   background: rgba(170, 255, 0, 0.06);
   border: 1px solid rgba(170, 255, 0, 0.12);
   border-radius: 8px;
-  color: #AAFF00;
+  color: #AF0;
   font-size: 12px;
   font-weight: 500;
   width: fit-content;
@@ -165,9 +159,7 @@ downloads-manager {
   display: inline-flex;
 }
 
-#neovex-cat-badge .badge-icon {
-  font-size: 13px;
-}
+#neovex-cat-badge .badge-icon { font-size: 13px; }
 
 #neovex-cat-badge .badge-clear {
   margin-left: 6px;
@@ -181,7 +173,6 @@ downloads-manager {
   opacity: 1;
 }
 
-/* ===== Scrollbar ===== */
 #neovex-sidebar::-webkit-scrollbar {
   width: 4px;
 }
@@ -197,9 +188,4 @@ downloads-manager {
 
 #neovex-sidebar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.12);
-}
-
-/* ===== Animation for showing/hiding items ===== */
-downloads-manager {
-  --neovex-item-transition: opacity 0.2s ease, transform 0.2s ease;
 }

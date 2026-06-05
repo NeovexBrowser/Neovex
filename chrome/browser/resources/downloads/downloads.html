@@ -112,11 +112,164 @@
 
     body {
       display: flex;
+      flex-direction: row;
       margin: 0;
+      overflow: hidden;
+    }
+
+    /* NEOVEX DOWNLOADS: Category sidebar (matching settings page) */
+    #neovex-sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 160px;
+      min-width: 160px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-right: 1px solid rgba(255, 255, 255, 0.04);
+      display: flex;
+      flex-direction: column;
+      padding: 12px 0 12px 0;
+      overflow-y: auto;
+      z-index: 9999;
+    }
+
+    #neovex-sidebar .nvx-sb-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      padding: 8px 16px 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #neovex-sidebar .nvx-cat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      margin: 1px 6px;
+      cursor: pointer;
+      border-radius: 8px;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      font-weight: 400;
+      transition: background 0.15s, color 0.15s;
+      user-select: none;
+      text-decoration: none;
+      border: none;
+      background: none;
+      width: calc(100% - 12px);
+      text-align: left;
+      font-family: inherit;
+      line-height: 1.3;
+    }
+
+    #neovex-sidebar .nvx-cat:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255,255,255,0.8);
+    }
+
+    #neovex-sidebar .nvx-cat.active {
+      background: rgba(124, 140, 255, 0.1);
+      color: #a0adff;
+    }
+
+    #neovex-sidebar .nvx-cat-icon {
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    #neovex-sidebar .nvx-cat-count {
+      margin-left: auto;
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      min-width: 14px;
+      text-align: right;
+    }
+
+    #neovex-sidebar .nvx-cat.active .nvx-cat-count {
+      color: rgba(160, 173, 255, 0.5);
+    }
+
+    #neovex-sidebar .nvx-sep {
+      height: 1px;
+      background: rgba(255,255,255,0.04);
+      margin: 6px 14px;
+    }
+
+    downloads-manager {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    #neovex-sidebar::-webkit-scrollbar { width: 3px; }
+    #neovex-sidebar::-webkit-scrollbar-track { background: transparent; }
+    #neovex-sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.06);
+      border-radius: 2px;
     }
   </style>
 </head>
 <body>
+<div id="debug-panel" style="position:fixed;top:0;right:0;background:#ff4444;color:#fff;padding:4px;z-index:10000;">DEBUG</div>
+  <!-- NEOVEX DOWNLOADS: Category sidebar (static HTML, matching settings page layout) -->
+  <nav id="neovex-sidebar">
+    <div class="nvx-sb-title">Categories</div>
+    <button class="nvx-cat active" data-category="All">
+      <span class="nvx-cat-icon">&#x1F4CB;</span>
+      <span>All</span>
+      <span class="nvx-cat-count" data-count="All">0</span>
+    </button>
+    <button class="nvx-cat" data-category="Images">
+      <span class="nvx-cat-icon">&#x1F5BC;&#xFE0F;</span>
+      <span>Images</span>
+      <span class="nvx-cat-count" data-count="Images">0</span>
+    </button>
+    <button class="nvx-cat" data-category="Documents">
+      <span class="nvx-cat-icon">&#x1F4C4;</span>
+      <span>Documents</span>
+      <span class="nvx-cat-count" data-count="Documents">0</span>
+    </button>
+    <button class="nvx-cat" data-category="Videos">
+      <span class="nvx-cat-icon">&#x1F3AC;</span>
+      <span>Videos</span>
+      <span class="nvx-cat-count" data-count="Videos">0</span>
+    </button>
+    <button class="nvx-cat" data-category="Audio">
+      <span class="nvx-cat-icon">&#x1F3B5;</span>
+      <span>Audio</span>
+      <span class="nvx-cat-count" data-count="Audio">0</span>
+    </button>
+    <div class="nvx-sep"></div>
+    <button class="nvx-cat" data-category="Archives">
+      <span class="nvx-cat-icon">&#x1F5DC;&#xFE0F;</span>
+      <span>Archives</span>
+      <span class="nvx-cat-count" data-count="Archives">0</span>
+    </button>
+    <button class="nvx-cat" data-category="Programs">
+      <span class="nvx-cat-icon">&#x2699;&#xFE0F;</span>
+      <span>Programs</span>
+      <span class="nvx-cat-count" data-count="Programs">0</span>
+    </button>
+    <button class="nvx-cat" data-category="Code">
+      <span class="nvx-cat-icon">&#x1F4BB;</span>
+      <span>Code</span>
+      <span class="nvx-cat-count" data-count="Code">0</span>
+    </button>
+    <div class="nvx-sep"></div>
+    <button class="nvx-cat" data-category="Other">
+      <span class="nvx-cat-icon">&#x1F4E6;</span>
+      <span>Other</span>
+      <span class="nvx-cat-count" data-count="Other">0</span>
+    </button>
+  </nav>
+
   <!-- Custom wallpaper (loaded from NTP via postMessage bridge) -->
   <div id="settingsBgCustom"></div>
 
@@ -180,8 +333,5 @@
   </script>
   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
   <script type="module" src="downloads.js"></script>
-  <!-- NEOVEX DOWNLOADS: Category sidebar overlay -->
-  <link rel="stylesheet" href="neovex_downloads.css">
-  <script src="neovex_downloads.js" defer></script>
 </body>
 </html>
