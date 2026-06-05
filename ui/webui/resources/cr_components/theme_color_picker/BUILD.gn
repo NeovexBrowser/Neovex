@@ -17,7 +17,7 @@ mojom("mojom") {
     "//ui/base/mojom",
   ]
 
-  webui_module_path = "chrome://resources/cr_components/theme_color_picker/"
+  webui_module_path = "neovex://resources/cr_components/theme_color_picker/"
 }
 
 build_webui("build") {

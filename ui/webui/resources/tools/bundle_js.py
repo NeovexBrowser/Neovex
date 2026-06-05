@@ -31,7 +31,7 @@ def _request_list_path(out_folder, target_name):
 def _get_dep_path(dep, host_url, out_folder):
   if dep.startswith(host_url):
     return dep.replace(host_url, os.path.relpath(out_folder, _CWD))
-  elif not (dep.startswith('chrome://') or dep.startswith('//')):
+  elif not (dep.startswith('neovex://') or dep.startswith('//')):
     return os.path.relpath(out_folder, _CWD) + '/' + dep
   return dep
 
@@ -46,7 +46,7 @@ def _update_dep_file(in_folder, args, out_file_path, manifest):
   for out_file in manifest:
     request_list += manifest[out_file]
 
-  # Add a slash in front of every dependency that is not a chrome:// URL, so
+  # Add a slash in front of every dependency that is not a neovex:// URL, so
   # that we can map it to the correct source file path below.
   request_list = map(
       lambda dep: _get_dep_path(dep, args.host_url, args.out_folder),
@@ -68,12 +68,12 @@ def _update_dep_file(in_folder, args, out_file_path, manifest):
 # in_path: Root directory for the input files.
 # bundle_dir_path: Path to the directory holding the bundled output files
 #                  relative to the root output directory. E.g. if bundle is
-#                  chrome://<blah>/foo/bundle.js, this is |foo|.
-# host_url: URL of the host. Usually something like "chrome://settings".
+#                  neovex://<blah>/foo/bundle.js, this is |foo|.
+# host_url: URL of the host. Usually something like "neovex://settings".
 # excludes: Imports to exclude from the bundle.
 # external_paths: Path mappings for import paths that are outside of
 #                 |in_path|. For example:
-#                 chrome://resources/|gen/ui/webui/resources/tsc
+#                 neovex://resources/|gen/ui/webui/resources/tsc
 def _generate_rollup_config(out_dir, in_path, bundle_dir_path, host_url,
                             excludes, external_paths):
   rollup_config_file = os.path.join(out_dir, 'rollup.config.mjs')
@@ -253,7 +253,7 @@ def main(argv):
   args.out_folder = os.path.normpath(args.out_folder)
   scheme_end_index = args.host.find('://')
   if (scheme_end_index == -1):
-    args.host_url = 'chrome://%s/' % args.host
+    args.host_url = 'neovex://%s/' % args.host
   else:
     args.host_url = args.host
 

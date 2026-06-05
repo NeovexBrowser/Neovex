@@ -46,7 +46,7 @@ export function createInitialState(
 }
 
 export function getAppIcon(app: App): string {
-  return `chrome://app-icon/${app.id}/64`;
+  return `neovex://app-icon/${app.id}/64`;
 }
 
 export function getPermissionValueBool(

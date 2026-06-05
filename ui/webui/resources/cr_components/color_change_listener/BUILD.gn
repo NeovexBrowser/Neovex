@@ -11,7 +11,7 @@ assert(!is_android && !is_ios)
 mojom("mojom") {
   sources = [ "color_change_listener.mojom" ]
   public_deps = [ "//mojo/public/mojom/base" ]
-  webui_module_path = "chrome://resources/cr_components/color_change_listener/"
+  webui_module_path = "neovex://resources/cr_components/color_change_listener/"
 }
 
 build_webui("build") {

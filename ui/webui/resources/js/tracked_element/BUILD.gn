@@ -16,5 +16,5 @@ mojom("mojo_bindings") {
   ]
 
   webui_module_path =
-      "chrome://resources/mojo/ui/webui/resources/js/tracked_element"
+      "neovex://resources/mojo/ui/webui/resources/js/tracked_element"
 }

@@ -83,12 +83,12 @@ template("bundle_js") {
     }
 
     # Specify default external_paths. The order here matters in multiple ways.
-    #   1) chrome:// URLs need to be listed before scheme relative URLs
+    #   1) neovex:// URLs need to be listed before scheme relative URLs
     #      (otherwise chrome-extension:// contexts break)
     #   2) Longer prefixes need to be listed before shorter prefixes, otherwise
     #      mappings are incorrect.
-    #   3) chrome:// URLs should not be listed at all for chrome-untrusted://
-    #      contexts, otherwise generated bundle includes chrome:// URLs which is
+    #   3) neovex:// URLs should not be listed at all for chrome-untrusted://
+    #      contexts, otherwise generated bundle includes neovex:// URLs which is
     #      incorrect.
 
     polymer_path =
@@ -105,25 +105,25 @@ template("bundle_js") {
                       root_build_dir)
       if (!is_chrome_untrusted) {
         external_paths +=
-            [ "chrome://resources/ash/common/|$ash_resources_path" ]
+            [ "neovex://resources/ash/common/|$ash_resources_path" ]
       }
       external_paths += [ "//resources/ash/common/|$ash_resources_path" ]
     }
 
     if (!is_chrome_untrusted) {
-      external_paths += [ "chrome://resources/polymer/v3_0/|$polymer_path" ]
+      external_paths += [ "neovex://resources/polymer/v3_0/|$polymer_path" ]
     }
     external_paths += [ "//resources/polymer/v3_0/|$polymer_path" ]
 
     lit_path = rebase_path("${root_gen_dir}/third_party/lit/v3_0/minified/",
                            root_build_dir)
     if (!is_chrome_untrusted) {
-      external_paths += [ "chrome://resources/lit/v3_0/|$lit_path" ]
+      external_paths += [ "neovex://resources/lit/v3_0/|$lit_path" ]
     }
     external_paths += [ "//resources/lit/v3_0/|$lit_path" ]
 
     if (!is_chrome_untrusted) {
-      external_paths += [ "chrome://resources/|$resources_path" ]
+      external_paths += [ "neovex://resources/|$resources_path" ]
     }
     external_paths += [ "//resources/|$resources_path" ]
 

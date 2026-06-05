@@ -3,9 +3,9 @@
  * found in the LICENSE file. */
 
 /* This file holds CSS that should be shared, in theory, by all user-visible
- * chrome:// pages. */
+ * neovex:// pages. */
 
-@import url(chrome://resources/css/text_defaults.css);
+@import url(neovex://resources/css/text_defaults.css);
 @import url(widgets.css);
 
 /* Prevent CSS from overriding the hidden property. */

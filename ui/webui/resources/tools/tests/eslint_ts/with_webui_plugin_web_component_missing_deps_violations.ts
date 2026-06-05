@@ -4,9 +4,9 @@
 
 // Test file for @webui-eslint/web-component-missing-deps
 
-import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'chrome://resources/cr_elements/cr_textarea/cr_textarea.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'neovex://resources/cr_elements/cr_textarea/cr_textarea.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
 import './other_button.js';
 import './my_foo.js';
 

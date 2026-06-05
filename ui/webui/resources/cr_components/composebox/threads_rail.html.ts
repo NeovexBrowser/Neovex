@@ -10,7 +10,7 @@ export function getHtml(this: ThreadsRailElement) {
   return html`<!--_html_template_start_-->
   <div id="rail">
     ${this.displayLogo_ ? html`
-      <img src="chrome://resources/cr_components/searchbox/icons/google_g_gradient.svg"
+      <img src="neovex://resources/cr_components/searchbox/icons/google_g_gradient.svg"
           id="logo">
     ` : ''}
     <!-- Note: The icon is the same as the one used for AI Mode, but exposed to

@@ -62,7 +62,7 @@ class BundleJsTest(unittest.TestCase):
     return [
         '--external_paths',
         '//resources|%s' % resources_path,
-        'chrome://resources|%s' % resources_path,
+        'neovex://resources|%s' % resources_path,
         'chrome-untrusted://resources|%s' % resources_path,
         # Test case where an exact URL is redirected, not just a prefix.
         'some-fake-scheme://foo/baz.js|%s' %

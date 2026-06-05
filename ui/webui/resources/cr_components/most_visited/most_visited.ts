@@ -721,7 +721,7 @@ export class MostVisitedElement extends MostVisitedElementBase {
   }
 
   protected getFaviconUrl_(url: Url): string {
-    const faviconUrl = new URL('chrome://favicon2/');
+    const faviconUrl = new URL('neovex://favicon2/');
     faviconUrl.searchParams.set('size', '24');
     faviconUrl.searchParams.set('scaleFactor', '1x');
     faviconUrl.searchParams.set('showFallbackMonogram', '');

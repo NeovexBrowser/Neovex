@@ -30,7 +30,7 @@ export function getHtml(this: HistoryClustersElement) {
       ?hidden="${this.showSpinner_}">
     ${this.i18n('loadMoreButtonLabel')}
   </cr-button>
-  <img class="spinner-icon" src="chrome://resources/images/throbber_small.svg"
+  <img class="spinner-icon" src="neovex://resources/images/throbber_small.svg"
       ?hidden="${!this.showSpinner_}"></img>
 </div>
 ${this.showConfirmationDialog_ ? html`<cr-dialog consume-keydown-event

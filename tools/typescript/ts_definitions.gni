@@ -70,29 +70,29 @@ template("ts_definitions") {
     }
 
     path_mappings = [
-      "chrome://resources/*|" +
+      "neovex://resources/*|" +
           rebase_path("$root_gen_dir/ui/webui/resources/tsc/*", target_gen_dir),
       "//resources/*|" +
           rebase_path("$root_gen_dir/ui/webui/resources/tsc/*", target_gen_dir),
-      "chrome://resources/polymer/v3_0/*|" +
+      "neovex://resources/polymer/v3_0/*|" +
           rebase_path("//third_party/polymer/v3_0/components-chromium/*",
                       target_gen_dir),
       "//resources/polymer/v3_0/*|" +
           rebase_path("//third_party/polymer/v3_0/components-chromium/*",
                       target_gen_dir),
-      "chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js|" + rebase_path(
+      "neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js|" + rebase_path(
               "//third_party/polymer/v3_0/components-chromium/polymer/polymer-element.d.ts",
               target_gen_dir),
       "//resources/polymer/v3_0/polymer/polymer_bundled.min.js|" + rebase_path(
               "//third_party/polymer/v3_0/components-chromium/polymer/polymer-element.d.ts",
               target_gen_dir),
-      "chrome://resources/cros_components/*|" + rebase_path(
+      "neovex://resources/cros_components/*|" + rebase_path(
               "$root_gen_dir/ui/webui/resources/tsc/cros_components/to_be_rewritten/*",
               target_gen_dir),
       "//resources/cros_components/*|" + rebase_path(
               "$root_gen_dir/ui/webui/resources/tsc/cros_components/to_be_rewritten/*",
               target_gen_dir),
-      "chrome://resources/ash/common/*|" +
+      "neovex://resources/ash/common/*|" +
           rebase_path("$root_gen_dir/ash/webui/common/resources/preprocessed/*",
                       target_gen_dir),
       "//resources/ash/common/*|" +

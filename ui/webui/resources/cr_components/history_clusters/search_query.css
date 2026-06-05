@@ -48,7 +48,7 @@ span {
 .icon {
   --cr-icon-button-margin-start: 0;
   --cr-icon-color: var(--icon-color);
-  --cr-icon-image: url(chrome://resources/images/icon_search.svg);
+  --cr-icon-image: url(neovex://resources/images/icon_search.svg);
   --cr-icon-ripple-margin: 0;
   --cr-icon-ripple-size: 16px;
   --cr-icon-size: 16px;
