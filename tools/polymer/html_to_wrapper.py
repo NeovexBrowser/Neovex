@@ -229,7 +229,7 @@ def main(argv):
 
       substitutions = {
           'content': html_content,
-          'scheme': 'chrome:' if args.scheme == 'chrome' else '',
+          'scheme': 'neovex:' if args.scheme == 'chrome' else '',
       }
 
       if template_type == 'lit_icons':

@@ -166,9 +166,14 @@ ts_library("build_ts") {
     ":copy_mojo_ts",
   ]
 
-  path_mappings = [ "//resources/mojo/*|" +
-                    rebase_path("$root_gen_dir/ui/webui/resources/tsc/mojo/*",
-                                target_gen_dir) ]
+  path_mappings = [
+    "//resources/mojo/*|" +
+        rebase_path("$root_gen_dir/ui/webui/resources/tsc/mojo/*",
+                    target_gen_dir),
+    "neovex://resources/mojo/*|" +
+        rebase_path("$root_gen_dir/ui/webui/resources/tsc/mojo/*",
+                    target_gen_dir),
+  ]
 }
 
 if (optimize_webui) {

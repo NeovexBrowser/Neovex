@@ -166,7 +166,7 @@ _js_reserved_keywords = [
     'yield',
 ]
 
-_CHROME_SCHEME_PREFIX = 'chrome:'
+_CHROME_SCHEME_PREFIX = 'neovex:'
 _SHARED_MODULE_PREFIX = '//resources/mojo'
 
 
