@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
 
-import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './toggle_row.css.js';
 import {getHtml} from './toggle_row.html.js';

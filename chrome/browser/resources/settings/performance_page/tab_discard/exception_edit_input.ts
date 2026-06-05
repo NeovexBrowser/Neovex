@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import type {ListPropertyUpdateMixinInterface} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import type {ListPropertyUpdateMixinInterface} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {convertDateToWindowsEpoch} from '../../time.js';
 import type {PerformanceMetricsProxy} from '../performance_metrics_proxy.js';

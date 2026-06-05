@@ -10,10 +10,10 @@
 
 import '../../controls/settings_toggle_button.js';
 
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {isPermissionEnabled} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {isPermissionEnabled} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../../common/deep_linking_mixin.js';
 import {RouteOriginMixin} from '../../common/route_origin_mixin.js';

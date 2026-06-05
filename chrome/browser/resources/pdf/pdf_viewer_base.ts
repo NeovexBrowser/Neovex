@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import {PdfHelpBubbleProxyImpl} from 'chrome://resources/cr_components/help_bubble/pdf_help_bubble_proxy.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {LoadTimeDataRaw} from 'chrome://resources/js/load_time_data.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import {PdfHelpBubbleProxyImpl} from 'neovex://resources/cr_components/help_bubble/pdf_help_bubble_proxy.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {LoadTimeDataRaw} from 'neovex://resources/js/load_time_data.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {BrowserApi} from './browser_api.js';
 import {ZoomBehavior} from './browser_api.js';

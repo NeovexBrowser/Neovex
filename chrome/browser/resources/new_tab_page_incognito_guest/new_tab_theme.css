@@ -5,7 +5,7 @@
 html {
   background-attachment: fixed;
   background-color: $i18n{colorBackground};
-  background-image: url(chrome://theme/IDR_THEME_NTP_BACKGROUND?$i18n{themeId});
+  background-image: url(neovex://theme/IDR_THEME_NTP_BACKGROUND?$i18n{themeId});
   background-position: $i18n{backgroundPosition};
   background-repeat: $i18n{backgroundTiling};
 }
@@ -30,7 +30,7 @@ body {
 }
 
 #attribution-img {
-  content: url(chrome://theme/IDR_THEME_NTP_ATTRIBUTION?$i18n{themeId});
+  content: url(neovex://theme/IDR_THEME_NTP_ATTRIBUTION?$i18n{themeId});
 }
 
 .page-switcher {

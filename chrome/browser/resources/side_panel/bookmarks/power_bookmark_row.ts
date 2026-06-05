@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
 import './power_bookmark_row_item.js';
 
 import type {PriceTrackingBrowserProxy} from '//resources/cr_components/commerce/price_tracking_browser_proxy.js';
@@ -10,9 +10,9 @@ import {PriceTrackingBrowserProxyImpl} from '//resources/cr_components/commerce/
 import type {BookmarkProductInfo} from '//resources/cr_components/commerce/shared.mojom-webui.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
-import {CrUrlListItemSize} from 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isRTL} from 'chrome://resources/js/util.js';
+import {CrUrlListItemSize} from 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isRTL} from 'neovex://resources/js/util.js';
 
 import type {BookmarksTreeNode} from './bookmarks.mojom-webui.js';
 import {KeyArrowNavigationService} from './keyboard_arrow_navigation_service.js';

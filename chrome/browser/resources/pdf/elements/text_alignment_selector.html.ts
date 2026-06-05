@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
 import './icons.html.js';
 import './selectable_icon_button.js';
 
-import {html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {TextAlignment} from '../constants.js';
 

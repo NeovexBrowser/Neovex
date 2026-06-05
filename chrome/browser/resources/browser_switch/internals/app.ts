@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
 
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

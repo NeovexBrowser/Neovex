@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 
 import {I18nMixinLit} from '//resources/cr_elements/i18n_mixin_lit.js';
-import {AnchorAlignment} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {AnchorAlignment} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {ItemDelegate} from './item.js';
 import type {Mv2DeprecationDelegate} from './mv2_deprecation_delegate.js';

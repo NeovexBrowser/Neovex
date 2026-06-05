@@ -24,7 +24,7 @@
 /* Used to slide in the overlay. */
 .overlay.transparent .page {
   /* TODO(flackr): Add perspective(500px) rotateX(5deg) when accelerated
-   * compositing is enabled on chrome:// pages. See http://crbug.com/116800. */
+   * compositing is enabled on neovex:// pages. See http://crbug.com/116800. */
   transform: scale(0.99) translateY(-20px);
 }
 
@@ -73,7 +73,7 @@
 }
 
 .overlay .page > .close-button {
-  background-image: url(chrome://theme/IDR_CLOSE_DIALOG);
+  background-image: url(neovex://theme/IDR_CLOSE_DIALOG);
   background-position: center;
   background-repeat: no-repeat;
   height: 14px;
@@ -90,11 +90,11 @@ html[dir='rtl'] .overlay .page > .close-button {
 }
 
 .overlay .page > .close-button:hover {
-  background-image: url(chrome://theme/IDR_CLOSE_DIALOG_H);
+  background-image: url(neovex://theme/IDR_CLOSE_DIALOG_H);
 }
 
 .overlay .page > .close-button:active {
-  background-image: url(chrome://theme/IDR_CLOSE_DIALOG_P);
+  background-image: url(neovex://theme/IDR_CLOSE_DIALOG_P);
 }
 
 .overlay .page h1 {

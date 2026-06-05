@@ -4,12 +4,12 @@
 
 import '/strings.m.js';
 
-import type {ClickInfo} from 'chrome://resources/js/browser_command.mojom-webui.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isChromeOS} from 'chrome://resources/js/platform.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import type {ClickInfo} from 'neovex://resources/js/browser_command.mojom-webui.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isChromeOS} from 'neovex://resources/js/platform.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import {handleBrowserCommand, handleModuleEvent, handlePageLoadMetric, handleScrollDepthMetric, handleTimeOnPageMetric} from './handlers.js';
 import {EventType} from './types.js';

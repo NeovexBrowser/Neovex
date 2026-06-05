@@ -7,17 +7,17 @@
  * containing the urls that will be opened when chrome is started.
  */
 
-import 'chrome://resources/js/action_link.js';
-import 'chrome://resources/cr_elements/action_link.css.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/js/action_link.js';
+import 'neovex://resources/cr_elements/action_link.css.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
 import '/shared/settings/controls/extension_controlled_indicator.js';
 import '../settings_shared.css.js';
 import './startup_url_dialog.js';
 import './startup_url_entry.js';
 
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ScrollableMixin} from '../scrollable_mixin.js';
 

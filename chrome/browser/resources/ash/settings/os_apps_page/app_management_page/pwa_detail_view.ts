@@ -11,13 +11,13 @@ import '../../app_management_icons.html.js';
 import './more_permissions_item.js';
 import './permission_item.js';
 import './supported_links_item.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
 
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {AppMap} from 'chrome://resources/cr_components/app_management/constants.js';
-import {getSelectedApp} from 'chrome://resources/cr_components/app_management/util.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {AppMap} from 'neovex://resources/cr_components/app_management/constants.js';
+import {getSelectedApp} from 'neovex://resources/cr_components/app_management/util.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AppManagementStoreMixin} from '../../common/app_management/store_mixin.js';
 import type {PrefsState} from '../../common/types.js';

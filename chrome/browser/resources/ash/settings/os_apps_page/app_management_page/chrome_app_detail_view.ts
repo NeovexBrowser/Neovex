@@ -7,10 +7,10 @@ import './more_permissions_item.js';
 import './pin_to_shelf_item.js';
 import './app_management_cros_shared_style.css.js';
 
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {App, ExtensionAppPermissionMessage} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {getSelectedApp} from 'chrome://resources/cr_components/app_management/util.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {App, ExtensionAppPermissionMessage} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {getSelectedApp} from 'neovex://resources/cr_components/app_management/util.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AppManagementBrowserProxy} from '../../common/app_management/browser_proxy.js';
 import {AppManagementStoreMixin} from '../../common/app_management/store_mixin.js';

@@ -7,16 +7,16 @@
  * page.
  */
 
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 import '../i18n_setup.js';
 import '../settings_shared.css.js';
 import './passwords_shared.css.js';
 import './screen_reader_only.css.js';
 
 import {I18nMixin} from '//resources/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './iban_list_entry.html.js';
 

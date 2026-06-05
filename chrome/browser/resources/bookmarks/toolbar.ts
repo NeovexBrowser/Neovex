@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_selection_overlay.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_selection_overlay.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import '/strings.m.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
 
-import type {CrToolbarElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import type {CrToolbarSearchFieldElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrToolbarElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import type {CrToolbarSearchFieldElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {setSearchTerm} from './actions.js';
 import {BookmarksCommandManagerElement} from './command_manager.js';

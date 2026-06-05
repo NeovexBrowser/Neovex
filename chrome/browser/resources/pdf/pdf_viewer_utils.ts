@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {getDeepActiveElement} from 'neovex://resources/js/util.js';
 
 // <if expr="enable_pdf_ink2">
 import type {Color} from './constants.js';

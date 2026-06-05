@@ -1,12 +1,12 @@
 <!doctype html>
 <html dir="$i18n{textdirection}" lang="$i18n{language}" class="loading">
 <head>
-  <link rel="icon" type="image/svg+xml" href="chrome://resources/images/neovex_logo.svg">
+  <link rel="icon" type="image/svg+xml" href="neovex://resources/images/neovex_logo.svg">
   <meta charset="utf-8">
   <meta name="color-scheme" content="light dark">
   <title>$i18n{settings}</title>
-  <base href="chrome://settings">
-  <link rel="stylesheet" href="chrome://resources/css/md_colors.css">
+  <base href="neovex://settings">
+  <link rel="stylesheet" href="neovex://resources/css/md_colors.css">
   <style>
     html {
       overflow: hidden;
@@ -117,12 +117,12 @@
   <div class="settings-bg-orb settings-bg-orb-4"></div>
   <div class="settings-dot-grid"></div>
 
-  <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+  <link rel="stylesheet" href="neovex://resources/css/text_defaults_md.css">
   <script type="module" src="settings.js"></script>
   <settings-ui></settings-ui>
 
   <!-- Hidden iframe bridge to NTP for wallpaper data -->
-  <iframe id="ntpBridge" src="chrome://new-tab-page/new_tab_page.html"></iframe>
+  <iframe id="ntpBridge" src="neovex://new-tab-page/new_tab_page.html"></iframe>
 
   <script>
     (function() {

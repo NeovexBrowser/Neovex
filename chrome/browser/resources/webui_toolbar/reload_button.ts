@@ -10,8 +10,8 @@ import '/strings.m.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
 import {MenuSourceType} from '//resources/mojo/ui/base/mojom/menu_source_type.mojom-webui.js';
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {BrowserProxyImpl, ContextMenuType} from './browser_proxy.js';
 import type {BrowserProxy, ReloadControlState} from './browser_proxy.js';

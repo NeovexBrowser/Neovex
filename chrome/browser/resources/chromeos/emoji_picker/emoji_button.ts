@@ -7,9 +7,9 @@
 // disabled.  I can delete the others in a follow up, but not changing this file
 // to make the revert simpler to review.
 // https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/resources/chromeos/emoji_picker/emoji_variants.html
-import 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './emoji_button.html.js';
 import type {EMOJI_IMG_BUTTON_CLICK, EMOJI_VARIANTS_SHOWN, EmojiImgButtonClickEvent, EmojiTextButtonClickEvent, EmojiVariantsShownEvent} from './events.js';

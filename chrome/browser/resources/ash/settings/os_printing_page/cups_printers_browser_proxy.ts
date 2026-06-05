@@ -7,7 +7,7 @@
  * interact with the browser. Used only on Chrome OS.
  */
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 import type {PrinterStatus} from './printer_status.js';
 

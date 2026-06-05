@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {ChromeEvent} from '/tools/typescript/definitions/chrome_event.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {ActivityLogDelegate} from './activity_log/activity_log_history.js';
 import type {ActivityLogEventDelegate} from './activity_log/activity_log_stream.js';

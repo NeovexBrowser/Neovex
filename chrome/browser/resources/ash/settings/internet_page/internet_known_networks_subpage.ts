@@ -7,30 +7,30 @@
  * 'settings-internet-known-networks' is the settings subpage listing the
  * known networks for a type (currently always WiFi).
  */
-import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
 import './internet_shared.css.js';
 
-import {MojoConnectivityProvider} from 'chrome://resources/ash/common/connectivity/mojo_connectivity_provider.js';
-import type {PasspointServiceInterface, PasspointSubscription} from 'chrome://resources/ash/common/connectivity/passpoint.mojom-webui.js';
-import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {CrPolicyNetworkBehaviorMojoInterface} from 'chrome://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
-import {CrPolicyNetworkBehaviorMojo} from 'chrome://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkListenerBehaviorInterface} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
-import {NetworkListenerBehavior} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {ConfigProperties, CrosNetworkConfigInterface, ManagedProperties, NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {FilterType, NO_LIMIT} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {MojoConnectivityProvider} from 'neovex://resources/ash/common/connectivity/mojo_connectivity_provider.js';
+import type {PasspointServiceInterface, PasspointSubscription} from 'neovex://resources/ash/common/connectivity/passpoint.mojom-webui.js';
+import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {CrPolicyNetworkBehaviorMojoInterface} from 'neovex://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
+import {CrPolicyNetworkBehaviorMojo} from 'neovex://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkListenerBehaviorInterface} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
+import {NetworkListenerBehavior} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {ConfigProperties, CrosNetworkConfigInterface, ManagedProperties, NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {FilterType, NO_LIMIT} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertExists} from '../assert_extras.js';
 import type {DeepLinkingMixinInterface} from '../common/deep_linking_mixin.js';

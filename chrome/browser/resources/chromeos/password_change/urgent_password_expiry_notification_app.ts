@@ -9,18 +9,18 @@
  * It is implemented not using the notification system, but as a system dialog.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '/strings.m.js';
 
-import {sendWithPromise} from 'chrome://resources/ash/common/cr.m.js';
-import {I18nBehavior} from 'chrome://resources/ash/common/i18n_behavior.js';
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {WebUIListenerBehavior} from 'chrome://resources/ash/common/web_ui_listener_behavior.js';
-import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {sendWithPromise} from 'neovex://resources/ash/common/cr.m.js';
+import {I18nBehavior} from 'neovex://resources/ash/common/i18n_behavior.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {WebUIListenerBehavior} from 'neovex://resources/ash/common/web_ui_listener_behavior.js';
+import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './urgent_password_expiry_notification_app.html.js';
 

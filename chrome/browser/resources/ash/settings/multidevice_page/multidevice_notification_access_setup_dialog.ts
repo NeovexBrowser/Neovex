@@ -9,18 +9,18 @@
  * notifications to be mirrored on their Chromebook.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
 import '../os_settings_icons.html.js';
 import '../settings_shared.css.js';
 
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {MultiDeviceBrowserProxy} from './multidevice_browser_proxy.js';
 import {MultiDeviceBrowserProxyImpl} from './multidevice_browser_proxy.js';

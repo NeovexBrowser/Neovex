@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
 import './exception_add_input.js';
 import './exception_current_sites_list.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrTabsElement} from 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
-import {NONE_SELECTED} from 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrTabsElement} from 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
+import {NONE_SELECTED} from 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../../i18n_setup.js';
 

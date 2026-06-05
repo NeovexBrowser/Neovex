@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PostMessageApiServer} from 'chrome://resources/ash/common/post_message_api/post_message_api_server.js';
+import {PostMessageApiServer} from 'neovex://resources/ash/common/post_message_api/post_message_api_server.js';
 
 import type {AddSupervisionHandlerRemote} from './add_supervision.mojom-webui.js';
 import {AddSupervisionHandler} from './add_supervision.mojom-webui.js';

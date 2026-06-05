@@ -11,7 +11,7 @@
  * when an eligible element is dropped.
  */
 
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
 
 import {CustomizeButtonRowElement} from './customize_button_row.js';
 

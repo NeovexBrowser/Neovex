@@ -8,19 +8,19 @@
  * or out.
  */
 
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 import '../settings_page/settings_subpage.js';
 import '../settings_shared.css.js';
 import '../site_favicon.js';
 
-import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {SettingsViewMixin} from '../settings_page/settings_view_mixin.js';
 

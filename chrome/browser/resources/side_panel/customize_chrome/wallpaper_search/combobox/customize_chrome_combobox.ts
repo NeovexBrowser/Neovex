@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import '../../check_mark_wrapper.js';
-import 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 
-import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './customize_chrome_combobox.css.js';
 import {getHtml} from './customize_chrome_combobox.html.js';

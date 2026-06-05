@@ -6,7 +6,7 @@ import './ink_brush_selector.js';
 import './ink_color_selector.js';
 import './ink_size_selector.js';
 
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {AnnotationBrushType} from '../constants.js';
 

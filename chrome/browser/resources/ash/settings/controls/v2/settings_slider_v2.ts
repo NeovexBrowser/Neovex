@@ -56,15 +56,15 @@
  *   <settings-slider-v2>
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_hidden_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
-import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_hidden_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
 
-import type {CrSliderElement, SliderTick} from 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrSliderElement, SliderTick} from 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {PrefControlMixinInternal} from './pref_control_mixin_internal.js';
 import {getTemplate} from './settings_slider_v2.html.js';

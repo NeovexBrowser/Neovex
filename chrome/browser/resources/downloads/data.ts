@@ -4,7 +4,7 @@
 
 /**
  * @fileoverview Typedef to allow augmentation of Data objects sent from C++ to
- * JS for chrome://downloads.
+ * JS for neovex://downloads.
  */
 
 import type {Data} from './downloads.mojom-webui.js';

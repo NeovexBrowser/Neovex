@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_grid/cr_grid.js';
+import 'neovex://resources/cr_elements/cr_grid/cr_grid.js';
 
-import {html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {InkColorSelectorElement} from './ink_color_selector.js';
 

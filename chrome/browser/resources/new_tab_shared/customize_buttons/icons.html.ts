@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_icon/cr_iconset.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_iconset.js';
 
-import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
 
 const div = document.createElement('div');
 div.innerHTML = getTrustedHTML`

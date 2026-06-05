@@ -10,7 +10,7 @@ import {loadTimeData} from '//resources/js/load_time_data.js';
 import {TrackedElementManager} from '//resources/js/tracked_element/tracked_element_manager.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

@@ -40,24 +40,24 @@
  *     the dialog resets the state machine back to `NO_DIALOG`.
  */
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/cr_elements/cr_spinner_style.css.js';
-import 'chrome://resources/cr_elements/md_select.css.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_spinner_style.css.js';
+import 'neovex://resources/cr_elements/md_select.css.js';
 import './site_favicon.js';
 import './dialogs/password_preview_item.js';
 
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {CrLinkRowElement} from 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import type {CrLinkRowElement} from 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {PasswordManagerProxy} from './password_manager_proxy.js';
 import {PasswordManagerImpl} from './password_manager_proxy.js';

@@ -7,14 +7,14 @@
  * 'settings-reset-profile-banner' is the banner shown for prompting the user to
  * clear profile settings.
  */
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
 import '../settings_shared.css.js';
 
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {routes} from '../route.js';
 import {Router} from '../router.js';

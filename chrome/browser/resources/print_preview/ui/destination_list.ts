@@ -6,9 +6,9 @@ import '//resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
 import './destination_list_item.js';
 import '/strings.m.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {Destination} from '../data/destination.js';
 

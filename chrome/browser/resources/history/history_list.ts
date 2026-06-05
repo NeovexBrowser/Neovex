@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
-import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
+import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
 import './history_item.js';
 
-import type {HistoryEntry, HistoryQuery, PageCallbackRouter, PageHandlerRemote, QueryState} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInfiniteListElement} from 'chrome://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
-import type {CrLazyRenderLitElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {HistoryEntry, HistoryQuery, PageCallbackRouter, PageHandlerRemote, QueryState} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInfiniteListElement} from 'neovex://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
+import type {CrLazyRenderLitElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {BrowserService} from './browser_service.js';
 import {BrowserServiceImpl} from './browser_service.js';

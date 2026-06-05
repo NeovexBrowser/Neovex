@@ -4,8 +4,8 @@
 
 import '/strings.m.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {TabElement} from './tab.js';
 import {isTabElement} from './tab.js';

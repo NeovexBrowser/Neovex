@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
-import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
-import 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
+import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
 import './browser_proxy.js';
 import './modifications_panel.js';
 
-import type {CrTreeElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
-import type {CrTreeItemElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import type {CrTreeElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import type {CrTreeItemElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 interface TreeInfo {
   payload?: object;

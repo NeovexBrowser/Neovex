@@ -12,19 +12,19 @@ import '//resources/cr_elements/cr_toggle/cr_toggle.js';
 import '/shared/settings/prefs/prefs.js';
 import '../controls/settings_toggle_button.js';
 import '../people_page/signout_dialog.js';
-import 'chrome://resources/cr_elements/md_select.css.js';
+import 'neovex://resources/cr_elements/md_select.css.js';
 // <if expr="not is_chromeos">
 import '../relaunch_confirmation_dialog.js';
 // </if>
 import '../settings_shared.css.js';
 // <if expr="not is_chromeos">
 import '//resources/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
 // </if>
 
 // <if expr="_google_chrome">
 // <if expr="is_chromeos">
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
 
 // </if>
 // </if>
@@ -39,8 +39,8 @@ import {ChromeSigninUserChoice, SignedInState, SyncBrowserProxyImpl} from '/shar
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
 import type {MetricsReporting, PrivacyPageBrowserProxy} from '/shared/settings/privacy_page/privacy_page_browser_proxy.js';
 import {PrivacyPageBrowserProxyImpl} from '/shared/settings/privacy_page/privacy_page_browser_proxy.js';
-import {HelpBubbleMixin} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {HelpBubbleMixin} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
 
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';
 import {loadTimeData} from '../i18n_setup.js';

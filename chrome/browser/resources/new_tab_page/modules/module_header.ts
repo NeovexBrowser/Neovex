@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import './icons.html.js';
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 
-import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 

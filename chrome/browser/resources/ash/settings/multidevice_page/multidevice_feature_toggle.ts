@@ -11,10 +11,10 @@
  * reflects them in the toggle status.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
 
-import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {MultiDeviceFeature, MultiDeviceFeatureState} from './multidevice_constants.js';
 import {MultiDeviceFeatureMixin} from './multidevice_feature_mixin.js';

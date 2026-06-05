@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {skColorToRgba} from 'chrome://resources/js/color_utils.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import {skColorToRgba} from 'neovex://resources/js/color_utils.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
 
 import type {BackgroundImage} from './new_tab_page.mojom-webui.js';
 import {strictQuery} from './utils.js';

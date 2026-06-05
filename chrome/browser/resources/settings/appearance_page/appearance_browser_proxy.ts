@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 // clang-format on

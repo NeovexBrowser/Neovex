@@ -11,7 +11,7 @@ export function getHtml(this: DeprecatedAppsLinkElement) {
   return html`<!--_html_template_start_-->
 ${this.display ? html`
   <div id="container">
-    <img src="chrome://resources/images/error_yellow900.svg">
+    <img src="neovex://resources/images/error_yellow900.svg">
     <a is="action-link"
         id="deprecated-apps-link"
         @click="${this.onLinkClick_}"

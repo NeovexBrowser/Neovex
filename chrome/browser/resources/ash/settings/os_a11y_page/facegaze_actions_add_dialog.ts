@@ -6,30 +6,30 @@
  * @fileoverview 'facegaze-actions-add-dialog' is a dialog for
  * adding an action to FaceGaze.
  */
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
-import 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input.js';
-import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input.js';
+import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
 import '../settings_shared.css.js';
 import './facegaze_icons.html.js';
 
 import type {CrSliderElement} from '//resources/ash/common/cr_elements/cr_slider/cr_slider.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {FacialGesture} from 'chrome://resources/ash/common/accessibility/facial_gestures.js';
-import {MacroName} from 'chrome://resources/ash/common/accessibility/macro_names.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {CrScrollableMixin} from 'chrome://resources/ash/common/cr_elements/cr_scrollable_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import type {ShortcutInputElement} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input.js';
-import {ModifierKeyCodes} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {FacialGesture} from 'neovex://resources/ash/common/accessibility/facial_gestures.js';
+import {MacroName} from 'neovex://resources/ash/common/accessibility/macro_names.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {CrScrollableMixin} from 'neovex://resources/ash/common/cr_elements/cr_scrollable_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import type {ShortcutInputElement} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input.js';
+import {ModifierKeyCodes} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {KeyEvent, ShortcutInputProviderInterface} from '../device_page/input_device_settings_types.js';
 import {getShortcutInputProvider} from '../device_page/shortcut_input_mojo_interface_provider.js';

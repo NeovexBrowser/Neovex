@@ -6,9 +6,9 @@ import '//resources/cr_elements/cr_collapse/cr_collapse.js';
 import '//resources/cr_elements/cr_expand_button/cr_expand_button.js';
 import '/strings.m.js';
 
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './profile_internals_app.css.js';
 import {getHtml} from './profile_internals_app.html.js';

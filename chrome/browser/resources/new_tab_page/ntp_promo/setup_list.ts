@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import './ntp_promo_icons.html.js';
 import './setup_list_item.js';
 import '../modules/icons.html.js';
 import '../modules/info_dialog.js';
 import '../modules/module_header.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {I18nMixinLit} from '../i18n_setup.js';
 import type {ModuleHeaderElement} from '../modules/module_header.js';

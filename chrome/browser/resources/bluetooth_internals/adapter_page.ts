@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /**
- * Javascript for AdapterPage, served from chrome://bluetooth-internals/.
+ * Javascript for AdapterPage, served from neovex://bluetooth-internals/.
  */
 
 import './object_fieldset.js';
 
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 import type {AdapterInfo} from './adapter.mojom-webui.js';
 import type {ObjectFieldsetElement} from './object_fieldset.js';

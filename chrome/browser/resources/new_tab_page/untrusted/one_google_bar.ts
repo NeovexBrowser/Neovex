@@ -24,7 +24,7 @@ function postMessage(messageType: MessageType, data?: object) {
   }
   window.parent.postMessage(
       {frameType: 'one-google-bar', messageType, data},
-      'chrome://new-tab-page');
+      'neovex://new-tab-page');
 }
 
 const oneGoogleBarApi = createOneGoogleBarApi(abp);

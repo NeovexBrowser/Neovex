@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {CrLitElement, nothing} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {CrLitElement, nothing} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {ChromeSigninInterceptionParameters, DiceWebSigninInterceptBrowserProxy} from '../dice_web_signin_intercept_browser_proxy.js';
 import {DiceWebSigninInterceptBrowserProxyImpl} from '../dice_web_signin_intercept_browser_proxy.js';

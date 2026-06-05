@@ -45,7 +45,7 @@
  *   </settings-row>
  */
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {BaseRowMixin} from './base_row_mixin.js';
 import {getTemplate} from './settings_row.html.js';

@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 import './shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
 
-import {HelpBubbleMixin} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
-import type {CrToolbarElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import type {CrToolbarSearchFieldElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {HelpBubbleMixin} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin.js';
+import type {CrToolbarElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import type {CrToolbarSearchFieldElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Route} from './router.js';
 import {Page, RouteObserverMixin, Router, UrlParam} from './router.js';

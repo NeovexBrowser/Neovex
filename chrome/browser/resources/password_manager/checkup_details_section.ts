@@ -1,21 +1,21 @@
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
-import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import './shared_style.css.js';
 import './checkup_list_item.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './checkup_details_section.html.js';
 import type {CheckupListItemElement} from './checkup_list_item.js';

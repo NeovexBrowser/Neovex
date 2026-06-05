@@ -1,19 +1,19 @@
 // Copyright 2025 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '../settings_shared.css.js';
 import '../os_settings_icons.html.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrRadioGroupElement} from 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrRadioGroupElement} from 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertExhaustive} from '../assert_extras.js';
 

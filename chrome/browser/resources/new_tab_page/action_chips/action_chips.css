@@ -4,8 +4,8 @@
 
 /* #css_wrapper_metadata_start
  * #type=style-lit
- * #import=chrome://resources/cr_elements/cr_shared_style_lit.css.js
- * #import=chrome://resources/cr_elements/cr_icons_lit.css.js
+ * #import=neovex://resources/cr_elements/cr_shared_style_lit.css.js
+ * #import=neovex://resources/cr_elements/cr_icons_lit.css.js
  * #scheme=relative
  * #include=cr-shared-style-lit cr-icons-lit
  * #css_wrapper_metadata_end */
@@ -82,19 +82,19 @@
 }
 
 .icon-type-sub-arrow-right {
-  -webkit-mask-image: url(chrome://new-tab-page/icons/suggestion.svg);
+  -webkit-mask-image: url(neovex://new-tab-page/icons/suggestion.svg);
 }
 
 .icon-type-globe-with-search-loop {
-  -webkit-mask-image: url(chrome://new-tab-page/icons/deep_search.svg);
+  -webkit-mask-image: url(neovex://new-tab-page/icons/deep_search.svg);
 }
 
 .icon-type-draft-spark {
-  -webkit-mask-image: url(chrome://new-tab-page/icons/canvas.svg);
+  -webkit-mask-image: url(neovex://new-tab-page/icons/canvas.svg);
 }
 
 .icon-type-banana {
-  background-image: url(chrome://new-tab-page/icons/banana.svg);
+  background-image: url(neovex://new-tab-page/icons/banana.svg);
 }
 
 .action-chip {
@@ -331,7 +331,7 @@
 .chip-remove-button {
   --cr-icon-button-icon-size: 16px;
   --cr-icon-button-size: 24px;
-  --cr-icon-image: url('chrome://resources/images/icon_clear.svg');
+  --cr-icon-image: url('neovex://resources/images/icon_clear.svg');
   align-self: center;
   display: none;
   position: absolute;

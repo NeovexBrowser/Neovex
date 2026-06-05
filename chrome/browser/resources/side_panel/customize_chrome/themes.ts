@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://customize-chrome-side-panel.top-chrome/shared/sp_heading.js';
-import 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'chrome://resources/cr_elements/cr_grid/cr_grid.js';
-import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://customize-chrome-side-panel.top-chrome/shared/sp_heading.js';
+import 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'neovex://resources/cr_elements/cr_grid/cr_grid.js';
+import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
 import './check_mark_wrapper.js';
 import '/strings.m.js';
 
-import type {SpHeadingElement} from 'chrome://customize-chrome-side-panel.top-chrome/shared/sp_heading.js';
-import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {SpHeadingElement} from 'neovex://customize-chrome-side-panel.top-chrome/shared/sp_heading.js';
+import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {CustomizeChromeAction, NtpImageType, recordCustomizeChromeAction, recordCustomizeChromeImageError} from './common.js';
 import type {BackgroundCollection, CollectionImage, Theme} from './customize_chrome.mojom-webui.js';

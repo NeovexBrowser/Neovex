@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
-import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/cr_elements/policy/cr_policy_indicator.js';
+import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/cr_elements/policy/cr_policy_indicator.js';
 import '/strings.m.js';
 import './button_label.js';
 
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './cards.css.js';
 import {getHtml} from './cards.html.js';

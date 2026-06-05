@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import './icons.html.js';
 
-import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrUrlListItemElement} from 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import {MouseHoverableMixinLit} from 'chrome://resources/cr_elements/mouse_hoverable_mixin_lit.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrUrlListItemElement} from 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import {MouseHoverableMixinLit} from 'neovex://resources/cr_elements/mouse_hoverable_mixin_lit.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {ReadLaterEntry} from './reading_list.mojom-webui.js';
 import type {ReadingListApiProxy} from './reading_list_api_proxy.js';

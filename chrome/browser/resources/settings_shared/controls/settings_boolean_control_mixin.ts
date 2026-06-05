@@ -9,9 +9,9 @@
  */
 
 // clang-format off
-import {assert} from 'chrome://resources/js/assert.js';
-import type { PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type { PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type { CrPolicyPrefMixinInterface} from './cr_policy_pref_mixin.js';
 import {CrPolicyPrefMixin} from './cr_policy_pref_mixin.js';

@@ -10,7 +10,7 @@ import '//resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
 import {assert} from '//resources/js/assert.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
 
 import {deduplicateEvents, mergeEvents, parseEvents, UpdaterProcessMap} from '../event_history.js';
 import type {HistoryEvent, MergedHistoryEvent, PolicySet} from '../event_history.js';

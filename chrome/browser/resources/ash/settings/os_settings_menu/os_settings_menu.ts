@@ -6,33 +6,33 @@
  * @fileoverview
  * 'os-settings-menu' shows a menu with a hardcoded set of pages and subpages.
  */
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
-import 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
 import '../settings_shared.css.js';
 import '../os_settings_icons.html.js';
 import './menu_item.js';
 
-import {getDeviceNameUnsafe} from 'chrome://resources/ash/common/bluetooth/bluetooth_utils.js';
-import {getBluetoothConfig} from 'chrome://resources/ash/common/bluetooth/cros_bluetooth_config.js';
-import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {WebUiListenerMixinInterface} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkListenerBehaviorInterface} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
-import {NetworkListenerBehavior} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {BluetoothSystemProperties, PairedBluetoothDeviceProperties} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {BluetoothSystemState, DeviceConnectionState, SystemPropertiesObserverReceiver as BluetoothPropertiesObserverReceiver} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import type {CrosNetworkConfigInterface, NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {FilterType, NO_LIMIT} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
-import type {DomRepeat} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getDeviceNameUnsafe} from 'neovex://resources/ash/common/bluetooth/bluetooth_utils.js';
+import {getBluetoothConfig} from 'neovex://resources/ash/common/bluetooth/cros_bluetooth_config.js';
+import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {WebUiListenerMixinInterface} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkListenerBehaviorInterface} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
+import {NetworkListenerBehavior} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {BluetoothSystemProperties, PairedBluetoothDeviceProperties} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {BluetoothSystemState, DeviceConnectionState, SystemPropertiesObserverReceiver as BluetoothPropertiesObserverReceiver} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import type {CrosNetworkConfigInterface, NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {FilterType, NO_LIMIT} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import type {DomRepeat} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertExists, castExists} from '../assert_extras.js';
 import {androidAppsVisible} from '../common/load_time_booleans.js';
@@ -444,7 +444,7 @@ export class OsSettingsMenuElement extends OsSettingsMenuElementBase {
   /**
    * @param path The path of the menu item to be selected. This path should be
    * the pathname portion of a URL, not the full URL. e.g. `/internet`, not
-   * `chrome://os-settings/internet`.
+   * `neovex://os-settings/internet`.
    */
   private setSelectedItemPath_(path: string): void {
     this.selectedItemPath_ = path;

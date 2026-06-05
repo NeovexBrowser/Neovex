@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
 import '//resources/cr_elements/cr_icon_button/cr_icon_button.js';
 import '//resources/cr_elements/icons.html.js';
 import './icons.html.js';
@@ -13,7 +13,7 @@ import './icons.html.js';
 import type {CrActionMenuElement} from '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
 import type {CrButtonElement} from '//resources/cr_elements/cr_button/cr_button.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {getCss} from './card.css.js';
 import {getHtml} from './card.html.js';

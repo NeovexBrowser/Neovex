@@ -6,10 +6,10 @@
  * @fileoverview 'settings-guest-os-container-select' is a component enabling a
  * user to select a target container from a list stored in prefs.
  */
-import 'chrome://resources/ash/common/cr_elements/md_select.css.js';
+import 'neovex://resources/ash/common/cr_elements/md_select.css.js';
 import '../settings_shared.css.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {cast} from '../assert_extras.js';
 

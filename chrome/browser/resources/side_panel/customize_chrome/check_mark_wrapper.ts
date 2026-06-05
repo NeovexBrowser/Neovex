@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './check_mark_wrapper.css.js';
 import {getHtml} from './check_mark_wrapper.html.js';

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview External interfaces used by chrome://healthd-internals.
+ * @fileoverview External interfaces used by neovex://healthd-internals.
  *
  * See chromeos/ash/services/cros_healthd/public/mojom/cros_healthd_probe.mojom
  * for more details.

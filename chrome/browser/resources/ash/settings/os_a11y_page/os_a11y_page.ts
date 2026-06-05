@@ -7,7 +7,7 @@
  * 'os-settings-a11y-page' is the small section of advanced settings containing
  * a subpage with Accessibility settings for ChromeOS.
  */
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
 import '../controls/settings_toggle_button.js';
 import '../os_settings_page/os_settings_animated_pages.js';
 import '../os_settings_page/os_settings_subpage.js';
@@ -15,9 +15,9 @@ import '../os_settings_page/settings_card.js';
 import '../settings_shared.css.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {RouteOriginMixin} from '../common/route_origin_mixin.js';

@@ -22,7 +22,7 @@ import {assert} from '//resources/js/assert.js';
 import {focusWithoutInk} from '//resources/js/focus_without_ink.js';
 import {listenOnce} from '//resources/js/util.js';
 import {afterNextRender, PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import type {Route} from '../router.js';

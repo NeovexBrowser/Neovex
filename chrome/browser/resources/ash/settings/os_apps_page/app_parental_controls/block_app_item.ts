@@ -4,7 +4,7 @@
 
 import '../../settings_shared.css.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {App, AppParentalControlsHandlerInterface} from '../../mojom-webui/app_parental_controls_handler.mojom-webui.js';
 
@@ -60,7 +60,7 @@ export class BlockAppItemElement extends PolymerElement {
     // Use a no-op query param that reflects the app blocked state.
     // This ensures that the icon is fetched every time the state of the app is
     // updated. Otherwise, the icon is cached if the src stays the same.
-    return `chrome://app-icon/${app.id}/64?` +
+    return `neovex://app-icon/${app.id}/64?` +
         `parental_controls_blocked=${app.isBlocked}`;
   }
 }

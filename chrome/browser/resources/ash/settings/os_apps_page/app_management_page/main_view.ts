@@ -4,15 +4,15 @@
 
 import './app_item.js';
 import './app_management_cros_shared_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
 
-import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {alphabeticalSort} from 'chrome://resources/cr_components/app_management/util.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {alphabeticalSort} from 'neovex://resources/cr_components/app_management/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {AppMap} from '../../common/app_management/store.js';
 import {AppManagementStore} from '../../common/app_management/store.js';

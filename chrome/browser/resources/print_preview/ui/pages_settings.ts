@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
 import './print_preview_shared.css.js';
 import './settings_section.js';
 import '/strings.m.js';
 
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {Range} from '../print_preview_utils.js';
 import {areRangesEqual} from '../print_preview_utils.js';

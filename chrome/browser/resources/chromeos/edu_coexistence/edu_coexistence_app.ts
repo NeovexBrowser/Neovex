@@ -8,11 +8,11 @@ import './edu_coexistence_button.js';
 import './edu_coexistence_error.js';
 import './edu_coexistence_offline.js';
 import './edu_coexistence_ui.js';
-import 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
 
-import type {CrViewManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './edu_coexistence_app.html.js';
 

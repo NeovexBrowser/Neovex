@@ -9,20 +9,20 @@
  */
 
 import '../settings_shared.css.js';
-import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
 import '../controls/settings_radio_group.js';
 import '../controls/settings_slider.js';
 import '../controls/settings_toggle_button.js';
 import './per_device_touchpad_subsection.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';
 import type {Route} from '../router.js';

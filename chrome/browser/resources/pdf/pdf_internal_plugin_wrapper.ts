@@ -22,7 +22,7 @@ const srcUrl = new URL(plugin.src);
 let parentOrigin = srcUrl.origin;
 if (parentOrigin === 'chrome-untrusted://print') {
   // Within Print Preview, the source origin differs from the parent origin.
-  parentOrigin = 'chrome://print';
+  parentOrigin = 'neovex://print';
 }
 
 // Plugin-to-parent message handlers. All messages are passed through, but some
@@ -93,7 +93,7 @@ channel.port1.onmessage = e => {
       // Snoop on "viewport" message to support real RTL scrolling in Print
       // Preview.
       // TODO(crbug.com/40737077): Support real RTL scrolling in the PDF viewer.
-      if (parentOrigin === 'chrome://print' && e.data.layoutOptions) {
+      if (parentOrigin === 'neovex://print' && e.data.layoutOptions) {
         switch (e.data.layoutOptions.direction) {
           case 1:
             document.dir = 'rtl';
@@ -293,7 +293,7 @@ function hasCtrlModifierOnly(e: KeyboardEvent): boolean {
   return hasCtrlModifier(e) && !e.shiftKey && !e.altKey && !metaModifier;
 }
 
-// TODO(crbug.com/40792950): Load from chrome://resources/js/util.js instead.
+// TODO(crbug.com/40792950): Load from neovex://resources/js/util.js instead.
 function hasKeyModifiers(e: KeyboardEvent): boolean {
   return !!(e.altKey || e.ctrlKey || e.metaKey || e.shiftKey);
 }

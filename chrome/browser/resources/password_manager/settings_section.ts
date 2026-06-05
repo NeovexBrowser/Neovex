@@ -1,12 +1,12 @@
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_spinner_style.css.js';
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_spinner_style.css.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
 import './dialogs/disconnect_cloud_authenticator_dialog.js';
 import './dialogs/remove_actor_login_permission_dialog.js';
 import './full_data_reset.js';
@@ -19,17 +19,17 @@ import './site_favicon.js';
 import './user_utils_mixin.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {HelpBubbleMixin} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
-import type {CrLinkRowElement} from 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {HelpBubbleMixin} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin.js';
+import type {CrLinkRowElement} from 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 // <if expr="is_win or is_macosx">
 import {PasskeysBrowserProxyImpl} from './passkeys_browser_proxy.js';

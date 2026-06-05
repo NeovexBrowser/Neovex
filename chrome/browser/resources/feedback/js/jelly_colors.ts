@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 import '/strings.m.js';
 
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
 
 /**
  * Initializes the page when the window is loaded.

@@ -7,11 +7,11 @@ import './cr_frame_list.js';
 import './mojo_timedelta.js';
 import './pref_display.js';
 import './pref_page.js';
-import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 import './privacy_sandbox_internals.mojom-webui.js';
 import './search_bar.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
 
 import {contentSettingGroups} from './content_settings_groups.js';
 import {ContentSettingsType} from './content_settings_types.mojom-webui.js';

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
-import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
 import './activity_log/activity_log.js';
 import './detail_view.js';
 import './drop_overlay.js';
@@ -22,14 +22,14 @@ import './site_permissions/site_permissions.js';
 import './site_permissions/site_permissions_by_site.js';
 import './toolbar.js';
 
-import {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
-import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
+import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {ActivityLogExtensionPlaceholder} from './activity_log/activity_log.js';
 import type {ExtensionsDetailViewElement} from './detail_view.js';
@@ -287,7 +287,7 @@ export class ExtensionsManagerElement extends ExtensionsManagerElementBase {
 
   /**
    * Initializes the page to reflect what's specified in the url so that if
-   * the user visits chrome://extensions/?id=..., we land on the proper page.
+   * the user visits neovex://extensions/?id=..., we land on the proper page.
    */
   private initPage_() {
     this.didInitPage_ = true;
@@ -397,7 +397,7 @@ export class ExtensionsManagerElement extends ExtensionsManagerElementBase {
       case ExtensionType.SHARED_MODULE:
         return 'extensions_';
       case ExtensionType.THEME:
-        assertNotReached('Don\'t send themes to the chrome://extensions page');
+        assertNotReached('Don\'t send themes to the neovex://extensions page');
       default:
         assertNotReachedCase(item.type);
     }

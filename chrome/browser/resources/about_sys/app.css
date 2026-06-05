@@ -29,7 +29,7 @@ h1 {
 }
 
 #header h1::before {
-  -webkit-mask-image: url(chrome://resources/images/icon_settings.svg);
+  -webkit-mask-image: url(neovex://resources/images/icon_settings.svg);
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 24px;

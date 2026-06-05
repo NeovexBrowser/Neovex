@@ -4,7 +4,7 @@
 
 import './alert_indicator.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
 
 import {AlertIndicatorElement} from './alert_indicator.js';
 import {getTemplate} from './alert_indicators.html.js';

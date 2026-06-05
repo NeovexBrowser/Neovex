@@ -7,11 +7,11 @@
  * |url| which can be used to download favicon. If downloading fails |origin|
  * will be used as a fallback to obtain the favicon from cache.
  */
-import 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'chrome://resources/cr_elements/cr_hidden_style.css.js';
+import 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'neovex://resources/cr_elements/cr_hidden_style.css.js';
 
-import {getFavicon, getFaviconForPageURL} from 'chrome://resources/js/icon.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getFavicon, getFaviconForPageURL} from 'neovex://resources/js/icon.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './site_favicon.html.js';
 

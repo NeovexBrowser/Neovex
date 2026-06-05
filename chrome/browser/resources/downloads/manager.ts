@@ -6,20 +6,20 @@ import '/strings.m.js';
 import './bypass_warning_confirmation_dialog.js';
 import './item.js';
 import './toolbar.js';
-import 'chrome://resources/cr_components/managed_footnote/managed_footnote.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
+import 'neovex://resources/cr_components/managed_footnote/managed_footnote.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrInfiniteListElement} from 'chrome://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
-import {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
-import {FindShortcutMixinLit} from 'chrome://resources/cr_elements/find_shortcut_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrInfiniteListElement} from 'neovex://resources/cr_elements/cr_infinite_list/cr_infinite_list.js';
+import {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
+import {FindShortcutMixinLit} from 'neovex://resources/cr_elements/find_shortcut_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {BrowserProxy} from './browser_proxy.js';
 import type {MojomData} from './data.js';
@@ -122,7 +122,7 @@ export class DownloadsManagerElement extends DownloadsManagerElementBase {
     // trailing slash in three different groups.
     const CANONICAL_PATH_REGEX = /(^\/)([\/-\w]+)(\/$)/;
     const path = location.pathname.replace(CANONICAL_PATH_REGEX, '$1$2');
-    if (path !== '/') {  // There are no subpages in chrome://downloads.
+    if (path !== '/') {  // There are no subpages in neovex://downloads.
       window.history.replaceState(undefined /* stateObject */, '', '/');
     }
   }

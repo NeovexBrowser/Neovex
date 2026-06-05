@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // <if expr="is_chromeos">
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 // </if>
 
 export interface DownloadsBrowserProxy {

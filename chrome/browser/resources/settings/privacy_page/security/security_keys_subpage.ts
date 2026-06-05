@@ -6,7 +6,7 @@
  * @fileoverview 'security-keys-subpage' is a settings subpage
  * containing operations on security keys.
  */
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
 import '../../settings_page/settings_subpage.js';
 import '../../settings_shared.css.js';
 import './security_keys_credential_management_dialog.js';
@@ -14,9 +14,9 @@ import './security_keys_bio_enroll_dialog.js';
 import './security_keys_set_pin_dialog.js';
 import './security_keys_reset_dialog.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../../i18n_setup.js';
 import {SettingsViewMixin} from '../../settings_page/settings_view_mixin.js';

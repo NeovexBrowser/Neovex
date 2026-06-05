@@ -6,25 +6,25 @@
  * @fileoverview Element which shows context menus and handles keyboard
  * shortcuts.
  */
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
 import '/strings.m.js';
 import './edit_dialog.js';
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrLazyRenderLitElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {KeyboardShortcutList} from 'chrome://resources/js/keyboard_shortcut_list.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrLazyRenderLitElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {KeyboardShortcutList} from 'neovex://resources/js/keyboard_shortcut_list.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {deselectItems, selectAll, selectFolder} from './actions.js';
 import {highlightUpdatedItems, trackUpdatedItems} from './api_listener.js';

@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
 import './synced_device_card.js';
 import '/strings.m.js';
 
 // <if expr="not is_chromeos">
-import type {AccountInfo} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+import type {AccountInfo} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
 // </if>
-import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrLazyRenderLitElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {FocusGrid} from 'chrome://resources/js/focus_grid.js';
-import type {FocusRow} from 'chrome://resources/js/focus_row.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrLazyRenderLitElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {FocusGrid} from 'neovex://resources/js/focus_grid.js';
+import type {FocusRow} from 'neovex://resources/js/focus_row.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {BrowserServiceImpl} from './browser_service.js';
 import {HistorySignInState, SYNCED_TABS_HISTOGRAM_NAME, SyncedTabsHistogram, SyncState} from './constants.js';

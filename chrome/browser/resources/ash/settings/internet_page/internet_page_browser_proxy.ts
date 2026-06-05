@@ -4,7 +4,7 @@
 
 /** @fileoverview A helper object used for Internet page. */
 
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
 
 export interface InternetPageBrowserProxy {
   /**

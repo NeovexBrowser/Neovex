@@ -1,7 +1,7 @@
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {Category, HistoryItem} from './emoji_picker.mojom-webui.js';
 import {PageHandlerFactory, PageHandlerRemote} from './emoji_picker.mojom-webui.js';

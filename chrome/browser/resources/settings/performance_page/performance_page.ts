@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 import '../controls/settings_toggle_button.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
 import '../settings_page/settings_section.js';
 import '../settings_shared.css.js';
 import './tab_discard/exception_list.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {HelpBubbleMixin} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {HelpBubbleMixin} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';
 import {loadTimeData} from '../i18n_setup.js';

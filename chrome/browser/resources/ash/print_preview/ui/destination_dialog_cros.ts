@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_hidden_style.css.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_hidden_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '../print_preview_utils.js';
 import './destination_dialog_style.css.js';
 import './destination_list.js';
@@ -21,13 +21,13 @@ import './throbber.css.js';
 import './destination_list_item_cros.js';
 import './searchable_drop_down_cros.js';
 
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement, timeOut} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement, timeOut} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Destination} from '../data/destination_cros.js';
 import {GooglePromotedDestinationId} from '../data/destination_cros.js';

@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {NativeLayerCrosImpl} from '../native_layer_cros.js';
 

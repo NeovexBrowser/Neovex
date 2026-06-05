@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import type {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
-import {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {ItemDelegate} from './item.js';
 import {TOAST_DURATION_MS} from './item_util.js';
@@ -52,7 +52,7 @@ export const ItemMixin = <T extends Constructor<CrLitElement>>(
           return extensionLabel;
         case ExtensionType.THEME:
           assertNotReached(
-              'Don\'t send themes to the chrome://extensions page');
+              'Don\'t send themes to the neovex://extensions page');
         default:
           assertNotReachedCase(type, 'Item type is not App or Extension.');
       }

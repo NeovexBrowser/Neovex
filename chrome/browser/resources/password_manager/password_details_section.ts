@@ -1,9 +1,9 @@
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_icons.css.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_icons.css.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
 import './shared_style.css.js';
 import './site_favicon.js';
 import './credential_details/password_details_card.js';
@@ -11,9 +11,9 @@ import './credential_details/passkey_details_card.js';
 import './user_utils_mixin.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './password_details_section.html.js';
 import {PasswordManagerImpl, PasswordViewPageInteractions} from './password_manager_proxy.js';

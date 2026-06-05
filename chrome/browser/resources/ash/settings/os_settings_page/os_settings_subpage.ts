@@ -8,26 +8,26 @@
  * contains the subpage title, a search field and a back icon.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
 import '../settings_shared.css.js';
 import './settings_card.js';
 
-import type {CrSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
-import type {FindShortcutMixinInterface} from 'chrome://resources/ash/common/cr_elements/find_shortcut_mixin.js';
-import {FindShortcutMixin} from 'chrome://resources/ash/common/cr_elements/find_shortcut_mixin.js';
-import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {listenOnce} from 'chrome://resources/js/util.js';
-import {IronResizableBehavior} from 'chrome://resources/polymer/v3_0/iron-resizable-behavior/iron-resizable-behavior.js';
-import {afterNextRender, mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import type {FindShortcutMixinInterface} from 'neovex://resources/ash/common/cr_elements/find_shortcut_mixin.js';
+import {FindShortcutMixin} from 'neovex://resources/ash/common/cr_elements/find_shortcut_mixin.js';
+import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {listenOnce} from 'neovex://resources/js/util.js';
+import {IronResizableBehavior} from 'neovex://resources/polymer/v3_0/iron-resizable-behavior/iron-resizable-behavior.js';
+import {afterNextRender, mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {RouteObserverMixinInterface} from '../common/route_observer_mixin.js';
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';

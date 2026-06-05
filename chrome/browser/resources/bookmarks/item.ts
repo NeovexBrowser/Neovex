@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 import '/strings.m.js';
 
-import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isMac} from 'chrome://resources/js/platform.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isMac} from 'neovex://resources/js/platform.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {selectItem} from './actions.js';
 import {BrowserProxyImpl} from './browser_proxy.js';

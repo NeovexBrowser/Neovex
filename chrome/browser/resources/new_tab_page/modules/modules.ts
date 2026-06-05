@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
 import './module_wrapper.js';
 
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import {recordBoolean, recordOccurrence, recordSmallCount, recordSparseValueWithPersistentHash} from '../metrics_utils.js';

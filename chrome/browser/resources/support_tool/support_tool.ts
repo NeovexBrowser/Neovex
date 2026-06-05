@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
 import './data_collectors.js';
 import './issue_details.js';
 import './spinner_page.js';
 import './pii_selection.js';
 import './data_export_done.js';
 
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {BrowserProxy, PiiDataItem, StartDataCollectionResult} from './browser_proxy.js';
 import {BrowserProxyImpl} from './browser_proxy.js';

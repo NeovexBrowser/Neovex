@@ -6,21 +6,21 @@
  * @fileoverview Polymer element to rename eSIM profile name
  */
 
-import 'chrome://resources/ash/common/cellular_setup/cellular_setup_icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'neovex://resources/ash/common/cellular_setup/cellular_setup_icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
 import '../settings_shared.css.js';
 
-import {getESimProfile} from 'chrome://resources/ash/common/cellular_setup/esim_manager_utils.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {ESimProfileRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {ESimOperationResult} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getESimProfile} from 'neovex://resources/ash/common/cellular_setup/esim_manager_utils.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {ESimProfileRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {ESimOperationResult} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './esim_rename_dialog.html.js';
 

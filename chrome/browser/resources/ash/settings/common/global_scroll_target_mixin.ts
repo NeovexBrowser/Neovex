@@ -14,8 +14,8 @@
  * |setGlobalScrollTarget| should only be called once.
  */
 
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {dedupingMixin, type PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {dedupingMixin, type PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {RouteObserverMixin, type RouteObserverMixinInterface} from '../common/route_observer_mixin.js';
 import {type Route, Router} from '../router.js';

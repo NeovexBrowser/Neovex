@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import './icons.html.js';
 import './viewer_zoom_button.js';
 
-import {isRTL} from 'chrome://resources/js/util.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {isRTL} from 'neovex://resources/js/util.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {FittingType} from '../constants.js';
 

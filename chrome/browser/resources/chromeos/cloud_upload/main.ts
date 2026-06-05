@@ -7,8 +7,8 @@ import './connect_onedrive.js';
 import './file_handler_page.js';
 import '/strings.m.js';
 
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
 
 import {CloudUploadBrowserProxy} from './cloud_upload_browser_proxy.js';
 import {CloudProvider, MoveConfirmationPageElement} from './move_confirmation_page.js';

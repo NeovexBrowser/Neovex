@@ -59,7 +59,7 @@ class CurtainScreenElement extends PolymerElement {
     // flag will be enabled by default.
     const fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'chrome://theme/typography.css';
+    fontLink.href = 'neovex://theme/typography.css';
     document.head.appendChild(fontLink);
 
     // Required on body to apply cros_color_overrides
@@ -73,7 +73,7 @@ class CurtainScreenElement extends PolymerElement {
   }
 
   listenToColorChanges() {
-    // Start listening for color changes in 'chrome://theme/colors.css'. Force
+    // Start listening for color changes in 'neovex://theme/colors.css'. Force
     // reload it once to account for any missed color change events between
     // loading oobe.html and here.
     const updater = ColorChangeUpdater.forDocument();

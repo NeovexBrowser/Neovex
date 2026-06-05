@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {addWebUiListener} from 'chrome://resources/js/cr.js';
-import {$} from 'chrome://resources/js/util.js';
+import {addWebUiListener} from 'neovex://resources/js/cr.js';
+import {$} from 'neovex://resources/js/util.js';
 
 window.addEventListener('load', function() {
   // Theme handling
@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
     document.documentElement.setAttribute(
         'hascustombackground', themeData.hasCustomBackground);
     $('incognitothemecss').href =
-        'chrome://theme/css/incognito_tab_theme.css?' + Date.now();
+        'neovex://theme/css/incognito_tab_theme.css?' + Date.now();
   });
   chrome.send('observeThemeChanges');
 

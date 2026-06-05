@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 import './sign_in_promo.js';
 
-import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './dice_app.css.js';
 import {getHtml} from './dice_app.html.js';

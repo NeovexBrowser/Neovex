@@ -8,7 +8,7 @@
  * Export them as functions so they reload the values when overridden in tests.
  * Organize the getter functions by their respective pages.
  */
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 // General
 export function isGuest(): boolean {

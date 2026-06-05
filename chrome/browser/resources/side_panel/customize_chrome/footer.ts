@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/cr_elements/policy/cr_policy_indicator.js';
+import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/cr_elements/policy/cr_policy_indicator.js';
 
-import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {CustomizeChromeAction, recordCustomizeChromeAction} from './common.js';
 import type {ManagementNoticeState} from './customize_chrome.mojom-webui.js';

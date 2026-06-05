@@ -120,7 +120,7 @@ export class CommandStore {
 /**
  *  category: The command's category.
  *  msgId: The message resource describing the command.
- *  denySignedOut: Explicitly denies this command when on chrome://oobe/* or
+ *  denySignedOut: Explicitly denies this command when on neovex://oobe/* or
  *             other signed-out contexts. Defaults to false.
  */
 interface DataEntry {

@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
 
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 import {BrowserServiceImpl} from './browser_service.js';
 import {HistorySignInState, SyncState} from './constants.js';
 import type {HistoryIdentityState} from './externs.js';
-import type {AccountInfo} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+import type {AccountInfo} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
 
 import {getCss} from './history_sync_promo.css.js';
 import {getHtml} from './history_sync_promo.html.js';

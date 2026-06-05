@@ -5,9 +5,9 @@
 import './app_content_dialog.js';
 import '//resources/cr_elements/cr_link_row/cr_link_row.js';
 
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app_content_item.css.js';
 import {getHtml} from './app_content_item.html.js';

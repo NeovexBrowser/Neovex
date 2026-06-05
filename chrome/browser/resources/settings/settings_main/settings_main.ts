@@ -6,10 +6,10 @@
  * @fileoverview
  * 'settings-main' displays the selected settings page.
  */
-import 'chrome://resources/cr_components/managed_footnote/managed_footnote.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_components/managed_footnote/managed_footnote.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import '../about_page/about_page.js';
 import '../ai_page/ai_page_index.js';
 import '../appearance_page/appearance_page_index.js';
@@ -26,11 +26,11 @@ import '../default_browser_page/default_browser_page.js';
 
 // </if>
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {beforeNextRender, flush, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {beforeNextRender, flush, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ensureLazyLoaded} from '../ensure_lazy_loaded.js';
 import {loadTimeData} from '../i18n_setup.js';

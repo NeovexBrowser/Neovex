@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/localized_link/localized_link.js';
-import 'chrome://resources/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'neovex://resources/cr_components/localized_link/localized_link.js';
+import 'neovex://resources/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
 import '//resources/cr_elements/cr_icon/cr_icon.js';
 import './icons.html.js';
 import './supported_links_dialog.js';
 import './supported_links_overlapping_apps_dialog.js';
 
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import type {AppMap} from 'chrome://resources/cr_components/app_management/constants.js';
-import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
-import {castExists, recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
-import type {LocalizedLinkElement} from 'chrome://resources/cr_components/localized_link/localized_link.js';
-import type {CrRadioButtonElement} from 'chrome://resources/cr_elements/cr_radio_button/cr_radio_button.js';
-import type {CrRadioGroupElement} from 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import type {AppMap} from 'neovex://resources/cr_components/app_management/constants.js';
+import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
+import {castExists, recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
+import type {LocalizedLinkElement} from 'neovex://resources/cr_components/localized_link/localized_link.js';
+import type {CrRadioButtonElement} from 'neovex://resources/cr_elements/cr_radio_button/cr_radio_button.js';
+import type {CrRadioGroupElement} from 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './supported_links_item.css.js';
 import {getHtml} from './supported_links_item.html.js';

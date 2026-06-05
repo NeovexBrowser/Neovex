@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {PageHandlerInterface} from './access_code_cast.mojom-webui.js';
 import {PageCallbackRouter, PageHandlerFactory, PageHandlerRemote} from './access_code_cast.mojom-webui.js';

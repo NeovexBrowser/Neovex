@@ -5,10 +5,10 @@
 // <if expr="is_linux or is_chromeos">
 import '/strings.m.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 // </if>
 
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 /**
  * CSS classes for different statuses.

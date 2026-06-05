@@ -7,8 +7,8 @@
  * Switch Access settings.
  */
 
-import 'chrome://resources/ash/common/cr_elements/md_select.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/md_select.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
 import '../controls/settings_slider.js';
 import '../controls/settings_toggle_button.js';
 import '../settings_shared.css.js';
@@ -17,13 +17,13 @@ import './switch_access_setup_guide_dialog.js';
 import './switch_access_setup_guide_warning_dialog.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrLinkRowElement} from 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import type {SliderTick} from 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrLinkRowElement} from 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import type {SliderTick} from 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';

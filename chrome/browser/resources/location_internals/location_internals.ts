@@ -4,7 +4,7 @@
 
 import './diagnose_info_view.js';
 
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 import type {DiagnoseInfoViewElement} from './diagnose_info_view.js';
 import type {AccessPointData, GeolocationDiagnostics, GeolocationInternalsObserverInterface, NetworkLocationResponse} from './geolocation_internals.mojom-webui.js';

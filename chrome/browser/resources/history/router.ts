@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {QueryState} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
-import {CrRouter} from 'chrome://resources/js/cr_router.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {QueryState} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
+import {CrRouter} from 'neovex://resources/js/cr_router.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 // All valid pages.
 // TODO(crbug.com/40069898): Change this to an enum and use that type for holding

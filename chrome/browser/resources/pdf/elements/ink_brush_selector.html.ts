@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import './selectable_icon_button.js';
-import 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
 
-import {html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {BRUSH_TYPES} from './ink_brush_selector.js';
 import type {InkBrushSelectorElement} from './ink_brush_selector.js';

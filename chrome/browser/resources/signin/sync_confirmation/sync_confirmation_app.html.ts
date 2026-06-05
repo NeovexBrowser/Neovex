@@ -26,7 +26,7 @@ export function getHtml(this: SyncConfirmationAppElement) {
   <div id="contentContainer" class="${this.getAnimationClass_()}">
     <div id="avatarContainer">
       <img class="loading-spinner"
-          src="chrome://resources/images/throbber_small.svg"
+          src="neovex://resources/images/throbber_small.svg"
           ?hidden="${!this.isPending_()}">
       <img id="avatar" alt="" src="${this.accountImageSrc_}"
           ?hidden="${this.isPending_()}">

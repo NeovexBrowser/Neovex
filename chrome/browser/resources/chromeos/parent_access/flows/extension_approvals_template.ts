@@ -4,7 +4,7 @@
 
 import './extension_permission.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ParentAccessEvent} from '../parent_access_app.js';
 import type {ExtensionApprovalsParams} from '../parent_access_ui.mojom-webui.js';

@@ -7,7 +7,7 @@ import '//resources/cr_elements/policy/cr_policy_indicator.js';
 import '//resources/cr_elements/cr_icon/cr_icon.js';
 
 import type {CrToggleElement} from '//resources/cr_elements/cr_toggle/cr_toggle.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './toggle_row.css.js';
 import {getHtml} from './toggle_row.html.js';

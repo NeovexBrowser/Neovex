@@ -7,26 +7,26 @@
  * 'crostini-port-forwarding' is the settings port forwarding subpage for
  * Crostini.
  */
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '../controls/settings_toggle_button.js';
 import '../os_settings_page/settings_card.js';
 import '../settings_shared.css.js';
 import './crostini_port_forwarding_add_port_dialog.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrLazyRenderElement} from 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrLazyRenderElement} from 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {ContainerInfo, GuestId} from '../guest_os/guest_os_browser_proxy.js';
 import {containerLabel, equalContainerId} from '../guest_os/guest_os_container_select.js';

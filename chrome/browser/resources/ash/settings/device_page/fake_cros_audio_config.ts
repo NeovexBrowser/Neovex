@@ -7,7 +7,7 @@
  * Fake implementation of CrosAudioConfig for testing.
  */
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {AudioDevice, AudioSystemProperties, CrosAudioConfigInterface, VoiceIsolationUIAppearance} from '../mojom-webui/cros_audio_config.mojom-webui.js';
 import {AudioDeviceType, AudioEffectState, AudioEffectType, MuteState} from '../mojom-webui/cros_audio_config.mojom-webui.js';

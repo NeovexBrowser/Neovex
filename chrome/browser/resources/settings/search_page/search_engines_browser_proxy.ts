@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 // clang-format on
 
 /**
@@ -72,9 +72,9 @@ export enum SearchEnginesInteractions {
  * //components/search_engines/choice_made_location.h
  */
 export enum ChoiceMadeLocation {
-  // `chrome://settings/search`
+  // `neovex://settings/search`
   SEARCH_SETTINGS = 0,
-  // `chrome://settings/searchEngines`
+  // `neovex://settings/searchEngines`
   SEARCH_ENGINE_SETTINGS = 1,
   // The search engine choice dialog for existing users or the profile picker
   // for new users. This value should not be used in settings.

@@ -7,15 +7,15 @@
  * `home-url-input` is a single-line text field intending to be used with
  * prefs.homepage
  */
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
 import '/shared/settings/controls/cr_policy_pref_indicator.js';
 
 import type {CrPolicyPrefMixinInterface} from '/shared/settings/controls/cr_policy_pref_mixin.js';
 import {CrPolicyPrefMixin} from '/shared/settings/controls/cr_policy_pref_mixin.js';
 import {PrefControlMixin} from '/shared/settings/controls/pref_control_mixin.js';
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {AppearanceBrowserProxy} from './appearance_browser_proxy.js';
 import {AppearanceBrowserProxyImpl} from './appearance_browser_proxy.js';

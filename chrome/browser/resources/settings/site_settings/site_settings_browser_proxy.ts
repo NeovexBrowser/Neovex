@@ -8,7 +8,7 @@
  */
 
 // clang-format off
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 import type {ChooserType,ContentSetting,ContentSettingsTypes,SiteSettingSource} from './constants.js';
 // clang-format on

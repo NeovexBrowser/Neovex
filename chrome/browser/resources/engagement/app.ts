@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import {getTemplate} from './app.html.js';
 import type {SiteEngagementDetails, SiteEngagementDetailsProviderInterface} from './site_engagement_details.mojom-webui.js';
@@ -203,7 +203,7 @@ export class SiteEngagementAppElement extends CustomElement {
   }
 
   /**
-   * Show chrome:// and chrome-untrusted:// pages.
+   * Show neovex:// and chrome-untrusted:// pages.
    */
   private handleShowWebUiPages(show: boolean) {
     this.showWebUiPages = show;
@@ -238,7 +238,7 @@ export class SiteEngagementAppElement extends CustomElement {
     assert(this.info);
     this.info.forEach((info) => {
       if (!this.showWebUiPages &&
-          (info.origin.startsWith('chrome://') ||
+          (info.origin.startsWith('neovex://') ||
            info.origin.startsWith('chrome-untrusted://'))) {
         return;
       }

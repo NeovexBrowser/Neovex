@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
-import 'chrome://resources/cr_elements/cr_icons.css.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'neovex://resources/cr_elements/cr_icons.css.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
 import '../controls/settings_toggle_button.js';
-import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '../icons.html.js';
 import '../settings_page/settings_subpage.js';
 import './glic_login_permissions_page.js';
@@ -19,14 +19,14 @@ import '../internal/icons.html.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
 import {CrSettingsPrefs} from '/shared/settings/prefs/prefs_types.js';
-import type {CrShortcutInputElement} from 'chrome://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
-import {HelpBubbleMixin} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrShortcutInputElement} from 'neovex://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
+import {HelpBubbleMixin} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AiPageActions} from '../ai_page/constants.js';
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';

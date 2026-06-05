@@ -6,7 +6,7 @@ import './ink_color_selector.js';
 import './text_alignment_selector.js';
 import './text_styles_selector.js';
 
-import {html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {ViewerTextSidePanelElement} from './viewer_text_side_panel.js';
 

@@ -8,23 +8,23 @@
  * controls to list, add and delete Kerberos Accounts.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
-import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
-import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 import '../settings_shared.css.js';
 import './kerberos_add_account_dialog.js';
 
-import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {getImage} from 'chrome://resources/js/icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {getImage} from 'neovex://resources/js/icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {cast, castExists} from '../assert_extras.js';
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
@@ -153,8 +153,8 @@ export class SettingsKerberosAccountsSubpageElement extends
    */
   private getErrorBadgeIcon_(): string {
     return this.isDarkModeActive_ ?
-        'chrome://os-settings/images/error_badge_dark.svg' :
-        'chrome://os-settings/images/error_badge.svg';
+        'neovex://os-settings/images/error_badge_dark.svg' :
+        'neovex://os-settings/images/error_badge.svg';
   }
 
   private getIconImageSet_(iconUrl: string): string {

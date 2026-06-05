@@ -45,7 +45,7 @@ export class ExtensionControlledIndicatorElement extends PolymerElement {
   }
 
   private onManageClick_() {
-    const manageUrl = 'chrome://extensions/?id=' + this.extensionId;
+    const manageUrl = 'neovex://extensions/?id=' + this.extensionId;
     OpenWindowProxyImpl.getInstance().openUrl(manageUrl);
   }
 

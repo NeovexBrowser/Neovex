@@ -6,12 +6,12 @@ import '/strings.m.js';
 import './tab.js';
 import './tab_group.js';
 
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {isRTL} from 'chrome://resources/js/util.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {isRTL} from 'neovex://resources/js/util.js';
 
 import type {DragManagerDelegate} from './drag_manager.js';
 import {DragManager} from './drag_manager.js';

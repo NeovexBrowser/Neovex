@@ -9,9 +9,9 @@
  * pages.
  */
 
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import type {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {beforeNextRender, dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import type {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {beforeNextRender, dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import type {RouteObserverMixinInterface} from '../common/route_observer_mixin.js';

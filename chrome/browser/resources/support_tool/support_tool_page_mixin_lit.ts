@@ -7,9 +7,9 @@
  * pages.
  */
 
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import type {I18nMixinLitInterface} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import type {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import type {I18nMixinLitInterface} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import type {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 type Constructor<T> = new (...args: any[]) => T;
 

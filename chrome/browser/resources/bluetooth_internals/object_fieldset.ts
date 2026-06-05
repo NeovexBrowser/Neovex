@@ -6,11 +6,11 @@
  * Javascript for ObjectFieldSet, a UI element for displaying the properties
  * of a given Javascript object. These properties are displayed in a fieldset
  * as a series of rows for each key-value pair.
- * Served from chrome://bluetooth-internals/.
+ * Served from neovex://bluetooth-internals/.
  */
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
 
 import {getTemplate} from './object_fieldset.html.js';
 

@@ -7,8 +7,8 @@ import './ml_calculator.js';
 import './ml_table.js';
 import './ml_chart.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {Signals} from '../omnibox_internals.mojom-webui.js';
 

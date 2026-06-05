@@ -14,11 +14,11 @@ import './per_device_app_installed_row.js';
 import './per_device_install_row.js';
 import './per_device_subsection_header.js';
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import {CrLinkRowElement} from 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import {CrLinkRowElement} from 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {cast, castExists} from '../assert_extras.js';
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';

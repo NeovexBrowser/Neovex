@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Externs for objects use by chrome://sys-internals.
+ * @fileoverview Externs for objects use by neovex://sys-internals.
  * @externs
  */
 

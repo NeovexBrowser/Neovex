@@ -6,12 +6,12 @@ import './icons.html.js';
 import './viewer_attachment_bar.js';
 import './viewer_document_outline.js';
 import './viewer_thumbnail_bar.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {Bookmark} from '../bookmark_type.js';
 import type {Attachment} from '../constants.js';

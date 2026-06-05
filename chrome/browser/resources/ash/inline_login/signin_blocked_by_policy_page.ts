@@ -7,12 +7,12 @@
  * `chrome/browser/resources/inline_login/inline_login_app.js`
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://chrome-signin/account_manager_shared.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://chrome-signin/account_manager_shared.css.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './signin_blocked_by_policy_page.html.js';
 

@@ -7,8 +7,8 @@ import './mojo_timedelta.js';
 import './text_copy_button.js';
 
 import type {Time, TimeDelta} from '//resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import type {Value} from 'chrome://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import type {Value} from 'neovex://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
 
 import {getTemplate} from './content_setting_pattern_source.html.js';
 import type {ContentSettingPatternSource as MojoContentSettingPatternSource} from './content_settings.mojom-webui.js';

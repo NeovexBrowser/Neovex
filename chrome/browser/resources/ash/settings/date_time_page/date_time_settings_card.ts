@@ -8,17 +8,17 @@
  * settings.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
-import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_pref_indicator.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_pref_indicator.js';
 import '../controls/settings_toggle_button.js';
 import '../os_settings_page/settings_card.js';
 import '../settings_shared.css.js';
 import './timezone_selector.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {isChild} from '../common/load_time_booleans.js';

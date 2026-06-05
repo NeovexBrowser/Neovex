@@ -8,19 +8,19 @@
  * and assistant settings.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
 import './magic_boost_review_terms_banner.js';
 import '../os_settings_page/settings_card.js';
 import '../settings_shared.css.js';
 import './search_engine.js';
 // <if expr="_google_chrome" >
-import 'chrome://resources/ash/common/internal/ash_internal_icons.html.js';
+import 'neovex://resources/ash/common/internal/ash_internal_icons.html.js';
 
 // </if>
 
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {isLobsterSettingsToggleVisible, isMagicBoostFeatureEnabled, isMagicBoostNoticeBannerVisible, isQuickAnswersSupported, isScannerSettingsToggleVisible} from '../common/load_time_booleans.js';

@@ -18,8 +18,8 @@ import type {CrDrawerElement} from '//resources/cr_elements/cr_drawer/cr_drawer.
 import type {CrToastElement} from '//resources/cr_elements/cr_toast/cr_toast.js';
 import type {CrToolbarSearchFieldElement} from '//resources/cr_elements/cr_toolbar/cr_toolbar_search_field.ts';
 import type {TimeDelta} from '//resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

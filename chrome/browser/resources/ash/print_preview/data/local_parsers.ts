@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {isChromeOS} from 'chrome://resources/js/platform.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {isChromeOS} from 'neovex://resources/js/platform.js';
 
 
 import type {DestinationOptionalParams} from './destination_cros.js';

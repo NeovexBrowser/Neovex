@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
 import './log_object.js';
 import './shared_style.css.js';
 
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {NearbyLogsBrowserProxy} from './cross_device_logs_browser_proxy.js';
 import {getTemplate} from './logging_tab.html.js';

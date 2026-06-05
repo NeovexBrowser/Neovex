@@ -7,19 +7,19 @@
  * 'site-details-permission' handles showing the state of one permission, such
  * as Geolocation, for a given origin.
  */
-import 'chrome://resources/cr_elements/md_select.css.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/md_select.css.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 import '../i18n_setup.js';
 import './site_details_permission_device_entry.js';
 
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ChooserType, ContentSetting, ContentSettingsTypes, SiteSettingSource} from './constants.js';
 import {getTemplate} from './site_details_permission.html.js';

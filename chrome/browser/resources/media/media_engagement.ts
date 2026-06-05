@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/mojo/url/mojom/origin.mojom-webui.js';
+import 'neovex://resources/mojo/url/mojom/origin.mojom-webui.js';
 
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
 
 import type {MediaEngagementConfig, MediaEngagementScoreDetails, MediaEngagementScoreDetailsProviderRemote} from './media_engagement_score_details.mojom-webui.js';
 import {MediaEngagementScoreDetailsProvider} from './media_engagement_score_details.mojom-webui.js';

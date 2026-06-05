@@ -9,13 +9,13 @@
  * controls page.
  */
 
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {Permission} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType, PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
-import {createBoolPermissionValue, createTriStatePermissionValue, isBoolValue, isPermissionEnabled, isTriStateValue} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {Permission} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType, PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
+import {createBoolPermissionValue, createTriStatePermissionValue, isBoolValue, isPermissionEnabled, isTriStateValue} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import type {App, AppPermissionsHandlerInterface} from '../mojom-webui/app_permission_handler.mojom-webui.js';

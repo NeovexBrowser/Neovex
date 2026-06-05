@@ -13,8 +13,8 @@ import '../settings_shared.css.js';
 import {assert} from '//resources/js/assert.js';
 import type {StoredAccount, SyncBrowserProxy, SyncStatus} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {SyncBrowserProxyImpl} from '/shared/settings/people_page/sync_browser_proxy.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './clear_browsing_data_account_indicator.html.js';
 import {canDeleteAccountData} from './clear_browsing_data_signin_util.js';
@@ -108,7 +108,7 @@ export class SettingsClearBrowsingDataAccountIndicator extends
 
     // image can be undefined if the account has not set an avatar photo.
     return this.shownAccount_.avatarImage ||
-        'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
+        'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
   }
 }
 

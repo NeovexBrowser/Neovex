@@ -46,7 +46,7 @@ export class PrivateStateTokensSidebarElement extends CrLitElement {
         {
           icon: 'cr:settings_icon',
           name: 'Settings',
-          path: 'chrome://settings',
+          path: 'neovex://settings',
         },
       ];
 

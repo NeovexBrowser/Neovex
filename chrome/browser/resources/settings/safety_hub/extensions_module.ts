@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '../i18n_setup.js';
 import './safety_hub_module.js';
 
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {MetricsBrowserProxyImpl} from '../metrics_browser_proxy.js';
 
@@ -71,7 +71,7 @@ export class SettingsSafetyHubExtensionsModuleElement extends
   private onButtonClick_() {
     MetricsBrowserProxyImpl.getInstance().recordAction(
         'Settings.SafetyCheck.ReviewExtensionsThroughSafetyCheck');
-    OpenWindowProxyImpl.getInstance().openUrl('chrome://extensions');
+    OpenWindowProxyImpl.getInstance().openUrl('neovex://extensions');
   }
 }
 

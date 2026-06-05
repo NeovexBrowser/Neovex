@@ -7,7 +7,7 @@
  * element to back-end data from the store.
  */
 
-import {makeStoreClientMixin, type StoreClientInterface} from 'chrome://resources/ash/common/cr_elements/store_client/store_client.js';
+import {makeStoreClientMixin, type StoreClientInterface} from 'neovex://resources/ash/common/cr_elements/store_client/store_client.js';
 
 import type {AppManagementActions} from './actions.js';
 import {initStoreAndListeners} from './api_listener.js';

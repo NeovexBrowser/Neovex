@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FacialGesture} from 'chrome://resources/ash/common/accessibility/facial_gestures.js';
-import {MacroName} from 'chrome://resources/ash/common/accessibility/macro_names.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {FacialGesture} from 'neovex://resources/ash/common/accessibility/facial_gestures.js';
+import {MacroName} from 'neovex://resources/ash/common/accessibility/macro_names.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 export const FACE_GAZE_GESTURE_TO_MACROS_PREF =
     'prefs.settings.a11y.face_gaze.gestures_to_macros.value';

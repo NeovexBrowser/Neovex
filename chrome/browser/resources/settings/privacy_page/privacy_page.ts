@@ -8,10 +8,10 @@
  * security settings.
  */
 import '/shared/settings/prefs/prefs.js';
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
 import '../icons.html.js';
 import '../privacy_icons.html.js';
 import '../settings_page/settings_section.js';
@@ -19,12 +19,12 @@ import '../settings_shared.css.js';
 import './privacy_guide/privacy_guide_dialog.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrLinkRowElement} from 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrLinkRowElement} from 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import type {MetricsBrowserProxy} from '../metrics_browser_proxy.js';

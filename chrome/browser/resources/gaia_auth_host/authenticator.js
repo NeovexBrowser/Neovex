@@ -4,15 +4,15 @@
 
 // clang-format off
 // <if expr="not is_chromeos">
-import {assert} from 'chrome://resources/js/assert.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {$, appendParam} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {$, appendParam} from 'neovex://resources/js/util.js';
 // </if>
 // <if expr="is_chromeos">
-import {assert} from 'chrome://resources/ash/common/assert.js';
-import {sendWithPromise} from 'chrome://resources/ash/common/cr.m.js';
-import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
-import {$, appendParam} from 'chrome://resources/ash/common/util.js';
+import {assert} from 'neovex://resources/ash/common/assert.js';
+import {sendWithPromise} from 'neovex://resources/ash/common/cr.m.js';
+import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
+import {$, appendParam} from 'neovex://resources/ash/common/util.js';
 
 // </if>
 

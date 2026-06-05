@@ -8,7 +8,7 @@ import './settings_category_default_radio_group.js';
 import './site_settings_shared.css.js';
 import './storage_access_site_list.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {SettingsViewMixin} from '../settings_page/settings_view_mixin.js';
 import {ContentSetting, ContentSettingsTypes} from '../site_settings/constants.js';

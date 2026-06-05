@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
 import '../controls/settings_slider.js';
 import '../settings_page/settings_subpage.js';
 import '../settings_shared.css.js';
@@ -10,8 +10,8 @@ import '../controls/settings_dropdown_menu.js';
 
 import type {FontsBrowserProxy, FontsData} from '/shared/settings/appearance_page/fonts_browser_proxy.js';
 import {FontsBrowserProxyImpl} from '/shared/settings/appearance_page/fonts_browser_proxy.js';
-import type {SliderTick} from 'chrome://resources/cr_elements/cr_slider/cr_slider.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SliderTick} from 'neovex://resources/cr_elements/cr_slider/cr_slider.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {DropdownMenuOptionList} from '../controls/settings_dropdown_menu.js';
 import {SettingsViewMixin} from '../settings_page/settings_view_mixin.js';

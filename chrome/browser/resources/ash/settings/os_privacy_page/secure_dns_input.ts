@@ -7,14 +7,14 @@
  * with the secure DNS setting to configure custom servers. It is based on
  * `home-url-input`.
  */
-import 'chrome://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
-import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
+import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
 
 import type {PrivacyPageBrowserProxy} from '/shared/settings/privacy_page/privacy_page_browser_proxy.js';
 import {PrivacyPageBrowserProxyImpl} from '/shared/settings/privacy_page/privacy_page_browser_proxy.js';
-import type {CrTextareaElement} from 'chrome://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrTextareaElement} from 'neovex://resources/ash/common/cr_elements/cr_textarea/cr_textarea.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './secure_dns_input.html.js';
 

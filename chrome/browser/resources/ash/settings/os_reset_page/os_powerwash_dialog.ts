@@ -7,22 +7,22 @@
  * 'os-settings-powerwash-dialog' is a dialog shown to request confirmation
  * from the user for a device reset (aka powerwash).
  */
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
 import '../settings_shared.css.js';
 import './os_powerwash_dialog_esim_item.js';
 
 import type {LifetimeBrowserProxy} from '/shared/settings/lifetime_browser_proxy.js';
 import {LifetimeBrowserProxyImpl} from '/shared/settings/lifetime_browser_proxy.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {ESimProfileRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {ESimProfileRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {recordSettingChange} from '../metrics_recorder.js';
 import {Setting} from '../mojom-webui/setting.mojom-webui.js';

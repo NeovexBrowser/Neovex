@@ -7,9 +7,9 @@
  *     Draggable elements must have the 'draggable' attribute set.
  */
 
-import {assert} from 'chrome://resources/js/assert.js';
-import type {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {cast} from '../assert_extras.js';
 import type {Constructor} from '../common/types.js';

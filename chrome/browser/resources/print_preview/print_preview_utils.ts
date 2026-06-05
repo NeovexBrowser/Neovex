@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrIconsetElement} from 'chrome://resources/cr_elements/cr_icon/cr_iconset.js';
-import {assert} from 'chrome://resources/js/assert.js';
+import type {CrIconsetElement} from 'neovex://resources/cr_elements/cr_icon/cr_iconset.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {inDarkMode} from './dark_mode_mixin.js';
 import type {LocalizedString} from './data/cdd.js';
@@ -85,8 +85,8 @@ export function getSelectDropdownBackground(
   iconElement.style.fill = fillColor;
   const serializedIcon = serializer.serializeToString(iconElement);
   const uri = encodeURIComponent(serializedIcon);
-  const arrowDownPath = dark ? 'chrome://resources/images/dark/arrow_down.svg' :
-                               'chrome://resources/images/arrow_down.svg';
+  const arrowDownPath = dark ? 'neovex://resources/images/dark/arrow_down.svg' :
+                               'neovex://resources/images/arrow_down.svg';
   return `url("data:image/svg+xml;charset=utf-8,${uri}"),` +
       `url("${arrowDownPath}")`;
 }

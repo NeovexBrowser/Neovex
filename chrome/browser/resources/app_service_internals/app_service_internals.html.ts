@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {AppServiceInternalsElement} from './app_service_internals.js';
 
@@ -38,7 +38,7 @@ export function getHtml(this: AppServiceInternalsElement) {
   ${this.appList_.map(item => html`
     <div id="app-${item.id}">
       <h3>${item.name}</h3>
-      <img src="chrome://app-icon/${item.id}/128">
+      <img src="neovex://app-icon/${item.id}/128">
       <pre>${item.debugInfo}</pre>
     </div>
   `)}

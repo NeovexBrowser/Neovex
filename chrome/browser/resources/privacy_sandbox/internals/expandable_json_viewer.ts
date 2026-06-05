@@ -4,7 +4,7 @@
 //
 import './text_copy_button.js';
 
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
 
 import {getTemplate} from './expandable_json_viewer.html.js';
 import type {TextCopyButton} from './text_copy_button.js';

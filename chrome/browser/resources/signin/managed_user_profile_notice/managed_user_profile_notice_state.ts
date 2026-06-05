@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './managed_user_profile_notice_state.css.js';
 import {getHtml} from './managed_user_profile_notice_state.html.js';

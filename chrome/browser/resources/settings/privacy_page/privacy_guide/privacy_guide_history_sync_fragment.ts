@@ -8,7 +8,7 @@
  * card that contains the history sync setting and its description.
  */
 
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '/shared/settings/prefs/prefs.js';
 import './privacy_guide_fragment_shared.css.js';
 import './privacy_guide_fragment_shared.css.js';
@@ -17,9 +17,9 @@ import '../../icons.html.js';
 
 import type {SyncBrowserProxy, SyncPrefs, SyncStatus} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {SignedInState, SyncBrowserProxyImpl, syncPrefsIndividualDataTypes} from '/shared/settings/people_page/sync_browser_proxy.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {BaseMixin} from '../../base_mixin.js';
 import type {SettingsToggleButtonElement} from '../../controls/settings_toggle_button.js';

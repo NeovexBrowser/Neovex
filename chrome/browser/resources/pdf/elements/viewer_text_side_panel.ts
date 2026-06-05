@@ -6,8 +6,8 @@ import './text_styles_selector.js';
 import './text_alignment_selector.js';
 import './ink_color_selector.js';
 
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {InkAnnotationTextMixin} from './ink_annotation_text_mixin.js';
 import {InkTextObserverMixin} from './ink_text_observer_mixin.js';

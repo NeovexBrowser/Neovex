@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {NearbyShareSettingsInterface, NearbyShareSettingsObserverInterface, NearbyShareSettingsObserverRemote} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
-import {NearbyShareSettings, NearbyShareSettingsObserverReceiver} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import type {NearbyShareSettingsInterface, NearbyShareSettingsObserverInterface, NearbyShareSettingsObserverRemote} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import {NearbyShareSettings, NearbyShareSettingsObserverReceiver} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
 
 let nearbyShareSettings: NearbyShareSettingsInterface|null = null;
 let isTesting = false;

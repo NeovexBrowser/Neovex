@@ -7,16 +7,16 @@
  * 'add-printer-manufacturer-model-dialog' is a dialog in which the user can
  *   manually select the manufacture and model of the new printer.
  */
-import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
 import './cups_add_printer_dialog.js';
 import './cups_printer_dialog_error.js';
 import './cups_printer_shared.css.js';
 import './cups_printers_browser_proxy.js';
 
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './cups_add_printer_manufacturer_model_dialog.html.js';
 import {getBaseName, getErrorText, isPPDInfoValid} from './cups_printer_dialog_util.js';

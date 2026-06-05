@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {loadTimeData} from './i18n_setup.js';
 import {pageVisibility} from './page_visibility.js';
@@ -339,7 +339,7 @@ window.addEventListener('popstate', function() {
 
 export let routes: SettingsRoutes = Router.getInstance().getRoutes();
 
-// Returns the "effective" route when at chrome://settings/.
+// Returns the "effective" route when at neovex://settings/.
 export function getTopLevelRoute(): Route {
   if (!loadTimeData.getBoolean('isGuest')) {
     return routes.PEOPLE;

@@ -8,7 +8,7 @@
  * state of Chrome.
  */
 
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 // <if expr="not is_chromeos">
 import '../relaunch_confirmation_dialog.js';
 // </if>
@@ -20,10 +20,10 @@ import './notification_permissions_module.js';
 import './unused_site_permissions_module.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {PasswordManagerImpl, PasswordManagerPage} from '../autofill_page/password_manager_proxy.js';
 import type {MetricsBrowserProxy, SafetyHubCardState} from '../metrics_browser_proxy.js';

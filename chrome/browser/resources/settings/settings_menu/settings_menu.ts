@@ -6,14 +6,14 @@
  * @fileoverview
  * 'settings-menu' shows a menu with a hardcoded set of pages and subpages.
  */
-import 'chrome://resources/cr_elements/cr_icons.css.js';
-import 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import 'chrome://resources/cr_elements/cr_hidden_style.css.js';
-import 'chrome://resources/cr_elements/cr_nav_menu_item_style.css.js';
-import 'chrome://resources/cr_elements/cr_ripple/cr_ripple.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icons.css.js';
+import 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import 'neovex://resources/cr_elements/cr_hidden_style.css.js';
+import 'neovex://resources/cr_elements/cr_nav_menu_item_style.css.js';
+import 'neovex://resources/cr_elements/cr_ripple/cr_ripple.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '../settings_vars.css.js';
 import '../icons.html.js';
 // <if expr="_google_chrome">
@@ -21,9 +21,9 @@ import '../internal/icons.html.js';
 
 // </if>
 
-import type {CrMenuSelectorElement} from 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrMenuSelectorElement} from 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import type {MetricsBrowserProxy} from '../metrics_browser_proxy.js';

@@ -186,7 +186,7 @@ function startOobe(): void {
     // Required on body to apply cros_color_overrides
     document.body.classList.add('jelly-enabled');
 
-    // Start listening for color changes in 'chrome://theme/colors.css'. Force
+    // Start listening for color changes in 'neovex://theme/colors.css'. Force
     // reload it once to account for any missed color change events between
     // loading oobe.html and here.
     const updater = ColorChangeUpdater.forDocument();
@@ -197,7 +197,7 @@ function startOobe(): void {
     // flag will be enabled by default.
     const fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'chrome://theme/typography.css';
+    fontLink.href = 'neovex://theme/typography.css';
     document.head.appendChild(fontLink);
   } else {
     // Add refresh color if D/L mode updated for the dynamic illustrations

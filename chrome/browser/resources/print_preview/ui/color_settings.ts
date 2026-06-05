@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/md_select_lit.css.js';
+import 'neovex://resources/cr_elements/md_select_lit.css.js';
 import './print_preview_shared.css.js';
 import './settings_section.js';
 
-import {getCss as getMdSelectLitCss} from 'chrome://resources/cr_elements/md_select_lit.css.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {getCss as getMdSelectLitCss} from 'neovex://resources/cr_elements/md_select_lit.css.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getHtml} from './color_settings.html.js';
 import {getCss as getPrintPreviewSharedCss} from './print_preview_shared.css.js';

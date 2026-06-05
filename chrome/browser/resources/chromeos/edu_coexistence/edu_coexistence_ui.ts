@@ -5,13 +5,13 @@
 import './common.css.js';
 import './edu_coexistence_template.js';
 import './edu_coexistence_button.js';
-import 'chrome://chrome-signin/gaia_action_buttons/gaia_action_buttons.js';
-import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'neovex://chrome-signin/gaia_action_buttons/gaia_action_buttons.js';
+import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
 
-import type {AuthParams} from 'chrome://chrome-signin/gaia_auth_host/authenticator.js';
-import {assert} from 'chrome://resources/ash/common/assert.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {AuthParams} from 'neovex://chrome-signin/gaia_auth_host/authenticator.js';
+import {assert} from 'neovex://resources/ash/common/assert.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {EduCoexistenceBrowserProxyImpl} from './edu_coexistence_browser_proxy.js';
 import type {EduCoexistenceButton} from './edu_coexistence_button.js';

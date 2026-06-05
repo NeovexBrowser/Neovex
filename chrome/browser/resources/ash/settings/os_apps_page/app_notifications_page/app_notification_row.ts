@@ -8,12 +8,12 @@
  * Notifications Subpage. Each row contains an app icon, app name, and toggle.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
 
-import {TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {createBoolPermissionValue, createTriStatePermissionValue, isBoolValue, isPermissionEnabled, isTriStateValue} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {createBoolPermissionValue, createTriStatePermissionValue, isBoolValue, isPermissionEnabled, isTriStateValue} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {recordSettingChange} from '../../metrics_recorder.js';
 import type {App, AppNotificationsHandlerInterface} from '../../mojom-webui/app_notification_handler.mojom-webui.js';

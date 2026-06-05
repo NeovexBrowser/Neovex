@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import './icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {createCustomEvent, GROUP_BUTTON_CLICK} from './events.js';
 import {getTemplate} from './text_group_button.html.js';

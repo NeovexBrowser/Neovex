@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {loadTimeData} from './i18n_setup.js';
 
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {createEmptySearchBubble, findAndRemoveHighlights, highlight, removeHighlights, stripDiacritics} from 'chrome://resources/js/search_highlight_utils.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {createEmptySearchBubble, findAndRemoveHighlights, highlight, removeHighlights, stripDiacritics} from 'neovex://resources/js/search_highlight_utils.js';
 
 // clang-format on
 

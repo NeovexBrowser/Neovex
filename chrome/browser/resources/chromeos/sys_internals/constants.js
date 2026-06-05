@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Constants use by chrome://sys-internals.
+ * @fileoverview Constants use by neovex://sys-internals.
  */
 
 /**

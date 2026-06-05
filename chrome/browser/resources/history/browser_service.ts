@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PageHandlerRemote} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
-import {PageCallbackRouter, PageHandler} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import type {PageHandlerRemote} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
+import {PageCallbackRouter, PageHandler} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 import type {ForeignSession} from './externs.js';
 import type {HistoryIdentityState} from './externs.js';

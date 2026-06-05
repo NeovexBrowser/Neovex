@@ -6,9 +6,9 @@ import '/strings.m.js';
 import './omnibox_input.js';
 import './omnibox_output.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import type {DisplayInputs, OmniboxInput, QueryInputs} from './omnibox_input.js';
 import type {OmniboxPageHandlerRemote, OmniboxResponse} from './omnibox_internals.mojom-webui.js';
@@ -16,7 +16,7 @@ import {AutocompleteControllerType, OmniboxPageCallbackRouter, OmniboxPageHandle
 import type {OmniboxOutput} from './omnibox_output.js';
 
 /**
- * Javascript for omnibox.html, served from chrome://omnibox/
+ * Javascript for omnibox.html, served from neovex://omnibox/
  * This is used to debug omnibox ranking. The user enters some text into a box,
  * submits it, and then sees lots of debug information from the autocompleter
  * that shows what omnibox would do with that input.
@@ -260,7 +260,7 @@ class ExportDelegate {
       dateCreated: now.toISOString(),
       author: '',
       description: '',
-      authorTool: 'chrome://omnibox',
+      authorTool: 'neovex://omnibox',
       batchName,
       versionDetails: ExportDelegate.getVersionDetails(),
       variationInfo,

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
 import '/shared/settings/prefs/prefs.js';
 import '../safety_hub/safety_hub_entry_point.js';
 import '../settings_page/settings_section.js';
@@ -11,10 +11,10 @@ import './privacy_guide/privacy_guide_promo.js';
 import './privacy_page.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
-import {beforeNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {beforeNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import {pageVisibility} from '../page_visibility.js';
@@ -271,7 +271,7 @@ export class SettingsPrivacyPageIndexElement extends
         // <if expr="is_chromeos">
         if (getTopLevelRoute() === routes.PRIVACY) {
           // On CrOS guest mode the "Privacy" section should be displayed when
-          // on chrome://settings/.
+          // on neovex://settings/.
           return this.getDefaultViews_();
         }
         // </if>
@@ -367,7 +367,7 @@ export class SettingsPrivacyPageIndexElement extends
     if (getTopLevelRoute() === routes.PRIVACY &&
         this.currentRoute === routes.BASIC) {
       // On CrOS guest mode the "Privacy" section should be displayed when
-      // on chrome://settings/.
+      // on neovex://settings/.
       return true;
     }
     // </if>

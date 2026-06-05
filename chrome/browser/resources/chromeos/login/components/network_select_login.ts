@@ -17,8 +17,8 @@ import {StartConnectResult} from '//resources/mojo/chromeos/services/network_con
 import {ConnectionStateType, NetworkType} from '//resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
 import type {PolymerElementProperties} from '//resources/polymer/v3_0/polymer/interfaces.js';
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
-import {NetworkSelectElement} from 'chrome://resources/ash/common/network/network_select.js';
+import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
+import {NetworkSelectElement} from 'neovex://resources/ash/common/network/network_select.js';
 
 import {Oobe} from '../cr_ui.js';
 

@@ -8,9 +8,9 @@
  * individually and for forgetting a host.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
 import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 import './multidevice_combined_setup_item.js';
@@ -21,7 +21,7 @@ import './multidevice_tether_item.js';
 import './multidevice_wifi_sync_item.js';
 import './multidevice_forget_device_dialog.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';

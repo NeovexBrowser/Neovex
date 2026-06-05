@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AuthCompletedCredentials} from 'chrome://chrome-signin/gaia_auth_host/authenticator.js';
-import {sendWithPromise} from 'chrome://resources/ash/common/cr.m.js';
+import type {AuthCompletedCredentials} from 'neovex://chrome-signin/gaia_auth_host/authenticator.js';
+import {sendWithPromise} from 'neovex://resources/ash/common/cr.m.js';
 
 import type {EduCoexistenceParams} from './edu_coexistence_controller.js';
 

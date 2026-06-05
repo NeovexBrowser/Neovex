@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {highlight as addHighlight, removeHighlights} from 'chrome://resources/js/search_highlight_utils.js';
-import type {Range} from 'chrome://resources/js/search_highlight_utils.js';
+import {highlight as addHighlight, removeHighlights} from 'neovex://resources/js/search_highlight_utils.js';
+import type {Range} from 'neovex://resources/js/search_highlight_utils.js';
 
 /**
  * Recursively finds and removes all highlight wrappers starting from the

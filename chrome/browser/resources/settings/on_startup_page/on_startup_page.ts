@@ -6,7 +6,7 @@
  * @fileoverview
  * 'settings-on-startup-page' is a settings page.
  */
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
 import '../controls/controlled_radio_button.js';
 import '/shared/settings/controls/extension_controlled_indicator.js';
 import '../controls/settings_radio_group.js';
@@ -19,11 +19,11 @@ import '../controls/settings_toggle_button.js';
 
 // </if>
 
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
 // <if expr="is_win">
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 // </if>
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getSearchManager} from '../search_settings.js';
 import type {SettingsPlugin} from '../settings_main/settings_plugin.js';

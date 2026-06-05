@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/ash/common/cr_elements/md_select.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/ash/common/cr_elements/md_select.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
 import './browser_tabs_model_form.js';
 import './camera_roll_manager_form.js';
 import './i18n_setup.js';
@@ -15,9 +15,9 @@ import './notification_manager.js';
 import './shared_style.css.js';
 import './quick_action_controller_form.js';
 
-import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
-import {WebUIListenerBehavior} from 'chrome://resources/ash/common/web_ui_listener_behavior.js';
-import {flush, Polymer} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {WebUIListenerBehavior} from 'neovex://resources/ash/common/web_ui_listener_behavior.js';
+import {flush, Polymer} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {MultidevicePhoneHubBrowserProxy} from './multidevice_phonehub_browser_proxy.js';
 import {getTemplate} from './phonehub_tab.html.js';
@@ -202,7 +202,7 @@ Polymer({
 
   /** @private */
   onPhoneHubFlagButtonClick_() {
-    window.open('chrome://flags/#enable-phone-hub');
+    window.open('neovex://flags/#enable-phone-hub');
   },
 
   /**

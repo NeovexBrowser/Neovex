@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/ash/common/cr_elements/md_select.css.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/md_select.css.js';
 import './customize_button_select.js';
 import '../settings_shared.css.js';
 import '../controls/settings_dropdown_menu.js';
 import '../os_settings_icons.html.js';
 
-import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ButtonPressObserverReceiver} from '../mojom-webui/input_device_settings_provider.mojom-webui.js';
 

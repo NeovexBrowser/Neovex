@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 /**
- * Typescript for actor_internals.html, served from chrome://actor-internals/
+ * Typescript for actor_internals.html, served from neovex://actor-internals/
  * This is used to debug actor events recording. It displays a live
  * stream of all actor events that occur in chromium while the
- * chrome://actor-internals/ page is open.
+ * neovex://actor-internals/ page is open.
  */
 
 import {getRequiredElement} from '//resources/js/util.js';

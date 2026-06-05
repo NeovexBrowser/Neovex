@@ -5,7 +5,7 @@
 import {DataSeries} from './line_chart/data_series.js';
 
 /**
- * @fileoverview Typedef use by chrome://sys-internals.
+ * @fileoverview Typedef use by neovex://sys-internals.
  */
 
 /**

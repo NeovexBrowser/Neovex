@@ -6,12 +6,12 @@ import './app_management_shared_style.css.js';
 import './toggle_row.js';
 
 import {assert, assertNotReached} from '//resources/js/assert.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {RunOnOsLoginMode} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
-import {recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {RunOnOsLoginMode} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
+import {recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app_management_shared_style.css.js';
 import {getHtml} from './run_on_os_login_item.html.js';

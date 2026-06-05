@@ -8,13 +8,13 @@
  * shared networks'.
  */
 
-import 'chrome://resources/ash/common/network/cr_policy_network_indicator_mojo.js';
-import 'chrome://resources/ash/common/network/network_proxy.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_hidden_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'neovex://resources/ash/common/network/cr_policy_network_indicator_mojo.js';
+import 'neovex://resources/ash/common/network/network_proxy.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_hidden_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
 import '../controls/extension_controlled_indicator.js';
 import '../settings_vars.css.js';
 import './internet_shared.css.js';
@@ -22,17 +22,17 @@ import '../controls/settings_toggle_button.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {CrPolicyNetworkBehaviorMojoInterface} from 'chrome://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
-import {CrPolicyNetworkBehaviorMojo} from 'chrome://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
-import type {NetworkProxyElement} from 'chrome://resources/ash/common/network/network_proxy.js';
-import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
-import type {ManagedProperties, ManagedString} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {OncSource, PolicySource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {CrPolicyNetworkBehaviorMojoInterface} from 'neovex://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
+import {CrPolicyNetworkBehaviorMojo} from 'neovex://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
+import type {NetworkProxyElement} from 'neovex://resources/ash/common/network/network_proxy.js';
+import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
+import type {ManagedProperties, ManagedString} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {OncSource, PolicySource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {RouteObserverMixinInterface} from '../common/route_observer_mixin.js';
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';

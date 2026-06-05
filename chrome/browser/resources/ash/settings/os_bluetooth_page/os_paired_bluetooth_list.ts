@@ -9,12 +9,12 @@
 
 import '../settings_shared.css.js';
 import './os_paired_bluetooth_list_item.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
 
-import {CrScrollableMixin} from 'chrome://resources/ash/common/cr_elements/cr_scrollable_mixin.js';
-import type {PairedBluetoothDeviceProperties} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import type {PaperTooltipElement} from 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {CrScrollableMixin} from 'neovex://resources/ash/common/cr_elements/cr_scrollable_mixin.js';
+import type {PairedBluetoothDeviceProperties} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import type {PaperTooltipElement} from 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './os_paired_bluetooth_list.html.js';
 

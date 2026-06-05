@@ -102,13 +102,13 @@ export {ScreenAiInstallStatus} from '/shared/settings/a11y_page/ax_annotations_b
 export type {CaptionsBrowserProxy, LiveCaptionLanguage, LiveCaptionLanguageList} from '/shared/settings/a11y_page/captions_browser_proxy.js';
 export {CaptionsBrowserProxyImpl} from '/shared/settings/a11y_page/captions_browser_proxy.js';
 export {LifetimeBrowserProxyImpl} from '/shared/settings/lifetime_browser_proxy.js';
-export {NetworkListElement} from 'chrome://resources/ash/common/network/network_list.js';
-export type {AddSmbShareDialogElement} from 'chrome://resources/ash/common/smb_shares/add_smb_share_dialog.js';
-export type {SmbBrowserProxy} from 'chrome://resources/ash/common/smb_shares/smb_browser_proxy.js';
-export {SmbBrowserProxyImpl, SmbMountResult} from 'chrome://resources/ash/common/smb_shares/smb_browser_proxy.js';
+export {NetworkListElement} from 'neovex://resources/ash/common/network/network_list.js';
+export type {AddSmbShareDialogElement} from 'neovex://resources/ash/common/smb_shares/add_smb_share_dialog.js';
+export type {SmbBrowserProxy} from 'neovex://resources/ash/common/smb_shares/smb_browser_proxy.js';
+export {SmbBrowserProxyImpl, SmbMountResult} from 'neovex://resources/ash/common/smb_shares/smb_browser_proxy.js';
 // Tests should use this export of `sanitizerInnerHtml` to prevent repeated
 // TrustedTypes policies from being created.
-export {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+export {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
 export {AppLanguageSelectionDialogElement} from './common/app_language_selection_dialog/app_language_selection_dialog.js';
 export {AppLanguageSelectionItemElement} from './common/app_language_selection_dialog/app_language_selection_item.js';
 export {MediaDevicesProxy} from './common/media_devices_proxy.js';

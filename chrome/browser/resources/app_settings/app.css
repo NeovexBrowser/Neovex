@@ -15,7 +15,7 @@
   border-radius: var(--cr-card-border-radius);
   box-shadow: var(--cr-card-shadow);
   color: var(--cr-primary-text-color);
-  /* Follows margin used in chrome://history */
+  /* Follows margin used in neovex://history */
   margin-top: 24px;
 }
 

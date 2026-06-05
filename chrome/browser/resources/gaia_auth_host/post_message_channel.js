@@ -15,10 +15,10 @@ import {Channel} from './channel.js';
  * @type {Array<string>}
  */
 const ALLOWED_ORIGINS = [
-  'chrome://oobe',
-  'chrome://chrome-signin',
-  'chrome://password-change',
-  'chrome://lock-reauth',
+  'neovex://oobe',
+  'neovex://chrome-signin',
+  'neovex://password-change',
+  'neovex://lock-reauth',
 ];
 
 /** @const */

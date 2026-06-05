@@ -6,11 +6,11 @@
  * @fileoverview 'settings-clear-browsing-data-dialog-v2' allows the user to
  * delete browsing data that has been cached by Chromium.
  */
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/cr_elements/cr_spinner_style.css.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_spinner_style.css.js';
 import '../controls/settings_checkbox.js';
 import '../settings_shared.css.js';
 // <if expr="not is_chromeos">
@@ -24,14 +24,14 @@ import type {SyncBrowserProxy, SyncStatus} from '/shared/settings/people_page/sy
 import {SyncBrowserProxyImpl} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
 import {CrSettingsPrefs} from '/shared/settings/prefs/prefs_types.js';
-import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrLinkRowElement} from 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrLinkRowElement} from 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SettingsCheckboxElement} from '../controls/settings_checkbox.js';
 import {loadTimeData} from '../i18n_setup.js';

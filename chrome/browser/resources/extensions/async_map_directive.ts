@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {AsyncDirective, directive, html, PartType} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PartInfo, TemplateResult} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {AsyncDirective, directive, html, PartType} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PartInfo, TemplateResult} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 // Directive to render some items in an array asynchronously. Initially
 // renders `initialCount` items, and renders remaining items asynchronously

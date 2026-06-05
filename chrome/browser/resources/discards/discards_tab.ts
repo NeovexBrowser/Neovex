@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/js/action_link.js';
+import 'neovex://resources/js/action_link.js';
 import '/strings.m.js';
 
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {TimeDelta} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {TimeDelta} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
 
 import {boolToString, durationToString, getOrCreateDetailsProvider} from './discards.js';
 import type {DetailsProviderRemote, TabDiscardsInfo} from './discards.mojom-webui.js';

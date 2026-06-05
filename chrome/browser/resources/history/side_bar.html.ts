@@ -31,7 +31,7 @@ export function getHtml(this: HistorySideBarElement) {
   </a>
   <a role="menuitem" id="clear-browsing-data"
       class="cr-nav-menu-item"
-      href="chrome://settings/clearBrowserData"
+      href="neovex://settings/clearBrowserData"
       @click="${this.onClearBrowsingDataClick_}"
       ?disabled="${this.guestSession_}"
       title="$i18n{clearBrowsingDataLinkTooltip}">

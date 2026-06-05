@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 /**
- * Javascript for usb_internals.html, served from chrome://usb-internals/.
+ * Javascript for usb_internals.html, served from neovex://usb-internals/.
  */
 
-import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
-import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
+import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {getTemplate} from './app.html.js';
 import {DevicesPage} from './devices_page.js';

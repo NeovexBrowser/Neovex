@@ -7,11 +7,11 @@
  * to install and uninstall Crostini.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
 
 import {type GuestId, TERMINA_VM_TYPE} from '../guest_os/guest_os_browser_proxy.js';
 

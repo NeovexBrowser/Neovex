@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ActionLink} from 'chrome://resources/js/action_link.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {listenOnce} from 'chrome://resources/js/util.js';
+import type {ActionLink} from 'neovex://resources/js/action_link.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {listenOnce} from 'neovex://resources/js/util.js';
 
 import {getTemplate} from './snackbar.html.js';
 
 /**
- * Javascript for Snackbar controls, served from chrome://bluetooth-internals/.
+ * Javascript for Snackbar controls, served from neovex://bluetooth-internals/.
  */
 
 interface SnackbarOptions {

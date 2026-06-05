@@ -7,13 +7,13 @@
  * dictionary).
  */
 import './os_japanese_dictionary_entry_row.js';
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
 
-import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {BigBuffer} from 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import type {BigString} from 'chrome://resources/mojo/mojo/public/mojom/base/big_string.mojom-webui.js';
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {BigBuffer} from 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import type {BigString} from 'neovex://resources/mojo/mojo/public/mojom/base/big_string.mojom-webui.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {JapaneseDictionary} from '../mojom-webui/user_data_japanese_dictionary.mojom-webui.js';
 import {JpPosType} from '../mojom-webui/user_data_japanese_dictionary.mojom-webui.js';

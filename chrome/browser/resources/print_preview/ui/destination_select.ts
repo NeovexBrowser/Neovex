@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/js/util.js';
+import 'neovex://resources/js/util.js';
 import './icons.html.js';
 import './settings_section.js';
 import '/strings.m.js';
 
-import {IconsetMap} from 'chrome://resources/cr_elements/cr_icon/iconset_map.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {IconsetMap} from 'neovex://resources/cr_elements/cr_icon/iconset_map.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {Destination} from '../data/destination.js';
 import {PDF_DESTINATION_KEY} from '../data/destination.js';

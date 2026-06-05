@@ -6,7 +6,7 @@ import '/shared/key_value_pair_viewer/key_value_pair_viewer.js';
 import '/strings.m.js';
 
 import type {KeyValuePairEntry} from '/shared/key_value_pair_viewer/key_value_pair_entry.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

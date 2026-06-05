@@ -16,7 +16,7 @@ import {assert} from '//resources/js/assert.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
 import type {FilePath} from '//resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {BrowserProxy} from './browser_proxy.js';
 import {type AudioData, type Capabilities, type InputPiece, InputSource, LoadModelResult, OnDeviceModelRemote, PerformanceClass, type ResponseChunk, type ResponseSummary, SessionRemote, StreamingResponderCallbackRouter, Token} from './on_device_model.mojom-webui.js';

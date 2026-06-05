@@ -14,15 +14,15 @@
  *   add a print server.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
 import './cups_add_print_server_dialog.js';
 import './cups_add_printer_manually_dialog.js';
 import './cups_add_printer_manufacturer_model_dialog.js';
 import './cups_printer_shared.css.js';
 import './cups_printers_browser_proxy.js';
 
-import {microTask, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {microTask, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {CupsPrinterInfo} from './cups_printers_browser_proxy.js';
 import {getTemplate} from './cups_settings_add_printer_dialog.html.js';

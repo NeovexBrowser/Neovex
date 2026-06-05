@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
+import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
 
 export const SUBDOMAIN_SPECIFIER = '*.';
 

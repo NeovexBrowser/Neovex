@@ -7,22 +7,22 @@
  * 'settings-manage-profile' is the settings subpage containing controls to
  * edit a profile's name, icon, and desktop shortcut.
  */
-import 'chrome://resources/cr_components/theme_color_picker/theme_color_picker.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import 'neovex://resources/cr_components/theme_color_picker/theme_color_picker.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
 import '../settings_page/settings_subpage.js';
 import '../settings_shared.css.js';
 
 import type {ProfileInfo} from '/shared/settings/people_page/profile_info_browser_proxy.js';
 import {ProfileInfoBrowserProxyImpl} from '/shared/settings/people_page/profile_info_browser_proxy.js';
-import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import type {AvatarIcon} from 'chrome://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import type {AvatarIcon} from 'neovex://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import {routes} from '../route.js';

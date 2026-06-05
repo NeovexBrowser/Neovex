@@ -31,7 +31,7 @@ import type {HealthdInternalsTelemetryElement} from './view/pages/telemetry.js';
 import type {HealthdInternalsSettingsDialogElement} from './view/settings/settings_dialog.js';
 
 /**
- * The enum for displayed pages in chrome://healthd-internals.
+ * The enum for displayed pages in neovex://healthd-internals.
  */
 export enum PagePath {
   // Only used when menu tabs are not displayed. No page should be displayed.
@@ -42,7 +42,7 @@ export enum PagePath {
   SYSTEM_TREND = '/system_trend'
 }
 
-// Interface of pages in chrome://healthd-internals.
+// Interface of pages in neovex://healthd-internals.
 interface Page {
   name: string;
   path: PagePath;
@@ -133,7 +133,7 @@ export class HealthdInternalsAppElement extends PolymerElement {
             },
           ];
 
-          // `currentPath` will be set when chrome://healthd-internals is open.
+          // `currentPath` will be set when neovex://healthd-internals is open.
           // Update the selected index to render the page after `pageList` is
           // set.
           this.updateSelectedIndex(this.currentPath);
@@ -146,7 +146,7 @@ export class HealthdInternalsAppElement extends PolymerElement {
   // Init in `connectedCallback`.
   private dataManager: DataManager;
 
-  // The content pages for chrome://healthd-internals. It is also used for
+  // The content pages for neovex://healthd-internals. It is also used for
   // rendering the tabs in the sidebar menu.
   // It will be empty if the feature flag (HealthdInternalsTabs) is disabled.
   private pageList: Page[] = [];

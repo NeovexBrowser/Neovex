@@ -6,14 +6,14 @@
  * @fileoverview 'settings-search-engines-list' is a component for showing a
  * list of search engines.
  */
-import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
 import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 import './search_engine_entry.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SearchEngine} from './search_engines_browser_proxy.js';
 import {getTemplate} from './search_engines_list.html.js';

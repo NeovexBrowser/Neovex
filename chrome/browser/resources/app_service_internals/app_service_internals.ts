@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getHtml} from './app_service_internals.html.js';
 import type {AppCapabilityInfo, AppInfo, DebugInfo, PreferredAppInfo, PromiseAppInfo} from './app_service_internals.mojom-webui.js';

@@ -6,7 +6,7 @@
  * @fileoverview Helper browser proxy for peripheral data access client.
  */
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 export interface DataAccessPolicyState {
   prefName: string;

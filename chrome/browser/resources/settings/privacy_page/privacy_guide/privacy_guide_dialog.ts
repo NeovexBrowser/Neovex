@@ -7,13 +7,13 @@
  * 'settings-rivacy-guide-dialog' is a settings dialog that helps users guide
  * various privacy settings.
  */
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
 import '/shared/settings/prefs/prefs.js';
 import '../../settings_shared.css.js';
 import './privacy_guide_page.js';
 
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './privacy_guide_dialog.html.js';
 

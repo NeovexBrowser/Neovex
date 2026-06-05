@@ -5,7 +5,7 @@
 import './service_list_item.js';
 import './expandable_list.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {ServiceInfo} from './device.mojom-webui.js';
 import {connectToDevice} from './device_broker.js';

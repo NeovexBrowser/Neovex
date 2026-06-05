@@ -13,8 +13,8 @@ export function getHtml(this: ChromeSigninAppElement) {
 
   <div id="header-container">
     <img id="product-logo"
-      srcset="chrome://theme/current-channel-logo@1x 1x,
-              chrome://theme/current-channel-logo@2x 2x"
+      srcset="neovex://theme/current-channel-logo@1x 1x,
+              neovex://theme/current-channel-logo@2x 2x"
       role="presentation">
 
     <h1 id="title">${this.interceptionParameters_.title}</h1>

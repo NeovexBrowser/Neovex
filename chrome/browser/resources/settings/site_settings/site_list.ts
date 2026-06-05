@@ -7,27 +7,27 @@
  * 'site-list' shows a list of Allowed and Blocked sites for a given
  * category.
  */
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
 import '/shared/settings/controls/cr_policy_pref_indicator.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
 import '../settings_shared.css.js';
 import './add_site_dialog.js';
 import './edit_exception_dialog.js';
 import './site_list_entry.js';
 
-import type {CrTooltipElement} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
-import type {SanitizeInnerHtmlOpts} from 'chrome://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrTooltipElement} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import type {SanitizeInnerHtmlOpts} from 'neovex://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {TooltipMixin} from '../tooltip_mixin.js';
 

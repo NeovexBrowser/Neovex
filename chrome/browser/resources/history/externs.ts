@@ -5,7 +5,7 @@
 import type {HistorySignInState, SyncState} from './constants.js';
 
 /**
- * @fileoverview Externs for objects sent from C++ to chrome://history.
+ * @fileoverview Externs for objects sent from C++ to neovex://history.
  */
 
 /**

@@ -5,7 +5,7 @@
 import '/shared/key_value_pair_viewer/key_value_pair_viewer.js';
 
 import type {KeyValuePairEntry} from '/shared/key_value_pair_viewer/key_value_pair_entry.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './css/about_sys.css.js';
 import {FeedbackBrowserProxyImpl} from './js/feedback_browser_proxy.js';

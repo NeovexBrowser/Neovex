@@ -7,9 +7,9 @@
  * operating system (i.e. network, background processes, hardware).
  */
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/policy/cr_policy_indicator.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/policy/cr_policy_indicator.js';
 import '/shared/settings/controls/cr_policy_pref_indicator.js';
 import '/shared/settings/controls/extension_controlled_indicator.js';
 import '../controls/settings_toggle_button.js';
@@ -18,9 +18,9 @@ import '../settings_page/settings_section.js';
 import '../settings_shared.css.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';
 import {loadTimeData} from '../i18n_setup.js';
@@ -186,7 +186,7 @@ export class SettingsSystemPageElement extends SettingsSystemPageElementBase
     // TODO(dbeam): this is a pretty huge bummer. It means there are things
     // (inputs) that our prefs system is not observing. And that changes from
     // other sources (i.e. disabling/enabling an extension from
-    // chrome://extensions or from the omnibox directly) will not update
+    // neovex://extensions or from the omnibox directly) will not update
     // |this.getPref('proxy')| directly (nor the UI). We should fix this
     // eventually.
     this.dispatchEvent(new CustomEvent(

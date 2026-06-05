@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {ACCOUNT_HEADING_NODE_ID, IncognitoAvailability, LOCAL_HEADING_NODE_ID, ROOT_NODE_ID} from './constants.js';
 import type {BookmarkNode, BookmarksPageState, NodeMap, ObjectMap} from './types.js';

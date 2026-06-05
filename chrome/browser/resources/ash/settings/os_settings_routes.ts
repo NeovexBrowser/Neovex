@@ -10,8 +10,8 @@
  * the Router singleton instance, rather than imported from here.
  */
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {androidAppsVisible, isAppParentalControlsFeatureAvailable, isArcVmEnabled, isCrostiniSupported, isGuest, isKerberosEnabled, isPluginVmAvailable} from './common/load_time_booleans.js';
 import * as routesMojom from './mojom-webui/routes.mojom-webui.js';
@@ -78,7 +78,7 @@ export class Route {
 
   /**
    * Returns the absolute path string for this Route, assuming this function
-   * has been called from within chrome://os-settings.
+   * has been called from within neovex://os-settings.
    */
   getAbsolutePath(): string {
     return window.location.origin + this.path;

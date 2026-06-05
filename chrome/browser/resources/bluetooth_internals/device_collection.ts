@@ -4,10 +4,10 @@
 
 /**
  * Javascript for DeviceCollection, served from
- *     chrome://bluetooth-internals/.
+ *     neovex://bluetooth-internals/.
  */
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {DeviceInfo} from './device.mojom-webui.js';
 

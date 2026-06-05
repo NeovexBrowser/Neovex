@@ -6,12 +6,12 @@ import './ink_brush_selector.js';
 import './ink_color_selector.js';
 import './ink_size_selector.js';
 import './viewer_bottom_toolbar_dropdown.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {AnnotationBrushType} from '../constants.js';
 import {blendHighlighterColorValue, colorToHex} from '../pdf_viewer_utils.js';

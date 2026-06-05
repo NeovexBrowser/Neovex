@@ -11,7 +11,7 @@ import '/shared/settings/controls/cr_policy_pref_indicator.js';
 import '../settings_shared.css.js';
 
 import {PrefControlMixin} from '/shared/settings/controls/pref_control_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './ai_policy_indicator.html.js';
 import {ModelExecutionEnterprisePolicyValue} from './constants.js';

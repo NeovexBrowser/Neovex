@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
   <title>$i18n{title}</title>
-  <base href="chrome://oobe">
+  <base href="neovex://oobe">
 
   <!-- Keeps track of when OOBE started. -->
   <script src="./oobe_trace_start.js"></script>
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="//resources/chromeos/colors/cros_styles.css">
   <!-- URL protocol prefix necessary, otherwise "new URL(href)"
     in colors_css_updater.ts will crash -->
-  <link rel="stylesheet" href="chrome://theme/colors.css?sets=sys">
+  <link rel="stylesheet" href="neovex://theme/colors.css?sets=sys">
   <link rel="stylesheet" href="oobe.css">
   <link rel="stylesheet" href="oobe_popup_overlay.css">
   <link rel="stylesheet" href="oobe_screen.css">
@@ -21,7 +21,7 @@
   <script type="module" src="./install_oobe_error_store.js"></script>
 
   <!-- OOBE Start Script -->
-  <link rel="modulepreload" href="chrome://oobe/screens.js">
+  <link rel="modulepreload" href="neovex://oobe/screens.js">
   <script type="module" src="./oobe.js"></script>
 </head>
 <custom-style>

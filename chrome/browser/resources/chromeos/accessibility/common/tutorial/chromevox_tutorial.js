@@ -7,7 +7,7 @@
  * interactive tutorial engine.
  */
 
-import {html, mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {html, mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {BackgroundBridge} from '../../../chromevox/mv2/common/background_bridge.js';
 import {EarconDescription} from '../../../chromevox/mv2/common/earcon_id.js';

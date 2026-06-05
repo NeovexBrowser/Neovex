@@ -10,7 +10,7 @@
 import '/strings.m.js';
 import './set_time_dialog.js';
 
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
 
 window.onload = () => {
   ColorChangeUpdater.forDocument().start();

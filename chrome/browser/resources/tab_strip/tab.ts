@@ -5,11 +5,11 @@
 import '/strings.m.js';
 import './alert_indicators.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {getFavicon} from 'chrome://resources/js/icon.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {isRTL} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {getFavicon} from 'neovex://resources/js/icon.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isRTL} from 'neovex://resources/js/util.js';
 
 import type {AlertIndicatorsElement} from './alert_indicators.js';
 import {getTemplate} from './tab.html.js';

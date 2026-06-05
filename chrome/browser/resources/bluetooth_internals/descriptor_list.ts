@@ -4,13 +4,13 @@
 
 /**
  * Javascript for DescriptorList and DescriptorListItem, served from
- *     chrome://bluetooth-internals/.
+ *     neovex://bluetooth-internals/.
  */
 
 import './descriptor_list_item.js';
 import './expandable_list.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import type {DescriptorListItemElement} from './descriptor_list_item.js';
 import type {DescriptorInfo} from './device.mojom-webui.js';

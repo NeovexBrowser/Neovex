@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_ripple/cr_ripple.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_ripple/cr_ripple.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import '/strings.m.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {isRTL} from 'chrome://resources/js/util.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {isRTL} from 'neovex://resources/js/util.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {changeFolderOpen, selectFolder} from './actions.js';
 import {BookmarksCommandManagerElement} from './command_manager.js';

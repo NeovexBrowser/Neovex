@@ -1,13 +1,13 @@
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
-import 'chrome://resources/cr_elements/cr_page_host_style.css.js';
-import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import 'chrome://resources/cr_elements/cr_scrollable.css.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import 'neovex://resources/cr_elements/cr_page_host_style.css.js';
+import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/cr_scrollable.css.js';
 import '/shared/settings/prefs/prefs.js';
 import './checkup_section.js';
 import './checkup_details_section.js';
@@ -24,15 +24,15 @@ import type {CrToastElement} from '//resources/cr_elements/cr_toast/cr_toast.js'
 import {focusWithoutInk} from '//resources/js/focus_without_ink.js';
 import {loadTimeData} from '//resources/js/load_time_data.js';
 import type {SettingsPrefsElement} from '/shared/settings/prefs/prefs.js';
-import type {CrDrawerElement} from 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
-import type {CrPageSelectorElement} from 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import {FindShortcutMixin} from 'chrome://resources/cr_elements/find_shortcut_mixin.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {getDeepActiveElement, listenOnce} from 'chrome://resources/js/util.js';
-import type {DomIf} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDrawerElement} from 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import type {CrPageSelectorElement} from 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import {FindShortcutMixin} from 'neovex://resources/cr_elements/find_shortcut_mixin.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {getDeepActiveElement, listenOnce} from 'neovex://resources/js/util.js';
+import type {DomIf} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {CheckupSectionElement} from './checkup_section.js';
 import type {BackupPasswordRemovedEvent} from './credential_details/backup_password_details_card.js';

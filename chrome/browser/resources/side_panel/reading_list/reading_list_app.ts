@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://read-later.top-chrome/shared/sp_empty_state.js';
-import 'chrome://read-later.top-chrome/shared/sp_footer.js';
-import 'chrome://read-later.top-chrome/shared/sp_heading.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://read-later.top-chrome/shared/sp_empty_state.js';
+import 'neovex://read-later.top-chrome/shared/sp_footer.js';
+import 'neovex://read-later.top-chrome/shared/sp_heading.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import './reading_list_item.js';
 import '/strings.m.js';
 
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import type {CrLazyListElement} from 'chrome://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import type {CrLazyListElement} from 'neovex://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {ReadLaterEntriesByStatus, ReadLaterEntry} from './reading_list.mojom-webui.js';
 import {CurrentPageActionButtonState} from './reading_list.mojom-webui.js';

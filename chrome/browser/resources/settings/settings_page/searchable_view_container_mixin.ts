@@ -26,8 +26,8 @@
 
 import {assert} from '//resources/js/assert.js';
 import type {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Route, RouteObserverMixinInterface} from '../router.js';
 import {RouteObserverMixin} from '../router.js';

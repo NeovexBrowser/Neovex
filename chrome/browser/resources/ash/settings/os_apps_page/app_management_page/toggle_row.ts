@@ -7,7 +7,7 @@ import '//resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
 import '//resources/ash/common/cr_elements/icons.html.js';
 
 import type {CrToggleElement} from '//resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './toggle_row.html.js';
 

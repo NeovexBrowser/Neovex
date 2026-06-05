@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_input/cr_input.js';
-import 'chrome://resources/cr_elements/cr_slider/cr_slider.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'neovex://resources/cr_elements/cr_slider/cr_slider.js';
 
 import type {CrInputElement} from '//resources/cr_elements/cr_input/cr_input.js';
 import type {CrSliderElement, SliderTick} from '//resources/cr_elements/cr_slider/cr_slider.js';

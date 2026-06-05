@@ -7,21 +7,21 @@
  * 'files-settings-card' is the card element containing files settings.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import 'chrome://resources/ash/common/smb_shares/add_smb_share_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'neovex://resources/ash/common/smb_shares/add_smb_share_dialog.js';
 import '../controls/controlled_button.js';
 import '../controls/settings_toggle_button.js';
 import '../os_settings_page/settings_card.js';
 import '../settings_shared.css.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {SmbBrowserProxy} from 'chrome://resources/ash/common/smb_shares/smb_browser_proxy.js';
-import {SmbBrowserProxyImpl} from 'chrome://resources/ash/common/smb_shares/smb_browser_proxy.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {SmbBrowserProxy} from 'neovex://resources/ash/common/smb_shares/smb_browser_proxy.js';
+import {SmbBrowserProxyImpl} from 'neovex://resources/ash/common/smb_shares/smb_browser_proxy.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertExhaustive} from '../assert_extras.js';
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';

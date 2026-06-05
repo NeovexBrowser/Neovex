@@ -6,10 +6,10 @@ import './print_preview_shared.css.js';
 import './settings_section.js';
 import './settings_select.js';
 
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
-import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
+import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {MediaSizeCapability} from '../data/cdd.js';
 

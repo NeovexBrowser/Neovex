@@ -1,12 +1,12 @@
 <!doctype html>
 <html dir="$i18n{textdirection}" lang="$i18n{language}" class="loading">
 <head>
-  <link rel="icon" type="image/svg+xml" href="chrome://resources/images/neovex_logo.svg">
+  <link rel="icon" type="image/svg+xml" href="neovex://resources/images/neovex_logo.svg">
   <meta charset="utf-8">
   <meta name="color-scheme" content="light dark">
-  <base href="chrome://downloads">
+  <base href="neovex://downloads">
   <title>$i18n{title}</title>
-  <link rel="stylesheet" href="chrome://resources/css/md_colors.css">
+  <link rel="stylesheet" href="neovex://resources/css/md_colors.css">
   <style>
     html {
       overflow: hidden;
@@ -123,33 +123,29 @@
       left: 0;
       top: 0;
       width: 160px;
-      min-width: 160px;
       height: 100vh;
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-right: 1px solid rgba(255, 255, 255, 0.04);
+      background: #0d0d16;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
       display: flex;
       flex-direction: column;
       padding: 12px 0 12px 0;
       overflow-y: auto;
-      z-index: 9999;
+      z-index: 100;
     }
 
     #neovex-sidebar .nvx-sb-title {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 600;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.3);
       padding: 8px 16px 6px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
     }
 
     #neovex-sidebar .nvx-cat {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
+      padding: 8px 16px;
       margin: 1px 6px;
       cursor: pointer;
       border-radius: 8px;
@@ -177,13 +173,6 @@
       color: #a0adff;
     }
 
-    #neovex-sidebar .nvx-cat-icon {
-      font-size: 14px;
-      width: 18px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-
     #neovex-sidebar .nvx-cat-count {
       margin-left: auto;
       font-size: 10px;
@@ -203,6 +192,7 @@
     }
 
     downloads-manager {
+      margin-left: 160px;
       flex: 1;
       min-width: 0;
       overflow: hidden;
@@ -217,54 +207,44 @@
   </style>
 </head>
 <body>
-<div id="debug-panel" style="position:fixed;top:0;right:0;background:#ff4444;color:#fff;padding:4px;z-index:10000;">DEBUG</div>
-  <!-- NEOVEX DOWNLOADS: Category sidebar (static HTML, matching settings page layout) -->
+  <!-- NEOVEX DOWNLOADS: Category sidebar -->
   <nav id="neovex-sidebar">
     <div class="nvx-sb-title">Categories</div>
     <button class="nvx-cat active" data-category="All">
-      <span class="nvx-cat-icon">&#x1F4CB;</span>
       <span>All</span>
       <span class="nvx-cat-count" data-count="All">0</span>
     </button>
     <button class="nvx-cat" data-category="Images">
-      <span class="nvx-cat-icon">&#x1F5BC;&#xFE0F;</span>
       <span>Images</span>
       <span class="nvx-cat-count" data-count="Images">0</span>
     </button>
     <button class="nvx-cat" data-category="Documents">
-      <span class="nvx-cat-icon">&#x1F4C4;</span>
       <span>Documents</span>
       <span class="nvx-cat-count" data-count="Documents">0</span>
     </button>
     <button class="nvx-cat" data-category="Videos">
-      <span class="nvx-cat-icon">&#x1F3AC;</span>
       <span>Videos</span>
       <span class="nvx-cat-count" data-count="Videos">0</span>
     </button>
     <button class="nvx-cat" data-category="Audio">
-      <span class="nvx-cat-icon">&#x1F3B5;</span>
       <span>Audio</span>
       <span class="nvx-cat-count" data-count="Audio">0</span>
     </button>
     <div class="nvx-sep"></div>
     <button class="nvx-cat" data-category="Archives">
-      <span class="nvx-cat-icon">&#x1F5DC;&#xFE0F;</span>
       <span>Archives</span>
       <span class="nvx-cat-count" data-count="Archives">0</span>
     </button>
     <button class="nvx-cat" data-category="Programs">
-      <span class="nvx-cat-icon">&#x2699;&#xFE0F;</span>
       <span>Programs</span>
       <span class="nvx-cat-count" data-count="Programs">0</span>
     </button>
     <button class="nvx-cat" data-category="Code">
-      <span class="nvx-cat-icon">&#x1F4BB;</span>
       <span>Code</span>
       <span class="nvx-cat-count" data-count="Code">0</span>
     </button>
     <div class="nvx-sep"></div>
     <button class="nvx-cat" data-category="Other">
-      <span class="nvx-cat-icon">&#x1F4E6;</span>
       <span>Other</span>
       <span class="nvx-cat-count" data-count="Other">0</span>
     </button>
@@ -283,7 +263,7 @@
   <downloads-manager></downloads-manager>
 
   <!-- Hidden iframe bridge to NTP for wallpaper data -->
-  <iframe id="ntpBridge" src="chrome://new-tab-page/new_tab_page.html"></iframe>
+  <iframe id="ntpBridge" src="neovex://new-tab-page/new_tab_page.html"></iframe>
 
   <script>
     (function() {
@@ -331,7 +311,7 @@
       } catch(e) { /* IndexedDB not available */ }
     })();
   </script>
-  <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+  <link rel="stylesheet" href="neovex://resources/css/text_defaults_md.css">
   <script type="module" src="downloads.js"></script>
 </body>
 </html>

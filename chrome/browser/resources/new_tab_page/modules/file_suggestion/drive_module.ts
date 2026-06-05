@@ -6,7 +6,7 @@ import '../info_dialog.js';
 import '../module_header.js';
 import './file_suggestion.js';
 
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import type {File} from '../../file_suggestion.mojom-webui.js';
 import {I18nMixinLit, loadTimeData} from '../../i18n_setup.js';

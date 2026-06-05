@@ -1,7 +1,7 @@
 <!doctype html>
 <html dir="$i18n{textdirection}" lang="$i18n{language}">
   <head>
-  <link rel="icon" type="image/svg+xml" href="chrome://resources/images/neovex_logo.svg">
+  <link rel="icon" type="image/svg+xml" href="neovex://resources/images/neovex_logo.svg">
     <meta charset="utf-8">
     <title>$i18n{title}</title>
     <style>
@@ -225,8 +225,8 @@
     <iframe id="backgroundImage" src="$i18nRaw{backgroundImageUrl}"></iframe>
     <ntp-app></ntp-app>
     <script type="module" src="new_tab_page.js"></script>
-    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
-    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome">
+    <link rel="stylesheet" href="neovex://resources/css/text_defaults_md.css">
+    <link rel="stylesheet" href="neovex://theme/colors.css?sets=ui,chrome">
     <link rel="stylesheet" href="shared_vars.css">
 
     <!-- ============================================= -->
@@ -343,7 +343,7 @@
       function loadBg(){return localStorage.getItem('ntp_bg')||'';}
       function saveBgData(v){localStorage.setItem('ntp_bg',v);syncBgToIDB(v);}
 
-      // Sync background to IndexedDB for cross-origin access (chrome://settings)
+      // Sync background to IndexedDB for cross-origin access (neovex://settings)
       function syncBgToIDB(v){
         var request=indexedDB.open('NeovexShared',1);
         request.onupgradeneeded=function(e){
@@ -364,7 +364,7 @@
         var d=getDomain(u);
         if(!d) return '';
         var googleUrl='https://www.google.com/s2/favicons?domain='+encodeURIComponent(d)+'&sz=64';
-        return 'chrome://image/?url='+encodeURIComponent(googleUrl);
+        return 'neovex://image/?url='+encodeURIComponent(googleUrl);
       }
       function hashStr(s){var h=0;for(var i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}return Math.abs(h);}
 
@@ -391,7 +391,7 @@
             // Show colorful letter as fallback base
             var fb=makeFallback(site);
             a.appendChild(fb);
-            // Load real favicon via chrome://image proxy
+            // Load real favicon via neovex://image proxy
             var furl=getFaviconUrl(site.url);
             if(furl){
               var img=document.createElement('img');

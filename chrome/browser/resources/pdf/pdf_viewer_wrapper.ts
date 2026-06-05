@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 // clang-format off
-export {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-export {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+export {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+export {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 // <if expr="enable_pdf_ink2">
 export {BeforeUnloadProxyImpl} from './before_unload_proxy.js';
 export type {BeforeUnloadProxy} from './before_unload_proxy.js';

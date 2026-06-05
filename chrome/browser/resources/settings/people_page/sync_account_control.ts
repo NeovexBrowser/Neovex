@@ -338,13 +338,13 @@ export class SettingsSyncAccountControlElement extends
     }
 
     // image can be undefined if the account has not set an avatar photo.
-    return image || 'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
+    return image || 'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
   }
 
 
   private getAccountImageSrc_(image: string|null): string {
     // image can be undefined if the account has not set an avatar photo.
-    return image || 'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
+    return image || 'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
   }
 
   /**

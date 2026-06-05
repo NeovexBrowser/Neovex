@@ -4,9 +4,9 @@
 
 // clang-format off
 // <if expr="enable_pdf_ink2">
-import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
 // </if>
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
 import './elements/viewer_error_dialog.js';
 import './elements/viewer_password_dialog.js';
 // <if expr="enable_pdf_ink2">
@@ -23,13 +23,13 @@ import './elements/viewer_save_to_drive_bubble.js';
 // </if> enable_pdf_save_to_drive
 import './elements/viewer_toolbar.js';
 
-import {PdfHelpBubbleProxyImpl} from 'chrome://resources/cr_components/help_bubble/pdf_help_bubble_proxy.js';
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import type {LoadTimeDataRaw} from 'chrome://resources/js/load_time_data.js';
-import {listenOnce} from 'chrome://resources/js/util.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {PdfHelpBubbleProxyImpl} from 'neovex://resources/cr_components/help_bubble/pdf_help_bubble_proxy.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {LoadTimeDataRaw} from 'neovex://resources/js/load_time_data.js';
+import {listenOnce} from 'neovex://resources/js/util.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 // <if expr="enable_pdf_ink2 or enable_pdf_save_to_drive">
 import {BeforeUnloadProxyImpl} from './before_unload_proxy.js';

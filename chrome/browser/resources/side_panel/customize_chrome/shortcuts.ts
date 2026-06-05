@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
-import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'chrome://resources/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'neovex://resources/cr_elements/cr_radio_button/cr_radio_button.js';
 import './button_label.js';
 import '/strings.m.js';
 
-import type {CrRadioGroupElement} from 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
-import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {CrRadioGroupElement} from 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {CustomizeChromeAction, recordCustomizeChromeAction} from './common.js';
 import {CustomizeChromeApiProxy} from './customize_chrome_api_proxy.js';

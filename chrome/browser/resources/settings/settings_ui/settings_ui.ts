@@ -10,13 +10,13 @@
  *
  *    <settings-ui prefs="{{prefs}}"></settings-ui>
  */
-import 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import 'chrome://resources/cr_elements/cr_page_host_style.css.js';
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_scrollable.css.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'neovex://resources/cr_elements/cr_page_host_style.css.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_scrollable.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 import '/shared/settings/prefs/prefs.js';
 import '../icons.html.js';
 import '../settings_main/settings_main.js';
@@ -25,12 +25,12 @@ import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 
 import type {SettingsPrefsElement} from '/shared/settings/prefs/prefs.js';
-import type {CrDrawerElement} from 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
-import type {CrToolbarElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import {FindShortcutMixin} from 'chrome://resources/cr_elements/find_shortcut_mixin.js';
-import {listenOnce} from 'chrome://resources/js/util.js';
-import type {DomIf} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDrawerElement} from 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import type {CrToolbarElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import {FindShortcutMixin} from 'neovex://resources/cr_elements/find_shortcut_mixin.js';
+import {listenOnce} from 'neovex://resources/js/util.js';
+import type {DomIf} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {resetGlobalScrollTargetForTesting, setGlobalScrollTarget} from '../global_scroll_target_mixin.js';
 import {loadTimeData} from '../i18n_setup.js';

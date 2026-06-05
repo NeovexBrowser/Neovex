@@ -8,7 +8,7 @@
  *  action settings.
  */
 
-import 'chrome://resources/cros_components/chip/chip.js';
+import 'neovex://resources/cros_components/chip/chip.js';
 import '../controls/settings_dropdown_menu.js';
 import '../os_settings_page/settings_card.js';
 import '../settings_shared.css.js';
@@ -17,13 +17,13 @@ import './facegaze_actions_add_dialog.js';
 import './facegaze_icons.html.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {FacialGesture} from 'chrome://resources/ash/common/accessibility/facial_gestures.js';
-import {MacroName} from 'chrome://resources/ash/common/accessibility/macro_names.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {FacialGesture} from 'neovex://resources/ash/common/accessibility/facial_gestures.js';
+import {MacroName} from 'neovex://resources/ash/common/accessibility/macro_names.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {RouteObserverMixin} from '../common/route_observer_mixin.js';

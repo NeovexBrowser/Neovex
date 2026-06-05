@@ -7,7 +7,7 @@
  * to interact with the browser.
  */
 
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
 
 /**
  * @see chrome/browser/ui/webui/settings/search_engine_manager_handler.cc

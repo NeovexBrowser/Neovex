@@ -9,20 +9,20 @@
  */
 
 import './privacy_hub_app_permission_row.js';
-import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button_style.css.js';
-import 'chrome://resources/ash/common/cr_elements/icons.html.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button_style.css.js';
+import 'neovex://resources/ash/common/cr_elements/icons.html.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '../controls/controlled_button.js';
 import '../os_settings_icons.html.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {PermissionType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {isPermissionEnabled} from 'chrome://resources/cr_components/app_management/permission_util.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {PermissionType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {isPermissionEnabled} from 'neovex://resources/cr_components/app_management/permission_util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {assertExhaustive, castExists} from '../assert_extras.js';
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';

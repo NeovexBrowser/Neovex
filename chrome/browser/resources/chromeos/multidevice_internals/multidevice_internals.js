@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
-import 'chrome://resources/polymer/v3_0/iron-location/iron-location.js';
-import 'chrome://resources/polymer/v3_0/iron-pages/iron-pages.js';
+import 'neovex://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
+import 'neovex://resources/polymer/v3_0/iron-location/iron-location.js';
+import 'neovex://resources/polymer/v3_0/iron-pages/iron-pages.js';
 import './logging_tab.js';
 import './phonehub_tab.js';
 import './shared_style.css.js';
 
-import {Polymer} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {Polymer} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './multidevice_internals.html.js';
 

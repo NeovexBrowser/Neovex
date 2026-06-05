@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import {fireAuthTokenInvalidEvent} from 'chrome://resources/ash/common/quick_unlock/utils.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {AuthFactor, AuthFactorConfig, ConfigureResult, FactorObserverReceiver, PasswordFactorEditor} from 'chrome://resources/mojo/chromeos/ash/services/auth_factor_config/public/mojom/auth_factor_config.mojom-webui.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import {fireAuthTokenInvalidEvent} from 'neovex://resources/ash/common/quick_unlock/utils.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {AuthFactor, AuthFactorConfig, ConfigureResult, FactorObserverReceiver, PasswordFactorEditor} from 'neovex://resources/mojo/chromeos/ash/services/auth_factor_config/public/mojom/auth_factor_config.mojom-webui.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './password_settings.html.js';
 import {SettingsSetLocalPasswordDialogElement} from './set_local_password_dialog.js';

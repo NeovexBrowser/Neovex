@@ -5,8 +5,8 @@
 /**
  * @fileoverview 'settings-live-caption' is a component for showing Live Caption
  * settings. It appears on the accessibility subpage
- * (chrome://settings/accessibility) on Mac and some versions of Windows and on
- * the captions subpage (chrome://settings/captions) on Linux and other versions
+ * (neovex://settings/accessibility) on Mac and some versions of Windows and on
+ * the captions subpage (neovex://settings/captions) on Linux and other versions
  * of Windows.
  */
 
@@ -30,19 +30,19 @@ import {getTemplate} from './live_caption.html.js';
 
 // clang-format off
 // <if expr="not is_chromeos">
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
 
 import type {CrActionMenuElement} from '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrLazyRenderElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import type {CrLazyRenderElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
 
 import './live_translate.js';
 import '../languages_page/add_languages_dialog.js';
 
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
 import type {DomRepeatEvent} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 // </if>
 // clang-format on

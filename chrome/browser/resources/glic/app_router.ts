@@ -5,7 +5,7 @@
 import {assertNotReachedCase} from '//resources/js/assert.js';
 import {loadTimeData} from '//resources/js/load_time_data.js';
 import {FreAppController} from '/fre/fre_app_controller.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 import {BrowserProxyImpl} from './browser_proxy.js';
 import type {PanelStateKind, ZoomAction} from './glic.mojom-webui.js';

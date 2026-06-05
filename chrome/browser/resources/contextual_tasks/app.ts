@@ -21,12 +21,12 @@ import './ghost_loader.js';
 import './top_toolbar.js';
 
 import type {ChromeEvent} from '/tools/typescript/definitions/chrome_event.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
-import type {Uuid} from 'chrome://resources/mojo/mojo/public/mojom/base/uuid.mojom-webui.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import type {Uuid} from 'neovex://resources/mojo/mojo/public/mojom/base/uuid.mojom-webui.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';
@@ -376,7 +376,7 @@ export class ContextualTasksAppElement extends CrLitElement {
           (title: string, thumbnail: string, fileToken: UnguessableToken,
            supportsUnimodal: boolean) => {
             this.composebox_?.injectInput(
-                title, 'chrome://image?url=' + encodeURIComponent(thumbnail),
+                title, 'neovex://image?url=' + encodeURIComponent(thumbnail),
                 fileToken, supportsUnimodal);
           }),
       callbackRouter.injectInputWithIcon.addListener(

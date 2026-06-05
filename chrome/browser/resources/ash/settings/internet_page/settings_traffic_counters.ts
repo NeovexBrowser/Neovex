@@ -8,18 +8,18 @@
  */
 
 import './internet_shared.css.js';
-import 'chrome://resources/ash/common/network/network_shared.css.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://resources/ash/common/cr_elements/md_select.css.js';
-import 'chrome://resources/ash/common/traffic_counters/traffic_counters.js';
+import 'neovex://resources/ash/common/network/network_shared.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://resources/ash/common/cr_elements/md_select.css.js';
+import 'neovex://resources/ash/common/traffic_counters/traffic_counters.js';
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {Network} from 'chrome://resources/ash/common/traffic_counters/traffic_counters_adapter.js';
-import {TrafficCountersAdapter} from 'chrome://resources/ash/common/traffic_counters/traffic_counters_adapter.js';
-import type {ManagedProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {Network} from 'neovex://resources/ash/common/traffic_counters/traffic_counters_adapter.js';
+import {TrafficCountersAdapter} from 'neovex://resources/ash/common/traffic_counters/traffic_counters_adapter.js';
+import type {ManagedProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './settings_traffic_counters.html.js';
 

@@ -4,15 +4,15 @@
 
 /**
  * Javascript for DevicesPage, served from
- *     chrome://usb-internals/.
+ *     neovex://usb-internals/.
  */
 
-import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
-import 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
 
-import type {CrTreeElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
-import type {CrTreeItemElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import type {CrTreeElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import type {CrTreeItemElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
 
 import {DescriptorPanel, renderClassCodeWithDescription} from './descriptor_panel.js';
 import type {UsbAlternateInterfaceInfo, UsbConfigurationInfo, UsbDeviceInfo, UsbEndpointInfo, UsbInterfaceInfo} from './usb_device.mojom-webui.js';

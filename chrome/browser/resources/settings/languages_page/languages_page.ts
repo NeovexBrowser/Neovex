@@ -8,18 +8,18 @@
  */
 // clang-format off
 
-import 'chrome://resources/cr_components/managed_dialog/managed_dialog.js';
-import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'chrome://resources/cr_elements/icons.html.js';
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/js/action_link.js';
-import 'chrome://resources/cr_elements/action_link.css.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_components/managed_dialog/managed_dialog.js';
+import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'neovex://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/js/action_link.js';
+import 'neovex://resources/cr_elements/action_link.css.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import './add_languages_dialog.js';
 import '../icons.html.js';
 import '../relaunch_confirmation_dialog.js';
@@ -28,16 +28,16 @@ import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 
 import type {CrActionMenuElement} from '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {CrLazyRenderElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {isWindows} from 'chrome://resources/js/platform.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import { PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import type {CrLazyRenderElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {isWindows} from 'neovex://resources/js/platform.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import { PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 // <if expr="is_win">
-import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 // </if>
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';

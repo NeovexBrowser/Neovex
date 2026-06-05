@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 import {assert, assertNotReached} from '//resources/js/assert.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
-import {getPermission, getPermissionValueAsTriState} from 'chrome://resources/cr_components/app_management/util.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
+import {getPermission, getPermissionValueAsTriState} from 'neovex://resources/cr_components/app_management/util.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {MediaDevicesProxy} from '../../common/media_devices_proxy.js';
 import {Router, routes} from '../../router.js';

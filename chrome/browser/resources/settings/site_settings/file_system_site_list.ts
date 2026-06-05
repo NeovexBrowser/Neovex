@@ -7,13 +7,13 @@
  * 'file-system-site-list' is an element representing a list of origin-specific
  * permission entries for the File System Access API.
  */
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 import '../settings_shared.css.js';
 import './file_system_site_entry.js';
 
-import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {routes} from '../route.js';
 import type {Route} from '../router.js';
@@ -85,7 +85,7 @@ export class FileSystemSiteListElement extends FileSystemSiteListElementBase {
   }
 
   /**
-   * Reload the site list when the chrome://settings/content/filesystem
+   * Reload the site list when the neovex://settings/content/filesystem
    * page is visited.
    *
    * RouteObserverMixin

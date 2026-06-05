@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {sendWithPromise} from 'chrome://resources/js/cr.js';
-import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {getRequiredElement} from 'neovex://resources/js/util.js';
 
 interface ModuleData {
   code_id: string;
@@ -42,7 +42,7 @@ function renderTemplate(moduleListData: ModuleListData) {
 
 /**
  * Filters list of displayed modules to those listed in the process types
- * specified in the url fragment. For instance, chrome://conflicts/#r will show
+ * specified in the url fragment. For instance, neovex://conflicts/#r will show
  * only those modules that have loaded into a renderer.
  */
 function filterModuleListData() {

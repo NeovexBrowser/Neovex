@@ -5,10 +5,10 @@
 import './add_supervision_ui.js';
 import '/supervision/supervised_user_error.js';
 import '/supervision/supervised_user_offline.js';
-import 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
 
-import type {CrViewManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './add_supervision_app.html.js';
 

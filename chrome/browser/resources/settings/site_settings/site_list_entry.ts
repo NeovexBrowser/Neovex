@@ -6,19 +6,19 @@
  * @fileoverview
  * 'site-list-entry' shows an Allowed and Blocked site for a given category.
  */
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/icons.html.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/icons.html.js';
 import '/shared/settings/controls/cr_policy_pref_indicator.js';
-import 'chrome://resources/cr_elements/policy/cr_tooltip_icon.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/policy/cr_tooltip_icon.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '../icons.html.js';
 import '../settings_shared.css.js';
 import '../site_favicon.js';
 
-import {FocusRowMixin} from 'chrome://resources/cr_elements/focus_row_mixin.js';
-import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {FocusRowMixin} from 'neovex://resources/cr_elements/focus_row_mixin.js';
+import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {BaseMixin} from '../base_mixin.js';
 import {loadTimeData} from '../i18n_setup.js';

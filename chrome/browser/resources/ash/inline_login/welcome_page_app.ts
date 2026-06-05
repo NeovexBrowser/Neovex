@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'chrome://chrome-signin/account_manager_shared.css.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'neovex://chrome-signin/account_manager_shared.css.js';
 
-import type {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {InlineLoginBrowserProxyImpl} from './inline_login_browser_proxy.js';
 import {getTemplate} from './welcome_page_app.html.js';

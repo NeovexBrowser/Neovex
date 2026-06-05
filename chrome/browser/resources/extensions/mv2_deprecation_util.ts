@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
 
 // The current stage of the Manifest V2 deprecation.
 // IMPORTANT: this should follow the same order as MV2ExperimentStage in

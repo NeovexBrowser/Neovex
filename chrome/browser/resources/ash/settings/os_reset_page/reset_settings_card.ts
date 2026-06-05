@@ -11,11 +11,11 @@ import '../os_settings_page/settings_card.js';
 import './os_powerwash_dialog.js';
 import './os_sanitize_dialog.js';
 
-import {getEuicc, getNonPendingESimProfiles} from 'chrome://resources/ash/common/cellular_setup/esim_manager_utils.js';
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import type {ESimProfileRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getEuicc, getNonPendingESimProfiles} from 'neovex://resources/ash/common/cellular_setup/esim_manager_utils.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import type {ESimProfileRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {isSanitizeAllowed} from '../common/load_time_booleans.js';

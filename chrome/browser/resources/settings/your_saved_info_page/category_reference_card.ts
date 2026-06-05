@@ -6,14 +6,14 @@
  * @fileoverview 'category-reference-card' is a card that shows a list of
  * chips related to a certain category.
  */
-import 'chrome://resources/cr_elements/cr_shared_style.css.js';
-import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
 import '../settings_shared.css.js';
-import 'chrome://resources/cr_elements/cr_chip/cr_chip.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
-import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'neovex://resources/cr_elements/cr_chip/cr_chip.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
 
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {YourSavedInfoDataCategory, YourSavedInfoDataChip} from '../metrics_browser_proxy.js';
 

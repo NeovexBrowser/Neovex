@@ -8,16 +8,16 @@
  * workflow.
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import './skyvault_icons.html.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
 import '/strings.m.js';
 
-import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {LocalFilesBrowserProxy} from './local_files_browser_proxy.js';
 import type {TimeUnitAndValue} from './local_files_migration.mojom-webui.js';

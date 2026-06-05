@@ -13,7 +13,7 @@ import type {OnCollectionCreatedEvent, OnDataChangedEvent, OnNodeMovedEvent, OnT
 import type {NodeId, Position} from '/tab_strip_api/tab_strip_api_types.mojom-webui.js';
 import {TabStripObservation} from '/tab_strip_api/tab_strip_observation.js';
 import type {TabStripObserver} from '/tab_strip_api/tab_strip_observer.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
 
 import {Color as TabGroupColor} from '../tab_group_types.mojom-webui.js';
 import {getTemplate} from '../tab_list.html.js';

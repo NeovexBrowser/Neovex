@@ -4,11 +4,11 @@
 
 import '/strings.m.js';
 
-import {skColorToRgba} from 'chrome://resources/js/color_utils.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {Point} from 'chrome://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
+import {skColorToRgba} from 'neovex://resources/js/color_utils.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {Point} from 'neovex://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
 
 import type {Theme} from './actor_overlay.mojom-webui.js';
 import {getCss} from './app.css.js';

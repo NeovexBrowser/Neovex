@@ -6,21 +6,21 @@
  * @fileoverview 'os-settings-search-box' is the container for the search input
  * and settings search results.
  */
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import 'chrome://resources/js/focus_row.js';
-import 'chrome://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
-import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'neovex://resources/js/focus_row.js';
+import 'neovex://resources/polymer/v3_0/iron-dropdown/iron-dropdown.js';
+import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
 import '../settings_shared.css.js';
 import './os_search_result_row.js';
 
-import {getInstance as getAnnouncerInstance} from 'chrome://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrToolbarSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
-import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getInstance as getAnnouncerInstance} from 'neovex://resources/ash/common/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrToolbarSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import {recordSearch} from '../metrics_recorder.js';

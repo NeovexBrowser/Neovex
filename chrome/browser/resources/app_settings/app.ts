@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_components/localized_link/localized_link.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'neovex://resources/cr_components/localized_link/localized_link.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
 import '/strings.m.js';
 import './app_content_item.js';
 import './file_handling_item.js';
@@ -18,15 +18,15 @@ import './supported_links_item.js';
 import './supported_links_overlapping_apps_dialog.js';
 import './supported_links_dialog.js';
 
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import type {AppMap} from 'chrome://resources/cr_components/app_management/constants.js';
-import {getAppIcon} from 'chrome://resources/cr_components/app_management/util.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import type {AppMap} from 'neovex://resources/cr_components/app_management/constants.js';
+import {getAppIcon} from 'neovex://resources/cr_components/app_management/util.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

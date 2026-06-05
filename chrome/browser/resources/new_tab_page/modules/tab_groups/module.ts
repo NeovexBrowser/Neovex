@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
 import '/strings.m.js';
 import '../info_dialog.js';
 import '../module_header.js';
@@ -12,9 +12,9 @@ import './icons.html.js';
 import './icon_container.js';
 
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {I18nMixinLit} from '../../i18n_setup.js';
 import {recordOccurrence, recordSmallCount} from '../../metrics_utils.js';

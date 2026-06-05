@@ -3,20 +3,20 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'chrome://resources/cr_components/history_clusters/browser_proxy.js';
-import 'chrome://resources/cr_components/history_clusters/clusters.js';
-import 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
-import 'chrome://resources/cr_components/history_embeddings/icons.html.js';
-import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'neovex://resources/cr_components/history_clusters/browser_proxy.js';
+import 'neovex://resources/cr_components/history_clusters/clusters.js';
+import 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
+import 'neovex://resources/cr_components/history_embeddings/icons.html.js';
+import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
 
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {BrowserProxyImpl} from 'chrome://resources/cr_components/history_clusters/browser_proxy.js';
-import type {HistoryClustersElement} from 'chrome://resources/cr_components/history_clusters/clusters.js';
-import {HistoryEmbeddingsBrowserProxyImpl} from 'chrome://resources/cr_components/history_embeddings/browser_proxy.js';
-import type {HistoryEmbeddingsMoreActionsClickEvent, HistoryEmbeddingsResultClickEvent, HistoryEmbeddingsResultContextMenuEvent} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
-import type {CrToolbarSearchFieldElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {BrowserProxyImpl} from 'neovex://resources/cr_components/history_clusters/browser_proxy.js';
+import type {HistoryClustersElement} from 'neovex://resources/cr_components/history_clusters/clusters.js';
+import {HistoryEmbeddingsBrowserProxyImpl} from 'neovex://resources/cr_components/history_embeddings/browser_proxy.js';
+import type {HistoryEmbeddingsMoreActionsClickEvent, HistoryEmbeddingsResultClickEvent, HistoryEmbeddingsResultContextMenuEvent} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
+import type {CrToolbarSearchFieldElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

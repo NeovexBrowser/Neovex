@@ -10,17 +10,17 @@
  */
 
 export {GlifAnimationState} from '//resources/cr_components/composebox/common.js';
-export {CustomizeButtonsElement} from 'chrome://new-tab-page/shared/customize_buttons/customize_buttons.js';
-export {PlaceholderTextCycler} from 'chrome://resources/cr_components/searchbox/placeholder_text_cycler.js';
-export {SearchboxElement} from 'chrome://resources/cr_components/searchbox/searchbox.js';
-export {SearchboxBrowserProxy} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-export {SearchboxIconElement} from 'chrome://resources/cr_components/searchbox/searchbox_icon.js';
-export {SearchboxMatchElement} from 'chrome://resources/cr_components/searchbox/searchbox_match.js';
-export {CrAutoImgElement} from 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-export {BrowserCommandProxy} from 'chrome://resources/js/browser_command/browser_command_proxy.js';
-export {BrowserProxyImpl} from 'chrome://resources/js/metrics_reporter/browser_proxy.js';
-export {MetricsReporterImpl} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
-export {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+export {CustomizeButtonsElement} from 'neovex://new-tab-page/shared/customize_buttons/customize_buttons.js';
+export {PlaceholderTextCycler} from 'neovex://resources/cr_components/searchbox/placeholder_text_cycler.js';
+export {SearchboxElement} from 'neovex://resources/cr_components/searchbox/searchbox.js';
+export {SearchboxBrowserProxy} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+export {SearchboxIconElement} from 'neovex://resources/cr_components/searchbox/searchbox_icon.js';
+export {SearchboxMatchElement} from 'neovex://resources/cr_components/searchbox/searchbox_match.js';
+export {CrAutoImgElement} from 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+export {BrowserCommandProxy} from 'neovex://resources/js/browser_command/browser_command_proxy.js';
+export {BrowserProxyImpl} from 'neovex://resources/js/metrics_reporter/browser_proxy.js';
+export {MetricsReporterImpl} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
+export {getTrustedHTML} from 'neovex://resources/js/static_types.js';
 export {AppElement, CONTEXTUAL_ENTRYPOINT_ELEMENT_ID, CUSTOMIZE_CHROME_BUTTON_ELEMENT_ID, NtpCustomizeChromeEntryPoint, NtpElement} from './app.js';
 export {BackgroundManager} from './background_manager.js';
 export {CustomizeButtonsProxy} from './customize_buttons_proxy.js';

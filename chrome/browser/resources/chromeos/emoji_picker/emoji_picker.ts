@@ -7,7 +7,7 @@ import './app.js';
 export {EmojiPickerApp} from './app.js';
 /**
  * With optimize_webui, the generated JS files are bundled into single file
- * `chrome://emoji-picker/emoji_picker.js`. These exports are
+ * `neovex://emoji-picker/emoji_picker.js`. These exports are
  * necessary so they can be imported in tests.
  */
 export {EMOJI_PICKER_TOTAL_EMOJI_WIDTH, GIF_VALIDATION_DATE, TRENDING, TRENDING_GROUP_ID} from './constants.js';

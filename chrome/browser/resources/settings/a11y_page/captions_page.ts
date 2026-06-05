@@ -4,7 +4,7 @@
 
 /**
  * @fileoverview 'settings-captions-page' is a component for showing captions
- * settings on chrome://settings/captions.
+ * settings on neovex://settings/captions.
  */
 
 import '//resources/cr_elements/cr_shared_style.css.js';

@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
 
-import {CrAutoImgElement} from 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {Command} from 'chrome://resources/js/browser_command.mojom-webui.js';
-import {BrowserCommandProxy} from 'chrome://resources/js/browser_command/browser_command_proxy.js';
-import {EventTracker} from 'chrome://resources/js/event_tracker.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {CrAutoImgElement} from 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {Command} from 'neovex://resources/js/browser_command.mojom-webui.js';
+import {BrowserCommandProxy} from 'neovex://resources/js/browser_command/browser_command_proxy.js';
+import {EventTracker} from 'neovex://resources/js/event_tracker.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import {recordEnumeration} from './metrics_utils.js';
 import {getCss} from './middle_slot_promo.css.js';

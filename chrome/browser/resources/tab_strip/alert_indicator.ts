@@ -4,9 +4,9 @@
 
 import '/strings.m.js';
 
-import {assert} from 'chrome://resources/js/assert.js';
-import {CustomElement} from 'chrome://resources/js/custom_element.js';
-import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
 
 import {getTemplate} from './alert_indicator.html.js';
 import {TabAlertState} from './tabs.mojom-webui.js';

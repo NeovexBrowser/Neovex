@@ -7,9 +7,9 @@
  * settings pages.
  */
 
-import type {CrTooltipElement} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import type {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrTooltipElement} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import type {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 type Constructor<T> = new (...args: any[]) => T;
 

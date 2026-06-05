@@ -6,20 +6,20 @@ import '/shared/nearby_onboarding_one_page.js';
 import '/shared/nearby_visibility_page.js';
 import './nearby_confirmation_page.js';
 import './nearby_discovery_page.js';
-import 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
 
 import type {ConfirmationManagerInterface, PayloadPreview, ShareTarget, TransferUpdateListenerPendingReceiver} from '/shared/nearby_share.mojom-webui.js';
 import {NearbyShareSettingsMixin} from '/shared/nearby_share_settings_mixin.js';
 import {CloseReason} from '/shared/types.js';
-import type {CrViewManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
-import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './app.html.js';
 
 /**
  * @fileoverview The 'nearby-share' component is the entry point for the Nearby
- * Share flow. It is used as a standalone dialog via chrome://nearby and as part
+ * Share flow. It is used as a standalone dialog via neovex://nearby and as part
  * of the ChromeOS share sheet.
  */
 

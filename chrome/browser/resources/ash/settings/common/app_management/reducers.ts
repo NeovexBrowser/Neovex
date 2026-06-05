@@ -9,8 +9,8 @@
  * calls.
  */
 
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {assertNotReached} from 'chrome://resources/js/assert.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {assertNotReached} from 'neovex://resources/js/assert.js';
 
 import type {AddAppAction, AppManagementActions, ChangeAppAction, RemoveAppAction} from './actions.js';
 import type {AppManagementPageState, AppMap} from './store.js';

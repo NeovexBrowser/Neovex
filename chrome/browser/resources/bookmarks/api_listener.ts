@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {addWebUiListener, removeWebUiListener} from 'chrome://resources/js/cr.js';
-import type {Action} from 'chrome://resources/js/store.js';
+import {addWebUiListener, removeWebUiListener} from 'neovex://resources/js/cr.js';
+import type {Action} from 'neovex://resources/js/store.js';
 
 import {createBookmark, editBookmark, moveBookmark, refreshNodes, removeBookmark, reorderChildren, setCanEditBookmarks, setIncognitoAvailability} from './actions.js';
 import {BrowserProxyImpl} from './browser_proxy.js';

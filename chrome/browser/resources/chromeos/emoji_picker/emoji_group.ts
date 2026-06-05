@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
 import './emoji_variants.js';
 
-import {assertInstanceof} from 'chrome://resources/js/assert.js';
-import type {PaperTooltipElement} from 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
-import {beforeNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertInstanceof} from 'neovex://resources/js/assert.js';
+import type {PaperTooltipElement} from 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import {beforeNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {VISUAL_CONTENT_WIDTH} from './constants.js';
 import {getTemplate} from './emoji_group.html.js';

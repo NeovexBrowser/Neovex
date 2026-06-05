@@ -19,9 +19,9 @@
  *  - showConfirmPage()
  */
 
-import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
 import '../settings_shared.css.js';
 import '/shared/nearby_onboarding_one_page.js';
 import '/shared/nearby_visibility_page.js';
@@ -31,10 +31,10 @@ import './nearby_share_high_visibility_page.js';
 import type {ReceiveManagerInterface, ReceiveObserverReceiver, RegisterReceiveSurfaceResult, ShareTarget, TransferMetadata} from '/shared/nearby_share.mojom-webui.js';
 import {TransferStatus} from '/shared/nearby_share.mojom-webui.js';
 import type {NearbySettings} from '/shared/nearby_share_settings_mixin.js';
-import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrViewManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
-import {assert} from 'chrome://resources/js/assert.js';
-import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrViewManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import {assert} from 'neovex://resources/js/assert.js';
+import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './nearby_share_receive_dialog.html.js';
 import {getReceiveManager, observeReceiveManager} from './nearby_share_receive_manager.js';

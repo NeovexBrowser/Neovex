@@ -4,20 +4,20 @@
 
 import './app_management_shared_style.css.js';
 import './toggle_row.js';
-import 'chrome://resources/cr_components/localized_link/localized_link.js';
-import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'neovex://resources/cr_components/localized_link/localized_link.js';
+import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'neovex://resources/cr_elements/cr_button/cr_button.js';
 
 import {assert} from '//resources/js/assert.js';
-import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
-import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
-import {recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
-import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
-import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
-import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
-import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
+import {recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
+import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
+import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './file_handling_item.css.js';
 import {getHtml} from './file_handling_item.html.js';

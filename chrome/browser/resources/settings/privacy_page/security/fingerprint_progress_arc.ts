@@ -29,10 +29,10 @@ export const FINGERPRINT_SCANNED_ICON_LIGHT: string =
     'fingerprint-icon:fingerprint-scanned-light';
 
 export const FINGERPRINT_CHECK_DARK_URL: string =
-    'chrome://theme/IDR_FINGERPRINT_COMPLETE_CHECK_DARK';
+    'neovex://theme/IDR_FINGERPRINT_COMPLETE_CHECK_DARK';
 
 export const FINGERPRINT_CHECK_LIGHT_URL: string =
-    'chrome://theme/IDR_FINGERPRINT_COMPLETE_CHECK_LIGHT';
+    'neovex://theme/IDR_FINGERPRINT_COMPLETE_CHECK_LIGHT';
 
 /**
  * The dark-mode color of the progress circle background: Google Grey 700.
@@ -356,8 +356,8 @@ export class FingerprintProgressArcElement extends PolymerElement {
       return;
     }
     scanningAnimation.animationUrl = this.isDarkModeActive_ ?
-        'chrome://theme/IDR_FINGERPRINT_ICON_ANIMATION_DARK' :
-        'chrome://theme/IDR_FINGERPRINT_ICON_ANIMATION_LIGHT';
+        'neovex://theme/IDR_FINGERPRINT_ICON_ANIMATION_DARK' :
+        'neovex://theme/IDR_FINGERPRINT_ICON_ANIMATION_LIGHT';
   }
 
   /**

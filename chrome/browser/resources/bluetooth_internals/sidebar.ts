@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 /**
- * Javascript for Sidebar, served from chrome://bluetooth-internals/.
+ * Javascript for Sidebar, served from neovex://bluetooth-internals/.
  */
 
-import {assert} from 'chrome://resources/js/assert.js';
+import {assert} from 'neovex://resources/js/assert.js';
 
 import {PageManager} from './page_manager.js';
 import type {PageManagerObserver} from './page_manager.js';
