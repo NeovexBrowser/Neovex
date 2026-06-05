@@ -101,7 +101,7 @@ bundle_js("bundle_js_internal") {
       rebase_path("${root_gen_dir}/components/security_interstitials/core/",
                   root_build_dir)
 
-  external_paths = [ "chrome://interstitials/|$shared_interstitials_path" ]
+  external_paths = [ "neovex://interstitials/|$shared_interstitials_path" ]
   deps = [
     ":build_ts",
     "../../security_interstitials/core/common/resources:preprocess",

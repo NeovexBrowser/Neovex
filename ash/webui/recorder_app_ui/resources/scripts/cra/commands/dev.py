@@ -31,17 +31,17 @@ def _get_root_relative_path(request_path: _RequestPath) -> _RequestPath:
 
 def _stub_chrome_url(request_path: _RequestPath, s: str) -> str:
     """
-    Replaces all chrome:// reference to /chrome_stub/.
+    Replaces all neovex:// reference to /chrome_stub/.
 
     Also replaces all //resources/ references to /chrome_stub/resources/, since
-    some imports in cros_component and mwc use // instead of chrome://, but
+    some imports in cros_component and mwc use // instead of neovex://, but
     replacing all '//' is too broad.
     """
     # Note that the path join needs to be done via string interpolation instead
     # of manipulation on _RequestPath, since './chrome_stub' gets transformed
     # into 'chrome_stub' by pathlib.
     chrome_stub_path = f"{_get_root_relative_path(request_path)}/chrome_stub/"
-    return s.replace("chrome://", chrome_stub_path).replace(
+    return s.replace("neovex://", chrome_stub_path).replace(
         "//resources/", f"{chrome_stub_path}resources/")
 
 
@@ -186,7 +186,7 @@ class RequestHandler:
         DevServerHandler.
         """
         return [
-            # Stubbed file from chrome://.
+            # Stubbed file from neovex://.
             _Route(
                 re.compile("chrome_stub/resources/(mwc|cros_components)/.*"),
                 functools.partial(

@@ -37,7 +37,7 @@ mojom("mojom") {
 mojom("hid_preserving_bluetooth_state_controller") {
   sources = [ "hid_preserving_bluetooth_state_controller.mojom" ]
   public_deps = [ "//mojo/public/mojom/base" ]
-  webui_module_path = "chrome://resources/ash/common/"
+  webui_module_path = "neovex://resources/ash/common/"
 }
 
 # This is a separate target so that downstream WebUI targets can take

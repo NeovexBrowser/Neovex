@@ -15,7 +15,7 @@ declare_args() {
   # depending on the build argument.
   mbi_mode = is_linux || is_chromeos || is_mac || is_win || is_android
 
-  # Enables the chrome://memory-coordinator-internals debug webui.
+  # Enables the neovex://memory-coordinator-internals debug webui.
   enable_memory_coordinator_internals =
       is_win || is_linux || is_mac || is_chromeos
 }

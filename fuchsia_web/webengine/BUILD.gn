@@ -498,7 +498,7 @@ fuchsia_package_installer("web_engine_installer") {
 }
 
 # Definitions for a variant of the web_engine package that bundles the WebUI
-# resources, to allow e.g. chrome://gpu to be used.  An installer script is
+# resources, to allow e.g. neovex://gpu to be used.  An installer script is
 # defined, for ease of development.
 
 fuchsia_package("web_engine_with_webui") {

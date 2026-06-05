@@ -638,7 +638,7 @@ action("symbol_data_fr") {
   args += [ "--cldr_data_path" ] + rebase_path(fr_keyword_xmls, root_build_dir)
 }
 
-# Resources used by chrome://picker.
+# Resources used by neovex://picker.
 grit("resources") {
   source = "emoji.grd"
 

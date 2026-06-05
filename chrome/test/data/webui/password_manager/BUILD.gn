@@ -72,7 +72,7 @@ build_webui_tests("build") {
   mojo_files = [ "$root_gen_dir/chrome/browser/ui/webui/password_manager/password_manager.mojom-webui.ts" ]
 
   ts_path_mappings = [
-    "chrome://password-manager/password_manager.js|" + rebase_path(
+    "neovex://password-manager/password_manager.js|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/password_manager/tsc/password_manager.d.ts",
             target_gen_dir),
     "//resources/mojo/*|" +

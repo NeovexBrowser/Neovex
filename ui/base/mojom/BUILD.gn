@@ -52,7 +52,7 @@ mojom("mojom") {
   export_class_attribute_blink = "BLINK_PLATFORM_EXPORT"
   export_define_blink = "BLINK_PLATFORM_IMPLEMENTATION=1"
   export_header_blink = "third_party/blink/public/platform/web_common.h"
-  webui_module_path = "chrome://resources/mojo/ui/base/mojom"
+  webui_module_path = "neovex://resources/mojo/ui/base/mojom"
 
   # Generate legacy bindings for Blink.
   generate_legacy_js_bindings = true
@@ -68,6 +68,6 @@ mojom("ui_base_types") {
     "menu_source_type.mojom",
     "window_show_state.mojom",
   ]
-  webui_module_path = "chrome://resources/mojo/ui/base/mojom"
+  webui_module_path = "neovex://resources/mojo/ui/base/mojom"
   generate_legacy_js_bindings = true
 }

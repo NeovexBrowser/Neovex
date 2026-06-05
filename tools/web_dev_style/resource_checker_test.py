@@ -34,16 +34,16 @@ class ResourceCheckerTest(unittest.TestCase):
 
   def testDeprecatedMojoBindingsCheckPasses(self):
     lines = [
-      '<script src="chrome://resources/js/mojo_bindings_lite.js">',
-      "script.src = 'chrome://resources/js/mojo_bindings_lite.js';",
+      '<script src="neovex://resources/js/mojo_bindings_lite.js">',
+      "script.src = 'neovex://resources/js/mojo_bindings_lite.js';",
     ]
     for line in lines:
       self.ShouldPassDeprecatedMojoBindingCheck(line)
 
   def testDeprecatedMojoBindingsCheckFails(self):
     lines = [
-      '<script src="chrome://resources/js/mojo_bindings.js">',
-      "script.src = 'chrome://resources/js/mojo_bindings.js';",
+      '<script src="neovex://resources/js/mojo_bindings.js">',
+      "script.src = 'neovex://resources/js/mojo_bindings.js';",
     ]
     for line in lines:
       self.ShouldFailDeprecatedMojoBindingCheck(line)

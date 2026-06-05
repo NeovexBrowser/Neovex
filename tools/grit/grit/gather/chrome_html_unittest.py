@@ -451,7 +451,7 @@ class ChromeHtmlUnittest(unittest.TestCase):
     tmp_dir.CleanUp()
 
   def testThemeResources(self):
-    '''Tests inserting high DPI chrome://theme references.'''
+    '''Tests inserting high DPI neovex://theme references.'''
 
     tmp_dir = util.TempDir({
       'index.html': '''
@@ -468,8 +468,8 @@ class ChromeHtmlUnittest(unittest.TestCase):
 
       'test.css': '''
       .image {
-        background: url('chrome://theme/IDR_RESOURCE_NAME');
-        content: url('chrome://theme/IDR_RESOURCE_NAME_WITH_Q?$1');
+        background: url('neovex://theme/IDR_RESOURCE_NAME');
+        content: url('neovex://theme/IDR_RESOURCE_NAME_WITH_Q?$1');
       }
       ''',
     })
@@ -485,8 +485,8 @@ class ChromeHtmlUnittest(unittest.TestCase):
         <head>
           <style>
       .image {
-        background: image-set(url('chrome://theme/IDR_RESOURCE_NAME') 1x, url('chrome://theme/IDR_RESOURCE_NAME@2x') 2x);
-        content: image-set(url('chrome://theme/IDR_RESOURCE_NAME_WITH_Q?$1') 1x, url('chrome://theme/IDR_RESOURCE_NAME_WITH_Q@2x?$1') 2x);
+        background: image-set(url('neovex://theme/IDR_RESOURCE_NAME') 1x, url('neovex://theme/IDR_RESOURCE_NAME@2x') 2x);
+        content: image-set(url('neovex://theme/IDR_RESOURCE_NAME_WITH_Q?$1') 1x, url('neovex://theme/IDR_RESOURCE_NAME_WITH_Q@2x?$1') 2x);
       }
       </style>
         </head>

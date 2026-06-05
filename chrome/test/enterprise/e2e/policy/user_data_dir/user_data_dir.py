@@ -40,10 +40,10 @@ class UserDataDirTest(ChromeEnterpriseTestCase):
 
     # Verify user data dir not existing before chrome launch
     self.assertIn('User data before running chrome is False', output)
-    # Verify policy in chrome://policy page
+    # Verify policy in neovex://policy page
     self.assertIn('UserDataDir', output)
     self.assertIn(user_data_dir, output)
-    # Verify profile path in chrome:// version
+    # Verify profile path in neovex:// version
     self.assertIn("Profile path is " + user_data_dir, output)
     # Verify user data dir folder creation
     self.assertIn('User data dir creation is True', output)

@@ -17,13 +17,13 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://chrome-signin/account_manager_shared.css.js|" + rebase_path(
+    "neovex://chrome-signin/account_manager_shared.css.js|" + rebase_path(
             "${root_gen_dir}/chrome/browser/resources/chromeos/account_manager/account_manager_shared.css.js",
             target_gen_dir),
-    "chrome://chrome-signin/gaia_auth_host/*|" +
+    "neovex://chrome-signin/gaia_auth_host/*|" +
         rebase_path("//chrome/browser/resources/gaia_auth_host/*",
                     target_gen_dir),
-    "chrome://chrome-signin/*|" + rebase_path(
+    "neovex://chrome-signin/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/ash/inline_login/tsc/*",
             target_gen_dir),
   ]

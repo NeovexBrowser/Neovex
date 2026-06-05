@@ -24,13 +24,13 @@ build_webui_tests("build") {
   static_files = [ "test_content.html" ]
 
   ts_path_mappings = [
-    "chrome://parent-access/strings.m.js|" +
+    "neovex://parent-access/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "chrome://parent-access/*|" + rebase_path(
+    "neovex://parent-access/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/chromeos/parent_access/tsc/*",
             target_gen_dir),
-    "chrome://webui-test/chromeos/*|" +
+    "neovex://webui-test/chromeos/*|" +
         rebase_path("$root_gen_dir/chrome/test/data/webui/chromeos/tsc/*",
                     target_gen_dir),
   ]

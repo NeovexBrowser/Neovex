@@ -11,7 +11,7 @@ from test_util import getElementFromShadowRoot
 
 def main(argv):
   driver = create_chrome_webdriver()
-  driver.get("chrome://password-manager/passwords")
+  driver.get("neovex://password-manager/passwords")
 
   # The settings is nested within multiple shadow doms - extract it.
   selectors = ["settings-section", "#passwordToggle", "cr-toggle"]

@@ -402,7 +402,7 @@ def find_images_used_by_css(all_png_files: Set[Text]) -> Set[Text]:
 def normalize_resource_url_path(rel_dir: Text, url: Text) -> Text:
   """Joins the relative root directory with the URL path and normalizes it.
 
-  It handles the special case of the 'chrome://' web resource URL.
+  It handles the special case of the 'neovex://' web resource URL.
 
   Args:
     rel_dir: The relative directory from the source root.
@@ -411,8 +411,8 @@ def normalize_resource_url_path(rel_dir: Text, url: Text) -> Text:
   Returns:
     The joined and normalized filepath.
   """
-  if url.startswith('chrome://'):
-    rooted_path = os.path.join('ui/webui', url[len('chrome://'):])
+  if url.startswith('neovex://'):
+    rooted_path = os.path.join('ui/webui', url[len('neovex://'):])
   else:
     rooted_path = os.path.join(rel_dir, url)
   return os.path.normpath(rooted_path)

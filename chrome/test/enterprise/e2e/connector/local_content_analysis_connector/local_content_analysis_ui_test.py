@@ -21,7 +21,7 @@ flags.mark_flag_as_required('url')
 flags.DEFINE_string('action', None, 'The action to trigger a DLP scan')
 flags.mark_flag_as_required('action')
 
-_SAFE_BROWSING_REPORTING_URL = "chrome://safe-browsing/#tab-reporting"
+_SAFE_BROWSING_REPORTING_URL = "neovex://safe-browsing/#tab-reporting"
 
 
 def main(argv):
@@ -74,7 +74,7 @@ def main(argv):
       # driver.execute_script('window.print();')
       # time.sleep(5)
 
-      # Click Print button on the chrome://print page
+      # Click Print button on the neovex://print page
       # driver.switch_to.window(driver.window_handles[-1])
       # print_app = driver.find_element(By.CSS_SELECTOR, 'print-preview-app')
       # preview_sidebar = getElementFromShadowRoot(driver, print_app,

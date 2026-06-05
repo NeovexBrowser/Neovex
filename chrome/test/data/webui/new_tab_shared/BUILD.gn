@@ -10,7 +10,7 @@ build_webui_tests("build") {
   files = [ "customize_buttons/customize_buttons_test.ts" ]
 
   ts_path_mappings =
-      [ "chrome://newtab-shared/*|" +
+      [ "neovex://newtab-shared/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/new_tab_shared/tsc/*",
             target_gen_dir) ]

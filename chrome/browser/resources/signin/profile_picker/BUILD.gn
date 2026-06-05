@@ -71,6 +71,6 @@ build_webui("build") {
       "lazy_load.js",
     ]
     optimize_webui_excludes =
-        [ "chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js" ]
+        [ "neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js" ]
   }
 }

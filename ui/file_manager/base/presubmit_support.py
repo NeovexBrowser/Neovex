@@ -31,7 +31,7 @@ def _CheckNoDirectLitImport(input_api, output_api):
     if not ts_files:
         return []
 
-    lit_import_pattern = "from 'chrome://resources/mwc/lit/"
+    lit_import_pattern = "from 'neovex://resources/mwc/lit/"
     results = []
     for f in ts_files:
         for line_num, line in enumerate(f.NewContents(), 1):

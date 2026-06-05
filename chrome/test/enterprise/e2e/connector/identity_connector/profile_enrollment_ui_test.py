@@ -79,7 +79,7 @@ def main(argv):
 
     # Check chrome policy page to see the cloud policies
     driver.switch_to.window(driver.window_handles[0])
-    driver.get('chrome://policy')
+    driver.get('neovex://policy')
     driver.find_element(By.ID, 'reload-policies').click
     # Give the page 5 seconds to render the legend
     time.sleep(5)

@@ -36,7 +36,7 @@ def LoginChromeAccount(action_runner, credential,
   account_name, password = login_utils.GetAccountNameAndPassword(
       credential, credentials_path=credentials_path)
 
-  action_runner.Navigate('chrome://chrome-signin')
+  action_runner.Navigate('neovex://chrome-signin')
 
   # Get the Gaia webview context within the sign in extension to create a Gaia
   # action_runner. The action runner will then execute JS in the Gaia context.

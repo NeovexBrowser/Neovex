@@ -45,7 +45,7 @@ build_webui("build") {
       "reload_button.js",
     ]
     optimize_webui_external_paths =
-        [ "chrome://webui-toolbar.top-chrome|" +
+        [ "neovex://webui-toolbar.top-chrome|" +
           rebase_path(
               "$root_gen_dir/chrome/browser/resources/webui_toolbar/tsc",
               root_build_dir) ]

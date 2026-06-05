@@ -8,13 +8,13 @@ build_webui_tests("build_webui_tests") {
   cc_test_files = [ "os_feedback_browsertest.cc" ]
 
   ts_path_mappings = [
-    "chrome://os-feedback/strings.m.js|" +
+    "neovex://os-feedback/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "chrome://os-feedback/*|" +
+    "neovex://os-feedback/*|" +
         rebase_path("$root_gen_dir/ash/webui/os_feedback_ui/resources/tsc/*",
                     target_gen_dir),
-    "chrome://webui-test/chromeos/*|" +
+    "neovex://webui-test/chromeos/*|" +
         rebase_path("$root_gen_dir/chrome/test/data/webui/chromeos/tsc/*",
                     target_gen_dir),
   ]

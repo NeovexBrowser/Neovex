@@ -57,10 +57,10 @@ def main(argv):
     # experiments have shown 3-4 minutes in most cases, so 5 should be plenty.
     time.sleep(60 * 5)
 
-    # Verify Policy status legend in chrome://policy page
+    # Verify Policy status legend in neovex://policy page
     # Switch to the new window
-    policy_url = 'chrome://policy'
-    logging.info('Navigating to chrome://policy')
+    policy_url = 'neovex://policy'
+    logging.info('Navigating to neovex://policy')
     driver.get(policy_url)
     WebDriverWait(driver=driver, timeout=10)
 

@@ -17,7 +17,7 @@ build_webui("build") {
   css_files = [ "app.css" ]
 
   # Enable the proper webui_context_type depending on whether implementing
-  # a chrome:// or chrome-untrusted:// page.
+  # a neovex:// or chrome-untrusted:// page.
   webui_context_type = "trusted"
 
   ts_deps = [

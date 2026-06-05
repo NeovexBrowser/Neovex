@@ -95,10 +95,10 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://print/pdf/*|" +
+    "neovex://print/pdf/*|" +
         rebase_path("$root_gen_dir/chrome/browser/resources/pdf/tsc/*",
                     target_gen_dir),
-    "chrome://print/print_preview.js|" + rebase_path(
+    "neovex://print/print_preview.js|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/ash/print_preview/tsc/print_preview.d.ts",
             target_gen_dir),
   ]

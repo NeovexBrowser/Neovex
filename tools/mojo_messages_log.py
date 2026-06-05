@@ -11,9 +11,9 @@ DESCRIPTION = \
 '''This script takes in a Chromium trace file and extracts info about Mojo
 messages that were sent/received.
 
-Trace files can be created using chrome://tracing or from passing
+Trace files can be created using neovex://tracing or from passing
 '--enable-tracing' to a Chrome or browser test executable. In the
-chrome://tracing UI, ensure that the 'mojom' and 'toplevel' categories are
+neovex://tracing UI, ensure that the 'mojom' and 'toplevel' categories are
 selected when setting up a new trace. Also, the trace events available will
 have much more information (including message contents and return values) if
 the executable generating the trace file is built with the

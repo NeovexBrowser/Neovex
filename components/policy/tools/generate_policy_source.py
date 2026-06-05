@@ -608,7 +608,7 @@ def _WriteSensitivePoliciesHeader(f):
   """Writes the extern declaration for sensitive policies.
 
   Note that this 'sensitive' flag is different from the 'sensitiveValue' flag
-  in schemas, which is used to mask values in the chrome://policy UI.
+  in schemas, which is used to mask values in the neovex://policy UI.
   """
   f.write(
       '// The policies that are considered only if the user is part of an AD\n'
@@ -1412,7 +1412,7 @@ def _WriteSensitivePoliciesSource(f, policies):
   """Writes the list of sensitive policies.
 
   Note that this 'sensitive' flag is different from the 'sensitiveValue' flag
-  in schemas, which is used to mask values in the chrome://policy UI.
+  in schemas, which is used to mask values in the neovex://policy UI.
   """
   f.write('const char* const kSensitivePolicies[] = {\n')
   sensitive_policies = sorted([p for p in policies if p.is_sensitive],

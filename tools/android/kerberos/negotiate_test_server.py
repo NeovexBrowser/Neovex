@@ -10,7 +10,7 @@ It is currently only used for manual testing.
 
 To use:
 - Start on host.
-- Use chrome://inspect to forward port 8080 from the target device to
+- Use neovex://inspect to forward port 8080 from the target device to
 the host.
 - From Chrome on the target connect to localhost:8080.
 - If HTTP Negotiate is working correctly the page should load as

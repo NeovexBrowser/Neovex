@@ -15,10 +15,10 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://graduation/strings.m.js|" +
+    "neovex://graduation/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "chrome://graduation/*|" +
+    "neovex://graduation/*|" +
         rebase_path("$root_gen_dir/ash/webui/graduation/resources/tsc/*",
                     target_gen_dir),
   ]

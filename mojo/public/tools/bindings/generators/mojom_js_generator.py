@@ -234,7 +234,7 @@ def _IsSharedModulePath(path):
 
 
 def _IsAbsoluteChromeResourcesPath(path):
-  return path.startswith('chrome://resources/') or \
+  return path.startswith('neovex://resources/') or \
       path.startswith('//resources/')
 
 
@@ -243,7 +243,7 @@ def _GetWebUiModulePath(module):
   that makes it available. This is based on the corresponding mojom target's
   webui_module_path value. Returns None if the target specifies no module
   path. Otherwise, returned paths always end in a '/' and begin with either
-  `chrome://resources/` or a '/'."""
+  `neovex://resources/` or a '/'."""
   path = module.metadata.get('webui_module_path')
   if path is None or path == '/':
     return path

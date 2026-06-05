@@ -296,7 +296,7 @@ class Orchestrator:
     self.restart_chrome_ui()
 
     logging.info("fake_dmserver is running. Policies should now be applied.")
-    logging.info("Check chrome://policy on your device.")
+    logging.info("Check neovex://policy on your device.")
     logging.info("Press Ctrl+C to stop the server and clean up.")
 
     last_mtime = os.path.getmtime(self.policy_file)

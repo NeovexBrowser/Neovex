@@ -41,8 +41,8 @@ def main(argv):
     if FLAGS.account and FLAGS.password:
       sign_in(driver, FLAGS.account, FLAGS.password)
 
-    # Verify Policy status legend in chrome://policy page
-    policy_url = "chrome://policy"
+    # Verify Policy status legend in neovex://policy page
+    policy_url = "neovex://policy"
     driver.get(policy_url)
 
     # Give the page 10 seconds for enrollment and legend rending

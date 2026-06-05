@@ -15,7 +15,7 @@ build_webui_tests("build") {
     "test_browser_proxy.ts",
   ]
 
-  ts_path_mappings = [ "chrome://default-browser-modal/*|" + rebase_path(
+  ts_path_mappings = [ "neovex://default-browser-modal/*|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/default_browser/default_browser_modal/tsc/*",
                            target_gen_dir) ]
 

@@ -35,25 +35,25 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://bookmarks-side-panel.top-chrome/*|" +
+    "neovex://bookmarks-side-panel.top-chrome/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/bookmarks/tsc/*",
             target_gen_dir),
-    "chrome://bookmarks-side-panel.top-chrome/shared/*|" +
+    "neovex://bookmarks-side-panel.top-chrome/shared/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/shared/tsc/*",
             target_gen_dir),
-    "chrome://history-clusters-side-panel.top-chrome/history_clusters.js|" + rebase_path(
+    "neovex://history-clusters-side-panel.top-chrome/history_clusters.js|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/history_clusters/tsc/history_clusters.d.ts",
             target_gen_dir),
-    "chrome://read-later.top-chrome/*|" + rebase_path(
+    "neovex://read-later.top-chrome/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/reading_list/tsc/*",
             target_gen_dir),
-    "chrome://shopping-insights-side-panel.top-chrome/*|" +
+    "neovex://shopping-insights-side-panel.top-chrome/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/commerce/tsc/*",
             target_gen_dir),
-    "chrome://shopping-insights-side-panel.top-chrome/shared/*|" +
+    "neovex://shopping-insights-side-panel.top-chrome/shared/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/shared/tsc/*",
             target_gen_dir),

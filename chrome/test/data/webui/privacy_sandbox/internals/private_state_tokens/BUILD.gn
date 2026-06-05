@@ -20,7 +20,7 @@ build_webui_tests("build") {
     "toolbar_test.ts",
   ]
 
-  ts_path_mappings = [ "chrome://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js|" + rebase_path(
+  ts_path_mappings = [ "neovex://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/privacy_sandbox/internals/private_state_tokens/tsc/private_state_tokens.d.ts",
                            target_gen_dir) ]
 

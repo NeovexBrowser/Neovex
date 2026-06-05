@@ -10,7 +10,7 @@ different code paths and different Chrome behaviors. When a bug is caused by
 one of the experiments or variations, it is useful to be able to bisect into
 the set and pin-point which one is responsible.
 
-Go to chrome://version/?show-variations-cmd, at the bottom a few commandline
+Go to neovex://version/?show-variations-cmd, at the bottom a few commandline
 switches define the current experiments and variations Chrome runs with.
 
 Sample use:
@@ -18,12 +18,12 @@ Sample use:
 python split_variations_cmd.py --file="variations_cmd.txt" --output-dir=".\out"
 
 "variations_cmd.txt" is the command line switches data saved from
-chrome://version/?show-variations-cmd. This command splits them into two sets.
+neovex://version/?show-variations-cmd. This command splits them into two sets.
 If needed, the script can run on one set to further divide until a single
 experiment/variation is pin-pointed as responsible.
 
 Note that on Windows, directly passing the command line switches taken from
-chrome://version/?show-variations-cmd to Chrome in "Command Prompt" won't work.
+neovex://version/?show-variations-cmd to Chrome in "Command Prompt" won't work.
 This is because Chrome in "Command Prompt" doesn't seem to handle
 --force-fieldtrials="value"; it only handles --force-fieldtrials=value.
 Run Chrome through "Windows PowerShell" instead.
@@ -332,7 +332,7 @@ def ParseCommandLineSwitchesString(data):
 def ParseVariationsCmdFromString(input_string):
   """Parses commandline switches string into internal representation.
 
-  Commandline switches string comes from chrome://version/?show-variations-cmd.
+  Commandline switches string comes from neovex://version/?show-variations-cmd.
   Currently we parse the following four command line switches:
     --force-fieldtrials
     --force-fieldtrial-params
@@ -429,7 +429,7 @@ def SplitVariationsCmd(results):
   This function can be called recursively when bisecting a set of experiments
   until one is identified to be responsble for a certain browser behavior.
 
-  The commandline switches come from chrome://version/?show-variations-cmd.
+  The commandline switches come from neovex://version/?show-variations-cmd.
   """
   enable_features = results.get(_ENABLE_FEATURES_SWITCH_NAME, [])
   disable_features = results.get(_DISABLE_FEATURES_SWITCH_NAME, [])

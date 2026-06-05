@@ -27,10 +27,10 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://customize-chrome-side-panel.top-chrome/strings.m.js|" +
+    "neovex://customize-chrome-side-panel.top-chrome/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "chrome://customize-chrome-side-panel.top-chrome/*|" + rebase_path(
+    "neovex://customize-chrome-side-panel.top-chrome/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/customize_chrome/tsc/*",
             target_gen_dir),
   ]

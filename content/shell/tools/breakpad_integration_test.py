@@ -142,13 +142,13 @@ def run_test(options, crash_dir, symbols_dir, platform,
                           '--crash-dumps-dir=%s' % ANDROID_CRASH_DIR])
 
     launch_intent = intent.Intent(action='android.intent.action.VIEW',
-                                  activity=view_activity, data='chrome://crash',
+                                  activity=view_activity, data='neovex://crash',
                                   package=package_name)
     device.StartActivity(launch_intent)
   else:
     cmd = [options.binary,
            '--run-web-tests',
-           'chrome://crash',
+           'neovex://crash',
            '--enable-crash-reporter',
            '--crash-dumps-dir=%s' % crash_dir]
     cmd += additional_arguments

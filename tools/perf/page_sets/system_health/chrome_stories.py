@@ -66,7 +66,7 @@ class MobileNewTabPageStory2019(system_health_story.SystemHealthStory):
    - navigates back to new tab page
   """
   NAME = 'browse:chrome:newtab:2019'
-  URL = 'chrome://newtab'
+  URL = 'neovex://newtab'
   _SEARCH_TEXTS = ['does google know everything',
                    'most famous paintings',
                    'current weather',

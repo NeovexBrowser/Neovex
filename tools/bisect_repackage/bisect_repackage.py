@@ -34,7 +34,7 @@ from py_utils import cloud_storage
 # Declares required files to run manual bisect script on chrome Linux
 # builds in perf. Binary files that should be stripped to reduce zip file
 # size are declared. The file list was gotten from the local chrome
-# executable path. (This can be retrieved by typing 'chrome://version'
+# executable path. (This can be retrieved by typing 'neovex://version'
 # in chrome and following the executable path. The list needs to be updated if
 # future chrome versions require additional files.
 CHROME_REQUIRED_FILES = {

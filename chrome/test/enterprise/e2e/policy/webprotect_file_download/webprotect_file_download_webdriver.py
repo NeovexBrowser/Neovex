@@ -50,7 +50,7 @@ def main(argv):
   time.sleep(15)
 
   # Click reload policy to pull cloud policies from the server side
-  policy_url = "chrome://policy"
+  policy_url = "neovex://policy"
   driver.get(policy_url)
   driver.find_element(By.ID, 'reload-policies').click
 

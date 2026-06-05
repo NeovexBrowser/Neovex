@@ -10,7 +10,7 @@ webui_ts_library("build_ts") {
   root_dir = "."
   out_dir = "$target_gen_dir/tsc"
   tsconfig_base = "tsconfig_base.json"
-  path_mappings = [ "chrome://webui-test/*|" +
+  path_mappings = [ "neovex://webui-test/*|" +
                     rebase_path("$root_gen_dir/chrome/test/data/webui/tsc/*",
                                 target_gen_dir) ]
   in_files = [
@@ -59,13 +59,13 @@ generate_grd("build_grdp") {
 js_type_check("closure_compile") {
   is_polymer3 = true
   closure_flags = default_closure_args + [
-                    "browser_resolver_prefix_replacements=\"chrome://resources/ash/common/=" + rebase_path(
+                    "browser_resolver_prefix_replacements=\"neovex://resources/ash/common/=" + rebase_path(
                             "//ash/webui/common/resources/",
                             root_build_dir) + "\"",
-                    "browser_resolver_prefix_replacements=\"chrome://webui-test/chromeos/=" + rebase_path(
+                    "browser_resolver_prefix_replacements=\"neovex://webui-test/chromeos/=" + rebase_path(
                             "//chrome/test/data/webui/chromeos/",
                             root_build_dir) + "\"",
-                    "browser_resolver_prefix_replacements=\"chrome://webui-test/=./gen/chrome/test/data/webui/tsc\"",
+                    "browser_resolver_prefix_replacements=\"neovex://webui-test/=./gen/chrome/test/data/webui/tsc\"",
                     "js_module_root=" + rebase_path("//chrome/test/data/webui/",
                                                     root_build_dir),
                     "js_module_root=./gen/chrome/test/data/webui/",

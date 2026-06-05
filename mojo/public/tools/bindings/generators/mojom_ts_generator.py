@@ -176,7 +176,7 @@ def _IsSharedModulePath(path):
 
 
 def _IsAbsoluteChromeResourcesPath(path):
-  return path.startswith('chrome://resources/') or \
+  return path.startswith('neovex://resources/') or \
       path.startswith('//resources/')
 
 
@@ -185,7 +185,7 @@ def _GetWebUiModulePath(module):
   that makes it available. This is based on the corresponding mojom target's
   webui_module_path value. Returns None if the target specifies no module
   path. Otherwise, returned paths always end in a '/' and begin with either
-  `chrome://resources/` or a '/'."""
+  `neovex://resources/` or a '/'."""
   path = module.metadata.get('webui_module_path')
   if path is None:
     return None
@@ -653,9 +653,9 @@ class Generator(generator.Generator):
             'Shared WebUI module "{}" cannot depend on non-shared WebUI ' \
                 'module "{}"'.format(self.module.path, kind.module.path)
 
-      # Some Mojo JS files are served from chrome://resources/, but not from
-      # chrome://resources/mojo/, for example from
-      # chrome://resources/cr_components/. Need to use absolute paths when
+      # Some Mojo JS files are served from neovex://resources/, but not from
+      # neovex://resources/mojo/, for example from
+      # neovex://resources/cr_components/. Need to use absolute paths when
       # referring to such files from other modules, so that TypeScript can
       # correctly resolve them since they belong to a different ts_library()
       # target compared to |this_module_path|.

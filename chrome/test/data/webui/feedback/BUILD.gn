@@ -18,13 +18,13 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://feedback/*|" +
+    "neovex://feedback/*|" +
         rebase_path("$root_gen_dir/chrome/browser/resources/feedback/tsc/*",
                     target_gen_dir),
-    "chrome://feedback/strings.m.js|" +
+    "neovex://feedback/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "chrome://feedback/report_unsafe_site_app.js|" + rebase_path(
+    "neovex://feedback/report_unsafe_site_app.js|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/feedback/report_unsafe_site/tsc/report_unsafe_site_app.d.ts",
             target_gen_dir),
   ]

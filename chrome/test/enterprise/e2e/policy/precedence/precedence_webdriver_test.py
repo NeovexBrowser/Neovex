@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from test_util import create_chrome_webdriver, getElementFromShadowRoot
 
 driver = create_chrome_webdriver()
-driver.get('chrome://policy')
+driver.get('neovex://policy')
 
 # Wait until the various policy tables are loaded.
 shadow_root_wrapper = WebDriverWait(driver, 10).until(

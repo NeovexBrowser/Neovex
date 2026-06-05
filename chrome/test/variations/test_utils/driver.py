@@ -25,7 +25,7 @@ from chrome.test.variations.test_utils import SRC_DIR
 sys.path.append(os.path.join(SRC_DIR, 'tools'))
 from variations.split_variations_cmd import ParseVariationsCmdFromString
 
-_GET_VERSIONS_COMMAND_URL = 'chrome://version/?show-variations-cmd'
+_GET_VERSIONS_COMMAND_URL = 'neovex://version/?show-variations-cmd'
 
 
 def _extract_features_from_commandline(
@@ -57,7 +57,7 @@ class DriverUtil:
     if self._test_options.platform in ['webview', 'android_webview']:
       logging.info('Skipping feature logging on webview')
       return features.Features([], [])
-    logging.info('Fetching data from chrome://version/?show-variations-cmd')
+    logging.info('Fetching data from neovex://version/?show-variations-cmd')
     self._driver.get(_GET_VERSIONS_COMMAND_URL)
     WebDriverWait(self._driver, 5).until(
       EC.presence_of_element_located((By.TAG_NAME, 'body')))

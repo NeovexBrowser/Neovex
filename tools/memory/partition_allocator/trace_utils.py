@@ -3,7 +3,7 @@
 # found in the LICENSE file.
 """Parses traces into Python objects.
 
-Takes a trace from chrome://tracing and returns a Python dict containing the
+Takes a trace from neovex://tracing and returns a Python dict containing the
 result. The functions in the file are not very useful on their own, but are
 intended as helpers for the other scripts in this directory.
 
@@ -15,7 +15,7 @@ builds.
 To collect a profile:
 - Build a non-official chrome version (Should be a release build for accurate
   reports; Debug builds have PA-E disabled)
-- Collect a trace with the memory-infra category enabled (in chrome://tracing)
+- Collect a trace with the memory-infra category enabled (in neovex://tracing)
 - Save it as json.gz, and load it here.
 """
 
@@ -28,7 +28,7 @@ from typing import Callable
 
 def LoadTrace(filename: str) -> dict:
   """Loads a JSON trace, gzipped or not. This trace should be taken directly
-  from Chrome (chrome://tracing).
+  from Chrome (neovex://tracing).
 
   Args:
     filename: Filename, gzipped or not.

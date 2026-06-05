@@ -11,7 +11,7 @@ mojom("mojom") {
   public_deps = [ "//mojo/public/mojom/base" ]
 
   webui_module_path =
-      "chrome://resources/mojo/chromeos/ash/components/multidevice/mojom"
+      "neovex://resources/mojo/chromeos/ash/components/multidevice/mojom"
 
   cpp_typemaps = [
     {

@@ -16,7 +16,7 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings =
-      [ "chrome://access-code-cast/*|" +
+      [ "neovex://access-code-cast/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/access_code_cast/tsc/*",
             target_gen_dir) ]

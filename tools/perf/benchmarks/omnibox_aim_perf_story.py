@@ -54,7 +54,7 @@ WEB_CONTENTS_UMA = [
 
 class OmniboxAIModePopupStory(omnibox_story.OmniboxStory):
   NAME = 'omnibox:aim_popup'
-  URL = 'chrome://newtab'
+  URL = 'neovex://newtab'
 
   def WillStartTracing(self, chrome_trace_config):
     super().WillStartTracing(chrome_trace_config)

@@ -242,9 +242,9 @@ class ContextLostIntegrationTest(gpu_integration_test.GpuIntegrationTest):
       # Crash the GPU process.
       #
       # This used to create a new tab and navigate it to
-      # chrome://gpucrash, but there was enough unreliability
+      # neovex://gpucrash, but there was enough unreliability
       # navigating between these tabs (one of which was created solely
-      # in order to navigate to chrome://gpucrash) that the simpler
+      # in order to navigate to neovex://gpucrash) that the simpler
       # solution of provoking the GPU process crash from this renderer
       # process was chosen.
       tab.EvaluateJavaScript('chrome.gpuBenchmarking.crashGpuProcess()')

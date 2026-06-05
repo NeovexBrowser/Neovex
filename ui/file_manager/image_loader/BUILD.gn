@@ -69,7 +69,7 @@ webui_ts_library("build_ts") {
   definitions = dts_files
 
   path_mappings =
-      [ "chrome://file-manager/*|" +
+      [ "neovex://file-manager/*|" +
         rebase_path("$preprocess_folder/file_manager/*", target_gen_dir) ]
 }
 
@@ -83,7 +83,7 @@ optimize_webui("build") {
   ]
 
   external_paths = [
-    "chrome://file-manager|$files_app_path",
+    "neovex://file-manager|$files_app_path",
     "chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp|$image_loader_path",
   ]
 

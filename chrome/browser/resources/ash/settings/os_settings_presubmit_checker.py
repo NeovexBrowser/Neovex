@@ -54,7 +54,7 @@ def _TypeScriptPrepCheckNoLegacyPolymerSyntax(file):
 
 def _EnforceSchemeSpecificURLs(file):
     """Checks that only scheme-specific URLs are used and scheme relative URLs
-      are avoided. (i.e. 'chrome://' is preferred over '//')
+      are avoided. (i.e. 'neovex://' is preferred over '//')
 
     Args:
         file: A changed file
@@ -69,7 +69,7 @@ def _EnforceSchemeSpecificURLs(file):
             if '\'//' in line:
                 error_messages.append(
                     "%s:%d:\n%s\n\n"
-                    "Prefer using scheme-specific URLs (i.e. 'chrome://')" %
+                    "Prefer using scheme-specific URLs (i.e. 'neovex://')" %
                     (file.LocalPath(), line_num, line.strip()))
 
     return error_messages

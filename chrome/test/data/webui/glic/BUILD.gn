@@ -102,7 +102,7 @@ build_webui_tests("build") {
     "unit_tests/webview_test.ts",
   ]
 
-  ts_path_mappings = [ "chrome://glic/*|" + rebase_path(
+  ts_path_mappings = [ "neovex://glic/*|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/glic/tsc/*",
                            target_gen_dir) ]
 

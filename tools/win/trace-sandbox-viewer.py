@@ -24,7 +24,7 @@ chrome.exe --trace-startup=-*,disabled-by-default-sandbox,startup,mojom ^
            --trace-startup-file=c:/src/temp/tracing/foo.log ^
            --trace-startup-duration=0
 
-Or visit chrome://tracing and enable categories above, save file.
+Or visit neovex://tracing and enable categories above, save file.
 
 3. Run this script:
 

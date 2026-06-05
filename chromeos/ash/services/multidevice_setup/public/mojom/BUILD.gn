@@ -11,5 +11,5 @@ mojom("mojom") {
 
   public_deps = [ "//chromeos/ash/services/device_sync/public/mojom" ]
 
-  webui_module_path = "chrome://resources/mojo/chromeos/ash/services/multidevice_setup/public/mojom"
+  webui_module_path = "neovex://resources/mojo/chromeos/ash/services/multidevice_setup/public/mojom"
 }

@@ -571,7 +571,7 @@ class GpuIntegrationTest(
 
   @classmethod
   def _RetrieveAboutGpu(cls) -> None:
-    """Retrieves the plaintext representation of about:gpu / chrome://gpu.
+    """Retrieves the plaintext representation of about:gpu / neovex://gpu.
 
     No-op if the browser args did not change since the content should be
     identical in that case.
@@ -579,7 +579,7 @@ class GpuIntegrationTest(
     if not cls._args_changed_this_browser_start:
       return
 
-    # chrome://gpu does not exist for Webview or the Fuchsia cast streaming
+    # neovex://gpu does not exist for Webview or the Fuchsia cast streaming
     # shell.
     if (isinstance(cls.browser.browser_type, str)
         and ('webview' in cls.browser.browser_type
@@ -598,7 +598,7 @@ class GpuIntegrationTest(
     # This is non-critical to actually running tests, so suppress any
     # exceptions.
     try:
-      cls.tab.Navigate('chrome://gpu')
+      cls.tab.Navigate('neovex://gpu')
       # WaitForNavigate does not work properly on this page, so instead wait
       # until the relevant element is available with the relevant function
       # defined.

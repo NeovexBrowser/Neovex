@@ -12,10 +12,10 @@ build_webui_tests("build_webui_tests") {
     "print_management_test.ts",
   ]
   ts_path_mappings = [
-    "chrome://print-management/*|" +
+    "neovex://print-management/*|" +
         rebase_path("$root_gen_dir/ash/webui/print_management/resources/tsc/*",
                     target_gen_dir),
-    "chrome://webui-test/chromeos/*|" +
+    "neovex://webui-test/chromeos/*|" +
         rebase_path("$root_gen_dir/chrome/test/data/webui/chromeos/tsc/*",
                     target_gen_dir),
   ]

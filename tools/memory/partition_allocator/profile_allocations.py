@@ -12,7 +12,7 @@ builds.
 To collect a profile:
 - Build a non-official chrome version (Should be a release build for accurate
   reports)
-- Collect a trace with the memory-infra category enabled (in chrome://tracing)
+- Collect a trace with the memory-infra category enabled (in neovex://tracing)
 - Save it as json.gz, and load it here.
 """
 

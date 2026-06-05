@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from test_util import create_chrome_webdriver
 
 # Constants
-CHROME_POLICY_URL = 'chrome://policy'
+CHROME_POLICY_URL = 'neovex://policy'
 CWS_URL = 'https://chromewebstore.google.com/'
 
 

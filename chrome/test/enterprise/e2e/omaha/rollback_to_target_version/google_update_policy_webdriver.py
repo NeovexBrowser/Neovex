@@ -12,7 +12,7 @@ def main(argv):
   driver = create_chrome_webdriver()
 
   try:
-    driver.get('chrome://policy')
+    driver.get('neovex://policy')
     driver.find_element(By.ID, 'reload-policies').click
 
   finally:

@@ -51,7 +51,7 @@ class HardwareAcceleratedFeatureIntegrationTest(
     for feature in tests:
       safe_name = safe_feature_name(feature)
       yield (f'HardwareAcceleratedFeature_{safe_name}_accelerated',
-             'chrome://gpu', [feature])
+             'neovex://gpu', [feature])
 
   def RunActualGpuTest(self, test_path: str, args: ct.TestArgs) -> None:
     feature = args[0]

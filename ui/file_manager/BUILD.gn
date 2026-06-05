@@ -60,13 +60,13 @@ common_path_mappings = [
   "tslib|" + rebase_path(
           "//third_party/material_web_components/components-chromium/node_modules/tslib/tslib.d.ts",
           target_gen_dir),
-  "chrome://resources/mwc/*|" + rebase_path(
+  "neovex://resources/mwc/*|" + rebase_path(
           "//third_party/material_web_components/components-chromium/node_modules/*",
           target_gen_dir),
-  "chrome://resources/cr_components/color_change_listener/*|" + rebase_path(
+  "neovex://resources/cr_components/color_change_listener/*|" + rebase_path(
           "$root_gen_dir/ui/webui/resources/tsc/cr_components/color_change_listener/*",
           target_gen_dir),
-  "chrome://file-manager/*|" +
+  "neovex://file-manager/*|" +
       rebase_path("$preprocess_folder/file_manager/*", target_gen_dir),
 ]
 
@@ -151,10 +151,10 @@ webui_ts_library("test_build_ts") {
   path_mappings =
       common_path_mappings + [
         # for chai_assert.js.
-        "chrome://webui-test/chromeos/*|" +
+        "neovex://webui-test/chromeos/*|" +
             rebase_path("$root_gen_dir/chrome/test/data/webui/chromeos/tsc/*",
                         target_gen_dir),
-        "chrome://webui-test/*|" +
+        "neovex://webui-test/*|" +
             rebase_path("$root_gen_dir/chrome/test/data/webui/tsc/*",
                         target_gen_dir),
       ]

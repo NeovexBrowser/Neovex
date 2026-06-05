@@ -46,7 +46,7 @@ build_webui("build") {
   ]
 
   ts_path_mappings =
-      [ "chrome://newtab-footer/shared/*|" +
+      [ "neovex://newtab-footer/shared/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/new_tab_shared/tsc/*",
             target_gen_dir) ]

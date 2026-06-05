@@ -183,7 +183,7 @@ ts_library("test_build_ts") {
     "//ash/webui/media_app_ui/test:stage_for_test_tsc",
   ]
 
-  path_mappings = [ "chrome://webui-test/*|" +
+  path_mappings = [ "neovex://webui-test/*|" +
                     rebase_path("$root_gen_dir/chrome/test/data/webui/tsc/*",
                                 target_gen_dir) ]
 }

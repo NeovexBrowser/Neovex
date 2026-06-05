@@ -69,8 +69,8 @@ class HomepageTest(ChromeEnterpriseTestCase):
     homepage = self._getHomepageLocation(self.win_config['client'])
 
     # The URL of the new tab can be one of the following:
-    # - chrome://new-tab-page/
-    # - chrome://new-tab-page-third-party/
+    # - neovex://new-tab-page/
+    # - neovex://new-tab-page-third-party/
     if 'new-tab-page' in homepage:
       pass
     else:

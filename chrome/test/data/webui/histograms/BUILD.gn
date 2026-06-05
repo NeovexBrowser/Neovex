@@ -15,7 +15,7 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings =
-      [ "chrome://histograms/*|" +
+      [ "neovex://histograms/*|" +
         rebase_path("$root_gen_dir/content/browser/resources/histograms/tsc/*",
                     target_gen_dir) ]
 }

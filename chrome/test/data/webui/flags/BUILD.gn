@@ -16,7 +16,7 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings =
-      [ "chrome://flags/*|" +
+      [ "neovex://flags/*|" +
         rebase_path("$root_gen_dir/components/webui/flags/resources/tsc/*",
                     target_gen_dir) ]
 

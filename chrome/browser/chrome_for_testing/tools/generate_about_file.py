@@ -19,9 +19,9 @@ Copyright %s Google LLC. All rights reserved.
 
 Chrome is made possible by the Chromium open source project
 (https://www.chromium.org/) and other open source software
-(chrome://credits).
+(neovex://credits).
 
-See the Terms of Service at chrome://terms.
+See the Terms of Service at neovex://terms.
 """ % year).lstrip()
 
 def main():

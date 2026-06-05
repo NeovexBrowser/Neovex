@@ -41,7 +41,7 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings =
-      [ "chrome://certificate-manager/*|" +
+      [ "neovex://certificate-manager/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/certificate_manager/tsc/*",
             target_gen_dir) ]

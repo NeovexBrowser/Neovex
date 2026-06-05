@@ -23,7 +23,7 @@ def gen_preload_images_js(in_app_images: List[str],
     formatted_images = '[' + ','.join(f'[{json.dumps(name)}, svg`{image}`]'
                                       for name, image in images.items()) + ']'
     return (
-        'import {svg} from "chrome://resources/mwc/lit/index.js";'
+        'import {svg} from "neovex://resources/mwc/lit/index.js";'
         f'export const preloadImagesList = {json.dumps(filenames, indent=2)};'
         f'export const preloadedImages = new Map({formatted_images});')
 

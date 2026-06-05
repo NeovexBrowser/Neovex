@@ -38,11 +38,11 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "chrome://history/history.js|" +
+    "neovex://history/history.js|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/history/tsc/history.d.ts",
             target_gen_dir),
-    "chrome://history/strings.m.js|" +
+    "neovex://history/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
   ]
