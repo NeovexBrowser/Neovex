@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ContainerInfo, CrostiniBrowserProxy, CrostiniDiskInfo, CrostiniPortActiveSetting, CrostiniPortProtocol, GuestId, ShareableDevices} from 'neovex://os-settings/lazy_load.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {ContainerInfo, CrostiniBrowserProxy, CrostiniDiskInfo, CrostiniPortActiveSetting, CrostiniPortProtocol, GuestId, ShareableDevices} from 'chrome://os-settings/lazy_load.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export interface SharedVmDevices {
   id: GuestId;

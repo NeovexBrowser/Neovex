@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AuthCompletedCredentials} from 'neovex://chrome-signin/gaia_auth_host/authenticator.js';
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import type {AuthCompletedCredentials} from 'chrome://chrome-signin/gaia_auth_host/authenticator.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 export interface InlineLoginBrowserProxy {
   /** Send 'initialize' message to prepare for starting auth. */

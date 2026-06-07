@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_splitter/cr_splitter.js';
-import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
-import 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
+import 'chrome://resources/cr_elements/cr_splitter/cr_splitter.js';
+import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
+import 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
 
-import type {CrTreeItemElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {html, render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {CrTreeItemElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {html, render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {SyncNode, SyncNodeMap} from './chrome_sync.js';
 import {getAllNodes} from './chrome_sync.js';

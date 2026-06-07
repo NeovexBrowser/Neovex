@@ -65,7 +65,7 @@ class Policy(NamedTuple):
 # TODO(crbug.com/399483772): Update tests to use this to get policies.
 def fetch_policies(driver: webdriver.Chrome,
                    refresh: bool = True) -> dict[str, Policy]:
-  driver.get('neovex://policy')
+  driver.get('chrome://policy')
   if refresh:
     clickable = EC.element_to_be_clickable((By.ID, 'reload-policies'))
     WebDriverWait(driver, 10).until(clickable).click()
@@ -146,7 +146,7 @@ def sign_in(driver: webdriver.Chrome, account: str, password: str):
         "not running inside a UI test, which is required for sign-in")
   # Start sign-in from the "New Tab Page" (NTP) so that the login page opens
   # in-place instead of in a new tab.
-  driver.get("neovex://newtab")
+  driver.get("chrome://newtab")
   app = pywinauto.Application(backend="uia")
   app.connect(title_re=".*Chrome|.*Chromium")
   old_window = app.top_window()

@@ -13,10 +13,10 @@ import './reopen_tabs.js';
 import './sources_menu.js';
 
 import {AnchorAlignment} from '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrLazyRenderLitElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrLazyRenderLitElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {ContextInfo} from './contextual_tasks.mojom-webui.js';
 import type {BrowserProxy} from './contextual_tasks_browser_proxy.js';

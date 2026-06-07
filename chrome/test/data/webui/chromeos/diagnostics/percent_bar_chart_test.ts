@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/percent_bar_chart.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/percent_bar_chart.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {PercentBarChartElement} from 'neovex://diagnostics/percent_bar_chart.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {PaperProgressElement} from 'neovex://resources/polymer/v3_0/paper-progress/paper-progress.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {PercentBarChartElement} from 'chrome://diagnostics/percent_bar_chart.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {PaperProgressElement} from 'chrome://resources/polymer/v3_0/paper-progress/paper-progress.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('percentBarChartTestSuite', function() {
   let percentBarChartElement: PercentBarChartElement|null = null;

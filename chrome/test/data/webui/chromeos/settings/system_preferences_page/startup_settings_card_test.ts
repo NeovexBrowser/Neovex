@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {SettingsDropdownMenuElement, StartupSettingsCardElement} from 'neovex://os-settings/os_settings.js';
-import {Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsDropdownMenuElement, StartupSettingsCardElement} from 'chrome://os-settings/os_settings.js';
+import {Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('<startup-settings-card>', () => {
   let startupSettingsCard: StartupSettingsCardElement;

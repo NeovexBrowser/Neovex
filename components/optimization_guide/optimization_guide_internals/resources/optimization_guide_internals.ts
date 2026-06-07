@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {$, getRequiredElement} from 'neovex://resources/js/util.js';
-import type {Time} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {$, getRequiredElement} from 'chrome://resources/js/util.js';
+import type {Time} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
 
 import type {DownloadedModelInfo, LoggedClientIds, MqlsLog} from './optimization_guide_internals.mojom-webui.js';
 import {PageHandlerFactory} from './optimization_guide_internals.mojom-webui.js';

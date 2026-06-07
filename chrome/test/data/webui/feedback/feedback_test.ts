@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://feedback/app.js';
+import 'chrome://feedback/app.js';
 
-import type {AppElement} from 'neovex://feedback/app.js';
-import {FeedbackBrowserProxyImpl} from 'neovex://feedback/js/feedback_browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import type {AppElement} from 'chrome://feedback/app.js';
+import {FeedbackBrowserProxyImpl} from 'chrome://feedback/js/feedback_browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestFeedbackBrowserProxy} from './test_feedback_browser_proxy.js';
 
@@ -120,7 +120,7 @@ suite('FeedbackTest', function() {
 
   test('SendReport', async function() {
     const DESCRIPTION_TEXT = 'feedback test';
-    const PAGE_URL = 'neovex://feedback';
+    const PAGE_URL = 'chrome://feedback';
 
     app.getRequiredElement('#description-text').textContent = DESCRIPTION_TEXT;
     app.getRequiredElement<HTMLInputElement>('#page-url-text').value = PAGE_URL;

@@ -7,10 +7,10 @@
  * for testing.
  */
 
-import type {SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {FakeChromeEvent} from 'neovex://webui-test/fake_chrome_event.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {FakeChromeEvent} from 'chrome://webui-test/fake_chrome_event.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 type LanguageSettingsPrivate = typeof chrome.languageSettingsPrivate;
 type Language = chrome.languageSettingsPrivate.Language;

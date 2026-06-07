@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {AccountManagerBrowserProxy} from 'neovex://os-settings/lazy_load.js';
-import {AccountManagerBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {OsSettingsPeoplePageElement, ProfileInfoBrowserProxy} from 'neovex://os-settings/os_settings.js';
-import {ProfileInfoBrowserProxyImpl, Router, routes, setGraduationHandlerProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {AccountManagerBrowserProxy} from 'chrome://os-settings/lazy_load.js';
+import {AccountManagerBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {OsSettingsPeoplePageElement, ProfileInfoBrowserProxy} from 'chrome://os-settings/os_settings.js';
+import {ProfileInfoBrowserProxyImpl, Router, routes, setGraduationHandlerProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestAccountManagerBrowserProxy} from './test_account_manager_browser_proxy.js';
 import {TestGraduationHandler} from './test_graduation_handler_provider.js';

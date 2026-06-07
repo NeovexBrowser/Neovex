@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/ash/common/cr_elements/cr_lottie/cr_lottie.js';
+import 'chrome://resources/ash/common/cr_elements/cr_lottie/cr_lottie.js';
 
-import type {CrLottieElement} from 'neovex://resources/ash/common/cr_elements/cr_lottie/cr_lottie.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type { MockMethod} from 'neovex://webui-test/mock_controller.js';
-import {MockController} from 'neovex://webui-test/mock_controller.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CrLottieElement} from 'chrome://resources/ash/common/cr_elements/cr_lottie/cr_lottie.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type { MockMethod} from 'chrome://webui-test/mock_controller.js';
+import {MockController} from 'chrome://webui-test/mock_controller.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr-lottie. */

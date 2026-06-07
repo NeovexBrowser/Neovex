@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
-import 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
-import 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
 import './color_icon_element.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
 
 import type {CurrentBacklightState} from '../../personalization_app.mojom-webui.js';
 import {BacklightColor} from '../../personalization_app.mojom-webui.js';

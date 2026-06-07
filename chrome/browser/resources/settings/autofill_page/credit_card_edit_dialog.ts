@@ -8,21 +8,21 @@
  */
 
 import '/shared/settings/prefs/prefs.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/cr_elements/cr_input/cr_input.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/cr_elements/md_select.css.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/md_select.css.js';
 import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {microTask, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {microTask, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 
@@ -340,8 +340,8 @@ export class SettingsCreditCardEditDialogElement extends
     // The location differs for AmEx and non-AmEx cards, so we have to get
     // the first two digits of the card number for AmEx cards before we can
     // update the icon.
-    return this.isCardAmex_() ? 'neovex://settings/images/cvc_amex.svg' :
-                                'neovex://settings/images/cvc.svg';
+    return this.isCardAmex_() ? 'chrome://settings/images/cvc_amex.svg' :
+                                'chrome://settings/images/cvc.svg';
   }
 
   private getCvcImageTooltip_(): string {

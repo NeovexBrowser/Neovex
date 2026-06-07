@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// This file demonstrates how a neovex:// page can communicate with its
+// This file demonstrates how a chrome:// page can communicate with its
 // embedded chrome-untrusted:// child page.
 
 import {callbackRouter} from './page_handler.js';
@@ -62,5 +62,5 @@ declare global {
 window.childPageReady = childPageReady;
 
 childPageReady.then((result: ChildPageReadyResult) => {
-  result.childPage.doSomethingForParent('Hello from neovex://');
+  result.childPage.doSomethingForParent('Hello from chrome://');
 });

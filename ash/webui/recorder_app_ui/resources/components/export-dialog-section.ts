@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/checkbox/checkbox.js';
-import 'neovex://resources/cros_components/dropdown/dropdown_option.js';
-import 'neovex://resources/mwc/@material/web/focus/md-focus-ring.js';
+import 'chrome://resources/cros_components/checkbox/checkbox.js';
+import 'chrome://resources/cros_components/dropdown/dropdown_option.js';
+import 'chrome://resources/mwc/@material/web/focus/md-focus-ring.js';
 import './cra/cra-dropdown.js';
 import './expandable-card.js';
 
 import {
   Checkbox as CrosCheckbox,
-} from 'neovex://resources/cros_components/checkbox/checkbox.js';
+} from 'chrome://resources/cros_components/checkbox/checkbox.js';
 import {
   classMap,
   css,
@@ -19,7 +19,7 @@ import {
   map,
   nothing,
   PropertyDeclarations,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {ReactiveLitElement} from '../core/reactive/lit.js';
 import {assertInstanceof} from '../core/utils/assert.js';

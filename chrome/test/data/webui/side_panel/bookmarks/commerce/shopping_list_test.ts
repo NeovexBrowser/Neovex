@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://bookmarks-side-panel.top-chrome/commerce/shopping_list.js';
-import 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
+import 'chrome://bookmarks-side-panel.top-chrome/commerce/shopping_list.js';
+import 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
 
-import {ActionSource} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
-import {BookmarksApiProxyImpl} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks_api_proxy.js';
-import type {ShoppingListElement} from 'neovex://bookmarks-side-panel.top-chrome/commerce/shopping_list.js';
-import {ACTION_BUTTON_TRACK_IMAGE, ACTION_BUTTON_UNTRACK_IMAGE, LOCAL_STORAGE_EXPAND_STATUS_KEY} from 'neovex://bookmarks-side-panel.top-chrome/commerce/shopping_list.js';
-import {PageCallbackRouter} from 'neovex://resources/cr_components/commerce/price_tracking.mojom-webui.js';
-import type {PageRemote} from 'neovex://resources/cr_components/commerce/price_tracking.mojom-webui.js';
-import {PriceTrackingBrowserProxyImpl} from 'neovex://resources/cr_components/commerce/price_tracking_browser_proxy.js';
-import type {BookmarkProductInfo} from 'neovex://resources/cr_components/commerce/shared.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {ActionSource} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
+import {BookmarksApiProxyImpl} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks_api_proxy.js';
+import type {ShoppingListElement} from 'chrome://bookmarks-side-panel.top-chrome/commerce/shopping_list.js';
+import {ACTION_BUTTON_TRACK_IMAGE, ACTION_BUTTON_UNTRACK_IMAGE, LOCAL_STORAGE_EXPAND_STATUS_KEY} from 'chrome://bookmarks-side-panel.top-chrome/commerce/shopping_list.js';
+import {PageCallbackRouter} from 'chrome://resources/cr_components/commerce/price_tracking.mojom-webui.js';
+import type {PageRemote} from 'chrome://resources/cr_components/commerce/price_tracking.mojom-webui.js';
+import {PriceTrackingBrowserProxyImpl} from 'chrome://resources/cr_components/commerce/price_tracking_browser_proxy.js';
+import type {BookmarkProductInfo} from 'chrome://resources/cr_components/commerce/shared.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBookmarksApiProxy} from '../test_bookmarks_api_proxy.js';
 
@@ -37,7 +37,7 @@ suite('SidePanelShoppingListTest', () => {
         title: 'Product Foo',
         clusterTitle: 'Product Cluster Foo',
         domain: 'foo.com',
-        imageUrl: 'neovex://resources/images/error.svg',
+        imageUrl: 'chrome://resources/images/error.svg',
         productUrl: 'https://foo.com/product',
         currentPrice: '$12',
         previousPrice: '$34',
@@ -374,7 +374,7 @@ suite('SidePanelShoppingListTest', () => {
         title: 'Product Baz',
         clusterTitle: 'Product Cluster Baz',
         domain: 'baz.com',
-        imageUrl: 'neovex://resources/images/error.svg',
+        imageUrl: 'chrome://resources/images/error.svg',
         productUrl: 'https://baz.com/product',
         currentPrice: '$56',
         previousPrice: '$78',

@@ -673,7 +673,7 @@ const KNOWN_SCREENS: ScreenDefType[] = [
       appInfo: {
         name: 'Application Name',
         url: 'http://example.com/someApplication/VeryLongURL',
-        iconURL: 'neovex://theme/IDR_LOGO_GOOGLE_COLOR_90',
+        iconURL: 'chrome://theme/IDR_LOGO_GOOGLE_COLOR_90',
       },
       shortcutEnabled: true,
     },

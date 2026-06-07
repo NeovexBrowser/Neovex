@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/d3/d3.min.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/d3/d3.min.js';
 
 import type {PricePoint} from '//resources/cr_components/commerce/shopping_service.mojom-webui.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './history_graph.html.js';
 

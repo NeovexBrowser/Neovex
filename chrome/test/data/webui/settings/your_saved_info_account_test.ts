@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {loadTimeData, ProfileInfoBrowserProxyImpl, resetRouterForTesting, SyncBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData, ProfileInfoBrowserProxyImpl, resetRouterForTesting, SyncBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
 // clang-format off
 // <if expr="not is_chromeos">
-import {ChromeSigninAccessPoint, Router, routes, SignedInState, StatusAction} from 'neovex://settings/settings.js';
-import {assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {ChromeSigninAccessPoint, Router, routes, SignedInState, StatusAction} from 'chrome://settings/settings.js';
+import {assertFalse} from 'chrome://webui-test/chai_assert.js';
 // </if>
 // clang-format on
 

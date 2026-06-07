@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import {AmbientObserver, AmbientPreviewBase, AmbientPreviewLargeElement, Paths, PersonalizationActionName, PersonalizationRouterElement, TopicSource} from 'neovex://personalization/js/personalization_app.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import {AmbientObserver, AmbientPreviewBase, AmbientPreviewLargeElement, Paths, PersonalizationActionName, PersonalizationRouterElement, TopicSource} from 'chrome://personalization/js/personalization_app.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 import {baseSetup, initElement, teardownElement} from './personalization_app_test_utils.js';
 import type {TestAmbientProvider} from './test_ambient_interface_provider.js';

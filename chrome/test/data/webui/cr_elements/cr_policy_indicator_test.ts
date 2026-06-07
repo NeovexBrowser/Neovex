@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/policy/cr_policy_indicator.js';
-import 'neovex://resources/cr_elements/policy/cr_tooltip_icon.js';
+import 'chrome://resources/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/cr_elements/policy/cr_tooltip_icon.js';
 import './cr_policy_strings.js';
 
-import type {CrPolicyIndicatorElement} from 'neovex://resources/cr_elements/policy/cr_policy_indicator.js';
-import {CrPolicyIndicatorType} from 'neovex://resources/cr_elements/policy/cr_policy_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrPolicyIndicatorElement} from 'chrome://resources/cr_elements/policy/cr_policy_indicator.js';
+import {CrPolicyIndicatorType} from 'chrome://resources/cr_elements/policy/cr_policy_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr-policy-indicator. */

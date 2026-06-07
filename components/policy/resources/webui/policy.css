@@ -121,7 +121,7 @@ status-box {
 }
 
 #dropdown-icon {
-  background-image: url(neovex://resources/images/icon_arrow_dropdown.svg);
+  background-image: url(chrome://resources/images/icon_arrow_dropdown.svg);
   background-size: cover;
   width: 20px;
   height: 20px;
@@ -176,8 +176,8 @@ status-box {
 
 <if expr="not is_android and not is_ios">
 #topbar-brand-logo {
-  background-image: image-set('neovex://theme/current-channel-logo@1x' 1x,
-                              'neovex://theme/current-channel-logo@2x' 2x);
+  background-image: image-set('chrome://theme/current-channel-logo@1x' 1x,
+                              'chrome://theme/current-channel-logo@2x' 2x);
   background-size: cover;
   height: 24px;
   margin-inline-end: 10px;
@@ -208,7 +208,7 @@ status-box {
 }
 
 #search-field-icon {
-  background-image: url(neovex://resources/images/dark/icon_search.svg);
+  background-image: url(chrome://resources/images/dark/icon_search.svg);
   background-size: cover;
   fill: var(--search-field-icon-background);
   height: 20px;

@@ -14,8 +14,8 @@ import {AnnotationBrushType, DEFAULT_TEXTBOX_WIDTH, MIN_TEXTBOX_SIZE_PX, hexToCo
 // <if expr="enable_pdf_save_to_drive">
 import {SaveToDriveBubbleAction, SaveToDriveBubbleState, SaveToDriveSaveType } from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 // </if>
-import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 const SaveRequestType = chrome.pdfViewerPrivate.SaveRequestType;

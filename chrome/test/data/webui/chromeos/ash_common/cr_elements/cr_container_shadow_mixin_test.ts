@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {CrContainerShadowMixin} from 'neovex://resources/ash/common/cr_elements/cr_container_shadow_mixin.js';
-import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {CrContainerShadowMixin} from 'chrome://resources/ash/common/cr_elements/cr_container_shadow_mixin.js';
+import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 // clang-format on
 
 suite('CrContainerShadowBehavior', function() {

@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 import type {WindowOpenDisposition} from '//resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
-import type {NavigationPredictor} from 'neovex://resources/mojo/components/omnibox/browser/omnibox.mojom-webui.js';
-import type {OmniboxPopupSelection, PageHandlerInterface, PageRemote, PlaceholderConfig, SelectedFileInfo} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {PageCallbackRouter} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import type {ModelMode, ToolMode} from 'neovex://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
-import type {BigBuffer} from 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import type {String16} from 'neovex://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
-import type {TimeTicks} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
-import type {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {NavigationPredictor} from 'chrome://resources/mojo/components/omnibox/browser/omnibox.mojom-webui.js';
+import type {OmniboxPopupSelection, PageHandlerInterface, PageRemote, PlaceholderConfig, SelectedFileInfo} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {PageCallbackRouter} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import type {ModelMode, ToolMode} from 'chrome://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
+import type {BigBuffer} from 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import type {String16} from 'chrome://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
+import type {TimeTicks} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import type {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * Helps track realbox browser call arguments. A mocked page handler remote

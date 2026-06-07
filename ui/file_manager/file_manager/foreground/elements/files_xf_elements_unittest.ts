@@ -7,8 +7,8 @@ import './xf_circular_progress.js';
 import './xf_display_panel.js';
 import './xf_panel_item.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {waitUntil} from '../../common/js/test_error_reporting.js';
 import {mockPluralStringProxy} from '../../common/js/unittest_util.js';

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewDestinationDropdownCrosElement} from 'neovex://print/print_preview.js';
-import {Destination, DestinationOrigin} from 'neovex://print/print_preview.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {move} from 'neovex://webui-test/mouse_mock_interactions.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {PrintPreviewDestinationDropdownCrosElement} from 'chrome://print/print_preview.js';
+import {Destination, DestinationOrigin} from 'chrome://print/print_preview.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {move} from 'chrome://webui-test/mouse_mock_interactions.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {getGoogleDriveDestination, getSaveAsPdfDestination} from './print_preview_test_utils.js';
 

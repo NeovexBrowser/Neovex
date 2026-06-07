@@ -6,10 +6,10 @@ import("../../build_webui_tests.gni")
 
 build_webui_tests("build_webui_tests") {
   ts_path_mappings = [
-    "neovex://manage-mirrorsync/*|" + rebase_path(
+    "chrome://manage-mirrorsync/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/chromeos/manage_mirrorsync/tsc/*",
             target_gen_dir),
-    "neovex://webui-test/chromeos/*|" +
+    "chrome://webui-test/chromeos/*|" +
         rebase_path("$root_gen_dir/chrome/test/data/webui/chromeos/tsc/*",
                     target_gen_dir),
   ]

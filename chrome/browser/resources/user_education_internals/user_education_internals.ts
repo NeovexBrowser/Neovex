@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_components/help_bubble/help_bubble.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
-import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import 'chrome://resources/cr_components/help_bubble/help_bubble.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
 import '//resources/cr_elements/cr_input/cr_input.js';
 import '//resources/cr_elements/icons.html.js';
 import './user_education_internals_card.js';
@@ -20,13 +20,13 @@ import './user_education_whats_new_internals_card.js';
 import type {CrInputElement} from '//resources/cr_elements/cr_input/cr_input.js';
 // </if>
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import type {CrMenuSelectorElement} from 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import type {CrMenuSelectorElement} from 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './user_education_internals.css.js';
 import {getHtml} from './user_education_internals.html.js';

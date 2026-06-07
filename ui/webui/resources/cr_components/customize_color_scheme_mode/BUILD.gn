@@ -17,7 +17,7 @@ mojom("mojom") {
   ]
 
   webui_module_path =
-      "neovex://resources/cr_components/customize_color_scheme_mode/"
+      "chrome://resources/cr_components/customize_color_scheme_mode/"
 }
 
 build_webui("build") {

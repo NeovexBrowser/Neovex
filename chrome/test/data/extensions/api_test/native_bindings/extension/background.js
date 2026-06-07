@@ -126,8 +126,8 @@ var tests = [
     });
   },
   function testLastError() {
-    chrome.runtime.setUninstallURL('neovex://newtab', function() {
-      var expectedError = 'Invalid URL: "neovex://newtab".';
+    chrome.runtime.setUninstallURL('chrome://newtab', function() {
+      var expectedError = 'Invalid URL: "chrome://newtab".';
       chrome.test.assertLastError(expectedError);
       // Explicitly also test the old extension.lastError property.
       chrome.test.assertTrue(!!chrome.extension.lastError);

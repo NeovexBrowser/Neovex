@@ -154,7 +154,7 @@ export class InjectedKeyboardUtils extends KeyboardUtils {
    */
   private onInitMessage(event: MessageEvent): void {
     if (event.data === InjectedKeyboardUtils.INITIAL_MSG &&
-        event.origin === 'neovex://oobe') {
+        event.origin === 'chrome://oobe') {
       this.hostWindow = event.source as chrome.webviewTag.ContentWindow;
       this.hostOrigin = event.origin;
     }

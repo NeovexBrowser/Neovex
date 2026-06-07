@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/cellular_setup/cellular_setup.js';
-import 'neovex://resources/ash/common/cellular_setup/psim_flow_ui.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/cellular_setup/cellular_setup.js';
+import 'chrome://resources/ash/common/cellular_setup/psim_flow_ui.js';
 
-import type {CellularSetupElement} from 'neovex://resources/ash/common/cellular_setup/cellular_setup.js';
-import {CellularSetupPageName} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
-import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import {InhibitReason} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CellularSetupElement} from 'chrome://resources/ash/common/cellular_setup/cellular_setup.js';
+import {CellularSetupPageName} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
+import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import {InhibitReason} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {FakeNetworkConfig} from '../fake_network_config_mojom.js';
 

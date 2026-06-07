@@ -4,8 +4,8 @@
 import './mojo_timestamp.js';
 import './expandable_json_viewer.js';
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
-import type {Value} from 'neovex://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import type {Value} from 'chrome://resources/mojo/mojo/public/mojom/base/values.mojom-webui.js';
 
 import {getTemplate} from './value_display.html.js';
 

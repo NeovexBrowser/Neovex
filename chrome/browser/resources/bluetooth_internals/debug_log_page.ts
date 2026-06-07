@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 import type {BluetoothBtsnoopRemote, BluetoothInternalsHandlerRemote, DebugLogsChangeHandlerRemote} from './bluetooth_internals.mojom-webui.js';
 import {Page} from './page.js';

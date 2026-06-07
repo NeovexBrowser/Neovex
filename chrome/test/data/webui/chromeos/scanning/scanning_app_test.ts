@@ -2,34 +2,34 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
-import 'neovex://scanning/scanning_app.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://scanning/scanning_app.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
 
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import type {IronCollapseElement} from 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import type {PaperProgressElement} from 'neovex://resources/polymer/v3_0/paper-progress/paper-progress.js';
-import {setScanServiceForTesting} from 'neovex://scanning/mojo_interface_provider.js';
-import {ScanDoneSectionElement} from 'neovex://scanning/scan_done_section.js';
-import {ScanPreviewElement} from 'neovex://scanning/scan_preview.js';
-import {ColorMode, FileType, PageSize, ScanResult, SourceType} from 'neovex://scanning/scanning.mojom-webui.js';
-import type {MultiPageScanControllerInterface, MultiPageScanControllerRemote, ScanJobObserverRemote, Scanner, ScannerCapabilities, ScanServiceInterface, ScanSettings as ScanSettingsMojom} from 'neovex://scanning/scanning.mojom-webui.js';
-import type {ScanningAppElement} from 'neovex://scanning/scanning_app.js';
-import {MAX_NUM_SAVED_SCANNERS} from 'neovex://scanning/scanning_app_types.js';
-import type {ScannerCapabilitiesResponse, ScannerSetting, ScannersReceivedResponse, ScanSettings, StartMultiPageScanResponse} from 'neovex://scanning/scanning_app_types.js';
-import {getColorModeString, getPageSizeString} from 'neovex://scanning/scanning_app_util.js';
-import {ScanningBrowserProxyImpl} from 'neovex://scanning/scanning_browser_proxy.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/chromeos/test_util.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import type {IronCollapseElement} from 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import type {PaperProgressElement} from 'chrome://resources/polymer/v3_0/paper-progress/paper-progress.js';
+import {setScanServiceForTesting} from 'chrome://scanning/mojo_interface_provider.js';
+import {ScanDoneSectionElement} from 'chrome://scanning/scan_done_section.js';
+import {ScanPreviewElement} from 'chrome://scanning/scan_preview.js';
+import {ColorMode, FileType, PageSize, ScanResult, SourceType} from 'chrome://scanning/scanning.mojom-webui.js';
+import type {MultiPageScanControllerInterface, MultiPageScanControllerRemote, ScanJobObserverRemote, Scanner, ScannerCapabilities, ScanServiceInterface, ScanSettings as ScanSettingsMojom} from 'chrome://scanning/scanning.mojom-webui.js';
+import type {ScanningAppElement} from 'chrome://scanning/scanning_app.js';
+import {MAX_NUM_SAVED_SCANNERS} from 'chrome://scanning/scanning_app_types.js';
+import type {ScannerCapabilitiesResponse, ScannerSetting, ScannersReceivedResponse, ScanSettings, StartMultiPageScanResponse} from 'chrome://scanning/scanning_app_types.js';
+import {getColorModeString, getPageSizeString} from 'chrome://scanning/scanning_app_util.js';
+import {ScanningBrowserProxyImpl} from 'chrome://scanning/scanning_browser_proxy.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/chromeos/test_util.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {changeSelectedIndex, changeSelectedValue, createScanner, createScannerSource} from './scanning_app_test_utils.js';
 import {TestScanningBrowserProxy} from './test_scanning_browser_proxy.js';

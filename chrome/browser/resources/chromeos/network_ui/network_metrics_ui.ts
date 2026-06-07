@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './network_metrics_ui.html.js';
 import type {NetworkUiBrowserProxy} from './network_ui_browser_proxy.js';

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import type {Switch} from 'neovex://resources/cros_components/switch/switch.js';
-import {assertInstanceof} from 'neovex://resources/js/assert.js';
+import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import type {Switch} from 'chrome://resources/cros_components/switch/switch.js';
+import {assertInstanceof} from 'chrome://resources/js/assert.js';
 
 import type {VolumeManager} from '../../background/js/volume_manager.js';
 import {queryRequiredElement} from '../../common/js/dom_utils.js';

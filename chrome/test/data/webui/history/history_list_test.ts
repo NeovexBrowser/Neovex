@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {HistoryAppElement, HistoryEntry, HistoryItemElement, HistoryListElement, HistoryToolbarElement} from 'neovex://history/history.js';
-import {BrowserServiceImpl, CrRouter} from 'neovex://history/history.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HistoryAppElement, HistoryEntry, HistoryItemElement, HistoryListElement, HistoryToolbarElement} from 'chrome://history/history.js';
+import {BrowserServiceImpl, CrRouter} from 'chrome://history/history.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBrowserService} from './test_browser_service.js';
 import {createHistoryEntry, createHistoryInfo, shiftClick, waitForEvent} from './test_util.js';
@@ -624,8 +624,8 @@ suite('HistoryListTest', function() {
       },
     }));
 
-    // Navigate from neovex://history/ to
-    // neovex://history/?q=something else.
+    // Navigate from chrome://history/ to
+    // chrome://history/?q=something else.
     app.dispatchEvent(new CustomEvent('change-query', {
       bubbles: true,
       composed: true,
@@ -651,7 +651,7 @@ suite('HistoryListTest', function() {
     await microtasksFinished();
     // Confirmation dialog should appear.
     assertTrue(element.$.dialog.getIfExists()!.open);
-    // Navigate back to neovex://history.
+    // Navigate back to chrome://history.
     testService.handler.setResultFor('queryHistory', Promise.resolve({
       results: {
         info: createHistoryInfo('something else'),

@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
+import 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
 
-import type {CrTabsElement} from 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CrTabsElement} from 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 suite('cr_tabs_test', function() {
@@ -18,7 +18,7 @@ suite('cr_tabs_test', function() {
     document.body.innerHTML = window.trustedTypes!.emptyHTML;
     tabs = document.createElement('cr-tabs');
     tabs.tabNames = ['tab1', 'tab2', 'tab3'];
-    tabs.tabIcons = ['neovex://icon1.png'];
+    tabs.tabIcons = ['chrome://icon1.png'];
     document.body.appendChild(tabs);
   });
 

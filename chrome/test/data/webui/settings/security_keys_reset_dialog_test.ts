@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import type {SecurityKeysResetBrowserProxy, SettingsSecurityKeysResetDialogElement} from 'neovex://settings/lazy_load.js';
-import {ResetDialogPage, SecurityKeysResetBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import type {SecurityKeysResetBrowserProxy, SettingsSecurityKeysResetDialogElement} from 'chrome://settings/lazy_load.js';
+import {ResetDialogPage, SecurityKeysResetBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {assertShown} from './security_keys_test_util.js';
 import {TestSecurityKeysBrowserProxy} from './test_security_keys_browser_proxy.js';

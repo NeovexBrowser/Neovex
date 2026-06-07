@@ -4,7 +4,7 @@
 
 /**
  * @fileoverview Small utilities to be used during auth factor setup in
- * neovex://os-settings and neovex://oobe, typically in conjunction with the
+ * chrome://os-settings and chrome://oobe, typically in conjunction with the
  * quickUnlockPrivate extension API or the authFactorConfig mojo service.
  */
 

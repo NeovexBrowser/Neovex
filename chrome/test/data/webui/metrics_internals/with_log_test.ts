@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://metrics-internals/app.js';
+import 'chrome://metrics-internals/app.js';
 
-import type {MetricsInternalsAppElement} from 'neovex://metrics-internals/app.js';
-import {getEventsPeekString, sizeToString, timestampToString} from 'neovex://metrics-internals/log_utils.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertGT, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {MetricsInternalsAppElement} from 'chrome://metrics-internals/app.js';
+import {getEventsPeekString, sizeToString, timestampToString} from 'chrome://metrics-internals/log_utils.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertGT, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {getTableRowAsStringArray} from './utils.js';
 

@@ -8,7 +8,7 @@
 
 /** The placeholder url for an avatar, rendered if the avatar url is invalid. */
 export const AVATAR_PLACEHOLDER_URL: string =
-    'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
+    'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE';
 
 /**
  * Returns the avatar url. If necessary, prefixes the url with the sanitizing
@@ -24,7 +24,7 @@ export function getAvatarUrl(
     return url;
   }
   if (!staticEncode) {
-    return `neovex://image/?${url}`;
+    return `chrome://image/?${url}`;
   }
-  return `neovex://image/?url=${encodeURIComponent(url)}&staticEncode=true`;
+  return `chrome://image/?url=${encodeURIComponent(url)}&staticEncode=true`;
 }

@@ -8,10 +8,10 @@
 export type {
   BigBuffer,
 } from
-    'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+    'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
 export type {
   PointF,
-} from 'neovex://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
+} from 'chrome://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
 export {
   AspectRatio,
   CameraAppHelper,

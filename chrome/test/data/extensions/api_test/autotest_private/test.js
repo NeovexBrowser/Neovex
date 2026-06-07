@@ -1689,8 +1689,8 @@ var systemWebAppsTests = [
       chrome.test.callbackPass(apps => {
         chrome.test.assertEq(1, apps.length)
         chrome.test.assertEq('OSSettings', apps[0].internalName);
-        chrome.test.assertEq('neovex://test-system-app/', apps[0].url);
-        chrome.test.assertEq('neovex://test-system-app/pwa.html',
+        chrome.test.assertEq('chrome://test-system-app/', apps[0].url);
+        chrome.test.assertEq('chrome://test-system-app/pwa.html',
             apps[0].startUrl);
         chrome.test.assertEq('Test System App', apps[0].name);
       })
@@ -1718,7 +1718,7 @@ var systemWebAppsTests = [
         'App shouldn\'t be opened before launchSystemWebApp');
 
     // Launch an app.
-    await launchSystemWebApp('OSSettings', 'neovex://test-system-app/');
+    await launchSystemWebApp('OSSettings', 'chrome://test-system-app/');
 
     // App launch might be queued and processed later. We don't have a method to
     // wait for launch completion, so we poll instead. If this test times out,

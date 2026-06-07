@@ -9,8 +9,8 @@
  * calls.
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {Action} from 'neovex://resources/js/store.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {Action} from 'chrome://resources/js/store.js';
 
 import type {ChangeFolderOpenAction, CreateBookmarkAction, EditBookmarkAction, FinishSearchAction, MoveBookmarkAction, RefreshNodesAction, RemoveBookmarkAction, ReorderChildrenAction, SelectFolderAction, SelectItemsAction, SetPrefAction, StartSearchAction, UpdateAnchorAction} from './actions.js';
 import {ACCOUNT_HEADING_NODE_ID, LOCAL_HEADING_NODE_ID, ROOT_NODE_ID} from './constants.js';

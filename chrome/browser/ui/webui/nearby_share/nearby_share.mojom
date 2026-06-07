@@ -236,7 +236,7 @@ interface ConfirmationManager {
 // Observer interface to receive updates when high visibility has changed
 // and when an incoming share is requested and the user must confirm.
 //
-// This interface is implement in Javascript in the neovex://os-settings WebUI.
+// This interface is implement in Javascript in the chrome://os-settings WebUI.
 interface ReceiveObserver {
   // Called when high visibility receive state (foreground receive) has
   // changed and the new value is provided.

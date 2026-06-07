@@ -36,7 +36,7 @@ struct AppInfo {
   url.mojom.Url start_url;
   // The app's name.
   string name;
-  // The app's icon url showing on `neovex://apps`.
+  // The app's icon url showing on `chrome://apps`.
   url.mojom.Url icon_url;
   // Whether need to show `RunOnOsLoginMode` menu item or not.
   bool may_show_run_on_os_login_mode;
@@ -69,7 +69,7 @@ interface PageHandlerFactory {
                     pending_receiver<PageHandler> handler);
 };
 
-// Renderer to browser interface to support neovex://apps WebUI.
+// Renderer to browser interface to support chrome://apps WebUI.
 interface PageHandler {
   // Get all apps' information that defined in `AppInfo`.
   GetApps() => (array<AppInfo> app_list);

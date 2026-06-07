@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import './shortcut_input_key.js';
-import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {FakeShortcutInputProvider} from './fake_shortcut_input_provider.js';
 import type {KeyEvent} from './input_device_settings.mojom-webui.js';

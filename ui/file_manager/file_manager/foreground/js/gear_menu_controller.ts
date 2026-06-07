@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {getDriveQuotaMetadata, getSizeStats} from '../../common/js/api.js';
 import {isFakeEntry} from '../../common/js/entry_utils.js';

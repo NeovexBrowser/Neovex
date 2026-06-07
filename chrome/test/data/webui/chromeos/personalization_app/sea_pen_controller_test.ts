@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {SeaPenState, SeaPenStoreInterface} from 'neovex://personalization/js/personalization_app.js';
-import {beginLoadRecentSeaPenImagesAction, beginLoadSelectedImageAction, beginLoadSelectedRecentSeaPenImageAction, beginSearchSeaPenThumbnailsAction, beginSelectRecentSeaPenImageAction, beginSelectSeaPenThumbnailAction, endSelectRecentSeaPenImageAction, endSelectSeaPenThumbnailAction, FullscreenPreviewState, getRecentSeaPenImageIds, getSeaPenStore, getSeaPenThumbnails, SeaPenStoreAdapter, selectRecentSeaPenImage, selectSeaPenThumbnail, setCurrentSeaPenQueryAction, setFullscreenStateAction, setRecentSeaPenImagesAction, setSeaPenFullscreenStateAction, setSeaPenThumbnailsAction, setSelectedRecentSeaPenImageAction, setThumbnailResponseStatusCodeAction, WallpaperLayout, WallpaperType} from 'neovex://personalization/js/personalization_app.js';
-import {MantaStatusCode} from 'neovex://resources/ash/common/sea_pen/sea_pen.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SeaPenState, SeaPenStoreInterface} from 'chrome://personalization/js/personalization_app.js';
+import {beginLoadRecentSeaPenImagesAction, beginLoadSelectedImageAction, beginLoadSelectedRecentSeaPenImageAction, beginSearchSeaPenThumbnailsAction, beginSelectRecentSeaPenImageAction, beginSelectSeaPenThumbnailAction, endSelectRecentSeaPenImageAction, endSelectSeaPenThumbnailAction, FullscreenPreviewState, getRecentSeaPenImageIds, getSeaPenStore, getSeaPenThumbnails, SeaPenStoreAdapter, selectRecentSeaPenImage, selectSeaPenThumbnail, setCurrentSeaPenQueryAction, setFullscreenStateAction, setRecentSeaPenImagesAction, setSeaPenFullscreenStateAction, setSeaPenThumbnailsAction, setSelectedRecentSeaPenImageAction, setThumbnailResponseStatusCodeAction, WallpaperLayout, WallpaperType} from 'chrome://personalization/js/personalization_app.js';
+import {MantaStatusCode} from 'chrome://resources/ash/common/sea_pen/sea_pen.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {filterAndFlattenState, typeCheck} from './personalization_app_test_utils.js';
 import {TestPersonalizationStore} from './test_personalization_store.js';

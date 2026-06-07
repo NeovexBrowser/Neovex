@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CurrentAttribution, CurrentWallpaper, DefaultImageSymbol, GooglePhotosAlbum, GooglePhotosPhoto, WallpaperCollection, WallpaperImage, WallpaperObserverInterface, WallpaperObserverRemote, WallpaperProviderInterface} from 'neovex://personalization/js/personalization_app.js';
-import {GooglePhotosEnablementState, kDefaultImageSymbol, OnlineImageType, WallpaperLayout, WallpaperType} from 'neovex://personalization/js/personalization_app.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {CurrentAttribution, CurrentWallpaper, DefaultImageSymbol, GooglePhotosAlbum, GooglePhotosPhoto, WallpaperCollection, WallpaperImage, WallpaperObserverInterface, WallpaperObserverRemote, WallpaperProviderInterface} from 'chrome://personalization/js/personalization_app.js';
+import {GooglePhotosEnablementState, kDefaultImageSymbol, OnlineImageType, WallpaperLayout, WallpaperType} from 'chrome://personalization/js/personalization_app.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestWallpaperProvider extends TestBrowserProxy implements
     WallpaperProviderInterface {

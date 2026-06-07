@@ -11,7 +11,7 @@ import {
   LitElement,
   PropertyDeclarations,
   styleMap,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {CoverPhoto} from '../../cover_photo.js';
 import {I18nString} from '../../i18n_string.js';

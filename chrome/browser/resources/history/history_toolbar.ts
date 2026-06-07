@@ -3,18 +3,18 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_components/history_embeddings/icons.html.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_selection_overlay.js';
+import 'chrome://resources/cr_components/history_embeddings/icons.html.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_selection_overlay.js';
 
-import type {HistoryQuery} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
-import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrToolbarElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import type {CrToolbarSearchFieldElement} from 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {HistoryQuery} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrToolbarElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import type {CrToolbarSearchFieldElement} from 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar_search_field.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './history_toolbar.css.js';
 import {getHtml} from './history_toolbar.html.js';

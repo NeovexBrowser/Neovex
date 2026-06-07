@@ -6,11 +6,11 @@
  * @fileoverview A polymer component that displays SeaPen errors.
  */
 
-import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
 import './sea_pen.css.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {isSeaPenTextInputEnabled} from './load_time_booleans.js';
 import {MantaStatusCode} from './sea_pen.mojom-webui.js';

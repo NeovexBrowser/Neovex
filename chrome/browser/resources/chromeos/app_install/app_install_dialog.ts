@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'neovex://resources/cros_components/button/button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'chrome://resources/cros_components/button/button.js';
 import '/strings.m.js';
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import type {Button} from 'neovex://resources/cros_components/button/button.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import type {Button} from 'chrome://resources/cros_components/button/button.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import type {DialogArgs} from './app_install.mojom-webui.js';
 import {getTemplate} from './app_install_dialog.html.js';

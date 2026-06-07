@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {NewTabFooterAppElement} from 'neovex://newtab-footer/app.js';
-import {CustomizeDialogPage, FooterCustomizeChromeEntryPoint, FooterElement} from 'neovex://newtab-footer/app.js';
-import {NewTabFooterDocumentProxy} from 'neovex://newtab-footer/browser_proxy.js';
-import type {CustomizeButtonsDocumentRemote} from 'neovex://newtab-footer/customize_buttons.mojom-webui.js';
-import {CustomizeButtonsDocumentCallbackRouter, CustomizeButtonsHandlerRemote, SidePanelOpenTrigger} from 'neovex://newtab-footer/customize_buttons.mojom-webui.js';
-import {CustomizeButtonsProxy} from 'neovex://newtab-footer/customize_buttons_proxy.js';
-import {CustomizeChromeSection} from 'neovex://newtab-footer/customize_chrome.mojom-webui.js';
-import type {BackgroundAttribution, ManagementNotice, NewTabFooterDocumentRemote} from 'neovex://newtab-footer/new_tab_footer.mojom-webui.js';
-import {NewTabFooterDocumentCallbackRouter, NewTabFooterHandlerRemote, NewTabPageType} from 'neovex://newtab-footer/new_tab_footer.mojom-webui.js';
-import {WindowProxy} from 'neovex://newtab-footer/window_proxy.js';
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {$$, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {NewTabFooterAppElement} from 'chrome://newtab-footer/app.js';
+import {CustomizeDialogPage, FooterCustomizeChromeEntryPoint, FooterElement} from 'chrome://newtab-footer/app.js';
+import {NewTabFooterDocumentProxy} from 'chrome://newtab-footer/browser_proxy.js';
+import type {CustomizeButtonsDocumentRemote} from 'chrome://newtab-footer/customize_buttons.mojom-webui.js';
+import {CustomizeButtonsDocumentCallbackRouter, CustomizeButtonsHandlerRemote, SidePanelOpenTrigger} from 'chrome://newtab-footer/customize_buttons.mojom-webui.js';
+import {CustomizeButtonsProxy} from 'chrome://newtab-footer/customize_buttons_proxy.js';
+import {CustomizeChromeSection} from 'chrome://newtab-footer/customize_chrome.mojom-webui.js';
+import type {BackgroundAttribution, ManagementNotice, NewTabFooterDocumentRemote} from 'chrome://newtab-footer/new_tab_footer.mojom-webui.js';
+import {NewTabFooterDocumentCallbackRouter, NewTabFooterHandlerRemote, NewTabPageType} from 'chrome://newtab-footer/new_tab_footer.mojom-webui.js';
+import {WindowProxy} from 'chrome://newtab-footer/window_proxy.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {$$, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 type Constructor<T> = new (...args: any[]) => T;
 type Installer<T> = (instance: T) => void;
@@ -147,7 +147,7 @@ suite('NewTabFooterAppTest', () => {
       // Arrange.
       const managementNotice: ManagementNotice = {
         text: 'Managed by your organization',
-        customBitmapDataUrl: 'neovex://resources/images/chrome_logo_dark.svg',
+        customBitmapDataUrl: 'chrome://resources/images/chrome_logo_dark.svg',
       };
 
       // Act.
@@ -168,7 +168,7 @@ suite('NewTabFooterAppTest', () => {
       assertTrue(!!managementNoticeLogo);
       assertEquals(
           managementNoticeLogo.src,
-          'neovex://resources/images/chrome_logo_dark.svg');
+          'chrome://resources/images/chrome_logo_dark.svg');
 
       // Act.
       callbackRouter.setManagementNotice(null);
@@ -186,7 +186,7 @@ suite('NewTabFooterAppTest', () => {
       // Arrange.
       const managementNoticeWithCustomLogo: ManagementNotice = {
         text: 'Managed by your organization',
-        customBitmapDataUrl: 'neovex://resources/images/chrome_logo_dark.svg',
+        customBitmapDataUrl: 'chrome://resources/images/chrome_logo_dark.svg',
       };
 
       // Act.

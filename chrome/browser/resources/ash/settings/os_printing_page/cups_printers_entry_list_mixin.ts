@@ -8,11 +8,11 @@
  * saved and nearby printers.
  */
 
-import type {ListPropertyUpdateMixinInterface} from 'neovex://resources/ash/common/cr_elements/list_property_update_mixin.js';
-import {ListPropertyUpdateMixin} from 'neovex://resources/ash/common/cr_elements/list_property_update_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {ListPropertyUpdateMixinInterface} from 'chrome://resources/ash/common/cr_elements/list_property_update_mixin.js';
+import {ListPropertyUpdateMixin} from 'chrome://resources/ash/common/cr_elements/list_property_update_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Constructor} from '../common/types.js';
 

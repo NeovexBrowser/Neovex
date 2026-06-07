@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertThrows, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {assertThrows, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('manager tests', function() {
   const doNothing = function() {};

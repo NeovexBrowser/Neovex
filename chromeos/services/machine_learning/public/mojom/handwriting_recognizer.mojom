@@ -180,7 +180,7 @@ enum LoadHandwritingModelResult {
   // "gesture_in_context" for now. (checked in chrome)
   LANGUAGE_NOT_SUPPORTED_ERROR = 4,
 
-  // If the user goes to neovex://flag page and manually disable
+  // If the user goes to chrome://flag page and manually disable
   // handwriting or handwriting_dlc. (checked in chrome)
   FEATURE_DISABLED_BY_USER = 5,
 

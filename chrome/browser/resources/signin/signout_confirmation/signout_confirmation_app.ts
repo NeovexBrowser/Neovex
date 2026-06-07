@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/icons.html.js';
 import '/strings.m.js';
 import './extensions_section.js';
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {SignoutConfirmationBrowserProxyImpl} from './browser_proxy.js';
 import type {SignoutConfirmationBrowserProxy} from './browser_proxy.js';

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/polymer/v3_0/iron-pages/iron-pages.js';
+import 'chrome://resources/polymer/v3_0/iron-pages/iron-pages.js';
 import './confirmation_page.js';
 import './search_page.js';
 import './share_data_page.js';
 import '/strings.m.js';
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {ConfirmationPageElement} from './confirmation_page.js';
 import {getTemplate} from './feedback_flow.html.js';
@@ -237,9 +237,9 @@ export class FeedbackFlowElement extends PolymerElement {
     // `cros_styles.css` with `theme/colors.css` directly in `index.html`.
     // Also add `theme/typography.css` to `index.html`.
     document.querySelector('link[href*=\'cros_styles.css\']')
-        ?.setAttribute('href', 'neovex://theme/colors.css?sets=legacy,sys');
+        ?.setAttribute('href', 'chrome://theme/colors.css?sets=legacy,sys');
     const typographyLink = document.createElement('link');
-    typographyLink.href = 'neovex://theme/typography.css';
+    typographyLink.href = 'chrome://theme/typography.css';
     typographyLink.rel = 'stylesheet';
     document.head.appendChild(typographyLink);
     document.body.classList.add('jelly-enabled');

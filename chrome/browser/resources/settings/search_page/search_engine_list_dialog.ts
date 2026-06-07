@@ -9,20 +9,20 @@
  * list of search engines from which the user can choose a default.
  */
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
 import '../settings_shared.css.js';
 import '../site_favicon.js';
 
-import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './search_engine_list_dialog.html.js';
 import type {SearchEngine, SearchEnginesBrowserProxy} from './search_engines_browser_proxy.js';

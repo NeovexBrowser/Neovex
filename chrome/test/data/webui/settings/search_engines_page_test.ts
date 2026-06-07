@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrInputElement, SettingsSearchEngineEditDialogElement, SettingsSearchEnginesListElement, SettingsSearchEnginesPageElement} from 'neovex://settings/lazy_load.js';
-import type {SearchEngine, SearchEnginesInfo} from 'neovex://settings/settings.js';
-import {loadTimeData, SearchEnginesBrowserProxyImpl, SearchEnginesInteractions} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement, SettingsSearchEngineEditDialogElement, SettingsSearchEnginesListElement, SettingsSearchEnginesPageElement} from 'chrome://settings/lazy_load.js';
+import type {SearchEngine, SearchEnginesInfo} from 'chrome://settings/settings.js';
+import {loadTimeData, SearchEnginesBrowserProxyImpl, SearchEnginesInteractions} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {createSampleOmniboxExtension, createSampleSearchEngine, TestSearchEnginesBrowserProxy} from './test_search_engines_browser_proxy.js';
 // clang-format on

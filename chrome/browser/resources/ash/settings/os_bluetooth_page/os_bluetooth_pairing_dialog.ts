@@ -6,13 +6,13 @@
  * @fileoverview
  * UI element for displaying Bluetooth pairing dialog.
  */
-import 'neovex://resources/ash/common/bluetooth/bluetooth_pairing_ui.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/bluetooth/bluetooth_pairing_ui.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
 import '../settings_shared.css.js';
 
-import {BluetoothUiSurface, recordBluetoothUiSurfaceMetrics} from 'neovex://resources/ash/common/bluetooth/bluetooth_metrics_utils.js';
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {BluetoothUiSurface, recordBluetoothUiSurfaceMetrics} from 'chrome://resources/ash/common/bluetooth/bluetooth_metrics_utils.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './os_bluetooth_pairing_dialog.html.js';
 

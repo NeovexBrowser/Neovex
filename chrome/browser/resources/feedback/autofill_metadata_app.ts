@@ -9,7 +9,7 @@ import './js/jelly_colors.js';
 // </if>
 
 import type {KeyValuePairEntry} from '/shared/key_value_pair_viewer/key_value_pair_entry.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getHtml} from './autofill_metadata_app.html.js';
 import {getCss} from './css/about_sys.css.js';

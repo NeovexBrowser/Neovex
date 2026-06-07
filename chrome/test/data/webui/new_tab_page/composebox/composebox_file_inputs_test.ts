@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ComposeboxFileInputsElement} from 'neovex://new-tab-page/lazy_load.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {ComposeboxFileInputsElement} from 'chrome://new-tab-page/lazy_load.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('NewTabPageComposeboxFileInputsTest', () => {
   let fileUploadSlot: HTMLElement;

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/switch/switch.js';
+import 'chrome://resources/cros_components/switch/switch.js';
 import '../../background/js/file_manager_base.js';
 import '../../background/js/test_util.js';
 import '../../widgets/xf_jellybean.js';
 
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert, assertInstanceof} from 'neovex://resources/js/assert.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert, assertInstanceof} from 'chrome://resources/js/assert.js';
 
 import type {Crostini} from '../../background/js/crostini.js';
 import type {FileManagerBase} from '../../background/js/file_manager_base.js';
@@ -1629,7 +1629,7 @@ export class FileManager {
     }
     // Reset the seen state for office nudge. For normal users these 2 prefs
     // will never reset to 0, however for manual tests it can be reset in
-    // neovex://files-internals.
+    // chrome://files-internals.
     if (prefs.officeFileMovedOneDrive === 0 &&
         await this.ui_.nudgeContainer.checkSeen(
             NudgeType['ONE_DRIVE_MOVED_FILE_NUDGE'])) {

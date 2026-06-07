@@ -9,7 +9,7 @@ import {remoteCall} from '../background.js';
 
 const FAKE_ENTRY_PATH_PREFIX = 'fake-entry:';
 const ENTRY_LIST_PATH_PREFIX = 'entry-list:';
-const REAL_ENTRY_PATH_PREFIX = 'filesystem:neovex://file-manager/external';
+const REAL_ENTRY_PATH_PREFIX = 'filesystem:chrome://file-manager/external';
 
 /** This serves as the additional selector of the tree item. */
 interface ModifierOptions {

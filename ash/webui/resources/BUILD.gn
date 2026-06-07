@@ -69,7 +69,7 @@ ash_generated_grit("boca_receiver_app_bundle_resources") {
   use_brotli = true
 }
 
-# Resources used by neovex://camera-app.
+# Resources used by chrome://camera-app.
 ash_generated_grit("camera_app_resources") {
   source = "$root_gen_dir/ash/webui/camera_app_ui/ash_camera_app_resources.grd"
   deps = [ "//ash/webui/camera_app_ui:build_grd" ]
@@ -80,7 +80,7 @@ ash_generated_grit("files_internals_resources") {
   deps = [ "//ash/webui/files_internals:build_grd" ]
 }
 
-# Resources used by neovex://help-app, and parts of the sandboxed app it hosts
+# Resources used by chrome://help-app, and parts of the sandboxed app it hosts
 # that do not come from the app bundle (below).
 grit("help_app_resources") {
   source = "//ash/webui/help_app_ui/resources/help_app_resources.grd"
@@ -99,7 +99,7 @@ grit("help_app_resources") {
   ]
 }
 
-# Resources automatically served by the neovex://help-app bundle, obtained via DEPS.
+# Resources automatically served by the chrome://help-app bundle, obtained via DEPS.
 grit("help_app_bundle_resources") {
   if (enable_cros_help_app) {
     # Obtained via an internal CIPD package in src/DEPS.
@@ -139,7 +139,7 @@ grit("help_app_kids_magazine_bundle_resources") {
   output_dir = "$root_gen_dir/chromeos"
 }
 
-# Resources used by neovex://media-app, and parts of the sandboxed app it hosts
+# Resources used by chrome://media-app, and parts of the sandboxed app it hosts
 # that do not come from the app bundle (below).
 grit("media_app_resources") {
   source = "//ash/webui/media_app_ui/resources/media_app_resources.grd"
@@ -160,7 +160,7 @@ grit("media_app_resources") {
   ]
 }
 
-# Resources automatically served by the neovex://media-app bundle, obtained via DEPS.
+# Resources automatically served by the chrome://media-app bundle, obtained via DEPS.
 grit("media_app_bundle_resources") {
   if (enable_cros_media_app) {
     # Obtained via an internal CIPD package in src/DEPS.
@@ -210,19 +210,19 @@ grit("projector_app_bundle_resources") {
   output_dir = "$root_gen_dir/chromeos"
 }
 
-# Resources used by neovex://projector and neovex://projector-annotator SWA.
+# Resources used by chrome://projector and chrome://projector-annotator SWA.
 ash_generated_grit("projector_common_resources") {
   source = "$root_gen_dir/ash/webui/projector_app/resources/common/ash_projector_common_resources.grd"
   deps = [ "//ash/webui/projector_app/resources/common:build_common_grd" ]
 }
 
-# Resources used by neovex://eche-app
+# Resources used by chrome://eche-app
 ash_generated_grit("eche_app_resources") {
   source = "$root_gen_dir/ash/webui/eche_app_ui/ash_eche_app_resources.grd"
   deps = [ "//ash/webui/eche_app_ui:build_grd" ]
 }
 
-# Resources automatically served by the neovex://eche-app bundle, obtained via DEPS.
+# Resources automatically served by the chrome://eche-app bundle, obtained via DEPS.
 grit("eche_bundle_resources") {
   # Obtained via an internal CIPD package in src/DEPS.
   if (enable_cros_eche_app) {

@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_slider/cr_slider.js';
+import 'chrome://resources/cr_elements/cr_slider/cr_slider.js';
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import type {CrSliderElement} from 'neovex://resources/cr_elements/cr_slider/cr_slider.js';
-import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {assertEquals, assertFalse, assertTrue, assertNotReached} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import type {CrSliderElement} from 'chrome://resources/cr_elements/cr_slider/cr_slider.js';
+import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {assertEquals, assertFalse, assertTrue, assertNotReached} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-slider', function() {

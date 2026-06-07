@@ -4,8 +4,8 @@
 
 import {hexToColor, Ink2Manager, MIN_TEXTBOX_SIZE_PX, PluginController, PluginControllerEventType, TEXT_COLORS, TextAlignment, TextBoxState, TextStyle, TextTypeface} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {TextAnnotation} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {keyDownOn, keyUpOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {keyDownOn, keyUpOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertDeepEquals, getRequiredElement, setUpInkTestContext} from './test_util.js';
 

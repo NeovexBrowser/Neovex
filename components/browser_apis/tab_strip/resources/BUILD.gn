@@ -10,7 +10,7 @@ build_webui("build") {
   # TODO (crbug.com/453756445): make it easier to share components. Users
   # should not need to mess around with WebUIDataSource.
   # The files in this package are served from:
-  #     neovex://<webui-host>/tab_strip_api/...
+  #     chrome://<webui-host>/tab_strip_api/...
   # This package's resources need to be added to a WebUI's WebUIDataSource.
   # The import is 'chrome/grit/tab_strip_api_resources_map.h and the resource
   # paths is |kTabStripApiResources|.

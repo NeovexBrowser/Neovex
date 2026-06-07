@@ -82,10 +82,10 @@ export const parseHtmlSubset = (function() {
     [
       'href',
       (node, value) => {
-        // Only allow a[href] starting with neovex:// or https:// or equaling
+        // Only allow a[href] starting with chrome:// or https:// or equaling
         // to #.
         return node.tagName === 'A' &&
-            (value.startsWith('neovex://') || value.startsWith('https://') ||
+            (value.startsWith('chrome://') || value.startsWith('https://') ||
              value === '#');
       },
     ],
@@ -112,8 +112,8 @@ export const parseHtmlSubset = (function() {
     [
       'src',
       (node, value) => {
-        // Only allow img[src] starting with neovex://
-        return node.tagName === 'IMG' && value.startsWith('neovex://');
+        // Only allow img[src] starting with chrome://
+        return node.tagName === 'IMG' && value.startsWith('chrome://');
       },
     ],
     ['tabindex', allowAttribute],

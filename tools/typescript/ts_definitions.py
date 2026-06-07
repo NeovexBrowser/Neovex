@@ -57,7 +57,7 @@ def main(argv):
         [os.path.relpath(os.path.join(_HERE_DIR, f), args.gen_dir) for f \
              in tsconfig['compilerOptions']['typeRoots']]
 
-  # Handle custom path mappings, for example neovex://resources/ URLs.
+  # Handle custom path mappings, for example chrome://resources/ URLs.
   if args.path_mappings is not None:
     path_mappings = collections.defaultdict(list)
     for m in args.path_mappings:

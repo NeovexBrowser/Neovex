@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {I18nBehavior} from 'neovex://resources/ash/common/i18n_behavior.js';
+import {I18nBehavior} from 'chrome://resources/ash/common/i18n_behavior.js';
 
-import {assertEquals, assertThrows, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertThrows, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 suite('I18nBehaviorModuleTest', function() {
   const allowedByDefault = '<a href="https://google.com">Google!</a>';

@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {OsSettingsPowerwashDialogElement, ResetSettingsCardElement} from 'neovex://os-settings/lazy_load.js';
-import {OsResetBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {CrButtonElement} from 'neovex://os-settings/os_settings.js';
-import {LifetimeBrowserProxyImpl, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {ESimManagerRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeESimManagerRemote} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {OsSettingsPowerwashDialogElement, ResetSettingsCardElement} from 'chrome://os-settings/lazy_load.js';
+import {OsResetBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {CrButtonElement} from 'chrome://os-settings/os_settings.js';
+import {LifetimeBrowserProxyImpl, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {ESimManagerRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeESimManagerRemote} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestLifetimeBrowserProxy} from '../test_os_lifetime_browser_proxy.js';
 

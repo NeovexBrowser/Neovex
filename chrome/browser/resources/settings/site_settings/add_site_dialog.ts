@@ -7,18 +7,18 @@
  * 'add-site-dialog' provides a dialog to add exceptions for a given Content
  * Settings category.
  */
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/cr_elements/cr_input/cr_input.js';
 import '../settings_shared.css.js';
 
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import type {MetricsBrowserProxy} from '../metrics_browser_proxy.js';

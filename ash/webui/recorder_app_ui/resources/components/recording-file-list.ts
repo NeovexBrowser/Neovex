@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/card/card.js';
-import 'neovex://resources/mwc/@material/web/divider/divider.js';
-import 'neovex://resources/mwc/@material/web/icon/icon.js';
-import 'neovex://resources/mwc/@material/web/iconbutton/icon-button.js';
-import 'neovex://resources/mwc/@material/web/list/list.js';
-import 'neovex://resources/mwc/@material/web/list/list-item.js';
+import 'chrome://resources/cros_components/card/card.js';
+import 'chrome://resources/mwc/@material/web/divider/divider.js';
+import 'chrome://resources/mwc/@material/web/icon/icon.js';
+import 'chrome://resources/mwc/@material/web/iconbutton/icon-button.js';
+import 'chrome://resources/mwc/@material/web/list/list.js';
+import 'chrome://resources/mwc/@material/web/list/list-item.js';
 import './cra/cra-icon.js';
 import './cra/cra-icon-button.js';
 import './cra/cra-image.js';
@@ -24,7 +24,7 @@ import {
   PropertyDeclarations,
   ref,
   repeat,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

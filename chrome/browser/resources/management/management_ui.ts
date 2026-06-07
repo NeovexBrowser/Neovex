@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
-import 'neovex://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'chrome://resources/cr_elements/icons.html.js';
 import './icons.html.js';
 import './promotion_banner.js';
 import '/strings.m.js';
 
-import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
-import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
+import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
 // <if expr="is_chromeos">
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 // </if>
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 // clang-format off
 import type {Application, BrowserReportingResponse, Extension, ManagementBrowserProxy, ThreatProtectionInfo} from './management_browser_proxy.js';
@@ -472,14 +472,14 @@ export class ManagementUiElement extends ManagementUiElementBase {
   protected onSearchChanged_(e: CustomEvent<string>) {
     const query = e.detail;
     window.location.href =
-        `neovex://settings?search=${encodeURIComponent(query)}`;
+        `chrome://settings?search=${encodeURIComponent(query)}`;
   }
 
   protected onBackClick_() {
     if (history.length > 1) {
       history.back();
     } else {
-      window.location.href = 'neovex://settings/help';
+      window.location.href = 'chrome://settings/help';
     }
   }
 

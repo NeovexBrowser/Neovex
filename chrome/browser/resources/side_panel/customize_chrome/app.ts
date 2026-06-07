@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://customize-chrome-side-panel.top-chrome/shared/sp_heading.js';
-import 'neovex://resources/cr_components/help_bubble/new_badge.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_chip/cr_chip.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import 'neovex://resources/cr_elements/icons.html.js';
+import 'chrome://customize-chrome-side-panel.top-chrome/shared/sp_heading.js';
+import 'chrome://resources/cr_components/help_bubble/new_badge.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_chip/cr_chip.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'chrome://resources/cr_elements/icons.html.js';
 import './appearance.js';
 import './cards.js';
 import './categories.js';
@@ -19,12 +19,12 @@ import './shortcuts.js';
 import './themes.js';
 import './wallpaper_search/wallpaper_search.js';
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

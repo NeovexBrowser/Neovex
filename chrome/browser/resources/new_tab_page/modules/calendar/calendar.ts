@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 import './calendar_event.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {CalendarEvent} from '../../calendar_data.mojom-webui.js';
 import {recordSmallCount} from '../../metrics_utils.js';

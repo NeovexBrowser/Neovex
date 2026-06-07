@@ -180,7 +180,7 @@
 
   :host(:not([has-started-setup-attempt_])) #illustration {
     background-image:
-        url(neovex://os-settings/images/notification_access_setup.svg);
+        url(chrome://os-settings/images/notification_access_setup.svg);
     padding-bottom: 8px;
     padding-top: 8px;
     width: 200px;
@@ -188,38 +188,38 @@
 
   :host([is-setup-attempt-in-progress_]) #illustration {
     background-image:
-        url(neovex://os-settings/images/notification_access_connecting.svg);
+        url(chrome://os-settings/images/notification_access_connecting.svg);
   }
 
   :host([did-setup-attempt-fail_]) #illustration {
     background-image:
-        url(neovex://os-settings/images/notification_access_error.svg);
+        url(chrome://os-settings/images/notification_access_error.svg);
   }
 
   :host([has-completed-setup_]) #illustration {
     background-image:
-        url(neovex://os-settings/images/notification_access_finished.svg);
+        url(chrome://os-settings/images/notification_access_finished.svg);
   }
 
   @media(prefers-color-scheme: dark) {
     :host(:not([has-started-setup-attempt_])) #illustration {
       background-image: url(
-        neovex://os-settings/images/notification_access_setup_dark.svg);
+        chrome://os-settings/images/notification_access_setup_dark.svg);
     }
 
     :host([is-setup-attempt-in-progress_]) #illustration {
       background-image: url(
-        neovex://os-settings/images/notification_access_connecting_dark.svg);
+        chrome://os-settings/images/notification_access_connecting_dark.svg);
     }
 
     :host([did-setup-attempt-fail_]) #illustration {
       background-image: url(
-        neovex://os-settings/images/notification_access_error_dark.svg);
+        chrome://os-settings/images/notification_access_error_dark.svg);
     }
 
     :host([has-completed-setup-successfully_]) #illustration {
       background-image: url(
-        neovex://os-settings/images/notification_access_finished_dark.svg);
+        chrome://os-settings/images/notification_access_finished_dark.svg);
     }
   }
 </style>

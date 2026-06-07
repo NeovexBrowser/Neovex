@@ -8,21 +8,21 @@
  * by search query.
  * Note: `App` object must be present before showing this dialog.
  */
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
 import './app_language_selection_item.js';
 import '../../settings_shared.css.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {App, Locale} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {getAppIcon} from 'neovex://resources/cr_components/app_management/util.js';
-import {type DomRepeatEvent, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {App, Locale} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {getAppIcon} from 'chrome://resources/cr_components/app_management/util.js';
+import {type DomRepeatEvent, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AppManagementBrowserProxy} from '../app_management/browser_proxy.js';
 

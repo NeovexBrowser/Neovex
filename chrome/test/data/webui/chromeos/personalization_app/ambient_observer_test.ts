@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import type {AmbientModeAlbum, SetAlbumsAction} from 'neovex://personalization/js/personalization_app.js';
-import {AmbientActionName, AmbientObserver, emptyState, TopicSource} from 'neovex://personalization/js/personalization_app.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {AmbientModeAlbum, SetAlbumsAction} from 'chrome://personalization/js/personalization_app.js';
+import {AmbientActionName, AmbientObserver, emptyState, TopicSource} from 'chrome://personalization/js/personalization_app.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {baseSetup} from './personalization_app_test_utils.js';
 import type {TestAmbientProvider} from './test_ambient_interface_provider.js';

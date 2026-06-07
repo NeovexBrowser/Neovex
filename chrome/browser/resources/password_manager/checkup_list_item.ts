@@ -1,23 +1,23 @@
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_icons.css.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_icons.css.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
 import './dialogs/edit_password_dialog.js';
 import './dialogs/delete_password_disclaimer_dialog.js';
 import './dialogs/edit_password_disclaimer_dialog.js';
 import './site_favicon.js';
 import './shared_style.css.js';
 
-import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './checkup_list_item.html.js';
 import {PasswordManagerImpl} from './password_manager_proxy.js';

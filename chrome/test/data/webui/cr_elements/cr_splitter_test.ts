@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_splitter/cr_splitter.js';
+import 'chrome://resources/cr_elements/cr_splitter/cr_splitter.js';
 
-import type {CrSplitterElement} from 'neovex://resources/cr_elements/cr_splitter/cr_splitter.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrSplitterElement} from 'chrome://resources/cr_elements/cr_splitter/cr_splitter.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('cr-splitter', function() {
   let crSplitter: CrSplitterElement;

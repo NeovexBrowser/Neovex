@@ -7,12 +7,12 @@
  * 'site-details-permission-device-entry' shows a single device for a given
  * chooser exception.
  */
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 import '/shared/settings/controls/cr_policy_pref_indicator.js';
 import '../settings_shared.css.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './site_details_permission_device_entry.html.js';
 import type {ChooserException, SiteException} from './site_settings_browser_proxy.js';

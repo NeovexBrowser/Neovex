@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
 
-import type {WallpaperGridItemElement} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import {getSeaPenTemplates} from 'neovex://resources/ash/common/sea_pen/constants.js';
-import type {SeaPenRouterElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_router_element.js';
-import {SeaPenPaths} from 'neovex://resources/ash/common/sea_pen/sea_pen_router_element.js';
-import type {SeaPenTemplateQueryElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_template_query_element.js';
-import {setTransitionsEnabled} from 'neovex://resources/ash/common/sea_pen/transition.js';
-import type {VcBackgroundApp} from 'neovex://vc-background/js/vc_background_app.js';
-import type {VcBackgroundBreadcrumbElement} from 'neovex://vc-background/js/vc_background_breadcrumb_element.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {WallpaperGridItemElement} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import {getSeaPenTemplates} from 'chrome://resources/ash/common/sea_pen/constants.js';
+import type {SeaPenRouterElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_router_element.js';
+import {SeaPenPaths} from 'chrome://resources/ash/common/sea_pen/sea_pen_router_element.js';
+import type {SeaPenTemplateQueryElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_template_query_element.js';
+import {setTransitionsEnabled} from 'chrome://resources/ash/common/sea_pen/transition.js';
+import type {VcBackgroundApp} from 'chrome://vc-background/js/vc_background_app.js';
+import type {VcBackgroundBreadcrumbElement} from 'chrome://vc-background/js/vc_background_breadcrumb_element.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('VcBackgroundUITest', () => {
   setup(() => {
@@ -111,7 +111,7 @@ suite('VcBackgroundUITest', () => {
         'Expected template text is shown for Classic art');
 
     assertEquals(
-        'neovex://vc-background/results?seaPenTemplateId=104',
+        'chrome://vc-background/results?seaPenTemplateId=104',
         window.location.href,
         'VC Background Classic art template id is added to url');
 
@@ -152,7 +152,7 @@ suite('VcBackgroundUITest', () => {
         await waitAfterNextRender(seaPenTemplateQuery);
 
         assertEquals(
-            'neovex://vc-background/results?seaPenTemplateId=104',
+            'chrome://vc-background/results?seaPenTemplateId=104',
             window.location.href,
             'App is on /results and Classic art template id is added to url');
 
@@ -215,7 +215,7 @@ suite('VcBackgroundUITest', () => {
 
     // We should be redirected to the new template page.
     assertEquals(
-        'neovex://vc-background/results?seaPenTemplateId=101',
+        'chrome://vc-background/results?seaPenTemplateId=101',
         window.location.href,
         'App is on /results and Office template id is added to url');
 

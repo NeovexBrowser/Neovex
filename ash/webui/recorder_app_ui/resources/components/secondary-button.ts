@@ -4,7 +4,7 @@
 
 import './cra/cra-icon-button.js';
 
-import {css} from 'neovex://resources/mwc/lit/index.js';
+import {css} from 'chrome://resources/mwc/lit/index.js';
 
 import {CraIconButton} from './cra/cra-icon-button.js';
 

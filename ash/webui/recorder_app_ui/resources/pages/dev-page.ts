@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/mwc/@material/web/button/filled-button.js';
-import 'neovex://resources/mwc/@material/web/icon/icon.js';
-import 'neovex://resources/mwc/@material/web/iconbutton/icon-button.js';
+import 'chrome://resources/mwc/@material/web/button/filled-button.js';
+import 'chrome://resources/mwc/@material/web/icon/icon.js';
+import 'chrome://resources/mwc/@material/web/iconbutton/icon-button.js';
 import '../components/cra/cra-icon.js';
 
-import {createRef, css, html, ref} from 'neovex://resources/mwc/lit/index.js';
+import {createRef, css, html, ref} from 'chrome://resources/mwc/lit/index.js';
 
 import {
   usePlatformHandler,

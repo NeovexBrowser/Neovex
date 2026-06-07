@@ -10,17 +10,17 @@
 import './hotspot_summary_item.js';
 import './network_summary_item.js';
 
-import {getHotspotConfig} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.js';
-import type {CrosHotspotConfigInterface, HotspotInfo} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {CrosHotspotConfigObserverReceiver, HotspotAllowStatus} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkListenerBehaviorInterface} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {NetworkListenerBehavior} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {CrosNetworkConfigInterface, DeviceStateProperties, GlobalPolicy, NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {FilterType, NO_LIMIT} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType, OncSource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getHotspotConfig} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.js';
+import type {CrosHotspotConfigInterface, HotspotInfo} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {CrosHotspotConfigObserverReceiver, HotspotAllowStatus} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkListenerBehaviorInterface} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {NetworkListenerBehavior} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {CrosNetworkConfigInterface, DeviceStateProperties, GlobalPolicy, NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {FilterType, NO_LIMIT} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType, OncSource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import type {Constructor} from '../common/types.js';

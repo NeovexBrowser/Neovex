@@ -9,7 +9,7 @@ import {loadTimeData} from '//resources/js/load_time_data.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
 import {MenuSourceType} from '//resources/mojo/ui/base/mojom/menu_source_type.mojom-webui.js';
-import {isMac} from 'neovex://resources/js/platform.js';
+import {isMac} from 'chrome://resources/js/platform.js';
 
 import {getCss} from './back_forward_button.css.js';
 import {getHtml} from './back_forward_button.html.js';

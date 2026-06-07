@@ -7,8 +7,8 @@ import("//ui/webui/resources/tools/generate_grd.gni")
 
 assert(is_chromeos, "Nearby Share is CrOS only")
 
-# TODO(b/207087930) Consider moving these shared files to neovex://resources.
-# b/207087942 provides context why neovex://resources did not work previously.
+# TODO(b/207087930) Consider moving these shared files to chrome://resources.
+# b/207087942 provides context why chrome://resources did not work previously.
 build_webui("build") {
   grd_prefix = "nearby_share"
   grd_resource_path_prefix = "shared"

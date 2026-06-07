@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import type {SettingsAntiAbusePageElement} from 'neovex://settings/lazy_load.js';
-import {ContentSetting, DefaultSettingSource, ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import {assertEquals, assertNotEquals, assertTrue, assertFalse} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsAntiAbusePageElement} from 'chrome://settings/lazy_load.js';
+import {ContentSetting, DefaultSettingSource, ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import {assertEquals, assertNotEquals, assertTrue, assertFalse} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import type {SiteSettingsPref} from './test_util.js';

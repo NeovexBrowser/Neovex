@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {ViewerThumbnailElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 function createThumbnail() {
   document.body.innerHTML = '';

@@ -1011,7 +1011,7 @@ fuzzer_test("search_suggestion_parser_fuzzer") {
 mojom("mojo_bindings") {
   sources = [ "omnibox.mojom" ]
 
-  webui_module_path = "neovex://resources/mojo/components/omnibox/browser"
+  webui_module_path = "chrome://resources/mojo/components/omnibox/browser"
 
   public_deps = [
     "//components/omnibox/composebox:mojo_bindings",

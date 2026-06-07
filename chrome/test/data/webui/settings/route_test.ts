@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SettingsRoutes} from 'neovex://settings/settings.js';
-import {resetRouterForTesting, buildRouter, loadTimeData, Route, Router, routes, resetPageVisibilityForTesting} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsRoutes} from 'chrome://settings/settings.js';
+import {resetRouterForTesting, buildRouter, loadTimeData, Route, Router, routes, resetPageVisibilityForTesting} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 // clang-format on
 
@@ -308,16 +308,16 @@ suite('Basic', function() {
         // correct path.
         window.location.href = 'https://example.com/path/to/page.html';
         assertEquals(
-            'neovex://settings/cookies', routes.COOKIES.getAbsolutePath());
+            'chrome://settings/cookies', routes.COOKIES.getAbsolutePath());
 
         // Check getting the absolute path while inside settings returns the
         // correct path for the current route and a different route.
         Router.getInstance().navigateTo(routes.DOWNLOADS);
         assertEquals(
-            'neovex://settings/downloads',
+            'chrome://settings/downloads',
             Router.getInstance().getCurrentRoute().getAbsolutePath());
         assertEquals(
-            'neovex://settings/languages', routes.LANGUAGES.getAbsolutePath());
+            'chrome://settings/languages', routes.LANGUAGES.getAbsolutePath());
       });
 
   test('resetRouterForTesting updates routes', function() {

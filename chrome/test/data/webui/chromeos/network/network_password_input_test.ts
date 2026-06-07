@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/network_password_input.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/network_password_input.js';
 
-import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import type {NetworkPasswordInputElement} from 'neovex://resources/ash/common/network/network_password_input.js';
-import {FAKE_CREDENTIAL} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {ManagedProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {OncSource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import type {NetworkPasswordInputElement} from 'chrome://resources/ash/common/network/network_password_input.js';
+import {FAKE_CREDENTIAL} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {ManagedProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {OncSource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('CrComponentsNetworkPasswordInputTest', () => {
   let networkPassword: NetworkPasswordInputElement;

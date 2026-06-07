@@ -70,7 +70,7 @@ struct DebugInfo {
 };
 
 // Handler providing access to App Service information from the
-// neovex://app-service-internals WebUI.
+// chrome://app-service-internals WebUI.
 interface AppServiceInternalsPageHandler {
   // Returns debug information about the state of App Service. Will be null if
   // App Service is not available for the profile.

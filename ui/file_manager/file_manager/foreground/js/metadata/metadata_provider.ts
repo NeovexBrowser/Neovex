@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {MetadataItem} from './metadata_item.js';
 import {type MetadataKey} from './metadata_item.js';

@@ -8,10 +8,10 @@
  * various privacy settings.
  */
 import '/shared/settings/prefs/prefs.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
 import '../../settings_shared.css.js';
-import 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
 import './privacy_guide_ad_topics_fragment.js';
 import './privacy_guide_completion_fragment.js';
 import './privacy_guide_cookies_fragment.js';
@@ -25,11 +25,11 @@ import type {SyncBrowserProxy, SyncStatus} from '/shared/settings/people_page/sy
 import {SignedInState, SyncBrowserProxyImpl} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
 import {CrSettingsPrefs} from '/shared/settings/prefs/prefs_types.js';
-import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../../i18n_setup.js';
 import type {MetricsBrowserProxy} from '../../metrics_browser_proxy.js';

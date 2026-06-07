@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/network/network_select.js';
+import 'chrome://resources/ash/common/network/network_select.js';
 
-import type {NetworkSelectElement} from 'neovex://resources/ash/common/network/network_select.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {NetworkSelectElement} from 'chrome://resources/ash/common/network/network_select.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('NetworkSelectTest', function() {
   let networkSelect: NetworkSelectElement|undefined;

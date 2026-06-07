@@ -3,19 +3,19 @@
 // found in the LICENSE file.
 
 /** @fileoverview Test suite for SupportedLinksItemElement. */
-import 'neovex://app-settings/supported_links_item.js';
+import 'chrome://app-settings/supported_links_item.js';
 
-import type {SupportedLinksItemElement} from 'neovex://app-settings/supported_links_item.js';
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType, WindowMode} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
-import type {AppMap} from 'neovex://resources/cr_components/app_management/constants.js';
-import type {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrRadioGroupElement} from 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SupportedLinksItemElement} from 'chrome://app-settings/supported_links_item.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType, WindowMode} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
+import type {AppMap} from 'chrome://resources/cr_components/app_management/constants.js';
+import type {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrRadioGroupElement} from 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import type {AppConfig} from './app_management_test_support.js';
 import {createTestApp, TestAppManagementBrowserProxy} from './app_management_test_support.js';

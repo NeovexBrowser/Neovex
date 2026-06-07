@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import type {SettingsCheckboxListEntryElement} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SettingsCheckboxListEntryElement} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('SettingsCheckboxListEntry', function() {
   let checkboxListEntry: SettingsCheckboxListEntryElement;

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FakeObservables} from 'neovex://resources/ash/common/fake_observables.js';
+import {FakeObservables} from 'chrome://resources/ash/common/fake_observables.js';
 
 import type {FirmwareUpdate, InstallControllerRemote, UpdateObserverRemote} from './firmware_update.mojom-webui.js';
 import type {FakeInstallControllerInterface, FakeUpdateProviderInterface} from './firmware_update_types.js';

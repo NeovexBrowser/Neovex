@@ -6,15 +6,15 @@
  * @fileoverview Test suite for the ChromeVox subpage in ChromeOS Settings.
  */
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsChromeVoxSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import type {SettingsDropdownMenuElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
-import {ChromeVoxSubpageBrowserProxyImpl, CrSettingsPrefs} from 'neovex://os-settings/os_settings.js';
-import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsChromeVoxSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import type {SettingsDropdownMenuElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
+import {ChromeVoxSubpageBrowserProxyImpl, CrSettingsPrefs} from 'chrome://os-settings/os_settings.js';
+import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestChromeVoxSubpageBrowserProxy} from './test_chromevox_subpage_browser_proxy.js';
 

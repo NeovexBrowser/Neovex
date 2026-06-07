@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ExtensionApprovalsParams, ExtensionPermission, ParentAccessParams, WebApprovalsParams} from 'neovex://parent-access/parent_access_ui.mojom-webui.js';
-import {ParentAccessParams_FlowType} from 'neovex://parent-access/parent_access_ui.mojom-webui.js';
+import type {ExtensionApprovalsParams, ExtensionPermission, ParentAccessParams, WebApprovalsParams} from 'chrome://parent-access/parent_access_ui.mojom-webui.js';
+import {ParentAccessParams_FlowType} from 'chrome://parent-access/parent_access_ui.mojom-webui.js';
 
 export function buildWebApprovalsParams(): ParentAccessParams {
   const webApprovalsParams: WebApprovalsParams = {

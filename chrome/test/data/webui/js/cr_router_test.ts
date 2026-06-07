@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CrRouter} from 'neovex://resources/js/cr_router.js';
-import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {CrRouter} from 'chrome://resources/js/cr_router.js';
+import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
 
 suite('CrRouterTest', function() {
   setup(function() {

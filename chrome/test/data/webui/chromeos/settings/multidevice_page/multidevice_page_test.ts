@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/lazy_load.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {SettingsMultideviceSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import type {MultiDevicePageContentData, SettingsMultidevicePageElement} from 'neovex://os-settings/os_settings.js';
-import {MultiDeviceBrowserProxyImpl, MultiDeviceFeature, MultiDeviceFeatureState, MultiDeviceSettingsMode, PhoneHubFeatureAccessStatus, Router, routes, setContactManagerForTesting, setNearbyShareSettingsForTesting, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {Visibility} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeContactManager} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
-import {FakeNearbyShareSettings} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsMultideviceSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import type {MultiDevicePageContentData, SettingsMultidevicePageElement} from 'chrome://os-settings/os_settings.js';
+import {MultiDeviceBrowserProxyImpl, MultiDeviceFeature, MultiDeviceFeatureState, MultiDeviceSettingsMode, PhoneHubFeatureAccessStatus, Router, routes, setContactManagerForTesting, setNearbyShareSettingsForTesting, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {Visibility} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeContactManager} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
+import {FakeNearbyShareSettings} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {FakeInSessionAuth} from '../fake_in_session_auth.js';
 

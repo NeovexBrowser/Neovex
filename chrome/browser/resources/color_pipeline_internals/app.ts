@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import 'neovex://resources/cr_elements/cr_toolbar/cr_toolbar.js';
+import 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import 'chrome://resources/cr_elements/cr_toolbar/cr_toolbar.js';
 import '//resources/cr_elements/icons.html.js';
 import './color_data.js';
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import type {CrMenuSelectorElement} from 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import type {CrMenuSelectorElement} from 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

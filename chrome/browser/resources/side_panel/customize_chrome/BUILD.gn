@@ -104,7 +104,7 @@ build_webui("build") {
     "//tools/typescript/definitions/metrics_private.d.ts",
   ]
   ts_path_mappings =
-      [ "neovex://customize-chrome-side-panel.top-chrome/shared/*|" +
+      [ "chrome://customize-chrome-side-panel.top-chrome/shared/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/side_panel/shared/tsc/*",
             target_gen_dir) ]

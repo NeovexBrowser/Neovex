@@ -9,13 +9,13 @@
  * suite to avoid timeouts since the <os-settings-ui> element is very large.
  */
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {OsSettingsUiElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
-import {CrSettingsPrefs} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {OsSettingsUiElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
+import {CrSettingsPrefs} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {clearBody} from '../utils.js';
 

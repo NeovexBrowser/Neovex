@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {AmbientModeAlbum, AmbientObserverInterface, AmbientProviderInterface, AmbientTheme, AmbientUiVisibility, TemperatureUnit, TopicSource} from '../../personalization_app.mojom-webui.js';
 import {AmbientObserverReceiver} from '../../personalization_app.mojom-webui.js';

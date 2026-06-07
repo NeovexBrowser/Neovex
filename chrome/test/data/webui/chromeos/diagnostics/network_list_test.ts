@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/network_list.js';
+import 'chrome://diagnostics/network_list.js';
 
-import {ConnectivityCardElement} from 'neovex://diagnostics/connectivity_card.js';
-import type {DataPointElement} from 'neovex://diagnostics/data_point.js';
-import {DiagnosticsBrowserProxyImpl} from 'neovex://diagnostics/diagnostics_browser_proxy.js';
-import type {NetworkGuidInfo} from 'neovex://diagnostics/diagnostics_types.js';
-import {NavigationView} from 'neovex://diagnostics/diagnostics_types.js';
-import {fakeCellularNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakeWifiNetwork} from 'neovex://diagnostics/fake_data.js';
-import {FakeNetworkHealthProvider} from 'neovex://diagnostics/fake_network_health_provider.js';
-import {FakeSystemRoutineController} from 'neovex://diagnostics/fake_system_routine_controller.js';
-import {setNetworkHealthProviderForTesting, setSystemRoutineControllerForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
-import {NetworkCardElement} from 'neovex://diagnostics/network_card.js';
-import {NetworkInfoElement} from 'neovex://diagnostics/network_info.js';
-import {NetworkListElement} from 'neovex://diagnostics/network_list.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {DomRepeat} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {ConnectivityCardElement} from 'chrome://diagnostics/connectivity_card.js';
+import type {DataPointElement} from 'chrome://diagnostics/data_point.js';
+import {DiagnosticsBrowserProxyImpl} from 'chrome://diagnostics/diagnostics_browser_proxy.js';
+import type {NetworkGuidInfo} from 'chrome://diagnostics/diagnostics_types.js';
+import {NavigationView} from 'chrome://diagnostics/diagnostics_types.js';
+import {fakeCellularNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakeWifiNetwork} from 'chrome://diagnostics/fake_data.js';
+import {FakeNetworkHealthProvider} from 'chrome://diagnostics/fake_network_health_provider.js';
+import {FakeSystemRoutineController} from 'chrome://diagnostics/fake_system_routine_controller.js';
+import {setNetworkHealthProviderForTesting, setSystemRoutineControllerForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
+import {NetworkCardElement} from 'chrome://diagnostics/network_card.js';
+import {NetworkInfoElement} from 'chrome://diagnostics/network_info.js';
+import {NetworkListElement} from 'chrome://diagnostics/network_list.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {DomRepeat} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 import {TestDiagnosticsBrowserProxy} from './test_diagnostics_browser_proxy.js';

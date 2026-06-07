@@ -67,10 +67,10 @@ const allowedAttributes: Map<string, AllowFunction> = new Map([
   [
     'href',
     (node, value) => {
-      // Only allow a[href] starting with neovex:// or https:// or equaling
+      // Only allow a[href] starting with chrome:// or https:// or equaling
       // to #.
       return (node as HTMLElement).tagName === 'A' &&
-          (value.startsWith('neovex://') || value.startsWith('https://') ||
+          (value.startsWith('chrome://') || value.startsWith('https://') ||
            value === '#');
     },
   ],
@@ -93,9 +93,9 @@ const allowedOptionalAttributes: Map<string, AllowFunction> = new Map([
   [
     'src',
     (node, value) => {
-      // Only allow img[src] starting with neovex://
+      // Only allow img[src] starting with chrome://
       return (node as HTMLElement).tagName === 'IMG' &&
-          value.startsWith('neovex://');
+          value.startsWith('chrome://');
     },
   ],
   ['tabindex', allowAttribute],

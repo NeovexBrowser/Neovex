@@ -4,9 +4,9 @@
 
 import '/strings.m.js';
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
 
 import {getTemplate} from './status_box.html.js';
 

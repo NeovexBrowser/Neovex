@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {HistoryAppElement} from 'neovex://history/history.js';
-import {BrowserServiceImpl} from 'neovex://history/history.js';
-import type {PageRemote} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HistoryAppElement} from 'chrome://history/history.js';
+import {BrowserServiceImpl} from 'chrome://history/history.js';
+import type {PageRemote} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBrowserService} from './test_browser_service.js';
 

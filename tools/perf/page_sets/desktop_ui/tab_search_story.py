@@ -44,7 +44,7 @@ TAB_SEARCH_CUSTOM_METRIC_NAMES = [
     'TabSearchPageHandler:TabChangedAt',
 ]
 
-TAB_SEARCH_URL = 'neovex://tab-search.top-chrome/'
+TAB_SEARCH_URL = 'chrome://tab-search.top-chrome/'
 
 
 class TabSearchStory(MultiTabStory):
@@ -172,21 +172,21 @@ class TabSearchRecentlyClosedStory(TabSearchStory):
 
 class TabSearchStoryRecentlyClosed10(TabSearchRecentlyClosedStory):
   NAME = 'tab_search:10_recently_closed'
-  URL_LIST = ['neovex://version?q={}'.format(i) for i in range(10)]
+  URL_LIST = ['chrome://version?q={}'.format(i) for i in range(10)]
   URL = URL_LIST[0]
   WAIT_FOR_NETWORK_QUIESCENCE = True
 
 
 class TabSearchStoryRecentlyClosed50(TabSearchRecentlyClosedStory):
   NAME = 'tab_search:50_recently_closed'
-  URL_LIST = ['neovex://version?q={}'.format(i) for i in range(50)]
+  URL_LIST = ['chrome://version?q={}'.format(i) for i in range(50)]
   URL = URL_LIST[0]
   WAIT_FOR_NETWORK_QUIESCENCE = True
 
 
 class TabSearchStoryRecentlyClosed100(TabSearchRecentlyClosedStory):
   NAME = 'tab_search:100_recently_closed'
-  URL_LIST = ['neovex://version?q={}'.format(i) for i in range(100)]
+  URL_LIST = ['chrome://version?q={}'.format(i) for i in range(100)]
   URL = URL_LIST[0]
   WAIT_FOR_NETWORK_QUIESCENCE = True
 

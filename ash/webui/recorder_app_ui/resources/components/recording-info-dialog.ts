@@ -16,7 +16,7 @@ import {
   nothing,
   PropertyDeclarations,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {

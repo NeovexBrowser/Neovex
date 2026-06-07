@@ -9,7 +9,7 @@
 
 import './add_items_dialog.js';
 
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Item} from './add_items_dialog.js';
 import type {LanguageHelper, LanguagesModel} from './languages_types.js';

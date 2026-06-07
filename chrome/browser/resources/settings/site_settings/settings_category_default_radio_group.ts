@@ -11,9 +11,9 @@ import '../settings_shared.css.js';
 import '../controls/collapse_radio_button.js';
 import '../controls/settings_radio_group.js';
 
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SettingsCollapseRadioButtonElement} from '../controls/collapse_radio_button.js';
 import type {SettingsRadioGroupElement} from '../controls/settings_radio_group.js';

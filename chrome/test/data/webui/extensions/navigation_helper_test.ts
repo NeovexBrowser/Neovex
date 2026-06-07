@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PageState} from 'neovex://extensions/extensions.js';
-import {Dialog, NavigationHelper, Page} from 'neovex://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockMethod} from 'neovex://webui-test/mock_controller.js';
+import type {PageState} from 'chrome://extensions/extensions.js';
+import {Dialog, NavigationHelper, Page} from 'chrome://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockMethod} from 'chrome://webui-test/mock_controller.js';
 
 /**
  * @return A promise that resolves after the next popstate event.
@@ -69,15 +69,15 @@ suite('ExtensionNavigationHelperTest', function() {
     const id = 'a'.repeat(32);
     const stateUrlPairs: {[k: string]: {url: string, state: PageState}} = {
       extensions: {
-        url: 'neovex://extensions/',
+        url: 'chrome://extensions/',
         state: {page: Page.LIST},
       },
       details: {
-        url: 'neovex://extensions/?id=' + id,
+        url: 'chrome://extensions/?id=' + id,
         state: {page: Page.DETAILS, extensionId: id},
       },
       options: {
-        url: 'neovex://extensions/?options=' + id,
+        url: 'chrome://extensions/?options=' + id,
         state: {
           page: Page.DETAILS,
           extensionId: id,
@@ -85,19 +85,19 @@ suite('ExtensionNavigationHelperTest', function() {
         },
       },
       errors: {
-        url: 'neovex://extensions/?errors=' + id,
+        url: 'chrome://extensions/?errors=' + id,
         state: {page: Page.ERRORS, extensionId: id},
       },
       shortcuts: {
-        url: 'neovex://extensions/shortcuts',
+        url: 'chrome://extensions/shortcuts',
         state: {page: Page.SHORTCUTS},
       },
       sitePermissions: {
-        url: 'neovex://extensions/sitePermissions',
+        url: 'chrome://extensions/sitePermissions',
         state: {page: Page.SITE_PERMISSIONS},
       },
       sitePermissionsAllSites: {
-        url: 'neovex://extensions/sitePermissions/allSites',
+        url: 'chrome://extensions/sitePermissions/allSites',
         state: {page: Page.SITE_PERMISSIONS_ALL_SITES},
       },
     };
@@ -123,7 +123,7 @@ suite('ExtensionNavigationHelperTest', function() {
     const id1 = 'a'.repeat(32);
     const id2 = 'b'.repeat(32);
 
-    history.pushState({}, '', 'neovex://extensions/');
+    history.pushState({}, '', 'chrome://extensions/');
     assertDeepEquals({page: Page.LIST}, navigationHelper.getCurrentPage());
 
     let expectedLength = history.length;
@@ -181,16 +181,16 @@ suite('ExtensionNavigationHelperTest', function() {
           removeEndSlash(window.location.href), removeEndSlash(newUrl || url));
     }
 
-    testIfRedirected('neovex://extensions');
-    testIfRedirected('neovex://extensions/');
-    testIfRedirected('neovex://extensions/shortcuts');
-    testIfRedirected('neovex://extensions/shortcuts/');
-    testIfRedirected('neovex://extensions/fake-route', 'neovex://extensions');
+    testIfRedirected('chrome://extensions');
+    testIfRedirected('chrome://extensions/');
+    testIfRedirected('chrome://extensions/shortcuts');
+    testIfRedirected('chrome://extensions/shortcuts/');
+    testIfRedirected('chrome://extensions/fake-route', 'chrome://extensions');
     // Test trailing slash works.
 
     // Test legacy paths
     testIfRedirected(
-        'neovex://extensions/configureCommands',
-        'neovex://extensions/shortcuts');
+        'chrome://extensions/configureCommands',
+        'chrome://extensions/shortcuts');
   });
 });

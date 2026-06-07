@@ -22,7 +22,7 @@ interface PageHandler {
   GetChildFolders(mojo_base.mojom.FilePath path) => (
       array<mojo_base.mojom.FilePath> paths);
 
-  // A mapping exposed to the neovex://manage-mirrorsync webui to abstract away
+  // A mapping exposed to the chrome://manage-mirrorsync webui to abstract away
   // 3 classes of errors from their drive::FileError equivalents.
   //  - When the DriveFS service is unavailable.
   //  - Any other error has occurred.

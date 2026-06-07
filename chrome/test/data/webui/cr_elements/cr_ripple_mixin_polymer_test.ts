@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {CrRippleMixinPolymer} from 'neovex://resources/cr_elements/cr_ripple/cr_ripple_mixin_polymer.js';
-import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {CrRippleMixinPolymer} from 'chrome://resources/cr_elements/cr_ripple/cr_ripple_mixin_polymer.js';
+import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNotEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 // clang-format on
 
 suite('CrRippleMixin', function() {

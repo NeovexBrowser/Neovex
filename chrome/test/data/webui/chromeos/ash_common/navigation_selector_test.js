@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {NavigationSelectorElement, SelectorItem} from 'neovex://resources/ash/common/navigation_selector.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {NavigationSelectorElement, SelectorItem} from 'chrome://resources/ash/common/navigation_selector.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 suite('navigationSelectorTestSuite', () => {
   /** @type {?NavigationSelectorElement} */

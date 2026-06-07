@@ -12,7 +12,7 @@ build_webui_tests("build") {
 
   files = [ "zero_state_promo_app_test.ts" ]
 
-  ts_path_mappings = [ "neovex://extensions-zero-state/*|" + rebase_path(
+  ts_path_mappings = [ "chrome://extensions-zero-state/*|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/extensions_zero_state_promo/tsc/*",
                            target_gen_dir) ]
 

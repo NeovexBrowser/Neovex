@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://history/history.js';
+import 'chrome://history/history.js';
 
-import type {HistorySyncedDeviceManagerElement} from 'neovex://history/history.js';
-import {BrowserServiceImpl, HistorySignInState, SyncState} from 'neovex://history/history.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HistorySyncedDeviceManagerElement} from 'chrome://history/history.js';
+import {BrowserServiceImpl, HistorySignInState, SyncState} from 'chrome://history/history.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBrowserService} from './test_browser_service.js';
 import {createSession, createWindow} from './test_util.js';

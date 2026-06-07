@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import 'neovex://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
-import 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
-import 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import 'chrome://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
+import 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import './color_mode_select.js';
 import './file_type_select.js';
 import './loading_page.js';
@@ -28,20 +28,20 @@ import './scanning_fonts.css.js';
 import './scanning_shared.css.js';
 import './source_select.js';
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrContainerShadowMixinInterface} from 'neovex://resources/ash/common/cr_elements/cr_container_shadow_mixin.js';
-import {CrContainerShadowMixin} from 'neovex://resources/ash/common/cr_elements/cr_container_shadow_mixin.js';
-import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import type {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
-import type {IronCollapseElement} from 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrContainerShadowMixinInterface} from 'chrome://resources/ash/common/cr_elements/cr_container_shadow_mixin.js';
+import {CrContainerShadowMixin} from 'chrome://resources/ash/common/cr_elements/cr_container_shadow_mixin.js';
+import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import type {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import type {IronCollapseElement} from 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getScanService} from './mojo_interface_provider.js';
 import type {ColorMode, MultiPageScanControllerRemote, PageSize, ScanJobObserverInterface, Scanner, ScannerCapabilities, ScanSettings as ScanSettingsMojom} from './scanning.mojom-webui.js';

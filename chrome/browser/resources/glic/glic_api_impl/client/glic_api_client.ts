@@ -595,7 +595,7 @@ class GlicBrowserHostImpl implements GlicBrowserHost {
     // web client very quickly, and in normal operation, the webview does not
     // reload after successful load.
     const {router, sender} = createBidirectionalPostMessageTransport(
-        'neovex://glic',
+        'chrome://glic',
         this.hostId,
         windowProxy,
         this,

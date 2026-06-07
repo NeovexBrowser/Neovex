@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://new-tab-page/new_tab_page.js';
+import 'chrome://new-tab-page/new_tab_page.js';
 
-import type {SearchboxElement} from 'neovex://new-tab-page/new_tab_page.js';
-import {BrowserProxyImpl, MetricsReporterImpl, SearchboxBrowserProxy} from 'neovex://new-tab-page/new_tab_page.js';
-import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PageMetricsCallbackRouter} from 'neovex://resources/js/metrics_reporter.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SearchboxElement} from 'chrome://new-tab-page/new_tab_page.js';
+import {BrowserProxyImpl, MetricsReporterImpl, SearchboxBrowserProxy} from 'chrome://new-tab-page/new_tab_page.js';
+import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PageMetricsCallbackRouter} from 'chrome://resources/js/metrics_reporter.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestSearchboxBrowserProxy} from './test_searchbox_browser_proxy.js';
 

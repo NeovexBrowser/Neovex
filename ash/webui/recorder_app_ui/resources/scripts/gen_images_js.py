@@ -25,7 +25,7 @@ def gen_images_js(images: List[pathlib.Path], root_dir: pathlib.Path) -> str:
         f'[{json.dumps(name)}, svg`{svg}`]'
         for name, svg in image_dict.items()) + ']'
 
-    return ('import {svg} from "neovex://resources/mwc/lit/index.js";\n'
+    return ('import {svg} from "chrome://resources/mwc/lit/index.js";\n'
             f'export const images = new Map({formatted_images});')
 
 

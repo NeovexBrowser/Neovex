@@ -11,12 +11,12 @@
 import './privacy_hub_app_permission_row.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {PermissionType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {isPermissionEnabled} from 'neovex://resources/cr_components/app_management/permission_util.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {PermissionType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {isPermissionEnabled} from 'chrome://resources/cr_components/app_management/permission_util.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import {MediaDevicesProxy} from '../common/media_devices_proxy.js';

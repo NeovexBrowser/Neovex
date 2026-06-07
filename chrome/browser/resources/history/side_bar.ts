@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/managed_footnote/managed_footnote.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import 'neovex://resources/cr_elements/cr_ripple/cr_ripple.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_components/managed_footnote/managed_footnote.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import 'chrome://resources/cr_elements/cr_ripple/cr_ripple.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
 import './shared_icons.html.js';
 import './shared_vars.css.js';
 import '/strings.m.js';
 
-import type {CrMenuSelectorElement} from 'neovex://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {CrMenuSelectorElement} from 'chrome://resources/cr_elements/cr_menu_selector/cr_menu_selector.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {BrowserServiceImpl} from './browser_service.js';
 import {Page, TABBED_PAGES} from './router.js';

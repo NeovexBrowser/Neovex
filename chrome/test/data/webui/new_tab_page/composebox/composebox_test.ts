@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {$$} from 'neovex://new-tab-page/new_tab_page.js';
-import {ModelMode, ToolMode as ComposeboxToolMode} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {SelectedFileInfo} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import type {InputState} from 'neovex://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {$$} from 'chrome://new-tab-page/new_tab_page.js';
+import {ModelMode, ToolMode as ComposeboxToolMode} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {SelectedFileInfo} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import type {InputState} from 'chrome://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertStyle} from '../test_support.js';
 

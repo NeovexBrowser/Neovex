@@ -14,7 +14,7 @@ build_webui_tests("build") {
     "test_on_device_translation_internals_browser_proxy.ts",
   ]
 
-  ts_path_mappings = [ "neovex://on-device-translation-internals/*|" + rebase_path(
+  ts_path_mappings = [ "chrome://on-device-translation-internals/*|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/on_device_translation_internals/tsc/*",
                            target_gen_dir) ]
 

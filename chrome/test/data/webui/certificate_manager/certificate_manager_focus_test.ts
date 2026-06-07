@@ -6,16 +6,16 @@
 // depend on what element is focused, and thus need to be an
 // interactive_ui_test to avoid flake.
 
-import 'neovex://certificate-manager/certificate_manager.js';
+import 'chrome://certificate-manager/certificate_manager.js';
 
-import type {CertificateManagerElement} from 'neovex://certificate-manager/certificate_manager.js';
-import {CertificateSource} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
-import type {CertManagementMetadata} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
-import {CertificatesBrowserProxy} from 'neovex://certificate-manager/certificates_browser_proxy.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CertificateManagerElement} from 'chrome://certificate-manager/certificate_manager.js';
+import {CertificateSource} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
+import type {CertManagementMetadata} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
+import {CertificatesBrowserProxy} from 'chrome://certificate-manager/certificates_browser_proxy.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestCertificateManagerProxy} from './certificate_manager_test_support.js';
 

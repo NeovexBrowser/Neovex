@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import type {PageHandlerRemote} from './privacy_sandbox_internals.mojom-webui.js';
 import {PageHandler} from './privacy_sandbox_internals.mojom-webui.js';

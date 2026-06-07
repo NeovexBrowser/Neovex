@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksCommandManagerElement, Command} from 'neovex://bookmarks/bookmarks.js';
-import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
+import type {BookmarksCommandManagerElement, Command} from 'chrome://bookmarks/bookmarks.js';
+import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {normalizeIterable} from './test_util.js';
 

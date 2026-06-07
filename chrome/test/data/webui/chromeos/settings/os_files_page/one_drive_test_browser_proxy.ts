@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {OneDriveBrowserProxy, OneDrivePageRemote} from 'neovex://os-settings/os_settings.js';
-import {OneDrivePageCallbackRouter, OneDrivePageHandlerRemote} from 'neovex://os-settings/os_settings.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {OneDriveBrowserProxy, OneDrivePageRemote} from 'chrome://os-settings/os_settings.js';
+import {OneDrivePageCallbackRouter, OneDrivePageHandlerRemote} from 'chrome://os-settings/os_settings.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 export interface ProxyOptions {
   email?: string|null;

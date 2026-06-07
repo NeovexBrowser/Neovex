@@ -4,18 +4,18 @@
 
 
 // clang-format off
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsSystemPageElement, SystemPageBrowserProxy} from 'neovex://settings/lazy_load.js';
-import {SystemPageBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import {LifetimeBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsSystemPageElement, SystemPageBrowserProxy} from 'chrome://settings/lazy_load.js';
+import {SystemPageBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import {LifetimeBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestLifetimeBrowserProxy} from './test_lifetime_browser_proxy.js';
 
 // <if expr="_google_chrome and is_win">
-import {MetricsBrowserProxyImpl} from 'neovex://settings/settings.js';
+import {MetricsBrowserProxyImpl} from 'chrome://settings/settings.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 // </if>

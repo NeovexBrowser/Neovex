@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertInstanceof} from 'neovex://resources/js/assert.js';
+import {assertInstanceof} from 'chrome://resources/js/assert.js';
 
 import type {VolumeManager} from '../../background/js/volume_manager.js';
 import {isFolderDialogType} from '../../common/js/dialog_type.js';

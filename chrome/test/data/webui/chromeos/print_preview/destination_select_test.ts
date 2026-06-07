@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewDestinationSelectElement} from 'neovex://print/print_preview.js';
-import {Destination, DestinationOrigin, getSelectDropdownBackground, IconsetMap} from 'neovex://print/print_preview.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {PrintPreviewDestinationSelectElement} from 'chrome://print/print_preview.js';
+import {Destination, DestinationOrigin, getSelectDropdownBackground, IconsetMap} from 'chrome://print/print_preview.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {selectOption} from './print_preview_test_utils.js';
 

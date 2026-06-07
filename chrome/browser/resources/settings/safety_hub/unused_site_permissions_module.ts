@@ -1,25 +1,25 @@
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
-import 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
 import '../i18n_setup.js';
 import '../icons.html.js';
 import '../privacy_icons.html.js';
 import './safety_hub_module.js';
 
-import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
-import {isUndoKeyboardEvent} from 'neovex://resources/js/util.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+import {isUndoKeyboardEvent} from 'chrome://resources/js/util.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {MetricsBrowserProxy} from '../metrics_browser_proxy.js';
 import {MetricsBrowserProxyImpl, SafetyCheckUnusedSitePermissionsModuleInteractions} from '../metrics_browser_proxy.js';

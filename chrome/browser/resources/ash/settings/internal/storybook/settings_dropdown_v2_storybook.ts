@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import '../../controls/v2/settings_dropdown_v2.js';
-import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
 
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {DropdownOptionList} from '../../controls/v2/settings_dropdown_v2.js';
 

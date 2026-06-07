@@ -4,7 +4,7 @@
 
 import './shimless_rma_shared.css.js';
 
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './base_page.html.js';
 

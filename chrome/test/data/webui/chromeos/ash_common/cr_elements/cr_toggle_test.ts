@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import type {CrToggleElement} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {MOVE_THRESHOLD_PX} from 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import type {CrToggleElement} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import {MOVE_THRESHOLD_PX} from 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-toggle', function() {

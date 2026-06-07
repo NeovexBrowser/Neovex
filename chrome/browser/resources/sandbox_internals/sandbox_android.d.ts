@@ -16,6 +16,6 @@ declare namespace chrome {
 
   type GetAndroidStatusCallback = (status: AndroidSandboxStatus) => void;
 
-  // This function is only exposed to the Android neovex://sandbox webui.
+  // This function is only exposed to the Android chrome://sandbox webui.
   function getAndroidSandboxStatus(callback: GetAndroidStatusCallback): void;
 }

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://skills/app.js';
+import 'chrome://skills/app.js';
 
-import {CrRouter} from 'neovex://resources/js/cr_router.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {SkillsAppElement} from 'neovex://skills/app.js';
-import {SkillsManagementAction, SkillsManagementPage} from 'neovex://skills/skill_metrics.mojom-webui.js';
-import {SkillsPageBrowserProxy} from 'neovex://skills/skills_page_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {CrRouter} from 'chrome://resources/js/cr_router.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {SkillsAppElement} from 'chrome://skills/app.js';
+import {SkillsManagementAction, SkillsManagementPage} from 'chrome://skills/skill_metrics.mojom-webui.js';
+import {SkillsPageBrowserProxy} from 'chrome://skills/skills_page_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestSkillsBrowserProxy} from './test_skills_browser_proxy.js';
 
@@ -68,7 +68,7 @@ suite('SkillsAppPage', function() {
     await microtasksFinished();
     const selectedTab =
         app.$.menu.shadowRoot.querySelector('.cr-nav-menu-item[selected]');
-    assertEquals('neovex://skills/yourSkills', window.location.href);
+    assertEquals('chrome://skills/yourSkills', window.location.href);
     assertEquals(
         loadTimeData.getString('userSkillsTitle'),
         selectedTab!.querySelector('.name')!.textContent.trim());
@@ -78,7 +78,7 @@ suite('SkillsAppPage', function() {
     browserProxy.handler.resetResolver('recordSkillsManagementAction');
     navigateTo('/browse');
     await eventToPromise('iron-select', app.$.menu);
-    assertEquals('neovex://skills/browse', window.location.href);
+    assertEquals('chrome://skills/browse', window.location.href);
     await microtasksFinished();
     const selectedTab =
         app.$.menu.shadowRoot.querySelector('.cr-nav-menu-item[selected]');
@@ -95,7 +95,7 @@ suite('SkillsAppPage', function() {
   test('UserSkillsPageLoadsCorrectly', async function() {
     navigateTo('/yourSkills');
     await microtasksFinished();
-    assertEquals('neovex://skills/yourSkills', window.location.href);
+    assertEquals('chrome://skills/yourSkills', window.location.href);
     await microtasksFinished();
     const selectedTab =
         app.$.menu.shadowRoot.querySelector('.cr-nav-menu-item[selected]');

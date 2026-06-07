@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {LanguagesBrowserProxy} from 'neovex://os-settings/lazy_load.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {LanguagesBrowserProxy} from 'chrome://os-settings/lazy_load.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 import {FakeInputMethodPrivate} from '../fake_input_method_private.js';
 import {FakeLanguageSettingsPrivate} from '../fake_language_settings_private.js';

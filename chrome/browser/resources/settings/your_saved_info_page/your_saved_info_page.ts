@@ -12,14 +12,14 @@ import './category_reference_card.js';
 import './collapsible_autofill_settings_card.js';
 import '/shared/settings/prefs/prefs.js';
 import '../settings_page/settings_section.js';
-import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {EntityTypeName} from '../autofill_ai_enums.mojom-webui.js';
 import type {AutofillManagerProxy, PersonalDataChangedListener} from '../autofill_page/autofill_manager_proxy.js';

@@ -8,16 +8,16 @@
  * zone color.
  */
 
-import 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
 import './color_icon_element.js';
 
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {IronA11yKeysElement} from 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
-import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {IronA11yKeysElement} from 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {CurrentBacklightState} from '../../personalization_app.mojom-webui.js';
 import {BacklightColor} from '../../personalization_app.mojom-webui.js';

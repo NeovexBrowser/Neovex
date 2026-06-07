@@ -4,14 +4,14 @@
 
 
 
-import type {CrExpandButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {SanitizeDoneElement} from 'neovex://sanitize/sanitize_done.js';
-import {SanitizeInitialElement} from 'neovex://sanitize/sanitize_initial.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
+import type {CrExpandButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {SanitizeDoneElement} from 'chrome://sanitize/sanitize_done.js';
+import {SanitizeInitialElement} from 'chrome://sanitize/sanitize_initial.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
 
 
 function initSanitizeDoneElement(): SanitizeDoneElement {
@@ -67,7 +67,7 @@ suite('SanitizeUITest', function() {
     assert(!!extensionsButton);
     extensionsButton.click();
     const extensionsUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(extensionsUrl, 'neovex://extensions');
+    assertEquals(extensionsUrl, 'chrome://extensions');
     openWindowProxy.resetResolver('openUrl');
 
 
@@ -90,14 +90,14 @@ suite('SanitizeUITest', function() {
     assert(!!chromeOsInputButton);
     chromeOsInputButton.click();
     const chromeOsInputUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(chromeOsInputUrl, 'neovex://os-settings/osLanguages/input');
+    assertEquals(chromeOsInputUrl, 'chrome://os-settings/osLanguages/input');
     openWindowProxy.resetResolver('openUrl');
 
 
     assert(!!chromeOsNetworkButton);
     chromeOsNetworkButton.click();
     const chromeOsNetworkUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(chromeOsNetworkUrl, 'neovex://os-settings/internet');
+    assertEquals(chromeOsNetworkUrl, 'chrome://os-settings/internet');
     openWindowProxy.resetResolver('openUrl');
 
     // ChromeOS Settings Section
@@ -131,25 +131,25 @@ suite('SanitizeUITest', function() {
     assert(!!chromeSiteContentButton);
     chromeSiteContentButton.click();
     const chromeSiteContentUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(chromeSiteContentUrl, 'neovex://settings/content');
+    assertEquals(chromeSiteContentUrl, 'chrome://settings/content');
     openWindowProxy.resetResolver('openUrl');
 
     assert(!!chromeStartupButton);
     chromeStartupButton.click();
     const chromeStartupUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(chromeStartupUrl, 'neovex://settings/onStartup');
+    assertEquals(chromeStartupUrl, 'chrome://settings/onStartup');
     openWindowProxy.resetResolver('openUrl');
 
     assert(!!chromeHomepageButton);
     chromeHomepageButton.click();
     const chromeHomepageUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(chromeHomepageUrl, 'neovex://settings/appearance');
+    assertEquals(chromeHomepageUrl, 'chrome://settings/appearance');
     openWindowProxy.resetResolver('openUrl');
 
     assert(!!chromeLanguagesButton);
     chromeLanguagesButton.click();
     const chromeLanguagesUrl = await openWindowProxy.whenCalled('openUrl');
-    assertEquals(chromeLanguagesUrl, 'neovex://settings/languages');
+    assertEquals(chromeLanguagesUrl, 'chrome://settings/languages');
   });
 
   test('PerformSanitize', async function() {

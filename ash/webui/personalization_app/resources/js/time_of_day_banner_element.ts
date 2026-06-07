@@ -7,9 +7,9 @@
  * user.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
 
 import {dismissTimeOfDayBanner} from './ambient/ambient_controller.js';
 import {isAmbientModeAllowed} from './load_time_booleans.js';

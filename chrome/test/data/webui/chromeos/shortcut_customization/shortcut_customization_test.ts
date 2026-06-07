@@ -2,39 +2,39 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shortcut-customization/js/shortcut_customization_app.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://shortcut-customization/js/shortcut_customization_app.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrDrawerElement} from 'neovex://resources/ash/common/cr_elements/cr_drawer/cr_drawer.js';
-import {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import {VKey} from 'neovex://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
-import {FakeShortcutInputProvider} from 'neovex://resources/ash/common/shortcut_input_ui/fake_shortcut_input_provider.js';
-import type {KeyEvent} from 'neovex://resources/ash/common/shortcut_input_ui/input_device_settings.mojom-webui.js';
-import {Modifier as ModifierEnum} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {IronIconElement} from 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {AcceleratorEditViewElement} from 'neovex://shortcut-customization/js/accelerator_edit_view.js';
-import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
-import type {AcceleratorRowElement} from 'neovex://shortcut-customization/js/accelerator_row.js';
-import type {AcceleratorSubsectionElement} from 'neovex://shortcut-customization/js/accelerator_subsection.js';
-import {fakeAcceleratorConfig, fakeDefaultAccelerators, fakeLayoutInfo, fakeSearchResults} from 'neovex://shortcut-customization/js/fake_data.js';
-import {FakeShortcutProvider} from 'neovex://shortcut-customization/js/fake_shortcut_provider.js';
-import {setShortcutProviderForTesting, setUseFakeProviderForTesting} from 'neovex://shortcut-customization/js/mojo_interface_provider.js';
-import {FakeShortcutSearchHandler} from 'neovex://shortcut-customization/js/search/fake_shortcut_search_handler.js';
-import {setShortcutSearchHandlerForTesting} from 'neovex://shortcut-customization/js/search/shortcut_search_handler.js';
-import type {ShortcutCustomizationAppElement} from 'neovex://shortcut-customization/js/shortcut_customization_app.js';
-import {setShortcutInputProviderForTesting} from 'neovex://shortcut-customization/js/shortcut_input_mojo_interface_provider.js';
-import type {LayoutInfo, MojoAcceleratorConfig, MojoLayoutInfo} from 'neovex://shortcut-customization/js/shortcut_types.js';
-import {AcceleratorCategory, AcceleratorConfigResult, AcceleratorSource, AcceleratorState, AcceleratorSubcategory, AcceleratorType, LayoutStyle, MetaKey, Modifier, TextAcceleratorPartType} from 'neovex://shortcut-customization/js/shortcut_types.js';
-import {getSubcategoryNameStringId} from 'neovex://shortcut-customization/js/shortcut_utils.js';
-import type {AcceleratorResultData} from 'neovex://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
-import {EditDialogCompletedActions, Subactions, UserAction} from 'neovex://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrDrawerElement} from 'chrome://resources/ash/common/cr_elements/cr_drawer/cr_drawer.js';
+import {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import {VKey} from 'chrome://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
+import {FakeShortcutInputProvider} from 'chrome://resources/ash/common/shortcut_input_ui/fake_shortcut_input_provider.js';
+import type {KeyEvent} from 'chrome://resources/ash/common/shortcut_input_ui/input_device_settings.mojom-webui.js';
+import {Modifier as ModifierEnum} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {IronIconElement} from 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {AcceleratorEditViewElement} from 'chrome://shortcut-customization/js/accelerator_edit_view.js';
+import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
+import type {AcceleratorRowElement} from 'chrome://shortcut-customization/js/accelerator_row.js';
+import type {AcceleratorSubsectionElement} from 'chrome://shortcut-customization/js/accelerator_subsection.js';
+import {fakeAcceleratorConfig, fakeDefaultAccelerators, fakeLayoutInfo, fakeSearchResults} from 'chrome://shortcut-customization/js/fake_data.js';
+import {FakeShortcutProvider} from 'chrome://shortcut-customization/js/fake_shortcut_provider.js';
+import {setShortcutProviderForTesting, setUseFakeProviderForTesting} from 'chrome://shortcut-customization/js/mojo_interface_provider.js';
+import {FakeShortcutSearchHandler} from 'chrome://shortcut-customization/js/search/fake_shortcut_search_handler.js';
+import {setShortcutSearchHandlerForTesting} from 'chrome://shortcut-customization/js/search/shortcut_search_handler.js';
+import type {ShortcutCustomizationAppElement} from 'chrome://shortcut-customization/js/shortcut_customization_app.js';
+import {setShortcutInputProviderForTesting} from 'chrome://shortcut-customization/js/shortcut_input_mojo_interface_provider.js';
+import type {LayoutInfo, MojoAcceleratorConfig, MojoLayoutInfo} from 'chrome://shortcut-customization/js/shortcut_types.js';
+import {AcceleratorCategory, AcceleratorConfigResult, AcceleratorSource, AcceleratorState, AcceleratorSubcategory, AcceleratorType, LayoutStyle, MetaKey, Modifier, TextAcceleratorPartType} from 'chrome://shortcut-customization/js/shortcut_types.js';
+import {getSubcategoryNameStringId} from 'chrome://shortcut-customization/js/shortcut_utils.js';
+import type {AcceleratorResultData} from 'chrome://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
+import {EditDialogCompletedActions, Subactions, UserAction} from 'chrome://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {createUserAcceleratorInfo} from './shortcut_customization_test_util.js';
 
@@ -59,7 +59,7 @@ suite('shortcutCustomizationAppTest', function() {
       new FakeShortcutInputProvider();
 
   const jellyDisabledCssUrl =
-      'neovex://resources/chromeos/colors/cros_styles.css';
+      'chrome://resources/chromeos/colors/cros_styles.css';
   let linkEl: HTMLLinkElement|null = null;
 
   setup(() => {
@@ -992,7 +992,7 @@ suite('shortcutCustomizationAppTest', function() {
 
     // Notify the app that the route has changed, and the selected page should
     // change too.
-    let url = new URL('neovex://shortcut-customization');
+    let url = new URL('chrome://shortcut-customization');
     url.searchParams.append('action', '0');
     url.searchParams.append(
         'category', AcceleratorCategory.kBrowser.toString());
@@ -1004,7 +1004,7 @@ suite('shortcutCustomizationAppTest', function() {
 
     // If we notify with a URL that doesn't contain the correct params, the
     // selected page should not change.
-    url = new URL('neovex://shortcut-customization');
+    url = new URL('chrome://shortcut-customization');
     page.onRouteChanged(url);
     await flushTasks();
     assertEquals(
@@ -1013,7 +1013,7 @@ suite('shortcutCustomizationAppTest', function() {
 
     // If we notify with a URL that contains extra params, the selected page
     // should change.
-    url = new URL('neovex://shortcut-customization');
+    url = new URL('chrome://shortcut-customization');
     url.searchParams.append('action', '0');
     url.searchParams.append(
         'category', AcceleratorCategory.kWindowsAndDesks.toString());
@@ -1043,7 +1043,7 @@ suite('shortcutCustomizationAppTest', function() {
     page = initShortcutCustomizationAppElement();
     await flushTasks();
 
-    assertTrue(getLinkEl().href.includes('neovex://theme/colors.css'));
+    assertTrue(getLinkEl().href.includes('chrome://theme/colors.css'));
   });
 
   test('TextAcceleratorLookupUpdatesCorrectly', async () => {
@@ -1309,7 +1309,7 @@ suite('shortcutCustomizationAppTest', function() {
             .shadowRoot!.querySelector('#keyboardSettingsLinkContainer')!
             .querySelector<HTMLLinkElement>('#keyboardSettingsLink');
     assertTrue(!!actualLink);
-    assertEquals('neovex://os-settings/per-device-keyboard', actualLink.href);
+    assertEquals('chrome://os-settings/per-device-keyboard', actualLink.href);
   });
 
   test('PolicyIndicatorShown', async () => {

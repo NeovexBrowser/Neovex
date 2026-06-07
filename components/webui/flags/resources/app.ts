@@ -3,22 +3,22 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 // </if>
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
 import '/strings.m.js';
 import './experiment.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';
@@ -160,7 +160,7 @@ export class FlagsAppElement extends CrLitElement {
   // <if expr="not is_ios">
   private lastFocused: HTMLElement|null = null;
 
-  // Whether the current URL is neovex://flags/deprecated. Only updated on
+  // Whether the current URL is chrome://flags/deprecated. Only updated on
   // initial load.
   private isFlagsDeprecatedUrl_: boolean = false;
   // </if>
@@ -194,7 +194,7 @@ export class FlagsAppElement extends CrLitElement {
     // <if expr="not is_ios">
     if (this.isFlagsDeprecatedUrl_) {
       // Update strings that are slightly different when on
-      // neovex://flags/deprecated
+      // chrome://flags/deprecated
       document.title = loadTimeData.getString('deprecatedTitle');
       this.getRequiredElement('.section-header-title').textContent =
           loadTimeData.getString('deprecatedHeading');

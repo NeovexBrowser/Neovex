@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {$} from 'neovex://resources/js/util.js';
+import {$} from 'chrome://resources/js/util.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 import {millisecondsToString} from './util.js';
 import '/strings.m.js';
 

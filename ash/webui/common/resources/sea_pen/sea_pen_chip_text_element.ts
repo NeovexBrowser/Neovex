@@ -6,12 +6,12 @@
  * @fileoverview A polymer component that displays Sea Pen chip text.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './sea_pen_chip_text_element.html.js';
 

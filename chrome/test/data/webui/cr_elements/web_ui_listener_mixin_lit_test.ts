@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 const TestDummyElementBase = WebUiListenerMixinLit(CrLitElement);
 class TestDummyElement extends TestDummyElementBase {

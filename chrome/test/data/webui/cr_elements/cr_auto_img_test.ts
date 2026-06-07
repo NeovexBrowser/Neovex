@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
 
-import {CrAutoImgElement} from 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import {CrAutoImgElement} from 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
 
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 async function waitForAttributeChange(
     element: HTMLElement, attribute: string): Promise<MutationRecord[]> {
@@ -38,8 +38,8 @@ suite('CrAutoImgElementTest', () => {
   });
 
   ([
-    ['https://foo.com/img.png', 'neovex://image/?https://foo.com/img.png'],
-    ['neovex://foo/img.png', 'neovex://foo/img.png'],
+    ['https://foo.com/img.png', 'chrome://image/?https://foo.com/img.png'],
+    ['chrome://foo/img.png', 'chrome://foo/img.png'],
     ['data:imge/png;base64,abc', 'data:imge/png;base64,abc'],
     ['', ''],
     ['chrome-untrusted://foo/img.png', ''],
@@ -77,7 +77,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(autoSrc)}&isGooglePhotos=true`,
             img.src);
 
@@ -85,7 +85,7 @@ suite('CrAutoImgElementTest', () => {
         img.isGooglePhotos = false;
 
         // Assert.
-        assertEquals(`neovex://image/?${autoSrc}`, img.src);
+        assertEquals(`chrome://image/?${autoSrc}`, img.src);
       });
 
   test(
@@ -99,7 +99,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(autoSrc)}&isGooglePhotos=true`,
             img.src);
 
@@ -107,19 +107,19 @@ suite('CrAutoImgElementTest', () => {
         img.removeAttribute('is-google-photos');
 
         // Assert.
-        assertEquals(`neovex://image/?${autoSrc}`, img.src);
+        assertEquals(`chrome://image/?${autoSrc}`, img.src);
       });
 
   test(
       'setting clear-src removes the src attribute first when auto-src changes',
       async () => {
-        const originalSrc = 'neovex://foo/foo.png';
+        const originalSrc = 'chrome://foo/foo.png';
         img.clearSrc = '';
         img.autoSrc = originalSrc;
         assertEquals(
             originalSrc, img.src, 'src attribute is set to initial value');
 
-        const newSrc = 'neovex://bar/bar.png';
+        const newSrc = 'chrome://bar/bar.png';
 
         const attrChangedPromise = waitForAttributeChange(img, 'src');
         img.autoSrc = newSrc;
@@ -147,7 +147,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(autoSrc)}&staticEncode=true`,
             img.src);
 
@@ -155,7 +155,7 @@ suite('CrAutoImgElementTest', () => {
         img.staticEncode = false;
 
         // Assert.
-        assertEquals(`neovex://image/?${autoSrc}`, img.src);
+        assertEquals(`chrome://image/?${autoSrc}`, img.src);
       });
 
   test(
@@ -169,7 +169,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(autoSrc)}&staticEncode=true`,
             img.src);
 
@@ -177,7 +177,7 @@ suite('CrAutoImgElementTest', () => {
         img.removeAttribute('static-encode');
 
         // Assert.
-        assertEquals(`neovex://image/?${autoSrc}`, img.src);
+        assertEquals(`chrome://image/?${autoSrc}`, img.src);
       });
 
   test(
@@ -191,7 +191,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(autoSrc)}&encodeType=jpeg`,
             img.src);
 
@@ -199,7 +199,7 @@ suite('CrAutoImgElementTest', () => {
         img.encodeType = '';
 
         // Assert.
-        assertEquals(`neovex://image/?${autoSrc}`, img.src);
+        assertEquals(`chrome://image/?${autoSrc}`, img.src);
       });
 
   test(
@@ -213,7 +213,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(autoSrc)}&encodeType=webp`,
             img.src);
 
@@ -221,7 +221,7 @@ suite('CrAutoImgElementTest', () => {
         img.removeAttribute('encode-type');
 
         // Assert.
-        assertEquals(`neovex://image/?${autoSrc}`, img.src);
+        assertEquals(`chrome://image/?${autoSrc}`, img.src);
       });
 
   test(
@@ -237,7 +237,7 @@ suite('CrAutoImgElementTest', () => {
 
         // Assert.
         assertEquals(
-            `neovex://image/?url=${
+            `chrome://image/?url=${
                 encodeURIComponent(
                     autoSrc)}&isGooglePhotos=true&staticEncode=true&encodeType=`,
             img.src);

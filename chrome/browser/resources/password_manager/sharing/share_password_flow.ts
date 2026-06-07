@@ -13,9 +13,9 @@ import './share_password_no_other_family_members_dialog.js';
 import './share_password_not_family_member_dialog.js';
 import './share_password_confirmation_dialog.js';
 
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {PasswordManagerProxy} from '../password_manager_proxy.js';
 import {PasswordManagerImpl} from '../password_manager_proxy.js';

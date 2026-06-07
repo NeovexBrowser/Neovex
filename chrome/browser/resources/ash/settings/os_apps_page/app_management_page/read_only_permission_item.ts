@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
 import '../../os_privacy_page/privacy_hub_allow_sensor_access_dialog.js';
 
 import {assert} from '//resources/js/assert.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
-import {getPermission} from 'neovex://resources/cr_components/app_management/util.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
+import {getPermission} from 'chrome://resources/cr_components/app_management/util.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {MediaDevicesProxy} from '../../common/media_devices_proxy.js';
 

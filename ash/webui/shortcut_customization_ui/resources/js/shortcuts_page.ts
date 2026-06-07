@@ -5,10 +5,10 @@
 import './accelerator_subsection.js';
 import '../css/shortcut_customization_shared.css.js';
 
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {afterNextRender, microTask, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {afterNextRender, microTask, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AcceleratorLookupManager} from './accelerator_lookup_manager.js';
 import type {AcceleratorRowElement} from './accelerator_row.js';

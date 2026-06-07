@@ -8,7 +8,7 @@
  * exist in chrome/.
  */
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 import type {NavigationView} from './diagnostics_types.js';
 import {getNavigationViewForPageId} from './diagnostics_utils.js';

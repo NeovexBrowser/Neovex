@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://password-manager/password_manager.js';
+import 'chrome://password-manager/password_manager.js';
 
-import type {SharePasswordRecipientElement} from 'neovex://password-manager/password_manager.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SharePasswordRecipientElement} from 'chrome://password-manager/password_manager.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {makeRecipientInfo} from './test_util.js';
 

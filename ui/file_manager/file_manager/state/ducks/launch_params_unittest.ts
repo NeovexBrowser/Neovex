@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertDeepEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertDeepEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {DialogType, type LaunchParams} from '../../state/state.js';
 import {getEmptyState, getStore, type Store} from '../store.js';

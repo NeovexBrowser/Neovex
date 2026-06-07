@@ -60,7 +60,7 @@ build_webui_tests("build") {
     "url_util_test.ts",
   ]
 
-  ts_path_mappings = [ "neovex://extensions/extensions.js|" + rebase_path(
+  ts_path_mappings = [ "chrome://extensions/extensions.js|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/extensions/tsc/extensions.d.ts",
                            target_gen_dir) ]
 

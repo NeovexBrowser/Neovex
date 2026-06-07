@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {$} from 'neovex://resources/js/util.js';
+import {$} from 'chrome://resources/js/util.js';
 
 import {BrowserBridge} from './browser_bridge.js';
 import {addNode, addNodeWithText, addTextNode} from './util.js';
@@ -184,7 +184,7 @@ DomainSecurityPolicyView.TAB_ID = 'tab-handle-domain-security-policy';
 DomainSecurityPolicyView.TAB_NAME = 'Domain Security Policy';
 // This tab was originally limited to HSTS. Even though it now encompasses
 // domain security policy more broadly, keep the hash as "#hsts" to preserve
-// links/documentation that directs users to neovex://net-internals#hsts.
+// links/documentation that directs users to chrome://net-internals#hsts.
 DomainSecurityPolicyView.TAB_HASH = '#hsts';
 
 // IDs for special HTML elements in domain_security_policy_view.html

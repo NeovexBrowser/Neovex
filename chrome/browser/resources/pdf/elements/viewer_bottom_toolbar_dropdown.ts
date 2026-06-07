@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './viewer_bottom_toolbar_dropdown.css.js';
 import {getHtml} from './viewer_bottom_toolbar_dropdown.html.js';

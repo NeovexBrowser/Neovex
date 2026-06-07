@@ -1,4 +1,4 @@
-// NEOVEX DOWNLOADS: Category sidebar overlay for neovex://downloads
+// NEOVEX DOWNLOADS: Category sidebar overlay for chrome://downloads
 // This script injects a category sidebar and filters the existing
 // downloads list by file extension categories.
 
@@ -254,7 +254,7 @@
   function captureBrowserProxy() {
     try {
       // The BrowserProxy is a singleton
-      const modUrl = 'neovex://downloads/browser_proxy.js';
+      const modUrl = 'chrome://downloads/browser_proxy.js';
       import(modUrl).then(mod => {
         if (mod && mod.BrowserProxy) {
           window.__neovexBrowserProxy = mod.BrowserProxy.getInstance();

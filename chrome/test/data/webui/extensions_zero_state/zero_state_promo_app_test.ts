@@ -1,19 +1,19 @@
 // Copyright 2025 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'neovex://extensions-zero-state/zero_state_promo_app.js';
+import 'chrome://extensions-zero-state/zero_state_promo_app.js';
 
-import {WebStoreLinkClicked} from 'neovex://extensions-zero-state/zero_state_promo.mojom-webui.js';
-import type {ZeroStatePromoAppElement} from 'neovex://extensions-zero-state/zero_state_promo_app.js';
-import type {ZeroStatePromoBrowserProxy} from 'neovex://extensions-zero-state/zero_state_promo_browser_proxy.js';
-import {ZeroStatePromoBrowserProxyImpl} from 'neovex://extensions-zero-state/zero_state_promo_browser_proxy.js';
-import {CustomHelpBubbleUserAction} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
-import type {CustomHelpBubbleHandlerInterface} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
-import type {CustomHelpBubbleProxy} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble_proxy.js';
-import {CustomHelpBubbleProxyImpl} from 'neovex://resources/cr_components/help_bubble/custom_help_bubble_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {WebStoreLinkClicked} from 'chrome://extensions-zero-state/zero_state_promo.mojom-webui.js';
+import type {ZeroStatePromoAppElement} from 'chrome://extensions-zero-state/zero_state_promo_app.js';
+import type {ZeroStatePromoBrowserProxy} from 'chrome://extensions-zero-state/zero_state_promo_browser_proxy.js';
+import {ZeroStatePromoBrowserProxyImpl} from 'chrome://extensions-zero-state/zero_state_promo_browser_proxy.js';
+import {CustomHelpBubbleUserAction} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
+import type {CustomHelpBubbleHandlerInterface} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble.mojom-webui.js';
+import type {CustomHelpBubbleProxy} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble_proxy.js';
+import {CustomHelpBubbleProxyImpl} from 'chrome://resources/cr_components/help_bubble/custom_help_bubble_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 
 export class TestBubbleHandler extends TestBrowserProxy implements

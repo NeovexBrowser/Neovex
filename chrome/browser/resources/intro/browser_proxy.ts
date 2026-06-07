@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview A helper object used by the neovex://intro page to
+ * @fileoverview A helper object used by the chrome://intro page to
  * interact with the browser.
  */
 

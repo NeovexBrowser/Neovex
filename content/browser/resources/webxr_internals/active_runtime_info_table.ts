@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import {getTemplate} from './active_runtime_info_table.html.js';
 import type {RuntimeInfo} from './webxr_internals.mojom-webui.js';

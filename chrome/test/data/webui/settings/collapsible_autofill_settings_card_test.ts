@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrCollapseElement, CrExpandButtonElement} from 'neovex://settings/lazy_load.js';
-import {AiEnterpriseFeaturePrefName, EntityDataManagerProxyImpl} from 'neovex://settings/lazy_load.js';
-import type {CollapsibleCardElement} from 'neovex://settings/settings.js';
-import {CrSettingsPrefs, loadTimeData, ModelExecutionEnterprisePolicyValue} from 'neovex://settings/settings.js';
-import type {CrPolicyPrefIndicatorElement, SettingsAiLoggingInfoBullet, SettingsPrefsElement, SettingsToggleButtonElement} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrCollapseElement, CrExpandButtonElement} from 'chrome://settings/lazy_load.js';
+import {AiEnterpriseFeaturePrefName, EntityDataManagerProxyImpl} from 'chrome://settings/lazy_load.js';
+import type {CollapsibleCardElement} from 'chrome://settings/settings.js';
+import {CrSettingsPrefs, loadTimeData, ModelExecutionEnterprisePolicyValue} from 'chrome://settings/settings.js';
+import type {CrPolicyPrefIndicatorElement, SettingsAiLoggingInfoBullet, SettingsPrefsElement, SettingsToggleButtonElement} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestEntityDataManagerProxy} from './test_entity_data_manager_proxy.js';
 

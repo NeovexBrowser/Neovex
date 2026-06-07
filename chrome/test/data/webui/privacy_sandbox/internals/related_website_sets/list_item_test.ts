@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
 
-import type {RelatedWebsiteSet, RelatedWebsiteSetsListItemElement} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {RelatedWebsiteSet, RelatedWebsiteSetsListItemElement} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {SAMPLE_RELATED_WEBSITE_SET, SAMPLE_RELATED_WEBSITE_SET_MANAGED_BY_ENTERPRISE} from './test_data.js';
 

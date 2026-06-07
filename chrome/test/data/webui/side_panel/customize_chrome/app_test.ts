@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://customize-chrome-side-panel.top-chrome/app.js';
+import 'chrome://customize-chrome-side-panel.top-chrome/app.js';
 
-import type {AppElement} from 'neovex://customize-chrome-side-panel.top-chrome/app.js';
-import type {BackgroundCollection, CustomizeChromePageRemote, ManagementNoticeState} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote, CustomizeChromeSection, NewTabPageType} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromeApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
-import {CustomizeToolbarClientCallbackRouter, CustomizeToolbarHandlerRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
-import type {CustomizeToolbarHandlerInterface} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
-import {CustomizeToolbarApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_toolbar/customize_toolbar_api_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertGE, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {AppElement} from 'chrome://customize-chrome-side-panel.top-chrome/app.js';
+import type {BackgroundCollection, CustomizeChromePageRemote, ManagementNoticeState} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote, CustomizeChromeSection, NewTabPageType} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromeApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
+import {CustomizeToolbarClientCallbackRouter, CustomizeToolbarHandlerRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
+import type {CustomizeToolbarHandlerInterface} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar.mojom-webui.js';
+import {CustomizeToolbarApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_toolbar/customize_toolbar_api_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertGE, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {installMock} from './test_support.js';
 

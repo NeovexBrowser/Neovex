@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SettingsHistorySearchPageElement} from 'neovex://settings/lazy_load.js';
-import {AiEnterpriseFeaturePrefName, AiPageActions, FeatureOptInState, SettingsAiPageFeaturePrefName as PrefName} from 'neovex://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
-import {AiPageHistorySearchInteractions, CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, ModelExecutionEnterprisePolicyValue} from 'neovex://settings/settings.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {assertEquals, assertTrue, assertFalse} from 'neovex://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsHistorySearchPageElement} from 'chrome://settings/lazy_load.js';
+import {AiEnterpriseFeaturePrefName, AiPageActions, FeatureOptInState, SettingsAiPageFeaturePrefName as PrefName} from 'chrome://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
+import {AiPageHistorySearchInteractions, CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, ModelExecutionEnterprisePolicyValue} from 'chrome://settings/settings.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {assertEquals, assertTrue, assertFalse} from 'chrome://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 

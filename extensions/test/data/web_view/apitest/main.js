@@ -1038,7 +1038,7 @@ function testLoadAbortIllegalChromeURL() {
     embedder.test.assertEq('about:blank', webview.src);
     embedder.test.succeed();
   });
-  webview.src = 'neovex://newtab';
+  webview.src = 'chrome://newtab';
   document.body.appendChild(webview);
 }
 

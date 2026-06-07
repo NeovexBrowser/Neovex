@@ -4,9 +4,9 @@
 
 import './key_value_pair_entry.js';
 
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {KeyValuePairEntry, KeyValuePairEntryElement} from './key_value_pair_entry.js';
 import {parseKeyValuePairEntry} from './key_value_pair_parser.js';

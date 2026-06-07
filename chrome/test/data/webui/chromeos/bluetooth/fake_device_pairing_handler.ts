@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {PairingAuthType} from 'neovex://resources/ash/common/bluetooth/bluetooth_types.js';
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {KeyEnteredHandlerRemote, PairingResult} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import type {BluetoothDeviceProperties, DevicePairingDelegateInterface, DevicePairingHandlerInterface, KeyEnteredHandlerPendingReceiver} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {PairingAuthType} from 'chrome://resources/ash/common/bluetooth/bluetooth_types.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {KeyEnteredHandlerRemote, PairingResult} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import type {BluetoothDeviceProperties, DevicePairingDelegateInterface, DevicePairingHandlerInterface, KeyEnteredHandlerPendingReceiver} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
 
 /**
  * @fileoverview Fake implementation of DevicePairingHandler for testing.

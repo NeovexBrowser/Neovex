@@ -18,10 +18,10 @@ export const FINGERPRINT_SCANNED_ICON: string =
     'fingerprint-icon:fingerprint-scanned';
 
 export const FINGERPRINT_CHECK_URL: string =
-    'neovex://resources/ash/common/quick_unlock/fingerprint_check.json';
+    'chrome://resources/ash/common/quick_unlock/fingerprint_check.json';
 
 export const FINGERPRINT_ANIMATION_URL: string =
-    'neovex://resources/ash/common/quick_unlock/fingerprint_enrollment.json';
+    'chrome://resources/ash/common/quick_unlock/fingerprint_enrollment.json';
 
 /**
  * The time in milliseconds of the animation updates.

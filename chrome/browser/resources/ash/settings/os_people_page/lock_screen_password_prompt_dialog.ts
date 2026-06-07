@@ -18,8 +18,8 @@
  */
 import '../common/password_prompt_dialog/password_prompt_dialog.js';
 
-import {LockScreenProgress, recordLockScreenProgress} from 'neovex://resources/ash/common/quick_unlock/lock_screen_constants.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {LockScreenProgress, recordLockScreenProgress} from 'chrome://resources/ash/common/quick_unlock/lock_screen_constants.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {LockStateMixin} from '../lock_state_mixin.js';
 

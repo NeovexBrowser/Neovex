@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://certificate-manager/certificate_provisioning_list.js';
-import 'neovex://certificate-manager/certificate_provisioning_entry.js';
+import 'chrome://certificate-manager/certificate_provisioning_list.js';
+import 'chrome://certificate-manager/certificate_provisioning_entry.js';
 
-import type {CertificateProvisioningActionEventDetail} from 'neovex://certificate-manager/certificate_manager_types.js';
-import {CertificateProvisioningViewDetailsActionEvent} from 'neovex://certificate-manager/certificate_manager_types.js';
-import type {CertificateProvisioningProcess} from 'neovex://certificate-manager/certificate_provisioning_browser_proxy.js';
-import {CertificateProvisioningBrowserProxyImpl} from 'neovex://certificate-manager/certificate_provisioning_browser_proxy.js';
-import type {CertificateProvisioningDetailsDialogElement} from 'neovex://certificate-manager/certificate_provisioning_details_dialog.js';
-import type {CertificateProvisioningEntryElement} from 'neovex://certificate-manager/certificate_provisioning_entry.js';
-import type {CertificateProvisioningListElement} from 'neovex://certificate-manager/certificate_provisioning_list.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CertificateProvisioningActionEventDetail} from 'chrome://certificate-manager/certificate_manager_types.js';
+import {CertificateProvisioningViewDetailsActionEvent} from 'chrome://certificate-manager/certificate_manager_types.js';
+import type {CertificateProvisioningProcess} from 'chrome://certificate-manager/certificate_provisioning_browser_proxy.js';
+import {CertificateProvisioningBrowserProxyImpl} from 'chrome://certificate-manager/certificate_provisioning_browser_proxy.js';
+import type {CertificateProvisioningDetailsDialogElement} from 'chrome://certificate-manager/certificate_provisioning_details_dialog.js';
+import type {CertificateProvisioningEntryElement} from 'chrome://certificate-manager/certificate_provisioning_entry.js';
+import type {CertificateProvisioningListElement} from 'chrome://certificate-manager/certificate_provisioning_list.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {TestCertificateProvisioningBrowserProxy} from './test_certificate_provisioning_browser_proxy.js';
 

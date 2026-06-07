@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertDeepEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertDeepEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {PropStatus, type SearchData, SearchLocation, SearchRecency} from '../../state/state.js';
 import {getEmptyState, getStore, type Store} from '../store.js';

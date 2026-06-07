@@ -6,7 +6,7 @@ import './eligibility_list.js';
 import './subscription_list.js';
 import './shared_style.css.js';
 
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';

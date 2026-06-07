@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
 import '/strings.m.js';
 
-import type {CrTooltipElement} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import {MouseHoverableMixinLit} from 'neovex://resources/cr_elements/mouse_hoverable_mixin_lit.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {CrTooltipElement} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import {MouseHoverableMixinLit} from 'chrome://resources/cr_elements/mouse_hoverable_mixin_lit.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {normalizeURL, TabData, TabItemType} from './tab_data.js';
 import {colorName} from './tab_group_color_helper.js';
@@ -183,7 +183,7 @@ export class TabSearchItemElement extends TabSearchItemBase {
     return (tab as Tab).faviconUrl ?
         `url("${(tab as Tab).faviconUrl!}")` :
         getFaviconForPageURL(
-            (tab as Tab).isDefaultFavicon ? 'neovex://newtab' : tab.url, false);
+            (tab as Tab).isDefaultFavicon ? 'chrome://newtab' : tab.url, false);
   }
 
   /**
@@ -255,10 +255,10 @@ export class TabSearchItemElement extends TabSearchItemBase {
           }
         });
 
-    // Show neovex:// if it's a chrome internal url
+    // Show chrome:// if it's a chrome internal url
     const protocol = new URL(normalizeURL(data.tab.url)).protocol;
     if (protocol === 'chrome:') {
-      this.$.secondaryText.prepend(document.createTextNode('neovex://'));
+      this.$.secondaryText.prepend(document.createTextNode('chrome://'));
     }
   }
 

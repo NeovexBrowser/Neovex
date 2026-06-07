@@ -6,9 +6,9 @@
  * @fileoverview Fake implementation of chrome.system.display for testing.
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {FakeChromeEvent} from 'neovex://webui-test/fake_chrome_event.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {FakeChromeEvent} from 'chrome://webui-test/fake_chrome_event.js';
 
 type SystemDisplayApi = typeof chrome.system.display;
 type DisplayLayout = chrome.system.display.DisplayLayout;

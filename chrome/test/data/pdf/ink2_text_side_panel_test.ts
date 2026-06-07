@@ -4,7 +4,7 @@
 
 import {AnnotationMode, hexToColor, Ink2Manager, TEXT_COLORS, TextTypeface, UserAction} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {Color} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {setupMockMetricsPrivate} from './test_util.js';
 

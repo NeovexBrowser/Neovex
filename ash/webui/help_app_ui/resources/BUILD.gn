@@ -69,17 +69,17 @@ copy("stage_static") {
 system_apps_dir =
     rebase_path("$root_gen_dir/ash/webui/system_apps/public/js", root_build_dir)
 
-# Generate a bundle of all the JS needed for neovex://help-app.
+# Generate a bundle of all the JS needed for chrome://help-app.
 optimize_webui("browser_proxy_rollup") {
   host = "help-app"
   js_module_in_files = [ "browser_proxy.js" ]
 
-  # Exclude files that are served from neovex://resources anyway, since bundling
+  # Exclude files that are served from chrome://resources anyway, since bundling
   # them would unnecessarily increase the overall build size.
   excludes = [
-    "neovex://resources/js/mojo_type_util.js",
-    "neovex://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js",
-    "neovex://resources/mojo/url/mojom/url.mojom-webui.js",
+    "chrome://resources/js/mojo_type_util.js",
+    "chrome://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js",
+    "chrome://resources/mojo/url/mojom/url.mojom-webui.js",
   ]
   input = rebase_path(stage_folder, root_build_dir)
   deps = [

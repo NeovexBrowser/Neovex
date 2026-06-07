@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
+import 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
 
 import type {BookmarkProductInfo} from '//resources/cr_components/commerce/shared.mojom-webui.js';
-import type {BookmarksTreeNode} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
-import {BookmarksApiProxyImpl} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks_api_proxy.js';
-import {PowerBookmarksService} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_service.js';
-import {ShoppingServiceBrowserProxyImpl} from 'neovex://resources/cr_components/commerce/shopping_service_browser_proxy.js';
-import {PageImageServiceBrowserProxy} from 'neovex://resources/cr_components/page_image_service/browser_proxy.js';
-import {PageImageServiceHandlerRemote} from 'neovex://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
-import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import type {BookmarksTreeNode} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
+import {BookmarksApiProxyImpl} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks_api_proxy.js';
+import {PowerBookmarksService} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_service.js';
+import {ShoppingServiceBrowserProxyImpl} from 'chrome://resources/cr_components/commerce/shopping_service_browser_proxy.js';
+import {PageImageServiceBrowserProxy} from 'chrome://resources/cr_components/page_image_service/browser_proxy.js';
+import {PageImageServiceHandlerRemote} from 'chrome://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
+import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
 
 import {TestBrowserProxy as TestShoppingServiceApiProxy} from './commerce/test_shopping_service_api_proxy.js';
 import {TestBookmarksApiProxy} from './test_bookmarks_api_proxy.js';

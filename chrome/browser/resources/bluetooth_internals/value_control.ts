@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 /**
- * Javascript for ValueControl, served from neovex://bluetooth-internals/.
+ * Javascript for ValueControl, served from chrome://bluetooth-internals/.
  */
 
-import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import {GattResult, Property} from './device.mojom-webui.js';
 import {connectToDevice} from './device_broker.js';

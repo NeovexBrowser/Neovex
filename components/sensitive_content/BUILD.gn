@@ -100,7 +100,7 @@ if (is_android) {
   }
 
   # Used to expose the features to the WebView flag UI (the equivalent of
-  # neovex://flags for WebView).
+  # chrome://flags for WebView).
   android_library("sensitive_content_features_java") {
     srcjar_deps = [ ":java_features_srcjar" ]
   }

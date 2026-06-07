@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/textfield/textfield.js';
-import 'neovex://resources/cros_components/snackbar/snackbar.js';
+import 'chrome://resources/cros_components/textfield/textfield.js';
+import 'chrome://resources/cros_components/snackbar/snackbar.js';
 import './cra/cra-icon.js';
 import './cra/cra-icon-button.js';
 import './recording-title-suggestion.js';
 
 import {
   Snackbar,
-} from 'neovex://resources/cros_components/snackbar/snackbar.js';
+} from 'chrome://resources/cros_components/snackbar/snackbar.js';
 import {
   Textfield,
-} from 'neovex://resources/cros_components/textfield/textfield.js';
+} from 'chrome://resources/cros_components/textfield/textfield.js';
 import {
   createRef,
   css,
@@ -21,7 +21,7 @@ import {
   nothing,
   PropertyDeclarations,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {

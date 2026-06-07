@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import type {SettingsOtherGoogleDataDialogElement} from 'neovex://settings/lazy_load.js';
-import type {CrLinkRowElement} from 'neovex://settings/settings.js';
-import {loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, PasswordManagerImpl, PasswordManagerPage, SignedInState} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
-import {isChildVisible, isVisible} from 'neovex://webui-test/test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import type {SettingsOtherGoogleDataDialogElement} from 'chrome://settings/lazy_load.js';
+import type {CrLinkRowElement} from 'chrome://settings/settings.js';
+import {loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, PasswordManagerImpl, PasswordManagerPage, SignedInState} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {isChildVisible, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';

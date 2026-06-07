@@ -303,12 +303,12 @@ webui_ts_library("build_ts") {
   # TODO(b/314832310): Delete the path_mappings argument and change the imports
   # to relative imports once ash/webui/common/resources/network migrated to TS.
   path_mappings =
-      [ "neovex://resources/ash/common/network/*|" +
+      [ "chrome://resources/ash/common/network/*|" +
         rebase_path(
             "$root_gen_dir/ash/webui/common/resources/preprocessed/network/*",
             target_gen_dir) ]
   if (is_chrome_branded) {
-    path_mappings += [ "neovex://resources/ash/common/internal/ash_internal_icons.html.js|" + rebase_path(
+    path_mappings += [ "chrome://resources/ash/common/internal/ash_internal_icons.html.js|" + rebase_path(
                            "$root_gen_dir/ash/webui/common/resources/preprocessed/internal/ash_internal_icons.html.d.ts",
                            target_gen_dir) ]
   }

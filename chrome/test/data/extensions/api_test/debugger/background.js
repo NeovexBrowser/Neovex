@@ -151,10 +151,10 @@ chrome.test.getConfig(config => chrome.test.runTests([
   },
 
   async function attachToWebUI() {
-    const tab = await openTab('neovex://version');
+    const tab = await openTab('chrome://version');
     const debuggee = {tabId: tab.id};
     chrome.debugger.attach(debuggee, protocolVersion,
-        fail('Cannot access a neovex:// URL'));
+        fail('Cannot access a chrome:// URL'));
     chrome.tabs.remove(tab.id);
   },
 
@@ -172,7 +172,7 @@ chrome.test.getConfig(config => chrome.test.runTests([
       function onDetach(from, reason) {
         chrome.debugger.onDetach.removeListener(onDetach);
         chrome.debugger.attach(
-            debuggee, protocolVersion, fail('Cannot access a neovex:// URL'));
+            debuggee, protocolVersion, fail('Cannot access a chrome:// URL'));
         chrome.test.assertTrue(responded);
         chrome.test.assertEq(debuggee.tabId, from.tabId);
         chrome.test.assertEq('target_closed', reason);
@@ -182,7 +182,7 @@ chrome.test.getConfig(config => chrome.test.runTests([
       chrome.test.assertNoLastError();
       chrome.debugger.onDetach.addListener(onDetach);
       chrome.debugger.sendCommand(
-        debuggee, 'Page.navigate', {url: 'neovex://version'}, onResponse);
+        debuggee, 'Page.navigate', {url: 'chrome://version'}, onResponse);
     });
   },
 

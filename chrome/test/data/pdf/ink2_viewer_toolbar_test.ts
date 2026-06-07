@@ -4,10 +4,10 @@
 
 import {AnnotationMode, PluginController, UserAction} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {InkTextBoxElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertCheckboxMenuButton, createTextBox, enterFullscreenWithUserGesture, finishInkStroke, getRequiredElement, openToolbarMenu, setupMockMetricsPrivate, setupTestMockPluginForInk, startFinishModifiedInkStroke, startInkStroke} from './test_util.js';
 

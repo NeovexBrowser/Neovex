@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 var tabProps = [];
-const NEW_TAB_URL = 'neovex://newtab/';
+const NEW_TAB_URL = 'chrome://newtab/';
 
 chrome.test.runTests([
   // Get the info for any tabs already exist.
@@ -43,7 +43,7 @@ chrome.test.runTests([
   },
   // Test the chrome.tabs.onUpdated listener through the loading cycle.
   function testTabOnUpdatedListener() {
-    var newUrl = 'neovex://version/';
+    var newUrl = 'chrome://version/';
     var gotLoading = false;
     chrome.tabs.onUpdated.addListener(function localListener(
         tabId, changeInfo, tab) {

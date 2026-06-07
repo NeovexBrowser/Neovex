@@ -1,13 +1,13 @@
 <!doctype html>
 <html dir="$i18n{textdirection}" lang="$i18n{language}">
 <head>
-  <link rel="icon" type="image/svg+xml" href="neovex://resources/images/neovex_logo.svg">
-  <base href="neovex://history">
+  <link rel="icon" type="image/svg+xml" href="chrome://resources/images/neovex_logo.svg">
+  <base href="chrome://history">
   <meta charset="utf8">
   <meta name="color-scheme" content="light dark">
   <title>$i18n{title}</title>
 
-  <link rel="stylesheet" href="neovex://resources/css/md_colors.css">
+  <link rel="stylesheet" href="chrome://resources/css/md_colors.css">
 
   <style>
     html {
@@ -143,7 +143,7 @@
   <div id="app-shim">$i18n{loading}</div>
 
   <!-- Hidden iframe bridge to NTP for wallpaper data -->
-  <iframe id="ntpBridge" src="neovex://new-tab-page/new_tab_page.html"></iframe>
+  <iframe id="ntpBridge" src="chrome://new-tab-page/new_tab_page.html"></iframe>
 
   <script>
     (function() {
@@ -191,7 +191,7 @@
       } catch(e) { /* IndexedDB not available */ }
     })();
   </script>
-  <link rel="stylesheet" href="neovex://resources/css/text_defaults_md.css">
+  <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
   <script type="module" src="history.js"></script>
 </body>
 </html>

@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://webui-test/cr_elements/cr_policy_strings.js';
+import 'chrome://webui-test/cr_elements/cr_policy_strings.js';
 
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SiteEntryElement} from 'neovex://settings/lazy_load.js';
-import {SiteSettingsBrowserProxyImpl, SortMethod} from 'neovex://settings/lazy_load.js';
-import {Router, routes} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished, isChildVisible} from 'neovex://webui-test/test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SiteEntryElement} from 'chrome://settings/lazy_load.js';
+import {SiteSettingsBrowserProxyImpl, SortMethod} from 'chrome://settings/lazy_load.js';
+import {Router, routes} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished, isChildVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import {createOriginInfo, createSiteGroup} from './test_util.js';

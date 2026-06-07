@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/dropdown/dropdown_option.js';
+import 'chrome://resources/cros_components/dropdown/dropdown_option.js';
 import './cra/cra-dropdown.js';
 import './cra/cra-icon.js';
 
@@ -13,7 +13,7 @@ import {
   map,
   PropertyDeclarations,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {ReactiveLitElement} from '../core/reactive/lit.js';
 import {LangPackInfo, LanguageCode} from '../core/soda/language_info.js';

@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import {html, render} from '//resources/lit/v3_0/lit.rollup.js';
-import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 interface Result {
   reason: string;

@@ -7,8 +7,8 @@
  * testing.
  */
 
-import type {personalizationSearchMojom} from 'neovex://os-settings/os_settings.js';
-import type {String16} from 'neovex://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
+import type {personalizationSearchMojom} from 'chrome://os-settings/os_settings.js';
+import type {String16} from 'chrome://resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
 
 type SearchResult = personalizationSearchMojom.SearchResult;
 type SearchHandlerInterface = personalizationSearchMojom.SearchHandlerInterface;

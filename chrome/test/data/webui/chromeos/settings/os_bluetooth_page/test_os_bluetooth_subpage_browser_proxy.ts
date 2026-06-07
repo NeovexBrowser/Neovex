@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {FastPairSavedDevice, OsBluetoothDevicesSubpageBrowserProxy} from 'neovex://os-settings/os_settings.js';
-import {FastPairSavedDevicesOptInStatus} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/ash/common/cr.m.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {FastPairSavedDevice, OsBluetoothDevicesSubpageBrowserProxy} from 'chrome://os-settings/os_settings.js';
+import {FastPairSavedDevicesOptInStatus} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/ash/common/cr.m.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestOsBluetoothDevicesSubpageBrowserProxy extends TestBrowserProxy
     implements OsBluetoothDevicesSubpageBrowserProxy {

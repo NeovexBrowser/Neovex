@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
-import 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
+import 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
 import './input_device_settings_shared.css.js';
 import '../settings_shared.css.js';
 
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {ShortcutInputElement} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {ShortcutInputElement} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {ButtonRemapping, KeyEvent, ShortcutInputProviderInterface} from './input_device_settings_types.js';
 import {MetaKey} from './input_device_settings_types.js';

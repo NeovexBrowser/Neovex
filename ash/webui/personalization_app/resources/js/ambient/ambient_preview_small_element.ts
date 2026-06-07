@@ -8,14 +8,14 @@
  * Currently used on the ambient settings page.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
-import 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 import './ambient_zero_state_svg_element.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {AmbientUiVisibility} from '../../personalization_app.mojom-webui.js';
 import {isAmbientModeAllowed} from '../load_time_booleans.js';

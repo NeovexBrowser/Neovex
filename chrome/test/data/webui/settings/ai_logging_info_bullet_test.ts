@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import type {SettingsAiLoggingInfoBullet} from 'neovex://settings/settings.js';
-import {loadTimeData, ModelExecutionEnterprisePolicyValue} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsAiLoggingInfoBullet} from 'chrome://settings/settings.js';
+import {loadTimeData, ModelExecutionEnterprisePolicyValue} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 type PrefObject = chrome.settingsPrivate.PrefObject;
 

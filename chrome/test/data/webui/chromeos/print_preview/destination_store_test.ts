@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {DestinationStore, LocalDestinationInfo, NativeInitialSettings} from 'neovex://print/print_preview.js';
-import {Destination, DestinationErrorType, DestinationOrigin, DestinationStoreEventType, GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl, PrinterStatusReason, PrinterStatusSeverity, PrinterType} from 'neovex://print/print_preview.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {DestinationStore, LocalDestinationInfo, NativeInitialSettings} from 'chrome://print/print_preview.js';
+import {Destination, DestinationErrorType, DestinationOrigin, DestinationStoreEventType, GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl, PrinterStatusReason, PrinterStatusSeverity, PrinterType} from 'chrome://print/print_preview.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import type {NativeLayerCrosStub} from './native_layer_cros_stub.js';
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';

@@ -9,7 +9,7 @@ import type {HelpBubbleElement} from './help_bubble.js';
 export function getHtml(this: HelpBubbleElement) {
   // clang-format off
   return html`
-<link rel="stylesheet" href="neovex://theme/colors.css?sets=ui,chrome&shadow_host=true">
+<link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome&shadow_host=true">
 <div class="help-bubble" role="alertdialog" aria-modal="true"
     aria-labelledby="title" aria-describedby="body" aria-live="assertive"
     @keydown="${this.onKeydown_}" @click="${this.onHelpBubbleClick_}">

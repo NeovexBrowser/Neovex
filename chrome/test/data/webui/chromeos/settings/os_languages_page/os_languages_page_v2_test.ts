@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {LanguageHelper, LanguageState, OsSettingsChangeDeviceLanguageDialogElement, OsSettingsLanguagesPageV2Element, SettingsLanguagesElement} from 'neovex://os-settings/lazy_load.js';
-import {LanguagesBrowserProxyImpl, LanguagesMetricsProxyImpl, LanguagesPageInteraction, LifetimeBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {CrActionMenuElement, CrCheckboxElement, CrLinkRowElement, CrPolicyIndicatorElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
-import {CrSettingsPrefs, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {keyDownOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertGT, assertLT, assertNull, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
-import {fakeDataBind, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {LanguageHelper, LanguageState, OsSettingsChangeDeviceLanguageDialogElement, OsSettingsLanguagesPageV2Element, SettingsLanguagesElement} from 'chrome://os-settings/lazy_load.js';
+import {LanguagesBrowserProxyImpl, LanguagesMetricsProxyImpl, LanguagesPageInteraction, LifetimeBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {CrActionMenuElement, CrCheckboxElement, CrLinkRowElement, CrPolicyIndicatorElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
+import {CrSettingsPrefs, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {keyDownOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertGT, assertLT, assertNull, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
+import {fakeDataBind, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import type {FakeLanguageSettingsPrivate} from '../fake_language_settings_private.js';
 import {getFakeLanguagePrefs} from '../fake_language_settings_private.js';

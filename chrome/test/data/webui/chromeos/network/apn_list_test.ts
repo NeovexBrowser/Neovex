@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/apn_list.js';
-import 'neovex://resources/ash/common/network/apn_detail_dialog.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/apn_list.js';
+import 'chrome://resources/ash/common/network/apn_detail_dialog.js';
 
 import {ApnDetailDialogMode} from '//resources/ash/common/network/cellular_utils.js';
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {LocalizedLinkElement} from 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import type {ApnListElement} from 'neovex://resources/ash/common/network/apn_list.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {ActivationStateType, ApnAuthenticationType, ApnIpType, ApnSource, ApnState, ApnType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import type {ApnProperties, ManagedApnList, ManagedCellularProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {PolicySource, PortalState} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {LocalizedLinkElement} from 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import type {ApnListElement} from 'chrome://resources/ash/common/network/apn_list.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {ActivationStateType, ApnAuthenticationType, ApnIpType, ApnSource, ApnState, ApnType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import type {ApnProperties, ManagedApnList, ManagedCellularProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {PolicySource, PortalState} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('ApnListTest', () => {
   let apnList: ApnListElement;

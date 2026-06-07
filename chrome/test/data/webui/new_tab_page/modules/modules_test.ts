@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Module, ModuleWrapperElement, NamedWidth} from 'neovex://new-tab-page/lazy_load.js';
-import {ModuleDescriptor, ModuleRegistry, ModulesElement, SUPPORTED_MODULE_WIDTHS} from 'neovex://new-tab-page/lazy_load.js';
-import {NewTabPageProxy} from 'neovex://new-tab-page/new_tab_page.js';
-import type {PageRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {Module, ModuleWrapperElement, NamedWidth} from 'chrome://new-tab-page/lazy_load.js';
+import {ModuleDescriptor, ModuleRegistry, ModulesElement, SUPPORTED_MODULE_WIDTHS} from 'chrome://new-tab-page/lazy_load.js';
+import {NewTabPageProxy} from 'chrome://new-tab-page/new_tab_page.js';
+import type {PageRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertNotStyle, assertStyle, createElement, initNullModule, installMock} from '../test_support.js';
 

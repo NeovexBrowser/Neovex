@@ -4,8 +4,8 @@
 
 import '/strings.m.js';
 
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import type {BookmarksTreeNode} from './bookmarks.mojom-webui.js';
 import type {BookmarksApiProxy} from './bookmarks_api_proxy.js';

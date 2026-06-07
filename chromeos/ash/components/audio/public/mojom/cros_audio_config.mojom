@@ -151,7 +151,7 @@ interface AudioSystemPropertiesObserver {
 // Provides audio metadata and controls. Embedded in the browser process.
 //
 // Clients include:
-// * WebUI such as neovex://os-settings, implemented in JS as part of renderer
+// * WebUI such as chrome://os-settings, implemented in JS as part of renderer
 //   processes.
 interface CrosAudioConfig {
   // Invokes OnPropertiesUpdated() with initial set of properties when

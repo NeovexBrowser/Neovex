@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {TetherConnectionDialogElement} from 'neovex://os-settings/lazy_load.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import type {TetherConnectionDialogElement} from 'chrome://os-settings/lazy_load.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 suite('<tether-connection-dialog>', function() {
   let tetherDialog: TetherConnectionDialogElement;

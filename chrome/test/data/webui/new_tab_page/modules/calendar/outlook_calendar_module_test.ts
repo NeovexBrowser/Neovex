@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {DisableModuleEvent, DismissModuleInstanceEvent, OutlookCalendarModuleElement} from 'neovex://new-tab-page/lazy_load.js';
-import {outlookCalendarDescriptor, OutlookCalendarProxyImpl, ParentTrustedDocumentProxy} from 'neovex://new-tab-page/lazy_load.js';
-import {MicrosoftAuthUntrustedDocumentRemote} from 'neovex://new-tab-page/ntp_microsoft_auth_shared_ui.mojom-webui.js';
-import {OutlookCalendarPageHandlerRemote} from 'neovex://new-tab-page/outlook_calendar.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import type {DisableModuleEvent, DismissModuleInstanceEvent, OutlookCalendarModuleElement} from 'chrome://new-tab-page/lazy_load.js';
+import {outlookCalendarDescriptor, OutlookCalendarProxyImpl, ParentTrustedDocumentProxy} from 'chrome://new-tab-page/lazy_load.js';
+import {MicrosoftAuthUntrustedDocumentRemote} from 'chrome://new-tab-page/ntp_microsoft_auth_shared_ui.mojom-webui.js';
+import {OutlookCalendarPageHandlerRemote} from 'chrome://new-tab-page/outlook_calendar.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {installMock} from '../../test_support.js';
 

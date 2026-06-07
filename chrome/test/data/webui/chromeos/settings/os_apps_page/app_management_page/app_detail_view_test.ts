@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {AppManagementAppDetailViewElement} from 'neovex://os-settings/lazy_load.js';
-import {AppManagementStore, updateSelectedAppId} from 'neovex://os-settings/os_settings.js';
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {assertEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {AppManagementAppDetailViewElement} from 'chrome://os-settings/lazy_load.js';
+import {AppManagementStore, updateSelectedAppId} from 'chrome://os-settings/os_settings.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {assertEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import type {FakePageHandler} from '../../app_management/fake_page_handler.js';
 import {replaceBody, replaceStore, setupFakeHandler} from '../../app_management/test_util.js';

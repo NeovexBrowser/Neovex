@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {parseHtmlSubset, sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {assertEquals, assertFalse, assertThrows} from 'neovex://webui-test/chai_assert.js';
+import {parseHtmlSubset, sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {assertEquals, assertFalse, assertThrows} from 'chrome://webui-test/chai_assert.js';
 
 declare global {
   interface Window {
@@ -53,7 +53,7 @@ suite('ParseHtmlSubsetTest', function() {
 
   test('valid anchors', function() {
     parseHtmlSubset('<a href="https://google.com">Google</a>');
-    parseHtmlSubset('<a href="neovex://settings">Google</a>');
+    parseHtmlSubset('<a href="chrome://settings">Google</a>');
   });
 
   test('invalid anchor hrefs', function() {
@@ -103,14 +103,14 @@ suite('ParseHtmlSubsetTest', function() {
     assertEquals(
         'link', (result.firstChild as HTMLAnchorElement).getAttribute('role'));
     result =
-        parseHtmlSubset('<img src="neovex://favicon2/">', ['img'], ['src']);
+        parseHtmlSubset('<img src="chrome://favicon2/">', ['img'], ['src']);
     assertEquals(
-        'neovex://favicon2/',
+        'chrome://favicon2/',
         (result.firstChild as HTMLAnchorElement).getAttribute('src'));
   });
 
   test('supported optional attributes without the argument', function() {
-    parseAndAssertThrows('<img src="neovex://favicon2/">', ['img']);
+    parseAndAssertThrows('<img src="chrome://favicon2/">', ['img']);
     parseAndAssertThrows('<a id="test">link</a>');
   });
 
@@ -126,8 +126,8 @@ suite('ParseHtmlSubsetTest', function() {
 
   test('sanitizeInnerHtml', function() {
     assertEquals(
-        '<a href="neovex://foo"></a>',
-        sanitizeInnerHtml('<a href="neovex://foo"></a>').toString());
+        '<a href="chrome://foo"></a>',
+        sanitizeInnerHtml('<a href="chrome://foo"></a>').toString());
     assertThrows(() => {
       sanitizeInnerHtml('<iframe></iframe>');
     }, 'IFRAME is not supported');

@@ -40,8 +40,8 @@ def main(argv):
     if FLAGS.account and FLAGS.password:
       sign_in(driver, FLAGS.account, FLAGS.password)
 
-      # Verify Policy status legend in neovex://policy page.
-      policy_url = 'neovex://policy'
+      # Verify Policy status legend in chrome://policy page.
+      policy_url = 'chrome://policy'
       driver.get(policy_url)
 
       # Give the page 10 seconds for `enrollment and legend rending.
@@ -50,9 +50,9 @@ def main(argv):
       # Wait for policy fetch to complete.
       time.sleep(10)
 
-    # The JSON content on neovex://prefs-internals is typically within a <pre>
+    # The JSON content on chrome://prefs-internals is typically within a <pre>
     # tag.
-    driver.get('neovex://prefs-internals')
+    driver.get('chrome://prefs-internals')
     try:
       pre_element = driver.find_element(By.TAG_NAME, 'pre')
       json_text = pre_element.text

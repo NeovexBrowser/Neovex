@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsDetailedBuildInfoSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import type {CrPolicyIndicatorElement} from 'neovex://os-settings/os_settings.js';
-import {AboutPageBrowserProxyImpl, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {CrPolicyIndicatorType} from 'neovex://resources/ash/common/cr_policy_indicator_behavior.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsDetailedBuildInfoSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import type {CrPolicyIndicatorElement} from 'chrome://os-settings/os_settings.js';
+import {AboutPageBrowserProxyImpl, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {CrPolicyIndicatorType} from 'chrome://resources/ash/common/cr_policy_indicator_behavior.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

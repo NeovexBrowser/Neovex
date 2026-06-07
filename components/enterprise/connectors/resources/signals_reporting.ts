@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import {BrowserProxy} from './browser_proxy.js';
 import type {PageHandlerInterface, SignalsReportingState} from './connectors_internals.mojom-webui.js';

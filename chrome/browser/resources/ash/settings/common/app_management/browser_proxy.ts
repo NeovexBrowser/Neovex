@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PageCallbackRouter, PageHandlerInterface} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy as AppManagementComponentBrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
+import type {PageCallbackRouter, PageHandlerInterface} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy as AppManagementComponentBrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
 
 // Export this module instance that is bundled locally.
 export {AppManagementComponentBrowserProxy};

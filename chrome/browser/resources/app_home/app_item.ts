@@ -6,7 +6,7 @@ import '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
 import '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
 
 import type {CrActionMenuElement} from '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {AppInfo, ClickEvent} from './app_home.mojom-webui.js';
 import {AppType, RunOnOsLoginMode} from './app_home.mojom-webui.js';

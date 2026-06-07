@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://extended-updates-dialog/app.js';
+import 'chrome://extended-updates-dialog/app.js';
 
-import {ExtendedUpdatesAppElement} from 'neovex://extended-updates-dialog/app.js';
-import {ExtendedUpdatesBrowserProxy} from 'neovex://extended-updates-dialog/extended_updates_browser_proxy.js';
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {ExtendedUpdatesAppElement} from 'chrome://extended-updates-dialog/app.js';
+import {ExtendedUpdatesBrowserProxy} from 'chrome://extended-updates-dialog/extended_updates_browser_proxy.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestExtendedUpdatesBrowserProxy} from './test_extended_updates_browser_proxy.js';
 

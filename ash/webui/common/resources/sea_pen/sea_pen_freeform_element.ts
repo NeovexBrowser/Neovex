@@ -6,14 +6,14 @@
  * @fileoverview A polymer element that displays the freeform subpage.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
-import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
 
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {IronA11yAnnouncer} from 'neovex://resources/polymer/v3_0/iron-a11y-announcer/iron-a11y-announcer.js';
-import type {IronA11yKeysElement} from 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {IronA11yAnnouncer} from 'chrome://resources/polymer/v3_0/iron-a11y-announcer/iron-a11y-announcer.js';
+import type {IronA11yKeysElement} from 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
 
 import type {SeaPenSamplePrompt} from './constants.js';
 import {FreeformTab, SEA_PEN_SAMPLES} from './constants.js';

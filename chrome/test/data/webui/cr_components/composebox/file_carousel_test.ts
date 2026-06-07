@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/composebox/file_carousel.js';
-import 'neovex://new-tab-page/strings.m.js';
+import 'chrome://resources/cr_components/composebox/file_carousel.js';
+import 'chrome://new-tab-page/strings.m.js';
 
-import type {ComposeboxFile} from 'neovex://resources/cr_components/composebox/common.js';
-import {ContextUploadStatus} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import type {ComposeboxFileCarouselElement} from 'neovex://resources/cr_components/composebox/file_carousel.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ComposeboxFile} from 'chrome://resources/cr_components/composebox/common.js';
+import {ContextUploadStatus} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import type {ComposeboxFileCarouselElement} from 'chrome://resources/cr_components/composebox/file_carousel.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('FileCarouselTest', function() {
   let fileCarousel: ComposeboxFileCarouselElement;

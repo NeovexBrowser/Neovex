@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 // </if>
 
-import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 import './about.js';
 import './data.js';
 import './sync_node_browser.js';
@@ -16,7 +16,7 @@ import './search.js';
 import '/strings.m.js';
 import './invalidations.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 // Allow platform specific CSS rules.
 //

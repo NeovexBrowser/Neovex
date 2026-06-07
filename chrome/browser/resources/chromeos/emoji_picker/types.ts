@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Size} from 'neovex://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import type {Size} from 'chrome://resources/mojo/ui/gfx/geometry/mojom/geometry.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 // LINT.IfChange
 

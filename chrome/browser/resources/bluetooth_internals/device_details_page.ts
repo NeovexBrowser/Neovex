@@ -5,14 +5,14 @@
 /**
  * Javascript for DeviceDetailsPage which displays all of the details of a
  * device. The page is generated and managed dynamically in bluetooth_internals.
- * served from neovex://bluetooth-internals/.
+ * served from chrome://bluetooth-internals/.
  */
 
 import './service_list.js';
 import './object_fieldset.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 import type {DeviceInfo, DeviceRemote, ServiceInfo} from './device.mojom-webui.js';
 import {connectToDevice} from './device_broker.js';

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
 
-import {addWebUiListener} from 'neovex://resources/js/cr.js';
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import type {MetricsInternalsBrowserProxy} from './browser_proxy.js';
 import {MetricsInternalsBrowserProxyImpl} from './browser_proxy.js';

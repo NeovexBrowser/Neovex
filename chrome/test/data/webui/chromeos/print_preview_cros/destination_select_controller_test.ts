@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/destination_select_controller.js';
+import 'chrome://os-print/js/destination_select_controller.js';
 
-import {DESTINATION_MANAGER_SESSION_INITIALIZED, DESTINATION_MANAGER_STATE_CHANGED, DestinationManager} from 'neovex://os-print/js/data/destination_manager.js';
-import {DESTINATION_SELECT_SHOW_LOADING_UI_CHANGED, DestinationSelectController} from 'neovex://os-print/js/destination_select_controller.js';
-import {createCustomEvent} from 'neovex://os-print/js/utils/event_utils.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {DESTINATION_MANAGER_SESSION_INITIALIZED, DESTINATION_MANAGER_STATE_CHANGED, DestinationManager} from 'chrome://os-print/js/data/destination_manager.js';
+import {DESTINATION_SELECT_SHOW_LOADING_UI_CHANGED, DestinationSelectController} from 'chrome://os-print/js/destination_select_controller.js';
+import {createCustomEvent} from 'chrome://os-print/js/utils/event_utils.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {resetDataManagersAndProviders} from './test_utils.js';
 

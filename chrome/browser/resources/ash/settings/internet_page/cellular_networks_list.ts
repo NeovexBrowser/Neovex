@@ -7,36 +7,36 @@
  * states
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icons.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
-import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icons.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
 import '../os_settings_icons.css.js';
 import './esim_install_error_dialog.js';
 
-import {CellularSetupPageName} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
-import {ESimManagerListenerMixin} from 'neovex://resources/ash/common/cellular_setup/esim_manager_listener_mixin.js';
-import {getEuicc} from 'neovex://resources/ash/common/cellular_setup/esim_manager_utils.js';
-import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrLazyRenderElement} from 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {getSimSlotCount} from 'neovex://resources/ash/common/network/cellular_utils.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import {NetworkList} from 'neovex://resources/ash/common/network/network_list_types.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {ESimProfileProperties, ESimProfileRemote, EuiccRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {ProfileInstallResult, ProfileState} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import type {CrosNetworkConfigInterface, GlobalPolicy} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {InhibitReason} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {CellularSetupPageName} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
+import {ESimManagerListenerMixin} from 'chrome://resources/ash/common/cellular_setup/esim_manager_listener_mixin.js';
+import {getEuicc} from 'chrome://resources/ash/common/cellular_setup/esim_manager_utils.js';
+import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrLazyRenderElement} from 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {getSimSlotCount} from 'chrome://resources/ash/common/network/cellular_utils.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import {NetworkList} from 'chrome://resources/ash/common/network/network_list_types.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {ESimProfileProperties, ESimProfileRemote, EuiccRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {ProfileInstallResult, ProfileState} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import type {CrosNetworkConfigInterface, GlobalPolicy} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {InhibitReason} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import {MultiDeviceBrowserProxyImpl} from '../multidevice_page/multidevice_browser_proxy.js';

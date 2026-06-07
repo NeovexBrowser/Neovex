@@ -5,10 +5,10 @@
 /**
  * 'printer-dialog-error' is the error container for dialogs.
  */
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import './cups_printer_shared.css.js';
 
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './cups_printer_dialog_error.html.js';
 

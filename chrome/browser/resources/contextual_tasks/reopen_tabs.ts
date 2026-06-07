@@ -5,7 +5,7 @@
 import '//resources/cr_elements/cr_button/cr_button.js';
 import '//resources/cr_elements/cr_icon_button/cr_icon_button.js';
 
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './reopen_tabs.css.js';
 import {getHtml} from './reopen_tabs.html.js';

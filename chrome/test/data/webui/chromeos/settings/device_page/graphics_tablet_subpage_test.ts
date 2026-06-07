@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsGraphicsTabletSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import type {GraphicsTablet} from 'neovex://os-settings/os_settings.js';
-import {DevicePageBrowserProxyImpl, fakeGraphicsTablets, fakeGraphicsTablets2, Router, routes} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsGraphicsTabletSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import type {GraphicsTablet} from 'chrome://os-settings/os_settings.js';
+import {DevicePageBrowserProxyImpl, fakeGraphicsTablets, fakeGraphicsTablets2, Router, routes} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

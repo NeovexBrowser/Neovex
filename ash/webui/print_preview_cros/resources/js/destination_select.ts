@@ -5,8 +5,8 @@
 import './destination_dropdown.js';
 import '../css/print_preview_cros_shared.css.js';
 
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './destination_select.html.js';
 import {DESTINATION_SELECT_SHOW_LOADING_UI_CHANGED, DestinationSelectController} from './destination_select_controller.js';

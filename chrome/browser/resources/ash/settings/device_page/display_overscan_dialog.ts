@@ -8,16 +8,16 @@
  * adjustments.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '../os_settings_icons.html.js';
 import '../settings_shared.css.js';
 
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getDisplayApi} from './device_page_browser_proxy.js';
 import {getTemplate} from './display_overscan_dialog.html.js';

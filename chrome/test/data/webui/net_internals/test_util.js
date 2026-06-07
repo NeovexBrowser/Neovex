@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // <if expr="is_chromeos">
-import {CrosView} from 'neovex://net-internals/chromeos_view.js';
+import {CrosView} from 'chrome://net-internals/chromeos_view.js';
 // </if>
-import {DnsView} from 'neovex://net-internals/dns_view.js';
-import {DomainSecurityPolicyView} from 'neovex://net-internals/domain_security_policy_view.js';
-import {EventsView} from 'neovex://net-internals/events_view.js';
-import {MainView} from 'neovex://net-internals/main.js';
-import {ProxyView} from 'neovex://net-internals/proxy_view.js';
-import {SharedDictionaryView} from 'neovex://net-internals/shared_dictionary_view.js';
-import {SocketsView} from 'neovex://net-internals/sockets_view.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {DnsView} from 'chrome://net-internals/dns_view.js';
+import {DomainSecurityPolicyView} from 'chrome://net-internals/domain_security_policy_view.js';
+import {EventsView} from 'chrome://net-internals/events_view.js';
+import {MainView} from 'chrome://net-internals/main.js';
+import {ProxyView} from 'chrome://net-internals/proxy_view.js';
+import {SharedDictionaryView} from 'chrome://net-internals/shared_dictionary_view.js';
+import {SocketsView} from 'chrome://net-internals/sockets_view.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 /**
  * Returns the view and menu item node for the tab with given id.

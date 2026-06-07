@@ -6,7 +6,7 @@ import './cra/cra-button.js';
 import './cra/cra-feature-tour-dialog.js';
 import './speaker-label-consent-dialog-content.js';
 
-import {createRef, css, html, ref} from 'neovex://resources/mwc/lit/index.js';
+import {createRef, css, html, ref} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n, NoArgStringName} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {dispatchPropertyChange} from 'neovex://resources/ash/common/cr_deprecated.js';
-import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
+import {dispatchPropertyChange} from 'chrome://resources/ash/common/cr_deprecated.js';
+import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
 
 /**
  * Creates a new selection model that is to be used with lists. This only

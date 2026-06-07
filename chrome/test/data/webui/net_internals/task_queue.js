@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
 
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 /**
  * This class allows multiple Tasks to be queued up to be run sequentially.

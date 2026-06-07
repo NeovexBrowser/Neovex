@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://graduation/js/graduation_welcome.js';
-import 'neovex://graduation/strings.m.js';
+import 'chrome://graduation/js/graduation_welcome.js';
+import 'chrome://graduation/strings.m.js';
 
-import {ScreenSwitchEvents} from 'neovex://graduation/js/graduation_app.js';
-import {GraduationWelcome} from 'neovex://graduation/js/graduation_welcome.js';
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {ScreenSwitchEvents} from 'chrome://graduation/js/graduation_app.js';
+import {GraduationWelcome} from 'chrome://graduation/js/graduation_welcome.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('GraduationWelcomeTest', function() {
   let welcomeScreen: GraduationWelcome;

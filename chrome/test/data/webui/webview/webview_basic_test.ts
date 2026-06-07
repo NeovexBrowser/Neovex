@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('WebviewBasicTest', function() {
   function createWebview(): chrome.webviewTag.WebView {
@@ -77,14 +77,14 @@ suite('WebviewBasicTest', function() {
   }
 
   // Verifies that a webview within a webui can forward media requests
-  // successfully. This forwarding is enabled for neovex://glic.
+  // successfully. This forwarding is enabled for chrome://glic.
   test('MediaRequestAllowOnGlic', async () => {
     assertTrue(await testMediaRequest(true));
   });
   test('MediaRequestDenyOnGlic', async () => {
     assertFalse(await testMediaRequest(false));
   });
-  // neovex://chrome-signin does not forward media requests in the same way, so
+  // chrome://chrome-signin does not forward media requests in the same way, so
   // they are not allowed unless the embedded site is allowed.
   test('MediaRequestAllowOnSignIn', async () => {
     assertFalse(await testMediaRequest(true));

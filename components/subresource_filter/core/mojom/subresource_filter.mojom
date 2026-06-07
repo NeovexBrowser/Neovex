@@ -36,7 +36,7 @@ enum SubresourceFilterDisabledReason {
 
   // The root frame document URL did not meet the activation conditions of any
   // enabled configurations. For example, the URL was not on the activation
-  // list, or it had a non-http(s) scheme (e.g., neovex://newtab).
+  // list, or it had a non-http(s) scheme (e.g., chrome://newtab).
   kNoMatchingConfiguration,
 
   // Activation was disabled by the highest-priority configuration that the

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {OnDeviceAiBrowserProxy, OnDeviceAiEnabled, SettingsSystemPageElement} from 'neovex://settings/lazy_load.js';
-import {OnDeviceAiBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import {loadTimeData} from 'neovex://settings/settings.js';
-import type {SettingsToggleButtonElement} from 'neovex://settings/settings.js';
-import {assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {OnDeviceAiBrowserProxy, OnDeviceAiEnabled, SettingsSystemPageElement} from 'chrome://settings/lazy_load.js';
+import {OnDeviceAiBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import {loadTimeData} from 'chrome://settings/settings.js';
+import type {SettingsToggleButtonElement} from 'chrome://settings/settings.js';
+import {assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 class TestOnDeviceAiBrowserProxy extends TestBrowserProxy implements
     OnDeviceAiBrowserProxy {

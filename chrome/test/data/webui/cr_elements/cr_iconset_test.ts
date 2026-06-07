@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_icon/cr_iconset.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_iconset.js';
 
-import type {CrIconsetElement} from 'neovex://resources/cr_elements/cr_icon/cr_iconset.js';
-import {IconsetMap} from 'neovex://resources/cr_elements/cr_icon/iconset_map.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrIconsetElement} from 'chrome://resources/cr_elements/cr_icon/cr_iconset.js';
+import {IconsetMap} from 'chrome://resources/cr_elements/cr_icon/iconset_map.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('cr-iconset', function() {
   let iconset: CrIconsetElement;

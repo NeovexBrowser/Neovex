@@ -89,7 +89,7 @@ enum ShowDirectoryTarget {
   kEnterpriseCompanionApp,
 };
 
-// Called from TS side of neovex://updater (Renderer -> Browser).
+// Called from TS side of chrome://updater (Renderer -> Browser).
 interface PageHandler {
   // Retrieves the contents of all available updater history logs. Events are
   // expected to be JSON blobs conforming to the format defined in
@@ -118,5 +118,5 @@ interface PageHandler {
   ShowDirectory(ShowDirectoryTarget scope);
 };
 
-// Called from C++ side of neovex://updater (Browser -> Renderer).
+// Called from C++ side of chrome://updater (Browser -> Renderer).
 interface Page {};

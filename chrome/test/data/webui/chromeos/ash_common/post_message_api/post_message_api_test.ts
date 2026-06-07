@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PostMessageApiClient} from 'neovex://resources/ash/common/post_message_api/post_message_api_client.js';
-import {PostMessageApiServer} from 'neovex://resources/ash/common/post_message_api/post_message_api_server.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {PostMessageApiClient} from 'chrome://resources/ash/common/post_message_api/post_message_api_client.js';
+import {PostMessageApiServer} from 'chrome://resources/ash/common/post_message_api/post_message_api_server.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
 
-const TARGET_URL = 'neovex://webui-test/post_message_api/iframe.html';
-const TARGET_ORIGIN = 'neovex://webui-test/';
+const TARGET_URL = 'chrome://webui-test/post_message_api/iframe.html';
+const TARGET_ORIGIN = 'chrome://webui-test/';
 
 class TestPostMessageApiServer extends PostMessageApiServer {
   /** Function that is executed when the test finishes successfully. */

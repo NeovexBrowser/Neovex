@@ -15,7 +15,7 @@
  * Example of using CSS classes:
  * In the .html.ts template file (if using a .html template file instead, the
  * import should be in the corresponding .ts file):
- * import 'neovex://resources/cr_elements/cr_icons.css.js';
+ * import 'chrome://resources/cr_elements/cr_icons.css.js';
  *
  * export function getHtml() {
  *   return html`
@@ -28,7 +28,7 @@
  * Example of using a cr-iconset to supply an icon via the iron-icon parameter:
  * In the .html.ts template file (if using a .html template file instead, the
  * import should be in the corresponding .ts file):
- * import 'neovex://resources/cr_elements/icons.html.js';
+ * import 'chrome://resources/cr_elements/icons.html.js';
  *
  * export function getHtml() {
  *   return html`

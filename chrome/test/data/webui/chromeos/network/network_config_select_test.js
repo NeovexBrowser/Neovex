@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/network_config_select.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/network_config_select.js';
 
-import {SecurityType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {SecurityType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('NetworkConfigSelectTest', function() {
   /** @type {!NetworkConfigSelect|undefined} */

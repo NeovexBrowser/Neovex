@@ -9,7 +9,7 @@ assert(is_chromeos)
 mojom("mojom") {
   sources = [ "in_session_auth.mojom" ]
   webui_module_path =
-      "neovex://resources/mojo/chromeos/components/in_session_auth/mojom"
+      "chrome://resources/mojo/chromeos/components/in_session_auth/mojom"
 
   public_deps = [ "//mojo/public/mojom/base" ]
 }

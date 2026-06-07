@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://personalization/strings.m.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {SeaPenImageLoadingElement, SparklePlaceholderElement, WallpaperGridItemElement} from 'neovex://personalization/js/personalization_app.js';
-import {SeaPenErrorElement, SeaPenHistoryPromptSelectedEvent, SeaPenImagesElement, SeaPenRouterElement, SeaPenZeroStateSvgElement, setSeaPenThumbnailsAction, setSelectedRecentSeaPenImageAction, setTransitionsEnabled} from 'neovex://personalization/js/personalization_app.js';
-import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
-import type {SeaPenThumbnail} from 'neovex://resources/ash/common/sea_pen/sea_pen.mojom-webui.js';
-import {MantaStatusCode} from 'neovex://resources/ash/common/sea_pen/sea_pen.mojom-webui.js';
-import {SeaPenTemplateId} from 'neovex://resources/ash/common/sea_pen/sea_pen_generated.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {PaperSpinnerLiteElement} from 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertLE, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import type {SeaPenImageLoadingElement, SparklePlaceholderElement, WallpaperGridItemElement} from 'chrome://personalization/js/personalization_app.js';
+import {SeaPenErrorElement, SeaPenHistoryPromptSelectedEvent, SeaPenImagesElement, SeaPenRouterElement, SeaPenZeroStateSvgElement, setSeaPenThumbnailsAction, setSelectedRecentSeaPenImageAction, setTransitionsEnabled} from 'chrome://personalization/js/personalization_app.js';
+import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
+import type {SeaPenThumbnail} from 'chrome://resources/ash/common/sea_pen/sea_pen.mojom-webui.js';
+import {MantaStatusCode} from 'chrome://resources/ash/common/sea_pen/sea_pen.mojom-webui.js';
+import {SeaPenTemplateId} from 'chrome://resources/ash/common/sea_pen/sea_pen_generated.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {PaperSpinnerLiteElement} from 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertLE, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {baseSetup, initElement, teardownElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';

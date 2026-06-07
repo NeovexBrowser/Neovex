@@ -12,15 +12,15 @@
 import './input_device_settings_shared.css.js';
 import '../os_settings_icons.html.js';
 import '../settings_shared.css.js';
-import 'neovex://resources/ash/common/bluetooth/bluetooth_battery_icon_percentage.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/bluetooth/bluetooth_battery_icon_percentage.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 
-import {BatteryType} from 'neovex://resources/ash/common/bluetooth/bluetooth_types.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {BluetoothDeviceProperties} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {BatteryType} from 'chrome://resources/ash/common/bluetooth/bluetooth_types.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {BluetoothDeviceProperties} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getInputDeviceSettingsProvider} from './input_device_mojo_interface_provider.js';
 import type {BatteryInfo, InputDeviceSettingsProviderInterface} from './input_device_settings_types.js';

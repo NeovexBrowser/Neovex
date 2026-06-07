@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/os_settings.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsHotspotSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import type {CrButtonElement, CrToggleElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
-import {Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {setHotspotConfigForTesting} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.js';
-import type {CrosHotspotConfigObserverInterface, CrosHotspotConfigObserverRemote, HotspotConfig, HotspotInfo} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {HotspotAllowStatus, HotspotControlResult, HotspotState, SetHotspotConfigResult} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {FakeHotspotConfig} from 'neovex://resources/ash/common/hotspot/fake_hotspot_config.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {SettingsHotspotSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import type {CrButtonElement, CrToggleElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
+import {Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {setHotspotConfigForTesting} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.js';
+import type {CrosHotspotConfigObserverInterface, CrosHotspotConfigObserverRemote, HotspotConfig, HotspotInfo} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {HotspotAllowStatus, HotspotControlResult, HotspotState, SetHotspotConfigResult} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {FakeHotspotConfig} from 'chrome://resources/ash/common/hotspot/fake_hotspot_config.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('<settings-hotspot-subpage>', () => {
   let hotspotSubpage: SettingsHotspotSubpageElement;

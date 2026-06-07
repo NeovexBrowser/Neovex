@@ -55,7 +55,7 @@ function openSurvey(result: string|undefined) {
 }
 
 function openError() {
-  window.location.href = 'neovex://network-error/-404';
+  window.location.href = 'chrome://network-error/-404';
 }
 
 function processPredictionResult(segmentInfo: SegmentInfo) {

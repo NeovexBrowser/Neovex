@@ -97,7 +97,7 @@ export class PdfScriptingApi {
     window.addEventListener('message', event => {
       if (event.origin !==
               'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai' &&
-          event.origin !== 'neovex://print') {
+          event.origin !== 'chrome://print') {
         console.error(
             'Received message that was not from the extension: ' + event);
         return;

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BackgroundImage, Theme} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {NtpBackgroundImageSource} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {BackgroundImage, Theme} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {NtpBackgroundImageSource} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 export const NONE_ANIMATION: string = 'none 0s ease 0s 1 normal none running';
 

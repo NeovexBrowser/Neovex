@@ -6,11 +6,11 @@
  * @fileoverview The element for displaying a list of albums.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 
 import type {AmbientModeAlbum} from '../../personalization_app.mojom-webui.js';
 import {TopicSource} from '../../personalization_app.mojom-webui.js';

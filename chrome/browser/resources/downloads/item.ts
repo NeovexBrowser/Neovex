@@ -6,30 +6,30 @@ import './icons.html.js';
 // <if expr="_google_chrome">
 import './internal/icons.html.js';
 // </if>
-import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 // <if expr="_google_chrome">
-import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
 // </if>
-import 'neovex://resources/cr_elements/cr_progress/cr_progress.js';
-import 'neovex://resources/cr_elements/icons.html.js';
-import 'neovex://resources/js/action_link.js';
+import 'chrome://resources/cr_elements/cr_progress/cr_progress.js';
+import 'chrome://resources/cr_elements/icons.html.js';
+import 'chrome://resources/js/action_link.js';
 import '/strings.m.js';
 
-import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
-import {FocusRowMixinLit} from 'neovex://resources/cr_elements/focus_row_mixin_lit.js';
-import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {htmlEscape} from 'neovex://resources/js/util.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
+import {FocusRowMixinLit} from 'chrome://resources/cr_elements/focus_row_mixin_lit.js';
+import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {htmlEscape} from 'chrome://resources/js/util.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {BrowserProxy} from './browser_proxy.js';
 import type {MojomData} from './data.js';
@@ -306,7 +306,7 @@ export class DownloadsItemElement extends DownloadsItemElementBase {
       return '';
     }
 
-    const url = `neovex://extensions/?id=${this.data.byExtId}`;
+    const url = `chrome://extensions/?id=${this.data.byExtId}`;
     const name = this.data.byExtName;
     return loadTimeData.getStringF('controlledByUrl', url, htmlEscape(name));
   }

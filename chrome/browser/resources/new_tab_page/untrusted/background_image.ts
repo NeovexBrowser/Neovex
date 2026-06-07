@@ -17,7 +17,7 @@ function sendLoadTime(time: number) {
         url: location.href,
         time: time,
       },
-      'neovex://new-tab-page');
+      'chrome://new-tab-page');
 }
 
 function onImageLoad() {

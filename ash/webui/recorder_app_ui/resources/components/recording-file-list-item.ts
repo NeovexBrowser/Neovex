@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/card/card.js';
+import 'chrome://resources/cros_components/card/card.js';
 import './cra/cra-icon.js';
 import './cra/cra-icon-button.js';
 import './time-duration.js';
 
-import {Card} from 'neovex://resources/cros_components/card/card.js';
+import {Card} from 'chrome://resources/cros_components/card/card.js';
 import {
   classMap,
   createRef,
@@ -18,7 +18,7 @@ import {
   PropertyDeclarations,
   ref,
   styleMap,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

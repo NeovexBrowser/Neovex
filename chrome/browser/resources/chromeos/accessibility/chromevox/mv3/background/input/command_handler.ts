@@ -1463,7 +1463,7 @@ export class CommandHandler implements CommandHandlerInterface {
     const description: {[key: string]: string} = {};
     description['Chrome OS Version'] = chrome.runtime.getManifest()['version'];
     description['Lacros Version (if applicable)'] =
-        '(copy from neovex://version)';
+        '(copy from chrome://version)';
     description['Reproduction Steps'] = '%0a1.%0a2.%0a3.';
     description['Expected result'] = '';
     description['What actually happens'] = '';

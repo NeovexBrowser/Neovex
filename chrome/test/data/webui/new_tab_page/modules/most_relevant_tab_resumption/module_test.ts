@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {DismissModuleElementEvent, DismissModuleInstanceEvent, MostRelevantTabResumptionModuleElement} from 'neovex://new-tab-page/lazy_load.js';
-import {mostRelevantTabResumptionDescriptor, MostRelevantTabResumptionProxyImpl} from 'neovex://new-tab-page/lazy_load.js';
-import {PageHandlerRemote, ScoredURLUserAction} from 'neovex://new-tab-page/most_relevant_tab_resumption.mojom-webui.js';
-import {$$} from 'neovex://new-tab-page/new_tab_page.js';
-import {DecorationType, FormFactor, VisitSource} from 'neovex://new-tab-page/url_visit_types.mojom-webui.js';
-import type {URLVisit} from 'neovex://new-tab-page/url_visit_types.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {DismissModuleElementEvent, DismissModuleInstanceEvent, MostRelevantTabResumptionModuleElement} from 'chrome://new-tab-page/lazy_load.js';
+import {mostRelevantTabResumptionDescriptor, MostRelevantTabResumptionProxyImpl} from 'chrome://new-tab-page/lazy_load.js';
+import {PageHandlerRemote, ScoredURLUserAction} from 'chrome://new-tab-page/most_relevant_tab_resumption.mojom-webui.js';
+import {$$} from 'chrome://new-tab-page/new_tab_page.js';
+import {DecorationType, FormFactor, VisitSource} from 'chrome://new-tab-page/url_visit_types.mojom-webui.js';
+import type {URLVisit} from 'chrome://new-tab-page/url_visit_types.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {installMock} from '../../test_support.js';
 

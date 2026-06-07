@@ -7,11 +7,11 @@
  * the Nearby Share flow. It shows a list of devices to select from.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_lottie/cr_lottie.js';
-import 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
-import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_lottie/cr_lottie.js';
+import 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 import '/shared/nearby_device.js';
 import '/shared/nearby_page_template.js';
 import '/shared/nearby_preview.js';
@@ -20,11 +20,11 @@ import '/strings.m.js';
 import type {NearbyDeviceElement} from '/shared/nearby_device.js';
 import type {ConfirmationManagerInterface, DiscoveryObserverReceiver, PayloadPreview, ShareTarget, TransferUpdateListenerPendingReceiver} from '/shared/nearby_share.mojom-webui.js';
 import {SelectShareTargetResult, ShareTargetListenerCallbackRouter, StartDiscoveryResult} from '/shared/nearby_share.mojom-webui.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import type {ArraySelector} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import type {ArraySelector} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getDiscoveryManager, observeDiscoveryManager} from './discovery_manager.js';
 import {getTemplate} from './nearby_discovery_page.html.js';

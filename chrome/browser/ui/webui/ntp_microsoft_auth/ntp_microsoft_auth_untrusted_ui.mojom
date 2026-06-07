@@ -15,7 +15,7 @@ struct AccessToken {
 // Factory interface to create parent/child communication interfaces.
 interface MicrosoftAuthUntrustedDocumentInterfacesFactory {
   // Passes the chrome-untrusted:// frame's remote to the embedding
-  // neovex:// parent frame to establish communication when the Microsoft
+  // chrome:// parent frame to establish communication when the Microsoft
   // Authentication Library is initialized.
   ConnectToParentDocument(
     pending_remote<MicrosoftAuthUntrustedDocument> child_document

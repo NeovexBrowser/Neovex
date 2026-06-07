@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
 import '/strings.m.js';
 
 import {isRTL} from '//resources/js/util.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AuthResult} from '../mojom/graduation_ui.mojom-webui.js';
 

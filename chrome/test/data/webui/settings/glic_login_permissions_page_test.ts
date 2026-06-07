@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import type {SettingsGlicLoginPermissionsPageElement} from 'neovex://settings/lazy_load.js';
-import {GlicBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {SettingsGlicLoginPermissionsPageElement} from 'chrome://settings/lazy_load.js';
+import {GlicBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {TestGlicBrowserProxy} from './test_glic_browser_proxy.js';
 

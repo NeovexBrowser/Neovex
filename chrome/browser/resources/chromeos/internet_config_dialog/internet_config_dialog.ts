@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/network/network_config.js';
-import 'neovex://resources/ash/common/network/network_icon.js';
-import 'neovex://resources/ash/common/network/network_shared.css.js';
-import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/cr_page_host_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/network/network_config.js';
+import 'chrome://resources/ash/common/network/network_icon.js';
+import 'chrome://resources/ash/common/network/network_shared.css.js';
+import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/cr_page_host_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
 import '/strings.m.js';
 
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import type {NetworkConfigElement} from 'neovex://resources/ash/common/network/network_config.js';
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {ConfigProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import type {NetworkConfigElement} from 'chrome://resources/ash/common/network/network_config.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {ConfigProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './internet_config_dialog.html.js';
 

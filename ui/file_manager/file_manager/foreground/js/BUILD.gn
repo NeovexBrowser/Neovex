@@ -15,7 +15,7 @@ tsc_folder =
     rebase_path("$target_gen_dir/../../../tsc/file_manager/foreground/js",
                 root_build_dir)
 
-# Path where neovex://file-manager should be mapped.
+# Path where chrome://file-manager should be mapped.
 files_app_path =
     rebase_path("$target_gen_dir/../../../tsc/file_manager/", root_build_dir)
 image_loader_path =
@@ -33,9 +33,9 @@ optimize_webui("build") {
   ]
 
   external_paths = [
-    # Mapping for the absolute neovex://file-manager/common/js/lru_cache.js
+    # Mapping for the absolute chrome://file-manager/common/js/lru_cache.js
     # import in image_loader.
-    "neovex://file-manager|$files_app_path",
+    "chrome://file-manager|$files_app_path",
     "chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp|$image_loader_path",
   ]
 

@@ -6,7 +6,7 @@
  * @fileoverview This implements a combobutton control.
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {boolAttrSetter, crInjectTypeAndInit} from '../../../common/js/cr_ui.js';
 import type {DropdownItem} from '../task_controller.js';

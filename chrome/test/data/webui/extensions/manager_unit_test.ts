@@ -8,11 +8,11 @@
  * chrome.developerPrivate API.
  */
 
-import type {ExtensionsManagerElement} from 'neovex://extensions/extensions.js';
-import {navigation, Page, Service} from 'neovex://extensions/extensions.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsManagerElement} from 'chrome://extensions/extensions.js';
+import {navigation, Page, Service} from 'chrome://extensions/extensions.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 import {createExtensionInfo, testVisible} from './test_util.js';

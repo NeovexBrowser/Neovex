@@ -6,7 +6,7 @@
  * @fileoverview Handles notifications supplied by drivefs.
  */
 
-import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
+import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
 
 import {RateLimiter} from '../../common/js/async_util.js';
 import {unwrapEntry, urlToEntry} from '../../common/js/entry_utils.js';

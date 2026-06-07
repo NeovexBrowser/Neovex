@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {NetworkConfigElement} from 'neovex://resources/ash/common/network/network_config.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {ConfigProperties, ManagedProperties, SecurityType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import type {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {NetworkConfigElement} from 'chrome://resources/ash/common/network/network_config.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {ConfigProperties, ManagedProperties, SecurityType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import type {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import type {FakeNetworkConfig} from '../fake_network_config_mojom.js';
 

@@ -9,17 +9,17 @@
  * @see //ash/webui/common/resources/network/network_icon.js
  */
 
-import 'neovex://resources/ash/common/network/network_icon.js';
-import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'chrome://resources/ash/common/network/network_icon.js';
+import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
 import './diagnostics_shared.css.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import type {CellularStateProperties, NetworkStateProperties, WiFiStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {SecurityType as MojomSecurityType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType as MojomConnectionStateType, NetworkType as MojomNetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import type {CellularStateProperties, NetworkStateProperties, WiFiStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {SecurityType as MojomSecurityType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType as MojomConnectionStateType, NetworkType as MojomNetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './diagnostics_network_icon.html.js';
 import {getNetworkType} from './diagnostics_utils.js';

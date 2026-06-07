@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsRoutes} from 'neovex://settings/settings.js';
-import {loadTimeData, Route, Router} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsRoutes} from 'chrome://settings/settings.js';
+import {loadTimeData, Route, Router} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {setupPopstateListener} from './test_util.js';
 

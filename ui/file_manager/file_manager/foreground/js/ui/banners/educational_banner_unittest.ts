@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {isCrosComponentsEnabled} from '../../../../common/js/flags.js';
 import {getLastVisitedURL} from '../../../../common/js/util.js';

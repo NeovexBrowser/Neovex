@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import type {ProfileData, TabSearchPageElement} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {SelectableLazyListElement, TabSearchApiProxyImpl, TabSearchItemElement} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {assertEquals, assertGT, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import type {ProfileData, TabSearchPageElement} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {SelectableLazyListElement, TabSearchApiProxyImpl, TabSearchItemElement} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {assertEquals, assertGT, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createProfileData, generateSampleDataFromSiteNames, generateSampleRecentlyClosedTabs, generateSampleTabsFromSiteNames, sampleSiteNames, sampleToken} from './tab_search_test_data.js';
 import {assertTabItemAndNeighborsInViewBounds, assertTabItemInViewBounds, disableAnimationBehavior, getStylePropertyPixelValue, initLoadTimeDataWithDefaults} from './tab_search_test_helper.js';

@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shortcut-customization/js/text_accelerator.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://shortcut-customization/js/text_accelerator.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {ShortcutInputKeyElement} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
-import {KeyInputState} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {IronIconElement} from 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
-import {fakeAcceleratorConfig, fakeLayoutInfo} from 'neovex://shortcut-customization/js/fake_data.js';
-import type {TextAcceleratorPart} from 'neovex://shortcut-customization/js/shortcut_types.js';
-import {AcceleratorSource, LayoutStyle, TextAcceleratorPartType} from 'neovex://shortcut-customization/js/shortcut_types.js';
-import type {TextAcceleratorElement} from 'neovex://shortcut-customization/js/text_accelerator.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {ShortcutInputKeyElement} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_input_key.js';
+import {KeyInputState} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {IronIconElement} from 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
+import {fakeAcceleratorConfig, fakeLayoutInfo} from 'chrome://shortcut-customization/js/fake_data.js';
+import type {TextAcceleratorPart} from 'chrome://shortcut-customization/js/shortcut_types.js';
+import {AcceleratorSource, LayoutStyle, TextAcceleratorPartType} from 'chrome://shortcut-customization/js/shortcut_types.js';
+import type {TextAcceleratorElement} from 'chrome://shortcut-customization/js/text_accelerator.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 
 function createTextAcceleratorPart(

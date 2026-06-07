@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import type {FakeEntry, FilesAppDirEntry} from '../../common/js/files_app_entry_types.js';
 import {EntryList, FakeEntryImpl} from '../../common/js/files_app_entry_types.js';

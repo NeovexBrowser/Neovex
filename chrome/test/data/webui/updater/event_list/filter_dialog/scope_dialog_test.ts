@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 import type {CrCheckboxElement} from '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {Scope} from 'neovex://updater/event_history.js';
-import {ScopeDialogElement} from 'neovex://updater/event_list/filter_dialog/scope_dialog.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {Scope} from 'chrome://updater/event_history.js';
+import {ScopeDialogElement} from 'chrome://updater/event_list/filter_dialog/scope_dialog.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('ScopeDialogElement', () => {
   let filterScope: ScopeDialogElement;

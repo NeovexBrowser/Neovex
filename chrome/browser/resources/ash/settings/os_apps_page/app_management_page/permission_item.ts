@@ -7,14 +7,14 @@ import '../../os_privacy_page/privacy_hub_allow_sensor_access_dialog.js';
 
 import {assert, assertNotReached} from '//resources/js/assert.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {App, Permission} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {InstallReason, PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
-import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
-import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
-import {createBoolPermission, createTriStatePermission, getBoolPermissionValue, getTriStatePermissionValue, isBoolValue, isTriStateValue} from 'neovex://resources/cr_components/app_management/permission_util.js';
-import {getPermission, getPermissionValueBool, recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {App, Permission} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {InstallReason, PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
+import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
+import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
+import {createBoolPermission, createTriStatePermission, getBoolPermissionValue, getTriStatePermissionValue, isBoolValue, isTriStateValue} from 'chrome://resources/cr_components/app_management/permission_util.js';
+import {getPermission, getPermissionValueBool, recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {MediaDevicesProxy} from '../../common/media_devices_proxy.js';
 

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsAppManagementPageElement} from 'neovex://os-settings/lazy_load.js';
-import {AppManagementBrowserProxy} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsAppManagementPageElement} from 'chrome://os-settings/lazy_load.js';
+import {AppManagementBrowserProxy} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import type {FakePageHandler} from '../../app_management/fake_page_handler.js';
 import {isHiddenByDomIf, replaceBody, replaceStore, setupFakeHandler} from '../../app_management/test_util.js';

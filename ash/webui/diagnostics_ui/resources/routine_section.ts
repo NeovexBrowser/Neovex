@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
 import './diagnostics_card.js';
 import './diagnostics_shared.css.js';
 import './icons.html.js';
@@ -12,13 +12,13 @@ import './routine_result_list.js';
 import './text_badge.js';
 import '/strings.m.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {IronA11yAnnouncer} from 'neovex://resources/polymer/v3_0/iron-a11y-announcer/iron-a11y-announcer.js';
-import type {IronCollapseElement} from 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {IronA11yAnnouncer} from 'chrome://resources/polymer/v3_0/iron-a11y-announcer/iron-a11y-announcer.js';
+import type {IronCollapseElement} from 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getSystemRoutineController} from './mojo_interface_provider.js';
 import {RoutineGroup} from './routine_group.js';

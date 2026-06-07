@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://certificate-manager/certificate_subpage.js';
+import 'chrome://certificate-manager/certificate_subpage.js';
 
-import {CertificateSource} from 'neovex://certificate-manager/certificate_manager.mojom-webui.js';
-import type {CertificateSubpageElement, SubpageCertificateList} from 'neovex://certificate-manager/certificate_subpage.js';
-import {CertificatesBrowserProxy} from 'neovex://certificate-manager/certificates_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {CertificateSource} from 'chrome://certificate-manager/certificate_manager.mojom-webui.js';
+import type {CertificateSubpageElement, SubpageCertificateList} from 'chrome://certificate-manager/certificate_subpage.js';
+import {CertificatesBrowserProxy} from 'chrome://certificate-manager/certificates_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestCertificateManagerProxy} from './certificate_manager_test_support.js';
 

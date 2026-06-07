@@ -4,8 +4,8 @@
 
 import './app.js';
 
-export {getInstance as getAnnouncerInstance, TIMEOUT_MS} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-export {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+export {getInstance as getAnnouncerInstance, TIMEOUT_MS} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+export {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
 export {TabSearchAppElement} from './app.js';
 export type {SearchOptions} from './search.js';
 export {search} from './search.js';

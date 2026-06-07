@@ -7,11 +7,11 @@
  * that the user can select from.
  */
 
-import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
 
-import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {DefaultUserImage, UserImage} from '../../personalization_app.mojom-webui.js';
 import {isUserAvatarCustomizationSelectorsEnabled} from '../load_time_booleans.js';
@@ -427,7 +427,7 @@ export class AvatarListElement extends WithPersonalizationStore {
     // return a static encoded background image.
     if (defaultImageIndex) {
       assert(
-          !url.startsWith('neovex://image/'),
+          !url.startsWith('chrome://image/'),
           'The URL shouldn\'t be sanitized');
       return `background-image: url('${
           getAvatarUrl(url, /*staticEncode=*/ true)}')`;

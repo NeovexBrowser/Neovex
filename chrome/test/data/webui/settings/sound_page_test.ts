@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import type {SoundPageElement} from 'neovex://settings/lazy_load.js';
-import {SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import type {SettingsToggleButtonElement} from 'neovex://settings/settings.js';
-import {loadTimeData, resetRouterForTesting} from 'neovex://settings/settings.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import type {SoundPageElement} from 'chrome://settings/lazy_load.js';
+import {SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import type {SettingsToggleButtonElement} from 'chrome://settings/settings.js';
+import {loadTimeData, resetRouterForTesting} from 'chrome://settings/settings.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 // clang-format on

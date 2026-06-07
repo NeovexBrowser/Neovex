@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import type {BookmarkProductInfo} from '//resources/cr_components/commerce/shared.mojom-webui.js';
-import type {BookmarksTreeNode} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {BookmarksTreeNode} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestPowerBookmarksDelegate extends TestBrowserProxy {
   constructor() {

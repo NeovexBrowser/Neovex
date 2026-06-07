@@ -7,7 +7,7 @@
  * @param {Element} peerConnectionElement
  */
 
-import {$} from 'neovex://resources/js/util.js';
+import {$} from 'chrome://resources/js/util.js';
 /**
  * A helper function for appending a child element to |parent|.
  * Copied from webrtc_internals.js

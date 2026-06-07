@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrCheckboxElement, NativeInitialSettings, PolicyObjectEntry, PrintPreviewAppElement, SerializedSettings} from 'neovex://print/print_preview.js';
-import {BackgroundGraphicsModeRestriction, NativeLayerImpl, PluginProxyImpl} from 'neovex://print/print_preview.js';
-import type {CrButtonElement} from 'neovex://print/print_preview.js';
-import {ColorModeRestriction, DuplexMode, DuplexModeRestriction, PinModeRestriction, PrintPreviewPluralStringProxyImpl} from 'neovex://print/print_preview.js';
+import type {CrCheckboxElement, NativeInitialSettings, PolicyObjectEntry, PrintPreviewAppElement, SerializedSettings} from 'chrome://print/print_preview.js';
+import {BackgroundGraphicsModeRestriction, NativeLayerImpl, PluginProxyImpl} from 'chrome://print/print_preview.js';
+import type {CrButtonElement} from 'chrome://print/print_preview.js';
+import {ColorModeRestriction, DuplexMode, DuplexModeRestriction, PinModeRestriction, PrintPreviewPluralStringProxyImpl} from 'chrome://print/print_preview.js';
 
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
-import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
+import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
 
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';
 

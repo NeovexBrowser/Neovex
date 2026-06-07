@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {CellularNetworksListElement, NetworkListElement} from 'neovex://os-settings/lazy_load.js';
-import type {LocalizedLinkElement, PaperSpinnerLiteElement} from 'neovex://os-settings/os_settings.js';
-import {createRouterForTesting, MultiDeviceBrowserProxyImpl, MultiDeviceFeatureState, Router} from 'neovex://os-settings/os_settings.js';
-import {CellularSetupPageName} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
-import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {DeviceStateProperties, GlobalPolicy, ManagedProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {InhibitReason} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeESimManagerRemote} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CellularNetworksListElement, NetworkListElement} from 'chrome://os-settings/lazy_load.js';
+import type {LocalizedLinkElement, PaperSpinnerLiteElement} from 'chrome://os-settings/os_settings.js';
+import {createRouterForTesting, MultiDeviceBrowserProxyImpl, MultiDeviceFeatureState, Router} from 'chrome://os-settings/os_settings.js';
+import {CellularSetupPageName} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
+import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {DeviceStateProperties, GlobalPolicy, ManagedProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {InhibitReason} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeESimManagerRemote} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {TestMultideviceBrowserProxy} from '../multidevice_page/test_multidevice_browser_proxy.js';
 import {clearBody} from '../utils.js';

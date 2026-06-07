@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BrowserService, ForeignSession, HistoryIdentityState} from 'neovex://history/history.js';
-import {HistorySignInState, SyncState} from 'neovex://history/history.js';
+import type {BrowserService, ForeignSession, HistoryIdentityState} from 'chrome://history/history.js';
+import {HistorySignInState, SyncState} from 'chrome://history/history.js';
 import {
   PageCallbackRouter,
   PageHandlerRemote,
   type PageRemote,
-} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 import {createHistoryInfo} from './test_util.js';
 

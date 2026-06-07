@@ -268,7 +268,7 @@ _ANDROID_NEGATIVE_FILTER['chrome'] = (
         'PerfTest.*',
         # Android doesn't support multiple sessions on one device.
         'SessionHandlingTest.testGetSessions',
-        # Android doesn't use the neovex://print dialog.
+        # Android doesn't use the chrome://print dialog.
         'ChromeDriverTest.testCanSwitchToPrintPreviewDialog',
         # Chrome 44+ for Android doesn't dispatch the dblclick event
         'ChromeDriverTest.testMouseDoubleClick',
@@ -3219,7 +3219,7 @@ class ChromeDriverTest(ChromeDriverBaseTestWithWebServer):
     print("Test debug: actual GetCurrentUrl: " + self._driver.GetCurrentUrl(),
             file = sys.stdout)
 
-    self.assertEqual('neovex://print/', self._driver.GetCurrentUrl())
+    self.assertEqual('chrome://print/', self._driver.GetCurrentUrl())
 
   def testCanClickInIframes(self):
     self._driver.Load(self.GetHttpUrlForFile('/chromedriver/nested.html'))
@@ -6728,7 +6728,7 @@ class ChromeDriverAndroidTest(ChromeDriverBaseTestWithWebServer):
             'download.extensions_to_open': 'this_is_a_test',
           }})
 
-    driver.Load("neovex://prefs-internals")
+    driver.Load("chrome://prefs-internals")
     prefs = json.loads(driver.ExecuteScript("return document.body.innerText;"))
     self.assertIn('download', prefs)
     self.assertIn('extensions_to_open', prefs['download'])
@@ -6746,7 +6746,7 @@ class ChromeDriverAndroidTest(ChromeDriverBaseTestWithWebServer):
             'variations_country': 'ABCD',
           }})
 
-    driver.Load("neovex://local-state/")
+    driver.Load("chrome://local-state/")
     prefs = json.loads(driver.ExecuteScript("return document.body.innerText;"))
     self.assertIn('variations_country', prefs)
     self.assertIn('value', prefs['variations_country'])
@@ -7041,7 +7041,7 @@ class ChromeExtensionsCapabilityTest(ChromeDriverBaseTestWithWebServer):
     self.assertEqual(len(handles), 2)
     for handle in handles:
       driver.SwitchToWindow(handle)
-      if driver.GetCurrentUrl() == 'neovex://new-tab-page/':
+      if driver.GetCurrentUrl() == 'chrome://new-tab-page/':
         return
     self.fail("couldn't find extension-created window")
 
@@ -7063,7 +7063,7 @@ class ChromeExtensionsCapabilityTest(ChromeDriverBaseTestWithWebServer):
     for handle in handles:
       # Ensure each exposed window can be switched into
       driver.SwitchToWindow(handle)
-      if driver.GetCurrentUrl() == 'neovex://new-tab-page/':
+      if driver.GetCurrentUrl() == 'chrome://new-tab-page/':
         return
     self.fail("couldn't find extension-created window")
 

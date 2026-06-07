@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import type {PasswordSettingsApiInterface, PasswordSettingsApiRemote} from '../password_settings_api.test-mojom-webui.js';
 import {PasswordSettingsApiReceiver} from '../password_settings_api.test-mojom-webui.js';

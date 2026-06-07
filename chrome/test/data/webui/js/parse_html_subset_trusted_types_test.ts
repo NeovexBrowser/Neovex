@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {parseHtmlSubset} from 'neovex://resources/js/parse_html_subset.js';
-import {assertNotReached} from 'neovex://webui-test/chai_assert.js';
+import {parseHtmlSubset} from 'chrome://resources/js/parse_html_subset.js';
+import {assertNotReached} from 'chrome://webui-test/chai_assert.js';
 
 suite('ParseHtmlSubsetTrustedTypesTest', function() {
   test('parseHtmlSubset won\'t cause Trusted Types violation', () => {

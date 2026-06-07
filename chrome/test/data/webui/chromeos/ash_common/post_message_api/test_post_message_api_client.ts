@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PostMessageApiClient} from 'neovex://resources/ash/common/post_message_api/post_message_api_client.js';
-import {RequestHandler} from 'neovex://resources/ash/common/post_message_api/post_message_api_request_handler.js';
+import {PostMessageApiClient} from 'chrome://resources/ash/common/post_message_api/post_message_api_client.js';
+import {RequestHandler} from 'chrome://resources/ash/common/post_message_api/post_message_api_request_handler.js';
 
-const SERVER_ORIGIN_URL_FILTER = 'neovex://chrome-signin/';
+const SERVER_ORIGIN_URL_FILTER = 'chrome://chrome-signin/';
 
 class TestRequestHandler extends RequestHandler {
   testFinalized: boolean = false;

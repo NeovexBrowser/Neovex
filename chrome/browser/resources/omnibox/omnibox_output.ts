@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {OmniboxElement} from './omnibox_element.js';
 import type {DisplayInputs} from './omnibox_input.js';
@@ -560,7 +560,7 @@ class OutputScoringSignalsProperty extends OutputDictionaryProperty {
     super(Object.fromEntries(
         Object.entries(value).filter(([, value]) => value !== null)));
     const link = createEl('a', null, ['icon', 'edit-icon']);
-    link.href = `neovex://omnibox/ml?signals=${Object.values(value).join()}`;
+    link.href = `chrome://omnibox/ml?signals=${Object.values(value).join()}`;
     this.container.insertBefore(link, this.container.firstChild);
   }
 }
@@ -590,7 +590,7 @@ class OutputUrlProperty extends FlexWrappingOutputProperty {
     const iconAndUrlContainer = createEl('div', this.container, ['pair-item']);
     if (!isSearchType) {
       createEl('img', iconAndUrlContainer).src =
-          `neovex://favicon/${destinationUrl}`;
+          `chrome://favicon/${destinationUrl}`;
     }
     createEl('a', iconAndUrlContainer, [], destinationUrl).href =
         destinationUrl;

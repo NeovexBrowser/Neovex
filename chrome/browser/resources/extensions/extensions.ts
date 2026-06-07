@@ -4,12 +4,12 @@
 
 import './manager.js';
 
-export {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-export {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-export {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
-export {TooltipPosition} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-export {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
-export {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+export {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+export {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+export {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
+export {TooltipPosition} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+export {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+export {getTrustedHTML} from 'chrome://resources/js/static_types.js';
 export type {ActivityLogExtensionPlaceholder} from './activity_log/activity_log.js';
 export {ExtensionsActivityLogElement} from './activity_log/activity_log.js';
 export {ActivityLogHistoryElement, ActivityLogPageState} from './activity_log/activity_log_history.js';

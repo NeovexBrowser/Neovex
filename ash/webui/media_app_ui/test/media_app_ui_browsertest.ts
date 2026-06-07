@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertDeepEquals, assertEquals, assertGE, assertLE, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
+import {assertDeepEquals, assertEquals, assertGE, assertLE, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {assertFilenamesToBe, assertFilesLoaded, assertFilesToBe, assertMatch, assertSingleFileLaunch, createMockTestDirectory, FakeFileSystemFileHandle, fileToFileHandle, getFileErrors, getLoadedFiles, GuestDriver, launchWithFiles, launchWithFocusFile, launchWithHandles, loadFilesWithoutSendingToGuest, runTestInGuest, sendTestMessage, simulateLosingAccessToDirectory} from './driver.js';
 import type {FileSnapshot} from './driver_api.js';
@@ -30,7 +30,7 @@ const {
 } = TEST_ONLY;
 const {captureConsoleErrors, reportCrashError} = error_reporter.TEST_ONLY;
 
-const HOST_ORIGIN = 'neovex://media-app';
+const HOST_ORIGIN = 'chrome://media-app';
 const GUEST_ORIGIN = 'chrome-untrusted://media-app';
 
 /**
@@ -124,7 +124,7 @@ const MediaAppUIBrowserTest: TestSuite = {
 (window as unknown as {MediaAppUiBrowserTest: {}})['MediaAppUiBrowserTest'] =
     MediaAppUIBrowserTest;
 
-// Tests that neovex://media-app is allowed to frame
+// Tests that chrome://media-app is allowed to frame
 // chrome-untrusted://media-app. The URL is set in the html. If that URL can't
 // load, test this fails like JS ERROR: "Refused to frame '...' because it
 // violates the following Content Security Policy directive: "frame-src
@@ -560,7 +560,7 @@ MediaAppUIBrowserTest['FileThatBecomesDirectory'] = async () => {
   assertEquals(await getFileErrors(), ',NotAFile');
 };
 
-// Tests that neovex://media-app can successfully send a request to open the
+// Tests that chrome://media-app can successfully send a request to open the
 // feedback dialog and receive a response.
 MediaAppUIBrowserTest['CanOpenFeedbackDialog'] = async () => {
   const result = await mediaAppPageHandler.openFeedbackDialog();

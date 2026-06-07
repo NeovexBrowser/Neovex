@@ -7,7 +7,7 @@
  * script to the DOM, which will subsequently load all subpages.
  */
 
-import {getTrustedScriptURL} from 'neovex://resources/js/static_types.js';
+import {getTrustedScriptURL} from 'chrome://resources/js/static_types.js';
 
 let lazyLoadPromise: Promise<void>|null = null;
 

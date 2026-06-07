@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {fakeDeviceRequest, fakeInstallationProgress} from 'neovex://accessory-update/fake_data.js';
-import {FakeUpdateController} from 'neovex://accessory-update/fake_update_controller.js';
-import type {DeviceRequestObserverRemote, UpdateProgressObserverRemote} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
-import {UpdateState} from 'neovex://accessory-update/firmware_update.mojom-webui.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {fakeDeviceRequest, fakeInstallationProgress} from 'chrome://accessory-update/fake_data.js';
+import {FakeUpdateController} from 'chrome://accessory-update/fake_update_controller.js';
+import type {DeviceRequestObserverRemote, UpdateProgressObserverRemote} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
+import {UpdateState} from 'chrome://accessory-update/firmware_update.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 suite('FakeUpdateController', () => {
   let controller: FakeUpdateController|null = null;

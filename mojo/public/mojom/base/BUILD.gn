@@ -61,7 +61,7 @@ mojom_component("base") {
     enabled_features += [ "file_path_is_string" ]
   }
 
-  webui_module_path = "neovex://resources/mojo/mojo/public/mojom/base"
+  webui_module_path = "chrome://resources/mojo/mojo/public/mojom/base"
 
   # Always generate legacy bindings since this target is used by Blink, fuzzers,
   # etc and not just by WebUI.
@@ -755,7 +755,7 @@ mojom_component("base") {
 mojom_component("protobuf_support") {
   sources = [ "proto_wrapper.mojom" ]
   generate_java = true
-  webui_module_path = "neovex://resources/mojo/mojo/public/mojom/base"
+  webui_module_path = "chrome://resources/mojo/mojo/public/mojom/base"
   generate_legacy_js_bindings = true
   output_prefix = "mojo_base_mojom_protobuf_support"
   macro_prefix = "MOJO_BASE_MOJOM_PROTOBUF_SUPPORT"

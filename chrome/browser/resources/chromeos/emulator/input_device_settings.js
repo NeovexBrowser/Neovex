@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'neovex://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
-import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/polymer/v3_0/iron-collapse/iron-collapse.js';
+import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
 import './icons.js';
 import './shared_styles.js';
 
-import {WebUIListenerBehavior} from 'neovex://resources/ash/common/web_ui_listener_behavior.js';
-import {html, Polymer} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUIListenerBehavior} from 'chrome://resources/ash/common/web_ui_listener_behavior.js';
+import {html, Polymer} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 Polymer({
   is: 'input-device-settings',

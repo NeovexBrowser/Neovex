@@ -8,8 +8,8 @@ import '//resources/polymer/v3_0/iron-collapse/iron-collapse.js';
 import '//resources/polymer/v3_0/iron-pages/iron-pages.js';
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {ContentRestriction, DataTransferEndpoint, DlpEvent, DlpEvent_Mode, DlpEvent_Restriction, DlpEvent_UserType, EndpointType, EventDestination, FileDatabaseEntry, Level, PageHandlerInterface, WebContentsInfo} from './dlp_internals.mojom-webui.js';
 import {PageHandler, ReportingObserverReceiver} from './dlp_internals.mojom-webui.js';

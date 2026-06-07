@@ -7,12 +7,12 @@
  * related to the Content Transfer app.
  */
 
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
 import '../../settings_shared.css.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../../common/deep_linking_mixin.js';
 import {RouteObserverMixin} from '../../common/route_observer_mixin.js';

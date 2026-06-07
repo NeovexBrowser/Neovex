@@ -76,7 +76,7 @@ class BrowserMinidumpTest(tab_test_case.TabTestCase):
   def testSymbolizeMinidump(self):
     # Wait for the browser to restart fully before crashing
     self._LoadPageThenWait('var sam = "car";', 'sam')
-    self._browser.tabs.New().Navigate('neovex://gpucrash', timeout=10)
+    self._browser.tabs.New().Navigate('chrome://gpucrash', timeout=10)
     crash_minidump_path = self._browser.GetRecentMinidumpPathWithTimeout(
         timeout_s=WAIT_FOR_MINIDUMP_TIMEOUT)
     self.assertIsNotNone(crash_minidump_path)
@@ -122,7 +122,7 @@ class BrowserMinidumpTest(tab_test_case.TabTestCase):
   def testMultipleCrashMinidumps(self):
     # Wait for the browser to restart fully before crashing
     self._LoadPageThenWait('var cat = "dog";', 'cat')
-    self._browser.tabs.New().Navigate('neovex://gpucrash', timeout=10)
+    self._browser.tabs.New().Navigate('chrome://gpucrash', timeout=10)
     first_crash_path = self._browser.GetRecentMinidumpPathWithTimeout(
         timeout_s=WAIT_FOR_MINIDUMP_TIMEOUT)
 
@@ -154,7 +154,7 @@ class BrowserMinidumpTest(tab_test_case.TabTestCase):
     # Start a new tab in the restarted browser
     self._LoadPageThenWait('var foo = "bar";', 'foo')
 
-    self._browser.tabs.New().Navigate('neovex://gpucrash', timeout=10)
+    self._browser.tabs.New().Navigate('chrome://gpucrash', timeout=10)
     # Make the oldest allowable timestamp slightly after the first dump's
     # timestamp so we don't get the first one returned to us again
     oldest_ts = os.path.getmtime(first_crash_path) + 1
@@ -222,7 +222,7 @@ class BrowserMinidumpTest(tab_test_case.TabTestCase):
     """
     self._LoadPageThenWait('var cat = "dog";', 'cat')
     try:
-      self._browser.tabs[-1].Navigate('neovex://hang', timeout=10)
+      self._browser.tabs[-1].Navigate('chrome://hang', timeout=10)
     except exceptions.Error:
       # We expect the navigate to time out due to the hang.
       pass

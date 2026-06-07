@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-feedback/file_attachment.js';
-import 'neovex://os-feedback/strings.m.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://os-feedback/file_attachment.js';
+import 'chrome://os-feedback/strings.m.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {FakeFeedbackServiceProvider} from 'neovex://os-feedback/fake_feedback_service_provider.js';
-import type {FileAttachmentElement} from 'neovex://os-feedback/file_attachment.js';
-import {setFeedbackServiceProviderForTesting} from 'neovex://os-feedback/mojo_interface_provider.js';
-import {FeedbackAppPreSubmitAction} from 'neovex://os-feedback/os_feedback_ui.mojom-webui.js';
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {FakeFeedbackServiceProvider} from 'chrome://os-feedback/fake_feedback_service_provider.js';
+import type {FileAttachmentElement} from 'chrome://os-feedback/file_attachment.js';
+import {setFeedbackServiceProviderForTesting} from 'chrome://os-feedback/mojo_interface_provider.js';
+import {FeedbackAppPreSubmitAction} from 'chrome://os-feedback/os_feedback_ui.mojom-webui.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
-const fakeImageUrl = 'neovex://os_feedback/app_icon_48.png';
+const fakeImageUrl = 'chrome://os_feedback/app_icon_48.png';
 
 const MAX_ATTACH_FILE_SIZE = 10 * 1024 * 1024;
 

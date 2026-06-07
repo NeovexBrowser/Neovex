@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://signout-confirmation/signout_confirmation.js';
+import 'chrome://signout-confirmation/signout_confirmation.js';
 
-import type {ExtensionsSectionElement} from 'neovex://signout-confirmation/signout_confirmation.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsSectionElement} from 'chrome://signout-confirmation/signout_confirmation.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 const TEST_ACCOUNT_EXTENSIONS = [
   {

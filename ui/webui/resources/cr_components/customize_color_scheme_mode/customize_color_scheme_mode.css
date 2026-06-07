@@ -10,13 +10,13 @@
  * #css_wrapper_metadata_end */
 
 #lightMode {
-  --cr-icon-image: url(neovex://resources/cr_components/customize_color_scheme_mode/light_mode.svg);
+  --cr-icon-image: url(chrome://resources/cr_components/customize_color_scheme_mode/light_mode.svg);
 }
 
 #darkMode {
-  --cr-icon-image: url(neovex://resources/cr_components/customize_color_scheme_mode/dark_mode.svg);
+  --cr-icon-image: url(chrome://resources/cr_components/customize_color_scheme_mode/dark_mode.svg);
 }
 
 #systemMode {
-  --cr-icon-image: url(neovex://resources/cr_components/customize_color_scheme_mode/system_mode.svg);
+  --cr-icon-image: url(chrome://resources/cr_components/customize_color_scheme_mode/system_mode.svg);
 }

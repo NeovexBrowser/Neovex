@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CrRouter} from 'neovex://resources/js/cr_router.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import type {StoreObserver} from 'neovex://resources/js/store.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CrRouter} from 'chrome://resources/js/cr_router.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import type {StoreObserver} from 'chrome://resources/js/store.js';
 
 import {selectFolder, setSearchTerm} from './actions.js';
 import {ROOT_NODE_ID} from './constants.js';

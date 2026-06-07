@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {EmojiButton, EmojiSearch} from 'neovex://emoji-picker/emoji_picker.js';
-import {EMOJI_PICKER_TOTAL_EMOJI_WIDTH, EMOJI_VARIANTS_SHOWN} from 'neovex://emoji-picker/emoji_picker.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertGT, assertLT, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {EmojiButton, EmojiSearch} from 'chrome://emoji-picker/emoji_picker.js';
+import {EMOJI_PICKER_TOTAL_EMOJI_WIDTH, EMOJI_VARIANTS_SHOWN} from 'chrome://emoji-picker/emoji_picker.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertGT, assertLT, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {assertCloseTo, dispatchMouseEvent, initialiseEmojiPickerForTest, isGroupButtonActive, timeout, waitForCondition, waitForEvent, waitWithTimeout} from './emoji_picker_test_util.js';
 

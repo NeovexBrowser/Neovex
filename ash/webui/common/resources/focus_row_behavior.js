@@ -7,8 +7,8 @@
 // code should use focus_row_mixin.ts.
 
 // clang-format off
-import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assert} from 'neovex://resources/ash/common/assert.js';
+import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
 import {focusWithoutInk} from './focus_without_ink_js.js';
 import {FocusRow, FocusRowDelegate} from './focus_row_js.js';
 // clang-format on

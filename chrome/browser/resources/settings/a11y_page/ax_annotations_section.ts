@@ -6,7 +6,7 @@
  * @fileoverview
  * 'settings-ax-annotations-section' is a section holding the toggle for main
  * node accessibility annotations. It appears on the accessibility page
- * (neovex://settings/accessibility) on Windows, macOS, and Linux.
+ * (chrome://settings/accessibility) on Windows, macOS, and Linux.
  */
 
 import '../controls/settings_toggle_button.js';
@@ -15,10 +15,10 @@ import '../settings_shared.css.js';
 import type {AxAnnotationsBrowserProxy} from '/shared/settings/a11y_page/ax_annotations_browser_proxy.js';
 import {AxAnnotationsBrowserProxyImpl, ScreenAiInstallStatus} from '/shared/settings/a11y_page/ax_annotations_browser_proxy.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 

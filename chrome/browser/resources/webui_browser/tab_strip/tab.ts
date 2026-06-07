@@ -41,7 +41,7 @@ export class TabElement extends CrLitElement {
 
   accessor data: TabData = {
     alertStates: [],
-    favicon: {dataUrl: 'neovex://favicon2/'},
+    favicon: {dataUrl: 'chrome://favicon2/'},
     id: '',
     isActive: false,
     isBlocked: false,

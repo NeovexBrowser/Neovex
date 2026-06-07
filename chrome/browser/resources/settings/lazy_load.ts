@@ -128,27 +128,27 @@ export type {CaptionsBrowserProxy, LiveCaptionLanguageList} from '/shared/settin
 
 export {FontsBrowserProxyImpl} from '/shared/settings/appearance_page/fonts_browser_proxy.js';
 export type {FontsBrowserProxy, FontsData} from '/shared/settings/appearance_page/fonts_browser_proxy.js';
-export {CrShortcutInputElement} from 'neovex://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
-export {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-export {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-export {CrCollapseElement} from 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
-export {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-export {CrExpandButtonElement} from 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-export {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-export {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
-export {CrLazyRenderElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
-export {CrSliderElement} from 'neovex://resources/cr_elements/cr_slider/cr_slider.js';
-export {CrTextareaElement} from 'neovex://resources/cr_elements/cr_textarea/cr_textarea.js';
-export {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
-export {getToastManager} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
-export {CrTooltipElement} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+export {CrShortcutInputElement} from 'chrome://resources/cr_components/cr_shortcut_input/cr_shortcut_input.js';
+export {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+export {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+export {CrCollapseElement} from 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
+export {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+export {CrExpandButtonElement} from 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+export {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+export {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
+export {CrLazyRenderElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+export {CrSliderElement} from 'chrome://resources/cr_elements/cr_slider/cr_slider.js';
+export {CrTextareaElement} from 'chrome://resources/cr_elements/cr_textarea/cr_textarea.js';
+export {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+export {getToastManager} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
+export {CrTooltipElement} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
 // <if expr="not is_chromeos">
-export {PageCallbackRouter, PageHandlerFactory, PageHandlerRemote, PageRemote} from 'neovex://resources/js/batch_upload_promo.mojom-webui.js';
-export type {PageHandlerInterface} from 'neovex://resources/js/batch_upload_promo.mojom-webui.js';
-export {BatchUploadPromoProxyImpl} from 'neovex://resources/js/batch_upload_promo/batch_upload_promo_proxy.js';
-export type {BatchUploadPromoProxy} from 'neovex://resources/js/batch_upload_promo/batch_upload_promo_proxy.js';
+export {PageCallbackRouter, PageHandlerFactory, PageHandlerRemote, PageRemote} from 'chrome://resources/js/batch_upload_promo.mojom-webui.js';
+export type {PageHandlerInterface} from 'chrome://resources/js/batch_upload_promo.mojom-webui.js';
+export {BatchUploadPromoProxyImpl} from 'chrome://resources/js/batch_upload_promo/batch_upload_promo_proxy.js';
+export type {BatchUploadPromoProxy} from 'chrome://resources/js/batch_upload_promo/batch_upload_promo_proxy.js';
 // </if>
-export type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+export type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 export {AccessibilityBrowserProxyImpl} from './a11y_page/a11y_browser_proxy.js';
 export type {AccessibilityBrowserProxy} from './a11y_page/a11y_browser_proxy.js';
 export {SettingsA11yPageElement, ToastAlertLevel} from './a11y_page/a11y_page.js';

@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
-import 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import 'neovex://resources/cr_elements/icons.html.js';
-import 'neovex://resources/cr_elements/policy/cr_tooltip_icon.js';
-import 'neovex://resources/js/action_link.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import 'chrome://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/policy/cr_tooltip_icon.js';
+import 'chrome://resources/js/action_link.js';
 import './icons.html.js';
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
 
 import type {ChromeEvent} from '/tools/typescript/definitions/chrome_event.js';
-import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
-import {TooltipPosition} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {isRTL} from 'neovex://resources/js/util.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
+import {TooltipPosition} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {isRTL} from 'chrome://resources/js/util.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './item.css.js';
 import {getHtml} from './item.html.js';

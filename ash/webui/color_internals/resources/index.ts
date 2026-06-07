@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {COLOR_PROVIDER_CHANGED, ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {COLOR_PROVIDER_CHANGED, ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {getRGBAFromComputedStyle} from './utils.js';
 import {startObservingWallpaperColors} from './wallpaper_colors.js';

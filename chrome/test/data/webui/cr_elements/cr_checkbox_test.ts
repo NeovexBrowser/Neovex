@@ -3,17 +3,17 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import {keyDownOn, keyUpOn, pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue, assertLT, assertGT} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
-import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import {keyDownOn, keyUpOn, pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue, assertLT, assertGT} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
+import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 // <if expr="is_win">
-import {assertNotEquals} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 // </if>
 // clang-format on
 

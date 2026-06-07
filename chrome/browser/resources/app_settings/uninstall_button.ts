@@ -6,13 +6,13 @@ import '//resources/cr_elements/cr_button/cr_button.js';
 import '//resources/cr_elements/policy/cr_tooltip_icon.js';
 import '//resources/cr_elements/icons.html.js';
 
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {InstallReason} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
-import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
-import {recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {InstallReason} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
+import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
+import {recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './uninstall_button.css.js';
 import {getHtml} from './uninstall_button.html.js';

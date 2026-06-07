@@ -7,9 +7,9 @@
 // clang-format off
 import './cr_policy_strings.js';
 
-import {CrPolicyIndicatorMixin, CrPolicyIndicatorType} from 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {CrPolicyIndicatorMixin, CrPolicyIndicatorType} from 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 // clang-format on
 

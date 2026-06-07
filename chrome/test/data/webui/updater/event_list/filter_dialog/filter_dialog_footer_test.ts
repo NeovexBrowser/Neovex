@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FilterDialogFooterElement} from 'neovex://updater/event_list/filter_dialog/filter_dialog_footer.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {FilterDialogFooterElement} from 'chrome://updater/event_list/filter_dialog/filter_dialog_footer.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('FilterDialogFooterElement', () => {
   let filterDialogFooter: FilterDialogFooterElement;

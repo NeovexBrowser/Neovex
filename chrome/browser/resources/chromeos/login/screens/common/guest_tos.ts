@@ -19,7 +19,7 @@ import '../../components/dialogs/oobe_loading_dialog.js';
 import {assert} from '//resources/js/assert.js';
 import type {PolymerElementProperties} from '//resources/polymer/v3_0/polymer/interfaces.js';
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
 
 import {OobeModalDialog} from '../../components/dialogs/oobe_modal_dialog.js';
 import {OobeUiState} from '../../components/display_manager_types.js';
@@ -43,7 +43,7 @@ enum GuestTosScreenState {
 /**
  * URL to use when online page is not available.
  */
-const GUEST_TOS_EULA_TERMS_URL = 'neovex://terms';
+const GUEST_TOS_EULA_TERMS_URL = 'chrome://terms';
 
 /**
  * Timeout to load online ToS.

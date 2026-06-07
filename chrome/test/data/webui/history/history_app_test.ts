@@ -3,17 +3,17 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://history/history.js';
+import 'chrome://history/history.js';
 
-import type {HistoryAppElement} from 'neovex://history/history.js';
-import {BrowserServiceImpl, CrRouter, HistoryEmbeddingsBrowserProxyImpl, HistoryEmbeddingsPageHandlerRemote} from 'neovex://history/history.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HistoryAppElement} from 'chrome://history/history.js';
+import {BrowserServiceImpl, CrRouter, HistoryEmbeddingsBrowserProxyImpl, HistoryEmbeddingsPageHandlerRemote} from 'chrome://history/history.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 // <if expr="not is_chromeos">
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {HistorySignInState, SyncState} from 'neovex://history/history.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {HistorySignInState, SyncState} from 'chrome://history/history.js';
 
 // </if>
 

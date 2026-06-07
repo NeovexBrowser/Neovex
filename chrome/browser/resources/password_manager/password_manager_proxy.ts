@@ -8,7 +8,7 @@
  * testing. The chrome.passwordsPrivate API is being migrated to use Mojo.
  */
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {type ActorLoginPermission, PageCallbackRouter, PageHandlerFactory, PageHandlerRemote} from './password_manager.mojom-webui.js';
 

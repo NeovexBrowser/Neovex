@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_grid/cr_grid.js';
+import 'chrome://resources/cr_elements/cr_grid/cr_grid.js';
 
-import type {CrGridElement} from 'neovex://resources/cr_elements/cr_grid/cr_grid.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CrGridElement} from 'chrome://resources/cr_elements/cr_grid/cr_grid.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('CrElementsGridFocusTest', () => {
   function createGrid(

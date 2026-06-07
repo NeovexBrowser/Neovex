@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_radio_button/cr_card_radio_button.js';
+import 'chrome://resources/cr_elements/cr_radio_button/cr_card_radio_button.js';
 
-import type {CrCardRadioButtonElement} from 'neovex://resources/cr_elements/cr_radio_button/cr_card_radio_button.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrCardRadioButtonElement} from 'chrome://resources/cr_elements/cr_radio_button/cr_card_radio_button.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 // clang-format on
 

@@ -8,10 +8,10 @@
  */
 
 import '/shared/settings/controls/extension_controlled_indicator.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_icons.css.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_icons.css.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/icons.html.js';
 import '/shared/settings/prefs/prefs.js';
 import '../ai_page/ai_logging_info_bullet.js';
 import '../controls/settings_toggle_button.js';
@@ -28,8 +28,8 @@ import './autofill_ai_entries_list.js';
 import './walletable_pass_detection_toggle.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AiEnterpriseFeaturePrefName, ModelExecutionEnterprisePolicyValue} from '../ai_page/constants.js';
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';

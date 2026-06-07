@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {SettingsDropdownMenuElement} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsDropdownMenuElement} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {clearBody} from '../utils.js';
 

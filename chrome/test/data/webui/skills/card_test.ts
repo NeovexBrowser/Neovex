@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://skills/card.js';
+import 'chrome://skills/card.js';
 
-import type {SkillCardElement} from 'neovex://skills/card.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SkillCardElement} from 'chrome://skills/card.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('SkillCard', function() {
   let skillCard: SkillCardElement;

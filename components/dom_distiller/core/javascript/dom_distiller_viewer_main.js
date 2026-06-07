@@ -18,7 +18,7 @@ if (typeof distillerOnIos === 'undefined') {
 }
 
 // The style guide recommends preferring $() to getElementById(). Chrome's
-// standard implementation of $() is imported from neovex://resources, which the
+// standard implementation of $() is imported from chrome://resources, which the
 // distilled page is prohibited from accessing. A version of it is
 // re-implemented here to allow stylistic consistency with other JS code.
 function $(id) {

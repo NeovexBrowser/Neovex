@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extension-sidebar. */
-import type {ExtensionsSidebarElement} from 'neovex://extensions/extensions.js';
-import {navigation, Page} from 'neovex://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsSidebarElement} from 'chrome://extensions/extensions.js';
+import {navigation, Page} from 'chrome://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {testVisible} from './test_util.js';
 

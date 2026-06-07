@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
-import 'neovex://parent-access/parent_access_ui.js';
-import 'neovex://parent-access/strings.m.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://parent-access/parent_access_ui.js';
+import 'chrome://parent-access/strings.m.js';
 
-import {ParentAccessUi} from 'neovex://parent-access/parent_access_ui.js';
-import type {ParentAccessUiHandlerInterface} from 'neovex://parent-access/parent_access_ui.mojom-webui.js';
-import {resetParentAccessHandlerForTest, setParentAccessUiHandlerForTest} from 'neovex://parent-access/parent_access_ui_handler.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {ParentAccessUi} from 'chrome://parent-access/parent_access_ui.js';
+import type {ParentAccessUiHandlerInterface} from 'chrome://parent-access/parent_access_ui.mojom-webui.js';
+import {resetParentAccessHandlerForTest, setParentAccessUiHandlerForTest} from 'chrome://parent-access/parent_access_ui_handler.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {clearDocumentBody} from './parent_access_test_utils.js';
 import {TestParentAccessUiHandler} from './test_parent_access_ui_handler.js';

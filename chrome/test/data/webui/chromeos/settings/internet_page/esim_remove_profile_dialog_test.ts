@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {EsimRemoveProfileDialogElement} from 'neovex://os-settings/os_settings.js';
-import {Router, routes} from 'neovex://os-settings/os_settings.js';
-import {setESimManagerRemoteForTesting} from 'neovex://resources/ash/common/cellular_setup/mojo_interface_provider.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {ESimManagerRemote, ESimProfileInterface} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {ESimOperationResult} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {FakeProfile} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {FakeESimManagerRemote} from 'neovex://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
-import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {EsimRemoveProfileDialogElement} from 'chrome://os-settings/os_settings.js';
+import {Router, routes} from 'chrome://os-settings/os_settings.js';
+import {setESimManagerRemoteForTesting} from 'chrome://resources/ash/common/cellular_setup/mojo_interface_provider.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {ESimManagerRemote, ESimProfileInterface} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {ESimOperationResult} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {FakeProfile} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {FakeESimManagerRemote} from 'chrome://webui-test/chromeos/cellular_setup/fake_esim_manager_remote.js';
+import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

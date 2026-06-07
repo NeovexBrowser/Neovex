@@ -8,16 +8,16 @@
  * <main-page-container> is the primary element.
  */
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import {AccountManagerBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {MainPageContainerElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
-import {createPageAvailabilityForTesting, CrSettingsPrefs, Router, routes, routesMojom, setContactManagerForTesting, setNearbyShareSettingsForTesting} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeContactManager} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
-import {FakeNearbyShareSettings} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {AccountManagerBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {MainPageContainerElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
+import {createPageAvailabilityForTesting, CrSettingsPrefs, Router, routes, routesMojom, setContactManagerForTesting, setNearbyShareSettingsForTesting} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeContactManager} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
+import {FakeNearbyShareSettings} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestAccountManagerBrowserProxy} from '../os_people_page/test_account_manager_browser_proxy.js';
 

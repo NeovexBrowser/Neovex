@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {castExists} from './assert_extras.js';
 import type {RouteObserverMixinInterface} from './common/route_observer_mixin.js';
@@ -290,7 +290,7 @@ export class Router {
    * Make a UMA note about visiting this URL path.
    */
   private recordMetrics_(urlPath: string): void {
-    assert(!urlPath.startsWith('neovex://'));
+    assert(!urlPath.startsWith('chrome://'));
     assert(!urlPath.startsWith('os-settings'));
     assert(urlPath.startsWith('/'));
     assert(!urlPath.match(/\?/g));  // query params should not be included

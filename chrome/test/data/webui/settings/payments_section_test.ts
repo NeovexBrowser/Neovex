@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsSimpleConfirmationDialogElement} from 'neovex://settings/lazy_load.js';
-import {PaymentsManagerImpl} from 'neovex://settings/lazy_load.js';
-import type {CrButtonElement, SettingsToggleButtonElement} from 'neovex://settings/settings.js';
-import {CvcDeletionUserAction, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, PrivacyElementInteractions} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsSimpleConfirmationDialogElement} from 'chrome://settings/lazy_load.js';
+import {PaymentsManagerImpl} from 'chrome://settings/lazy_load.js';
+import type {CrButtonElement, SettingsToggleButtonElement} from 'chrome://settings/settings.js';
+import {CvcDeletionUserAction, loadTimeData, MetricsBrowserProxyImpl, OpenWindowProxyImpl, PrivacyElementInteractions} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 // <if expr="not is_chromeos">
 import type {TestPaymentsManager} from './autofill_fake_data.js';
@@ -17,13 +17,13 @@ import {createCreditCardEntry} from './autofill_fake_data.js';
 import {createPaymentsSection, getLocalAndServerCreditCardListItems, getDefaultExpectations, getCardRowShadowRoot, verifyBooleanHistogramRecorded, verifyBooleanHistogramNotRecorded} from './payments_section_utils.js';
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
-import {eventToPromise, isVisible, whenAttributeIs} from 'neovex://webui-test/test_util.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {eventToPromise, isVisible, whenAttributeIs} from 'chrome://webui-test/test_util.js';
 
 // <if expr="is_chromeos">
 import {TestPaymentsManager} from './autofill_fake_data.js';
 
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 // </if>
 
 // clang-format on

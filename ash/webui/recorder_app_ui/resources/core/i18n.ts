@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {join} from 'neovex://resources/mwc/lit/index.js';
+import {join} from 'chrome://resources/mwc/lit/index.js';
 
 import {PlatformHandler} from '../platforms/index.js';
 

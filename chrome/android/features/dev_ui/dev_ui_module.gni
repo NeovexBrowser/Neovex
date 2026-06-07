@@ -3,7 +3,7 @@
 # found in the LICENSE file.
 
 declare_args() {
-  # Whether Developer UI (neovex:// pages) should be split into a separate
+  # Whether Developer UI (chrome:// pages) should be split into a separate
   # Dynamic Feature Module (DFM: //docs/android_dynamic_feature_modules.md).
   dfmify_dev_ui = true
 }

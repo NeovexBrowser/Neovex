@@ -10,7 +10,7 @@
  * It is column model responsibility to resize other columns accordingly.
  */
 
-import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
 
 import {jsSetter} from '../../../../common/js/cr_ui.js';
 import type {FileTableColumnModel} from '../file_table.js';

@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SettingsCategoryDefaultRadioGroupElement} from 'neovex://settings/lazy_load.js';
-import {ContentSetting, DefaultSettingSource, ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import {assertEquals, assertTrue, assertFalse} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SettingsCategoryDefaultRadioGroupElement} from 'chrome://settings/lazy_load.js';
+import {ContentSetting, DefaultSettingSource, ContentSettingsTypes, SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import {assertEquals, assertTrue, assertFalse} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 import type {SiteSettingsPref} from './test_util.js';

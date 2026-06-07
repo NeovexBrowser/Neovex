@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/wifi_info.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/wifi_info.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {getSignalStrength} from 'neovex://diagnostics/diagnostics_utils.js';
-import {fakeDisconnectedWifiNetwork, fakeWifiNetwork, fakeWiFiStateProperties} from 'neovex://diagnostics/fake_data.js';
-import type {Network, WiFiStateProperties} from 'neovex://diagnostics/network_health_provider.mojom-webui.js';
-import {SecurityType} from 'neovex://diagnostics/network_health_provider.mojom-webui.js';
-import type {WifiInfoElement} from 'neovex://diagnostics/wifi_info.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {getSignalStrength} from 'chrome://diagnostics/diagnostics_utils.js';
+import {fakeDisconnectedWifiNetwork, fakeWifiNetwork, fakeWiFiStateProperties} from 'chrome://diagnostics/fake_data.js';
+import type {Network, WiFiStateProperties} from 'chrome://diagnostics/network_health_provider.mojom-webui.js';
+import {SecurityType} from 'chrome://diagnostics/network_health_provider.mojom-webui.js';
+import type {WifiInfoElement} from 'chrome://diagnostics/wifi_info.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {assertDataPointHasExpectedHeaderAndValue, assertTextContains, getDataPointValue} from './diagnostics_test_utils.js';
 

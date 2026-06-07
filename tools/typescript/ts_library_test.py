@@ -92,8 +92,8 @@ class TsLibraryTest(unittest.TestCase):
                      tsbuildinfo)
 
   # Builds project2 which depends on files from project1 and project3, project6,
-  # both via relative URLs, as well as via absolute neovex:// and
-  # neovex://resources/ URLs.
+  # both via relative URLs, as well as via absolute chrome:// and
+  # chrome://resources/ URLs.
   def _build_project2(self, project1_gen_dir, project3_gen_dir,
                       project6_gen_dir):
     root_dir = os.path.join(_HERE_DIR, 'tests', 'project2')
@@ -137,7 +137,7 @@ class TsLibraryTest(unittest.TestCase):
         os.path.join(project3_gen_dir, 'tsconfig_build_ts.json'),
         os.path.join(project6_gen_dir, 'tsconfig_build_ts.json'),
         '--path_mappings',
-        'neovex://some-other-source/*|' + os.path.join(project1_gen_dir, '*'),
+        'chrome://some-other-source/*|' + os.path.join(project1_gen_dir, '*'),
         '--path_mappings_file',
         'path_mappings_project2.json',
         '--tsconfig_base',

@@ -42,7 +42,7 @@ export class PrivateStateTokensMetadataElement extends CrLitElement {
 
   protected onClick_() {
     window.history.pushState(
-        {}, '', 'neovex://privacy-sandbox-internals/private-state-tokens');
+        {}, '', 'chrome://privacy-sandbox-internals/private-state-tokens');
     window.dispatchEvent(new CustomEvent('navigate-to-container'));
   }
 }

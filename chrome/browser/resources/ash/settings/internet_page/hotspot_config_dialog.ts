@@ -6,17 +6,17 @@
  * @fileoverview Polymer element to set hotspot configuration
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
 import './internet_shared.css.js';
 
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {getHotspotConfig} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.js';
-import type {HotspotConfig, HotspotInfo} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {SetHotspotConfigResult, WiFiBand, WiFiSecurityMode} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {getHotspotConfig} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.js';
+import type {HotspotConfig, HotspotInfo} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {SetHotspotConfigResult, WiFiBand, WiFiSecurityMode} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 

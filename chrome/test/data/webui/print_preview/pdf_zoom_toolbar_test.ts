@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrIconButtonElement, ViewerZoomButtonElement, ViewerZoomToolbarElement} from 'neovex://print/pdf/pdf_print_wrapper.js';
-import {FittingType} from 'neovex://print/pdf/pdf_print_wrapper.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrIconButtonElement, ViewerZoomButtonElement, ViewerZoomToolbarElement} from 'chrome://print/pdf/pdf_print_wrapper.js';
+import {FittingType} from 'chrome://print/pdf/pdf_print_wrapper.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('PdfZoomToolbarTest', function() {
   let zoomToolbar: ViewerZoomToolbarElement;

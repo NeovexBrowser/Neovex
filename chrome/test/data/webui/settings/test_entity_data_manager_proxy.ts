@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import type {EntityDataManagerProxy, EntityInstancesChangedListener} from 'neovex://settings/lazy_load.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import type {EntityDataManagerProxy, EntityInstancesChangedListener} from 'chrome://settings/lazy_load.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 type AttributeType = chrome.autofillPrivate.AttributeType;
 type EntityInstance = chrome.autofillPrivate.EntityInstance;

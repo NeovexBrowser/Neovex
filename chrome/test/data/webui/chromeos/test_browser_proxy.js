@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
 
 /**
  * @typedef {{resolver: !PromiseResolver,

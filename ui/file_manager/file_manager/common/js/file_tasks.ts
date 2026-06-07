@@ -15,7 +15,7 @@ export interface AnnotatedTask extends chrome.fileManagerPrivate.FileTask {
 }
 
 /**
- * The SWA actionId is prefixed with neovex://file-manager/?ACTION_ID, just the
+ * The SWA actionId is prefixed with chrome://file-manager/?ACTION_ID, just the
  * sub-string compatible with the extension/legacy e.g.: "view-pdf".
  */
 export function parseActionId(actionId: string): string {

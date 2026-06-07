@@ -4,7 +4,7 @@
 
 import './button_label.js';
 
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './hover_button.css.js';
 import {getHtml} from './hover_button.html.js';

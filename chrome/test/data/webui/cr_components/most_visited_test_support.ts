@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://new-tab-page/strings.m.js';
+import 'chrome://new-tab-page/strings.m.js';
 
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
 
 export function $$<E extends Element = Element>(
     element: HTMLElement, query: string): E {

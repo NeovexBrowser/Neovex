@@ -6,7 +6,7 @@ import {ImageLoaderClient} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeop
 import type {ImageOrientation, ImageTransformParam} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/image_orientation.js';
 import type {LoadImageResponse} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/load_image_request.js';
 import {type LoadImageRequest} from 'chrome-extension://pmfjbimdmchhbnneeidfognadeopoehp/load_image_request.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {MockEntry, MockFileSystem} from '../../common/js/mock_entry.js';
 

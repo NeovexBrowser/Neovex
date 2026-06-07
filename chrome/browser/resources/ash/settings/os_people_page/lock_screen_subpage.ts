@@ -14,11 +14,11 @@
  * </settings-lock-screen-subpage>
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
 import '../controls/settings_toggle_button.js';
 import './setup_pin_dialog.js';
 import './pin_autosubmit_dialog.js';
@@ -29,13 +29,13 @@ import './password_settings.js';
 import './pin_settings.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {fireAuthTokenInvalidEvent} from 'neovex://resources/ash/common/quick_unlock/utils.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
-import {AuthFactor, ConfigureResult, FactorObserverReceiver, ManagementType, PinFactorEditor} from 'neovex://resources/mojo/chromeos/ash/services/auth_factor_config/public/mojom/auth_factor_config.mojom-webui.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {fireAuthTokenInvalidEvent} from 'chrome://resources/ash/common/quick_unlock/utils.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+import {AuthFactor, ConfigureResult, FactorObserverReceiver, ManagementType, PinFactorEditor} from 'chrome://resources/mojo/chromeos/ash/services/auth_factor_config/public/mojom/auth_factor_config.mojom-webui.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';

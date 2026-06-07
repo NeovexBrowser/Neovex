@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://skills/user_skills_page.js';
+import 'chrome://skills/user_skills_page.js';
 
-import {CrRouter} from 'neovex://resources/js/cr_router.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {Skill} from 'neovex://skills/skill.mojom-webui.js';
-import {SkillsDialogType, SkillSource} from 'neovex://skills/skill.mojom-webui.js';
-import {SkillsManagementAction, SkillsManagementPage} from 'neovex://skills/skill_metrics.mojom-webui.js';
-import {SkillsPageBrowserProxy} from 'neovex://skills/skills_page_browser_proxy.js';
-import type {UserSkillsPageElement} from 'neovex://skills/user_skills_page.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {CrRouter} from 'chrome://resources/js/cr_router.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {Skill} from 'chrome://skills/skill.mojom-webui.js';
+import {SkillsDialogType, SkillSource} from 'chrome://skills/skill.mojom-webui.js';
+import {SkillsManagementAction, SkillsManagementPage} from 'chrome://skills/skill_metrics.mojom-webui.js';
+import {SkillsPageBrowserProxy} from 'chrome://skills/skills_page_browser_proxy.js';
+import type {UserSkillsPageElement} from 'chrome://skills/user_skills_page.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestSkillsBrowserProxy} from './test_skills_browser_proxy.js';
 

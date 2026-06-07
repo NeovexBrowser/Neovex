@@ -556,7 +556,7 @@ generate_grd("build_grd") {
 
   if (!is_android) {
     # Needed by the ExtensionWebUIListenersTest which needs to load a dummy
-    # HTML file from a neovex://webui-test URL.
+    # HTML file from a chrome://webui-test URL.
     input_files = [ "extension_webui_listeners_test.html" ]
     input_files_base_dir = rebase_path(".", "//")
 
@@ -706,7 +706,7 @@ generate_grd("build_grd") {
 
   if (enable_pdf) {
     # Include PDF Viewer tests, since they are also served by
-    # neovex://webui-test, even though they reside in chrome/test/data/pdf/.
+    # chrome://webui-test, even though they reside in chrome/test/data/pdf/.
     deps += [ "../pdf:build_grdp" ]
     grdp_files += [ "$target_gen_dir/../pdf/resources.grdp" ]
   }

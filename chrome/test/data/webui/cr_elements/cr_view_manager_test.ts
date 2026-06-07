@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
 
-import type {CrViewManagerElement} from 'neovex://resources/cr_elements/cr_view_manager/cr_view_manager.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {CrLitElement, html as litHtml} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {PolymerElement, html as polymerHtml} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import type {CrViewManagerElement} from 'chrome://resources/cr_elements/cr_view_manager/cr_view_manager.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {CrLitElement, html as litHtml} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {PolymerElement, html as polymerHtml} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 

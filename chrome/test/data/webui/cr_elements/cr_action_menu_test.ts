@@ -3,20 +3,20 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
 
-import type { CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {AnchorAlignment} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import {isMac, isWindows} from 'neovex://resources/js/platform.js';
-import {FocusOutlineManager} from 'neovex://resources/js/focus_outline_manager.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {html, css, CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
-import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
-import {getTrustedHTML as getTrustedStaticHtml} from 'neovex://resources/js/static_types.js';
+import type { CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import {AnchorAlignment} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import {isMac, isWindows} from 'chrome://resources/js/platform.js';
+import {FocusOutlineManager} from 'chrome://resources/js/focus_outline_manager.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {html, css, CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import {getTrustedHTML as getTrustedStaticHtml} from 'chrome://resources/js/static_types.js';
 // clang-format on
 
 /**

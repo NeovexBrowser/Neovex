@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
+import 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
 
-import type {BookmarksTreeNode} from 'neovex://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
-import type {PowerBookmarkRowElement} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmark_row.js';
-import type {PowerBookmarkRowItemElement} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmark_row_item.js';
-import type {PowerBookmarksListElement} from 'neovex://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
-import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {BookmarksTreeNode} from 'chrome://bookmarks-side-panel.top-chrome/bookmarks.mojom-webui.js';
+import type {PowerBookmarkRowElement} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmark_row.js';
+import type {PowerBookmarkRowItemElement} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmark_row_item.js';
+import type {PowerBookmarksListElement} from 'chrome://bookmarks-side-panel.top-chrome/power_bookmarks_list.js';
+import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import type {TestBookmarksApiProxy} from './test_bookmarks_api_proxy.js';
 

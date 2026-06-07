@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getRequiredElement} from 'neovex://resources/ash/common/util.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {getRequiredElement} from 'chrome://resources/ash/common/util.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {crInjectTypeAndInit} from '../../../common/js/cr_ui.js';
 

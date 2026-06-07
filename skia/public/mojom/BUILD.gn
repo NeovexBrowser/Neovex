@@ -246,6 +246,6 @@ mojom("mojom") {
 
   # Generate TypeScript bindings for WebUI and JavaScript legacy bindings for
   # Blink.
-  webui_module_path = "neovex://resources/mojo/skia/public/mojom/"
+  webui_module_path = "chrome://resources/mojo/skia/public/mojom/"
   generate_legacy_js_bindings = true
 }

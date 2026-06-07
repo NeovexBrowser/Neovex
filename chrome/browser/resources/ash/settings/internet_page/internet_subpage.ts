@@ -7,17 +7,17 @@
  * Cellular, or virtual networks.
  */
 
-import 'neovex://resources/ash/common/network/network_list.js';
-import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'neovex://resources/ash/common/cr_elements/md_select.css.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
-import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/network/network_list.js';
+import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/ash/common/cr_elements/md_select.css.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '../settings_shared.css.js';
 import '../os_settings_icons.css.js';
 import './cellular_networks_list.js';
@@ -26,21 +26,21 @@ import './internet_subpage_menu.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {CrPolicyNetworkBehaviorMojoInterface} from 'neovex://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
-import {CrPolicyNetworkBehaviorMojo} from 'neovex://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkListenerBehaviorInterface} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {NetworkListenerBehavior} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {AlwaysOnVpnMode, AlwaysOnVpnProperties, CrosNetworkConfigInterface, GlobalPolicy, VpnProvider} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {FilterType, NO_LIMIT, VpnType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {afterNextRender, mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {CrPolicyNetworkBehaviorMojoInterface} from 'chrome://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
+import {CrPolicyNetworkBehaviorMojo} from 'chrome://resources/ash/common/network/cr_policy_network_behavior_mojo.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkListenerBehaviorInterface} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {NetworkListenerBehavior} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {AlwaysOnVpnMode, AlwaysOnVpnProperties, CrosNetworkConfigInterface, GlobalPolicy, VpnProvider} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {FilterType, NO_LIMIT, VpnType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {afterNextRender, mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import type {DeepLinkingMixinInterface} from '../common/deep_linking_mixin.js';

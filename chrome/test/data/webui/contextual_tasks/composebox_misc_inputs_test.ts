@@ -3,28 +3,28 @@
 // found in the LICENSE file.
 
 // For composebox tests related to tools, secondary inputs (voice, drag/drop).
-import 'neovex://contextual-tasks/app.js';
+import 'chrome://contextual-tasks/app.js';
 
-import type {ContextualTasksAppElement} from 'neovex://contextual-tasks/app.js';
-import {BrowserProxyImpl} from 'neovex://contextual-tasks/contextual_tasks_browser_proxy.js';
-import type {ComposeboxFile} from 'neovex://resources/cr_components/composebox/common.js';
-import type {ComposeboxElement} from 'neovex://resources/cr_components/composebox/composebox.js';
-import {PageCallbackRouter as ComposeboxPageCallbackRouter, PageHandlerRemote as ComposeboxPageHandlerRemote} from 'neovex://resources/cr_components/composebox/composebox.mojom-webui.js';
-import {ComposeboxProxyImpl} from 'neovex://resources/cr_components/composebox/composebox_proxy.js';
-import {ContextUploadStatus, ToolMode as ComposeboxToolMode} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import type {ComposeboxVoiceSearchElement} from 'neovex://resources/cr_components/composebox/composebox_voice_search.js';
-import type {ComposeboxFileCarouselElement} from 'neovex://resources/cr_components/composebox/file_carousel.js';
-import type {ComposeboxFileThumbnailElement} from 'neovex://resources/cr_components/composebox/file_thumbnail.js';
-import {WindowProxy} from 'neovex://resources/cr_components/composebox/window_proxy.js';
-import {GlowAnimationState} from 'neovex://resources/cr_components/search/constants.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote, type PageRemote as SearchboxPageRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {$$, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ContextualTasksAppElement} from 'chrome://contextual-tasks/app.js';
+import {BrowserProxyImpl} from 'chrome://contextual-tasks/contextual_tasks_browser_proxy.js';
+import type {ComposeboxFile} from 'chrome://resources/cr_components/composebox/common.js';
+import type {ComposeboxElement} from 'chrome://resources/cr_components/composebox/composebox.js';
+import {PageCallbackRouter as ComposeboxPageCallbackRouter, PageHandlerRemote as ComposeboxPageHandlerRemote} from 'chrome://resources/cr_components/composebox/composebox.mojom-webui.js';
+import {ComposeboxProxyImpl} from 'chrome://resources/cr_components/composebox/composebox_proxy.js';
+import {ContextUploadStatus, ToolMode as ComposeboxToolMode} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import type {ComposeboxVoiceSearchElement} from 'chrome://resources/cr_components/composebox/composebox_voice_search.js';
+import type {ComposeboxFileCarouselElement} from 'chrome://resources/cr_components/composebox/file_carousel.js';
+import type {ComposeboxFileThumbnailElement} from 'chrome://resources/cr_components/composebox/file_thumbnail.js';
+import {WindowProxy} from 'chrome://resources/cr_components/composebox/window_proxy.js';
+import {GlowAnimationState} from 'chrome://resources/cr_components/search/constants.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote, type PageRemote as SearchboxPageRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {$$, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestContextualTasksBrowserProxy} from './test_contextual_tasks_browser_proxy.js';
 import {ADD_FILE_CONTEXT_FN, ADD_TAB_CONTEXT_FN, assertStyle, deleteLastFile, FAKE_TOKEN_STRING, fixtureUrl, installMock, mockInputState} from './test_utils.js';

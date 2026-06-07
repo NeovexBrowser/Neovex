@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AdapterInfo} from 'neovex://bluetooth-internals/adapter.mojom-webui.js';
-import type {AdapterPage} from 'neovex://bluetooth-internals/adapter_page.js';
-import {adapterBroker, checkSystemPermissions, devices, initializeViews, pageManager, sidebarObj} from 'neovex://bluetooth-internals/bluetooth_internals.js';
-import {BluetoothInternalsHandler} from 'neovex://bluetooth-internals/bluetooth_internals.mojom-webui.js';
-import type {BluetoothInternalsHandlerRemote} from 'neovex://bluetooth-internals/bluetooth_internals.mojom-webui.js';
-import type {DeviceInfo} from 'neovex://bluetooth-internals/device.mojom-webui.js';
-import {connectedDevices} from 'neovex://bluetooth-internals/device_broker.js';
-import type {ObjectFieldsetElement} from 'neovex://bluetooth-internals/object_fieldset.js';
-import {dismissSnackbar, getSnackbarStateForTest, showSnackbar} from 'neovex://bluetooth-internals/snackbar.js';
-import type {UUID} from 'neovex://bluetooth-internals/uuid.mojom-webui.js';
-import {ValueDataType} from 'neovex://bluetooth-internals/value_control.js';
-import type {ValueControlElement} from 'neovex://bluetooth-internals/value_control.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertThrows, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {AdapterInfo} from 'chrome://bluetooth-internals/adapter.mojom-webui.js';
+import type {AdapterPage} from 'chrome://bluetooth-internals/adapter_page.js';
+import {adapterBroker, checkSystemPermissions, devices, initializeViews, pageManager, sidebarObj} from 'chrome://bluetooth-internals/bluetooth_internals.js';
+import {BluetoothInternalsHandler} from 'chrome://bluetooth-internals/bluetooth_internals.mojom-webui.js';
+import type {BluetoothInternalsHandlerRemote} from 'chrome://bluetooth-internals/bluetooth_internals.mojom-webui.js';
+import type {DeviceInfo} from 'chrome://bluetooth-internals/device.mojom-webui.js';
+import {connectedDevices} from 'chrome://bluetooth-internals/device_broker.js';
+import type {ObjectFieldsetElement} from 'chrome://bluetooth-internals/object_fieldset.js';
+import {dismissSnackbar, getSnackbarStateForTest, showSnackbar} from 'chrome://bluetooth-internals/snackbar.js';
+import type {UUID} from 'chrome://bluetooth-internals/uuid.mojom-webui.js';
+import {ValueDataType} from 'chrome://bluetooth-internals/value_control.js';
+import type {ValueControlElement} from 'chrome://bluetooth-internals/value_control.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertThrows, assertTrue} from 'chrome://webui-test/chai_assert.js';
 // <if expr="is_chromeos">
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 // </if>
 

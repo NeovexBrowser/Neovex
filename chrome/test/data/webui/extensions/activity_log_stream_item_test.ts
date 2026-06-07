@@ -4,10 +4,10 @@
 
 /** @fileoverview Suite of tests for activity-log-stream-item. */
 
-import type {ActivityLogStreamItemElement, StreamItem} from 'neovex://extensions/extensions.js';
-import {ARG_URL_PLACEHOLDER} from 'neovex://extensions/extensions.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ActivityLogStreamItemElement, StreamItem} from 'chrome://extensions/extensions.js';
+import {ARG_URL_PLACEHOLDER} from 'chrome://extensions/extensions.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {testVisible} from './test_util.js';
 

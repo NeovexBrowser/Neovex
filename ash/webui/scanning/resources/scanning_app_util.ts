@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReached} from 'neovex://resources/ash/common/assert.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {assertNotReached} from 'chrome://resources/ash/common/assert.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
 
 import type {Scanner} from './scanning.mojom-webui.js';
 import {ColorMode, FileType, PageSize, SourceType} from './scanning.mojom-webui.js';

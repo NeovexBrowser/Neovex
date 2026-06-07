@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import type {DismissErrorAction} from 'neovex://personalization/js/personalization_app.js';
-import {PersonalizationActionName, PersonalizationToastElement} from 'neovex://personalization/js/personalization_app.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {DismissErrorAction} from 'chrome://personalization/js/personalization_app.js';
+import {PersonalizationActionName, PersonalizationToastElement} from 'chrome://personalization/js/personalization_app.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {baseSetup, initElement, teardownElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';

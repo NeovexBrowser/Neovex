@@ -7,7 +7,7 @@ Add feature flags for Clank.
 
 This script can be used to quickly add Chrome feature flags and export
 them to the Java-side code for Clank. It also creates the necessary
-code to add the flag to neovex://flags. It does NOT create a fieldtrial.
+code to add the flag to chrome://flags. It does NOT create a fieldtrial.
 
 The script presents the user with a series of prompts to specify the
 basic parts of a flag that are unique to each flag. It then uses the
@@ -30,15 +30,15 @@ tools/flags/generate_clank_feature_flag.py
 The script will assume that "MyNewFeatureFlag" should be "kMyNewFeatureFlag"
 in the code, with a string identifier as "MyNewFeatureFlag". For the
 Java-side it will use "MY_NEW_FEATURE_FLAG" as the variable name. The
-answers to the 2nd and 3rd prompts are what appear in neovex://flags. The
+answers to the 2nd and 3rd prompts are what appear in chrome://flags. The
 answers to the 4th and 5th prompts are what is used in flag-metadata.json.
 
 Example (Advanced):
 
 # Run the script from the base directory with arguments:
 tools/flags/generate_clank_feature_flag.py --name "MyNewFeatureFlag" \
-  --display-name "Name for neovex://flags" \
-  --description "Description for neovex://flags" \
+  --display-name "Name for chrome://flags" \
+  --description "Description for chrome://flags" \
   --owners "foo@google.com,bar@chromium.org" \
   --milestone 145
 
@@ -565,10 +565,10 @@ def parse_arguments():
       help='Internal feature flag name (e.g., MyNewFeatureFlag).')
   parser.add_argument('--display-name',
                       type=str,
-                      help='User-facing name for neovex://flags.')
+                      help='User-facing name for chrome://flags.')
   parser.add_argument('--description',
                       type=str,
-                      help='Description for neovex://flags.')
+                      help='Description for chrome://flags.')
   parser.add_argument(
       '--owners',
       type=str,
@@ -605,7 +605,7 @@ def main():
 
   if not display_name:
     display_name = input(
-        f"Enter the user-facing name for neovex://flags "
+        f"Enter the user-facing name for chrome://flags "
         f"(press Enter for default: '{default_display_name}'): ").strip()
     if not display_name:
       display_name = default_display_name
@@ -616,7 +616,7 @@ def main():
 
   if not description:
     description = input(
-        f"Enter the description for neovex://flags "
+        f"Enter the description for chrome://flags "
         f"(press Enter for default: '{default_description}'): ").strip()
     if not description:
       description = default_description

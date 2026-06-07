@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
+import 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
 
-import type {CrTreeElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree.js';
-import type {CrTreeItemElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {MAY_HAVE_CHILDREN_ATTR} from 'neovex://resources/cr_elements/cr_tree/cr_tree_item.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import type {CrTreeElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree.js';
+import type {CrTreeItemElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {MAY_HAVE_CHILDREN_ATTR} from 'chrome://resources/cr_elements/cr_tree/cr_tree_item.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {FrameInfo, ProcessInternalsHandlerRemote, WebContentsInfo} from './process_internals.mojom-webui.js';
 import {FrameInfo_Type, ProcessInternalsHandler} from './process_internals.mojom-webui.js';

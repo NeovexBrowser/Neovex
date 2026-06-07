@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ProductInfo} from 'neovex://resources/cr_components/commerce/shared.mojom-webui.js';
-import type {PriceInsightsInfo} from 'neovex://resources/cr_components/commerce/shopping_service.mojom-webui.js';
-import {PriceInsightsInfo_PriceBucket} from 'neovex://resources/cr_components/commerce/shopping_service.mojom-webui.js';
-import type {ShoppingServiceBrowserProxy} from 'neovex://resources/cr_components/commerce/shopping_service_browser_proxy.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy as BaseTestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {ProductInfo} from 'chrome://resources/cr_components/commerce/shared.mojom-webui.js';
+import type {PriceInsightsInfo} from 'chrome://resources/cr_components/commerce/shopping_service.mojom-webui.js';
+import {PriceInsightsInfo_PriceBucket} from 'chrome://resources/cr_components/commerce/shopping_service.mojom-webui.js';
+import type {ShoppingServiceBrowserProxy} from 'chrome://resources/cr_components/commerce/shopping_service_browser_proxy.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy as BaseTestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestBrowserProxy extends BaseTestBrowserProxy implements
     ShoppingServiceBrowserProxy {

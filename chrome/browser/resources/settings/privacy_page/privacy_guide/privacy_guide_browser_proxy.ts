@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 // The number of times the prviacy guide promo has been shown.
 export const MAX_PRIVACY_GUIDE_PROMO_IMPRESSION: number = 10;

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {MockVolumeManager} from '../../background/js/mock_volume_manager.js';
 import type {VolumeManager} from '../../background/js/volume_manager.js';

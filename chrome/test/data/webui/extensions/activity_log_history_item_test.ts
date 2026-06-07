@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {ActivityGroup, ActivityLogHistoryItemElement} from 'neovex://extensions/extensions.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ActivityGroup, ActivityLogHistoryItemElement} from 'chrome://extensions/extensions.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {testVisible} from './test_util.js';
 
@@ -99,7 +99,7 @@ suite('ExtensionsActivityLogHistoryItemTest', function() {
 
   test('count shown in descending order for multiple page URLs', async () => {
     const countsByUrl =
-        new Map([['google.com', 5], ['neovex://extensions', 10]]);
+        new Map([['google.com', 5], ['chrome://extensions', 10]]);
 
     testActivityGroup = {
       activityIds: new Set(['1']),
@@ -130,7 +130,7 @@ suite('ExtensionsActivityLogHistoryItemTest', function() {
     // hence the use of .includes.
     assertTrue(
         pageUrls[0]!.querySelector<HTMLElement>('.page-url-link')!.innerText
-            .includes('neovex://extensions'));
+            .includes('chrome://extensions'));
     assertEquals(
         pageUrls[0]!.querySelector<HTMLElement>('.page-url-count')!.innerText,
         '10');

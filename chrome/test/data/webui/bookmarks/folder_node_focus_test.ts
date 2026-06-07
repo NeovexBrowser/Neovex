@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksFolderNodeElement, SelectFolderAction} from 'neovex://bookmarks/bookmarks.js';
-import {BookmarkManagerApiProxyImpl, changeFolderOpen, Command, ROOT_NODE_ID, selectFolder} from 'neovex://bookmarks/bookmarks.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {BookmarksFolderNodeElement, SelectFolderAction} from 'chrome://bookmarks/bookmarks.js';
+import {BookmarkManagerApiProxyImpl, changeFolderOpen, Command, ROOT_NODE_ID, selectFolder} from 'chrome://bookmarks/bookmarks.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBookmarkManagerApiProxy} from './test_bookmark_manager_api_proxy.js';
 import {TestCommandManager} from './test_command_manager.js';

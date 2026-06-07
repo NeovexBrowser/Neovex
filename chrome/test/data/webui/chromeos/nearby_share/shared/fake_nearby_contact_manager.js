@@ -6,7 +6,7 @@
  * @fileoverview Fake implementation of ContactManagerInterface for testing.
  */
 
-import 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
 
 /**
  * Fake implementation of ContactManagerInterface

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://actor-overlay/app.js';
+import 'chrome://actor-overlay/app.js';
 
-import type {ActorOverlayPageRemote} from 'neovex://actor-overlay/actor_overlay.mojom-webui.js';
-import type {ActorOverlayAppElement} from 'neovex://actor-overlay/app.js';
-import {ActorOverlayBrowserProxy} from 'neovex://actor-overlay/browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ActorOverlayPageRemote} from 'chrome://actor-overlay/actor_overlay.mojom-webui.js';
+import type {ActorOverlayAppElement} from 'chrome://actor-overlay/app.js';
+import {ActorOverlayBrowserProxy} from 'chrome://actor-overlay/browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import type {TestActorOverlayPageHandler} from './test_browser_proxy.js';
 import {TestActorOverlayBrowserProxy} from './test_browser_proxy.js';

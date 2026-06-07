@@ -4,8 +4,8 @@
 
 import {
   Dropdown as CrosDropdown,
-} from 'neovex://resources/cros_components/dropdown/dropdown.js';
-import {css} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/cros_components/dropdown/dropdown.js';
+import {css} from 'chrome://resources/mwc/lit/index.js';
 
 /**
  * A dropdown with ChromeOS specific style.

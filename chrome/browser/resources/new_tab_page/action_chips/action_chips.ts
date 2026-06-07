@@ -1,16 +1,16 @@
 // Copyright 2025 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
 
-import type {TabUpload} from 'neovex://resources/cr_components/composebox/common.js';
-import {TabUploadOrigin} from 'neovex://resources/cr_components/composebox/common.js';
-import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {ToolMode} from 'neovex://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
+import type {TabUpload} from 'chrome://resources/cr_components/composebox/common.js';
+import {TabUploadOrigin} from 'chrome://resources/cr_components/composebox/common.js';
+import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {ToolMode} from 'chrome://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
 
 import type {ActionChip, ActionChipsHandlerInterface, PageCallbackRouter} from '../action_chips.mojom-webui.js';
 import {IconType} from '../action_chips.mojom-webui.js';
@@ -215,7 +215,7 @@ export class ActionChipsElement extends CrLitElement {
 
 
   protected getFaviconUrl_(url: string): string {
-    const faviconUrl = new URL('neovex://favicon2/');
+    const faviconUrl = new URL('chrome://favicon2/');
     faviconUrl.searchParams.set('size', '24');
     faviconUrl.searchParams.set('scaleFactor', '1x');
     faviconUrl.searchParams.set('showFallbackMonogram', '');

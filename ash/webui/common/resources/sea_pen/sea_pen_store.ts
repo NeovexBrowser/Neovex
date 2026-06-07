@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {ListPropertyUpdateMixin} from 'neovex://resources/ash/common/cr_elements/list_property_update_mixin.js';
-import {makeStoreClientMixin} from 'neovex://resources/ash/common/cr_elements/store_client/store_client.js';
-import {Store} from 'neovex://resources/js/store.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {ListPropertyUpdateMixin} from 'chrome://resources/ash/common/cr_elements/list_property_update_mixin.js';
+import {makeStoreClientMixin} from 'chrome://resources/ash/common/cr_elements/store_client/store_client.js';
+import {Store} from 'chrome://resources/js/store.js';
 
 import type {SeaPenActions} from './sea_pen_actions.js';
 import {seaPenReducer} from './sea_pen_reducer.js';

@@ -8,10 +8,10 @@
  * security settings.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'neovex://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/polymer/v3_0/paper-spinner/paper-spinner-lite.js';
 import '../controls/settings_toggle_button.js';
 import '../settings_shared.css.js';
 import '../os_settings_page/os_settings_animated_pages.js';
@@ -26,11 +26,11 @@ import './secure_dns.js';
 import type {SyncBrowserProxy, SyncStatus} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {SignedInState, SyncBrowserProxyImpl} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {AUTH_TOKEN_INVALID_EVENT_TYPE} from 'neovex://resources/ash/common/quick_unlock/utils.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {RequestTokenReply} from 'neovex://resources/mojo/chromeos/components/in_session_auth/mojom/in_session_auth.mojom-webui.js';
-import {InSessionAuth, Reason} from 'neovex://resources/mojo/chromeos/components/in_session_auth/mojom/in_session_auth.mojom-webui.js';
-import {afterNextRender, flush, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {AUTH_TOKEN_INVALID_EVENT_TYPE} from 'chrome://resources/ash/common/quick_unlock/utils.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {RequestTokenReply} from 'chrome://resources/mojo/chromeos/components/in_session_auth/mojom/in_session_auth.mojom-webui.js';
+import {InSessionAuth, Reason} from 'chrome://resources/mojo/chromeos/components/in_session_auth/mojom/in_session_auth.mojom-webui.js';
+import {afterNextRender, flush, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {isAccountManagerEnabled} from '../common/load_time_booleans.js';

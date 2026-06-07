@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/settings.js';
+import 'chrome://settings/lazy_load.js';
 
-import type {SettingsAppearancePageIndexElement} from 'neovex://settings/settings.js';
-import {AppearanceBrowserProxyImpl, CrSettingsPrefs, Router, routes} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SettingsAppearancePageIndexElement} from 'chrome://settings/settings.js';
+import {AppearanceBrowserProxyImpl, CrSettingsPrefs, Router, routes} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestAppearanceBrowserProxy} from './test_appearance_browser_proxy.js';
 

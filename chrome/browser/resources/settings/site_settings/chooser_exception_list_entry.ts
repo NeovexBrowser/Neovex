@@ -7,13 +7,13 @@
  * 'chooser-exception-list-entry' shows a single chooser exception for a given
  * chooser type.
  */
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 import '../settings_shared.css.js';
 import './site_list_entry.js';
 
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './chooser_exception_list_entry.html.js';
 import type {ChooserException} from './site_settings_browser_proxy.js';

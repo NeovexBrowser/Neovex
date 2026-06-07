@@ -72,7 +72,7 @@ struct SiteDataArray {
 
 // Interface for providing information about the site data database. Lives in
 // the browser process and is invoked in the renderer process via Javascript
-// code running in the neovex://discards WebUI.
+// code running in the chrome://discards WebUI.
 interface SiteDataProvider {
   // Returns the in-memory entries and the entries for the requested origins.
   // Note that any entry may take some time to load from disk, and so there may

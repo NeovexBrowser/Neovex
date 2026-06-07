@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/tooltip/tooltip.js';
+import 'chrome://resources/cros_components/tooltip/tooltip.js';
 
-import {Tooltip} from 'neovex://resources/cros_components/tooltip/tooltip.js';
+import {Tooltip} from 'chrome://resources/cros_components/tooltip/tooltip.js';
 import {
   AsyncDirective,
   directive,
@@ -13,7 +13,7 @@ import {
   nothing,
   PartInfo,
   PartType,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {
   assert,

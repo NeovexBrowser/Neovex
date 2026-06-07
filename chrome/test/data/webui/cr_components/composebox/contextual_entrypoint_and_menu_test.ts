@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://new-tab-page/strings.m.js';
-import 'neovex://resources/cr_components/composebox/contextual_entrypoint_and_menu.js';
+import 'chrome://new-tab-page/strings.m.js';
+import 'chrome://resources/cr_components/composebox/contextual_entrypoint_and_menu.js';
 
-import type {ContextualEntrypointAndMenuElement} from 'neovex://resources/cr_components/composebox/contextual_entrypoint_and_menu.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {$$, eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ContextualEntrypointAndMenuElement} from 'chrome://resources/cr_components/composebox/contextual_entrypoint_and_menu.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {$$, eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createValidInputState} from './composebox_test_utils.js';
 

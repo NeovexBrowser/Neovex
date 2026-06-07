@@ -2,23 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
-import 'neovex://scanning/scan_preview.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://scanning/scan_preview.js';
 
-import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {AccessibilityFeaturesInterface, ForceHiddenElementsVisibleObserverRemote} from 'neovex://scanning/accessibility_features.mojom-webui.js';
-import {setAccessibilityFeaturesForTesting} from 'neovex://scanning/mojo_interface_provider.js';
-import type {ScanPreviewElement} from 'neovex://scanning/scan_preview.js';
-import {AppState} from 'neovex://scanning/scanning_app_types.js';
-import {ScanningBrowserProxyImpl} from 'neovex://scanning/scanning_browser_proxy.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
-import {isVisible} from 'neovex://webui-test/chromeos/test_util.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {AccessibilityFeaturesInterface, ForceHiddenElementsVisibleObserverRemote} from 'chrome://scanning/accessibility_features.mojom-webui.js';
+import {setAccessibilityFeaturesForTesting} from 'chrome://scanning/mojo_interface_provider.js';
+import type {ScanPreviewElement} from 'chrome://scanning/scan_preview.js';
+import {AppState} from 'chrome://scanning/scanning_app_types.js';
+import {ScanningBrowserProxyImpl} from 'chrome://scanning/scanning_browser_proxy.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
+import {isVisible} from 'chrome://webui-test/chromeos/test_util.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {FakeMediaQueryList} from './scanning_app_test_utils.js';
 import {TestScanningBrowserProxy} from './test_scanning_browser_proxy.js';
@@ -46,7 +46,7 @@ class FakeAccessibilityFeatures implements AccessibilityFeaturesInterface {
 
 suite('scanPreviewTest', function() {
   const testSvgPath =
-      'neovex://webui-test/chromeos/scanning/fake_scanned_image.svg';
+      'chrome://webui-test/chromeos/scanning/fake_scanned_image.svg';
 
   let scanPreview: ScanPreviewElement|null = null;
 

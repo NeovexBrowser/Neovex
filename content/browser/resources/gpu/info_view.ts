@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import type {AngleFeature, BrowserBridge, ClientInfo, FeatureStatus, Problem} from './browser_bridge.js';
 import {getTemplate} from './info_view.html.js';

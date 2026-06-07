@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/history_clusters/horizontal_carousel.js';
+import 'chrome://resources/cr_components/history_clusters/horizontal_carousel.js';
 
-import type {HorizontalCarouselElement} from 'neovex://resources/cr_components/history_clusters/horizontal_carousel.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {HorizontalCarouselElement} from 'chrome://resources/cr_components/history_clusters/horizontal_carousel.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 let carouselElement : HorizontalCarouselElement;
 

@@ -8,7 +8,7 @@ import './settings-row.js';
 import './spoken-message.js';
 import './language-list.js';
 
-import {createRef, css, html, ref} from 'neovex://resources/mwc/lit/index.js';
+import {createRef, css, html, ref} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

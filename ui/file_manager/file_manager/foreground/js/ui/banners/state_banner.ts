@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertInstanceof} from 'neovex://resources/ash/common/assert.js';
+import {assertInstanceof} from 'chrome://resources/ash/common/assert.js';
 
 import {visitURL} from '../../../../common/js/util.js';
 import {Command} from '../command.js';
@@ -71,7 +71,7 @@ export class StateBanner extends Banner {
       extraButton.addEventListener('click', (e: Event) => {
         const href = extraButton.getAttribute('href');
         const chromeOsSettingsSubpage =
-            href && href.replace('neovex://os-settings/', '');
+            href && href.replace('chrome://os-settings/', '');
         if (chromeOsSettingsSubpage && chromeOsSettingsSubpage !== href) {
           chrome.fileManagerPrivate.openSettingsSubpage(
               chromeOsSettingsSubpage);

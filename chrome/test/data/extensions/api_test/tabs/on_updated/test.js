@@ -49,12 +49,12 @@ chrome.test.runTests([
   function chromeUrls() {
     // Test for crbug.com/27208.
     expect([
-      { status: 'loading', url: 'neovex://chrome-urls/' },
+      { status: 'loading', url: 'chrome://chrome-urls/' },
       { title : "Chrome URLs" },
       { status: 'complete' }
     ]);
 
-    chrome.tabs.create({ url: 'neovex://chrome-urls/' });
+    chrome.tabs.create({ url: 'chrome://chrome-urls/' });
   },
 
   /*
@@ -74,7 +74,7 @@ chrome.test.runTests([
       return ignore;
     });
 
-    chrome.tabs.create({ url: 'neovex://newtab/' }, function(tab) {
+    chrome.tabs.create({ url: 'chrome://newtab/' }, function(tab) {
       chrome.tabs.update(tab.id, { url: 'about:blank' });
     });
   }, */

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
+import 'chrome://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
 
-import type {PrivateStateTokensAppElement, PrivateStateTokensNavigationElement} from 'neovex://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
-import {ItemsToRender, PrivateStateTokensApiBrowserProxyImpl} from 'neovex://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {PrivateStateTokensAppElement, PrivateStateTokensNavigationElement} from 'chrome://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
+import {ItemsToRender, PrivateStateTokensApiBrowserProxyImpl} from 'chrome://privacy-sandbox-internals/private_state_tokens/private_state_tokens.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestPrivateStateTokensApiBrowserProxy} from './test_api_proxy.js';
 import {dummyIssuerTokenCounts} from './test_data.js';

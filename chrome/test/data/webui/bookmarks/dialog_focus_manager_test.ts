@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksCommandManagerElement, BookmarksItemElement, BookmarksListElement} from 'neovex://bookmarks/bookmarks.js';
-import {Command, DialogFocusManager, MenuSource} from 'neovex://bookmarks/bookmarks.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {BookmarksCommandManagerElement, BookmarksItemElement, BookmarksListElement} from 'chrome://bookmarks/bookmarks.js';
+import {Command, DialogFocusManager, MenuSource} from 'chrome://bookmarks/bookmarks.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestCommandManager} from './test_command_manager.js';
 import {TestStore} from './test_store.js';

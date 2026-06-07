@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/cr_elements/cr_input/cr_input.js';
 import './print_preview_shared.css.js';
 import './print_preview_vars.css.js';
 import './settings_section.js';
 
-import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {InputMixin} from './input_mixin.js';
 import {getTemplate} from './number_settings_section.html.js';

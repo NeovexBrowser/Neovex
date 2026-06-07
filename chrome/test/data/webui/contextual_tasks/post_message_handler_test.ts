@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {BrowserProxyImpl} from 'neovex://contextual-tasks/contextual_tasks_browser_proxy.js';
-import {PostMessageHandler} from 'neovex://contextual-tasks/post_message_handler.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {BrowserProxyImpl} from 'chrome://contextual-tasks/contextual_tasks_browser_proxy.js';
+import {PostMessageHandler} from 'chrome://contextual-tasks/post_message_handler.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestContextualTasksBrowserProxy} from './test_contextual_tasks_browser_proxy.js';
 import {HANDSHAKE_REQUEST_MESSAGE_BASE64, HANDSHAKE_RESPONSE_BYTES} from './test_utils.js';

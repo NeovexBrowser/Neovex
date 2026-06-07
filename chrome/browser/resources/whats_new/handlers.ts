@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {Command} from 'neovex://resources/js/browser_command.mojom-webui.js';
-import {BrowserCommandProxy} from 'neovex://resources/js/browser_command/browser_command_proxy.js';
-import type {TimeDelta} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import {Command} from 'chrome://resources/js/browser_command.mojom-webui.js';
+import {BrowserCommandProxy} from 'chrome://resources/js/browser_command/browser_command_proxy.js';
+import type {TimeDelta} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
 
 import {formatModuleName} from './format_module_name.js';
 import {EventType, kModulePositionsMap, SectionType} from './types.js';

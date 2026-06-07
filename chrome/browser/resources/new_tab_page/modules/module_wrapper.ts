@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {CrLitElement, render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {CrLitElement, render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {recordLoadDuration, recordOccurrence, recordPerdecage, recordSparseValueWithPersistentHash} from '../metrics_utils.js';
 import {NewTabPageProxy} from '../new_tab_page_proxy.js';

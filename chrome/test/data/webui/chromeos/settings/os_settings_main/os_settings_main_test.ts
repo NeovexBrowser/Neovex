@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {OsSettingsMainElement, SettingsPrefsElement} from 'neovex://os-settings/os_settings.js';
-import {createPageAvailabilityForTesting, CrSettingsPrefs, Router, routes, setContactManagerForTesting, setNearbyShareSettingsForTesting} from 'neovex://os-settings/os_settings.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeContactManager} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
-import {FakeNearbyShareSettings} from 'neovex://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {OsSettingsMainElement, SettingsPrefsElement} from 'chrome://os-settings/os_settings.js';
+import {createPageAvailabilityForTesting, CrSettingsPrefs, Router, routes, setContactManagerForTesting, setNearbyShareSettingsForTesting} from 'chrome://os-settings/os_settings.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeContactManager} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_contact_manager.js';
+import {FakeNearbyShareSettings} from 'chrome://webui-test/chromeos/nearby_share/shared/fake_nearby_share_settings.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 let settingsPrefs: SettingsPrefsElement;
 let fakeContactManager: FakeContactManager;

@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/destination_dropdown_controller.js';
+import 'chrome://os-print/js/destination_dropdown_controller.js';
 
-import {PDF_DESTINATION} from 'neovex://os-print/js/data/destination_constants.js';
-import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DESTINATION_MANAGER_DESTINATIONS_CHANGED, DestinationManager} from 'neovex://os-print/js/data/destination_manager.js';
-import type {DestinationProviderComposite} from 'neovex://os-print/js/data/destination_provider_composite.js';
-import {PRINT_REQUEST_FINISHED_EVENT, PrintTicketManager} from 'neovex://os-print/js/data/print_ticket_manager.js';
-import {DESTINATION_DROPDOWN_DROPDOWN_DISABLED_CHANGED, DESTINATION_DROPDOWN_UPDATE_DESTINATIONS, DESTINATION_DROPDOWN_UPDATE_SELECTED_DESTINATION, DestinationDropdownController} from 'neovex://os-print/js/destination_dropdown_controller.js';
-import type {FakeDestinationProvider} from 'neovex://os-print/js/fakes/fake_destination_provider.js';
-import {createCustomEvent} from 'neovex://os-print/js/utils/event_utils.js';
-import {getDestinationProvider} from 'neovex://os-print/js/utils/mojo_data_providers.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {PDF_DESTINATION} from 'chrome://os-print/js/data/destination_constants.js';
+import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DESTINATION_MANAGER_DESTINATIONS_CHANGED, DestinationManager} from 'chrome://os-print/js/data/destination_manager.js';
+import type {DestinationProviderComposite} from 'chrome://os-print/js/data/destination_provider_composite.js';
+import {PRINT_REQUEST_FINISHED_EVENT, PrintTicketManager} from 'chrome://os-print/js/data/print_ticket_manager.js';
+import {DESTINATION_DROPDOWN_DROPDOWN_DISABLED_CHANGED, DESTINATION_DROPDOWN_UPDATE_DESTINATIONS, DESTINATION_DROPDOWN_UPDATE_SELECTED_DESTINATION, DestinationDropdownController} from 'chrome://os-print/js/destination_dropdown_controller.js';
+import type {FakeDestinationProvider} from 'chrome://os-print/js/fakes/fake_destination_provider.js';
+import {createCustomEvent} from 'chrome://os-print/js/utils/event_utils.js';
+import {getDestinationProvider} from 'chrome://os-print/js/utils/mojo_data_providers.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {createTestDestination, resetDataManagersAndProviders, waitForInitialDestinationSet, waitForPrintTicketManagerInitialized, waitForSendPrintRequestFinished} from './test_utils.js';
 

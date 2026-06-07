@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {AppManagementMainViewElement} from 'neovex://os-settings/lazy_load.js';
-import type {AppManagementActions, AppManagementPageState} from 'neovex://os-settings/os_settings.js';
-import {Router} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {TestStore} from 'neovex://webui-test/test_store.js';
+import type {AppManagementMainViewElement} from 'chrome://os-settings/lazy_load.js';
+import type {AppManagementActions, AppManagementPageState} from 'chrome://os-settings/os_settings.js';
+import {Router} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {TestStore} from 'chrome://webui-test/test_store.js';
 
 import type {FakePageHandler} from '../../app_management/fake_page_handler.js';
 import {replaceBody, replaceStore, setupFakeHandler} from '../../app_management/test_util.js';

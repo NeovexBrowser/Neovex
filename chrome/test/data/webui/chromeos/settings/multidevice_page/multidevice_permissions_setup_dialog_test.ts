@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {SettingsMultidevicePermissionsSetupDialogElement} from 'neovex://os-settings/os_settings.js';
-import {MultiDeviceBrowserProxyImpl, PermissionsSetupStatus, SetupFlowStatus} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SettingsMultidevicePermissionsSetupDialogElement} from 'chrome://os-settings/os_settings.js';
+import {MultiDeviceBrowserProxyImpl, PermissionsSetupStatus, SetupFlowStatus} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {TestMultideviceBrowserProxy} from './test_multidevice_browser_proxy.js';
 

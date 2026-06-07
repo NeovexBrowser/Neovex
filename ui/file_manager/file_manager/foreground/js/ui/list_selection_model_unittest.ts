@@ -5,8 +5,8 @@
 // clang-format off
 import {ListSelectionModel, type SelectionChangeEvent} from './list_selection_model.js';
 
-import {assertArrayEquals, assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {assertArrayEquals, assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {adjust, range} from './list_selection_model_test_util.js';
 // clang-format on

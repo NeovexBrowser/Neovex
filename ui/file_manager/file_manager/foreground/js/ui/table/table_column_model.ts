@@ -6,8 +6,8 @@
  * @fileoverview This is a table column model
  */
 
-import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
-import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
+import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
+import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
 
 import type {TableColumn} from './table_column.js';
 import {type RenderFunction} from './table_column.js';

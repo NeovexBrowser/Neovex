@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/network_choose_mobile.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/network_choose_mobile.js';
 
-import type {NetworkChooseMobileElement} from 'neovex://resources/ash/common/network/network_choose_mobile.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {ConnectionStateType, DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {NetworkChooseMobileElement} from 'chrome://resources/ash/common/network/network_choose_mobile.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {ConnectionStateType, DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('NetworkChooseMobileTest', () => {
   let chooseMobile: NetworkChooseMobileElement|undefined;

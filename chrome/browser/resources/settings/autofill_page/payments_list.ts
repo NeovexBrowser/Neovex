@@ -7,15 +7,15 @@
  * cards etc.) to be shown in the settings page.
  */
 
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
 import '../settings_shared.css.js';
 import './credit_card_list_entry.js';
 import './iban_list_entry.js';
 import './pay_over_time_issuer_list_entry.js';
 import './passwords_shared.css.js';
 
-import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 

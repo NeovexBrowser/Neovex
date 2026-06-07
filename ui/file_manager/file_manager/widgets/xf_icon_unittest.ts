@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {waitForElementUpdate} from '../common/js/unittest_util.js';
 import {ICON_TYPES} from '../foreground/js/constants.js';

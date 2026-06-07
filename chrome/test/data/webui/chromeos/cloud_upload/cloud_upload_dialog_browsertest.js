@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for neovex://cloud-upload/cloud_upload_dialog.js.
+ * @fileoverview Test suite for chrome://cloud-upload/cloud_upload_dialog.js.
  * Tests the entire page instead of individual components.
  */
 
@@ -14,7 +14,7 @@ GEN('#include "content/public/test/browser_test.h"');
 
 var CloudUploadDialogTest = class extends PolymerTest {
   get browsePreload() {
-    return 'neovex://cloud-upload/test_loader.html?module=chromeos/' +
+    return 'chrome://cloud-upload/test_loader.html?module=chromeos/' +
         'cloud_upload/cloud_upload_dialog_test.js';
   }
 

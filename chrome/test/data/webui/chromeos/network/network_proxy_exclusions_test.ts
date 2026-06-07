@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/network_proxy_exclusions.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/network_proxy_exclusions.js';
 
-import type {NetworkProxyExclusionsElement} from 'neovex://resources/ash/common/network/network_proxy_exclusions.js';
-import {assertDeepEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {NetworkProxyExclusionsElement} from 'chrome://resources/ash/common/network/network_proxy_exclusions.js';
+import {assertDeepEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('NetworkProxyExclusionsTest', () => {
   let proxyExclusions: NetworkProxyExclusionsElement;

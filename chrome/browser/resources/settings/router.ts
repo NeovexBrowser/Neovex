@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import type {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import type {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from './i18n_setup.js';
 
@@ -181,7 +181,7 @@ export class Route {
 
   /**
    * Returns the absolute path string for this Route, assuming this function
-   * has been called from within neovex://settings.
+   * has been called from within chrome://settings.
    */
   getAbsolutePath(): string {
     return window.location.origin + this.path;
@@ -459,7 +459,7 @@ export class Router {
    * @param urlPath The url path (only).
    */
   recordMetrics(urlPath: string) {
-    assert(!urlPath.startsWith('neovex://'));
+    assert(!urlPath.startsWith('chrome://'));
     assert(!urlPath.startsWith('settings'));
     assert(urlPath.startsWith('/'));
     assert(!urlPath.match(/\?/g));

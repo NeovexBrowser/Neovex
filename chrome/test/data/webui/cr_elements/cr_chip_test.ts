@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_chip/cr_chip.js';
+import 'chrome://resources/cr_elements/cr_chip/cr_chip.js';
 
-import type {CrChipElement} from 'neovex://resources/cr_elements/cr_chip/cr_chip.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrChipElement} from 'chrome://resources/cr_elements/cr_chip/cr_chip.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-chip', function() {

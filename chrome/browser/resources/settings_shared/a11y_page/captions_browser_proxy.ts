@@ -7,7 +7,7 @@
  * interact with the browser. Used on operating system that is not Chrome OS.
  */
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 /**
  * |name| is the display name of a language, ex. German.

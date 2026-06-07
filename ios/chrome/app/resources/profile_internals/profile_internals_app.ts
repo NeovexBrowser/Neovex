@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './profile_internals_app.css.js';
 import {getHtml} from './profile_internals_app.html.js';

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {SettingsCupsPrintersElement} from 'neovex://os-settings/lazy_load.js';
-import {CupsPrintersBrowserProxyImpl, PrinterSettingsUserAction, PrinterType} from 'neovex://os-settings/lazy_load.js';
-import {Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/ash/common/cr.m.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible} from 'neovex://webui-test/chromeos/test_util.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsCupsPrintersElement} from 'chrome://os-settings/lazy_load.js';
+import {CupsPrintersBrowserProxyImpl, PrinterSettingsUserAction, PrinterType} from 'chrome://os-settings/lazy_load.js';
+import {Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/ash/common/cr.m.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible} from 'chrome://webui-test/chromeos/test_util.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {FakeMetricsPrivate} from '../fake_metrics_private.js';
 

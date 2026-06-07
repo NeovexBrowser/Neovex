@@ -12,13 +12,13 @@ import '../settings_shared.css.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {IronResizableBehavior} from 'neovex://resources/polymer/v3_0/iron-resizable-behavior/iron-resizable-behavior.js';
-import type {PaperRippleMixinInterface} from 'neovex://resources/polymer/v3_0/paper-behaviors/paper-ripple-mixin.js';
-import {PaperRippleMixin} from 'neovex://resources/polymer/v3_0/paper-behaviors/paper-ripple-mixin.js';
-import type {PaperRippleElement} from 'neovex://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
-import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {IronResizableBehavior} from 'chrome://resources/polymer/v3_0/iron-resizable-behavior/iron-resizable-behavior.js';
+import type {PaperRippleMixinInterface} from 'chrome://resources/polymer/v3_0/paper-behaviors/paper-ripple-mixin.js';
+import {PaperRippleMixin} from 'chrome://resources/polymer/v3_0/paper-behaviors/paper-ripple-mixin.js';
+import type {PaperRippleElement} from 'chrome://resources/polymer/v3_0/paper-ripple/paper-ripple.js';
+import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Constructor} from '../common/types.js';
 

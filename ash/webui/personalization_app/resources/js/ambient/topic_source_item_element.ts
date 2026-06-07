@@ -6,11 +6,11 @@
  * @fileoverview This component displays a topic (image) source.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 
 import {TopicSource} from '../../personalization_app.mojom-webui.js';
 import {PersonalizationRouterElement} from '../personalization_router_element.js';

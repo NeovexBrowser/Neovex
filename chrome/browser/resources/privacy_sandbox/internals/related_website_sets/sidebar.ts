@@ -48,7 +48,7 @@ export class RelatedWebsiteSetsSidebarElement extends CrLitElement {
     {
       icon: 'cr:settings_icon',
       name: 'Settings',
-      path: 'neovex://settings',
+      path: 'chrome://settings',
     },
   ];
 

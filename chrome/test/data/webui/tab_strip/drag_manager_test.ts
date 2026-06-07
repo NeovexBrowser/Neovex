@@ -1,14 +1,14 @@
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {isChromeOS} from 'neovex://resources/js/platform.js';
-import type {DragManagerDelegate} from 'neovex://tab-strip.top-chrome/drag_manager.js';
-import {DragManager, PLACEHOLDER_GROUP_ID, PLACEHOLDER_TAB_ID} from 'neovex://tab-strip.top-chrome/drag_manager.js';
-import type {TabElement} from 'neovex://tab-strip.top-chrome/tab.js';
-import type {TabGroupElement} from 'neovex://tab-strip.top-chrome/tab_group.js';
-import {TabsApiProxyImpl} from 'neovex://tab-strip.top-chrome/tabs_api_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {isChromeOS} from 'chrome://resources/js/platform.js';
+import type {DragManagerDelegate} from 'chrome://tab-strip.top-chrome/drag_manager.js';
+import {DragManager, PLACEHOLDER_GROUP_ID, PLACEHOLDER_TAB_ID} from 'chrome://tab-strip.top-chrome/drag_manager.js';
+import type {TabElement} from 'chrome://tab-strip.top-chrome/tab.js';
+import type {TabGroupElement} from 'chrome://tab-strip.top-chrome/tab_group.js';
+import {TabsApiProxyImpl} from 'chrome://tab-strip.top-chrome/tabs_api_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {createTab, TestTabsApiProxy} from './test_tabs_api_proxy.js';
 

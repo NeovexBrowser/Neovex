@@ -7,13 +7,13 @@
  * the lock screen.
  */
 
-import 'neovex://resources/ash/common/cr.m.js';
-import 'neovex://resources/ash/common/event_target.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr.m.js';
+import 'chrome://resources/ash/common/event_target.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
 import '/components/buttons/oobe_text_button.js';
 import '/components/oobe_icons.html.js';
 import '/components/oobe_illo_icons.html.js';
@@ -25,10 +25,10 @@ import type {AuthCompletedCredentials, AuthCompletedEvent, AuthDomainChangeEvent
 import {Authenticator, AuthFlow, AuthMode, SUPPORTED_PARAMS} from '//lock-reauth/gaia_auth_host/authenticator.js';
 import type {CrInputElement} from '//resources/ash/common/cr_elements/cr_input/cr_input.js';
 import {LoginOrUnlock, recordUmaHistogramForSamlRedirectEvent, SamlRedirectEvent} from '/components/online_auth_utils.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './lock_screen_reauth.html.js';
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {DragAndDropHandler, Service} from 'neovex://extensions/extensions.js';
+import {DragAndDropHandler, Service} from 'chrome://extensions/extensions.js';
 
 import {TestService} from './test_service.js';
 

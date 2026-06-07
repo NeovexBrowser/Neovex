@@ -31,7 +31,7 @@ import {
   CrOSEvents_RecorderAppTranscriptFormat,
   CrOSEvents_RecorderAppTranscriptionEnableState,
   CrOSEvents_RecorderAppTranscriptionLocale,
-} from 'neovex://resources/ash/common/metrics/structured_events.js';
+} from 'chrome://resources/ash/common/metrics/structured_events.js';
 
 import {
   ChangePlaybackSpeedParams,

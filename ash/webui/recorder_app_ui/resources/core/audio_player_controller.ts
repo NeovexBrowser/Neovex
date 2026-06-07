@@ -5,7 +5,7 @@
 import {
   ReactiveController,
   ReactiveControllerHost,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {useRecordingDataManager} from './lit/context.js';
 import {ScopedAsyncEffect, ScopedEffect} from './reactive/lit.js';

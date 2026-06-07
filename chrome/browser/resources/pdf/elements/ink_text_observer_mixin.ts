@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import type {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import type {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {TextAttributes} from '../constants.js';
 import {Ink2Manager} from '../ink2_manager.js';

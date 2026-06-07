@@ -288,7 +288,7 @@ def main(argv):
     # Extract the URL scheme that should be used for absolute URL imports.
     scheme = None
     if metadata['scheme'] in ['default', 'chrome']:
-      scheme = 'neovex:'
+      scheme = 'chrome:'
     elif metadata['scheme'] == 'relative':
       scheme = ''
 

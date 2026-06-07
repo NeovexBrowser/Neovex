@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {NetworkPredictionOptions} from 'neovex://settings/lazy_load.js';
-import type {SettingsPrefsElement, SpeedPageElement} from 'neovex://settings/settings.js';
-import {CrSettingsPrefs} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeSettingsPrivate} from 'neovex://webui-test/fake_settings_private.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {NetworkPredictionOptions} from 'chrome://settings/lazy_load.js';
+import type {SettingsPrefsElement, SpeedPageElement} from 'chrome://settings/settings.js';
+import {CrSettingsPrefs} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeSettingsPrivate} from 'chrome://webui-test/fake_settings_private.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('SpeedPage', function() {
   function getFakePrefs() {

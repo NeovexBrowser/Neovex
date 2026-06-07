@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://history/history.js';
+import 'chrome://history/history.js';
 
-import {HISTORY_EMBEDDINGS_ANSWERS_PROMO_SHOWN_KEY, HISTORY_EMBEDDINGS_PROMO_SHOWN_KEY} from 'neovex://history/history.js';
-import type {HistoryEmbeddingsPromoElement} from 'neovex://history/history.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {HISTORY_EMBEDDINGS_ANSWERS_PROMO_SHOWN_KEY, HISTORY_EMBEDDINGS_PROMO_SHOWN_KEY} from 'chrome://history/history.js';
+import type {HistoryEmbeddingsPromoElement} from 'chrome://history/history.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('HistoryEmbeddingsPromoTest', function() {
   let element: HistoryEmbeddingsPromoElement;

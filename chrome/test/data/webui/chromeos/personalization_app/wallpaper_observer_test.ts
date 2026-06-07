@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import type {SetSelectedImageAction} from 'neovex://personalization/js/personalization_app.js';
-import {emptyState, FullscreenPreviewState, setFullscreenStateAction, setSelectedImageAction, WallpaperActionName, WallpaperObserver} from 'neovex://personalization/js/personalization_app.js';
-import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
+import type {SetSelectedImageAction} from 'chrome://personalization/js/personalization_app.js';
+import {emptyState, FullscreenPreviewState, setFullscreenStateAction, setSelectedImageAction, WallpaperActionName, WallpaperObserver} from 'chrome://personalization/js/personalization_app.js';
+import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {baseSetup} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';

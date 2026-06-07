@@ -166,14 +166,9 @@ ts_library("build_ts") {
     ":copy_mojo_ts",
   ]
 
-  path_mappings = [
-    "//resources/mojo/*|" +
-        rebase_path("$root_gen_dir/ui/webui/resources/tsc/mojo/*",
-                    target_gen_dir),
-    "neovex://resources/mojo/*|" +
-        rebase_path("$root_gen_dir/ui/webui/resources/tsc/mojo/*",
-                    target_gen_dir),
-  ]
+  path_mappings = [ "//resources/mojo/*|" +
+                    rebase_path("$root_gen_dir/ui/webui/resources/tsc/mojo/*",
+                                target_gen_dir) ]
 }
 
 if (optimize_webui) {
@@ -192,7 +187,7 @@ if (optimize_webui) {
 
 # Copy bindings.d.ts file under the same location where other shared Mojo JS
 # generated files reside, so that it can be located by the TS compiler when
-# resolving neovex://resources/mojo/mojo/public/js/bindings.js.
+# resolving chrome://resources/mojo/mojo/public/js/bindings.js.
 copy("copy_bindings_dts") {
   sources = [ "bindings.d.ts" ]
   outputs = [ "$tsc_folder/mojo/public/js/{{source_file_part}}" ]

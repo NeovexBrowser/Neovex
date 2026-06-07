@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewAppElement} from 'neovex://print/print_preview.js';
-import {NativeLayerImpl, PluginProxyImpl} from 'neovex://print/print_preview.js';
-import {isChromeOS, isMac, isWindows} from 'neovex://resources/js/platform.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyEventOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import type {ModifiersParam} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {PrintPreviewAppElement} from 'chrome://print/print_preview.js';
+import {NativeLayerImpl, PluginProxyImpl} from 'chrome://print/print_preview.js';
+import {isChromeOS, isMac, isWindows} from 'chrome://resources/js/platform.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyEventOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import type {ModifiersParam} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {NativeLayerStub} from './native_layer_stub.js';
 import {getCddTemplateWithAdvancedSettings, getDefaultInitialSettings} from './print_preview_test_utils.js';

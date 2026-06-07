@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {String16Converter} from 'neovex://resources/mojo/mojo/public/mojom/base/string16_converter.js';
-import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {String16Converter} from 'chrome://resources/mojo/mojo/public/mojom/base/string16_converter.js';
+import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 suite('MojoTypeUtilTest', () => {
   test('Can convert strings to mojo String16s', () => {

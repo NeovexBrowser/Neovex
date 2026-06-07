@@ -5,7 +5,7 @@
 /**
  * @fileoverview 'cr-lottie' is a wrapper around the player for lottie
  * animations. Since the player runs on a worker thread, 'cr-lottie' requires
- * the document CSP to be set to "worker-src blob: neovex://resources 'self';".
+ * the document CSP to be set to "worker-src blob: chrome://resources 'self';".
  *
  * For documents that have TrustedTypes CSP checks enabled, it also requires the
  * document CSP to be set to "trusted-types lottie-worker-script-loader;".
@@ -34,9 +34,9 @@ function getLottieWorkerURL(): TrustedScriptURL {
         window.trustedTypes!.createPolicy('lottie-worker-script-loader', {
           createScriptURL: (_ignore: string) => {
             const script =
-                `import 'neovex://resources/lottie/lottie_worker.min.js';`;
+                `import 'chrome://resources/lottie/lottie_worker.min.js';`;
             // CORS blocks loading worker script from a different origin, even
-            // if neovex://resources/ is added in the 'worker-src' CSP header.
+            // if chrome://resources/ is added in the 'worker-src' CSP header.
             // (see https://crbug.com/1385477). Loading scripts as blob and then
             // instantiating it as web worker is possible.
             const blob = new Blob([script], {type: 'text/javascript'});

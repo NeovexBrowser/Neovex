@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {Account} from 'neovex://os-settings/lazy_load.js';
-import type {AccountManagerSettingsCardElement, CrIconButtonElement} from 'neovex://os-settings/os_settings.js';
-import {ParentalControlsBrowserProxyImpl, Router, routes} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {Account} from 'chrome://os-settings/lazy_load.js';
+import type {AccountManagerSettingsCardElement, CrIconButtonElement} from 'chrome://os-settings/os_settings.js';
+import {ParentalControlsBrowserProxyImpl, Router, routes} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestParentalControlsBrowserProxy} from './test_parental_controls_browser_proxy.js';
 

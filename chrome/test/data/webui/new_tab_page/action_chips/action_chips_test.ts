@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://new-tab-page/lazy_load.js';
+import 'chrome://new-tab-page/lazy_load.js';
 
-import {ActionChipsHandlerRemote, IconType, PageCallbackRouter} from 'neovex://new-tab-page/action_chips.mojom-webui.js';
-import type {ActionChip, PageRemote, TabInfo} from 'neovex://new-tab-page/action_chips.mojom-webui.js';
-import {ActionChipsApiProxyImpl, ActionChipsRetrievalState} from 'neovex://new-tab-page/lazy_load.js';
-import type {ActionChipsElement} from 'neovex://new-tab-page/lazy_load.js';
-import {WindowProxy} from 'neovex://new-tab-page/new_tab_page.js';
-import type {TabUpload} from 'neovex://resources/cr_components/composebox/common.js';
-import {TabUploadOrigin} from 'neovex://resources/cr_components/composebox/common.js';
-import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {ActionChipsHandlerRemote, IconType, PageCallbackRouter} from 'chrome://new-tab-page/action_chips.mojom-webui.js';
+import type {ActionChip, PageRemote, TabInfo} from 'chrome://new-tab-page/action_chips.mojom-webui.js';
+import {ActionChipsApiProxyImpl, ActionChipsRetrievalState} from 'chrome://new-tab-page/lazy_load.js';
+import type {ActionChipsElement} from 'chrome://new-tab-page/lazy_load.js';
+import {WindowProxy} from 'chrome://new-tab-page/new_tab_page.js';
+import type {TabUpload} from 'chrome://resources/cr_components/composebox/common.js';
+import {TabUploadOrigin} from 'chrome://resources/cr_components/composebox/common.js';
+import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {installMock} from '../test_support.js';
 

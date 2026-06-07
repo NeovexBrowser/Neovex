@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/mwc/@material/web/focus/md-focus-ring.js';
-import 'neovex://resources/cros_components/button/button.js';
+import 'chrome://resources/mwc/@material/web/focus/md-focus-ring.js';
+import 'chrome://resources/cros_components/button/button.js';
 
 import {
   classMap,
@@ -18,7 +18,7 @@ import {
   Ref,
   ref,
   repeat,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {ReactiveLitElement} from '../core/reactive/lit.js';

@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for the RepeatDirective class. */
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
 import {PromiseResolver} from '//resources/js/promise_resolver.js';
-import {asyncMap} from 'neovex://extensions/extensions.js';
-import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals, assertFalse, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {asyncMap} from 'chrome://extensions/extensions.js';
+import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals, assertFalse, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('AsyncMapDirectiveTest', function() {
   let initialCount: number = 2;

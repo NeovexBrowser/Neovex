@@ -3,18 +3,18 @@
 // found in the LICENSE file.
 
 import './select_custom.js';
-import 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
 
-import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {FormSelectOptions, NOTIFICATION_VIEW_TYPES, NotificationPriority, NotificationType, NotifierType, SystemNotificationWarningLevel} from './form_constants.js';
 import {Notification} from './types.js';
 
-// Web component housing the form for neovex://notification-tester.
+// Web component housing the form for chrome://notification-tester.
 export class NotificationTester extends PolymerElement {
   static get is() {
     return 'notification-tester';

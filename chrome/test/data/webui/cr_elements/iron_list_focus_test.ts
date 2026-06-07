@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 // clang-format on
 
 // test-iron-focusable is a native custom element in order to maintain

@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsOmniboxExtensionEntryElement, SettingsSearchEngineEntryElement} from 'neovex://settings/lazy_load.js';
-import type { SearchEngine, CrActionMenuElement } from 'neovex://settings/settings.js';
-import { ExtensionControlBrowserProxyImpl, SearchEnginesBrowserProxyImpl, ChoiceMadeLocation } from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import { eventToPromise, isVisible } from 'neovex://webui-test/test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsOmniboxExtensionEntryElement, SettingsSearchEngineEntryElement} from 'chrome://settings/lazy_load.js';
+import type { SearchEngine, CrActionMenuElement } from 'chrome://settings/settings.js';
+import { ExtensionControlBrowserProxyImpl, SearchEnginesBrowserProxyImpl, ChoiceMadeLocation } from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import { eventToPromise, isVisible } from 'chrome://webui-test/test_util.js';
 
 import {TestExtensionControlBrowserProxy} from './test_extension_control_browser_proxy.js';
 import {createSampleOmniboxExtension, createSampleSearchEngine, TestSearchEnginesBrowserProxy} from './test_search_engines_browser_proxy.js';
@@ -271,7 +271,7 @@ suite('SearchEngineEntryTest', function() {
     });
 
     assertEquals(
-        'neovex://image/?http://www.google.com/favicon.ico',
+        'chrome://image/?http://www.google.com/favicon.ico',
         entry.$.downloadedIcon.src);
     assertFalse(isVisible(entry.$.downloadedIcon));
 
@@ -288,12 +288,12 @@ suite('SearchEngineEntryTest', function() {
   test('FaviconWithIconURL_Successful', async function() {
     entry.engine = createSampleSearchEngine({
       iconPath: '',
-      iconURL: 'neovex://resources/images/chrome_logo_dark.svg',
+      iconURL: 'chrome://resources/images/chrome_logo_dark.svg',
     });
 
     await eventToPromise('load', entry.$.downloadedIcon);
     assertEquals(
-        'neovex://resources/images/chrome_logo_dark.svg',
+        'chrome://resources/images/chrome_logo_dark.svg',
         entry.$.downloadedIcon.src);
     assertTrue(isVisible(entry.$.downloadedIcon));
 
@@ -308,11 +308,11 @@ suite('SearchEngineEntryTest', function() {
   // site-favicon displays the icon.
   test('FaviconWithIconURL_Failed', async function() {
     entry.engine = createSampleSearchEngine(
-        {iconPath: '', iconURL: 'neovex://resources/images/invalid_url'});
+        {iconPath: '', iconURL: 'chrome://resources/images/invalid_url'});
 
     await eventToPromise('error', entry.$.downloadedIcon);
     assertEquals(
-        'neovex://resources/images/invalid_url', entry.$.downloadedIcon.src);
+        'chrome://resources/images/invalid_url', entry.$.downloadedIcon.src);
     assertFalse(isVisible(entry.$.downloadedIcon));
 
     const siteFavicon = entry.shadowRoot!.querySelector('site-favicon');

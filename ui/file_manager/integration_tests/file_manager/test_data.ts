@@ -17,7 +17,7 @@ export const FILE_MANAGER_SWA_APP_ID = 'fkiggjmkendpmbegkagpmagjepfkpmeb';
 /**
  * Base URL of Files app SWA.
  */
-export const FILE_SWA_BASE_URL = 'neovex://file-manager/';
+export const FILE_SWA_BASE_URL = 'chrome://file-manager/';
 
 /**
  * Basic entry set for the local volume.
@@ -238,7 +238,7 @@ export const MODIFIED_ENTRY_SET = [
  */
 export class FakeTask {
   driveApp = false;
-  iconUrl = 'neovex://theme/IDR_DEFAULT_FAVICON';  // Dummy icon
+  iconUrl = 'chrome://theme/IDR_DEFAULT_FAVICON';  // Dummy icon
 
   /**
    * @param isDefault Whether the task is default or not.

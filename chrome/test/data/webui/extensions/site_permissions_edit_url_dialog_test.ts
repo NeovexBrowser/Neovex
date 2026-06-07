@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for site-permissions-edit-url-dialog. */
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {SitePermissionsEditUrlDialogElement} from 'neovex://extensions/extensions.js';
-import {getSitePermissionsPatternFromSite} from 'neovex://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SitePermissionsEditUrlDialogElement} from 'chrome://extensions/extensions.js';
+import {getSitePermissionsPatternFromSite} from 'chrome://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 

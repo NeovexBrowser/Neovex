@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 interface SandboxFeature {
   name: string;

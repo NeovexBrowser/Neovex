@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://read-later.top-chrome/reading_list_app.js';
+import 'chrome://read-later.top-chrome/reading_list_app.js';
 
-import type {ReadLaterEntriesByStatus} from 'neovex://read-later.top-chrome/reading_list.mojom-webui.js';
-import {ReadingListApiProxyImpl} from 'neovex://read-later.top-chrome/reading_list_api_proxy.js';
-import type {ReadingListAppElement} from 'neovex://read-later.top-chrome/reading_list_app.js';
-import type {ReadingListItemElement} from 'neovex://read-later.top-chrome/reading_list_item.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ReadLaterEntriesByStatus} from 'chrome://read-later.top-chrome/reading_list.mojom-webui.js';
+import {ReadingListApiProxyImpl} from 'chrome://read-later.top-chrome/reading_list_api_proxy.js';
+import type {ReadingListAppElement} from 'chrome://read-later.top-chrome/reading_list_app.js';
+import type {ReadingListItemElement} from 'chrome://read-later.top-chrome/reading_list_item.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestReadingListApiProxy} from './test_reading_list_api_proxy.js';
 

@@ -4,8 +4,8 @@
 
 import '/strings.m.js';
 
-import {assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {Mv2ExperimentStage} from './mv2_deprecation_util.js';
 
@@ -222,7 +222,7 @@ export function getEnableToggleAriaLabel(
     case ExtensionType.SHARED_MODULE:
       return extensionEnabled;
     case ExtensionType.THEME:
-      assertNotReached('Don\'t send themes to the neovex://extensions page');
+      assertNotReached('Don\'t send themes to the chrome://extensions page');
     default:
       assertNotReachedCase(
           extensionsDataType, 'Item type is not App or Extension.');

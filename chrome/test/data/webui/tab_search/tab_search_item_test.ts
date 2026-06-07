@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {RecentlyClosedTab, Tab, TabGroup, TabSearchItemElement} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {TabAlertState, TabData, TabGroupColor, TabItemType} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {assertDeepEquals, assertEquals, assertNotEquals, assertNotReached} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {RecentlyClosedTab, Tab, TabGroup, TabSearchItemElement} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {TabAlertState, TabData, TabGroupColor, TabItemType} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {assertDeepEquals, assertEquals, assertNotEquals, assertNotReached} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createTab, sampleToken} from './tab_search_test_data.js';
 

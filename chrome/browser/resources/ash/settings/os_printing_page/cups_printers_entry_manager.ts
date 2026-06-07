@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {WebUiListener} from 'neovex://resources/js/cr.js';
-import {addWebUiListener, removeWebUiListener} from 'neovex://resources/js/cr.js';
+import type {WebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener, removeWebUiListener} from 'chrome://resources/js/cr.js';
 
 import {findDifference} from './cups_printer_dialog_util.js';
 import type {PrinterListEntry} from './cups_printer_types.js';

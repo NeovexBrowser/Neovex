@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // <if expr="is_chromeos">
-import {NativeEventTarget as EventTarget} from 'neovex://resources/ash/common/event_target.js';
+import {NativeEventTarget as EventTarget} from 'chrome://resources/ash/common/event_target.js';
 
 // </if>
 

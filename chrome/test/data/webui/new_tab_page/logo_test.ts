@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 import type {SkColor} from '//resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
-import type {IframeElement, LogoElement} from 'neovex://new-tab-page/new_tab_page.js';
-import {$$, NewTabPageProxy, WindowProxy} from 'neovex://new-tab-page/new_tab_page.js';
-import type {Doodle, Theme} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {DoodleImageType, DoodleShareChannel, PageCallbackRouter, PageHandlerRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {hexColorToSkColor} from 'neovex://resources/js/color_utils.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertLE, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {IframeElement, LogoElement} from 'chrome://new-tab-page/new_tab_page.js';
+import {$$, NewTabPageProxy, WindowProxy} from 'chrome://new-tab-page/new_tab_page.js';
+import type {Doodle, Theme} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {DoodleImageType, DoodleShareChannel, PageCallbackRouter, PageHandlerRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {hexColorToSkColor} from 'chrome://resources/js/color_utils.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertGE, assertLE, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertNotStyle, assertStyle, createTheme, installMock, keydown} from './test_support.js';
 

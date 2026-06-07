@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsSwitchAccessActionAssignmentDialogElement} from 'neovex://os-settings/lazy_load.js';
-import {SwitchAccessCommand} from 'neovex://os-settings/lazy_load.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SettingsSwitchAccessActionAssignmentDialogElement} from 'chrome://os-settings/lazy_load.js';
+import {SwitchAccessCommand} from 'chrome://os-settings/lazy_load.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('<settings-switch-access-action-assignment-dialog>', () => {
   let dialog: SettingsSwitchAccessActionAssignmentDialogElement;

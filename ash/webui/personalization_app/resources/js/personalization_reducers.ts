@@ -7,8 +7,8 @@
  * pure function that returns a new state object if anything has changed.
  * @see [redux tutorial]{@link https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers}
  */
-import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {ambientReducers} from './ambient/ambient_reducers.js';
 import type {AmbientState} from './ambient/ambient_state.js';

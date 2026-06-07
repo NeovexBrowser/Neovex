@@ -5,19 +5,19 @@
 import './theme_snapshot.js';
 import './hover_button.js';
 import '/strings.m.js'; // Required by <managed-dialog>.
-import 'neovex://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.js';
-import 'neovex://resources/cr_components/theme_color_picker/theme_color_picker.js';
-import 'neovex://resources/cr_components/managed_dialog/managed_dialog.js';
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/cr_components/customize_color_scheme_mode/customize_color_scheme_mode.js';
+import 'chrome://resources/cr_components/theme_color_picker/theme_color_picker.js';
+import 'chrome://resources/cr_components/managed_dialog/managed_dialog.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
 
-import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
-import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
+import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './appearance.css.js';
 import {getHtml} from './appearance.html.js';

@@ -95,7 +95,7 @@ struct LangPackInfo {
   bool is_speaker_label_supported;
 };
 
-// Primary interface for the neovex://recorder-app WebUI.
+// Primary interface for the chrome://recorder-app WebUI.
 interface PageHandler {
   // Returns model information of the given format feature type.
   // `feature` should be either `kAudioTitle` or `kAudioSummary`.

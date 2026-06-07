@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import {PerDeviceSubsectionHeaderElement} from 'neovex://os-settings/lazy_load.js';
-import type {BatteryInfo} from 'neovex://os-settings/os_settings.js';
-import {FakeInputDeviceSettingsProvider, fakeMice, setInputDeviceSettingsProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {PerDeviceSubsectionHeaderElement} from 'chrome://os-settings/lazy_load.js';
+import type {BatteryInfo} from 'chrome://os-settings/os_settings.js';
+import {FakeInputDeviceSettingsProvider, fakeMice, setInputDeviceSettingsProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

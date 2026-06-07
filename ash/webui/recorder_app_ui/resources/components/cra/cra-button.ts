@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {Button} from 'neovex://resources/cros_components/button/button.js';
-import {css} from 'neovex://resources/mwc/lit/index.js';
+import {Button} from 'chrome://resources/cros_components/button/button.js';
+import {css} from 'chrome://resources/mwc/lit/index.js';
 
 export class CraButton extends Button {
   static override styles = [

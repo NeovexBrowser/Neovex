@@ -16,7 +16,7 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings =
-      [ "neovex://sync-internals/*|" +
+      [ "chrome://sync-internals/*|" +
         rebase_path("$root_gen_dir/components/sync/service/resources/tsc/*",
                     target_gen_dir) ]
 }

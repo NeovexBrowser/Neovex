@@ -4,23 +4,23 @@
 
 /**
  * @fileoverview The 'nearby-onboarding-one-page' component handles the Nearby
- * Share onboarding flow. It is embedded in neovex://os-settings,
- * neovex://settings and as a standalone dialog via neovex://nearby.
+ * Share onboarding flow. It is embedded in chrome://os-settings,
+ * chrome://settings and as a standalone dialog via chrome://nearby.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icons.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icons.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import './nearby_page_template.js';
-import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
 
-import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {DeviceNameValidationResult, Visibility} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {DeviceNameValidationResult, Visibility} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getOnboardingEntryPoint, NearbyShareOnboardingEntryPoint, NearbyShareOnboardingFinalState, processOnePageOnboardingCancelledMetrics, processOnePageOnboardingCompleteMetrics, processOnePageOnboardingInitiatedMetrics, processOnePageOnboardingVisibilityButtonOnInitialPageClickedMetrics} from './nearby_metrics_logger.js';
 import {getTemplate} from './nearby_onboarding_one_page.html.js';

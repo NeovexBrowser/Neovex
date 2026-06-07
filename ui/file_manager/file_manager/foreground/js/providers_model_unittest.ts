@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {MockVolumeManager} from '../../background/js/mock_volume_manager.js';
 import {VolumeInfo} from '../../background/js/volume_info.js';
@@ -23,8 +23,8 @@ const MOUNTED_SINGLE_PROVIDING_EXTENSION = {
 
   providerId: 'mounted-single-provider-id',
   iconSet: {
-    icon16x16Url: 'neovex://mounted-single-extension-id-16.jpg',
-    icon32x32Url: 'neovex://mounted-single-extension-id-32.jpg',
+    icon16x16Url: 'chrome://mounted-single-extension-id-16.jpg',
+    icon32x32Url: 'chrome://mounted-single-extension-id-32.jpg',
   },
 
   configurable: false,
@@ -42,8 +42,8 @@ const NOT_MOUNTED_SINGLE_PROVIDING_EXTENSION = {
 
   providerId: 'not-mounted-single-provider-id',
   iconSet: {
-    icon16x16Url: 'neovex://not-mounted-single-extension-id-16.jpg',
-    icon32x32Url: 'neovex://not-mounted-single-extension-id-32.jpg',
+    icon16x16Url: 'chrome://not-mounted-single-extension-id-16.jpg',
+    icon32x32Url: 'chrome://not-mounted-single-extension-id-32.jpg',
   },
 
   configurable: false,
@@ -61,8 +61,8 @@ const MOUNTED_MULTIPLE_PROVIDING_EXTENSION = {
 
   providerId: 'mounted-multiple-provider-id',
   iconSet: {
-    icon16x16Url: 'neovex://mounted-multiple-extension-id-16.jpg',
-    icon32x32Url: 'neovex://mounted-multiple-extension-id-32.jpg',
+    icon16x16Url: 'chrome://mounted-multiple-extension-id-16.jpg',
+    icon32x32Url: 'chrome://mounted-multiple-extension-id-32.jpg',
   },
 
   configurable: true,
@@ -80,8 +80,8 @@ const NOT_MOUNTED_FILE_PROVIDING_EXTENSION = {
 
   providerId: 'file-provider-id',
   iconSet: {
-    icon16x16Url: 'neovex://file-extension-id-16.jpg',
-    icon32x32Url: 'neovex://file-extension-id-32.jpg',
+    icon16x16Url: 'chrome://file-extension-id-16.jpg',
+    icon32x32Url: 'chrome://file-extension-id-32.jpg',
   },
 
   configurable: false,
@@ -100,8 +100,8 @@ const NOT_MOUNTED_DEVICE_PROVIDING_EXTENSION = {
 
   providerId: 'device-provider-id',
   iconSet: {
-    icon16x16Url: 'neovex://device-extension-id-16.jpg',
-    icon32x32Url: 'neovex://device-extension-id-32.jpg',
+    icon16x16Url: 'chrome://device-extension-id-16.jpg',
+    icon32x32Url: 'chrome://device-extension-id-32.jpg',
   },
 
   configurable: false,

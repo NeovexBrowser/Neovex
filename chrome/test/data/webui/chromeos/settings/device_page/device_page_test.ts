@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/os_settings.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsAudioElement, SettingsPerDeviceKeyboardElement} from 'neovex://os-settings/lazy_load.js';
-import type {ControlledRadioButtonElement, CrIconButtonElement, CrSliderElement, CrToggleElement, Route, SettingsDevicePageElement, SettingsRadioGroupElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
-import {crosAudioConfigMojom, DevicePageBrowserProxyImpl, fakeCrosAudioConfig, fakeGraphicsTablets, FakeInputDeviceSettingsProvider, fakeKeyboards, fakeMice, fakePointingSticks, fakeTouchpads, Router, routes, setCrosAudioConfigForTesting, setDisplayApiForTesting, setInputDeviceSettingsProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockController} from 'neovex://webui-test/mock_controller.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsAudioElement, SettingsPerDeviceKeyboardElement} from 'chrome://os-settings/lazy_load.js';
+import type {ControlledRadioButtonElement, CrIconButtonElement, CrSliderElement, CrToggleElement, Route, SettingsDevicePageElement, SettingsRadioGroupElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
+import {crosAudioConfigMojom, DevicePageBrowserProxyImpl, fakeCrosAudioConfig, fakeGraphicsTablets, FakeInputDeviceSettingsProvider, fakeKeyboards, fakeMice, fakePointingSticks, fakeTouchpads, Router, routes, setCrosAudioConfigForTesting, setDisplayApiForTesting, setInputDeviceSettingsProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockController} from 'chrome://webui-test/mock_controller.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {FakeSystemDisplay} from '../fake_system_display.js';
 import {clearBody} from '../utils.js';

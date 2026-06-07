@@ -37,8 +37,8 @@ import {focusWithoutInk} from '//resources/js/focus_without_ink.js';
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 import type {SyncBrowserProxy, SyncPrefs, SyncStatus} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {ChromeSigninAccessPoint, shouldShowSyncTogglesForStatusAction, PageStatus, SignedInState, SyncBrowserProxyImpl} from '/shared/settings/people_page/sync_browser_proxy.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
 
 import type {FocusConfig} from '../focus_config.js';
 import {loadTimeData} from '../i18n_setup.js';

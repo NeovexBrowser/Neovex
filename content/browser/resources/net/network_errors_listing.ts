@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 /**
  * Generate the page content.
@@ -10,7 +10,7 @@ import {getRequiredElement} from 'neovex://resources/js/util.js';
  *     error code string.
  */
 function listErrorCodes(errorCodes: NetworkError[]) {
-  const errorPageUrl = 'neovex://network-error/';
+  const errorPageUrl = 'chrome://network-error/';
   const errorCodesList = document.createElement('ul');
   for (const error of errorCodes) {
     const listEl = document.createElement('li');

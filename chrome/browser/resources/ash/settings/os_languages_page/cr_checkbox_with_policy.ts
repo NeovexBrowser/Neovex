@@ -21,12 +21,12 @@
  * element to focus. This does not work when the element to focus is in a shadow
  * root.
  */
-import 'neovex://resources/ash/common/cr_elements/cros_color_overrides.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import 'chrome://resources/ash/common/cr_elements/cros_color_overrides.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
 
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './cr_checkbox_with_policy.html.js';
 

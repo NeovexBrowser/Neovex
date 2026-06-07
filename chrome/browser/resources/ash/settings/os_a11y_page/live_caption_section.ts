@@ -4,14 +4,14 @@
 
 /**
  * @fileoverview 'settings-live-caption' is a component for showing Live Caption
- * settings in neovex://os-settings/audioAndCaptions and has been forked from
- * the equivalent Browser Settings UI (in neovex://settings/captions).
+ * settings in chrome://os-settings/audioAndCaptions and has been forked from
+ * the equivalent Browser Settings UI (in chrome://settings/captions).
  */
 
 
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
 import '../controls/settings_toggle_button.js';
 import '../os_languages_page/add_items_dialog.js';
 import './live_translate_section.js';
@@ -19,16 +19,16 @@ import './live_translate_section.js';
 import type {CaptionsBrowserProxy, LiveCaptionLanguage, LiveCaptionLanguageList} from '/shared/settings/a11y_page/captions_browser_proxy.js';
 import {CaptionsBrowserProxyImpl} from '/shared/settings/a11y_page/captions_browser_proxy.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrLazyRenderElement} from 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {ListPropertyUpdateMixin} from 'neovex://resources/ash/common/cr_elements/list_property_update_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrLazyRenderElement} from 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {ListPropertyUpdateMixin} from 'chrome://resources/ash/common/cr_elements/list_property_update_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';
 import type {Item} from '../os_languages_page/add_items_dialog.js';

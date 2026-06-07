@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
+import 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
 
-import type {CrDrawerElement} from 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
-import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
-import {assertEquals, assertFalse, assertNotEquals, assertThrows, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CrDrawerElement} from 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
+import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import {assertEquals, assertFalse, assertNotEquals, assertThrows, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-drawer', function() {

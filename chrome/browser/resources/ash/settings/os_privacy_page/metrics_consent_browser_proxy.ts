@@ -7,7 +7,7 @@
  * consent data.
  */
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 /**
  * MetricsConsentState represents the current metrics state for the current

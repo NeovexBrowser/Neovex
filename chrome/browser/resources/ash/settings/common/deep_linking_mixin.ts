@@ -7,7 +7,7 @@
  * setting elements with deep links.
  */
 
-import {afterNextRender, dedupingMixin, type PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {afterNextRender, dedupingMixin, type PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {Setting} from '../mojom-webui/setting.mojom-webui.js';
 

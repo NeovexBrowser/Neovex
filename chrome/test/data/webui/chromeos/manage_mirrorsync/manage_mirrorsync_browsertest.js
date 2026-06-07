@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for neovex://manage-mirrorsync. Attempts to test the
+ * @fileoverview Test suite for chrome://manage-mirrorsync. Attempts to test the
  * entire application as a blackbox instead of individual components. See
  * manage_mirrorsync_app_test.ts for individual tests.
  */
@@ -15,7 +15,7 @@ GEN('#include "content/public/test/browser_test.h"');
 
 var ManageMirrorSyncAppBrowserTest = class extends PolymerTest {
   get browsePreload() {
-    return 'neovex://manage-mirrorsync/test_loader.html?module=' +
+    return 'chrome://manage-mirrorsync/test_loader.html?module=' +
         'chromeos/manage_mirrorsync/manage_mirrorsync_app_test.js';
   }
 

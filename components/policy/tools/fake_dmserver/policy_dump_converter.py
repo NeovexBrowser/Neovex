@@ -3,7 +3,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """
-This tool takes a JSON file exported from the neovex://policy page and
+This tool takes a JSON file exported from the chrome://policy page and
 converts it into the simplified policies.json format used by the
 fake_dmserver tools. This is useful for replicating an existing policy
 configuration for local testing.
@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 def main():
   """Main script execution."""
   parser = argparse.ArgumentParser(
-      description="Converts a neovex://policy JSON dump to the simple "
+      description="Converts a chrome://policy JSON dump to the simple "
       "policies.json format.",
       epilog="""For detailed usage instructions, please refer to the
 README.md in this directory.""",
@@ -29,7 +29,7 @@ README.md in this directory.""",
   parser.add_argument(
       "--input-dump",
       required=True,
-      help="Path to the JSON file exported from neovex://policy.")
+      help="Path to the JSON file exported from chrome://policy.")
   parser.add_argument("--output-policies",
                       required=True,
                       help="Path to write the simplified policies.json file.")

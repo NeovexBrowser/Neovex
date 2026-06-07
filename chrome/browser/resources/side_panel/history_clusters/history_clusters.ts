@@ -4,8 +4,8 @@
 
 import './app.js';
 
-export {BrowserProxyImpl} from 'neovex://resources/cr_components/history_clusters/browser_proxy.js';
-export {PageCallbackRouter, PageHandlerRemote} from 'neovex://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
-export {HistoryEmbeddingsBrowserProxyImpl} from 'neovex://resources/cr_components/history_embeddings/browser_proxy.js';
-export {PageHandlerRemote as HistoryEmbeddingsPageHandlerRemote} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
+export {BrowserProxyImpl} from 'chrome://resources/cr_components/history_clusters/browser_proxy.js';
+export {PageCallbackRouter, PageHandlerRemote} from 'chrome://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
+export {HistoryEmbeddingsBrowserProxyImpl} from 'chrome://resources/cr_components/history_embeddings/browser_proxy.js';
+export {PageHandlerRemote as HistoryEmbeddingsPageHandlerRemote} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
 export type {HistoryClustersAppElement} from './app.js';

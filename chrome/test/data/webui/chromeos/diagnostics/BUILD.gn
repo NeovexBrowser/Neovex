@@ -8,13 +8,13 @@ build_webui_tests("build_webui_tests") {
   cc_test_files = [ "diagnostics_browsertest.cc" ]
 
   ts_path_mappings = [
-    "neovex://diagnostics/strings.m.js|" +
+    "chrome://diagnostics/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "neovex://diagnostics/*|" +
+    "chrome://diagnostics/*|" +
         rebase_path("$root_gen_dir/ash/webui/diagnostics_ui/resources/tsc/*",
                     target_gen_dir),
-    "neovex://webui-test/chromeos/*|" +
+    "chrome://webui-test/chromeos/*|" +
         rebase_path("$root_gen_dir/chrome/test/data/webui/chromeos/tsc/*",
                     target_gen_dir),
   ]

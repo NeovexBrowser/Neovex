@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import type {ViewerPdfSidenavElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 function createSidenav(): ViewerPdfSidenavElement {
   document.body.innerHTML = '';

@@ -9,7 +9,7 @@
  * Export them as functions so they reload the values when overridden in test.
  */
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 export function isGooglePhotosIntegrationEnabled() {
   return loadTimeData.getBoolean('isGooglePhotosIntegrationEnabled');

@@ -13,7 +13,7 @@ import {getHtml} from './bookmark.html.js';
 import type {BookmarkData} from './bookmark_bar.mojom-webui.js';
 import {BookmarkType} from './bookmark_bar.mojom-webui.js';
 
-const DEFAULT_FAVICON_URL: string = 'url(neovex://favicon2/)';
+const DEFAULT_FAVICON_URL: string = 'url(chrome://favicon2/)';
 
 export class BookmarkElement extends CrLitElement {
   static get is() {
@@ -55,7 +55,7 @@ export class BookmarkElement extends CrLitElement {
     }
 
     // getFaviconForPageURL, given a page URL, will construct a
-    // neovex://favicon2/ URL that will request the icon from our local
+    // chrome://favicon2/ URL that will request the icon from our local
     // cache considering sizes, resolution, etc.
     return getFaviconForPageURL(this.data.pageUrlForFavicon, false);
   }

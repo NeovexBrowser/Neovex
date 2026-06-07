@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ColorOption, DpiOption, DuplexOption, PrintPreviewModelElement, PrintTicket, RecentDestination, Settings} from 'neovex://print/print_preview.js';
-import {ColorModeRestriction, Destination, DestinationOrigin, DuplexMode, DuplexModeRestriction, GooglePromotedDestinationId, makeRecentDestination, MarginsType, PinModeRestriction, PrinterStatusReason, PrinterType, ScalingType, Size} from 'neovex://print/print_preview.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {ColorOption, DpiOption, DuplexOption, PrintPreviewModelElement, PrintTicket, RecentDestination, Settings} from 'chrome://print/print_preview.js';
+import {ColorModeRestriction, Destination, DestinationOrigin, DuplexMode, DuplexModeRestriction, GooglePromotedDestinationId, makeRecentDestination, MarginsType, PinModeRestriction, PrinterStatusReason, PrinterType, ScalingType, Size} from 'chrome://print/print_preview.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {getCddTemplate, getCddTemplateWithAdvancedSettings} from './print_preview_test_utils.js';
 

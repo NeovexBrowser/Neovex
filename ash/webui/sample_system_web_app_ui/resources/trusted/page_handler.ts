@@ -35,7 +35,7 @@
  *  }
  */
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
 
 import {PageCallbackRouter, PageHandlerFactory, PageHandlerRemote} from './sample_system_web_app_ui.mojom-webui.js';
 

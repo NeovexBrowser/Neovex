@@ -7,7 +7,7 @@
  * to interact with the browser.
  */
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 export interface LanguagesBrowserProxy {
   /**

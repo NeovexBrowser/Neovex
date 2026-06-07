@@ -4,28 +4,28 @@
 
 // Strings needs to be imported before network_card to ensure assert is not
 // triggered during test.
-import 'neovex://diagnostics/strings.m.js';
-import 'neovex://diagnostics/network_card.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/strings.m.js';
+import 'chrome://diagnostics/network_card.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {CellularInfoElement} from 'neovex://diagnostics/cellular_info.js';
-import type {DiagnosticsNetworkIconElement} from 'neovex://diagnostics/diagnostics_network_icon.js';
-import type {EthernetInfoElement} from 'neovex://diagnostics/ethernet_info.js';
-import {fakeCellularDisabledNetwork, fakeCellularDisconnectedNetwork, fakeCellularNetwork, fakeCellularWithIpConfigNetwork, fakeConnectingEthernetNetwork, fakeDisconnectedEthernetNetwork, fakeDisconnectedWifiNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakePortalWifiNetwork, fakeWifiNetwork, fakeWifiNetworkDisabled, fakeWifiNetworkInvalidNameServers, fakeWifiNetworkNoIpAddress} from 'neovex://diagnostics/fake_data.js';
-import {FakeNetworkHealthProvider} from 'neovex://diagnostics/fake_network_health_provider.js';
-import type {IpConfigInfoDrawerElement} from 'neovex://diagnostics/ip_config_info_drawer.js';
-import {setNetworkHealthProviderForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
-import type {NetworkCardElement} from 'neovex://diagnostics/network_card.js';
-import type {NetworkInfoElement} from 'neovex://diagnostics/network_info.js';
-import type {NetworkTroubleshootingElement} from 'neovex://diagnostics/network_troubleshooting.js';
-import type {WifiInfoElement} from 'neovex://diagnostics/wifi_info.js';
-import type {CrExpandButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {CellularInfoElement} from 'chrome://diagnostics/cellular_info.js';
+import type {DiagnosticsNetworkIconElement} from 'chrome://diagnostics/diagnostics_network_icon.js';
+import type {EthernetInfoElement} from 'chrome://diagnostics/ethernet_info.js';
+import {fakeCellularDisabledNetwork, fakeCellularDisconnectedNetwork, fakeCellularNetwork, fakeCellularWithIpConfigNetwork, fakeConnectingEthernetNetwork, fakeDisconnectedEthernetNetwork, fakeDisconnectedWifiNetwork, fakeEthernetNetwork, fakeNetworkGuidInfoList, fakePortalWifiNetwork, fakeWifiNetwork, fakeWifiNetworkDisabled, fakeWifiNetworkInvalidNameServers, fakeWifiNetworkNoIpAddress} from 'chrome://diagnostics/fake_data.js';
+import {FakeNetworkHealthProvider} from 'chrome://diagnostics/fake_network_health_provider.js';
+import type {IpConfigInfoDrawerElement} from 'chrome://diagnostics/ip_config_info_drawer.js';
+import {setNetworkHealthProviderForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
+import type {NetworkCardElement} from 'chrome://diagnostics/network_card.js';
+import type {NetworkInfoElement} from 'chrome://diagnostics/network_info.js';
+import type {NetworkTroubleshootingElement} from 'chrome://diagnostics/network_troubleshooting.js';
+import type {WifiInfoElement} from 'chrome://diagnostics/wifi_info.js';
+import type {CrExpandButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

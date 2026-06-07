@@ -25,7 +25,7 @@ struct Tab {
   url.mojom.Url? favicon_url;
 
   // The URL of the favicon in data scheme for an active tab. Allows custom
-  // favicon theming for certain neovex:// URLs.
+  // favicon theming for certain chrome:// URLs.
   url.mojom.Url? active_favicon_url;
 
   // The group identifier of the tab.

@@ -5,7 +5,7 @@
 import './characteristic_list_item.js';
 import './expandable_list.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {CharacteristicListItemElement} from './characteristic_list_item.js';
 import type {CharacteristicInfo} from './device.mojom-webui.js';

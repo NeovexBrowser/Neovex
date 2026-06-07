@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {FakeMethodResolver} from 'neovex://resources/ash/common/fake_method_resolver.js';
-import {FakeObservables} from 'neovex://resources/ash/common/fake_observables.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {FakeMethodResolver} from 'chrome://resources/ash/common/fake_method_resolver.js';
+import {FakeObservables} from 'chrome://resources/ash/common/fake_observables.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
 
 import type {CalibrationComponentStatus, CalibrationObserverRemote, CalibrationSetupInstruction, Component, ErrorObserverRemote, ExternalDiskStateObserverRemote, FeatureLevel, FinalizationObserverRemote, HardwareVerificationStatusObserverRemote, HardwareWriteProtectionStateObserverRemote, OsUpdateObserverRemote, PowerCableStateObserverRemote, ProvisioningObserverRemote, Shimless3pDiagnosticsAppInfo, ShimlessRmaServiceInterface, Show3pDiagnosticsAppResult, ShutdownMethod, StatePropertyResult, StateResult, UpdateRoFirmwareObserverRemote, WriteProtectDisableCompleteAction} from './shimless_rma.mojom-webui.js';
 import {CalibrationOverallStatus, CalibrationStatus, ComponentType, FinalizationError, FinalizationStatus, HardwareVerificationResult, OsUpdateOperation, ProvisioningError, ProvisioningStatus, RmadErrorCode, State, UpdateErrorCode, UpdateRoFirmwareStatus} from './shimless_rma.mojom-webui.js';

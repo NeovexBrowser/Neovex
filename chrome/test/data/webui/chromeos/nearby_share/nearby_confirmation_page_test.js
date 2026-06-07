@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://nearby/nearby_confirmation_page.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://nearby/nearby_confirmation_page.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {TransferStatus} from 'neovex://nearby/shared/nearby_share.mojom-webui.js';
-import {ShareType} from 'neovex://nearby/shared/nearby_share_share_type.mojom-webui.js';
-import {ShareTargetType} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_target_types.mojom-webui.js';
+import {TransferStatus} from 'chrome://nearby/shared/nearby_share.mojom-webui.js';
+import {ShareType} from 'chrome://nearby/shared/nearby_share_share_type.mojom-webui.js';
+import {ShareTargetType} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_target_types.mojom-webui.js';
 
 import {assertEquals, assertFalse, assertTrue} from '../chai_assert.js';
 

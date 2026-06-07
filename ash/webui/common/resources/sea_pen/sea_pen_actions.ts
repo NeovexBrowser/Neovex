@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {FullscreenPreviewState} from 'neovex://resources/ash/common/personalization/wallpaper_state.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {Action} from 'neovex://resources/js/store.js';
+import type {FullscreenPreviewState} from 'chrome://resources/ash/common/personalization/wallpaper_state.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {Action} from 'chrome://resources/js/store.js';
 
 import type {SeaPenImageId} from './constants.js';
 import type {MantaStatusCode, RecentSeaPenThumbnailData, SeaPenQuery, SeaPenThumbnail, TextQueryHistoryEntry} from './sea_pen.mojom-webui.js';

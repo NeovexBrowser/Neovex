@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import type {CrInputElement, CrTextareaElement} from 'neovex://settings/lazy_load.js';
-import {CountryDetailManagerProxyImpl} from 'neovex://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertGT, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrInputElement, CrTextareaElement} from 'chrome://settings/lazy_load.js';
+import {CountryDetailManagerProxyImpl} from 'chrome://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertGT, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createAddressEntry, createEmptyAddressEntry, makeGuid, STUB_USER_ACCOUNT_INFO} from './autofill_fake_data.js';
 import {createAddressDialog, expectEvent} from './autofill_section_test_utils.js';

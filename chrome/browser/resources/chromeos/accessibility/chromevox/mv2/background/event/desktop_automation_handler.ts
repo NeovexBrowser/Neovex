@@ -60,7 +60,7 @@ export class DesktopAutomationHandler extends DesktopAutomationInterface {
    * URLs employing NTP (New tap page) searchbox.
    */
   static NTP_SEARCHBOX_URLS = new Set<string>(
-      ['neovex://new-tab-page/', 'chrome-untrusted://lens-overlay/']);
+      ['chrome://new-tab-page/', 'chrome-untrusted://lens-overlay/']);
 
   /** The object that speaks changes to an editable text field. */
   private textEditHandler_: TextEditHandler|null = null;
@@ -973,7 +973,7 @@ export class DesktopAutomationHandler extends DesktopAutomationInterface {
     const pos = ChromeVoxState.position[url];
 
     // Deny recovery for chrome urls.
-    if (pos && url.indexOf('neovex://') !== 0) {
+    if (pos && url.indexOf('chrome://') !== 0) {
       focusedRoot.hitTestWithReply(
           pos.x, pos.y, node => this.onHitTestResult(node));
       return;

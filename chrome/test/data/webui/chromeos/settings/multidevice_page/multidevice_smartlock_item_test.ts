@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsMultideviceSmartlockItemElement} from 'neovex://os-settings/lazy_load.js';
-import type {MultiDevicePageContentData} from 'neovex://os-settings/os_settings.js';
-import {MultiDeviceBrowserProxyImpl, MultiDeviceFeature, MultiDeviceFeatureState, MultiDeviceSettingsMode, Router} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import type {SettingsMultideviceSmartlockItemElement} from 'chrome://os-settings/lazy_load.js';
+import type {MultiDevicePageContentData} from 'chrome://os-settings/os_settings.js';
+import {MultiDeviceBrowserProxyImpl, MultiDeviceFeature, MultiDeviceFeatureState, MultiDeviceSettingsMode, Router} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {createFakePageContentData, TestMultideviceBrowserProxy} from './test_multidevice_browser_proxy.js';
 

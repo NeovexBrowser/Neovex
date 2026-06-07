@@ -4,7 +4,7 @@
 
 import '//resources/cr_elements/cr_icon_button/cr_icon_button.js';
 
-import {html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {SidePanelElement} from './side_panel.js';
 

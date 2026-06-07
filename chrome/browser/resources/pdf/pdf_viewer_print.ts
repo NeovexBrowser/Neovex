@@ -6,8 +6,8 @@ import './elements/viewer_error_dialog.js';
 import './elements/viewer_page_indicator.js';
 import './elements/viewer_zoom_toolbar.js';
 
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {isRTL} from 'neovex://resources/js/util.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {isRTL} from 'chrome://resources/js/util.js';
 
 import type {BrowserApi} from './browser_api.js';
 import type {ExtendedKeyEvent} from './constants.js';

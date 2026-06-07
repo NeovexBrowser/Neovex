@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {processFile} from 'neovex://new-tab-page/new_tab_page.js';
-import {assertEquals, assertLE, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
+import {processFile} from 'chrome://new-tab-page/new_tab_page.js';
+import {assertEquals, assertLE, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {generateTestImageFile, IMAGE_FILE} from './image_processor_test_support.js';
 

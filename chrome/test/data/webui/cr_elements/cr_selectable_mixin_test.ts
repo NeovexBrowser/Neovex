@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {CrSelectableMixin} from 'neovex://resources/cr_elements/cr_selectable_mixin.js';
-import {html, CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {getTrustedHtml} from 'neovex://webui-test/trusted_html.js';
-import {assertEquals, assertTrue, assertNull} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {CrSelectableMixin} from 'chrome://resources/cr_elements/cr_selectable_mixin.js';
+import {html, CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {getTrustedHtml} from 'chrome://webui-test/trusted_html.js';
+import {assertEquals, assertTrue, assertNull} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 suite('cr-scrollable-mixin', function() {

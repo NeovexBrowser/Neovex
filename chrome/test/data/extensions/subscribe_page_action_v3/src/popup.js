@@ -15,7 +15,7 @@ function main() {
     chrome.storage.local.get(tab.id.toString(), function(result) {
       let input = result[tab.id];
       let feeds = input !== undefined ? input['feeds'] : undefined;
-      // There are pages where our scripts can't run, such as neovex:// pages,
+      // There are pages where our scripts can't run, such as chrome:// pages,
       // so we must abort if the current url doesn't match the url associated
       // with the feed list (i.e. if the user navigates to a feed page and then
       // to about:version, the feed from the previous page should not show).

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://password-manager/password_manager.js';
+import 'chrome://password-manager/password_manager.js';
 
-import {OpenWindowProxyImpl} from 'neovex://password-manager/password_manager.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {OpenWindowProxyImpl} from 'chrome://password-manager/password_manager.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 suite('SharePasswordHeaderTest', function() {
   let openWindowProxy: TestOpenWindowProxy;

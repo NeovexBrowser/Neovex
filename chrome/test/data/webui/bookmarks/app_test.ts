@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksAppElement} from 'neovex://bookmarks/bookmarks.js';
-import {BookmarksApiProxyImpl, HIDE_FOCUS_RING_ATTRIBUTE, LOCAL_STORAGE_FOLDER_STATE_KEY, LOCAL_STORAGE_TREE_WIDTH_KEY} from 'neovex://bookmarks/bookmarks.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn, pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {down} from 'neovex://webui-test/mouse_mock_interactions.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {BookmarksAppElement} from 'chrome://bookmarks/bookmarks.js';
+import {BookmarksApiProxyImpl, HIDE_FOCUS_RING_ATTRIBUTE, LOCAL_STORAGE_FOLDER_STATE_KEY, LOCAL_STORAGE_TREE_WIDTH_KEY} from 'chrome://bookmarks/bookmarks.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn, pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {down} from 'chrome://webui-test/mouse_mock_interactions.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBookmarksApiProxy} from './test_bookmarks_api_proxy.js';
 import {TestStore} from './test_store.js';

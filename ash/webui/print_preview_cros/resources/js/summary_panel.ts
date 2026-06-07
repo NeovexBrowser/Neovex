@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 import '../css/print_preview_cros_shared.css.js';
-import 'neovex://resources/cros_components/button/button.js';
+import 'chrome://resources/cros_components/button/button.js';
 
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './summary_panel.html.js';
 import {PRINT_BUTTON_DISABLED_CHANGED_EVENT, SHEETS_USED_CHANGED_EVENT, SummaryPanelController} from './summary_panel_controller.js';

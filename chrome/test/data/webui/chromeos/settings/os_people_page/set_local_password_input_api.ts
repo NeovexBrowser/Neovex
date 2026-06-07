@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CrInputElement} from 'neovex://os-settings/os_settings.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {CrInputElement} from 'chrome://os-settings/os_settings.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import type {SetLocalPasswordInputApiInterface, SetLocalPasswordInputApiRemote} from '../set_local_password_input_api.test-mojom-webui.js';
 import {SetLocalPasswordInputApiReceiver} from '../set_local_password_input_api.test-mojom-webui.js';

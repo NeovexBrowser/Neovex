@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 import '/strings.m.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {PolymerElementProperties} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {PolymerElementProperties} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {App} from '../extended_updates.mojom-webui.js';
 
@@ -34,7 +34,7 @@ export class AndroidAppsListElement extends AndroidAppsListElementBase {
   private apps: App[];
 
   private iconUrlFromId(app: App): string {
-    return `neovex://app-icon/${app.id}/64`;
+    return `chrome://app-icon/${app.id}/64`;
   }
 
   private hasApps(apps: App[]): boolean {

@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {LogLevel} from './private_ai_internals.mojom-webui.js';
 import {PrivateAiInternalsBrowserProxyImpl} from './private_ai_internals_browser_proxy.js';

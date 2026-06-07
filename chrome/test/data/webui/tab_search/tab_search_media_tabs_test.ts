@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {MetricsReporterImpl} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
-import type {ProfileData, Tab, TabSearchPageElement} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {TabAlertState, TabSearchApiProxyImpl} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {MockedMetricsReporter} from 'neovex://webui-test/mocked_metrics_reporter.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {MetricsReporterImpl} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
+import type {ProfileData, Tab, TabSearchPageElement} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {TabAlertState, TabSearchApiProxyImpl} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {MockedMetricsReporter} from 'chrome://webui-test/mocked_metrics_reporter.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createProfileData, createTab, SAMPLE_WINDOW_DATA, SAMPLE_WINDOW_DATA_WITH_MEDIA_TAB, SAMPLE_WINDOW_HEIGHT} from './tab_search_test_data.js';
 import {initLoadTimeDataWithDefaults} from './tab_search_test_helper.js';

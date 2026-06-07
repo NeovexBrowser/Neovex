@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 import './pref_display.js';
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import {getTemplate} from './pref_page.html.js';
 

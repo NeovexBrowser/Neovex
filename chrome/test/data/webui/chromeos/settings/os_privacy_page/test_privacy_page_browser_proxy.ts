@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {MetricsReporting, PrivacyPageBrowserProxy, ResolverOption, SecureDnsSetting} from 'neovex://os-settings/os_settings.js';
-import {SecureDnsMode, SecureDnsUiManagementMode} from 'neovex://os-settings/os_settings.js';
-import {assertFalse} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {MetricsReporting, PrivacyPageBrowserProxy, ResolverOption, SecureDnsSetting} from 'chrome://os-settings/os_settings.js';
+import {SecureDnsMode, SecureDnsUiManagementMode} from 'chrome://os-settings/os_settings.js';
+import {assertFalse} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 // clang-format on
 

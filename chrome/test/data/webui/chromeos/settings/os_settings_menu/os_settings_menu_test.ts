@@ -6,26 +6,26 @@
  * @fileoverview Runs tests for the left menu of CrOS Settings.
  */
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {Account} from 'neovex://os-settings/lazy_load.js';
-import {AccountManagerBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {MultiDevicePageContentData, OsSettingsMenuElement, OsSettingsMenuItemElement} from 'neovex://os-settings/os_settings.js';
-import {createPageAvailabilityForTesting, createRouterForTesting, FakeInputDeviceSettingsProvider, fakeKeyboards, fakeMice, fakePointingSticks, fakeTouchpads, MultiDeviceBrowserProxyImpl, MultiDeviceSettingsMode, Router, routesMojom, setInputDeviceSettingsProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {setBluetoothConfigForTesting} from 'neovex://resources/ash/common/bluetooth/cros_bluetooth_config.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {AudioOutputCapability, DeviceConnectionState, DeviceType} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {InhibitReason} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertStringContains, assertStringExcludes, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {createDefaultBluetoothDevice, FakeBluetoothConfig} from 'neovex://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
-import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {Account} from 'chrome://os-settings/lazy_load.js';
+import {AccountManagerBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {MultiDevicePageContentData, OsSettingsMenuElement, OsSettingsMenuItemElement} from 'chrome://os-settings/os_settings.js';
+import {createPageAvailabilityForTesting, createRouterForTesting, FakeInputDeviceSettingsProvider, fakeKeyboards, fakeMice, fakePointingSticks, fakeTouchpads, MultiDeviceBrowserProxyImpl, MultiDeviceSettingsMode, Router, routesMojom, setInputDeviceSettingsProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {setBluetoothConfigForTesting} from 'chrome://resources/ash/common/bluetooth/cros_bluetooth_config.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {AudioOutputCapability, DeviceConnectionState, DeviceType} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {InhibitReason} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertStringContains, assertStringExcludes, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {createDefaultBluetoothDevice, FakeBluetoothConfig} from 'chrome://webui-test/chromeos/bluetooth/fake_bluetooth_config.js';
+import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {createFakePageContentData, TestMultideviceBrowserProxy} from '../multidevice_page/test_multidevice_browser_proxy.js';
 import {TestAccountManagerBrowserProxy} from '../os_people_page/test_account_manager_browser_proxy.js';

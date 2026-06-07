@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {InputState} from 'neovex://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import type {InputState} from 'chrome://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 /**
  * Asserts the computed style value for an element.

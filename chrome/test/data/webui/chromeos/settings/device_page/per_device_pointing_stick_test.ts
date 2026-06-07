@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsPerDevicePointingStickElement} from 'neovex://os-settings/lazy_load.js';
-import {PerDeviceSubsectionHeaderElement} from 'neovex://os-settings/lazy_load.js';
-import {fakePointingSticks, fakePointingSticks2} from 'neovex://os-settings/os_settings.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsPerDevicePointingStickElement} from 'chrome://os-settings/lazy_load.js';
+import {PerDeviceSubsectionHeaderElement} from 'chrome://os-settings/lazy_load.js';
+import {fakePointingSticks, fakePointingSticks2} from 'chrome://os-settings/os_settings.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('<settings-per-device-pointing-stick>', function() {
   let perDevicePointingStickPage: SettingsPerDevicePointingStickElement;

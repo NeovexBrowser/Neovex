@@ -7,11 +7,11 @@
  * SetupSucceededPage.
  */
 
-import 'neovex://multidevice-setup/strings.m.js';
-import 'neovex://resources/ash/common/multidevice_setup/setup_succeeded_page.js';
+import 'chrome://multidevice-setup/strings.m.js';
+import 'chrome://resources/ash/common/multidevice_setup/setup_succeeded_page.js';
 
-import {BrowserProxyImpl} from 'neovex://resources/ash/common/multidevice_setup/multidevice_setup_browser_proxy.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {BrowserProxyImpl} from 'chrome://resources/ash/common/multidevice_setup/multidevice_setup_browser_proxy.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * @implements {BrowserProxy}

@@ -3,17 +3,17 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsSafetyHubNotificationPermissionsModuleElement} from 'neovex://settings/lazy_load.js';
-import {SafetyHubBrowserProxyImpl, SafetyHubEvent} from 'neovex://settings/lazy_load.js';
-import {MetricsBrowserProxyImpl, resetRouterForTesting, Router, routes, SafetyCheckNotificationsModuleInteractions as Interactions, SettingsPluralStringProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsSafetyHubNotificationPermissionsModuleElement} from 'chrome://settings/lazy_load.js';
+import {SafetyHubBrowserProxyImpl, SafetyHubEvent} from 'chrome://settings/lazy_load.js';
+import {MetricsBrowserProxyImpl, resetRouterForTesting, Router, routes, SafetyCheckNotificationsModuleInteractions as Interactions, SettingsPluralStringProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 import {TestSafetyHubBrowserProxy} from './test_safety_hub_browser_proxy.js';

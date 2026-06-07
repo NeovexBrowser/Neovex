@@ -6,7 +6,7 @@ import {
   css,
   html,
   LitElement,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {I18nString} from '../../i18n_string.js';
 import {getI18nMessage} from '../../models/load_time_data.js';

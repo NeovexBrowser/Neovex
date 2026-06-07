@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrTreeBaseElement} from 'neovex://resources/cr_elements/cr_tree/cr_tree_base.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {CertViewerBrowserProxyImpl} from 'neovex://view-cert/browser_proxy.js';
-import type {CertMetadataChangeResult, CertViewerBrowserProxy, ConstraintChangeResult} from 'neovex://view-cert/browser_proxy.js';
-import type {TreeItemDetail} from 'neovex://view-cert/certificate_viewer.js';
-import {CertificateTrust} from 'neovex://view-cert/certificate_viewer.js';
-import type {ModificationsPanelElement} from 'neovex://view-cert/modifications_panel.js';
-import {assertEquals, assertFalse, assertLT, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrTreeBaseElement} from 'chrome://resources/cr_elements/cr_tree/cr_tree_base.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {CertViewerBrowserProxyImpl} from 'chrome://view-cert/browser_proxy.js';
+import type {CertMetadataChangeResult, CertViewerBrowserProxy, ConstraintChangeResult} from 'chrome://view-cert/browser_proxy.js';
+import type {TreeItemDetail} from 'chrome://view-cert/certificate_viewer.js';
+import {CertificateTrust} from 'chrome://view-cert/certificate_viewer.js';
+import type {ModificationsPanelElement} from 'chrome://view-cert/modifications_panel.js';
+import {assertEquals, assertFalse, assertLT, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 /**
  * Find the first tree item (in the certificate fields tree) with a value.

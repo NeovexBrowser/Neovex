@@ -9,7 +9,7 @@ import {
   nothing,
   PartInfo,
   PartType,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {assert, assertInstanceof} from '../../assert.js';
 import * as tooltip from '../../tooltip.js';

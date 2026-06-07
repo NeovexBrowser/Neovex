@@ -7,16 +7,16 @@
  * samples.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
-import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
 import './sea_pen.css.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {WallpaperGridItemSelectedEvent} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {afterNextRender, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {WallpaperGridItemSelectedEvent} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {afterNextRender, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SeaPenSamplePrompt} from './constants.js';
 import {logSamplePromptClicked} from './sea_pen_metrics_logger.js';

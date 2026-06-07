@@ -8,8 +8,8 @@ import '//resources/cr_elements/icons.html.js';
 import './cr_icon_instrumented.js';
 
 import type {CrIconElement} from '//resources/cr_elements/cr_icon/cr_icon.js';
-import {assertEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {assertEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('cr-icon', function() {
   let icon: CrIconElement;

@@ -17,7 +17,7 @@ GEN('#include "content/public/test/browser_test.h"');
 class EmojiPickerBrowserTest extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker';
+    return 'chrome://emoji-picker';
   }
 }
 
@@ -25,7 +25,7 @@ class EmojiPickerBrowserTest extends PolymerTest {
 var EmojiPickerMainTest = class extends EmojiPickerBrowserTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_test.js';
   }
 };
@@ -39,7 +39,7 @@ TEST_F('EmojiPickerMainTest', 'DISABLED_All', function() {
 var EmojiPickerExtensionBrowserTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_extension_test.js';
   }
 
@@ -57,7 +57,7 @@ TEST_F('EmojiPickerExtensionBrowserTest', 'All', function() {
 var EmojiPickerExtensionEmojiTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_extension_emoji_test.js';
   }
 };
@@ -69,7 +69,7 @@ TEST_F('EmojiPickerExtensionEmojiTest', 'All', function() {
 var EmojiPickerExtensionSymbolTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_extension_symbol_test.js';
   }
 };
@@ -81,7 +81,7 @@ TEST_F('EmojiPickerExtensionSymbolTest', 'All', function() {
 var EmojiPickerExtensionEmoticonTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=chromeos/' +
+    return 'chrome://emoji-picker/test_loader.html?module=chromeos/' +
         'emoji_picker/emoji_picker_extension_emoticon_test.js';
   }
 };
@@ -93,7 +93,7 @@ TEST_F('EmojiPickerExtensionEmoticonTest', 'All', function() {
 var EmojiPickerExtensionSearchTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_search_test.js';
   }
 
@@ -114,7 +114,7 @@ TEST_F('EmojiPickerExtensionSearchTest', 'All', function() {
 var EmojiPickerTrieTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_trie_test.js';
   }
 };
@@ -127,7 +127,7 @@ var EmojiPickerPrefixSearchTest =
     class extends EmojiPickerExtensionBrowserTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_prefix_search_test.js';
   }
 };
@@ -144,7 +144,7 @@ var EmojiPickerGifTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_gif_test.js';
   }
 };
@@ -161,7 +161,7 @@ var EmojiPickerGifValidationTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_validation_gif_test.js';
   }
 };
@@ -178,7 +178,7 @@ var EmojiPickerGifSearchTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_search_gif_test.js';
   }
 };
@@ -195,7 +195,7 @@ var EmojiPickerGifOfflineTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_offline_gif_test.js';
   }
 };
@@ -212,7 +212,7 @@ var EmojiPickerGifHttpErrorTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_http_error_gif_test.js';
   }
 };
@@ -229,7 +229,7 @@ var EmojiPickerGlobalVariantsTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_global_variants_test.js';
   }
 };
@@ -246,7 +246,7 @@ var EmojiPickerPreferenceStorageTest = class extends PolymerTest {
 
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_preference_storage_test.js';
   }
 };
@@ -258,7 +258,7 @@ TEST_F('EmojiPickerPreferenceStorageTest', 'All', function() {
 var EmojiPickerScrollTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_scroll_test.js';
   }
 };
@@ -270,7 +270,7 @@ TEST_F('EmojiPickerScrollTest', 'All', function() {
 var EmojiPickerLoadTest = class extends PolymerTest {
   /** @override */
   get browsePreload() {
-    return 'neovex://emoji-picker/test_loader.html?module=' +
+    return 'chrome://emoji-picker/test_loader.html?module=' +
         'chromeos/emoji_picker/emoji_picker_load_test.js';
   }
 };

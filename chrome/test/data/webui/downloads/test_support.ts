@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {IconLoader, MojomData, PageHandlerInterface, PageRemote} from 'neovex://downloads/downloads.js';
-import {DangerType, PageCallbackRouter, SafeBrowsingState, State, TailoredWarningType} from 'neovex://downloads/downloads.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {IconLoader, MojomData, PageHandlerInterface, PageRemote} from 'chrome://downloads/downloads.js';
+import {DangerType, PageCallbackRouter, SafeBrowsingState, State, TailoredWarningType} from 'chrome://downloads/downloads.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestDownloadsProxy {
   callbackRouter: PageCallbackRouter;

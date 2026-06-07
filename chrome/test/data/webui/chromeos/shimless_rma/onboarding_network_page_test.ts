@@ -2,26 +2,26 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shimless-rma/shimless_rma.js';
+import 'chrome://shimless-rma/shimless_rma.js';
 
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {NetworkConfigElement} from 'neovex://resources/ash/common/network/network_config.js';
-import type {NetworkListElement} from 'neovex://resources/ash/common/network/network_list.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {SET_NEXT_BUTTON_LABEL} from 'neovex://shimless-rma/events.js';
-import {fakeNetworks} from 'neovex://shimless-rma/fake_data.js';
-import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
-import {setNetworkConfigServiceForTesting, setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
-import {OnboardingNetworkPage} from 'neovex://shimless-rma/onboarding_network_page.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {NetworkConfigElement} from 'chrome://resources/ash/common/network/network_config.js';
+import type {NetworkListElement} from 'chrome://resources/ash/common/network/network_list.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {SET_NEXT_BUTTON_LABEL} from 'chrome://shimless-rma/events.js';
+import {fakeNetworks} from 'chrome://shimless-rma/fake_data.js';
+import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
+import {setNetworkConfigServiceForTesting, setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
+import {OnboardingNetworkPage} from 'chrome://shimless-rma/onboarding_network_page.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('onboardingNetworkPageTest', function() {
   let component: OnboardingNetworkPage|null = null;

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import * as tslib from 'neovex://resources/mwc/tslib/tslib.js';
+import * as tslib from 'chrome://resources/mwc/tslib/tslib.js';
 
 /**
  * This file serves as a shim to tslib. Using experimental features like

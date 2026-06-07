@@ -8,13 +8,13 @@
  * It's a slimmed down copy of
  * chrome/browser/resources/settings/people_page/people_page.ts
  */
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/cr_elements/icons.html.js';
-import 'neovex://resources/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/policy/cr_policy_indicator.js';
 import '../controls/settings_toggle_button.js';
 // <if expr="not is_chromeos">
 import '../people_page/sync_account_control.js';
@@ -26,10 +26,10 @@ import type {ProfileInfo} from '/shared/settings/people_page/profile_info_browse
 import {ProfileInfoBrowserProxyImpl} from '/shared/settings/people_page/profile_info_browser_proxy.js';
 import type {StoredAccount, SyncBrowserProxy, SyncStatus} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {ChromeSigninAccessPoint, SignedInState, StatusAction, SyncBrowserProxyImpl} from '/shared/settings/people_page/sync_browser_proxy.js';
-import {WebUiListenerMixin} from 'neovex://resources/cr_elements/web_ui_listener_mixin.js';
-import {getImage} from 'neovex://resources/js/icon.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WebUiListenerMixin} from 'chrome://resources/cr_elements/web_ui_listener_mixin.js';
+import {getImage} from 'chrome://resources/js/icon.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import {routes} from '../route.js';
@@ -37,7 +37,7 @@ import {Router} from '../router.js';
 
 // clang-format off
 // <if expr="is_chromeos">
-import {convertImageSequenceToPng} from 'neovex://resources/ash/common/cr_picture/png.js';
+import {convertImageSequenceToPng} from 'chrome://resources/ash/common/cr_picture/png.js';
 
 import {AccountManagerBrowserProxyImpl} from '../people_page/account_manager_browser_proxy.js';
 // </if>

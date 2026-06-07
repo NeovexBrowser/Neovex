@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {Visibility} from 'neovex://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {Visibility} from 'chrome://resources/mojo/chromeos/ash/services/nearby/public/mojom/nearby_share_settings.mojom-webui.js';
 
 /**
  * This enum is tied directly to the NearbyShareOnboardingFinalState UMA enum

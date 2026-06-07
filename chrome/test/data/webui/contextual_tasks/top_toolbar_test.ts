@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://contextual-tasks/top_toolbar.js';
-import 'neovex://contextual-tasks/sources_menu.js';
+import 'chrome://contextual-tasks/top_toolbar.js';
+import 'chrome://contextual-tasks/sources_menu.js';
 
-import {BrowserProxyImpl} from 'neovex://contextual-tasks/contextual_tasks_browser_proxy.js';
-import type {ContextualTasksFaviconGroupElement} from 'neovex://contextual-tasks/favicon_group.js';
-import type {SourcesMenuElement} from 'neovex://contextual-tasks/sources_menu.js';
-import type {TopToolbarElement} from 'neovex://contextual-tasks/top_toolbar.js';
-import type {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {BrowserProxyImpl} from 'chrome://contextual-tasks/contextual_tasks_browser_proxy.js';
+import type {ContextualTasksFaviconGroupElement} from 'chrome://contextual-tasks/favicon_group.js';
+import type {SourcesMenuElement} from 'chrome://contextual-tasks/sources_menu.js';
+import type {TopToolbarElement} from 'chrome://contextual-tasks/top_toolbar.js';
+import type {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestContextualTasksBrowserProxy} from './test_contextual_tasks_browser_proxy.js';
 import {assertHTMLElement} from './test_utils.js';
@@ -24,7 +24,7 @@ suite('TopToolbarTest', () => {
 
   setup(() => {
     proxy = new TestContextualTasksBrowserProxy(
-        'neovex://webui-test/contextual_tasks/test.html');
+        'chrome://webui-test/contextual_tasks/test.html');
     BrowserProxyImpl.setInstance(proxy);
   });
 
@@ -45,7 +45,7 @@ suite('TopToolbarTest', () => {
       assertHTMLElement(logo);
       assertEquals(
           logo.src,
-          'neovex://resources/cr_components/searchbox/icons/google_g_gradient.svg');
+          'chrome://resources/cr_components/searchbox/icons/google_g_gradient.svg');
       // </if>
       // <if expr="not _google_chrome">
       const lightLogo = topToolbar.shadowRoot.querySelector<HTMLImageElement>(
@@ -53,12 +53,12 @@ suite('TopToolbarTest', () => {
       assertHTMLElement(lightLogo);
       assertEquals(
           lightLogo.src,
-          'neovex://resources/cr_components/searchbox/icons/chrome_product.svg');
+          'chrome://resources/cr_components/searchbox/icons/chrome_product.svg');
       const darkLogo = topToolbar.shadowRoot.querySelector<HTMLImageElement>(
           '.chrome-logo-dark');
       assertHTMLElement(darkLogo);
       assertEquals(
-          darkLogo.src, 'neovex://resources/images/chrome_logo_dark.svg');
+          darkLogo.src, 'chrome://resources/images/chrome_logo_dark.svg');
       // </if>
     });
 

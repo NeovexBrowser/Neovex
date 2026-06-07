@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/network_proxy_input.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/network_proxy_input.js';
 
-import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import type {NetworkProxyInputElement} from 'neovex://resources/ash/common/network/network_proxy_input.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import type {NetworkProxyInputElement} from 'chrome://resources/ash/common/network/network_proxy_input.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('NetworkProxyInputTest', () => {
   let proxyInput: NetworkProxyInputElement;

@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import {ZoomBehavior, ZoomManager} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
 
 chrome.test.runTests(function() {
   'use strict';

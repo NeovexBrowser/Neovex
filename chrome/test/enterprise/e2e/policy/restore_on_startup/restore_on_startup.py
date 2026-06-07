@@ -96,8 +96,8 @@ class RestoreOnStartupTest(ChromeEnterpriseTestCase):
     self.assertEqual(len(output_urls), 1)
 
     # The URL of the new tab can be one of the following:
-    # - neovex://new-tab-page/
-    # - neovex://new-tab-page-third-party/
+    # - chrome://new-tab-page/
+    # - chrome://new-tab-page-third-party/
     self.assertTrue('new-tab-page' in output_urls[0])
 
   @test

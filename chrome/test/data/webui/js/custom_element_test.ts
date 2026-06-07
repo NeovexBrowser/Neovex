@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 class TestElement extends CustomElement {
   static override get template() {

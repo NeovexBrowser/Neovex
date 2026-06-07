@@ -80,7 +80,7 @@
             icon2x="oobe-40:hid-touchscreen">
         </hd-iron-icon>
         <img id="touchscreen-tick" alt=""
-            src="neovex://theme/IDR_BLUETOOTH_PAIRING_TICK">
+            src="chrome://theme/IDR_BLUETOOTH_PAIRING_TICK">
         <div id="touchscreen-label" aria-live="polite">
             [[i18nDynamic(locale, 'hidDetectionTouchscreenDetected')]]
         </div>
@@ -97,7 +97,7 @@
         </hd-iron-icon>
         <img id="mouse-tick" alt=""
             hidden="[[!tickIsVisible(mouseState)]]"
-            src="neovex://theme/IDR_BLUETOOTH_PAIRING_TICK">
+            src="chrome://theme/IDR_BLUETOOTH_PAIRING_TICK">
         <div id="mouse-label" aria-live="polite" class="flex">
           [[getMouseLabel(locale, mouseState, pointingDeviceName)]]
         </div>
@@ -115,7 +115,7 @@
         </hd-iron-icon>
         <img id="keyboard-tick" alt=""
             hidden="[[!tickIsVisible(keyboardState)]]"
-            src="neovex://theme/IDR_BLUETOOTH_PAIRING_TICK">
+            src="chrome://theme/IDR_BLUETOOTH_PAIRING_TICK">
         <div id="keyboard-label" aria-live="polite" class="flex">
           [[getKeyboardLabel(locale, keyboardState, keyboardDeviceName)]]
         </div>

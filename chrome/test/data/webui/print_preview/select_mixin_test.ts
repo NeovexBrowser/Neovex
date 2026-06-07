@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {SelectMixin} from 'neovex://print/print_preview.js';
-import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {SelectMixin} from 'chrome://print/print_preview.js';
+import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('SelectMixinTest', function() {
   let testSelect: TestSelectElement;

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 // Timer for automatic update in monitoring mode.
 let fetchDiffScheduler: number|null = null;
@@ -86,8 +86,8 @@ function fetchDiff() {
  * Gets the query string from the URL.
  *
  * For example, if the URL is
- *   - "neovex://histograms/#abc" or
- *   - "neovex://histograms/abc"
+ *   - "chrome://histograms/#abc" or
+ *   - "chrome://histograms/abc"
  * then the query is "abc". The "#" format is canonical. The bare format is
  * historical. "Blink.ImageDecodeTimes.Png" is a valid histogram name but the
  * ".Png" pathname suffix can cause the bare histogram page to be served as
@@ -272,6 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Reload histograms when the "#abc" in "neovex://histograms/#abc" changes.
+ * Reload histograms when the "#abc" in "chrome://histograms/#abc" changes.
  */
 window.onhashchange = handleHashChange;

@@ -6,7 +6,7 @@ module mojom;
 
 import "device/bluetooth/public/mojom/adapter.mojom";
 
-// Handles requests from neovex://bluetooth-internals to enable or disable the
+// Handles requests from chrome://bluetooth-internals to enable or disable the
 // usage of Bluetooth debug logs. The debug logs to be enabled reside in the
 // kernel as well within BlueZ/NewBlue. Note that these logs are text-only and
 // do not include captured packets from btmon.

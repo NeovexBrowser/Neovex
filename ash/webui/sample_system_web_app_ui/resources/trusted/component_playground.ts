@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // Examples of importing lit, cros components, and @material elements.
-import {Button} from 'neovex://resources/cros_components/button/button.js';
-import {MdTextButton} from 'neovex://resources/mwc/@material/web/button/text-button.js';
-import {html} from 'neovex://resources/mwc/lit/index.js';
+import {Button} from 'chrome://resources/cros_components/button/button.js';
+import {MdTextButton} from 'chrome://resources/mwc/@material/web/button/text-button.js';
+import {html} from 'chrome://resources/mwc/lit/index.js';
 
 // Log them to avoid unused import errors.
 console.info(html);

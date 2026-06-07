@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://borealis-installer/error_dialog.js';
+import 'chrome://borealis-installer/error_dialog.js';
 
-import {InstallResult} from 'neovex://borealis-installer/borealis_types.mojom-webui.js';
-import type {BorealisInstallerErrorDialogElement} from 'neovex://borealis-installer/error_dialog.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {InstallResult} from 'chrome://borealis-installer/borealis_types.mojom-webui.js';
+import type {BorealisInstallerErrorDialogElement} from 'chrome://borealis-installer/error_dialog.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('<borealis-installer-error-dialog>', () => {
   let errorDialog: BorealisInstallerErrorDialogElement;

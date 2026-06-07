@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
-import {$} from 'neovex://resources/js/util.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
+import {$} from 'chrome://resources/js/util.js';
 
 
 /**

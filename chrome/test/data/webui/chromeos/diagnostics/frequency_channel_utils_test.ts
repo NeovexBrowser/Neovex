@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {ChannelBand} from 'neovex://diagnostics/diagnostics_types.js';
-import {convertFrequencyToChannel, getFrequencyChannelBand} from 'neovex://diagnostics/frequency_channel_utils.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {ChannelBand} from 'chrome://diagnostics/diagnostics_types.js';
+import {convertFrequencyToChannel, getFrequencyChannelBand} from 'chrome://diagnostics/frequency_channel_utils.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 suite('frequencyChannelUtilsTestSuite', function() {
   test('ConvertFrequencyToChannel', () => {

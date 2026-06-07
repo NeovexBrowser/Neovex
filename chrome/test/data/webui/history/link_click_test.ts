@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {BrowserServiceImpl, getTrustedHTML} from 'neovex://history/history.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {BrowserServiceImpl, getTrustedHTML} from 'chrome://history/history.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {TestBrowserService} from './test_browser_service.js';
 

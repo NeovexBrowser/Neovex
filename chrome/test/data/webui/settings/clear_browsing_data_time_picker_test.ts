@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsClearBrowsingDataTimePicker} from 'neovex://settings/lazy_load.js';
-import {getTimePeriodString, TimePeriod} from 'neovex://settings/lazy_load.js';
-import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
-import {CrSettingsPrefs, MetricsBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsClearBrowsingDataTimePicker} from 'chrome://settings/lazy_load.js';
+import {getTimePeriodString, TimePeriod} from 'chrome://settings/lazy_load.js';
+import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
+import {CrSettingsPrefs, MetricsBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 

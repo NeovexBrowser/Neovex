@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import {ChangePageOrigin} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 const tests = [
   /**

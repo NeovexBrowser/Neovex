@@ -3,26 +3,26 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsSyncControlsElement} from 'neovex://settings/lazy_load.js';
-import type {CrRadioButtonElement, CrToggleElement, SyncPrefs} from 'neovex://settings/settings.js';
-import {loadTimeData, Router, resetRouterForTesting, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertDeepEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsSyncControlsElement} from 'chrome://settings/lazy_load.js';
+import type {CrRadioButtonElement, CrToggleElement, SyncPrefs} from 'chrome://settings/settings.js';
+import {loadTimeData, Router, resetRouterForTesting, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertDeepEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {getSyncAllPrefs, getSyncAllPrefsManaged} from './sync_test_util.js';
 import {TestSyncBrowserProxy} from './test_sync_browser_proxy.js';
 
 // <if expr="not is_chromeos">
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
-import {PageStatus, routes, UserSelectableType, SettingsPluralStringProxyImpl} from 'neovex://settings/settings.js';
-import {waitAfterNextRender, flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {BatchUploadPromoProxyImpl} from 'neovex://settings/lazy_load.js';
-import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
+import {PageStatus, routes, UserSelectableType, SettingsPluralStringProxyImpl} from 'chrome://settings/settings.js';
+import {waitAfterNextRender, flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {BatchUploadPromoProxyImpl} from 'chrome://settings/lazy_load.js';
+import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
 
 import {TestBatchUploadPromoProxy} from './test_batch_upload_promo_browser_proxy.js';
 // </if>

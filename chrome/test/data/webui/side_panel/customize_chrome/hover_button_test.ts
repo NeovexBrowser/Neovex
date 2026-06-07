@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://customize-chrome-side-panel.top-chrome/hover_button.js';
+import 'chrome://customize-chrome-side-panel.top-chrome/hover_button.js';
 
-import type {HoverButtonElement} from 'neovex://customize-chrome-side-panel.top-chrome/hover_button.js';
-import {listenOnce} from 'neovex://resources/js/util.js';
-import {assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HoverButtonElement} from 'chrome://customize-chrome-side-panel.top-chrome/hover_button.js';
+import {listenOnce} from 'chrome://resources/js/util.js';
+import {assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('HoverButtonTest', () => {
   let hoverButtonElement: HoverButtonElement;
@@ -76,7 +76,7 @@ suite('HoverButtonTest', () => {
   test('icon shows', () => {
     // Set --cr-icon-image variable. In prod code this is done in a parent
     // element.
-    const crIconImage = 'url("neovex://resources/images/open_in_new.svg")';
+    const crIconImage = 'url("chrome://resources/images/open_in_new.svg")';
     hoverButtonElement.style.setProperty('--cr-icon-image', crIconImage);
 
     // Assert that icon is visible.

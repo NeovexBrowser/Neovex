@@ -8,8 +8,8 @@
  * implementation for testing.
  */
 
-import 'neovex://resources/mojo/mojo/public/js/bindings.js';
-import 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import 'chrome://resources/mojo/mojo/public/js/bindings.js';
+import 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {WallpaperProviderInterface} from '../../personalization_app.mojom-webui.js';
 import {WallpaperProvider} from '../../personalization_app.mojom-webui.js';

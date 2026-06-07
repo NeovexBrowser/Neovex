@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/menu/menu_separator.js';
-import 'neovex://resources/cros_components/slider/slider.js';
-import 'neovex://resources/mwc/@material/web/icon/icon.js';
-import 'neovex://resources/mwc/@material/web/iconbutton/icon-button.js';
+import 'chrome://resources/cros_components/menu/menu_separator.js';
+import 'chrome://resources/cros_components/slider/slider.js';
+import 'chrome://resources/mwc/@material/web/icon/icon.js';
+import 'chrome://resources/mwc/@material/web/iconbutton/icon-button.js';
 import '../components/audio-waveform.js';
 import '../components/cra/cra-image.js';
 import '../components/cra/cra-menu-item.js';
@@ -23,7 +23,7 @@ import '../components/time-duration.js';
 
 import {
   Slider as CrosSlider,
-} from 'neovex://resources/cros_components/slider/slider.js';
+} from 'chrome://resources/cros_components/slider/slider.js';
 import {
   classMap,
   createRef,
@@ -33,7 +33,7 @@ import {
   nothing,
   PropertyDeclarations,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {CraIconButton} from '../components/cra/cra-icon-button.js';
 import {CraMenu} from '../components/cra/cra-menu.js';

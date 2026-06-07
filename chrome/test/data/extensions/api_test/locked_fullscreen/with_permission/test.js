@@ -22,7 +22,7 @@ openLockedFullscreenWindowWithIncorrectUrlCount = async function() {
   // Also verify error when more than one URL is specified.
   await chrome.test.assertPromiseRejects(
       chrome.windows.create({
-        url: ['about:blank', 'neovex://version'],
+        url: ['about:blank', 'chrome://version'],
         state: 'locked-fullscreen'
       }),
       `Error: ${incorrectUrlCountErrorMessage}`);

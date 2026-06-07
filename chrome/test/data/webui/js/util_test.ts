@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {isMac} from 'neovex://resources/js/platform.js';
-import {$, getRequiredElement, isUndoKeyboardEvent, quoteString as quoteStringJs, quoteString} from 'neovex://resources/js/util.js';
-import {assertEquals, assertFalse, assertThrows, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import type {Modifier} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {$, getRequiredElement, isUndoKeyboardEvent, quoteString as quoteStringJs, quoteString} from 'chrome://resources/js/util.js';
+import {assertEquals, assertFalse, assertThrows, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import type {Modifier} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('UtilTest', function() {
   test('get elements', function() {

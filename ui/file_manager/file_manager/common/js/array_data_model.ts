@@ -6,7 +6,7 @@
  * @fileoverview This is a data model representin
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {type CustomEventMap, FilesEventTarget} from './files_event_target.js';
 

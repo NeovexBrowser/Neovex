@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {MostVisitedBrowserProxy} from 'neovex://resources/cr_components/most_visited/browser_proxy.js';
-import {MAX_TILES_DEFAULT, MAX_TILES_FOR_CUSTOM_LINKS, MostVisitedElement} from 'neovex://resources/cr_components/most_visited/most_visited.js';
-import type {MostVisitedPageRemote} from 'neovex://resources/cr_components/most_visited/most_visited.mojom-webui.js';
-import {MostVisitedPageCallbackRouter, MostVisitedPageHandlerRemote} from 'neovex://resources/cr_components/most_visited/most_visited.mojom-webui.js';
-import {TextDirection} from 'neovex://resources/mojo/mojo/public/mojom/base/text_direction.mojom-webui.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {MostVisitedBrowserProxy} from 'chrome://resources/cr_components/most_visited/browser_proxy.js';
+import {MAX_TILES_DEFAULT, MAX_TILES_FOR_CUSTOM_LINKS, MostVisitedElement} from 'chrome://resources/cr_components/most_visited/most_visited.js';
+import type {MostVisitedPageRemote} from 'chrome://resources/cr_components/most_visited/most_visited.mojom-webui.js';
+import {MostVisitedPageCallbackRouter, MostVisitedPageHandlerRemote} from 'chrome://resources/cr_components/most_visited/most_visited.mojom-webui.js';
+import {TextDirection} from 'chrome://resources/mojo/mojo/public/mojom/base/text_direction.mojom-webui.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertFocus, keydown} from './most_visited_test_support.js';
 

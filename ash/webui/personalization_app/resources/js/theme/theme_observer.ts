@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {String16} from '//resources/mojo/mojo/public/mojom/base/string16.mojom-webui.js';
-import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
 
 import type {ColorScheme} from '../../color_scheme.mojom-webui.js';
 import type {SampleColorScheme, ThemeObserverInterface, ThemeProviderInterface} from '../../personalization_app.mojom-webui.js';

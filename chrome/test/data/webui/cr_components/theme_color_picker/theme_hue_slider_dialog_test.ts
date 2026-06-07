@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/theme_color_picker/theme_hue_slider_dialog.js';
-import 'neovex://customize-chrome-side-panel.top-chrome/strings.m.js';
+import 'chrome://resources/cr_components/theme_color_picker/theme_hue_slider_dialog.js';
+import 'chrome://customize-chrome-side-panel.top-chrome/strings.m.js';
 
-import type {ThemeHueSliderDialogElement} from 'neovex://resources/cr_components/theme_color_picker/theme_hue_slider_dialog.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ThemeHueSliderDialogElement} from 'chrome://resources/cr_components/theme_color_picker/theme_hue_slider_dialog.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('CrComponentsThemeHueSliderDialogTest', () => {
   let element: ThemeHueSliderDialogElement;

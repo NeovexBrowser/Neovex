@@ -5,9 +5,9 @@
 import './manager.js';
 import './neovex_downloads.js';  // NEOVEX DOWNLOADS: Category sidebar
 
-export {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-export {CrToastManagerElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast_manager.js';
-export {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+export {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+export {CrToastManagerElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';
+export {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 export {BrowserProxy} from './browser_proxy.js';
 export type {MojomData} from './data.js';
 export {DangerType, PageCallbackRouter, PageRemote, SafeBrowsingState, State, TailoredWarningType} from './downloads.mojom-webui.js';

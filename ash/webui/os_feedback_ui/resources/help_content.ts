@@ -22,7 +22,7 @@ import type {HelpContent} from './os_feedback_ui.mojom-webui.js';
 import {HelpContentType} from './os_feedback_ui.mojom-webui.js';
 
 /** The host of trusted parent page. */
-export const OS_FEEDBACK_TRUSTED_ORIGIN = 'neovex://os-feedback';
+export const OS_FEEDBACK_TRUSTED_ORIGIN = 'chrome://os-feedback';
 
 const ICON_NAME_FOR_ARTICLE = 'content-type:article';
 

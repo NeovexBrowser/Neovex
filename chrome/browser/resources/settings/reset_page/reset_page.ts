@@ -7,15 +7,15 @@
  * 'settings-reset-page' is the settings page containing reset
  * settings.
  */
-import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
 import '../settings_page/settings_section.js';
 import '../settings_shared.css.js';
 import './reset_profile_dialog.js';
 
-import type {CrLazyRenderElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrLazyRenderElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {routes} from '../route.js';
 import type {Route} from '../router.js';

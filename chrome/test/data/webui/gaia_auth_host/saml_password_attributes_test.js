@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {readPasswordAttributes} from 'neovex://chrome-signin/gaia_auth_host/saml_password_attributes.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {readPasswordAttributes} from 'chrome://chrome-signin/gaia_auth_host/saml_password_attributes.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 let xmlTestData;
 let xmlTestDataWithAttributesRemoved;
@@ -20,7 +20,7 @@ suite('SamlPasswordAttributesSuite', function() {
   // Fetch the SAML XML test file and make it available for the tests.
   setup(function(done) {
     const xmlTestDataUrl =
-        'neovex://webui-test/gaia_auth_host/saml_with_password_attributes.xml';
+        'chrome://webui-test/gaia_auth_host/saml_with_password_attributes.xml';
     const xhr = new XMLHttpRequest();
     xhr.responseType = 'text';
     xhr.onreadystatechange = function() {

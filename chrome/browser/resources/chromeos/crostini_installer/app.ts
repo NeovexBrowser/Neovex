@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/paper-progress/paper-progress.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/paper-progress/paper-progress.js';
 import '/strings.m.js';
 
-import {assert, assertNotReached} from 'neovex://resources/ash/common/assert.js';
-import {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {CrSliderElement} from 'neovex://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert, assertNotReached} from 'chrome://resources/ash/common/assert.js';
+import {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {CrSliderElement} from 'chrome://resources/ash/common/cr_elements/cr_slider/cr_slider.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './app.html.js';
 import {BrowserProxy} from './browser_proxy.js';
@@ -292,7 +292,7 @@ class CrostiniInstallerAppElement extends PolymerElement {
   }
 
   private onSettingsButtonClick_() {
-    window.open('neovex://os-settings/help');
+    window.open('chrome://os-settings/help');
   }
 
   private onCancelButtonClick_() {

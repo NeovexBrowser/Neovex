@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import {SettingsAppParentalControlsSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import type {CrToggleElement} from 'neovex://os-settings/os_settings.js';
-import {Router, routes, setAppParentalControlsProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {SettingsAppParentalControlsSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import type {CrToggleElement} from 'chrome://os-settings/os_settings.js';
+import {Router, routes, setAppParentalControlsProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {FakeAppParentalControlsHandler} from './fake_app_parental_controls_handler.js';
 import {createApp} from './test_utils.js';

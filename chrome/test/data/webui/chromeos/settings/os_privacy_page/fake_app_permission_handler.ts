@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {appPermissionHandlerMojom} from 'neovex://os-settings/os_settings.js';
-import type {Permission} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {appPermissionHandlerMojom} from 'chrome://os-settings/os_settings.js';
+import type {Permission} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {createApp} from './privacy_hub_app_permission_test_util.js';
 

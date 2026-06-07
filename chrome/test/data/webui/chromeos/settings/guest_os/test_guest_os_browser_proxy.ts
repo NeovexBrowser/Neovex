@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {GuestOsBrowserProxy, GuestOsSharedUsbDevice} from 'neovex://os-settings/lazy_load.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {GuestOsBrowserProxy, GuestOsSharedUsbDevice} from 'chrome://os-settings/lazy_load.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestGuestOsBrowserProxy extends TestBrowserProxy implements
     GuestOsBrowserProxy {

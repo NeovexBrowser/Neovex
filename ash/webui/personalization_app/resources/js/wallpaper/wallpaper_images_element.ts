@@ -9,12 +9,12 @@
  * wallpaper collection id to avoid refetching data unnecessarily.
  */
 
-import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
-import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
+import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 
-import type {WallpaperGridItemSelectedEvent} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import {isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import type {WallpaperGridItemSelectedEvent} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import {isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {CurrentWallpaper, WallpaperCollection, WallpaperImage} from '../../personalization_app.mojom-webui.js';
 import {OnlineImageType, WallpaperType} from '../../personalization_app.mojom-webui.js';

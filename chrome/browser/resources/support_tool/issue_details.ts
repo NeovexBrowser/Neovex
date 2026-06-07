@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_input/cr_input.js';
-import 'neovex://resources/cr_elements/cr_textarea/cr_textarea.js';
+import 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/cr_elements/cr_textarea/cr_textarea.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {BrowserProxy, IssueDetails} from './browser_proxy.js';
 import {BrowserProxyImpl} from './browser_proxy.js';

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://cloud-upload/move_confirmation_page.js';
+import 'chrome://cloud-upload/move_confirmation_page.js';
 
-import {OperationType, UserAction} from 'neovex://cloud-upload/cloud_upload.mojom-webui.js';
-import {CloudUploadBrowserProxy} from 'neovex://cloud-upload/cloud_upload_browser_proxy.js';
-import type {MoveConfirmationPageElement} from 'neovex://cloud-upload/move_confirmation_page.js';
-import {CloudProvider} from 'neovex://cloud-upload/move_confirmation_page.js';
-import type {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {CrosLottieEvent} from 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {OperationType, UserAction} from 'chrome://cloud-upload/cloud_upload.mojom-webui.js';
+import {CloudUploadBrowserProxy} from 'chrome://cloud-upload/cloud_upload_browser_proxy.js';
+import type {MoveConfirmationPageElement} from 'chrome://cloud-upload/move_confirmation_page.js';
+import {CloudProvider} from 'chrome://cloud-upload/move_confirmation_page.js';
+import type {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {CrosLottieEvent} from 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import type {ProxyOptions} from './cloud_upload_test_browser_proxy.js';
 import {CloudUploadTestBrowserProxy} from './cloud_upload_test_browser_proxy.js';

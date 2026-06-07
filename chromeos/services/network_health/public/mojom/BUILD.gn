@@ -18,7 +18,7 @@ mojom("mojom") {
   ]
 
   webui_module_path =
-      "neovex://resources/mojo/chromeos/services/network_health/public/mojom"
+      "chrome://resources/mojo/chromeos/services/network_health/public/mojom"
 
   # Used by external clients, see chromeos/resources/BUILD.gn.
   generate_legacy_js_bindings = true
@@ -33,7 +33,7 @@ mojom("types") {
   ]
 
   webui_module_path =
-      "neovex://resources/mojo/chromeos/services/network_health/public/mojom"
+      "chrome://resources/mojo/chromeos/services/network_health/public/mojom"
 
   # Used by external clients, see chromeos/resources/BUILD.gn.
   generate_legacy_js_bindings = true

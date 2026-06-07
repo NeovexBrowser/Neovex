@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_hidden_style.css.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/js/util.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'chrome://resources/cr_elements/cr_hidden_style.css.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/js/util.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 import './destination_dropdown_cros.js';
 import './destination_select_style.css.js';
 import './icons.html.js';
@@ -14,8 +14,8 @@ import './print_preview_shared.css.js';
 import './throbber.css.js';
 import '/strings.m.js';
 
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Destination} from '../data/destination_cros.js';
 import {DestinationOrigin, GooglePromotedDestinationId, PDF_DESTINATION_KEY} from '../data/destination_cros.js';

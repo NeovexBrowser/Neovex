@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://print-management/print_management.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://print-management/print_management.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
 import type {IronIconElement} from '//resources/polymer/v3_0/iron-icon/iron-icon.js';
-import {setMetadataProviderForTesting, setPrintManagementHandlerForTesting} from 'neovex://print-management/mojo_interface_provider.js';
-import type {PrintJobEntryElement} from 'neovex://print-management/print_job_entry.js';
-import type {PrintManagementElement} from 'neovex://print-management/print_management.js';
-import {PrinterSetupInfoElement} from 'neovex://print-management/printer_setup_info.js';
-import {ActivePrintJobState, LaunchSource, PrinterErrorCode, PrintJobCompletionStatus} from 'neovex://print-management/printing_manager.mojom-webui.js';
-import type {ActivePrintJobInfo, CompletedPrintJobInfo, PrintingMetadataProviderInterface, PrintJobInfo, PrintJobsObserverRemote} from 'neovex://print-management/printing_manager.mojom-webui.js';
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {setMetadataProviderForTesting, setPrintManagementHandlerForTesting} from 'chrome://print-management/mojo_interface_provider.js';
+import type {PrintJobEntryElement} from 'chrome://print-management/print_job_entry.js';
+import type {PrintManagementElement} from 'chrome://print-management/print_management.js';
+import {PrinterSetupInfoElement} from 'chrome://print-management/printer_setup_info.js';
+import {ActivePrintJobState, LaunchSource, PrinterErrorCode, PrintJobCompletionStatus} from 'chrome://print-management/printing_manager.mojom-webui.js';
+import type {ActivePrintJobInfo, CompletedPrintJobInfo, PrintingMetadataProviderInterface, PrintJobInfo, PrintJobsObserverRemote} from 'chrome://print-management/printing_manager.mojom-webui.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {FakePrintManagementHandler} from './fake_print_management_handler.js';
 

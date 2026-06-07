@@ -11,7 +11,7 @@ import {InstallReason} from '//resources/cr_components/app_management/app_manage
 import {BrowserProxy} from '//resources/cr_components/app_management/browser_proxy.js';
 import {AppManagementUserAction} from '//resources/cr_components/app_management/constants.js';
 import {recordAppManagementUserAction} from '//resources/cr_components/app_management/util.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './uninstall_button.html.js';
 

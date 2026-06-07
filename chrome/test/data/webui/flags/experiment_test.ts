@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://flags/experiment.js';
+import 'chrome://flags/experiment.js';
 
-import type {ExperimentElement} from 'neovex://flags/experiment.js';
-import {FlagsBrowserProxyImpl} from 'neovex://flags/flags_browser_proxy.js';
-import type {Feature} from 'neovex://flags/flags_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExperimentElement} from 'chrome://flags/experiment.js';
+import {FlagsBrowserProxyImpl} from 'chrome://flags/flags_browser_proxy.js';
+import type {Feature} from 'chrome://flags/flags_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestFlagsBrowserProxy} from './test_flags_browser_proxy.js';
 

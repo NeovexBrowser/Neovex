@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import type {CrPolicyPrefIndicatorElement} from 'neovex://settings/settings.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrPolicyPrefIndicatorElement} from 'chrome://settings/settings.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
-import {CrPolicyStrings} from 'neovex://webui-test/cr_elements/cr_policy_strings.js';
+import {CrPolicyStrings} from 'chrome://webui-test/cr_elements/cr_policy_strings.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr_policy-pref-indicator. */

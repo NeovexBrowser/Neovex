@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {SelectFolderAction, StartSearchAction} from 'neovex://bookmarks/bookmarks.js';
-import {BookmarksApiProxyImpl, BookmarksRouter, CrRouter, getDisplayedList, Store} from 'neovex://bookmarks/bookmarks.js';
-import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SelectFolderAction, StartSearchAction} from 'chrome://bookmarks/bookmarks.js';
+import {BookmarksApiProxyImpl, BookmarksRouter, CrRouter, getDisplayedList, Store} from 'chrome://bookmarks/bookmarks.js';
+import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBookmarksApiProxy} from './test_bookmarks_api_proxy.js';
 import {TestStore} from './test_store.js';
@@ -54,13 +54,13 @@ suite('<bookmarks-router>', function() {
     store.data.selectedFolder = '2';
     store.notifyObservers();
     await microtasksFinished();
-    assertEquals('neovex://bookmarks/?id=2', window.location.href);
+    assertEquals('chrome://bookmarks/?id=2', window.location.href);
 
     store.data.selectedFolder = '1';
     store.notifyObservers();
     await microtasksFinished();
     // Selecting Bookmarks bar clears route.
-    assertEquals('neovex://bookmarks/', window.location.href);
+    assertEquals('chrome://bookmarks/', window.location.href);
   });
 
   test('route updates from search', async function() {
@@ -68,13 +68,13 @@ suite('<bookmarks-router>', function() {
     store.notifyObservers();
     await microtasksFinished();
 
-    assertEquals('neovex://bookmarks/?q=bloop', window.location.href);
+    assertEquals('chrome://bookmarks/?q=bloop', window.location.href);
 
     // Ensure that the route doesn't change when the search finishes.
     store.data.selectedFolder = '';
     store.notifyObservers();
     await microtasksFinished();
-    assertEquals('neovex://bookmarks/?q=bloop', window.location.href);
+    assertEquals('chrome://bookmarks/?q=bloop', window.location.href);
   });
 
   test('bookmarks bar selected with empty route', function() {
@@ -130,13 +130,13 @@ suite('<bookmarks-router-account-and-local>', function() {
     store.data.selectedFolder = '2';
     store.notifyObservers();
     await microtasksFinished();
-    assertEquals('neovex://bookmarks/?id=2', window.location.href);
+    assertEquals('chrome://bookmarks/?id=2', window.location.href);
 
     store.data.selectedFolder = 'account_heading';
     store.notifyObservers();
     await microtasksFinished();
     // Selecting account bookmarks root clears route.
-    assertEquals('neovex://bookmarks/', window.location.href);
+    assertEquals('chrome://bookmarks/', window.location.href);
   });
 
   test('account bookmarks root selected with empty route', function() {
@@ -212,6 +212,6 @@ suite('URL preload', function() {
         const state = Store.getInstance().data;
         assertEquals('1', state.selectedFolder);
         await microtasksFinished();
-        assertEquals('neovex://bookmarks/', window.location.href);
+        assertEquals('chrome://bookmarks/', window.location.href);
       });
 });

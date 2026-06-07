@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/utils/event_utils.js';
+import 'chrome://os-print/js/utils/event_utils.js';
 
-import {createCustomEvent} from 'neovex://os-print/js/utils/event_utils.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {createCustomEvent} from 'chrome://os-print/js/utils/event_utils.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 suite('EventUtils', () => {
   test('createCustomEvent', () => {

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {WebUiListener} from 'neovex://resources/js/cr.js';
-import {addWebUiListener, removeWebUiListener} from 'neovex://resources/js/cr.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {html, render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {WebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener, removeWebUiListener} from 'chrome://resources/js/cr.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {html, render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {requestDataAndRegisterForUpdates, requestStart, setIncludeSpecifics, triggerRefresh} from './chrome_sync.js';
 import type {ProtocolEvent} from './traffic_log.js';

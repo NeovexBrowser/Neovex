@@ -10,9 +10,9 @@ import {SaveToDriveBubbleAction, SaveToDriveBubbleState, SaveToDriveSaveType, Wi
 // <if expr="enable_pdf_ink2">
 import {AnnotationMode, PluginController, UserAction} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 // </if>
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import type {TestPdfViewerPrivateProxy} from './test_pdf_viewer_private_proxy.js';
 import {setUpTestPdfViewerPrivateProxy} from './test_pdf_viewer_private_proxy.js';

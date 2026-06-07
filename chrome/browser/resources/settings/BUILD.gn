@@ -490,7 +490,7 @@ build_webui("build") {
       "lazy_load.js",
     ]
     optimize_webui_excludes =
-        [ "neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js" ]
+        [ "chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js" ]
     optimize_webui_external_paths =
         [ "/shared/settings|" + rebase_path(
               "$root_gen_dir/chrome/browser/resources/settings_shared/tsc",

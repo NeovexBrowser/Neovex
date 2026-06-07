@@ -4,10 +4,10 @@
 
 /**
  * @fileoverview A helper object used by the
- * neovex://metrics-internals/structured page to interact with the browser.
+ * chrome://metrics-internals/structured page to interact with the browser.
  */
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 import type {StructuredMetricEvent, StructuredMetricsSummary} from './structured_utils.js';
 

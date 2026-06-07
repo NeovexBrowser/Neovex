@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/foo_resource.js';
+import 'chrome://resources/foo_resource.js';
 import 'some-fake-scheme://foo/foo.js';
 import 'some-fake-scheme://foo/baz.js';
 

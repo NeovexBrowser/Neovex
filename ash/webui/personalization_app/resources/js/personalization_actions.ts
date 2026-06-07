@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {SeaPenActions} from 'neovex://resources/ash/common/sea_pen/sea_pen_actions.js';
-import type {Action} from 'neovex://resources/js/store.js';
+import type {SeaPenActions} from 'chrome://resources/ash/common/sea_pen/sea_pen_actions.js';
+import type {Action} from 'chrome://resources/js/store.js';
 
 import type {AmbientActions} from './ambient/ambient_actions.js';
 import type {KeyboardBacklightActions} from './keyboard_backlight/keyboard_backlight_actions.js';

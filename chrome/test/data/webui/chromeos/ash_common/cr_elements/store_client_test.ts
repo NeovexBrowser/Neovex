@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {makeStoreClientMixin} from 'neovex://resources/ash/common/cr_elements/store_client/store_client.js';
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import type {Action} from 'neovex://resources/js/store.js';
-import {Store} from 'neovex://resources/js/store.js';
-import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {makeStoreClientMixin} from 'chrome://resources/ash/common/cr_elements/store_client/store_client.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import type {Action} from 'chrome://resources/js/store.js';
+import {Store} from 'chrome://resources/js/store.js';
+import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 interface TestState {
   value: number;

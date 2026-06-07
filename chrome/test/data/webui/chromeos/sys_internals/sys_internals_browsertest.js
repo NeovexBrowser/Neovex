@@ -18,7 +18,7 @@ SysInternalsBrowserTest.prototype = {
   __proto__: testing.Test.prototype,
 
   browsePreload:
-      'neovex://sys-internals/index.html?module=chromeos/sys_internals/all_tests.js',
+      'chrome://sys-internals/index.html?module=chromeos/sys_internals/all_tests.js',
 
   isAsync: true,
 

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarkNode, BookmarksItemElement} from 'neovex://bookmarks/bookmarks.js';
-import {BrowserProxyImpl, selectItem} from 'neovex://bookmarks/bookmarks.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {BookmarkNode, BookmarksItemElement} from 'chrome://bookmarks/bookmarks.js';
+import {BrowserProxyImpl, selectItem} from 'chrome://bookmarks/bookmarks.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBookmarksBrowserProxy} from './test_browser_proxy.js';
 import {TestStore} from './test_store.js';

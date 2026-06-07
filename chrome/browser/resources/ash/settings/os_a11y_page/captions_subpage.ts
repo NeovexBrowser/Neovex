@@ -4,11 +4,11 @@
 
 /**
  * @fileoverview 'settings-captions' is a component for showing captions
- * settings in neovex://os-settings/audioAndCaptions and is forked from the
- * equivalent Browser Settings UI (in neovex://settings/captions).
+ * settings in chrome://os-settings/audioAndCaptions and is forked from the
+ * equivalent Browser Settings UI (in chrome://settings/captions).
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
 import '../controls/settings_slider.js';
 import '../settings_shared.css.js';
 import './live_caption_section.js';
@@ -16,8 +16,8 @@ import './live_caption_section.js';
 import type {FontsData} from '/shared/settings/appearance_page/fonts_browser_proxy.js';
 import {FontsBrowserProxyImpl} from '/shared/settings/appearance_page/fonts_browser_proxy.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {DropdownMenuOptionList} from '../controls/settings_dropdown_menu.js';
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';

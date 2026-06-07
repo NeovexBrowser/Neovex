@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
 
-import {getInstance, TIMEOUT_MS} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {getInstance, TIMEOUT_MS} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('CrA11yAnnouncerElementTest', () => {
   setup(() => {

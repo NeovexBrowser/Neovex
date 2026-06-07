@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for neovex://sample-system-web-app.
+ * @fileoverview Test suite for chrome://sample-system-web-app.
  */
 
 GEN('#include "content/public/test/browser_test.h"');
 GEN('#include "build/config/coverage/buildflags.h"');
 
-const HOST_ORIGIN = 'neovex://sample-system-web-app';
+const HOST_ORIGIN = 'chrome://sample-system-web-app';
 const UNTRUSTED_HOST_ORIGIN = 'chrome-untrusted://sample-system-web-app';
 
 // TODO:(crbug.com/1262025): We should avoid using `var`.
@@ -28,7 +28,7 @@ var SampleSystemWebAppUIBrowserTest = class extends testing.Test {
   }
 };
 
-// Tests that neovex://sample-system-web-app runs js file and that it goes
+// Tests that chrome://sample-system-web-app runs js file and that it goes
 // somewhere instead of 404ing or crashing.
 // TODO(b/280457934): Skip as shared workers crash for JS coverage builds.
 GEN('#if BUILDFLAG(USE_JAVASCRIPT_COVERAGE)');
@@ -38,7 +38,7 @@ GEN('#define MAYBE_HasChromeSchemeURL HasChromeSchemeURL');
 GEN('#endif');
 TEST_F(
     'SampleSystemWebAppUIBrowserTest', 'MAYBE_HasChromeSchemeURL', async () => {
-      const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+      const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
       const header = document.querySelector('header');
 
       assertEquals(header.innerText, 'Sample System Web App');
@@ -56,7 +56,7 @@ GEN('#endif');
 TEST_F(
     'SampleSystemWebAppUIBrowserTest', 'MAYBE_FetchPreferences', async () => {
       const {assertDeepEquals} =
-          await import('neovex://webui-test/chai_assert.js');
+          await import('chrome://webui-test/chai_assert.js');
       const {preferences} = await window.pageHandler.getPreferences();
       assertDeepEquals(
           {background: '#ffffff', foreground: '#000000'}, preferences);
@@ -71,7 +71,7 @@ GEN('#else');
 GEN('#define MAYBE_DoSomething DoSomething');
 GEN('#endif');
 TEST_F('SampleSystemWebAppUIBrowserTest', 'MAYBE_DoSomething', async () => {
-  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
   const pageHandler = window.pageHandler;
   const callbackRouter = window.callbackRouter;
 
@@ -108,12 +108,12 @@ var SampleSystemWebAppUIUntrustedBrowserTest = class extends testing.Test {
   }
 };
 
-// Tests that neovex://sample-system-web-app/inter_frame_communication.html
+// Tests that chrome://sample-system-web-app/inter_frame_communication.html
 // embeds a chrome-untrusted:// iframe.
 TEST_F(
     'SampleSystemWebAppUIUntrustedBrowserTest', 'HasChromeUntrustedIframe',
     async () => {
-      const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+      const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
       const iframe = document.querySelector('iframe');
       window.onmessage = (event) => {
         if (event.data.id === 'post-message') {
@@ -125,12 +125,12 @@ TEST_F(
       iframe.contentWindow.postMessage('hello', UNTRUSTED_HOST_ORIGIN);
     });
 
-// Tests that neovex://sample-system-web-app/inter_frame_communication.html
+// Tests that chrome://sample-system-web-app/inter_frame_communication.html
 // can communicate with its embedded chrome-untrusted:// iframe via Mojo
 // method calls.
 TEST_F(
     'SampleSystemWebAppUIUntrustedBrowserTest', 'MojoMethodCall', async () => {
-      const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+      const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
       window.onmessage = (event) => {
         if (event.data.id === 'mojo-method-call-resp') {
           assertEquals(event.data.resp, 'Task done');
@@ -144,15 +144,15 @@ TEST_F(
     });
 
 TEST_F('SampleSystemWebAppUIUntrustedBrowserTest', 'MojoMessage', async () => {
-  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
   window.onmessage = (event) => {
     if (event.data.id === 'mojo-did-receive-task') {
-      assertEquals(event.data.task, 'Hello from neovex://');
+      assertEquals(event.data.task, 'Hello from chrome://');
       testDone();
     }
   };
 
   window.childPageReady.then(({childPage}) => {
-    childPage.doSomethingForParent('Hello from neovex://');
+    childPage.doSomethingForParent('Hello from chrome://');
   });
 });

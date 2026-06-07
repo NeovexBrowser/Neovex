@@ -4,12 +4,12 @@
 
 import '/strings.m.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {isChromeOS} from 'neovex://resources/js/platform.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {isChromeOS} from 'chrome://resources/js/platform.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getHtml} from './component.html.js';
 

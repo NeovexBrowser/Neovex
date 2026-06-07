@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://history/history.js';
+import 'chrome://history/history.js';
 
-import type {HistoryAppElement, HistorySideBarElement} from 'neovex://history/history.js';
-import {BrowserProxyImpl, BrowserServiceImpl, CrRouter, HistoryEmbeddingsBrowserProxyImpl, HistoryEmbeddingsPageHandlerRemote, MetricsProxyImpl} from 'neovex://history/history.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HistoryAppElement, HistorySideBarElement} from 'chrome://history/history.js';
+import {BrowserProxyImpl, BrowserServiceImpl, CrRouter, HistoryEmbeddingsBrowserProxyImpl, HistoryEmbeddingsPageHandlerRemote, MetricsProxyImpl} from 'chrome://history/history.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBrowserProxy, TestMetricsProxy} from './history_clusters/utils.js';
 import {TestBrowserService} from './test_browser_service.js';
@@ -48,7 +48,7 @@ import {navigateTo} from './test_util.js';
       app = document.createElement('history-app');
       document.body.appendChild(app);
 
-      assertEquals('neovex://history/', window.location.href);
+      assertEquals('chrome://history/', window.location.href);
       sidebar = app.$.contentSideBar;
       return microtasksFinished();
     });
@@ -60,7 +60,7 @@ import {navigateTo} from './test_util.js';
       navigateTo('/syncedTabs', app);
       await eventToPromise('iron-select', sidebar.$.menu);
 
-      assertEquals('neovex://history/syncedTabs', window.location.href);
+      assertEquals('chrome://history/syncedTabs', window.location.href);
       await microtasksFinished();
       assertEquals('syncedTabs', app.$.content.selected);
       assertEquals(
@@ -78,7 +78,7 @@ import {navigateTo} from './test_util.js';
       navigateTo('/grouped', app);
       await microtasksFinished();
 
-      assertEquals('neovex://history/grouped', window.location.href);
+      assertEquals('chrome://history/grouped', window.location.href);
       await microtasksFinished();
       assertEquals('history', app.$.content.selected);
       assertEquals(
@@ -92,15 +92,15 @@ import {navigateTo} from './test_util.js';
     });
 
     test('routing to /grouped may update sidebar menu item', function() {
-      assertEquals('neovex://history/', sidebar.$.history.href);
+      assertEquals('chrome://history/', sidebar.$.history.href);
       assertEquals('history', sidebar.$.history.getAttribute('path'));
 
       navigateTo('/grouped', app);
       return microtasksFinished().then(function() {
         // Currently selected history view is preserved in sidebar menu item.
         assertEquals(
-            isHistoryClustersEnabled ? 'neovex://history/grouped' :
-                                       'neovex://history/',
+            isHistoryClustersEnabled ? 'chrome://history/grouped' :
+                                       'chrome://history/',
             sidebar.$.history.href);
         assertEquals(
             isHistoryClustersEnabled ? 'grouped' : 'history',
@@ -110,20 +110,20 @@ import {navigateTo} from './test_util.js';
 
     test('route updates from tabs and sidebar menu items', async function() {
       assertEquals('history', sidebar.$.menu.selected);
-      assertEquals('neovex://history/', window.location.href);
+      assertEquals('chrome://history/', window.location.href);
 
       sidebar.$.syncedTabs.click();
       await eventToPromise('iron-select', sidebar.$.menu);
       await microtasksFinished();
       assertEquals('syncedTabs', sidebar.$.menu.selected);
-      assertEquals('neovex://history/syncedTabs', window.location.href);
+      assertEquals('chrome://history/syncedTabs', window.location.href);
 
       // Currently selected history view is preserved in sidebar menu item.
       keyDownOn(sidebar.$.history, 0, [], ' ');
       await eventToPromise('iron-select', sidebar.$.menu);
       await microtasksFinished();
       assertEquals('history', sidebar.$.menu.selected);
-      assertEquals('neovex://history/', window.location.href);
+      assertEquals('chrome://history/', window.location.href);
 
       const historyTabs = app.shadowRoot.querySelector('cr-tabs');
       assertEquals(!!historyTabs, isHistoryClustersEnabled);
@@ -133,30 +133,30 @@ import {navigateTo} from './test_util.js';
         historyTabs.selected = 1;
         await microtasksFinished();
         assertEquals('grouped', sidebar.$.menu.selected);
-        assertEquals('neovex://history/grouped', window.location.href);
+        assertEquals('chrome://history/grouped', window.location.href);
 
         keyDownOn(sidebar.$.syncedTabs, 0, [], ' ');
         await eventToPromise('iron-select', sidebar.$.menu);
         await microtasksFinished();
         assertEquals('syncedTabs', sidebar.$.menu.selected);
-        assertEquals('neovex://history/syncedTabs', window.location.href);
+        assertEquals('chrome://history/syncedTabs', window.location.href);
 
         // Currently selected history view is preserved in sidebar menu item.
         keyDownOn(sidebar.$.history, 0, [], ' ');
         await eventToPromise('iron-select', sidebar.$.menu);
         await microtasksFinished();
         assertEquals('grouped', sidebar.$.menu.selected);
-        assertEquals('neovex://history/grouped', window.location.href);
+        assertEquals('chrome://history/grouped', window.location.href);
 
         historyTabs.selected = 0;
         await microtasksFinished();
         assertEquals('history', sidebar.$.menu.selected);
-        assertEquals('neovex://history/', window.location.href);
+        assertEquals('chrome://history/', window.location.href);
       }
     });
 
     test('search updates from route', async function() {
-      assertEquals('neovex://history/', window.location.href);
+      assertEquals('chrome://history/', window.location.href);
       const searchTerm = 'Mei';
       assertEquals('history', app.$.content.selected);
       navigateTo('/?q=' + searchTerm, app);
@@ -171,7 +171,7 @@ import {navigateTo} from './test_util.js';
           'change-query',
           {bubbles: true, composed: true, detail: {search: searchTerm}}));
       await microtasksFinished();
-      assertEquals('neovex://history/?q=' + searchTerm, window.location.href);
+      assertEquals('chrome://history/?q=' + searchTerm, window.location.href);
     });
 
     test(
@@ -187,7 +187,7 @@ import {navigateTo} from './test_util.js';
           assertEquals('syncedTabs', sidebar.$.menu.selected);
           assertEquals(searchTerm, app.$.toolbar.searchTerm);
           assertEquals(
-              'neovex://history/syncedTabs?q=' + searchTerm,
+              'chrome://history/syncedTabs?q=' + searchTerm,
               window.location.href);
 
           sidebar.$.history.click();
@@ -196,7 +196,7 @@ import {navigateTo} from './test_util.js';
           assertEquals('history', sidebar.$.menu.selected);
           assertEquals(searchTerm, app.$.toolbar.searchTerm);
           assertEquals(
-              'neovex://history/?q=' + searchTerm, window.location.href);
+              'chrome://history/?q=' + searchTerm, window.location.href);
 
           if (isHistoryClustersEnabled) {
             const tabs = app.shadowRoot.querySelector('cr-tabs');
@@ -206,13 +206,13 @@ import {navigateTo} from './test_util.js';
             assertEquals('grouped', sidebar.$.menu.selected);
             assertEquals(searchTerm, app.$.toolbar.searchTerm);
             assertEquals(
-                'neovex://history/grouped?q=' + searchTerm,
+                'chrome://history/grouped?q=' + searchTerm,
                 window.location.href);
           }
         });
 
     test(
-        'routing to neovex://history/syncedTabs works correctly',
+        'routing to chrome://history/syncedTabs works correctly',
         async function() {
           navigateTo('/syncedTabs', app);
           if (isHistoryClustersEnabled) {
@@ -222,7 +222,7 @@ import {navigateTo} from './test_util.js';
             historyTabs.selected = -1;
             await microtasksFinished();
           }
-          assertEquals(`neovex://history/syncedTabs`, window.location.href);
+          assertEquals(`chrome://history/syncedTabs`, window.location.href);
         });
   });
 });
@@ -265,19 +265,19 @@ suite(`routing-test-with-history-clusters-pref-set`, () => {
       async () => {
         initialize();
         await microtasksFinished();
-        assertEquals(`neovex://history/grouped`, window.location.href);
+        assertEquals(`chrome://history/grouped`, window.location.href);
       });
 
   test(`route to grouped url when last tab is grouped`, async () => {
     loadTimeData.overrideValues({lastSelectedTab: 0});
     initialize();
     await microtasksFinished();
-    assertEquals(`neovex://history/`, window.location.href);
+    assertEquals(`chrome://history/`, window.location.href);
     testBrowserService.handler.reset();
 
     navigateTo('/grouped', app);
     await microtasksFinished();
-    assertEquals(`neovex://history/grouped`, window.location.href);
+    assertEquals(`chrome://history/grouped`, window.location.href);
     const lastSelectedTab =
         await testBrowserService.handler.whenCalled('setLastSelectedTab');
     assertEquals(lastSelectedTab, 1);
@@ -287,7 +287,7 @@ suite(`routing-test-with-history-clusters-pref-set`, () => {
     loadTimeData.overrideValues({lastSelectedTab: 0});
     initialize();
     await microtasksFinished();
-    assertEquals(`neovex://history/`, window.location.href);
+    assertEquals(`chrome://history/`, window.location.href);
   });
 });
 
@@ -337,12 +337,12 @@ suite(`routing-test-with-history-embeddings-enabled`, () => {
     filterChips.dispatchEvent(new CustomEvent(
         'show-results-by-group-changed', {detail: {value: true}}));
     await microtasksFinished();
-    assertEquals('neovex://history/grouped', window.location.href);
+    assertEquals('chrome://history/grouped', window.location.href);
 
     filterChips.dispatchEvent(new CustomEvent(
         'show-results-by-group-changed', {detail: {value: false}}));
     await microtasksFinished();
-    assertEquals('neovex://history/', window.location.href);
+    assertEquals('chrome://history/', window.location.href);
   });
 
   test('route updates from date filter chip', async () => {
@@ -366,13 +366,13 @@ suite(`routing-test-with-history-embeddings-enabled`, () => {
     await microtasksFinished();
 
     assertEquals(
-        'neovex://history/?q=test&after=2011-01-01', window.location.href);
+        'chrome://history/?q=test&after=2011-01-01', window.location.href);
   });
 
   test('route clears date if invalid', async () => {
     navigateTo('/?q=test&after=2022-invalid-date', app);
     await microtasksFinished();
-    assertEquals('neovex://history/?q=test', window.location.href);
+    assertEquals('chrome://history/?q=test', window.location.href);
   });
 
   test('route sets correct date', async () => {

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import {PerDeviceInstallRowElement} from 'neovex://os-settings/lazy_load.js';
-import type {CompanionAppInfo, CrAutoImgElement} from 'neovex://os-settings/os_settings.js';
-import {CompanionAppState} from 'neovex://os-settings/os_settings.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {PerDeviceInstallRowElement} from 'chrome://os-settings/lazy_load.js';
+import type {CompanionAppInfo, CrAutoImgElement} from 'chrome://os-settings/os_settings.js';
+import {CompanionAppState} from 'chrome://os-settings/os_settings.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {clearBody} from '../utils.js';
 

@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extensions-item-list. */
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {ExtensionsItemListElement} from 'neovex://extensions/extensions.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsItemListElement} from 'chrome://extensions/extensions.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createExtensionInfo, testVisible} from './test_util.js';
 

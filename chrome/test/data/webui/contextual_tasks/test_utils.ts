@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ToolMode as ComposeboxToolMode} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import {createAutocompleteMatch, createAutocompleteResultForTesting} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {type PageHandlerRemote as SearchboxPageHandlerRemote, type PageRemote as SearchboxPageRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import type {InputState} from 'neovex://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {type MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {ToolMode as ComposeboxToolMode} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import {createAutocompleteMatch, createAutocompleteResultForTesting} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {type PageHandlerRemote as SearchboxPageHandlerRemote, type PageRemote as SearchboxPageRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import type {InputState} from 'chrome://resources/mojo/components/omnibox/composebox/composebox_query.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {type MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 // Base64 encoding of a UI handshake request message [1, 2, 3].
 // Generated from btoa(String.fromCharCode(...[1, 2, 3]))
@@ -25,7 +25,7 @@ export const HANDSHAKE_RESPONSE_BYTES = new Uint8Array([10, 2, 8, 0]);
 export const FAKE_TOKEN_STRING = '00000000000000001234567890ABCDEF';
 export const FAKE_TOKEN_STRING_2 = '00000000000000001234567890ABCDFF';
 
-export const fixtureUrl = 'neovex://webui-test/contextual_tasks/test.html';
+export const fixtureUrl = 'chrome://webui-test/contextual_tasks/test.html';
 
 export function assertHTMLElement(element: Element|null|undefined):
     asserts element is HTMLElement {

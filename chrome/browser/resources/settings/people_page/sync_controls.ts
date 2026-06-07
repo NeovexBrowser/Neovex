@@ -17,7 +17,7 @@ import {assert} from '//resources/js/assert.js';
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 import type {SyncBrowserProxy, SyncPrefs, SyncStatus} from '/shared/settings/people_page/sync_browser_proxy.js';
 import {shouldShowSyncTogglesForStatusAction, SignedInState, StatusAction, SyncBrowserProxyImpl, syncPrefsIndividualDataTypes, UserSelectableType} from '/shared/settings/people_page/sync_browser_proxy.js';
-import type {CrToggleElement} from 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
+import type {CrToggleElement} from 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
 
 import {routes} from '../route.js';
 import {Router} from '../router.js';
@@ -29,9 +29,9 @@ import {loadTimeData} from '../i18n_setup.js';
 import type {Route} from '../router.js';
 import {RouteObserverMixin} from '../router.js';
 
-import {PluralStringProxyImpl} from 'neovex://resources/js/plural_string_proxy.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {BatchUploadPromoProxyImpl} from 'neovex://resources/js/batch_upload_promo/batch_upload_promo_proxy.js';
+import {PluralStringProxyImpl} from 'chrome://resources/js/plural_string_proxy.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {BatchUploadPromoProxyImpl} from 'chrome://resources/js/batch_upload_promo/batch_upload_promo_proxy.js';
 // </if>
 
 // clang-format on

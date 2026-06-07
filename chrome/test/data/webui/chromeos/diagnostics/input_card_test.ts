@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/strings.m.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/strings.m.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
 import type {IronIconElement} from '//resources/polymer/v3_0/iron-icon/iron-icon.js';
-import {fakeTouchDevices} from 'neovex://diagnostics/fake_data.js';
-import {FakeInputDataProvider} from 'neovex://diagnostics/fake_input_data_provider.js';
-import type {KeyboardInfo} from 'neovex://diagnostics/input.mojom-webui.js';
-import {BottomLeftLayout, BottomRightLayout, ConnectionType, MechanicalLayout, NumberPadPresence, NumpadLayout, PhysicalLayout, TopRightKey, TopRowKey} from 'neovex://diagnostics/input.mojom-webui.js';
-import type {InputCardElement} from 'neovex://diagnostics/input_card.js';
-import {InputCardType} from 'neovex://diagnostics/input_card.js';
-import type {TouchDeviceInfo} from 'neovex://diagnostics/input_data_provider.mojom-webui.js';
-import {setInputDataProviderForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {fakeTouchDevices} from 'chrome://diagnostics/fake_data.js';
+import {FakeInputDataProvider} from 'chrome://diagnostics/fake_input_data_provider.js';
+import type {KeyboardInfo} from 'chrome://diagnostics/input.mojom-webui.js';
+import {BottomLeftLayout, BottomRightLayout, ConnectionType, MechanicalLayout, NumberPadPresence, NumpadLayout, PhysicalLayout, TopRightKey, TopRowKey} from 'chrome://diagnostics/input.mojom-webui.js';
+import type {InputCardElement} from 'chrome://diagnostics/input_card.js';
+import {InputCardType} from 'chrome://diagnostics/input_card.js';
+import type {TouchDeviceInfo} from 'chrome://diagnostics/input_data_provider.mojom-webui.js';
+import {setInputDataProviderForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 const keyboards: KeyboardInfo[] = [
   {

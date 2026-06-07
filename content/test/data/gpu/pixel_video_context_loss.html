@@ -52,7 +52,7 @@ function CrashGpuProcess() {
     video.play();
   }, false);
 
-  // Invokes neovex://gpucrash, which triggers a webglcontextlost event above.
+  // Invokes chrome://gpucrash, which triggers a webglcontextlost event above.
   chrome.gpuBenchmarking.crashGpuProcess();
 }
 

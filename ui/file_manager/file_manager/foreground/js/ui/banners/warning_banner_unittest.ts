@@ -4,9 +4,9 @@
 
 import './warning_banner.js';
 
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {getLastVisitedURL} from '../../../../common/js/util.js';
 

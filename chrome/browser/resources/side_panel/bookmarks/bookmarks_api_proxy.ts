@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {ChromeEvent} from '/tools/typescript/definitions/chrome_event.js';
-import type {ClickModifiers} from 'neovex://resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
+import type {ClickModifiers} from 'chrome://resources/mojo/ui/base/mojom/window_open_disposition.mojom-webui.js';
 
 import type {ActionSource, SortOrder, ViewType} from './bookmarks.mojom-webui.js';
 import {BookmarksPageCallbackRouter, BookmarksPageHandlerFactory, BookmarksPageHandlerRemote} from './bookmarks.mojom-webui.js';

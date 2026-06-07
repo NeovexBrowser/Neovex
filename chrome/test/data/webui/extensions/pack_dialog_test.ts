@@ -4,12 +4,12 @@
 
 /** @fileoverview Suite of tests for extension-pack-dialog. */
 
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {ExtensionsPackDialogElement, PackDialogDelegate} from 'neovex://extensions/extensions.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsPackDialogElement, PackDialogDelegate} from 'chrome://extensions/extensions.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {isElementVisible} from './test_util.js';
 

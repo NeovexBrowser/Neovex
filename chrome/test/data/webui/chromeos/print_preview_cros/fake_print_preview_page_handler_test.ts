@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
+import 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
 
-import {DEFAULT_PARTIAL_PRINT_TICKET} from 'neovex://os-print/js/data/ticket_constants.js';
-import {getFakePreviewTicket} from 'neovex://os-print/js/fakes/fake_data.js';
-import {FAKE_PRINT_REQUEST_FAILURE_INVALID_SETTINGS_ERROR, FAKE_PRINT_REQUEST_SUCCESSFUL, FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL, FakePrintPreviewPageHandler} from 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
-import type {PrintTicket} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
+import {DEFAULT_PARTIAL_PRINT_TICKET} from 'chrome://os-print/js/data/ticket_constants.js';
+import {getFakePreviewTicket} from 'chrome://os-print/js/fakes/fake_data.js';
+import {FAKE_PRINT_REQUEST_FAILURE_INVALID_SETTINGS_ERROR, FAKE_PRINT_REQUEST_SUCCESSFUL, FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL, FakePrintPreviewPageHandler} from 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
+import type {PrintTicket} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
 
 suite('FakePrintPreviewPageHandler', () => {
   let printPreviewPageHandler: FakePrintPreviewPageHandler;

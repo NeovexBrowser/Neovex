@@ -3,10 +3,10 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {ZoomLevelEntry, ZoomLevelsElement} from 'neovex://settings/lazy_load.js';
-import {SiteSettingsBrowserProxyImpl} from 'neovex://settings/lazy_load.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {ZoomLevelEntry, ZoomLevelsElement} from 'chrome://settings/lazy_load.js';
+import {SiteSettingsBrowserProxyImpl} from 'chrome://settings/lazy_load.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestSiteSettingsBrowserProxy} from './test_site_settings_browser_proxy.js';
 // clang-format on

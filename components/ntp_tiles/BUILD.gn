@@ -195,5 +195,5 @@ mojom("mojo_bindings") {
     "tile_source.mojom",
     "tile_type.mojom",
   ]
-  webui_module_path = "neovex://resources/mojo/components/ntp_tiles/"
+  webui_module_path = "chrome://resources/mojo/components/ntp_tiles/"
 }

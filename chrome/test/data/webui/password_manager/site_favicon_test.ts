@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://password-manager/password_manager.js';
+import 'chrome://password-manager/password_manager.js';
 
-import type {SiteFaviconElement} from 'neovex://password-manager/password_manager.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import type {SiteFaviconElement} from 'chrome://password-manager/password_manager.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 suite('SiteFaviconTest', function() {
   let icon: SiteFaviconElement;
@@ -19,7 +19,7 @@ suite('SiteFaviconTest', function() {
 
   test('on successful download', async function() {
     icon.domain = 'https://test.com';
-    icon.url = 'neovex://resources/images/chrome_logo_dark.svg';
+    icon.url = 'chrome://resources/images/chrome_logo_dark.svg';
     await eventToPromise('site-favicon-loaded', icon);
 
     assertTrue(isVisible(icon.$.downloadedFavicon));
@@ -28,7 +28,7 @@ suite('SiteFaviconTest', function() {
 
   test('on failed download', async function() {
     icon.domain = 'https://test.com';
-    icon.url = 'neovex://resources/images/invalid_url';
+    icon.url = 'chrome://resources/images/invalid_url';
     await eventToPromise('site-favicon-error', icon);
 
     assertFalse(isVisible(icon.$.downloadedFavicon));
@@ -37,7 +37,7 @@ suite('SiteFaviconTest', function() {
 
   test('url change', async function() {
     icon.domain = 'https://test.com';
-    icon.url = 'neovex://resources/images/chrome_logo_dark.svg';
+    icon.url = 'chrome://resources/images/chrome_logo_dark.svg';
     await eventToPromise('site-favicon-loaded', icon);
 
     assertTrue(isVisible(icon.$.downloadedFavicon));

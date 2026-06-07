@@ -4,10 +4,10 @@
 
 /** @fileoverview Suite of tests for extension-item. */
 
-import type {CrIconElement, ExtensionsItemElement} from 'neovex://extensions/extensions.js';
-import {Mv2ExperimentStage, navigation, Page} from 'neovex://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrIconElement, ExtensionsItemElement} from 'chrome://extensions/extensions.js';
+import {Mv2ExperimentStage, navigation, Page} from 'chrome://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 import {createExtensionInfo, MockItemDelegate, testVisible} from './test_util.js';

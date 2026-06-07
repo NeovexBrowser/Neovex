@@ -95,7 +95,7 @@ chrome.test.runTests([
     createTab(0, "about:blank");
     createTab(1, pageUrl("a"));
     createTab(2, pageUrl("b"));
-    createTab(3, "neovex://newtab/");
+    createTab(3, "chrome://newtab/");
 
     // Wait for all loads to complete.
     var completedCount = 0;
@@ -108,7 +108,7 @@ chrome.test.runTests([
           // Once the NTP finishes loading, create another one.  This ensures
           // both NTPs end up in the same process.
           if (changedTabId == tabs[3].id)
-            createTab(4, "neovex://newtab/");
+            createTab(4, "chrome://newtab/");
         }
 
         // Once all tabs are done loading, continue with the next test.
@@ -267,7 +267,7 @@ chrome.test.runTests([
       // is expected to be > 0.
       assertTrue(process.id > 0, "id is not positive " + process.id);
     });
-    createTab(5, "neovex://newtab/");
+    createTab(5, "chrome://newtab/");
   },
 
   // DISABLED: crbug.com/345411
@@ -330,11 +330,11 @@ chrome.test.runTests([
           chrome.test.assertTrue(killed);
       });
     });
-    chrome.tabs.create({"url": "neovex://hang" }, function(tab) {
+    chrome.tabs.create({"url": "chrome://hang" }, function(tab) {
       getProcessId(tab.id, function(pid0) {
         hangingTabProcess = pid0;
       });
-      chrome.tabs.update(tab.id, { "url": "neovex://flags" });
+      chrome.tabs.update(tab.id, { "url": "chrome://flags" });
     });
   }
 ]);

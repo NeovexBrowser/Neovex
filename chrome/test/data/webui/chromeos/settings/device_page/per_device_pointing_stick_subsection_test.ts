@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsPerDevicePointingStickSubsectionElement} from 'neovex://os-settings/lazy_load.js';
-import type {SettingsDropdownMenuElement, SettingsSliderElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
-import {FakeInputDeviceSettingsProvider, fakePointingSticks, Router, routes, setInputDeviceSettingsProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsPerDevicePointingStickSubsectionElement} from 'chrome://os-settings/lazy_load.js';
+import type {SettingsDropdownMenuElement, SettingsSliderElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
+import {FakeInputDeviceSettingsProvider, fakePointingSticks, Router, routes, setInputDeviceSettingsProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 const POINTING_STICK_SPEED_SETTING_ID = 435;
 

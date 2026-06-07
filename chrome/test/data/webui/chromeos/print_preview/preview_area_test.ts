@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewPreviewAreaElement} from 'neovex://print/print_preview.js';
-import {Destination, DestinationOrigin, Error, Margins, MeasurementSystem, MeasurementSystemUnitType, NativeLayerImpl, PluginProxyImpl, PreviewAreaState, Size, State} from 'neovex://print/print_preview.js';
+import type {PrintPreviewPreviewAreaElement} from 'chrome://print/print_preview.js';
+import {Destination, DestinationOrigin, Error, Margins, MeasurementSystem, MeasurementSystemUnitType, NativeLayerImpl, PluginProxyImpl, PreviewAreaState, Size, State} from 'chrome://print/print_preview.js';
 // clang-format off
-import {PrinterSetupInfoMessageType, PrintPreviewPrinterSetupInfoCrosElement} from 'neovex://print/print_preview.js';
+import {PrinterSetupInfoMessageType, PrintPreviewPrinterSetupInfoCrosElement} from 'chrome://print/print_preview.js';
 // clang-format on
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
 
 import type {NativeLayerCrosStub} from './native_layer_cros_stub.js';
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';

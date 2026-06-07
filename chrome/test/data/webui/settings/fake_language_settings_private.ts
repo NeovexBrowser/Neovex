@@ -7,9 +7,9 @@
  * for testing.
  */
 
-import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
-import {FakeChromeEvent} from 'neovex://webui-test/fake_chrome_event.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
+import {FakeChromeEvent} from 'chrome://webui-test/fake_chrome_event.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * Fake of the chrome.languageSettingsPrivate API.

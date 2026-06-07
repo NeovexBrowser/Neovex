@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {MultiDeviceSetup, MultiDeviceSetupRemote} from 'neovex://resources/mojo/chromeos/ash/services/multidevice_setup/public/mojom/multidevice_setup.mojom-webui.js';
+import {MultiDeviceSetup, MultiDeviceSetupRemote} from 'chrome://resources/mojo/chromeos/ash/services/multidevice_setup/public/mojom/multidevice_setup.mojom-webui.js';
 
 /** @interface */
 export class MojoInterfaceProvider {

@@ -30,7 +30,7 @@ chrome.test.runTests([
 
   async function testAddEntryNotSupportedURLError() {
     const entry = {
-      url: 'neovex://example',
+      url: 'chrome://example',
       title: 'example of title',
       hasBeenRead: false
     };
@@ -60,7 +60,7 @@ chrome.test.runTests([
 
   async function testRemoveEntryNotSupportedURLError() {
     const entry = {
-      url: 'neovex://example'
+      url: 'chrome://example'
     };
     await chrome.test.assertPromiseRejects(
         readingList.removeEntry(entry), 'Error: URL is not supported.');
@@ -97,7 +97,7 @@ chrome.test.runTests([
   },
 
   async function testUpdateEntryNotSupportedURLError() {
-    const entry = {url: 'neovex://example', title: 'example of title'};
+    const entry = {url: 'chrome://example', title: 'example of title'};
     await chrome.test.assertPromiseRejects(
         readingList.updateEntry(entry), 'Error: URL is not supported.');
     chrome.test.succeed();
@@ -152,7 +152,7 @@ chrome.test.runTests([
   },
 
   async function testQueryNotSupportedURLError() {
-    const entry = {url: 'neovex://example', title: 'example of title'};
+    const entry = {url: 'chrome://example', title: 'example of title'};
     await chrome.test.assertPromiseRejects(
         readingList.query(entry), 'Error: URL is not supported.');
     chrome.test.succeed();

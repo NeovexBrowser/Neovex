@@ -4,10 +4,10 @@
 
 import '../settings_page/settings_section.js';
 import '../settings_shared.css.js';
-import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
 
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import {getSearchManager} from '../search_settings.js';

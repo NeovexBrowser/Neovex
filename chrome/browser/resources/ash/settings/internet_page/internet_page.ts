@@ -8,16 +8,16 @@
  * settings.
  */
 
-import 'neovex://resources/ash/common/cellular_setup/cellular_setup_icons.html.js';
-import 'neovex://resources/ash/common/network/sim_lock_dialogs.js';
-import 'neovex://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_tooltip_icon.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
+import 'chrome://resources/ash/common/cellular_setup/cellular_setup_icons.html.js';
+import 'chrome://resources/ash/common/network/sim_lock_dialogs.js';
+import 'chrome://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_tooltip_icon.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/paper-tooltip/paper-tooltip.js';
 import '../settings_shared.css.js';
 import '../os_settings_page/os_settings_animated_pages.js';
 import '../os_settings_page/os_settings_subpage.js';
@@ -33,29 +33,29 @@ import './network_summary.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {CellularSetupPageName} from 'neovex://resources/ash/common/cellular_setup/cellular_types.js';
-import {getNumESimProfiles} from 'neovex://resources/ash/common/cellular_setup/esim_manager_utils.js';
-import type {PasspointSubscription} from 'neovex://resources/ash/common/connectivity/passpoint.mojom-webui.js';
-import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import type {I18nMixinInterface} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {WebUiListenerMixinInterface} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import type {HotspotInfo} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {HotspotState} from 'neovex://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
-import {hasActiveCellularNetwork, isConnectedToNonCellularNetwork} from 'neovex://resources/ash/common/network/cellular_utils.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkListenerBehaviorInterface} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {NetworkListenerBehavior} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {CrosNetworkConfigInterface, GlobalPolicy, NetworkStateProperties, VpnProvider} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {StartConnectResult} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {afterNextRender, mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {CellularSetupPageName} from 'chrome://resources/ash/common/cellular_setup/cellular_types.js';
+import {getNumESimProfiles} from 'chrome://resources/ash/common/cellular_setup/esim_manager_utils.js';
+import type {PasspointSubscription} from 'chrome://resources/ash/common/connectivity/passpoint.mojom-webui.js';
+import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import type {I18nMixinInterface} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {WebUiListenerMixinInterface} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import type {HotspotInfo} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {HotspotState} from 'chrome://resources/ash/common/hotspot/cros_hotspot_config.mojom-webui.js';
+import {hasActiveCellularNetwork, isConnectedToNonCellularNetwork} from 'chrome://resources/ash/common/network/cellular_utils.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkListenerBehaviorInterface} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {NetworkListenerBehavior} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {CrosNetworkConfigInterface, GlobalPolicy, NetworkStateProperties, VpnProvider} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {StartConnectResult} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {afterNextRender, mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import type {DeepLinkingMixinInterface} from '../common/deep_linking_mixin.js';
@@ -545,7 +545,7 @@ export class SettingsInternetPageElement extends
       this.attemptDeepLink();
     } else if (newRoute === routes.INTERNET_NETWORKS) {
       // Handle direct navigation to the networks page,
-      // e.g. neovex://settings/internet/networks?type=WiFi
+      // e.g. chrome://settings/internet/networks?type=WiFi
       const queryParams = Router.getInstance().getQueryParameters();
       const type = queryParams.get('type');
       if (type) {
@@ -572,7 +572,7 @@ export class SettingsInternetPageElement extends
           this.subpageType_ === NetworkType.kCellular;
     } else if (newRoute === routes.KNOWN_NETWORKS) {
       // Handle direct navigation to the known networks page,
-      // e.g. neovex://settings/internet/knownNetworks?type=WiFi
+      // e.g. chrome://settings/internet/knownNetworks?type=WiFi
       const queryParams = Router.getInstance().getQueryParameters();
       const type = queryParams.get('type');
       if (type) {

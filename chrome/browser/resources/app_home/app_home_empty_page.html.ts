@@ -9,7 +9,7 @@ import type {AppHomeEmptyPageElement} from './app_home_empty_page.js';
 export function getHtml(this: AppHomeEmptyPageElement) {
   return html`<!--_html_template_start_-->
 <div class="container">
-  <img src="neovex://resources/images/apps_home_empty_238x170.svg">
+  <img src="chrome://resources/images/apps_home_empty_238x170.svg">
     <p>$i18n{appAppearanceLabel}</p>
     <a href="https://support.google.com/chrome?p=install_web_apps"
         target="_blank">

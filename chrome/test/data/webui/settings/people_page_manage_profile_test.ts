@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {ManageProfileBrowserProxy, SettingsManageProfileElement} from 'neovex://settings/lazy_load.js';
-import {ManageProfileBrowserProxyImpl, ProfileShortcutStatus} from 'neovex://settings/lazy_load.js';
-import type {CrToggleElement} from 'neovex://settings/settings.js';
-import {loadTimeData, Router, routes, StatusAction} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {ManageProfileBrowserProxy, SettingsManageProfileElement} from 'chrome://settings/lazy_load.js';
+import {ManageProfileBrowserProxyImpl, ProfileShortcutStatus} from 'chrome://settings/lazy_load.js';
+import type {CrToggleElement} from 'chrome://settings/settings.js';
+import {loadTimeData, Router, routes, StatusAction} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 // clang-format on
 

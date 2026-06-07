@@ -4,11 +4,11 @@
 
 /**
  * Javascript for bluetooth_internals.html, served from
- *     neovex://bluetooth-internals/.
+ *     chrome://bluetooth-internals/.
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 import type {AdapterInfo, DiscoverySessionRemote} from './adapter.mojom-webui.js';
 import {AdapterProperty, getAdapterBroker} from './adapter_broker.js';

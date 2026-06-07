@@ -7,19 +7,19 @@
  * for spell check settings.
  */
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
 // <if expr="_google_chrome or not is_macosx">
-import 'neovex://resources/cr_elements/cr_collapse/cr_collapse.js';
+import 'chrome://resources/cr_elements/cr_collapse/cr_collapse.js';
 // </if>
-import 'neovex://resources/cr_elements/cr_link_row/cr_link_row.js';
-import 'neovex://resources/cr_elements/cr_toggle/cr_toggle.js';
-import 'neovex://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/cr_elements/icons.html.js';
 import '/shared/settings/controls/cr_policy_pref_indicator.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/js/action_link.js';
-import 'neovex://resources/cr_elements/action_link.css.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/js/action_link.js';
+import 'chrome://resources/cr_elements/action_link.css.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
 import '../controls/controlled_radio_button.js';
 import '../controls/settings_radio_group.js';
 import '../controls/settings_toggle_button.js';
@@ -29,11 +29,11 @@ import '../settings_shared.css.js';
 import '../settings_vars.css.js';
 
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
-import type {DomRepeatEvent} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import type {DomRepeatEvent} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {BaseMixin} from '../base_mixin.js';
 import type {SettingsToggleButtonElement} from '../controls/settings_toggle_button.js';

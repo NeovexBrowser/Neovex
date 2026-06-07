@@ -6,8 +6,8 @@ import {EventTracker} from '//resources/js/event_tracker.js';
 import {loadTimeData} from '//resources/js/load_time_data.js';
 import {GlicRequestHeaderInjector} from '/shared/glic_request_headers.js';
 import type {WebViewType} from '/shared/web_view_type.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 import {FrePageHandlerFactory, FrePageHandlerRemote, FreWebUiState} from './glic_fre.mojom-webui.js';
 import {GlicFreWebviewLoadAbortReason} from './metrics_enums.js';

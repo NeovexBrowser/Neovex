@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {COLORS_CSS_SELECTOR, ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {COLORS_CSS_SELECTOR, ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
 // <if expr="is_chromeos">
-import {COLOR_PROVIDER_CHANGED} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {COLOR_PROVIDER_CHANGED} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
 // </if>
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 // clang-format on
 
 suite('ColorChangeListenerTest', () => {
@@ -17,7 +17,7 @@ suite('ColorChangeListenerTest', () => {
 
   setup(() => {
     document.body.innerHTML = getTrustedHTML`
-      <link rel="stylesheet" href="neovex://theme/colors.css?sets=ui"/>`;
+      <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui"/>`;
     updater = ColorChangeUpdater.forDocument();
   });
 
@@ -40,16 +40,16 @@ suite('ColorChangeListenerTest', () => {
   }
 
   test('CorrectlyUpdatesColorsStylesheetURL', async () => {
-    assertEquals(getSearchParam('neovex://theme/colors.css', 'version'), null);
+    assertEquals(getSearchParam('chrome://theme/colors.css', 'version'), null);
 
-    // refreshColorsCss() should append search params to the neovex://theme
+    // refreshColorsCss() should append search params to the chrome://theme
     // href.
     assertTrue(await updater.refreshColorsCss());
 
-    let version = getSearchParam('neovex://theme/colors.css', 'version');
+    let version = getSearchParam('chrome://theme/colors.css', 'version');
     assertNotEquals(version, null);
     const lastVersion = version;
-    assertEquals(getSearchParam('neovex://theme/colors.css', 'sets'), 'ui');
+    assertEquals(getSearchParam('chrome://theme/colors.css', 'sets'), 'ui');
 
     // Wait 1 millisecond before refresh. Otherwise the timestamp-based
     // version might not yet be updated.
@@ -58,22 +58,22 @@ suite('ColorChangeListenerTest', () => {
     // refreshColorsCss() should append search params to the colors CSS href.
     assertTrue(await updater.refreshColorsCss());
 
-    version = getSearchParam('neovex://theme/colors.css', 'version');
+    version = getSearchParam('chrome://theme/colors.css', 'version');
     assertTrue(!!version);
     assertNotEquals(version, lastVersion);
-    assertEquals(getSearchParam('neovex://theme/colors.css', 'sets'), 'ui');
+    assertEquals(getSearchParam('chrome://theme/colors.css', 'sets'), 'ui');
   });
 
   test('IgnoresNonTargetStylesheetURLs', async () => {
     document.body.innerHTML = getTrustedHTML`
-      <link rel="stylesheet" href="neovex://resources/colors.css"/>`;
+      <link rel="stylesheet" href="chrome://resources/colors.css"/>`;
     assertEquals(
-        getSearchParam('neovex://resources/colors.css', 'version'), null);
+        getSearchParam('chrome://resources/colors.css', 'version'), null);
 
     assertFalse(await updater.refreshColorsCss());
 
     assertEquals(
-        getSearchParam('neovex://resources/colors.css', 'version'), null);
+        getSearchParam('chrome://resources/colors.css', 'version'), null);
   });
 
   test('HandlesRelativeURLs', async () => {
@@ -93,7 +93,7 @@ suite('ColorChangeListenerTest', () => {
     // Handles the case where the link element exists but the attribute is
     // malformed.
     document.body.innerHTML =
-        getTrustedHTML`<link rel="stylesheet" bad_href="neovex://theme/colors.css?sets=ui"/>`;
+        getTrustedHTML`<link rel="stylesheet" bad_href="chrome://theme/colors.css?sets=ui"/>`;
     assertFalse(await updater.refreshColorsCss());
 
     // Handles the case where the link element does not exist.

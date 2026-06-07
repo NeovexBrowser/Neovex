@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsGoogleDriveSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import {ConfirmationDialogType} from 'neovex://os-settings/lazy_load.js';
-import type {CrButtonElement, GoogleDrivePageRemote, PaperTooltipElement, SettingsPrefsElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
-import {CrSettingsPrefs, GoogleDriveBrowserProxy, GoogleDrivePageCallbackRouter, GoogleDrivePageHandlerRemote, Stage} from 'neovex://os-settings/os_settings.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {SettingsGoogleDriveSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import {ConfirmationDialogType} from 'chrome://os-settings/lazy_load.js';
+import type {CrButtonElement, GoogleDrivePageRemote, PaperTooltipElement, SettingsPrefsElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
+import {CrSettingsPrefs, GoogleDriveBrowserProxy, GoogleDrivePageCallbackRouter, GoogleDrivePageHandlerRemote, Stage} from 'chrome://os-settings/os_settings.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 import {assertAsync, querySelectorShadow} from '../utils.js';
 

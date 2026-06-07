@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BrowserProxy} from 'neovex://bookmarks/bookmarks.js';
-import {IncognitoAvailability} from 'neovex://bookmarks/bookmarks.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {BrowserProxy} from 'chrome://bookmarks/bookmarks.js';
+import {IncognitoAvailability} from 'chrome://bookmarks/bookmarks.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * Test version of the bookmarks browser proxy.

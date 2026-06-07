@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://print/print_preview.js';
+import 'chrome://print/print_preview.js';
 
-import type {PrintPreviewHeaderElement, PrintPreviewModelElement} from 'neovex://print/print_preview.js';
-import {Destination, DestinationOrigin, GooglePromotedDestinationId, PrintPreviewPluralStringProxyImpl, State} from 'neovex://print/print_preview.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {PrintPreviewHeaderElement, PrintPreviewModelElement} from 'chrome://print/print_preview.js';
+import {Destination, DestinationOrigin, GooglePromotedDestinationId, PrintPreviewPluralStringProxyImpl, State} from 'chrome://print/print_preview.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('HeaderTest', function() {
   let header: PrintPreviewHeaderElement;
@@ -81,7 +81,7 @@ suite('HeaderTest', function() {
     await assertGetPluralStringCall(1, 'printPreviewPageSummaryLabel');
     assertEquals(pluralStringProxy.text, summary.textContent.trim());
 
-    // Verify the neovex://print case of a zero length document does not show
+    // Verify the chrome://print case of a zero length document does not show
     // the summary.
     model.setSetting('pages', []);
     await microtasksFinished();

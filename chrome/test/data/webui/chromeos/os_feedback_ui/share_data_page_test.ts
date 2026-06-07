@@ -2,30 +2,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-feedback/file_attachment.js';
-import 'neovex://os-feedback/share_data_page.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://os-feedback/file_attachment.js';
+import 'chrome://os-feedback/share_data_page.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {fakeEmptyFeedbackContext, fakeFeedbackContext, fakeFeedbackContextWithExtraDiagnostics, fakeInternalUserFeedbackContext, fakeLoginFlowFeedbackContext} from 'neovex://os-feedback/fake_data.js';
-import {FakeFeedbackServiceProvider} from 'neovex://os-feedback/fake_feedback_service_provider.js';
-import type {FeedbackFlowButtonClickEvent} from 'neovex://os-feedback/feedback_flow.js';
-import {FeedbackFlowState} from 'neovex://os-feedback/feedback_flow.js';
-import {FileAttachmentElement} from 'neovex://os-feedback/file_attachment.js';
-import {setFeedbackServiceProviderForTesting} from 'neovex://os-feedback/mojo_interface_provider.js';
-import {FeedbackAppPreSubmitAction} from 'neovex://os-feedback/os_feedback_ui.mojom-webui.js';
-import type {ShareDataPageElement} from 'neovex://os-feedback/share_data_page.js';
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrCheckboxElement} from 'neovex://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
-import type {BigBuffer} from 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertArrayEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {fakeEmptyFeedbackContext, fakeFeedbackContext, fakeFeedbackContextWithExtraDiagnostics, fakeInternalUserFeedbackContext, fakeLoginFlowFeedbackContext} from 'chrome://os-feedback/fake_data.js';
+import {FakeFeedbackServiceProvider} from 'chrome://os-feedback/fake_feedback_service_provider.js';
+import type {FeedbackFlowButtonClickEvent} from 'chrome://os-feedback/feedback_flow.js';
+import {FeedbackFlowState} from 'chrome://os-feedback/feedback_flow.js';
+import {FileAttachmentElement} from 'chrome://os-feedback/file_attachment.js';
+import {setFeedbackServiceProviderForTesting} from 'chrome://os-feedback/mojo_interface_provider.js';
+import {FeedbackAppPreSubmitAction} from 'chrome://os-feedback/os_feedback_ui.mojom-webui.js';
+import type {ShareDataPageElement} from 'chrome://os-feedback/share_data_page.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrCheckboxElement} from 'chrome://resources/ash/common/cr_elements/cr_checkbox/cr_checkbox.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
+import type {BigBuffer} from 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertArrayEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
-const fakeImageUrl = 'neovex://os_feedback/app_icon_48.png';
+const fakeImageUrl = 'chrome://os_feedback/app_icon_48.png';
 
 suite('shareDataPageTestSuite', () => {
   let page: ShareDataPageElement;
@@ -282,7 +282,7 @@ suite('shareDataPageTestSuite', () => {
     await initializePage();
     page.feedbackContext = fakeFeedbackContext;
 
-    assertEquals('neovex://tab/', getElementContent('#pageUrlText'));
+    assertEquals('chrome://tab/', getElementContent('#pageUrlText'));
   });
 
   // Test that the pageUrl section is hidden when the url is empty string.
@@ -297,7 +297,7 @@ suite('shareDataPageTestSuite', () => {
     assertFalse(isVisible(pageUrl));
 
     // Change it back otherwise it will effect other tests.
-    fakeFeedbackContext.pageUrl = 'neovex://tab/';
+    fakeFeedbackContext.pageUrl = 'chrome://tab/';
   });
 
   // Test that the performanceTraceContainer section is hidden when the trace id
@@ -332,7 +332,7 @@ suite('shareDataPageTestSuite', () => {
     assertEquals('_blank', link.getAttribute('target'));
     // Performance trace id is the last number in the URL, which is 1.
     assertEquals(
-        'neovex://slow_trace/tracing.zip#1', link.getAttribute('href'));
+        'chrome://slow_trace/tracing.zip#1', link.getAttribute('href'));
   });
 
   /**
@@ -350,7 +350,7 @@ suite('shareDataPageTestSuite', () => {
 
     const report = (await clickSendAndWait(page)).detail.report;
 
-    assertEquals('neovex://tab/', report!.feedbackContext.pageUrl!);
+    assertEquals('chrome://tab/', report!.feedbackContext.pageUrl!);
     assertFalse(report!.includeSystemLogsAndHistograms);
   });
 
@@ -626,7 +626,7 @@ suite('shareDataPageTestSuite', () => {
   test('screenshotAvailable', async () => {
     await initializePage();
 
-    const imgUrl = 'neovex://os-feedback/image.png';
+    const imgUrl = 'chrome://os-feedback/image.png';
     page.screenshotUrl = imgUrl;
 
     const screenshotCheckbox =

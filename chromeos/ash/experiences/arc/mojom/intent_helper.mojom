@@ -103,7 +103,7 @@ struct UrlWithMimeType {
   string mime_type;
 };
 
-// Describes a specific page in neovex://, about:blank, about:downloads and about:history.
+// Describes a specific page in chrome://, about:blank, about:downloads and about:history.
 // This enum should have only the chrome pages used by ARC.
 // Numerical values should be used for each constant and should not be reused.
 [Extensible]

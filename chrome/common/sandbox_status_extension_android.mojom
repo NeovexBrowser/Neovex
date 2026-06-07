@@ -6,7 +6,7 @@ module chrome.mojom;
 
 // Messages sent from browser to the renderer
 interface SandboxStatusExtension {
-  // Sent when navigating to neovex://sandbox on Android to add
+  // Sent when navigating to chrome://sandbox on Android to add
   // a JavaScript function querying the current sandbox status.
   AddSandboxStatusExtension();
 };

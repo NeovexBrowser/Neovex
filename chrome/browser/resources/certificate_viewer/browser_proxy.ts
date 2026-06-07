@@ -7,7 +7,7 @@
  * easier.
  */
 
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 export interface CertMetadataChangeResult {
   // TODO(crbug.com/40928765): consider adding enum of possible errors instead

@@ -1,7 +1,7 @@
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import {assertEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {installMockChrome} from '../common/js/mock_chrome.js';
 import {waitUntil} from '../common/js/test_error_reporting.js';

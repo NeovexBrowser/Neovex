@@ -3,26 +3,26 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {loadTimeData} from 'neovex://settings/settings.js';
-import type {SettingsPeoplePageElement} from 'neovex://settings/settings.js';
-import {ProfileInfoBrowserProxyImpl, resetRouterForTesting, Router, routes, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'chrome://settings/settings.js';
+import type {SettingsPeoplePageElement} from 'chrome://settings/settings.js';
+import {ProfileInfoBrowserProxyImpl, resetRouterForTesting, Router, routes, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
 
 import {simulateSyncStatus} from './sync_test_util.js';
 import {TestProfileInfoBrowserProxy} from './test_profile_info_browser_proxy.js';
 import {TestSyncBrowserProxy} from './test_sync_browser_proxy.js';
 
 // <if expr="not is_chromeos">
-import {listenOnce} from 'neovex://resources/js/util.js';
-import type {CrCheckboxElement} from 'neovex://settings/lazy_load.js';
-import {assertLT} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import type {StoredAccount} from 'neovex://settings/settings.js';
+import {listenOnce} from 'chrome://resources/js/util.js';
+import type {CrCheckboxElement} from 'chrome://settings/lazy_load.js';
+import {assertLT} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import type {StoredAccount} from 'chrome://settings/settings.js';
 
 import {simulateStoredAccounts} from './sync_test_util.js';
 // </if>
@@ -244,7 +244,7 @@ suite('SyncStatusTests', function() {
   });
 
   test('SignOutNavigationNormalProfile', async function() {
-    // Navigate to neovex://settings/signOut
+    // Navigate to chrome://settings/signOut
     Router.getInstance().navigateTo(routes.SIGN_OUT);
 
     await flushTasks();
@@ -315,7 +315,7 @@ suite('SyncStatusTests', function() {
   });
 
   test('getProfileStatsCount', async function() {
-    // Navigate to neovex://settings/signOut
+    // Navigate to chrome://settings/signOut
     Router.getInstance().navigateTo(routes.SIGN_OUT);
 
     await flushTasks();
@@ -353,7 +353,7 @@ suite('SyncStatusTests', function() {
   });
 
   test('NavigateDirectlyToSignOutURL', async function() {
-    // Navigate to neovex://settings/signOut
+    // Navigate to chrome://settings/signOut
     Router.getInstance().navigateTo(routes.SIGN_OUT);
 
     await flushTasks();
@@ -363,7 +363,7 @@ suite('SyncStatusTests', function() {
     await profileInfoBrowserProxy.whenCalled('getProfileStatsCount');
     // 'getProfileStatsCount' can be the first message sent to the
     // handler if the user navigates directly to
-    // neovex://settings/signOut. if so, it should not cause a crash.
+    // chrome://settings/signOut. if so, it should not cause a crash.
     new ProfileInfoBrowserProxyImpl().getProfileStatsCount();
 
     // Close the disconnect dialog.

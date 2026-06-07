@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 // </if>
 
 import '/strings.m.js';
 
-import {addWebUiListener} from 'neovex://resources/js/cr.js';
-import {$, getRequiredElement} from 'neovex://resources/js/util.js';
+import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {$, getRequiredElement} from 'chrome://resources/js/util.js';
 
 let isRecording: boolean = false;
 let keyPressState = 0;

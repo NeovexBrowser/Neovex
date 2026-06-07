@@ -5,14 +5,14 @@ import './app_management_shared_style.css.js';
 import './toggle_row.js';
 
 import {assert, assertNotReached} from '//resources/js/assert.js';
-import type {App, Permission} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {InstallReason, PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {BrowserProxy} from 'neovex://resources/cr_components/app_management/browser_proxy.js';
-import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
-import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
-import {createBoolPermission, createTriStatePermission, getBoolPermissionValue, getTriStatePermissionValue, isBoolValue, isTriStateValue} from 'neovex://resources/cr_components/app_management/permission_util.js';
-import {getPermission, getPermissionValueBool, recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
-import {CrLitElement, type PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {App, Permission} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {InstallReason, PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {BrowserProxy} from 'chrome://resources/cr_components/app_management/browser_proxy.js';
+import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
+import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
+import {createBoolPermission, createTriStatePermission, getBoolPermissionValue, getTriStatePermissionValue, isBoolValue, isTriStateValue} from 'chrome://resources/cr_components/app_management/permission_util.js';
+import {getPermission, getPermissionValueBool, recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
+import {CrLitElement, type PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './permission_item.css.js';
 import {getHtml} from './permission_item.html.js';

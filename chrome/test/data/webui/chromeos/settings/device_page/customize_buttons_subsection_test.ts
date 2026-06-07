@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
-import 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import 'chrome://os-settings/lazy_load.js';
+import 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
 
-import type {KeyCombinationInputDialogElement} from 'neovex://os-settings/lazy_load.js';
-import {CustomizeButtonsSubsectionElement} from 'neovex://os-settings/lazy_load.js';
-import {fakeGraphicsTabletButtonActions, fakeGraphicsTablets} from 'neovex://os-settings/os_settings.js';
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {KeyCombinationInputDialogElement} from 'chrome://os-settings/lazy_load.js';
+import {CustomizeButtonsSubsectionElement} from 'chrome://os-settings/lazy_load.js';
+import {fakeGraphicsTabletButtonActions, fakeGraphicsTablets} from 'chrome://os-settings/os_settings.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('<customize-buttons-subsection>', () => {
   let customizeButtonsSubsection: CustomizeButtonsSubsectionElement;

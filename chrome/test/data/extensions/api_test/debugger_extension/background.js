@@ -25,7 +25,7 @@ chrome.test.runTests([
       return;
     }
     const {openTab} = await import('/_test_resources/test_util/tabs_util.js');
-    const tab = await openTab('neovex://version');
+    const tab = await openTab('chrome://version');
     const debuggee = {tabId: tab.id};
     chrome.debugger.attach(debuggee, protocolVersion,
                            fail('Cannot attach to this target.'));

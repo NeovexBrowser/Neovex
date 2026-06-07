@@ -27,7 +27,7 @@ def main(argv):
 
   try:
     wait = WebDriverWait(driver, 10)
-    policy_url = 'neovex://policy'
+    policy_url = 'chrome://policy'
     driver.get(policy_url)
 
     wait.until(
@@ -44,7 +44,7 @@ def main(argv):
 
     el = getElementFromShadowRoot(driver, status_box, '.status-box-fields')
 
-    # Verify policy status legend in neovex://policy page
+    # Verify policy status legend in chrome://policy page
     print(el.find_element(By.CLASS_NAME, 'status-box-heading').text)
     print(el.find_element(By.CLASS_NAME, 'machine-enrollment-name').text)
     print(el.find_element(By.CLASS_NAME, 'machine-enrollment-token').text)

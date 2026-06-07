@@ -7,13 +7,13 @@
  * viewing mode of the currently selected wallpaper.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
 import '../../common/icons.html.js';
 
-import {FullscreenPreviewState} from 'neovex://resources/ash/common/personalization/wallpaper_state.js';
-import {isNonEmptyFilePath} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {FullscreenPreviewState} from 'chrome://resources/ash/common/personalization/wallpaper_state.js';
+import {isNonEmptyFilePath} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {CurrentWallpaper} from '../../personalization_app.mojom-webui.js';
 import {WallpaperLayout} from '../../personalization_app.mojom-webui.js';

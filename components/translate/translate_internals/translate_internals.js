@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 // <if expr="is_ios">
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 // </if>
 
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 
-import {addWebUiListener} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {$} from 'neovex://resources/js/util.js';
+import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {$} from 'chrome://resources/js/util.js';
 
 const detectionLogs = [];
 

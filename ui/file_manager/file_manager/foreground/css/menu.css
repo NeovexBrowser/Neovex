@@ -102,7 +102,7 @@ cr-menu.files-menu:not(.has-icon-start) cr-menu-item .icon.start {
 }
 
 cr-menu.files-menu cr-menu-item .icon.managed {
-  background-image: url(neovex://resources/images/business.svg);
+  background-image: url(chrome://resources/images/business.svg);
   margin-inline-start: 16px;
 }
 

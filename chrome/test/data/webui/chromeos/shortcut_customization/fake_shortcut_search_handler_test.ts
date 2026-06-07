@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {fakeSearchResults} from 'neovex://shortcut-customization/js/fake_data.js';
-import {FakeShortcutSearchHandler} from 'neovex://shortcut-customization/js/search/fake_shortcut_search_handler.js';
-import type {MojoSearchResult} from 'neovex://shortcut-customization/js/shortcut_types.js';
-import {assertDeepEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {fakeSearchResults} from 'chrome://shortcut-customization/js/fake_data.js';
+import {FakeShortcutSearchHandler} from 'chrome://shortcut-customization/js/search/fake_shortcut_search_handler.js';
+import type {MojoSearchResult} from 'chrome://shortcut-customization/js/shortcut_types.js';
+import {assertDeepEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('fakeShortcutSearchHandlerTest', function() {
   let handler: FakeShortcutSearchHandler|null = null;

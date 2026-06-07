@@ -4,8 +4,8 @@
 
 import {HIGHLIGHTER_COLORS, PEN_COLORS} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
 import type {Color, InkColorSelectorElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertLabels, assertSelectedColor, getColorButtons} from './test_util.js';
 

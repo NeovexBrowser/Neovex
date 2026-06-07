@@ -3,15 +3,15 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview A set of utilities to help test the neovex://personalization
+ * @fileoverview A set of utilities to help test the chrome://personalization
  * SWA.
  */
 
-import type {PersonalizationState} from 'neovex://personalization/js/personalization_app.js';
-import {emptyState, getSeaPenStore, SeaPenStoreAdapter, setAmbientProviderForTesting, setKeyboardBacklightProviderForTesting, setSeaPenProviderForTesting, setThemeProviderForTesting, setUserProviderForTesting, setWallpaperProviderForTesting} from 'neovex://personalization/js/personalization_app.js';
-import type {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {PersonalizationState} from 'chrome://personalization/js/personalization_app.js';
+import {emptyState, getSeaPenStore, SeaPenStoreAdapter, setAmbientProviderForTesting, setKeyboardBacklightProviderForTesting, setSeaPenProviderForTesting, setThemeProviderForTesting, setUserProviderForTesting, setWallpaperProviderForTesting} from 'chrome://personalization/js/personalization_app.js';
+import type {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestAmbientProvider} from './test_ambient_interface_provider.js';
 import {TestKeyboardBacklightProvider} from './test_keyboard_backlight_interface_provider.js';

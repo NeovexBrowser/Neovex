@@ -15,9 +15,9 @@
  * command if there might be other command listeners higher up in the DOM tree.
  */
 
-import {dispatchPropertyChange} from 'neovex://resources/ash/common/cr_deprecated.js';
-import {KeyboardShortcutList} from 'neovex://resources/ash/common/keyboard_shortcut_list_js.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {dispatchPropertyChange} from 'chrome://resources/ash/common/cr_deprecated.js';
+import {KeyboardShortcutList} from 'chrome://resources/ash/common/keyboard_shortcut_list_js.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {boolAttrSetter, convertToKebabCase, domAttrSetter} from '../../../common/js/cr_ui.js';
 

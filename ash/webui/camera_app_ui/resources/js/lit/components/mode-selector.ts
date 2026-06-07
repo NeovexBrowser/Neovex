@@ -9,7 +9,7 @@ import {
   LitElement,
   PropertyDeclarations,
   repeat,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {
   assertExists,

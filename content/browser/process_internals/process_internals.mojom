@@ -96,7 +96,7 @@ struct IsolatedOriginInfo {
   string source;
 };
 
-// Interface used by neovex://process-internals to query data from the
+// Interface used by chrome://process-internals to query data from the
 // browser process.
 interface ProcessInternalsHandler {
 

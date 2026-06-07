@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import {html} from '//resources/lit/v3_0/lit.rollup.js';
-import {nothing} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {nothing} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {HoverButtonElement} from './hover_button.js';
 

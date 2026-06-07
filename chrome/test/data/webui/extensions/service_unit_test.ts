@@ -8,8 +8,8 @@
  * extension APIs (and not mocking them out via a TestService).
  */
 
-import {Service} from 'neovex://extensions/extensions.js';
-import type {ServiceInterface} from 'neovex://extensions/extensions.js';
+import {Service} from 'chrome://extensions/extensions.js';
+import type {ServiceInterface} from 'chrome://extensions/extensions.js';
 
 suite('ExtensionServiceUnitTest', function() {
   let service: ServiceInterface;

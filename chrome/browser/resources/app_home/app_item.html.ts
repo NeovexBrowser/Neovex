@@ -17,7 +17,7 @@ export function getHtml(this: AppItemElement) {
         aria-hidden="true"
         draggable="false">
     <img id="deprecatedIcon"
-        src="neovex://resources/images/error_yellow900.svg"
+        src="chrome://resources/images/error_yellow900.svg"
         ?hidden="${this.appInfo.appType !== AppType.kDeprecatedChromeApp}">
   </div>
   <div id="textContainer"

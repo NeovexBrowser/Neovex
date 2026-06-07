@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://access-code-cast/access_code_cast_app.js';
+import 'chrome://access-code-cast/access_code_cast_app.js';
 
-import {AddSinkResultCode, CastDiscoveryMethod} from 'neovex://access-code-cast/access_code_cast.mojom-webui.js';
-import type {AccessCodeCastAppElement} from 'neovex://access-code-cast/access_code_cast_app.js';
-import {BrowserProxy} from 'neovex://access-code-cast/browser_proxy.js';
-import {RouteRequestResultCode} from 'neovex://access-code-cast/route_request_result_code.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {AddSinkResultCode, CastDiscoveryMethod} from 'chrome://access-code-cast/access_code_cast.mojom-webui.js';
+import type {AccessCodeCastAppElement} from 'chrome://access-code-cast/access_code_cast_app.js';
+import {BrowserProxy} from 'chrome://access-code-cast/browser_proxy.js';
+import {RouteRequestResultCode} from 'chrome://access-code-cast/route_request_result_code.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createTestProxy} from './test_access_code_cast_browser_proxy.js';
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AddPrintServerDialogElement, CupsPrinterInfo, PrinterDialogErrorElement, PrinterListEntry, SettingsCupsAddPrinterDialogElement, SettingsCupsPrintersElement} from 'neovex://os-settings/lazy_load.js';
-import {CupsPrintersBrowserProxyImpl, CupsPrintersEntryManager, PrinterType, PrintServerResult} from 'neovex://os-settings/lazy_load.js';
-import type {CrInputElement, CrToastElement} from 'neovex://os-settings/os_settings.js';
-import {Router, routes} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/ash/common/cr.m.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {AddPrintServerDialogElement, CupsPrinterInfo, PrinterDialogErrorElement, PrinterListEntry, SettingsCupsAddPrinterDialogElement, SettingsCupsPrintersElement} from 'chrome://os-settings/lazy_load.js';
+import {CupsPrintersBrowserProxyImpl, CupsPrintersEntryManager, PrinterType, PrintServerResult} from 'chrome://os-settings/lazy_load.js';
+import type {CrInputElement, CrToastElement} from 'chrome://os-settings/os_settings.js';
+import {Router, routes} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/ash/common/cr.m.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {createCupsPrinterInfo, createPrinterListEntry} from './cups_printer_test_utils.js';
 import {TestCupsPrintersBrowserProxy} from './test_cups_printers_browser_proxy.js';

@@ -30,7 +30,7 @@ interface PageHandlerFactory {
   CreateDialogHandler(pending_receiver<DialogHandler> handler);
 };
 
-// Called from TS side of neovex://skills (Renderer -> Browser)
+// Called from TS side of chrome://skills (Renderer -> Browser)
 interface PageHandler {
   // Called when the user wants to either add or edit a skill.
   // `dialog_type` determines whether to open the add or edit dialog.
@@ -52,7 +52,7 @@ interface PageHandler {
   // `skill_map` is keyed by category name.
   GetInitial1PSkills() => (map<string, array<skills.mojom.Skill>> skill_map);
 
-  // Called whenever the user navigates to neovex://skills/browse-skills.
+  // Called whenever the user navigates to chrome://skills/browse-skills.
   // Requests a new download of 1P skills from the skills service.
   Request1PSkills();
 
@@ -69,7 +69,7 @@ interface PageHandler {
                                skills.mojom.SkillsManagementAction action);
 };
 
-// Called from C++ side of neovex://skills (Browser -> Renderer)
+// Called from C++ side of chrome://skills (Browser -> Renderer)
 interface SkillsPage {
   // Notifies the UI that a skill has been updated or added.
   // This may be extended to support multiple skill updates in the future.
@@ -84,7 +84,7 @@ interface SkillsPage {
   Update1PMap(map<string, array<Skill>> skill_map);
 };
 
-// Called from TS side of neovex://skills/dialog (Renderer -> Browser)
+// Called from TS side of chrome://skills/dialog (Renderer -> Browser)
 // Handler for the add/edit skill dialog.
 interface DialogHandler {
   // Called when the user clicks the "Save" button in the dialog.

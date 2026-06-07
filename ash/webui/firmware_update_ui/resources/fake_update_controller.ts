@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FakeObservables} from 'neovex://resources/ash/common/fake_observables.js';
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import {FakeObservables} from 'chrome://resources/ash/common/fake_observables.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
 
 import {fakeDeviceRequest, fakeFirmwareUpdates, fakeInstallationProgress, fakeInstallationProgressFailure, fakeInstallationProgressWithRequest, fakeInstallationProgressWithRequestAndFailure} from './fake_data.js';
 import type {DeviceRequest, DeviceRequestObserverRemote, FirmwareUpdate, InstallationProgress, UpdateProgressObserverRemote, UpdateProviderInterface} from './firmware_update.mojom-webui.js';

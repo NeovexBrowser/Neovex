@@ -20,7 +20,7 @@ build_webui_tests("build") {
     "toolbar_test.ts",
   ]
 
-  ts_path_mappings = [ "neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js|" + rebase_path(
+  ts_path_mappings = [ "chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/privacy_sandbox/internals/related_website_sets/tsc/related_website_sets.d.ts",
                            target_gen_dir) ]
 

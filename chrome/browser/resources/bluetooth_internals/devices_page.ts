@@ -4,11 +4,11 @@
 
 /**
  * Javascript for DevicesPage and DevicesView, served from
- *     neovex://bluetooth-internals/.
+ *     chrome://bluetooth-internals/.
  */
 import './device_table.js';
 
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
 
 import type {DeviceInfo} from './device.mojom-webui.js';
 import type {DeviceCollection} from './device_collection.js';

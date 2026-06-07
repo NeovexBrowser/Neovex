@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/touchscreen_tester.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/touchscreen_tester.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {TouchscreenTesterElement} from 'neovex://diagnostics/touchscreen_tester.js';
-import {DialogType, SCREEN_MAX_LENGTH, TouchEventType} from 'neovex://diagnostics/touchscreen_tester.js';
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {CrDialogElement} from 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/mock_controller.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {TouchscreenTesterElement} from 'chrome://diagnostics/touchscreen_tester.js';
+import {DialogType, SCREEN_MAX_LENGTH, TouchEventType} from 'chrome://diagnostics/touchscreen_tester.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {CrDialogElement} from 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/mock_controller.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('touchscreenTesterTestSuite', function() {
   let touchscreenTesterElement: TouchscreenTesterElement|null = null;

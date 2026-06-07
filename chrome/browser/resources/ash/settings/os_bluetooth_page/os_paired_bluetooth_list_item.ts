@@ -9,21 +9,21 @@
  */
 
 import '../settings_shared.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/ash/common/bluetooth/bluetooth_icon.js';
-import 'neovex://resources/ash/common/bluetooth/bluetooth_device_battery_info.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/bluetooth/bluetooth_icon.js';
+import 'chrome://resources/ash/common/bluetooth/bluetooth_device_battery_info.js';
 
-import {BatteryType} from 'neovex://resources/ash/common/bluetooth/bluetooth_types.js';
-import {getBatteryPercentage, getDeviceNameUnsafe, hasAnyDetailedBatteryInfo} from 'neovex://resources/ash/common/bluetooth/bluetooth_utils.js';
-import {FocusRowMixin} from 'neovex://resources/ash/common/cr_elements/focus_row_mixin.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {PairedBluetoothDeviceProperties} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {DeviceConnectionState, DeviceType} from 'neovex://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {BatteryType} from 'chrome://resources/ash/common/bluetooth/bluetooth_types.js';
+import {getBatteryPercentage, getDeviceNameUnsafe, hasAnyDetailedBatteryInfo} from 'chrome://resources/ash/common/bluetooth/bluetooth_utils.js';
+import {FocusRowMixin} from 'chrome://resources/ash/common/cr_elements/focus_row_mixin.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {PairedBluetoothDeviceProperties} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {DeviceConnectionState, DeviceType} from 'chrome://resources/mojo/chromeos/ash/services/bluetooth_config/public/mojom/cros_bluetooth_config.mojom-webui.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {Router, routes} from '../router.js';
 

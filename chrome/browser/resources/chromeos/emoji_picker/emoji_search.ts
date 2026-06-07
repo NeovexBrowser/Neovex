@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
 import './emoji_category_button.js';
 import './emoji_group.js';
 
-import type {CrSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import type {PolymerSpliceChange} from 'neovex://resources/polymer/v3_0/polymer/interfaces.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import type {PolymerSpliceChange} from 'chrome://resources/polymer/v3_0/polymer/interfaces.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {NO_INTERNET_SEARCH_ERROR_MSG} from './constants.js';
 import {EmojiPickerApiProxy} from './emoji_picker_api_proxy.js';

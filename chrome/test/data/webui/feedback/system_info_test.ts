@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://feedback/system_info_app.js';
-import 'neovex://feedback/strings.m.js';
+import 'chrome://feedback/system_info_app.js';
+import 'chrome://feedback/strings.m.js';
 
-import {FeedbackBrowserProxyImpl} from 'neovex://feedback/js/feedback_browser_proxy.js';
-import type {SystemInfoAppElement} from 'neovex://feedback/system_info_app.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {FeedbackBrowserProxyImpl} from 'chrome://feedback/js/feedback_browser_proxy.js';
+import type {SystemInfoAppElement} from 'chrome://feedback/system_info_app.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {TestFeedbackBrowserProxy} from './test_feedback_browser_proxy.js';
 

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/switch/switch.js';
-import 'neovex://resources/mwc/@material/web/progress/circular-progress.js';
+import 'chrome://resources/cros_components/switch/switch.js';
+import 'chrome://resources/mwc/@material/web/progress/circular-progress.js';
 import './cra/cra-button.js';
 import './cra/cra-dialog.js';
 import './cra/cra-icon.js';
@@ -16,7 +16,7 @@ import './transcription-consent-dialog.js';
 
 import {
   Switch as CrosSwitch,
-} from 'neovex://resources/cros_components/switch/switch.js';
+} from 'chrome://resources/cros_components/switch/switch.js';
 import {
   createRef,
   css,
@@ -24,7 +24,7 @@ import {
   live,
   nothing,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

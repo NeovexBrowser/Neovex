@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 chrome.test.runTests([
   async function testPrintingEnabled() {

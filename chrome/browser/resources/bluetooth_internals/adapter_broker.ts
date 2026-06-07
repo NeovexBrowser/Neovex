@@ -12,7 +12,7 @@ const SCAN_CLIENT_NAME = 'Bluetooth Internals Page';
 
 /**
  * Javascript for AdapterBroker, served from
- *     neovex://bluetooth-internals/.
+ *     chrome://bluetooth-internals/.
  */
 
 /**

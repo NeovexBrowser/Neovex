@@ -4,12 +4,12 @@
 
 /** @fileoverview Suite of tests for extension-keyboard-shortcuts. */
 
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {ExtensionsKeyboardShortcutsElement} from 'neovex://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn, keyUpOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsKeyboardShortcutsElement} from 'chrome://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn, keyUpOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 import {createExtensionInfo} from './test_util.js';

@@ -6,7 +6,7 @@ import {
   html,
   nothing,
   PropertyDeclarations,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {ReactiveLitElement} from '../core/reactive/lit.js';
 import {Duration, formatDuration} from '../core/utils/datetime.js';

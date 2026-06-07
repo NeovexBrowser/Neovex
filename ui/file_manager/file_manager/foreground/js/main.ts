@@ -11,7 +11,7 @@ import '../../common/js/error_counter.js';
 import './metrics_start.js';
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
 
 import {GlitchType, reportGlitch} from '../../common/js/glitch.js';
 import {testSendMessage} from '../../common/js/util.js';

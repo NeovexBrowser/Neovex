@@ -7,15 +7,15 @@
  * Suite of tests for the overall OS Settings UI.
  */
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import {AccountManagerBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {CrDrawerElement, MainPageContainerElement, OsSettingsMainElement, OsSettingsUiElement} from 'neovex://os-settings/os_settings.js';
-import {CrSettingsPrefs} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {AccountManagerBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {CrDrawerElement, MainPageContainerElement, OsSettingsMainElement, OsSettingsUiElement} from 'chrome://os-settings/os_settings.js';
+import {CrSettingsPrefs} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {TestAccountManagerBrowserProxy} from '../os_people_page/test_account_manager_browser_proxy.js';
 import {clearBody} from '../utils.js';

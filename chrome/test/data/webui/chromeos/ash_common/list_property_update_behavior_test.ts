@@ -4,9 +4,9 @@
 
 /** @fileoverview Suite of tests for the ListPropertyUpdateBehavior.  */
 
-import {ListPropertyUpdateBehavior} from 'neovex://resources/ash/common/list_property_update_behavior.js';
-import {mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {ListPropertyUpdateBehavior} from 'chrome://resources/ash/common/list_property_update_behavior.js';
+import {mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 interface SimpleArrayEntry {
   id: number;

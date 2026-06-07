@@ -3,18 +3,18 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/cr_elements/cr_input/cr_input.js';
 
-import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
+import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
 // <if expr="not is_android">
-import {html, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 // </if>
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 // <if expr="not is_android">
-import {assertDeepEquals} from 'neovex://webui-test/chai_assert.js';
+import {assertDeepEquals} from 'chrome://webui-test/chai_assert.js';
 // </if>
-import {eventToPromise, isChildVisible} from 'neovex://webui-test/test_util.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+import {eventToPromise, isChildVisible} from 'chrome://webui-test/test_util.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
 // clang-format on
 
 suite('cr-input', function() {

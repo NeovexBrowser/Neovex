@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
-import 'neovex://parent-access/parent_access_after.js';
-import 'neovex://parent-access/strings.m.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://parent-access/parent_access_after.js';
+import 'chrome://parent-access/strings.m.js';
 
-import {ParentAccessResult} from 'neovex://parent-access/parent_access_ui.mojom-webui.js';
-import {resetParentAccessHandlerForTest, setParentAccessUiHandlerForTest} from 'neovex://parent-access/parent_access_ui_handler.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {ParentAccessResult} from 'chrome://parent-access/parent_access_ui.mojom-webui.js';
+import {resetParentAccessHandlerForTest, setParentAccessUiHandlerForTest} from 'chrome://parent-access/parent_access_ui_handler.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {buildWebApprovalsParams, clearDocumentBody} from './parent_access_test_utils.js';
 import {TestParentAccessUiHandler} from './test_parent_access_ui_handler.js';

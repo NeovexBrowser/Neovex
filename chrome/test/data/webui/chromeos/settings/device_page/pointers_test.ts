@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsPointersElement} from 'neovex://os-settings/lazy_load.js';
-import type {CrToggleElement, LocalizedLinkElement, Route, SettingsSliderElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
-import {DevicePageBrowserProxyImpl, Router, routes, settingMojom} from 'neovex://os-settings/os_settings.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsPointersElement} from 'chrome://os-settings/lazy_load.js';
+import type {CrToggleElement, LocalizedLinkElement, Route, SettingsSliderElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
+import {DevicePageBrowserProxyImpl, Router, routes, settingMojom} from 'chrome://os-settings/os_settings.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {clearBody} from '../utils.js';
 

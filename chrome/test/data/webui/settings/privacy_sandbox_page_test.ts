@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {CrExpandButtonElement, SettingsPrivacySandboxAdMeasurementSubpageElement, SettingsPrivacySandboxManageTopicsSubpageElement, SettingsPrivacySandboxPageElement, SettingsPrivacySandboxTopicsSubpageElement, SettingsSimpleConfirmationDialogElement} from 'neovex://settings/lazy_load.js';
-import {SettingsPrivacySandboxFledgeSubpageElement} from 'neovex://settings/lazy_load.js';
-import type {CrButtonElement, CrLinkRowElement, FirstLevelTopicsState, SettingsPrefsElement, SettingsToggleButtonElement, TopicsState} from 'neovex://settings/settings.js';
-import {CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, PrivacySandboxBrowserProxyImpl, Router, routes} from 'neovex://settings/settings.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isChildVisible, isVisible, whenAttributeIs} from 'neovex://webui-test/test_util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {CrExpandButtonElement, SettingsPrivacySandboxAdMeasurementSubpageElement, SettingsPrivacySandboxManageTopicsSubpageElement, SettingsPrivacySandboxPageElement, SettingsPrivacySandboxTopicsSubpageElement, SettingsSimpleConfirmationDialogElement} from 'chrome://settings/lazy_load.js';
+import {SettingsPrivacySandboxFledgeSubpageElement} from 'chrome://settings/lazy_load.js';
+import type {CrButtonElement, CrLinkRowElement, FirstLevelTopicsState, SettingsPrefsElement, SettingsToggleButtonElement, TopicsState} from 'chrome://settings/settings.js';
+import {CrSettingsPrefs, loadTimeData, MetricsBrowserProxyImpl, PrivacySandboxBrowserProxyImpl, Router, routes} from 'chrome://settings/settings.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isChildVisible, isVisible, whenAttributeIs} from 'chrome://webui-test/test_util.js';
 
 import {TestMetricsBrowserProxy} from './test_metrics_browser_proxy.js';
 import {TestPrivacySandboxBrowserProxy} from './test_privacy_sandbox_browser_proxy.js';
@@ -231,8 +231,8 @@ suite('SiteSuggestedAdsSubpageAdsApiUxEnhancement', function() {
             'the link should indicate that it will be opened in a new tab'));
     const hrefs = Array.from<HTMLAnchorElement>(links).map(link => link.href);
     const expectedLinks = [
-      'neovex://settings/adPrivacy/interests',
-      'neovex://settings/cookies',
+      'chrome://settings/adPrivacy/interests',
+      'chrome://settings/cookies',
     ];
     assertDeepEquals(hrefs, expectedLinks);
   });
@@ -927,8 +927,8 @@ suite('TopicsSubpageAdsApiUxEnhancements', function() {
             'the link should indicate that it will be opened in a new tab'));
     const hrefs = Array.from<HTMLAnchorElement>(links).map(link => link.href);
     const expectedLinks = [
-      'neovex://settings/adPrivacy/sites',
-      'neovex://settings/cookies',
+      'chrome://settings/adPrivacy/sites',
+      'chrome://settings/cookies',
     ];
     assertDeepEquals(hrefs, expectedLinks);
   });

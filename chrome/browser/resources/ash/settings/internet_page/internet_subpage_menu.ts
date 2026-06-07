@@ -7,21 +7,21 @@
  * additional technology specific actions for a network type in the network
  * subpage.
  */
-import 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
 import './network_device_info_dialog.js';
 
-import {ESimManagerListenerMixin} from 'neovex://resources/ash/common/cellular_setup/esim_manager_listener_mixin.js';
-import {getEuicc} from 'neovex://resources/ash/common/cellular_setup/esim_manager_utils.js';
-import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {CrLazyRenderElement} from 'neovex://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import type {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {EuiccRemote} from 'neovex://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
-import {NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {ESimManagerListenerMixin} from 'chrome://resources/ash/common/cellular_setup/esim_manager_listener_mixin.js';
+import {getEuicc} from 'chrome://resources/ash/common/cellular_setup/esim_manager_utils.js';
+import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {CrLazyRenderElement} from 'chrome://resources/ash/common/cr_elements/cr_lazy_render/cr_lazy_render.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import type {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {EuiccRemote} from 'chrome://resources/mojo/chromeos/ash/services/cellular_setup/public/mojom/esim_manager.mojom-webui.js';
+import {NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 

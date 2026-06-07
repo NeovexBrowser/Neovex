@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertDeepEquals} from 'neovex://webui-test/chai_assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertDeepEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {SearchLocation, SearchRecency} from '../state/state.js';
 

@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
-import 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import 'chrome://os-settings/lazy_load.js';
+import 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
 
-import {FkeyRowElement} from 'neovex://os-settings/lazy_load.js';
-import type {Keyboard, SettingsDropdownMenuElement} from 'neovex://os-settings/os_settings.js';
-import {fakeKeyboards, Fkey, Router, routes, TopRowActionKey} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {FkeyRowElement} from 'chrome://os-settings/lazy_load.js';
+import type {Keyboard, SettingsDropdownMenuElement} from 'chrome://os-settings/os_settings.js';
+import {fakeKeyboards, Fkey, Router, routes, TopRowActionKey} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 const builtInKeyboard = fakeKeyboards[1];
 

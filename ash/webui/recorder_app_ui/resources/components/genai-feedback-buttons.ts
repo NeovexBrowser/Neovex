@@ -6,7 +6,7 @@ import './cra/cra-image.js';
 import './cra/cra-icon.js';
 import './cra/cra-icon-button.js';
 
-import {css, CSSResultGroup, html} from 'neovex://resources/mwc/lit/index.js';
+import {css, CSSResultGroup, html} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

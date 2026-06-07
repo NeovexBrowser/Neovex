@@ -36,7 +36,7 @@ struct SignoutConfirmationData {
   bool has_unsynced_data;
 };
 
-// Called from TS side of neovex://signout-confirmation (Renderer -> Browser)
+// Called from TS side of chrome://signout-confirmation (Renderer -> Browser)
 interface PageHandler {
   // Updates the native view of the dialog based on the current `height` of the
   // web content view measured in pixels. Height of the content view is variable
@@ -60,7 +60,7 @@ interface PageHandler {
   Close();
 };
 
-// Called from C++ side of neovex://signout-confirmation. (Browser -> Renderer)
+// Called from C++ side of chrome://signout-confirmation. (Browser -> Renderer)
 interface Page {
   // When the handler is initialized, sends the signout confirmation data to the
   // UI.

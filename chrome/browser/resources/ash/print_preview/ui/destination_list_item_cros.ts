@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/icons.html.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'chrome://resources/cr_elements/icons.html.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 import './destination_list_item_style.css.js';
 import './icons.html.js';
 import '/strings.m.js';
 
-import {I18nMixin} from 'neovex://resources/cr_elements/i18n_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {removeHighlights} from 'neovex://resources/js/search_highlight_utils.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {removeHighlights} from 'chrome://resources/js/search_highlight_utils.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Destination} from '../data/destination_cros.js';
 import {DestinationOrigin} from '../data/destination_cros.js';
@@ -111,9 +111,9 @@ export class PrintPreviewDestinationListItemElement extends
           this.shadowRoot!.querySelector<HTMLElement>('.extension-icon');
       assert(icon);
       icon.style.backgroundImage = 'image-set(' +
-          'url(neovex://extension-icon/' + this.destination.extensionId +
+          'url(chrome://extension-icon/' + this.destination.extensionId +
           '/24/1) 1x,' +
-          'url(neovex://extension-icon/' + this.destination.extensionId +
+          'url(chrome://extension-icon/' + this.destination.extensionId +
           '/48/1) 2x)';
     }
   }

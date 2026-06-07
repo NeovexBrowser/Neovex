@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
-import 'neovex://webui-test/chromeos/network/cr_policy_strings.js';
+import 'chrome://os-settings/lazy_load.js';
+import 'chrome://webui-test/chromeos/network/cr_policy_strings.js';
 
-import type {CellularRoamingToggleButtonElement} from 'neovex://os-settings/lazy_load.js';
-import type {CrToggleElement} from 'neovex://os-settings/os_settings.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import type {ManagedBoolean} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {NetworkType, PolicySource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {FakeNetworkConfig} from 'neovex://webui-test/chromeos/fake_network_config_mojom.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {CellularRoamingToggleButtonElement} from 'chrome://os-settings/lazy_load.js';
+import type {CrToggleElement} from 'chrome://os-settings/os_settings.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import type {ManagedBoolean} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {NetworkType, PolicySource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {FakeNetworkConfig} from 'chrome://webui-test/chromeos/fake_network_config_mojom.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 suite('<cellular-roaming-toggle-button>', () => {
   let cellularRoamingToggleButton: CellularRoamingToggleButtonElement;

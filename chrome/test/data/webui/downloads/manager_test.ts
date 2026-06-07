@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrToastManagerElement, DownloadsManagerElement, PageRemote} from 'neovex://downloads/downloads.js';
-import {BrowserProxy, DangerType, loadTimeData, State} from 'neovex://downloads/downloads.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrToastManagerElement, DownloadsManagerElement, PageRemote} from 'chrome://downloads/downloads.js';
+import {BrowserProxy, DangerType, loadTimeData, State} from 'chrome://downloads/downloads.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {createDownload, TestDownloadsProxy} from './test_support.js';
 

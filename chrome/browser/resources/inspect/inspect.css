@@ -355,17 +355,17 @@ dialog.config {
 }
 
 .close-button {
-  background-image: url(neovex://theme/IDR_CLOSE_DIALOG);
+  background-image: url(chrome://theme/IDR_CLOSE_DIALOG);
   height: 14px;
   width: 14px;
 }
 
 .close-button:active {
-  background-image: url(neovex://theme/IDR_CLOSE_DIALOG_P);
+  background-image: url(chrome://theme/IDR_CLOSE_DIALOG_P);
 }
 
 .close-button:hover {
-  background-image: url(neovex://theme/IDR_CLOSE_DIALOG_H);
+  background-image: url(chrome://theme/IDR_CLOSE_DIALOG_H);
 }
 
 dialog.config > .close-button {

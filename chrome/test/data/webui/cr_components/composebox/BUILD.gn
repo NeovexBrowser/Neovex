@@ -38,7 +38,7 @@ build_webui_tests("build") {
   ts_tsconfig_base = "tsconfig_base.json"
 
   ts_path_mappings =
-      [ "neovex://new-tab-page/strings.m.js|" +
+      [ "chrome://new-tab-page/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir) ]
 }

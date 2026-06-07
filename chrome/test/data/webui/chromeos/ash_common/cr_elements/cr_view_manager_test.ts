@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
 
-import type {CrViewManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import type {CrViewManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_view_manager/cr_view_manager.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 

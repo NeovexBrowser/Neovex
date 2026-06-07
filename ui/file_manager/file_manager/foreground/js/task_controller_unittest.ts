@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertDeepEquals, assertEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertDeepEquals, assertEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import type {ProgressCenter} from '../../background/js/progress_center.js';
 import type {VolumeInfo} from '../../background/js/volume_info.js';

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FakeMethodResolver} from 'neovex://resources/ash/common/fake_method_resolver.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {FakeMethodResolver} from 'chrome://resources/ash/common/fake_method_resolver.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
 
 import type {PowerRoutineResult, RoutineResult, RoutineResultInfo, RoutineRunnerInterface, SystemRoutineControllerInterface} from './system_routine_controller.mojom-webui.js';
 import {RoutineType, StandardRoutineResult} from './system_routine_controller.mojom-webui.js';

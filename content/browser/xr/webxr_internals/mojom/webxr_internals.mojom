@@ -58,7 +58,7 @@ struct RuntimeInfo {
 };
 
 // Interface for controlling WebXR Internals.
-// Handles requests from "neovex://webxr-internals"
+// Handles requests from "chrome://webxr-internals"
 // This is expected to be hosted in the browser process and is used from the
 // WebUI renderer.
 interface WebXrInternalsHandler {

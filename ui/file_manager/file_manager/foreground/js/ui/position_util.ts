@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
 
 /**
  * @fileoverview This file provides utility functions for position popups.

@@ -30,7 +30,7 @@ union GetRelatedWebsiteSetsResponse {
 };
 
 // Provides access to browser-side related website sets data for
-// neovex://privacy-sandbox-internals/related-website-sets
+// chrome://privacy-sandbox-internals/related-website-sets
 interface RelatedWebsiteSetsPageHandler {
     // Get the list of all related website sets
     // If no related website sets gathered pass error message to callback function

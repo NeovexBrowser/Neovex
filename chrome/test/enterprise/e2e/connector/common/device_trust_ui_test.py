@@ -28,9 +28,9 @@ FLAGS = flags.FLAGS
 
 flags.DEFINE_string(
     'idp_matcher', '',
-    'The idp_matcher used to match a IdP site listed at neovex://policy.')
+    'The idp_matcher used to match a IdP site listed at chrome://policy.')
 
-_CONNECTOR_INTERNAL_URL = 'neovex://connectors-internals'
+_CONNECTOR_INTERNAL_URL = 'chrome://connectors-internals'
 _POLICY_CONTEXT_AWARE_ACCESS_SIGNALS_ALLOWLIST = (
     'BrowserContextAwareAccessSignalsAllowlist')
 _TIMEOUT = 10
@@ -72,7 +72,7 @@ def main(argv):
     try:
       WebDriverWait(driver=driver, timeout=_TIMEOUT)
 
-      # Step 1: navigate to neovex://policy app
+      # Step 1: navigate to chrome://policy app
       # Only click `Reload-policies` button on the key_creation because
       # a newly enrolled Chrome does not have policies cached. The button
       # triggers a policy refetch which is needed.
@@ -92,7 +92,7 @@ def main(argv):
       idp_url = next(
           url for url in json.loads(idp_urls) if idp_pattern.search(url))
 
-      # Step 2: navigate to neovex://connectors-internals app
+      # Step 2: navigate to chrome://connectors-internals app
       count = 0
       dtc_policy_enabled = ''
       key_manager_initialized = ''

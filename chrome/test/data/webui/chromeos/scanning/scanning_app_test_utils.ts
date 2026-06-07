@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
-import type {ColorMode, PageSize, Scanner, ScanSource} from 'neovex://scanning/scanning.mojom-webui.js';
-import {alphabeticalCompare} from 'neovex://scanning/scanning_app_util.js';
-import {assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import type {ColorMode, PageSize, Scanner, ScanSource} from 'chrome://scanning/scanning.mojom-webui.js';
+import {alphabeticalCompare} from 'chrome://scanning/scanning_app_util.js';
+import {assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 export function assertOrderedAlphabetically<T>(
     arr: T[], conversionFn = (val: T): string => `${val}`) {

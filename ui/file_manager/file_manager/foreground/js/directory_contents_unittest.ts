@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertFalse} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertFalse} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import type {VolumeInfo} from '../../background/js/volume_info.js';
 import type {VolumeManager} from '../../background/js/volume_manager.js';

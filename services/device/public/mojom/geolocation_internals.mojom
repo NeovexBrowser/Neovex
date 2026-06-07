@@ -8,7 +8,7 @@ import "mojo/public/mojom/base/time.mojom";
 import "services/device/public/mojom/geoposition.mojom";
 
 // Types and interfaces defined in this file are intended for use by the
-// geolocation internals WebUI. (neovex://location-internals)
+// geolocation internals WebUI. (chrome://location-internals)
 
 const int32 kInvalidRadioSignalStrength = -2147483648;  // INT32_MIN
 const int32 kInvalidChannel = -2147483648;  // INT32_MIN
@@ -172,7 +172,7 @@ enum LocationProviderManagerMode {
   // sync.
 };
 
-// Interface for neovex://location-internals to be notified when the debug data
+// Interface for chrome://location-internals to be notified when the debug data
 // is updated.
 interface GeolocationInternalsObserver {
   // Called after handling an event that may have changed the debug data.
@@ -188,7 +188,7 @@ interface GeolocationInternalsObserver {
   OnNetworkLocationReceived(NetworkLocationResponse? response);
 };
 
-// Interface for neovex://location-internals to access geolocation debug data.
+// Interface for chrome://location-internals to access geolocation debug data.
 interface GeolocationInternals {
   // Registers a geolocation debug data observer. Responds with the current
   // debug data, or null if the geolocation API has not been initialized.

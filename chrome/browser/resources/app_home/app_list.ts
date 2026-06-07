@@ -8,7 +8,7 @@ import '//resources/cr_elements/cr_action_menu/cr_action_menu.js';
 import '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
 
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {AppInfo, PageCallbackRouter} from './app_home.mojom-webui.js';
 import {AppHomeUserAction, recordUserAction} from './app_home_utils.js';

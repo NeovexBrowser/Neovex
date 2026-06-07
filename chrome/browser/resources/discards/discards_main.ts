@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
+import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
 import './database_tab.js';
 import './discards_tab.js';
 import './graph_tab.js';
 
-import {CrRouter} from 'neovex://resources/js/cr_router.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {CrRouter} from 'chrome://resources/js/cr_router.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './discards_main.css.js';
 import {getHtml} from './discards_main.html.js';

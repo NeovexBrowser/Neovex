@@ -10,7 +10,7 @@ build_webui_tests("build") {
   files = [ "location_internals_test.ts" ]
 
   ts_path_mappings =
-      [ "neovex://location-internals/*|" +
+      [ "chrome://location-internals/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/location_internals/tsc/*",
             target_gen_dir) ]

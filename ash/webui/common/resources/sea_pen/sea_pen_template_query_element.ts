@@ -7,19 +7,19 @@
  * SeaPen wallpapers.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/personalization/personalization_shared_icons.html.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/personalization/personalization_shared_icons.html.js';
 import './sea_pen.css.js';
 import './sea_pen_chip_text_element.js';
 import './sea_pen_icons.html.js';
 import './sea_pen_options_element.js';
-import 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
 
-import type {LottieRenderer} from 'neovex://resources/cros_components/lottie_renderer/lottie-renderer.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {afterNextRender, beforeNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {LottieRenderer} from 'chrome://resources/cros_components/lottie_renderer/lottie-renderer.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {afterNextRender, beforeNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {SeaPenOption, SeaPenTemplate} from './constants.js';
 import {getSeaPenTemplates} from './constants.js';

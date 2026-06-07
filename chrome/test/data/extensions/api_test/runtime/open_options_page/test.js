@@ -9,7 +9,7 @@ var assertTrue = chrome.test.assertTrue;
 var listenOnce = chrome.test.listenOnce;
 var callbackPass = chrome.test.callbackPass;
 
-var optionsTabUrl = 'neovex://extensions/?options=' + chrome.runtime.id;
+var optionsTabUrl = 'chrome://extensions/?options=' + chrome.runtime.id;
 
 // Finds the Tab for an options page, or null if no options page is open.
 // Asserts that there is at most 1 options page open.

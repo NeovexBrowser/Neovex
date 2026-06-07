@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
-import 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import 'chrome://os-settings/lazy_load.js';
+import 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
 
-import {KeyboardSixPackKeyRowElement, sixPackKeyProperties} from 'neovex://os-settings/lazy_load.js';
-import type {SettingsDropdownMenuElement} from 'neovex://os-settings/os_settings.js';
-import {SixPackKey} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {KeyboardSixPackKeyRowElement, sixPackKeyProperties} from 'chrome://os-settings/lazy_load.js';
+import type {SettingsDropdownMenuElement} from 'chrome://os-settings/os_settings.js';
+import {SixPackKey} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('<keyboard-six-pack-key-row>', () => {
   let sixPackKeyRow: KeyboardSixPackKeyRowElement;

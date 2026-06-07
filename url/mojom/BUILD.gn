@@ -54,7 +54,7 @@ mojom("url_mojom_gurl") {
     },
   ]
 
-  webui_module_path = "neovex://resources/mojo/url/mojom"
+  webui_module_path = "chrome://resources/mojo/url/mojom"
 
   # Legacy JS bindings are needed for Blink regardless of platform.
   generate_legacy_js_bindings = true
@@ -101,7 +101,7 @@ mojom("url_mojom_origin") {
     },
   ]
 
-  webui_module_path = "neovex://resources/mojo/url/mojom"
+  webui_module_path = "chrome://resources/mojo/url/mojom"
   generate_legacy_js_bindings = true
 }
 

@@ -34,7 +34,7 @@
 }
 
 .hide-visit-icon {
-  --cr-icon-image: url(neovex://resources/cr_components/history_clusters/hide_source_gm_grey_24dp.svg);
+  --cr-icon-image: url(chrome://resources/cr_components/history_clusters/hide_source_gm_grey_24dp.svg);
   --cr-icon-button-icon-size: 16px;
   --cr-icon-button-size: 24px;
 }

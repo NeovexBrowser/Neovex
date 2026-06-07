@@ -9,5 +9,5 @@ img.onload = function() {
 img.onerror = function() {
   document.title = 'Not Loaded';
 };
-img.src = 'neovex://extension-icon/apocjbpjpkghdepdngjlknfpmabcmlao/24/0';
+img.src = 'chrome://extension-icon/apocjbpjpkghdepdngjlknfpmabcmlao/24/0';
 document.body.appendChild(img);

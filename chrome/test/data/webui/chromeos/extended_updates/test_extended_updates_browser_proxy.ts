@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {App} from 'neovex://extended-updates-dialog/extended_updates.mojom-webui.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'neovex://extended-updates-dialog/extended_updates.mojom-webui.js';
-import type {ExtendedUpdatesBrowserProxy} from 'neovex://extended-updates-dialog/extended_updates_browser_proxy.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {App} from 'chrome://extended-updates-dialog/extended_updates.mojom-webui.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'chrome://extended-updates-dialog/extended_updates.mojom-webui.js';
+import type {ExtendedUpdatesBrowserProxy} from 'chrome://extended-updates-dialog/extended_updates_browser_proxy.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 export class TestExtendedUpdatesBrowserProxy extends TestBrowserProxy implements
     ExtendedUpdatesBrowserProxy {

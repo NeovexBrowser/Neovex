@@ -13,7 +13,7 @@ chrome.test.runTests([
     function setupWindow() {
       var testTabId;
 
-      createWindow(["about:blank", "neovex://newtab/"], {},
+      createWindow(["about:blank", "chrome://newtab/"], {},
                    pass(function(winId, tabIds) {
         testTabId = tabIds[1];
       }));

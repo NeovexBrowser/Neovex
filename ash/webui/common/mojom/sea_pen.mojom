@@ -133,7 +133,7 @@ interface SeaPenObserver {
 // Provides APIs to get thumbnails and full size images. Uses APIs in
 // `manta.proto` to send requests to a google owned server.
 // Implemented in the browser process, and called by the ChromeOS
-// Personalization App (neovex://personalization) in a renderer process.
+// Personalization App (chrome://personalization) in a renderer process.
 interface SeaPenProvider {
 
     // Binds a listener to start receiving updates on SeaPen status changes.

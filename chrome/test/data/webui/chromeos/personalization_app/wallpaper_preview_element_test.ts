@@ -4,11 +4,11 @@
 
 /** @fileoverview Test suite for wallpaper-preview component.  */
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import {WallpaperPreviewElement, WallpaperType} from 'neovex://personalization/js/personalization_app.js';
-import {assertEquals, assertNotEquals, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import {WallpaperPreviewElement, WallpaperType} from 'chrome://personalization/js/personalization_app.js';
+import {assertEquals, assertNotEquals, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {baseSetup, initElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';
@@ -87,7 +87,7 @@ suite('WallpaperPreviewElementTest', function() {
     const img = wallpaperPreviewElement.shadowRoot!.querySelector('img');
     assertStringContains(
         img!.src,
-        `neovex://personalization/wallpaper.jpg?key=${
+        `chrome://personalization/wallpaper.jpg?key=${
             wallpaperProvider.currentWallpaper.key}`);
   });
 

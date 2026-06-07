@@ -23,7 +23,7 @@ from .popups_allowed.popups_allowed import *
 from .precedence.precedence import *
 from .encrypted_reporting.report_cbcm_events import *
 from .restore_on_startup.restore_on_startup import *
-# Disable safe_browsing test due to neovex://downloads shadow DOM issue http://b/298889715
+# Disable safe_browsing test due to chrome://downloads shadow DOM issue http://b/298889715
 # from .safe_browsing.safe_browsing import *
 from .translate_enabled.translate_enabled import *
 from .url_blocklist.url_blocklist import *

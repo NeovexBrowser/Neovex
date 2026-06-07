@@ -7,7 +7,7 @@ import './expandable_list_item.js';
 import './object_fieldset.js';
 import './value_control.js';
 
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import {getTemplate} from './characteristic_list_item.html.js';
 import type {DescriptorListElement} from './descriptor_list.js';

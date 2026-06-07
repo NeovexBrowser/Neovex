@@ -4,7 +4,7 @@
 import {
   ReactiveController,
   ReactiveControllerHost,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {assert} from '../assert.js';
 import * as state from '../state.js';

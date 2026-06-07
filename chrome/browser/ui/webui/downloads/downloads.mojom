@@ -129,20 +129,20 @@ interface PageHandler {
   Drag(string id);
 
   // Called when "Download suspicious file" is clicked from the
-  // neovex://downloads overflow menu, for suspicious/unverified files. Does not
+  // chrome://downloads overflow menu, for suspicious/unverified files. Does not
   // show a prompt.
   SaveSuspiciousRequiringGesture(string id);
 
   // Called when "Download dangerous file" is clicked from the
-  // neovex://downloads overflow menu to open the warning bypass dialog, for
+  // chrome://downloads overflow menu to open the warning bypass dialog, for
   // dangerous files. Only records the opening of the warning bypass dialog.
   RecordOpenBypassWarningDialog(string id);
 
   // Called when "Download dangerous file" is clicked from the
-  // neovex://downloads warning dialog, for dangerous files.
+  // chrome://downloads warning dialog, for dangerous files.
   SaveDangerousFromDialogRequiringGesture(string id);
 
-  // Called when "Cancel" is clicked on the neovex://downloads warning bypass
+  // Called when "Cancel" is clicked on the chrome://downloads warning bypass
   // dialog, or the dialog is closed by dismissing it. Only records the event
   // and potentially sends a report.
   RecordCancelBypassWarningDialog(string id);
@@ -159,7 +159,7 @@ interface PageHandler {
   OpenDownloadsFolderRequiringGesture();
 
   // The two methods below are for the ESB Download Row Promo.
-  // Opens the neovex://settings/security page with a IPH Promotion
+  // Opens the chrome://settings/security page with a IPH Promotion
   // on the ESB radio button.
   OpenEsbSettings();
 

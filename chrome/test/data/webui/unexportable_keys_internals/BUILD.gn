@@ -11,7 +11,7 @@ build_webui_tests("build") {
 
   files = [ "app_test.ts" ]
 
-  ts_path_mappings = [ "neovex://unexportable-keys-internals/*|" + rebase_path(
+  ts_path_mappings = [ "chrome://unexportable-keys-internals/*|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/unexportable_keys_internals/tsc/*",
                            target_gen_dir) ]
 

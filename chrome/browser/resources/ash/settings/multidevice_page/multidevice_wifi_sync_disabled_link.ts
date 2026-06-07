@@ -14,8 +14,8 @@
 
 import '../settings_shared.css.js';
 
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../assert_extras.js';
 import {Router, routes} from '../router.js';

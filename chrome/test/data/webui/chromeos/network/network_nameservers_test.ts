@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/strings.m.js';
-import 'neovex://resources/ash/common/network/network_nameservers.js';
+import 'chrome://os-settings/strings.m.js';
+import 'chrome://resources/ash/common/network/network_nameservers.js';
 
-import type {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import type {CrRadioButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
-import type {CrRadioGroupElement} from 'neovex://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
-import type {NetworkNameserversElement} from 'neovex://resources/ash/common/network/network_nameservers.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {IPConfigType, NetworkType, PolicySource} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import type {CrRadioButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_radio_button/cr_radio_button.js';
+import type {CrRadioGroupElement} from 'chrome://resources/ash/common/cr_elements/cr_radio_group/cr_radio_group.js';
+import type {NetworkNameserversElement} from 'chrome://resources/ash/common/network/network_nameservers.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {IPConfigType, NetworkType, PolicySource} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('NetworkNameserversTest', () => {
   let nameservers: NetworkNameserversElement|undefined;

@@ -5,13 +5,13 @@
 /** @fileoverview Suite of tests for managed-footnote. */
 
 // clang-format off
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {ManagedFootnoteElement} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals,assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {ManagedFootnoteElement} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals,assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {clearBody} from '../utils.js';
 

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {ClickNextButtonEvent, DisableAllButtonsEvent, DisableNextButtonEvent, EnableAllButtonsEvent, TransitionStateEvent} from './events.js';
 import {CLICK_NEXT_BUTTON, createCustomEvent, DISABLE_ALL_BUTTONS, DISABLE_NEXT_BUTTON, ENABLE_ALL_BUTTONS, TRANSITION_STATE} from './events.js';

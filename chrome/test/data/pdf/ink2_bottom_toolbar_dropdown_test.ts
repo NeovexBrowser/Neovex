@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 import type {ViewerBottomToolbarDropdownElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {keyDownOn, keyUpOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {keyDownOn, keyUpOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {getRequiredElement} from './test_util.js';
 

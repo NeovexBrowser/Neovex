@@ -3,22 +3,22 @@
 // found in the LICENSE file.
 
 // For composebox tests related to tools, secondary inputs (voice, drag/drop).
-import 'neovex://contextual-tasks/app.js';
+import 'chrome://contextual-tasks/app.js';
 
-import type {ContextualTasksAppElement} from 'neovex://contextual-tasks/app.js';
-import {BrowserProxyImpl} from 'neovex://contextual-tasks/contextual_tasks_browser_proxy.js';
-import type {ComposeboxFile} from 'neovex://resources/cr_components/composebox/common.js';
-import {PageCallbackRouter as ComposeboxPageCallbackRouter, PageHandlerRemote as ComposeboxPageHandlerRemote} from 'neovex://resources/cr_components/composebox/composebox.mojom-webui.js';
-import {ComposeboxProxyImpl} from 'neovex://resources/cr_components/composebox/composebox_proxy.js';
-import {ContextUploadStatus, ToolMode} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import {WindowProxy} from 'neovex://resources/cr_components/composebox/window_proxy.js';
-import {GlowAnimationState} from 'neovex://resources/cr_components/search/constants.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote, type PageRemote as SearchboxPageRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ContextualTasksAppElement} from 'chrome://contextual-tasks/app.js';
+import {BrowserProxyImpl} from 'chrome://contextual-tasks/contextual_tasks_browser_proxy.js';
+import type {ComposeboxFile} from 'chrome://resources/cr_components/composebox/common.js';
+import {PageCallbackRouter as ComposeboxPageCallbackRouter, PageHandlerRemote as ComposeboxPageHandlerRemote} from 'chrome://resources/cr_components/composebox/composebox.mojom-webui.js';
+import {ComposeboxProxyImpl} from 'chrome://resources/cr_components/composebox/composebox_proxy.js';
+import {ContextUploadStatus, ToolMode} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import {WindowProxy} from 'chrome://resources/cr_components/composebox/window_proxy.js';
+import {GlowAnimationState} from 'chrome://resources/cr_components/search/constants.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote, type PageRemote as SearchboxPageRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestContextualTasksBrowserProxy} from './test_contextual_tasks_browser_proxy.js';
 import {ADD_TAB_CONTEXT_FN, assertStyle, FAKE_TOKEN_STRING, FAKE_TOKEN_STRING_2, fixtureUrl, getSubmitButton, getSubmitContainer, installMock, mockInputState, setupAutocompleteResults, simulateUserInput, uploadFileAndVerify} from './test_utils.js';

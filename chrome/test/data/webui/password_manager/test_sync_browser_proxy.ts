@@ -4,9 +4,9 @@
 
 /** @fileoverview Test implementation of SyncBrowserProxy. */
 
-import type {AccountInfo, BatchUploadPasswordsEntryPoint, SyncBrowserProxy, SyncInfo} from 'neovex://password-manager/password_manager.js';
-import {TrustedVaultBannerState} from 'neovex://password-manager/password_manager.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {AccountInfo, BatchUploadPasswordsEntryPoint, SyncBrowserProxy, SyncInfo} from 'chrome://password-manager/password_manager.js';
+import {TrustedVaultBannerState} from 'chrome://password-manager/password_manager.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * Test implementation

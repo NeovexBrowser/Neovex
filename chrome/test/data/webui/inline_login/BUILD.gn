@@ -20,10 +20,10 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings = [
-    "neovex://chrome-signin/gaia_auth_host/*|" +
+    "chrome://chrome-signin/gaia_auth_host/*|" +
         rebase_path("//chrome/browser/resources/gaia_auth_host/*",
                     target_gen_dir),
-    "neovex://chrome-signin/*|" +
+    "chrome://chrome-signin/*|" +
         rebase_path("$root_gen_dir/chrome/browser/resources/inline_login/tsc/*",
                     target_gen_dir),
   ]

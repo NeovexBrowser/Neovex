@@ -6,8 +6,8 @@ import './characteristic_list.js';
 import './expandable_list_item.js';
 import './object_fieldset.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
 
 import type {CharacteristicListElement} from './characteristic_list.js';
 import type {ServiceInfo} from './device.mojom-webui.js';

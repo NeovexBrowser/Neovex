@@ -4,20 +4,20 @@
 
 import './app.js';
 
-export type {HistoryEntry, QueryResult} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
-export {BrowserProxyImpl} from 'neovex://resources/cr_components/history_clusters/browser_proxy.js';
-export {ClusterAction, PageCallbackRouter, PageHandlerRemote, RelatedSearchAction, VisitAction, VisitType} from 'neovex://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
-export type {MetricsProxy} from 'neovex://resources/cr_components/history_clusters/metrics_proxy.js';
-export {MetricsProxyImpl} from 'neovex://resources/cr_components/history_clusters/metrics_proxy.js';
-export {HistoryEmbeddingsBrowserProxyImpl} from 'neovex://resources/cr_components/history_embeddings/browser_proxy.js';
-export type {HistoryEmbeddingsMoreActionsClickEvent} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
-export {PageHandlerRemote as HistoryEmbeddingsPageHandlerRemote} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
-export {CrActionMenuElement} from 'neovex://resources/cr_elements/cr_action_menu/cr_action_menu.js';
-export {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-export {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-export {CrDialogElement} from 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
-export {CrRouter} from 'neovex://resources/js/cr_router.js';
-export {getTrustedHTML} from 'neovex://resources/js/static_types.js';
+export type {HistoryEntry, QueryResult} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+export {BrowserProxyImpl} from 'chrome://resources/cr_components/history_clusters/browser_proxy.js';
+export {ClusterAction, PageCallbackRouter, PageHandlerRemote, RelatedSearchAction, VisitAction, VisitType} from 'chrome://resources/cr_components/history_clusters/history_clusters.mojom-webui.js';
+export type {MetricsProxy} from 'chrome://resources/cr_components/history_clusters/metrics_proxy.js';
+export {MetricsProxyImpl} from 'chrome://resources/cr_components/history_clusters/metrics_proxy.js';
+export {HistoryEmbeddingsBrowserProxyImpl} from 'chrome://resources/cr_components/history_embeddings/browser_proxy.js';
+export type {HistoryEmbeddingsMoreActionsClickEvent} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
+export {PageHandlerRemote as HistoryEmbeddingsPageHandlerRemote} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
+export {CrActionMenuElement} from 'chrome://resources/cr_elements/cr_action_menu/cr_action_menu.js';
+export {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+export {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+export {CrDialogElement} from 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
+export {CrRouter} from 'chrome://resources/js/cr_router.js';
+export {getTrustedHTML} from 'chrome://resources/js/static_types.js';
 export {HistoryAppElement} from './app.js';
 export type {BrowserService, RemoveVisitsRequest} from './browser_service.js';
 export {BrowserServiceImpl} from './browser_service.js';

@@ -4,8 +4,8 @@
 
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './app.html.js';
 import {DiagnosticEntry_Status as Status} from './guest_os_diagnostics.mojom-webui.js';

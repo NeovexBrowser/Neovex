@@ -1,12 +1,12 @@
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import 'neovex://oobe/components/security_token_pin.js';
+import 'chrome://oobe/components/security_token_pin.js';
 
 import {CrButtonElement} from '//resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {SecurityTokenPin} from 'neovex://oobe/components/security_token_pin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertGT, assertLE, assertNotEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SecurityTokenPin} from 'chrome://oobe/components/security_token_pin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertGT, assertLE, assertNotEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 declare global {
   interface HTMLElementEventMap {

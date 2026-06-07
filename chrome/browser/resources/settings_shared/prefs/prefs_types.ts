@@ -6,7 +6,7 @@
  * @fileoverview Global state for prefs initialization status.
  */
 
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
 
 class CrSettingsPrefsInternal {
   isInitialized: boolean = false;

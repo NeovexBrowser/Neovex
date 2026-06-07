@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {handleKeyboardNavigation} from 'neovex://updater/event_list/filter_dialog/keyboard_navigation.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {handleKeyboardNavigation} from 'chrome://updater/event_list/filter_dialog/keyboard_navigation.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 suite('handleKeyboardNavigation', () => {
   let items: HTMLElement[];

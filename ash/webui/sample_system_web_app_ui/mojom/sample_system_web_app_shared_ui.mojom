@@ -4,7 +4,7 @@
 
 module ash.mojom.sample_swa;
 
-// Interfaces for inter-frame communication between neovex:// and its embedded
+// Interfaces for inter-frame communication between chrome:// and its embedded
 // chrome-untrusted:// child page.
 
 // Implemented in JavaScript by the chrome-untrusted:// page, represents the
@@ -15,7 +15,7 @@ interface ChildUntrustedPage {
 };
 
 
-// Implemented in the embedding neovex:// page's JavaScript, used to
+// Implemented in the embedding chrome:// page's JavaScript, used to
 // communicate with the child page.
 interface ParentTrustedPage {
   // Called when the child page requests the parent page to perform `task`,

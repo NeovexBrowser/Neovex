@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertDeepEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertDeepEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {Id3Parser} from './id3_parser.js';
 import {ParserMetadata} from './metadata_item.js';

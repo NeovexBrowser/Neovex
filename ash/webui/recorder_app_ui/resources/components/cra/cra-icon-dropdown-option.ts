@@ -5,8 +5,8 @@
 import {
   IconDropdownOption,
 } from
-  'neovex://resources/cros_components/icon_dropdown/icon-dropdown-option.js';
-import {PropertyValues} from 'neovex://resources/mwc/lit/index.js';
+  'chrome://resources/cros_components/icon_dropdown/icon-dropdown-option.js';
+import {PropertyValues} from 'chrome://resources/mwc/lit/index.js';
 
 import {assertExists} from '../../core/utils/assert.js';
 

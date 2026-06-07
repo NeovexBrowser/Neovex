@@ -10,7 +10,7 @@
 import '/strings.m.js';
 import './local_files_migration_dialog.js';
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
 
 window.addEventListener('load', () => {
   const updater = ColorChangeUpdater.forDocument();

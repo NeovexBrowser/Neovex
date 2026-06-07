@@ -11,17 +11,17 @@ import '/components/oobe_network_icons.html.js';
 import '/components/common_styles/oobe_dialog_host_styles.css.js';
 import '/components/dialogs/oobe_adaptive_dialog.js';
 import '/components/buttons/oobe_text_button.js';
-import 'neovex://resources/ash/common/network/network_select.js';
+import 'chrome://resources/ash/common/network/network_select.js';
 
 import {NetworkList} from '//resources/ash/common/network/network_list_types.js';
 import {$} from '//resources/ash/common/util.js';
 import {PolymerElement} from '//resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 import type {OobeAdaptiveDialog} from '/components/dialogs/oobe_adaptive_dialog.js';
 import {OobeCrLottie} from '/components/oobe_cr_lottie.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {CrosNetworkConfigRemote} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {CrosNetworkConfig, StartConnectResult} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {CrosNetworkConfigRemote} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {CrosNetworkConfig, StartConnectResult} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
 
 import {getTemplate} from './app.html.js';
 
@@ -193,7 +193,7 @@ declare global {
 }
 function initialize() {
   // '$(id)' is an alias for 'document.getElementById(id)'. It is defined
-  // in neovex://resources/ash/common/util.js. If this function is not exposed
+  // in chrome://resources/ash/common/util.js. If this function is not exposed
   // via the global object, it would not be available to tests that inject
   // JavaScript directly into the renderer.
   (window as any).$ = $;

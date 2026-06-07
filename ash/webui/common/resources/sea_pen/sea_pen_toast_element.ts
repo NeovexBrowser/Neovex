@@ -6,7 +6,7 @@
  * @fileoverview This component displays toast notifications to the user.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
 
 import {dismissSeaPenErrorAction} from './sea_pen_actions.js';
 import {WithSeaPenStore} from './sea_pen_store.js';

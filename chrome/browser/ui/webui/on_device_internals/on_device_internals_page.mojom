@@ -84,7 +84,7 @@ interface PageHandlerFactory {
                     pending_receiver<PageHandler> handler);
 };
 
-// Primary interface for the neovex://on-device-internals WebUI. Lives in the
+// Primary interface for the chrome://on-device-internals WebUI. Lives in the
 // browser process.
 interface PageHandler {
   // Binds a new OnDeviceModel interface if possible using model assets loaded

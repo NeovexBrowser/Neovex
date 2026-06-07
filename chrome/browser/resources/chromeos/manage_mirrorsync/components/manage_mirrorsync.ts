@@ -12,7 +12,7 @@ import {getTemplate} from './manage_mirrorsync.html.js';
 
 /**
  * ManageMirrorSync represents the top level web component that tracks the
- * state for the neovex://manage-mirrorsync dialog.
+ * state for the chrome://manage-mirrorsync dialog.
  */
 class ManageMirrorSync extends HTMLElement {
   /**

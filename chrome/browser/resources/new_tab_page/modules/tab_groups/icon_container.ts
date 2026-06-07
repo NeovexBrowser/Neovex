@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
 
-import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
-import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
+import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './icon_container.css.js';
 

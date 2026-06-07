@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
 import './selectable_lazy_list.js';
 import '/strings.m.js';
 import './tab_search_group_item.js';
@@ -11,16 +11,16 @@ import './tab_search_item.js';
 import './title_item.js';
 
 import {ColorChangeUpdater} from '//resources/cr_components/color_change_listener/colors_css_updater.js';
-import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import {CrSearchFieldMixinLit} from 'neovex://resources/cr_elements/cr_search_field/cr_search_field_mixin_lit.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {MetricsReporter} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
-import {MetricsReporterImpl} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
-import {listenOnce} from 'neovex://resources/js/util.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {Token} from 'neovex://resources/mojo/mojo/public/mojom/base/token.mojom-webui.js';
+import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import {CrSearchFieldMixinLit} from 'chrome://resources/cr_elements/cr_search_field/cr_search_field_mixin_lit.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {MetricsReporter} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
+import {MetricsReporterImpl} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
+import {listenOnce} from 'chrome://resources/js/util.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {Token} from 'chrome://resources/mojo/mojo/public/mojom/base/token.mojom-webui.js';
 
 import type {SearchOptions} from './search.js';
 import {search} from './search.js';

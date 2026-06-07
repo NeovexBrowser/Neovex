@@ -36,7 +36,7 @@ class NoDirectLitImportPresubmit(unittest.TestCase):
         """
         lines = [
             "import {aaa} from 'a.js';",
-            "import {css} from 'neovex://resources/mwc/lit/index.js';",
+            "import {css} from 'chrome://resources/mwc/lit/index.js';",
         ]
         ts_path, js_path = self.emulateJsAndTsFiles(lines)
         errors = _CheckNoDirectLitImport(self.mock_input_api,
@@ -52,7 +52,7 @@ class NoDirectLitImportPresubmit(unittest.TestCase):
         """
         lines = [
             "import {aaa} from 'a.js';",
-            "import {css} from 'neovex://resources/mwc/lit/index.js';",
+            "import {css} from 'chrome://resources/mwc/lit/index.js';",
         ]
         xf_base_ts = MockFile(
             os.path.join('ui', 'file_manager', 'file_manager', 'widgets',
@@ -92,7 +92,7 @@ class BannedTsTagsTest(unittest.TestCase):
     def testNoTags(self):
         lines = [
             "import {aaa} from 'a.js';",
-            "import {css} from 'neovex://resources/mwc/lit/index.js';",
+            "import {css} from 'chrome://resources/mwc/lit/index.js';",
         ]
         self.emulateJsAndTsFiles(lines)
         errors = _CheckBannedTsTags(self.mock_input_api, self.mock_output_api)

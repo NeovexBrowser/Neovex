@@ -2,29 +2,29 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/network_health/network_diagnostics.js';
-import 'neovex://resources/ash/common/network_health/network_health_summary.js';
-import 'neovex://resources/ash/common/traffic_counters/traffic_counters.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import 'neovex://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
-import 'neovex://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
-import 'neovex://resources/polymer/v3_0/iron-pages/iron-pages.js';
-import 'neovex://resources/ash/common/network/network_select.js';
+import 'chrome://resources/ash/common/network_health/network_diagnostics.js';
+import 'chrome://resources/ash/common/network_health/network_health_summary.js';
+import 'chrome://resources/ash/common/traffic_counters/traffic_counters.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import 'chrome://resources/ash/common/cr_elements/cr_tabs/cr_tabs.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toggle/cr_toggle.js';
+import 'chrome://resources/polymer/v3_0/iron-pages/iron-pages.js';
+import 'chrome://resources/ash/common/network/network_select.js';
 import '/strings.m.js';
 import './network_state_ui.js';
 import './network_logs_ui.js';
 import './network_metrics_ui.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import type {NetworkList} from 'neovex://resources/ash/common/network/network_list_types.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import type {NetworkDiagnosticsElement} from 'neovex://resources/ash/common/network_health/network_diagnostics.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {CrosNetworkConfigRemote} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {CrosNetworkConfig, StartConnectResult} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {flush, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import type {NetworkList} from 'chrome://resources/ash/common/network/network_list_types.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import type {NetworkDiagnosticsElement} from 'chrome://resources/ash/common/network_health/network_diagnostics.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {CrosNetworkConfigRemote} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {CrosNetworkConfig, StartConnectResult} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {flush, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './network_ui.html.js';
 import type {NetworkUiBrowserProxy} from './network_ui_browser_proxy.js';

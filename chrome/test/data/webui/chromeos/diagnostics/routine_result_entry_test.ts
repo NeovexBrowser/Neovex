@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/routine_result_entry.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/routine_result_entry.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {RoutineGroup} from 'neovex://diagnostics/routine_group.js';
-import {ExecutionProgress, ResultStatusItem} from 'neovex://diagnostics/routine_list_executor.js';
-import {RoutineResultEntryElement} from 'neovex://diagnostics/routine_result_entry.js';
-import type {RoutineResult} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
-import {RoutineType, StandardRoutineResult} from 'neovex://diagnostics/system_routine_controller.mojom-webui.js';
-import type {TextBadgeElement} from 'neovex://diagnostics/text_badge.js';
-import {BadgeType} from 'neovex://diagnostics/text_badge.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {RoutineGroup} from 'chrome://diagnostics/routine_group.js';
+import {ExecutionProgress, ResultStatusItem} from 'chrome://diagnostics/routine_list_executor.js';
+import {RoutineResultEntryElement} from 'chrome://diagnostics/routine_result_entry.js';
+import type {RoutineResult} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
+import {RoutineType, StandardRoutineResult} from 'chrome://diagnostics/system_routine_controller.mojom-webui.js';
+import type {TextBadgeElement} from 'chrome://diagnostics/text_badge.js';
+import {BadgeType} from 'chrome://diagnostics/text_badge.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 import './error_dialog.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/polymer/v3_0/paper-progress/paper-progress.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/polymer/v3_0/paper-progress/paper-progress.js';
 import '/strings.m.js';
-import 'neovex://resources/ash/common/cr.m.js';
-import 'neovex://resources/ash/common/event_target.js';
+import 'chrome://resources/ash/common/cr.m.js';
+import 'chrome://resources/ash/common/event_target.js';
 
-import {assertNotReached} from 'neovex://resources/ash/common/assert.js';
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertNotReached} from 'chrome://resources/ash/common/assert.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './app.html.js';
 import type {PageCallbackRouter} from './borealis_installer.mojom-webui.js';

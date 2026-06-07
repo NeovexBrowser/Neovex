@@ -59,8 +59,8 @@ chrome.test.runTests([
     });
 
     // Create two tabs.
-    tab1 = await openTab('neovex://version');
-    tab2 = await openTab('neovex://about');
+    tab1 = await openTab('chrome://version');
+    tab2 = await openTab('chrome://about');
     chrome.test.assertNe(tab1.id, tab2.id);
     chrome.test.assertNe(tab1.index, tab2.index);
     chrome.test.assertEq(tab1.windowId, tab2.windowId);

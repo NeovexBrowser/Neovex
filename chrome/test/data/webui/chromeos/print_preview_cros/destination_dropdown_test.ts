@@ -2,25 +2,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/destination_dropdown.js';
+import 'chrome://os-print/js/destination_dropdown.js';
 
-import {PDF_DESTINATION} from 'neovex://os-print/js/data/destination_constants.js';
-import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DESTINATION_MANAGER_DESTINATIONS_CHANGED, DESTINATION_MANAGER_SESSION_INITIALIZED, DestinationManager} from 'neovex://os-print/js/data/destination_manager.js';
-import type {DestinationProviderComposite} from 'neovex://os-print/js/data/destination_provider_composite.js';
-import {DestinationDropdownElement} from 'neovex://os-print/js/destination_dropdown.js';
-import type {DestinationDropdownController} from 'neovex://os-print/js/destination_dropdown_controller.js';
-import {DESTINATION_DROPDOWN_DROPDOWN_DISABLED_CHANGED, DESTINATION_DROPDOWN_UPDATE_DESTINATIONS, DESTINATION_DROPDOWN_UPDATE_SELECTED_DESTINATION} from 'neovex://os-print/js/destination_dropdown_controller.js';
-import {DestinationRowElement} from 'neovex://os-print/js/destination_row.js';
-import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
-import {createCustomEvent} from 'neovex://os-print/js/utils/event_utils.js';
-import {getDestinationProvider} from 'neovex://os-print/js/utils/mojo_data_providers.js';
-import type {Destination} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {PDF_DESTINATION} from 'chrome://os-print/js/data/destination_constants.js';
+import {DESTINATION_MANAGER_ACTIVE_DESTINATION_CHANGED, DESTINATION_MANAGER_DESTINATIONS_CHANGED, DESTINATION_MANAGER_SESSION_INITIALIZED, DestinationManager} from 'chrome://os-print/js/data/destination_manager.js';
+import type {DestinationProviderComposite} from 'chrome://os-print/js/data/destination_provider_composite.js';
+import {DestinationDropdownElement} from 'chrome://os-print/js/destination_dropdown.js';
+import type {DestinationDropdownController} from 'chrome://os-print/js/destination_dropdown_controller.js';
+import {DESTINATION_DROPDOWN_DROPDOWN_DISABLED_CHANGED, DESTINATION_DROPDOWN_UPDATE_DESTINATIONS, DESTINATION_DROPDOWN_UPDATE_SELECTED_DESTINATION} from 'chrome://os-print/js/destination_dropdown_controller.js';
+import {DestinationRowElement} from 'chrome://os-print/js/destination_row.js';
+import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL} from 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
+import {createCustomEvent} from 'chrome://os-print/js/utils/event_utils.js';
+import {getDestinationProvider} from 'chrome://os-print/js/utils/mojo_data_providers.js';
+import type {Destination} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {createTestDestination, resetDataManagersAndProviders, waitForInitialDestinationSet, waitForPrintTicketManagerInitialized} from './test_utils.js';
 

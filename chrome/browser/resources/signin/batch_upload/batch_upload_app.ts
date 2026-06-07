@@ -9,7 +9,7 @@ import '//resources/cr_elements/cr_button/cr_button.js';
 import type {CrButtonElement} from '//resources/cr_elements/cr_button/cr_button.js';
 import {assert} from '//resources/js/assert.js';
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
-import {I18nMixinLit} from 'neovex://resources/cr_elements/i18n_mixin_lit.js';
+import {I18nMixinLit} from 'chrome://resources/cr_elements/i18n_mixin_lit.js';
 
 import type {BatchUploadAccountInfo, BatchUploadData, DataContainer} from './batch_upload.js';
 import {getCss} from './batch_upload_app.css.js';

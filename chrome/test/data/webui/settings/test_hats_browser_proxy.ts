@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {HatsBrowserProxy, SafeBrowsingSetting, SecurityPageV2Interaction, SecuritySettingsBundleSetting, TrustSafetyInteraction} from 'neovex://settings/settings.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {HatsBrowserProxy, SafeBrowsingSetting, SecurityPageV2Interaction, SecuritySettingsBundleSetting, TrustSafetyInteraction} from 'chrome://settings/settings.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestHatsBrowserProxy extends TestBrowserProxy implements
     HatsBrowserProxy {

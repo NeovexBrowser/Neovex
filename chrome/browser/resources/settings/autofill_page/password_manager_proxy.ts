@@ -22,7 +22,7 @@ export interface PasswordManagerProxy {
   recordPasswordCheckReferrer(referrer: PasswordCheckReferrer): void;
 
   /**
-   * Shows new Password Manager UI (neovex://password-manager).
+   * Shows new Password Manager UI (chrome://password-manager).
    */
   showPasswordManager(page: PasswordManagerPage): void;
 }

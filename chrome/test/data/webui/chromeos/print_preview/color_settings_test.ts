@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://print/print_preview.js';
+import 'chrome://print/print_preview.js';
 
-import type {ColorOption, PrintPreviewColorSettingsElement, PrintPreviewModelElement} from 'neovex://print/print_preview.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
-import {Destination, DestinationOrigin} from 'neovex://print/print_preview.js';
+import type {ColorOption, PrintPreviewColorSettingsElement, PrintPreviewModelElement} from 'chrome://print/print_preview.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
+import {Destination, DestinationOrigin} from 'chrome://print/print_preview.js';
 
 import {getCddTemplateWithAdvancedSettings, selectOption} from './print_preview_test_utils.js';
 

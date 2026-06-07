@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {MultiDeviceBrowserProxy, MultiDeviceFeature, MultiDeviceFeatureState, MultiDevicePageContentData, PhoneHubFeatureAccessStatus, PhoneHubPermissionsSetupAction, PhoneHubPermissionsSetupFeatureCombination, PhoneHubPermissionsSetupFlowScreens} from 'neovex://os-settings/os_settings.js';
-import {MultiDeviceSettingsMode} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/ash/common/cr.m.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {MultiDeviceBrowserProxy, MultiDeviceFeature, MultiDeviceFeatureState, MultiDevicePageContentData, PhoneHubFeatureAccessStatus, PhoneHubPermissionsSetupAction, PhoneHubPermissionsSetupFeatureCombination, PhoneHubPermissionsSetupFlowScreens} from 'chrome://os-settings/os_settings.js';
+import {MultiDeviceSettingsMode} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/ash/common/cr.m.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * Default Host device for PageContentData.

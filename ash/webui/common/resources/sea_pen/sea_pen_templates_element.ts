@@ -6,12 +6,12 @@
  * @fileoverview A polymer component that displays the SeaPen templates.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {SeaPenTemplate} from './constants.js';
 import {getSeaPenTemplates, QUERY} from './constants.js';

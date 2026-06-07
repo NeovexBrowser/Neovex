@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {html, CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {html, CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
-import 'neovex://resources/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/cr_elements/cr_dialog/cr_dialog.js';
 
-import {TooltipPosition} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import type {CrTooltipElement} from 'neovex://resources/cr_elements/cr_tooltip/cr_tooltip.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {TooltipPosition} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import type {CrTooltipElement} from 'chrome://resources/cr_elements/cr_tooltip/cr_tooltip.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 // clang-format on
 

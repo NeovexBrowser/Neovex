@@ -4,8 +4,8 @@
 
 import './dlp_restricted_banner.js';
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {RootType} from '../../../../common/js/volume_manager_types.js';
 

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {hexColorToSkColor, skColorToHexColor, skColorToRgba} from 'neovex://resources/js/color_utils.js';
-import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {hexColorToSkColor, skColorToHexColor, skColorToRgba} from 'chrome://resources/js/color_utils.js';
+import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 suite('ColorUtilsTest', () => {
   test('Can convert simple SkColors to rgba strings', () => {

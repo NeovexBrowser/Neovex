@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast_manager.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast_manager.js';
 
-import type {CrToastManagerElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast_manager.js';
-import {getToastManager} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast_manager.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrToastManagerElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast_manager.js';
+import {getToastManager} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast_manager.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 // clang-format on
 

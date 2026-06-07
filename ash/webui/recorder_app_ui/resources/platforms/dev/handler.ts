@@ -7,15 +7,15 @@
  * release. Reconsider this and whether we need the mock/alternative
  * implementation other than mojo to exist in release image.
  */
-import 'neovex://resources/cros_components/dropdown/dropdown_option.js';
-import 'neovex://resources/cros_components/switch/switch.js';
+import 'chrome://resources/cros_components/dropdown/dropdown_option.js';
+import 'chrome://resources/cros_components/switch/switch.js';
 import '../../components/cra/cra-dropdown.js';
 import './error-view.js';
 
 import {
   Switch as CrosSwitch,
-} from 'neovex://resources/cros_components/switch/switch.js';
-import {html, map, styleMap} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/cros_components/switch/switch.js';
+import {html, map, styleMap} from 'chrome://resources/mwc/lit/index.js';
 
 import {CraDropdown} from '../../components/cra/cra-dropdown.js';
 import {SAMPLE_RATE} from '../../core/audio_constants.js';

@@ -10,7 +10,7 @@ build_webui_tests("build") {
   files = [ "usb_internals_test.ts" ]
 
   ts_path_mappings =
-      [ "neovex://usb-internals/*|" +
+      [ "chrome://usb-internals/*|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/usb_internals/tsc/*",
             target_gen_dir) ]

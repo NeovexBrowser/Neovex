@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://signout-confirmation/signout_confirmation.js';
+import 'chrome://signout-confirmation/signout_confirmation.js';
 
-import {SignoutConfirmationBrowserProxyImpl} from 'neovex://signout-confirmation/signout_confirmation.js';
-import type {ExtensionsSectionElement, PageRemote, SignoutConfirmationAppElement} from 'neovex://signout-confirmation/signout_confirmation.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyDownOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import type {ModifiersParam} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {isChildVisible, isVisible} from 'neovex://webui-test/test_util.js';
+import {SignoutConfirmationBrowserProxyImpl} from 'chrome://signout-confirmation/signout_confirmation.js';
+import type {ExtensionsSectionElement, PageRemote, SignoutConfirmationAppElement} from 'chrome://signout-confirmation/signout_confirmation.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyDownOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import type {ModifiersParam} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {isChildVisible, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestSignoutConfirmationBrowserProxy} from './test_signout_confirmation_browser_proxy.js';
 

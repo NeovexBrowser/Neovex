@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {DriveSuggestionHandlerRemote} from 'neovex://new-tab-page/drive_suggestion.mojom-webui.js';
-import type {DisableModuleEvent, DismissModuleInstanceEvent, DriveModuleElement} from 'neovex://new-tab-page/lazy_load.js';
-import {driveModuleDescriptor, FileProxy} from 'neovex://new-tab-page/lazy_load.js';
-import {$$} from 'neovex://new-tab-page/new_tab_page.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {DriveSuggestionHandlerRemote} from 'chrome://new-tab-page/drive_suggestion.mojom-webui.js';
+import type {DisableModuleEvent, DismissModuleInstanceEvent, DriveModuleElement} from 'chrome://new-tab-page/lazy_load.js';
+import {driveModuleDescriptor, FileProxy} from 'chrome://new-tab-page/lazy_load.js';
+import {$$} from 'chrome://new-tab-page/new_tab_page.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {installMock} from '../../test_support.js';
 

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/history_clusters/clusters.js';
-import 'neovex://resources/cr_components/history_embeddings/filter_chips.js';
-import 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
-import 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
-import 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import 'neovex://resources/cr_elements/cr_tabs/cr_tabs.js';
+import 'chrome://resources/cr_components/history_clusters/clusters.js';
+import 'chrome://resources/cr_components/history_embeddings/filter_chips.js';
+import 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
+import 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
+import 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import 'chrome://resources/cr_elements/cr_tabs/cr_tabs.js';
 import './history_embeddings_promo.js';
 // <if expr="not is_chromeos">
 import './history_sync_promo.js';
@@ -22,24 +22,24 @@ import './side_bar.js';
 import './synced_device_manager.js';
 import '/strings.m.js';
 
-import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import {HistoryResultType} from 'neovex://resources/cr_components/history/constants.js';
-import type {PageCallbackRouter, PageHandlerRemote, QueryResult, QueryState} from 'neovex://resources/cr_components/history/history.mojom-webui.js';
-import {HistoryEmbeddingsBrowserProxyImpl} from 'neovex://resources/cr_components/history_embeddings/browser_proxy.js';
-import type {Suggestion} from 'neovex://resources/cr_components/history_embeddings/filter_chips.js';
-import type {HistoryEmbeddingsMoreActionsClickEvent} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.js';
-import {getInstance as getAnnouncerInstance} from 'neovex://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
-import type {CrDrawerElement} from 'neovex://resources/cr_elements/cr_drawer/cr_drawer.js';
-import type {CrLazyRenderLitElement} from 'neovex://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
-import type {CrPageSelectorElement} from 'neovex://resources/cr_elements/cr_page_selector/cr_page_selector.js';
-import {FindShortcutMixinLit} from 'neovex://resources/cr_elements/find_shortcut_mixin_lit.js';
-import {WebUiListenerMixinLit} from 'neovex://resources/cr_elements/web_ui_listener_mixin_lit.js';
-import {assert, assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {hasKeyModifiers} from 'neovex://resources/js/util.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import {HistoryResultType} from 'chrome://resources/cr_components/history/constants.js';
+import type {PageCallbackRouter, PageHandlerRemote, QueryResult, QueryState} from 'chrome://resources/cr_components/history/history.mojom-webui.js';
+import {HistoryEmbeddingsBrowserProxyImpl} from 'chrome://resources/cr_components/history_embeddings/browser_proxy.js';
+import type {Suggestion} from 'chrome://resources/cr_components/history_embeddings/filter_chips.js';
+import type {HistoryEmbeddingsMoreActionsClickEvent} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.js';
+import {getInstance as getAnnouncerInstance} from 'chrome://resources/cr_elements/cr_a11y_announcer/cr_a11y_announcer.js';
+import type {CrDrawerElement} from 'chrome://resources/cr_elements/cr_drawer/cr_drawer.js';
+import type {CrLazyRenderLitElement} from 'chrome://resources/cr_elements/cr_lazy_render/cr_lazy_render_lit.js';
+import type {CrPageSelectorElement} from 'chrome://resources/cr_elements/cr_page_selector/cr_page_selector.js';
+import {FindShortcutMixinLit} from 'chrome://resources/cr_elements/find_shortcut_mixin_lit.js';
+import {WebUiListenerMixinLit} from 'chrome://resources/cr_elements/web_ui_listener_mixin_lit.js';
+import {assert, assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {hasKeyModifiers} from 'chrome://resources/js/util.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';
@@ -226,7 +226,7 @@ export class HistoryAppElement extends HistoryAppElementBase {
   protected accessor showTabs_: boolean = false;
   protected accessor showHistoryClusters_: boolean = false;
   protected accessor tabsIcons_: string[] =
-      ['images/list.svg', 'neovex://resources/images/icon_journeys.svg'];
+      ['images/list.svg', 'chrome://resources/images/icon_journeys.svg'];
   protected accessor tabsNames_: string[] = [
     loadTimeData.getString('historyListTabLabel'),
     loadTimeData.getString('historyClustersTabLabel'),

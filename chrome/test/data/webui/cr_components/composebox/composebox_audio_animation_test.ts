@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/search/audio_wave.js';
+import 'chrome://resources/cr_components/search/audio_wave.js';
 
-import type {AudioWaveElement, Bump} from 'neovex://resources/cr_components/search/audio_wave.js';
-import {bezierEasing, weightedAverage} from 'neovex://resources/cr_components/search/audio_wave.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {AudioWaveElement, Bump} from 'chrome://resources/cr_components/search/audio_wave.js';
+import {bezierEasing, weightedAverage} from 'chrome://resources/cr_components/search/audio_wave.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertAlmostEquals} from './composebox_test_utils.js';
 

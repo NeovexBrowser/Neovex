@@ -4,11 +4,11 @@
 
 /** @fileoverview Utils for device page browser tests. */
 
-import type {CrSliderElement} from 'neovex://os-settings/os_settings.js';
-import {GeolocationAccessLevel} from 'neovex://os-settings/os_settings.js';
-import {pressAndReleaseKeyOn} from 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {CrSliderElement} from 'chrome://os-settings/os_settings.js';
+import {GeolocationAccessLevel} from 'chrome://os-settings/os_settings.js';
+import {pressAndReleaseKeyOn} from 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 export function getFakePrefs() {
   return {

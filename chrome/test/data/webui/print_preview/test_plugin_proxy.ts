@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PdfPlugin} from 'neovex://print/pdf/pdf_scripting_api.js';
-import type {PluginProxy, ViewportChangedCallback} from 'neovex://print/print_preview.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {PdfPlugin} from 'chrome://print/pdf/pdf_scripting_api.js';
+import type {PluginProxy, ViewportChangedCallback} from 'chrome://print/print_preview.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 /**
  * Test version of the PluginProxy.

@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for extensions-mv2-deprecation-panel. */
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {ExtensionsMv2DeprecationPanelElement} from 'neovex://extensions/extensions.js';
-import {Mv2ExperimentStage} from 'neovex://extensions/extensions.js';
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsMv2DeprecationPanelElement} from 'chrome://extensions/extensions.js';
+import {Mv2ExperimentStage} from 'chrome://extensions/extensions.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 import {createExtensionInfo} from './test_util.js';

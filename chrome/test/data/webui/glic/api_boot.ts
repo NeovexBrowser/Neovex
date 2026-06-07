@@ -17,7 +17,7 @@ export function createGlicHostRegistryOnLoad(): Promise<GlicHostRegistry> {
   return new Promise<GlicHostRegistry>(resolve => {
     function messageHandler(event: MessageEvent) {
       // Important: only accept messages from Chrome browser's glic WebUI.
-      if (event.origin !== 'neovex://glic' || event.source === null) {
+      if (event.origin !== 'chrome://glic' || event.source === null) {
         return;
       }
       const bootMessage = event.data as GlicApiBootMessage;

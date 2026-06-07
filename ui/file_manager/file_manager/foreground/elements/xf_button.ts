@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import type {Button} from 'neovex://resources/cros_components/button/button.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import type {Button} from 'chrome://resources/cros_components/button/button.js';
 
 import {queryRequiredElement} from '../../common/js/dom_utils.js';
 import {isCrosComponentsEnabled} from '../../common/js/flags.js';

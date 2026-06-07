@@ -10,7 +10,7 @@ NEW_TAB_PAGE_BENCHMARK_UMA = [
     'NewTabPage.Modules.ShownTime',
 ]
 
-NEW_TAB_PAGE_URL = 'neovex://new-tab-page'
+NEW_TAB_PAGE_URL = 'chrome://new-tab-page'
 
 
 class NewTabPageStory(MultiTabStory):

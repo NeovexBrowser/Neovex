@@ -6,9 +6,9 @@
  * @fileoverview Handles shares for Crostini VMs.
  */
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
 
 import type {VolumeManager} from '../../background/js/volume_manager.js';
 import type {FilesAppEntry} from '../../common/js//files_app_entry_types.js';

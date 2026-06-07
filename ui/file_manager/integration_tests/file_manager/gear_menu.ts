@@ -416,8 +416,8 @@ export async function newFolderInDownloads() {
  * opens the Files section of the Settings page.
  */
 export async function showFilesSettingsButton() {
-  const settingsWindowOrigin = 'neovex://os-settings';
-  const filesSettingsWindowURL = 'neovex://os-settings/systemPreferences';
+  const settingsWindowOrigin = 'chrome://os-settings';
+  const filesSettingsWindowURL = 'chrome://os-settings/systemPreferences';
 
   // Open Files.App on Downloads and wait for the gear menu button to appear.
   const appId = await remoteCall.setupAndWaitUntilReady(
@@ -451,7 +451,7 @@ export async function showFilesSettingsButton() {
  * opens the feedback window.
  */
 export async function showSendFeedbackAction() {
-  const feedbackWindowOrigin = 'neovex://os-feedback';
+  const feedbackWindowOrigin = 'chrome://os-feedback';
 
   // Open Files.App on Downloads.
   const appId = await remoteCall.openNewWindow(RootPath.DOWNLOADS);

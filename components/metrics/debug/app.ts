@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 import './field_trials.js';
 import './private_metrics.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {addWebUiListener} from 'neovex://resources/js/cr.js';
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {addWebUiListener} from 'chrome://resources/js/cr.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {getTemplate} from './app.html.js';
 import type {KeyValue, Log, LogData, MetricsInternalsBrowserProxy, SeedType} from './browser_proxy.js';
@@ -143,7 +143,7 @@ export class MetricsInternalsAppElement extends CustomElement {
 
   /**
    * Synchronize the selected tab and the URL hash. Allows, for example,
-   * neovex://metrics-internals#variations to directly open the variations tab.
+   * chrome://metrics-internals#variations to directly open the variations tab.
    */
   private syncTabsWithUrlHash_() {
     const tabUrlHashes: string[] = [

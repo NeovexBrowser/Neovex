@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {BigBuffer} from 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {BigBuffer} from 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import type {UserImage} from '../../personalization_app.mojom-webui.js';
 import type {PersonalizationState} from '../personalization_state.js';

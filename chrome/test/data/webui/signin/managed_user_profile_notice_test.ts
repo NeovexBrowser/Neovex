@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://managed-user-profile-notice/managed_user_profile_notice_app.js';
-import 'neovex://managed-user-profile-notice/managed_user_profile_notice_disclosure.js';
+import 'chrome://managed-user-profile-notice/managed_user_profile_notice_app.js';
+import 'chrome://managed-user-profile-notice/managed_user_profile_notice_disclosure.js';
 
-import type {ManagedUserProfileNoticeAppElement} from 'neovex://managed-user-profile-notice/managed_user_profile_notice_app.js';
-import type {ManagedUserProfileInfo} from 'neovex://managed-user-profile-notice/managed_user_profile_notice_browser_proxy.js';
-import {ManagedUserProfileNoticeBrowserProxyImpl, State} from 'neovex://managed-user-profile-notice/managed_user_profile_notice_browser_proxy.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ManagedUserProfileNoticeAppElement} from 'chrome://managed-user-profile-notice/managed_user_profile_notice_app.js';
+import type {ManagedUserProfileInfo} from 'chrome://managed-user-profile-notice/managed_user_profile_notice_browser_proxy.js';
+import {ManagedUserProfileNoticeBrowserProxyImpl, State} from 'chrome://managed-user-profile-notice/managed_user_profile_notice_browser_proxy.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestManagedUserProfileNoticeBrowserProxy} from './test_managed_user_profile_notice_browser_proxy.js';
 
@@ -19,8 +19,8 @@ suite('ManagedUserProfileNoticeTest', function() {
   let app: ManagedUserProfileNoticeAppElement;
   let browserProxy: TestManagedUserProfileNoticeBrowserProxy;
 
-  const AVATAR_URL_1: string = 'neovex://theme/IDR_PROFILE_AVATAR_1';
-  const AVATAR_URL_2: string = 'neovex://theme/IDR_PROFILE_AVATAR_2';
+  const AVATAR_URL_1: string = 'chrome://theme/IDR_PROFILE_AVATAR_1';
+  const AVATAR_URL_2: string = 'chrome://theme/IDR_PROFILE_AVATAR_2';
 
   const testManagedUserProfileInfo: ManagedUserProfileInfo = {
     pictureUrl: AVATAR_URL_1,

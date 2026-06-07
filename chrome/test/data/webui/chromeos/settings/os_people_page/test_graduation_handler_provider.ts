@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {graduationHandlerMojom} from 'neovex://os-settings/os_settings.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {graduationHandlerMojom} from 'chrome://os-settings/os_settings.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 type GraduationHandlerInterface =
     graduationHandlerMojom.GraduationHandlerInterface;

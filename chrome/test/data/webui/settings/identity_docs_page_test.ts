@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import {EntityDataManagerProxyImpl} from 'neovex://settings/lazy_load.js';
-import type {SettingsIdentityDocsPageElement} from 'neovex://settings/lazy_load.js';
-import {CrSettingsPrefs, loadTimeData} from 'neovex://settings/settings.js';
-import type {SettingsPrefsElement} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {EntityDataManagerProxyImpl} from 'chrome://settings/lazy_load.js';
+import type {SettingsIdentityDocsPageElement} from 'chrome://settings/lazy_load.js';
+import {CrSettingsPrefs, loadTimeData} from 'chrome://settings/settings.js';
+import type {SettingsPrefsElement} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestEntityDataManagerProxy} from './test_entity_data_manager_proxy.js';
 

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
-import 'neovex://scanning/multi_page_scan.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://scanning/multi_page_scan.js';
 
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {MultiPageScanElement} from 'neovex://scanning/multi_page_scan.js';
-import {AppState} from 'neovex://scanning/scanning_app_types.js';
-import {ScanningBrowserProxyImpl} from 'neovex://scanning/scanning_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/chromeos/test_util.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {MultiPageScanElement} from 'chrome://scanning/multi_page_scan.js';
+import {AppState} from 'chrome://scanning/scanning_app_types.js';
+import {ScanningBrowserProxyImpl} from 'chrome://scanning/scanning_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/chromeos/test_util.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {TestScanningBrowserProxy} from './test_scanning_browser_proxy.js';
 

@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://signin-dice-web-intercept.top-chrome/chrome_signin/chrome_signin_app.js';
+import 'chrome://signin-dice-web-intercept.top-chrome/chrome_signin/chrome_signin_app.js';
 
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import type {ChromeSigninAppElement} from 'neovex://signin-dice-web-intercept.top-chrome/chrome_signin/chrome_signin_app.js';
-import type {ChromeSigninInterceptionParameters} from 'neovex://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
-import {DiceWebSigninInterceptBrowserProxyImpl} from 'neovex://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import type {ChromeSigninAppElement} from 'chrome://signin-dice-web-intercept.top-chrome/chrome_signin/chrome_signin_app.js';
+import type {ChromeSigninInterceptionParameters} from 'chrome://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
+import {DiceWebSigninInterceptBrowserProxyImpl} from 'chrome://signin-dice-web-intercept.top-chrome/dice_web_signin_intercept_browser_proxy.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestDiceWebSigninInterceptBrowserProxy} from './test_dice_web_signin_intercept_browser_proxy.js';
 
-const AVATAR_URL: string = 'neovex://theme/IDR_PROFILE_AVATAR_1';
+const AVATAR_URL: string = 'chrome://theme/IDR_PROFILE_AVATAR_1';
 
 const PARAMETERS: ChromeSigninInterceptionParameters = {
   title: 'title',
@@ -90,7 +90,7 @@ suite('DiceWebSigninInterceptChromeSigninTest', function() {
     // Simulate a change of picture url.
     const newParams = {
       ...PARAMETERS,
-      pictureUrl: 'neovex://theme/IDR_PROFILE_AVATAR_2',
+      pictureUrl: 'chrome://theme/IDR_PROFILE_AVATAR_2',
     };
     webUIListenerCallback(
         'interception-chrome-signin-parameters-changed', newParams);

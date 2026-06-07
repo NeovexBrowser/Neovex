@@ -105,7 +105,7 @@ function registerWebUiTest(componentName, webuiHost, testName, module) {
     get browsePreload() {
       // TODO(jhawkins): Set up test_loader.html for internet-config-dialog
       // and use it here instead of os-settings.
-      return `neovex://${webuiHost}/test_loader.html?module=chromeos/${module}`;
+      return `chrome://${webuiHost}/test_loader.html?module=chromeos/${module}`;
     }
   };
 

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FakeMethodResolver} from 'neovex://resources/ash/common/fake_method_resolver.js';
-import {FakeObservables} from 'neovex://resources/ash/common/fake_observables.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {UnguessableToken} from 'neovex://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
+import {FakeMethodResolver} from 'chrome://resources/ash/common/fake_method_resolver.js';
+import {FakeObservables} from 'chrome://resources/ash/common/fake_observables.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {UnguessableToken} from 'chrome://resources/mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js';
 
 import {type PrintPreviewPageHandler, type PrintRequestOutcome} from '../utils/print_preview_cros_app_types.js';
 import type {FakeGeneratePreviewObserver, PreviewTicket, PrintTicket, SessionContext} from '../utils/print_preview_cros_app_types.js';

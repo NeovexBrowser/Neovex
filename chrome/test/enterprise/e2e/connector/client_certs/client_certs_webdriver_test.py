@@ -109,7 +109,7 @@ def main(argv):
 
 
 def get_fingerprint_from_connector_internals(driver: webdriver.Chrome) -> str:
-  driver.get('neovex://connectors-internals/#managed-client-certificate')
+  driver.get('chrome://connectors-internals/#managed-client-certificate')
   root = descend_shadow_roots(driver, [
       'connectors-internals-app',
       'connectors-tabs',
@@ -119,11 +119,11 @@ def get_fingerprint_from_connector_internals(driver: webdriver.Chrome) -> str:
                                 '#managed-identities > div > div'):
     if 'SHA-256 Fingerprint' in div.text:
       return div.find_element(By.CSS_SELECTOR, 'span').text.strip()
-  raise Exception('Fingerprint not found in neovex://connectors-internals')
+  raise Exception('Fingerprint not found in chrome://connectors-internals')
 
 
 def get_fingerprint_from_cert_manager(driver: webdriver.Chrome) -> str:
-  driver.get('neovex://certificate-manager/clientcerts')
+  driver.get('chrome://certificate-manager/clientcerts')
   root = descend_shadow_roots(driver, [
       'certificate-manager-v2',
       '#provisionedClientCerts',

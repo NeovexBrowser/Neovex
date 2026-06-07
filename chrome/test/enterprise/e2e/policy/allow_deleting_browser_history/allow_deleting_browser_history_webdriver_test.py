@@ -13,7 +13,7 @@ from test_util import getElementFromShadowRoot
 # Detect if history deletion is enabled or disabled and print the result.
 
 # The way to check is:
-# - visit neovex://history;
+# - visit chrome://history;
 # - get the first history item;
 # - check the checkbox. If history deletion is disabled, then the check
 #   box has attribute 'disabled';
@@ -24,7 +24,7 @@ def main(argv):
 
   try:
     driver.get('http://www.google.com')
-    driver.get('neovex://history')
+    driver.get('chrome://history')
 
     # wait for page to be loaded
     wait = WebDriverWait(driver, 10)

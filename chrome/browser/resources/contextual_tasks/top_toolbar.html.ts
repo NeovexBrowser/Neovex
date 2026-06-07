@@ -13,15 +13,15 @@ export function getHtml(this: TopToolbarElement) {
   return html`<!--_html_template_start_-->
 <div id="top-row">
 <if expr="_google_chrome">
-    <img src="neovex://resources/cr_components/searchbox/icons/google_g_gradient.svg"
+    <img src="chrome://resources/cr_components/searchbox/icons/google_g_gradient.svg"
         class="top-toolbar-logo">
 </if>
 <if expr="not _google_chrome">
     <img class="top-toolbar-logo chrome-logo-light"
-        src="neovex://resources/cr_components/searchbox/icons/chrome_product.svg"
+        src="chrome://resources/cr_components/searchbox/icons/chrome_product.svg"
         alt="Chrome Logo">
     <img class="top-toolbar-logo chrome-logo-dark"
-        src="neovex://resources/images/chrome_logo_dark.svg" alt="Chrome Logo">
+        src="chrome://resources/images/chrome_logo_dark.svg" alt="Chrome Logo">
 </if>
   <div class="top-toolbar-title">
     ${this.title}

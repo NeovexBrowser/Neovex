@@ -1,6 +1,6 @@
 
-import {ObservableValue, Subject} from 'neovex://glic/observable.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {ObservableValue, Subject} from 'chrome://glic/observable.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('ObservableTest', () => {
   setup(() => {});

@@ -7,7 +7,7 @@
  * by the files app frontend.
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {VolumeInfo} from '../../background/js/volume_info.js';
 import {getEntry, getParentEntry, moveEntryTo, validatePathNameLength} from '../../common/js/api.js';

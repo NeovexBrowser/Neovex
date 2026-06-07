@@ -3,29 +3,29 @@
 // found in the LICENSE file.
 
 // clang-format off
-import type {SettingsAboutPageElement} from 'neovex://settings/settings.js';
-import {AboutPageBrowserProxyImpl, LifetimeBrowserProxyImpl, loadTimeData, Router, routes} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SettingsAboutPageElement} from 'chrome://settings/settings.js';
+import {AboutPageBrowserProxyImpl, LifetimeBrowserProxyImpl, loadTimeData, Router, routes} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {TestAboutPageBrowserProxy} from './test_about_page_browser_proxy.js';
 import {TestLifetimeBrowserProxy} from './test_lifetime_browser_proxy.js';
 
 // <if expr="_google_chrome">
-import {ABOUT_PAGE_PRIVACY_POLICY_URL, OpenWindowProxyImpl} from 'neovex://settings/settings.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
+import {ABOUT_PAGE_PRIVACY_POLICY_URL, OpenWindowProxyImpl} from 'chrome://settings/settings.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
 // </if>
 
 // <if expr="_google_chrome and is_macosx">
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {PromoteUpdaterStatus} from 'neovex://settings/settings.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {PromoteUpdaterStatus} from 'chrome://settings/settings.js';
 // </if>
 
 // <if expr="not is_chromeos">
-import {UpdateStatus} from 'neovex://settings/settings.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {assertNotEquals} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, eventToPromise} from 'neovex://webui-test/test_util.js';
+import {UpdateStatus} from 'chrome://settings/settings.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, eventToPromise} from 'chrome://webui-test/test_util.js';
 // </if>
 // clang-format on
 
@@ -80,7 +80,7 @@ suite('AllBuilds', function() {
   }
 
   // <if expr="not is_chromeos">
-  const SPINNER_ICON: string = 'neovex://resources/images/throbber_small.svg';
+  const SPINNER_ICON: string = 'chrome://resources/images/throbber_small.svg';
 
   async function assertSpinnerVisible(visible: boolean) {
     const img = page.shadowRoot!.querySelector<HTMLImageElement>(

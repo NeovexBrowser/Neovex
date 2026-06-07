@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {hasOverflowEllipsis} from '../common/js/dom_utils.js';
 import {waitUntil} from '../common/js/test_error_reporting.js';

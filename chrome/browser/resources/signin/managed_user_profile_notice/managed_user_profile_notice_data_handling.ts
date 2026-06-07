@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 import '/strings.m.js';
-import 'neovex://resources/cr_elements/cr_radio_group/cr_radio_group.js';
-import 'neovex://resources/cr_elements/cr_radio_button/cr_radio_button.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/cr_radio_group/cr_radio_group.js';
+import 'chrome://resources/cr_elements/cr_radio_button/cr_radio_button.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import type {BrowsingDataHandling} from './managed_user_profile_notice_browser_proxy.js';
 import {getCss} from './managed_user_profile_notice_data_handling.css.js';

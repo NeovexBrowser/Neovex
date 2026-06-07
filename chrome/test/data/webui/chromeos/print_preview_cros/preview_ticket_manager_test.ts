@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/data/preview_ticket_manager.js';
+import 'chrome://os-print/js/data/preview_ticket_manager.js';
 
-import {PREVIEW_REQUEST_FINISHED_EVENT, PREVIEW_REQUEST_STARTED_EVENT, PREVIEW_TICKET_MANAGER_SESSION_INITIALIZED, PreviewTicketManager} from 'neovex://os-print/js/data/preview_ticket_manager.js';
-import type {PrintPreviewPageHandlerComposite} from 'neovex://os-print/js/data/print_preview_page_handler_composite.js';
-import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL, type FakePrintPreviewPageHandler, OBSERVE_PREVIEW_READY_METHOD} from 'neovex://os-print/js/fakes/fake_print_preview_page_handler.js';
-import {getPrintPreviewPageHandler} from 'neovex://os-print/js/utils/mojo_data_providers.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {MockController} from 'neovex://webui-test/chromeos/mock_controller.m.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {PREVIEW_REQUEST_FINISHED_EVENT, PREVIEW_REQUEST_STARTED_EVENT, PREVIEW_TICKET_MANAGER_SESSION_INITIALIZED, PreviewTicketManager} from 'chrome://os-print/js/data/preview_ticket_manager.js';
+import type {PrintPreviewPageHandlerComposite} from 'chrome://os-print/js/data/print_preview_page_handler_composite.js';
+import {FAKE_PRINT_SESSION_CONTEXT_SUCCESSFUL, type FakePrintPreviewPageHandler, OBSERVE_PREVIEW_READY_METHOD} from 'chrome://os-print/js/fakes/fake_print_preview_page_handler.js';
+import {getPrintPreviewPageHandler} from 'chrome://os-print/js/utils/mojo_data_providers.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {MockController} from 'chrome://webui-test/chromeos/mock_controller.m.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {resetDataManagersAndProviders} from './test_utils.js';
 

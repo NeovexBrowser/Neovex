@@ -147,7 +147,7 @@ struct FileDatabaseEntry {
 };
 
 // Observer interface to receive updates about DLP reporting events.
-// This interface is implement in Javascript in neovex://dlp-internals WebUI.
+// This interface is implement in Javascript in chrome://dlp-internals WebUI.
 interface ReportingObserver {
   // Called when an event is reported.
   OnReportEvent(DlpEvent event);

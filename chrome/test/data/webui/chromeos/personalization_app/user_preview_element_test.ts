@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import type {DefaultUserImage, UserImage} from 'neovex://personalization/js/personalization_app.js';
-import {Paths, UserPreviewElement} from 'neovex://personalization/js/personalization_app.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {DefaultUserImage, UserImage} from 'chrome://personalization/js/personalization_app.js';
+import {Paths, UserPreviewElement} from 'chrome://personalization/js/personalization_app.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {baseSetup, initElement, teardownElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';
@@ -138,9 +138,9 @@ suite('UserPreviewElementTest', function() {
                             'avatar') as HTMLImageElement;
 
     assertTrue(
-        avatarImage.src.startsWith('neovex://image'), 'url was sanitized');
+        avatarImage.src.startsWith('chrome://image'), 'url was sanitized');
     assertTrue(
-        avatarImage.style.backgroundImage.startsWith('url("neovex://image'),
+        avatarImage.style.backgroundImage.startsWith('url("chrome://image'),
         'background-url was sanitized');
   });
 
@@ -163,7 +163,7 @@ suite('UserPreviewElementTest', function() {
     const avatarImage = userPreviewElement.shadowRoot!.getElementById(
                             'avatar') as HTMLImageElement;
     assertEquals(
-        'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE', avatarImage.src,
+        'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE', avatarImage.src,
         'placeholder image is shown for invalid user image');
   });
 

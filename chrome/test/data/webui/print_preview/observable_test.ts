@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {Observable, setValueAtPath} from 'neovex://print/print_preview.js';
-import type {WildcardChangeRecord} from 'neovex://print/print_preview.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import {Observable, setValueAtPath} from 'chrome://print/print_preview.js';
+import type {WildcardChangeRecord} from 'chrome://print/print_preview.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
 
 suite('Observable', function() {
   interface Prefs {

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
 
-import type {GetRelatedWebsiteSetsResponse, RelatedWebsiteSetsApiBrowserProxy, RelatedWebsiteSetsPageHandlerInterface} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {GetRelatedWebsiteSetsResponse, RelatedWebsiteSetsApiBrowserProxy, RelatedWebsiteSetsPageHandlerInterface} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestRelatedWebsiteSetsPageHandler extends TestBrowserProxy
     implements RelatedWebsiteSetsPageHandlerInterface {

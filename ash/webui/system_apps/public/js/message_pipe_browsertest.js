@@ -47,7 +47,7 @@ async function sendTestMessage(messageType, message = {}) {
 var MessagePipeBrowserTest = class extends testing.Test {
   /** @override */
   get browsePreload() {
-    return 'neovex://system-app-test/test_data/message_pipe_browsertest_trusted.html';
+    return 'chrome://system-app-test/test_data/message_pipe_browsertest_trusted.html';
   }
 
   /** @override */
@@ -62,7 +62,7 @@ var MessagePipeBrowserTest = class extends testing.Test {
 };
 
 TEST_F('MessagePipeBrowserTest', 'ReceivesSuccessResponse', async () => {
-  const {assertDeepEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertDeepEquals} = await import('chrome://webui-test/chai_assert.js');
   const request = {'foo': 'bar'};
   const response = await sendTestMessage('success-message', request);
   assertDeepEquals(response, {'success': true, 'request': request});
@@ -70,7 +70,7 @@ TEST_F('MessagePipeBrowserTest', 'ReceivesSuccessResponse', async () => {
 });
 
 TEST_F('MessagePipeBrowserTest', 'IgnoresMessagesWithNoType', async () => {
-  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
   await sendTestMessage('install-generic-responder');
 
   let messageCount = 0;
@@ -98,7 +98,7 @@ TEST_F('MessagePipeBrowserTest', 'IgnoresMessagesWithNoType', async () => {
 
 // Tests that we receive an error if our message is unhandled.
 TEST_F('MessagePipeBrowserTest', 'ReceivesNoHandlerError', async () => {
-  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
   window['untrustedMessagePipe'].logClientError = error =>
       console.log(JSON.stringify(error));
   let caughtError = {};
@@ -116,7 +116,7 @@ TEST_F('MessagePipeBrowserTest', 'ReceivesNoHandlerError', async () => {
   assertMatchErrorStack(caughtError.stack, [
     // Error stack of the test context.
     'Error: unknown-message: No handler registered for message type \'unknown-message\'',
-    'at MessagePipe.sendMessage \\(neovex://system-app-test/',
+    'at MessagePipe.sendMessage \\(chrome://system-app-test/',
     'at async MessagePipeBrowserTest.',
     // Error stack of the untrusted context.
     'Error from chrome-untrusted://system-app-test',
@@ -129,7 +129,7 @@ TEST_F('MessagePipeBrowserTest', 'ReceivesNoHandlerError', async () => {
 
 // Tests that we receive an error if the handler fails.
 TEST_F('MessagePipeBrowserTest', 'ReceivesProxiedError', async () => {
-  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
   window['untrustedMessagePipe'].logClientError = error =>
       console.log(JSON.stringify(error));
   let caughtError = {};
@@ -146,7 +146,7 @@ TEST_F('MessagePipeBrowserTest', 'ReceivesProxiedError', async () => {
   assertMatchErrorStack(caughtError.stack, [
     // Error stack of the test context.
     'Error: bad-handler: This is an error from untrusted',
-    'at MessagePipe.sendMessage \\(neovex://system-app-test/',
+    'at MessagePipe.sendMessage \\(chrome://system-app-test/',
     'at async MessagePipeBrowserTest.',
     // Error stack of the untrusted context.
     'Error from chrome-untrusted://system-app-test',
@@ -162,7 +162,7 @@ TEST_F('MessagePipeBrowserTest', 'ReceivesProxiedError', async () => {
 // Tests `MessagePipe.sendMessage()` properly propagates errors and appends
 // stacktraces.
 TEST_F('MessagePipeBrowserTest', 'CrossContextErrors', async () => {
-  const {assertEquals} = await import('neovex://webui-test/chai_assert.js');
+  const {assertEquals} = await import('chrome://webui-test/chai_assert.js');
   const untrustedMessagePipe = window['untrustedMessagePipe'];
 
   untrustedMessagePipe.logClientError = error =>
@@ -188,7 +188,7 @@ TEST_F('MessagePipeBrowserTest', 'CrossContextErrors', async () => {
   assertMatchErrorStack(caughtError.stack, [
     // Error stack of the test context.
     'Error: request-bad-handler: bad-handler: This is an error from trusted',
-    'at MessagePipe.sendMessage \\(neovex://system-app-test/',
+    'at MessagePipe.sendMessage \\(chrome://system-app-test/',
     'at async MessagePipeBrowserTest',
     // Error stack of the untrusted context.
     'Error from chrome-untrusted://system-app-test',
@@ -196,7 +196,7 @@ TEST_F('MessagePipeBrowserTest', 'CrossContextErrors', async () => {
     'at MessagePipe.sendMessage \\(chrome-untrusted://system-app-test/',
     'at async MessagePipe.callHandlerForMessageType_ \\(chrome-untrusted://system-app-test/',
     // Error stack of the trusted context.
-    'Error from neovex://system-app-test',
+    'Error from chrome://system-app-test',
     'Error: This is an error from trusted',
     'at .*message_pipe_browsertest.js',
     'at MessagePipe.callHandlerForMessageType_',

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {deepEqual} from 'neovex://updater/tools.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {deepEqual} from 'chrome://updater/tools.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('ToolsTest', () => {
   suite('deepEqual', () => {

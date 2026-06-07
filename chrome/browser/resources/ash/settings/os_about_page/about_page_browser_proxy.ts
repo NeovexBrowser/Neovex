@@ -7,8 +7,8 @@
  * the browser.
  */
 
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {sendWithPromise} from 'neovex://resources/js/cr.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {sendWithPromise} from 'chrome://resources/js/cr.js';
 
 export interface RegulatoryInfo {
   text: string;

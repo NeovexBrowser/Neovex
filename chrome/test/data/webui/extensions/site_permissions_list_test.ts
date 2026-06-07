@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for site-permissions-list. */
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {ExtensionsSitePermissionsListElement} from 'neovex://extensions/extensions.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ExtensionsSitePermissionsListElement} from 'chrome://extensions/extensions.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestService} from './test_service.js';
 

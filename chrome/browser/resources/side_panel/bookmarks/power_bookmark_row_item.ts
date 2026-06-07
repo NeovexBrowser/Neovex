@@ -12,11 +12,11 @@ import './icons.html.js';
 
 import {CrLitElement} from '//resources/lit/v3_0/lit.rollup.js';
 import type {PropertyValues} from '//resources/lit/v3_0/lit.rollup.js';
-import type {CrCheckboxElement} from 'neovex://resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {CrInputElement} from 'neovex://resources/cr_elements/cr_input/cr_input.js';
-import type {CrUrlListItemElement} from 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import {CrUrlListItemSize} from 'neovex://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import type {CrCheckboxElement} from 'chrome://resources/cr_elements/cr_checkbox/cr_checkbox.js';
+import type {CrInputElement} from 'chrome://resources/cr_elements/cr_input/cr_input.js';
+import type {CrUrlListItemElement} from 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import {CrUrlListItemSize} from 'chrome://resources/cr_elements/cr_url_list_item/cr_url_list_item.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import type {BookmarksTreeNode} from './bookmarks.mojom-webui.js';
 import {getCss} from './power_bookmark_row_item.css.js';
@@ -288,7 +288,7 @@ export class PowerBookmarkRowItemElement extends CrLitElement {
       if (bookmark?.url) {
         const url = new URL(bookmark?.url);
         if (url.protocol === 'chrome:') {
-          urlString = 'neovex://' + url.hostname;
+          urlString = 'chrome://' + url.hostname;
         }
         urlString = url.hostname;
       }

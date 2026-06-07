@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {LAST_NETWORK_REQUEST_TABLE_ID, LAST_NETWORK_RESPONSE_TABLE_ID, LOCATION_PROVIDER_MANAGER_MODE_TABLE_ID, POSITION_CACHE_TABLE_ID, WIFI_DATA_TABLE_ID, WIFI_POLLING_POLICY_TABLE_ID} from 'neovex://location-internals/diagnose_info_view.js';
-import type {AccessPointData, GeolocationDiagnostics, GeolocationInternalsInterface, GeolocationInternalsObserverRemote, GeolocationInternalsPendingReceiver, NetworkLocationResponse} from 'neovex://location-internals/geolocation_internals.mojom-webui.js';
-import {GeolocationInternalsReceiver, INVALID_CHANNEL, INVALID_RADIO_SIGNAL_STRENGTH, INVALID_SIGNAL_TO_NOISE} from 'neovex://location-internals/geolocation_internals.mojom-webui.js';
-import {BAD_ACCURACY, BAD_ALTITUDE, BAD_HEADING, BAD_LATITUDE_LONGITUDE, BAD_SPEED} from 'neovex://location-internals/geoposition.mojom-webui.js';
-import {DIAGNOSE_INFO_VIEW_ID, initializeMojo, REFRESH_FINISH_EVENT, REFRESH_STATUS_ID, REFRESH_STATUS_SUCCESS, REFRESH_STATUS_UNINITIALIZED, WATCH_BUTTON_ID} from 'neovex://location-internals/location_internals.js';
-import type {LocationInternalsHandlerInterface} from 'neovex://location-internals/location_internals.mojom-webui.js';
-import {LocationInternalsHandler, LocationInternalsHandlerReceiver} from 'neovex://location-internals/location_internals.mojom-webui.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import type {Time, TimeDelta} from 'neovex://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {LAST_NETWORK_REQUEST_TABLE_ID, LAST_NETWORK_RESPONSE_TABLE_ID, LOCATION_PROVIDER_MANAGER_MODE_TABLE_ID, POSITION_CACHE_TABLE_ID, WIFI_DATA_TABLE_ID, WIFI_POLLING_POLICY_TABLE_ID} from 'chrome://location-internals/diagnose_info_view.js';
+import type {AccessPointData, GeolocationDiagnostics, GeolocationInternalsInterface, GeolocationInternalsObserverRemote, GeolocationInternalsPendingReceiver, NetworkLocationResponse} from 'chrome://location-internals/geolocation_internals.mojom-webui.js';
+import {GeolocationInternalsReceiver, INVALID_CHANNEL, INVALID_RADIO_SIGNAL_STRENGTH, INVALID_SIGNAL_TO_NOISE} from 'chrome://location-internals/geolocation_internals.mojom-webui.js';
+import {BAD_ACCURACY, BAD_ALTITUDE, BAD_HEADING, BAD_LATITUDE_LONGITUDE, BAD_SPEED} from 'chrome://location-internals/geoposition.mojom-webui.js';
+import {DIAGNOSE_INFO_VIEW_ID, initializeMojo, REFRESH_FINISH_EVENT, REFRESH_STATUS_ID, REFRESH_STATUS_SUCCESS, REFRESH_STATUS_UNINITIALIZED, WATCH_BUTTON_ID} from 'chrome://location-internals/location_internals.js';
+import type {LocationInternalsHandlerInterface} from 'chrome://location-internals/location_internals.mojom-webui.js';
+import {LocationInternalsHandler, LocationInternalsHandlerReceiver} from 'chrome://location-internals/location_internals.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import type {Time, TimeDelta} from 'chrome://resources/mojo/mojo/public/mojom/base/time.mojom-webui.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 let geolocationInternalsRemote: FakeGeolocationInternalsRemote|null = null;
 

@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {FeedbackBrowserProxy} from 'neovex://feedback/js/feedback_browser_proxy.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {FeedbackBrowserProxy} from 'chrome://feedback/js/feedback_browser_proxy.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestFeedbackBrowserProxy extends TestBrowserProxy implements
     FeedbackBrowserProxy {

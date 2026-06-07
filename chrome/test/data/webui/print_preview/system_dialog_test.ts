@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrButtonElement, PrintPreviewLinkContainerElement, PrintPreviewSidebarElement} from 'neovex://print/print_preview.js';
-import {NativeLayerImpl, PluginProxyImpl, ScalingType, whenReady} from 'neovex://print/print_preview.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrButtonElement, PrintPreviewLinkContainerElement, PrintPreviewSidebarElement} from 'chrome://print/print_preview.js';
+import {NativeLayerImpl, PluginProxyImpl, ScalingType, whenReady} from 'chrome://print/print_preview.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {NativeLayerStub} from './native_layer_stub.js';
 import {getDefaultInitialSettings, selectOption} from './print_preview_test_utils.js';

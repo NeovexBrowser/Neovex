@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /**
- * @fileoverview Test suite for neovex://help-app. The tests are actually
+ * @fileoverview Test suite for chrome://help-app. The tests are actually
  * invoked in help_app_ui_gtest_browsertest.js, this file simply packages up
  * each tests logic into a single object that file can import.
  *
@@ -12,7 +12,7 @@
  */
 import {runTestInGuest} from './driver.js';
 
-const HOST_ORIGIN = 'neovex://help-app';
+const HOST_ORIGIN = 'chrome://help-app';
 const GUEST_ORIGIN = 'chrome-untrusted://help-app';
 
 interface TestSuite {
@@ -34,7 +34,7 @@ const HelpAppUIBrowserTest: TestSuite = {
 (window as unknown as {HelpAppUiBrowserTest: {}})['HelpAppUiBrowserTest'] =
   HelpAppUIBrowserTest;
 
-// Tests that neovex://help-app goes somewhere instead of 404ing or crashing.
+// Tests that chrome://help-app goes somewhere instead of 404ing or crashing.
 HelpAppUIBrowserTest['HasChromeSchemeURL'] = async () => {
   const {assertEquals} = await import('//webui-test/chai_assert.js');
   const guest =

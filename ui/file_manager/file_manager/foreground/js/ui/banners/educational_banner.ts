@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/button/button.js';
+import 'chrome://resources/cros_components/button/button.js';
 
 import {isCrosComponentsEnabled} from '../../../../common/js/flags.js';
 import {visitURL} from '../../../../common/js/util.js';

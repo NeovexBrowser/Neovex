@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {SplitNewTabPageAppElement, Tab} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {TabAlertState, TabSearchApiProxyImpl} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {SplitNewTabPageAppElement, Tab} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {TabAlertState, TabSearchApiProxyImpl} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {createProfileData, createTab, SAMPLE_WINDOW_HEIGHT} from './tab_search_test_data.js';
 import {TestTabSearchApiProxy} from './test_tab_search_api_proxy.js';
@@ -31,7 +31,7 @@ function createWindowData() {
           index: 1,
           tabId: ACTIVE_TAB_ID,
           title: 'Split View New Tab Page',
-          url: 'neovex://tab-search.top-chrome/split_new_tab_page.html',
+          url: 'chrome://tab-search.top-chrome/split_new_tab_page.html',
           visible: true,
         }),
         createTab({

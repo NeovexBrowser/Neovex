@@ -6,8 +6,8 @@
  * @fileoverview This implements a common button control, bound to command.
  */
 
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {crInjectTypeAndInit} from '../../../common/js/cr_ui.js';
 

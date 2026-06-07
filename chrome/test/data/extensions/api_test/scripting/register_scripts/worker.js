@@ -196,13 +196,13 @@ chrome.test.runTests([
   },
 
   // Test that an error is returned if a content script specifies a disallowed
-  // scheme (neovex:// URL).
+  // scheme (chrome:// URL).
   async function disallowedMatchPatternSchemeChromeUrl() {
     await chrome.scripting.unregisterContentScripts();
     const scriptId = 'disallowedMatchPatternSchemeChromeUrl';
     const scripts = [{
       id: scriptId,
-      matches: ['neovex://newtab/'],
+      matches: ['chrome://newtab/'],
       js: ['dynamic_1.js']
     }];
 

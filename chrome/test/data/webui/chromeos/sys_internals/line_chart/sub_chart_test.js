@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {UnitLabelAlign} from 'neovex://sys-internals/line_chart/constants.js';
-import {DataSeries} from 'neovex://sys-internals/line_chart/data_series.js';
-import {SubChart} from 'neovex://sys-internals/line_chart/sub_chart.js';
-import {UnitLabel} from 'neovex://sys-internals/line_chart/unit_label.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {UnitLabelAlign} from 'chrome://sys-internals/line_chart/constants.js';
+import {DataSeries} from 'chrome://sys-internals/line_chart/data_series.js';
+import {SubChart} from 'chrome://sys-internals/line_chart/sub_chart.js';
+import {UnitLabel} from 'chrome://sys-internals/line_chart/unit_label.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {assertCloseTo} from '../test_util.js';
 

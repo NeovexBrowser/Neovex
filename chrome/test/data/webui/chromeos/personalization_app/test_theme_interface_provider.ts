@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ThemeObserverInterface, ThemeObserverRemote, ThemeProviderInterface} from 'neovex://personalization/js/personalization_app.js';
-import {ColorScheme} from 'neovex://personalization/js/personalization_app.js';
-import {hexColorToSkColor} from 'neovex://resources/js/color_utils.js';
-import type {SkColor} from 'neovex://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {ThemeObserverInterface, ThemeObserverRemote, ThemeProviderInterface} from 'chrome://personalization/js/personalization_app.js';
+import {ColorScheme} from 'chrome://personalization/js/personalization_app.js';
+import {hexColorToSkColor} from 'chrome://resources/js/color_utils.js';
+import type {SkColor} from 'chrome://resources/mojo/skia/public/mojom/skcolor.mojom-webui.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestThemeProvider extends TestBrowserProxy implements
     ThemeProviderInterface {

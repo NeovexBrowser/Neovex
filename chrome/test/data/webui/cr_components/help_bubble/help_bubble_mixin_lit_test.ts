@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_components/help_bubble/help_bubble.js';
+import 'chrome://resources/cr_components/help_bubble/help_bubble.js';
 
-import type {HelpBubbleClientRemote, HelpBubbleHandlerInterface, HelpBubbleParams} from 'neovex://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
-import {HelpBubbleArrowPosition, HelpBubbleClientCallbackRouter, HelpBubbleClosedReason} from 'neovex://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
-import type {HelpBubbleController} from 'neovex://resources/cr_components/help_bubble/help_bubble_controller.js';
-import {ANCHOR_HIGHLIGHT_CLASS} from 'neovex://resources/cr_components/help_bubble/help_bubble_controller.js';
-import {HelpBubbleMixinLit} from 'neovex://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
-import type {HelpBubbleProxy} from 'neovex://resources/cr_components/help_bubble/help_bubble_proxy.js';
-import {HelpBubbleProxyImpl} from 'neovex://resources/cr_components/help_bubble/help_bubble_proxy.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {TrackedElementHandlerInterface, TrackedElementHandlerPendingReceiver, TrackedElementManagerRemote} from 'neovex://resources/mojo/ui/webui/resources/js/tracked_element/tracked_element.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertThrows, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {HelpBubbleClientRemote, HelpBubbleHandlerInterface, HelpBubbleParams} from 'chrome://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
+import {HelpBubbleArrowPosition, HelpBubbleClientCallbackRouter, HelpBubbleClosedReason} from 'chrome://resources/cr_components/help_bubble/help_bubble.mojom-webui.js';
+import type {HelpBubbleController} from 'chrome://resources/cr_components/help_bubble/help_bubble_controller.js';
+import {ANCHOR_HIGHLIGHT_CLASS} from 'chrome://resources/cr_components/help_bubble/help_bubble_controller.js';
+import {HelpBubbleMixinLit} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin_lit.js';
+import type {HelpBubbleProxy} from 'chrome://resources/cr_components/help_bubble/help_bubble_proxy.js';
+import {HelpBubbleProxyImpl} from 'chrome://resources/cr_components/help_bubble/help_bubble_proxy.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {TrackedElementHandlerInterface, TrackedElementHandlerPendingReceiver, TrackedElementManagerRemote} from 'chrome://resources/mojo/ui/webui/resources/js/tracked_element/tracked_element.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertThrows, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 const TITLE_NATIVE_ID: string = 'kHelpBubbleMixinTestTitleElementId';
 const PARAGRAPH_NATIVE_ID: string = 'kHelpBubbleMixinTestParagraphElementId';

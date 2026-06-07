@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import type {GooglePhotosAlbum, SetErrorAction, WallpaperGridItemElement} from 'neovex://personalization/js/personalization_app.js';
-import {fetchGooglePhotosAlbums, fetchGooglePhotosEnabled, fetchGooglePhotosSharedAlbums, getCountText, GooglePhotosAlbumsElement, PersonalizationActionName, PersonalizationRouterElement} from 'neovex://personalization/js/personalization_app.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertGT, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {GooglePhotosAlbum, SetErrorAction, WallpaperGridItemElement} from 'chrome://personalization/js/personalization_app.js';
+import {fetchGooglePhotosAlbums, fetchGooglePhotosEnabled, fetchGooglePhotosSharedAlbums, getCountText, GooglePhotosAlbumsElement, PersonalizationActionName, PersonalizationRouterElement} from 'chrome://personalization/js/personalization_app.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertGT, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 import {baseSetup, createSvgDataUrl, initElement, teardownElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/accordion/accordion.js';
-import 'neovex://resources/cros_components/accordion/accordion_item.js';
-import 'neovex://resources/cros_components/badge/badge.js';
+import 'chrome://resources/cros_components/accordion/accordion.js';
+import 'chrome://resources/cros_components/accordion/accordion_item.js';
+import 'chrome://resources/cros_components/badge/badge.js';
 import './cra/cra-icon.js';
 import './genai-error.js';
 import './genai-feedback-buttons.js';
@@ -21,7 +21,7 @@ import {
   nothing,
   PropertyDeclarations,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {usePlatformHandler} from '../core/lit/context.js';

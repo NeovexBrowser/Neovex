@@ -10,10 +10,10 @@ build_webui_tests("build") {
   files = [ "key_value_pair_viewer_test.ts" ]
 
   ts_path_mappings = [
-    "neovex://system/strings.m.js|" +
+    "chrome://system/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "neovex://system/shared/key_value_pair_viewer/*|" + rebase_path(
+    "chrome://system/shared/key_value_pair_viewer/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/key_value_pair_viewer_shared/tsc/*",
             target_gen_dir),
   ]

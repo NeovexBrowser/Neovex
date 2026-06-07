@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
+import 'chrome://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
 
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrProfileAvatarSelectorElement} from 'neovex://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {keyDownOn, pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrProfileAvatarSelectorElement} from 'chrome://resources/cr_elements/cr_profile_avatar_selector/cr_profile_avatar_selector.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {keyDownOn, pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr-profile-avatar-selector. */
@@ -21,21 +21,21 @@ suite('cr-profile-avatar-selector', function() {
     const avatarSelector = document.createElement('cr-profile-avatar-selector');
     avatarSelector.avatars = [
       {
-        url: 'neovex://avatar1.png',
+        url: 'chrome://avatar1.png',
         label: 'avatar1',
         index: 1,
         selected: false,
         isGaiaAvatar: false,
       },
       {
-        url: 'neovex://avatar2.png',
+        url: 'chrome://avatar2.png',
         label: 'avatar2',
         index: 2,
         selected: false,
         isGaiaAvatar: false,
       },
       {
-        url: 'neovex://avatar3.png',
+        url: 'chrome://avatar3.png',
         label: 'avatar3',
         index: 3,
         selected: false,
@@ -103,14 +103,14 @@ suite('cr-profile-avatar-selector', function() {
     verifyTabIndex(items, [0, -1, -1]);
     avatarSelector.avatars = [
       {
-        url: 'neovex://avatar1.png',
+        url: 'chrome://avatar1.png',
         label: 'avatar1',
         index: 1,
         selected: false,
         isGaiaAvatar: false,
       },
       {
-        url: 'neovex://avatar2.png',
+        url: 'chrome://avatar2.png',
         label: 'avatar2',
         index: 2,
         selected: true,
@@ -147,7 +147,7 @@ suite('cr-profile-avatar-selector', function() {
     // Simulate tapping the third avatar.
     items[2]!.click();
     await microtasksFinished();
-    assertEquals('neovex://avatar3.png', avatarSelector.selectedAvatar!.url);
+    assertEquals('chrome://avatar3.png', avatarSelector.selectedAvatar!.url);
     assertFalse(items[0]!.parentElement!.classList.contains('iron-selected'));
     assertFalse(items[1]!.parentElement!.classList.contains('iron-selected'));
     assertTrue(items[2]!.parentElement!.classList.contains('iron-selected'));

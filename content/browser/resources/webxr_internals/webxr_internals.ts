@@ -8,8 +8,8 @@ import './runtime_changelog_table.js';
 import './session_info_table.js';
 import './session_statistics_table.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 import type {ActiveRuntimeInfoTableElement} from './active_runtime_info_table.js';
 import {BrowserProxy} from './browser_proxy.js';

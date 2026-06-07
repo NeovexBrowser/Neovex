@@ -10,5 +10,5 @@ mojom("mojom") {
   sources = [ "passpoint.mojom" ]
   public_deps = [ "//mojo/public/mojom/base" ]
   webui_module_path =
-      "neovex://resources/mojo/chromeos/ash/services/connectivity/public/mojom"
+      "chrome://resources/mojo/chromeos/ash/services/connectivity/public/mojom"
 }

@@ -6,11 +6,11 @@
  * @fileoverview Fake implementation of CrosNetworkConfig for testing.
  */
 
-import {assert, assertNotReached} from 'neovex://resources/ash/common/assert.js';
-import {OncMojo} from 'neovex://resources/ash/common/network/onc_mojo.js';
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
-import {AlwaysOnVpnMode, ApnState, FilterType, InhibitReason, NO_LIMIT, StartConnectResult} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, DeviceStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {assert, assertNotReached} from 'chrome://resources/ash/common/assert.js';
+import {OncMojo} from 'chrome://resources/ash/common/network/onc_mojo.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
+import {AlwaysOnVpnMode, ApnState, FilterType, InhibitReason, NO_LIMIT, StartConnectResult} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, DeviceStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
 
 /** @typedef {*} AlwaysOnVpnProperties */
 /** @typedef {*} ApnProperties */

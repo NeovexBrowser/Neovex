@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 import './attribution_detail_table.js';
 import './attribution_internals_table.js';
 
-import type {Origin} from 'neovex://resources/mojo/url/mojom/origin.mojom-webui.js';
+import type {Origin} from 'chrome://resources/mojo/url/mojom/origin.mojom-webui.js';
 
 import {AggregatableResult} from './aggregatable_result.mojom-webui.js';
 import {AttributionSupport} from './attribution.mojom-webui.js';

@@ -7,13 +7,13 @@
  * information.
  */
 
-import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_link_row/cr_link_row.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 import '../os_settings_page/os_settings_animated_pages.js';
 import '../os_settings_page/os_settings_subpage.js';
 import '../os_settings_page/settings_card.js';
@@ -22,17 +22,17 @@ import '../os_settings_icons.html.js';
 import '../os_reset_page/os_powerwash_dialog.js';
 import './update_warning_dialog.js';
 import '../crostini_page/crostini_settings_card.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator.js';
 
 import {LifetimeBrowserProxyImpl} from '/shared/settings/lifetime_browser_proxy.js';
-import type {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {CrPolicyIndicatorType} from 'neovex://resources/ash/common/cr_elements/policy/cr_policy_indicator_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {sanitizeInnerHtml} from 'neovex://resources/js/parse_html_subset.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {CrPolicyIndicatorType} from 'chrome://resources/ash/common/cr_elements/policy/cr_policy_indicator_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {sanitizeInnerHtml} from 'chrome://resources/js/parse_html_subset.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';
 import {isCrostiniSupported} from '../common/load_time_booleans.js';
@@ -652,8 +652,8 @@ export class OsAboutPageElement extends OsAboutPageBase {
       case UpdateStatus.CHECKING:
       case UpdateStatus.UPDATING:
         return this.isDarkModeActive_ ?
-            'neovex://resources/images/throbber_small_dark.svg' :
-            'neovex://resources/images/throbber_small.svg';
+            'chrome://resources/images/throbber_small_dark.svg' :
+            'chrome://resources/images/throbber_small.svg';
       default:
         return null;
     }
@@ -664,7 +664,7 @@ export class OsAboutPageElement extends OsAboutPageBase {
   }
 
   private onManagementPageClick_(): void {
-    window.open('neovex://management');
+    window.open('chrome://management');
   }
 
   private isPowerwash_(): boolean {

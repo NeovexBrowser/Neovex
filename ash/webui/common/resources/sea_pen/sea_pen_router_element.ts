@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
-import 'neovex://resources/polymer/v3_0/iron-location/iron-location.js';
-import 'neovex://resources/polymer/v3_0/iron-location/iron-query-params.js';
+import 'chrome://resources/ash/common/cr_elements/cr_dialog/cr_dialog.js';
+import 'chrome://resources/polymer/v3_0/iron-location/iron-location.js';
+import 'chrome://resources/polymer/v3_0/iron-location/iron-query-params.js';
 import './sea_pen_freeform_element.js';
 import './sea_pen_images_element.js';
 import './sea_pen_input_query_element.js';
@@ -15,8 +15,8 @@ import './sea_pen_template_query_element.js';
 import './sea_pen_templates_element.js';
 import './sea_pen_toast_element.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {Query} from './constants.js';
 import {QUERY} from './constants.js';
@@ -161,8 +161,8 @@ export class SeaPenRouterElement extends WithSeaPenStore {
     }
     const relativePath = path.substring(basePath.length);
     // Normalize single slash to empty string.
-    // This keeps path consistent between neovex://vc-background/ and
-    // neovex://personalization/wallpaper/sea-pen.
+    // This keeps path consistent between chrome://vc-background/ and
+    // chrome://personalization/wallpaper/sea-pen.
     return relativePath === '/' ? '' : relativePath;
   }
 

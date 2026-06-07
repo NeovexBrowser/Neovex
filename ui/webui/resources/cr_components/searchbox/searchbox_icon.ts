@@ -331,7 +331,7 @@ export class SearchboxIconElement extends CrLitElement {
   }
 
   private computeFaviconImageSrcSet_(): string {
-    if (!this.faviconImage_.startsWith('neovex://favicon2/')) {
+    if (!this.faviconImage_.startsWith('chrome://favicon2/')) {
       return '';
     }
 

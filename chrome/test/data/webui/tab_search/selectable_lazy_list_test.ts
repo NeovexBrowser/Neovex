@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {CrLitElement, html} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import {SelectableLazyListElement, TabData, TabItemType, TabSearchItemElement, TitleItem} from 'neovex://tab-search.top-chrome/tab_search.js';
-import {assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {CrLitElement, html} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import {SelectableLazyListElement, TabData, TabItemType, TabSearchItemElement, TitleItem} from 'chrome://tab-search.top-chrome/tab_search.js';
+import {assertEquals, assertFalse, assertGT, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {generateSampleTabsFromSiteNames, sampleSiteNames} from './tab_search_test_data.js';
 import {assertTabItemAndNeighborsInViewBounds, disableAnimationBehavior} from './tab_search_test_helper.js';

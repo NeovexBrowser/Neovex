@@ -26,7 +26,7 @@ build_webui_tests("build") {
   ]
 
   ts_path_mappings =
-      [ "neovex://history/strings.m.js|" +
+      [ "chrome://history/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir) ]
 }

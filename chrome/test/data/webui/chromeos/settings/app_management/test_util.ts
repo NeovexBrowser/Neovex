@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {AppManagementToggleRowElement, CrToggleElement} from 'neovex://os-settings/os_settings.js';
-import {AppManagementBrowserProxy, AppManagementComponentBrowserProxy} from 'neovex://os-settings/os_settings.js';
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {PageCallbackRouter, PermissionType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
-import {assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {AppManagementToggleRowElement, CrToggleElement} from 'chrome://os-settings/os_settings.js';
+import {AppManagementBrowserProxy, AppManagementComponentBrowserProxy} from 'chrome://os-settings/os_settings.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {PageCallbackRouter, PermissionType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
+import {assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import type {FakeMediaDevices} from '../fake_media_devices.js';
 

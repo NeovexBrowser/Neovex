@@ -8,7 +8,7 @@
  * in chrome/.
  */
 
-import {sendWithPromise} from 'neovex://resources/ash/common/cr.m.js';
+import {sendWithPromise} from 'chrome://resources/ash/common/cr.m.js';
 
 import type {ScanCompleteAction, ScanJobSettingsForMetrics} from './scanning_app_types.js';
 

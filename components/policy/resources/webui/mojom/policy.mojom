@@ -18,7 +18,7 @@ interface PolicyPageClient {
 };
 
 // The factory interface used to bootstrap the connection between the
-// neovex://policy WebUI and the browser process.
+// chrome://policy WebUI and the browser process.
 interface PolicyPageHandlerFactory {
   // Called by the renderer to initialize the communication channel.
   // `handler` is used to send commands from TypeScript to C++.

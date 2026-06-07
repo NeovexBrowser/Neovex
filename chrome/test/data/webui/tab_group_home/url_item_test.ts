@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://tab-group-home/url_item_grid/url_item.js';
+import 'chrome://tab-group-home/url_item_grid/url_item.js';
 
-import {getFaviconForPageURL} from 'neovex://resources/js/icon.js';
-import type {UrlItemElement} from 'neovex://tab-group-home/url_item_grid/url_item.js';
-import type {UrlItem} from 'neovex://tab-group-home/url_item_grid/url_item_delegate.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {getFaviconForPageURL} from 'chrome://resources/js/icon.js';
+import type {UrlItemElement} from 'chrome://tab-group-home/url_item_grid/url_item.js';
+import type {UrlItem} from 'chrome://tab-group-home/url_item_grid/url_item_delegate.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('UrlItemElementTest', () => {
   let urlItemElement: UrlItemElement;

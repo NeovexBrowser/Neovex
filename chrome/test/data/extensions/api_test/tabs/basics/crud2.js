@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 var newTabUrls = [
-  'neovex://newtab/',
+  'chrome://newtab/',
   'chrome-native://newtab/',
 ];
 
@@ -27,13 +27,13 @@ const tests = [
   },
 
   function setupTwoWindows() {
-    createWindow(["about:blank", "neovex://newtab/", pageUrl("a")], {},
+    createWindow(["about:blank", "chrome://newtab/", pageUrl("a")], {},
                  pass(function(winId, tabIds) {
       waitForAllTabs(pass(function() {
         secondWindowId = winId;
         testTabId = tabIds[2];
 
-        createWindow(["neovex://newtab/", pageUrl("b")], {},
+        createWindow(["chrome://newtab/", pageUrl("b")], {},
                      pass(function(winId, tabIds) {
           waitForAllTabs(pass(function() {
             thirdWindowId = winId;

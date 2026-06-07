@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BackgroundImage, Theme, ThirdPartyThemeInfo} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {BackgroundImage, Theme, ThirdPartyThemeInfo} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 type Constructor<T> = new (...args: any[]) => T;
 type Installer<T> = (instance: T) => void;

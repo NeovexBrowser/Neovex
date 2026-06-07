@@ -6,14 +6,14 @@
  * @fileoverview Entry point for the Image Loader's service worker.
  */
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import type {LoadImageRequest, LoadImageResponse} from './load_image_request.js';
 import type {PrivateApi} from './sw_od_messages.js';
 
 const EXTENSION_ID = 'pmfjbimdmchhbnneeidfognadeopoehp';
 
-const ALLOW_LISTED_FILE_MANAGER_SWA = 'neovex://file-manager';
+const ALLOW_LISTED_FILE_MANAGER_SWA = 'chrome://file-manager';
 const ALLOW_LISTED_NATIVE = 'com.google.ash_thumbnail_loader';
 
 // setupOffscreenDocument is based on

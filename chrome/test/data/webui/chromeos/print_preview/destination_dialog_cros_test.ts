@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Destination, DestinationStore, LocalDestinationInfo, PrintPreviewDestinationDialogCrosElement, RecentDestination} from 'neovex://print/print_preview.js';
-import {DESTINATION_DIALOG_CROS_LOADING_TIMER_IN_MS, makeRecentDestination, NativeLayerImpl, PrinterSetupInfoMessageType, PrintPreviewPrinterSetupInfoCrosElement} from 'neovex://print/print_preview.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {keyEventOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {eventToPromise, isChildVisible, isVisible} from 'neovex://webui-test/test_util.js';
+import type {Destination, DestinationStore, LocalDestinationInfo, PrintPreviewDestinationDialogCrosElement, RecentDestination} from 'chrome://print/print_preview.js';
+import {DESTINATION_DIALOG_CROS_LOADING_TIMER_IN_MS, makeRecentDestination, NativeLayerImpl, PrinterSetupInfoMessageType, PrintPreviewPrinterSetupInfoCrosElement} from 'chrome://print/print_preview.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {keyEventOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {eventToPromise, isChildVisible, isVisible} from 'chrome://webui-test/test_util.js';
 
 import type {NativeLayerCrosStub} from './native_layer_cros_stub.js';
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';

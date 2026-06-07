@@ -4,9 +4,9 @@
 
 import '/strings.m.js';
 
-import {sendWithPromise} from 'neovex://resources/ash/common/cr.m.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {$} from 'neovex://resources/ash/common/util.js';
+import {sendWithPromise} from 'chrome://resources/ash/common/cr.m.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {$} from 'chrome://resources/ash/common/util.js';
 
 const devicePixelRatio = window.devicePixelRatio;
 

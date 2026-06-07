@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {crosAudioConfigMojom, fakeCrosAudioConfig} from 'neovex://os-settings/os_settings.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MockMethod} from 'neovex://webui-test/mock_controller.js';
-import {MockController} from 'neovex://webui-test/mock_controller.js';
+import {crosAudioConfigMojom, fakeCrosAudioConfig} from 'chrome://os-settings/os_settings.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MockMethod} from 'chrome://webui-test/mock_controller.js';
+import {MockController} from 'chrome://webui-test/mock_controller.js';
 
 suite('FakeCrosAudioConfig', () => {
   // Observer for testing updates which have not been added to mojo yet.

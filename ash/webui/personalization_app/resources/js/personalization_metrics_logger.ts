@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {ColorScheme} from '../color_scheme.mojom-webui.js';
 import {StaticColor, TopicSource} from '../personalization_app.mojom-webui.js';

@@ -20,7 +20,7 @@ mojom("mojo_bindings") {
     "//ui/webui/resources/js/tracked_element:mojo_bindings",
   ]
 
-  webui_module_path = "neovex://resources/cr_components/help_bubble/"
+  webui_module_path = "chrome://resources/cr_components/help_bubble/"
 }
 
 build_webui("build") {

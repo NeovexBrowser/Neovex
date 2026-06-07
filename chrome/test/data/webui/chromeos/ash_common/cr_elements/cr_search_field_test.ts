@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
 
-import type {CrSearchFieldElement} from 'neovex://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNotReached, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {CrSearchFieldElement} from 'chrome://resources/ash/common/cr_elements/cr_search_field/cr_search_field.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNotReached, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 // clang-format on
 
 /** @fileoverview Suite of tests for cr-search-field. */
@@ -25,9 +25,9 @@ suite('cr-search-field', function() {
   setup(function() {
     document.body.innerHTML = window.trustedTypes!.emptyHTML;
     // Ensure svg, which is referred to by a relative URL, is loaded from
-    // neovex://resources and not neovex://test
+    // chrome://resources and not chrome://test
     const base = document.createElement('base');
-    base.href = 'neovex://resources/ash/common/cr_elements/';
+    base.href = 'chrome://resources/ash/common/cr_elements/';
     document.head.appendChild(base);
     field = document.createElement('cr-search-field');
     searches = [];

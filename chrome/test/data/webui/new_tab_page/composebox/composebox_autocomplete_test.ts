@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ComposeboxElement, VoiceSearchAction} from 'neovex://new-tab-page/lazy_load.js';
-import {InputType} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import type {ComposeboxVoiceSearchElement} from 'neovex://resources/cr_components/composebox/composebox_voice_search.js';
-import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'neovex://resources/cr_components/searchbox/searchbox_browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {TabInfo} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {$$, eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {ComposeboxElement, VoiceSearchAction} from 'chrome://new-tab-page/lazy_load.js';
+import {InputType} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import type {ComposeboxVoiceSearchElement} from 'chrome://resources/cr_components/composebox/composebox_voice_search.js';
+import {createAutocompleteResultForTesting, createSearchMatchForTesting} from 'chrome://resources/cr_components/searchbox/searchbox_browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {TabInfo} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {$$, eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertStyle} from '../test_support.js';
 

@@ -887,7 +887,7 @@ export declare interface GlicBrowserHost {
 
   /**
    * Returns an observable skill to invoke. This happens when user chooses
-   * a skill to run in the neovex://skills page. The web client should
+   * a skill to run in the chrome://skills page. The web client should
    * automatically run the skill when it is received.
    */
   getSkillToInvoke?(): ObservableValue<Skill>;

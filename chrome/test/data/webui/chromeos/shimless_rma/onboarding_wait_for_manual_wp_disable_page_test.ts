@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shimless-rma/shimless_rma.js';
+import 'chrome://shimless-rma/shimless_rma.js';
 
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
-import {OnboardingWaitForManualWpDisablePage} from 'neovex://shimless-rma/onboarding_wait_for_manual_wp_disable_page.js';
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
+import {OnboardingWaitForManualWpDisablePage} from 'chrome://shimless-rma/onboarding_wait_for_manual_wp_disable_page.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 
 suite('onboardingWaitForManualWpDisablePageTest', function() {

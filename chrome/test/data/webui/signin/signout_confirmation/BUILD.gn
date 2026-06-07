@@ -16,7 +16,7 @@ build_webui_tests("build") {
     "test_signout_confirmation_browser_proxy.ts",
   ]
 
-  ts_path_mappings = [ "neovex://signout-confirmation/signout_confirmation.js|" + rebase_path(
+  ts_path_mappings = [ "chrome://signout-confirmation/signout_confirmation.js|" + rebase_path(
                            "$root_gen_dir/chrome/browser/resources/signin/signout_confirmation/tsc/signout_confirmation.d.ts",
                            target_gen_dir) ]
 

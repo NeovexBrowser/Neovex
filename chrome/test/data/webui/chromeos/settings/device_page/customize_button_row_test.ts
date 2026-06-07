@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
-import 'neovex://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
+import 'chrome://os-settings/lazy_load.js';
+import 'chrome://resources/polymer/v3_0/iron-test-helpers/mock-interactions.js';
 
-import type {CustomizeButtonSelectElement} from 'neovex://os-settings/lazy_load.js';
-import {CustomizeButtonRowElement} from 'neovex://os-settings/lazy_load.js';
-import type {FakeInputDeviceSettingsProvider} from 'neovex://os-settings/os_settings.js';
-import {fakeGraphicsTabletButtonActions, fakeGraphicsTablets, fakeMice, fakeMouseButtonActions, getInputDeviceSettingsProvider, setupFakeInputDeviceSettingsProvider} from 'neovex://os-settings/os_settings.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertDeepEquals, assertEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {CustomizeButtonSelectElement} from 'chrome://os-settings/lazy_load.js';
+import {CustomizeButtonRowElement} from 'chrome://os-settings/lazy_load.js';
+import type {FakeInputDeviceSettingsProvider} from 'chrome://os-settings/os_settings.js';
+import {fakeGraphicsTabletButtonActions, fakeGraphicsTablets, fakeMice, fakeMouseButtonActions, getInputDeviceSettingsProvider, setupFakeInputDeviceSettingsProvider} from 'chrome://os-settings/os_settings.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertDeepEquals, assertEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 suite('<customize-button-row>', () => {
   let customizeButtonRow: CustomizeButtonRowElement;

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://histograms/histograms_internals.js';
+import 'chrome://histograms/histograms_internals.js';
 
-import {generateHistogramsAsText, monitoringStopped} from 'neovex://histograms/histograms_internals.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {generateHistogramsAsText, monitoringStopped} from 'chrome://histograms/histograms_internals.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 /**
  * @return A Promise that will resolve on the histograms tag

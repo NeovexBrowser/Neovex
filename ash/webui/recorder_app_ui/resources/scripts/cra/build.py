@@ -51,13 +51,13 @@ def _get_tsc_paths(build_dir: pathlib.Path) -> dict[str, list[str]]:
 
     return {
         "//resources/*": [str(resources_dir / "*")],
-        "neovex://resources/*": [str(resources_dir / "*")],
-        "neovex://resources/mwc/lit/index.js": [str(lit_d_ts)],
-        "neovex://resources/mwc/@material/*": [str(mwc_components_dir / "*")],
-        "neovex://resources/cros_components/*":
+        "chrome://resources/*": [str(resources_dir / "*")],
+        "chrome://resources/mwc/lit/index.js": [str(lit_d_ts)],
+        "chrome://resources/mwc/@material/*": [str(mwc_components_dir / "*")],
+        "chrome://resources/cros_components/*":
         [str(cros_components_dir / "*")],
         "/images/*": [str(images_dir / "*")],
-        "neovex://resources/ash/common/metrics/*": [str(metrics_dir / "*")],
+        "chrome://resources/ash/common/metrics/*": [str(metrics_dir / "*")],
         "/strings.m.js": [str(typescript_definition_dir / "strings.d.ts")],
     }
 

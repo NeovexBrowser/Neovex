@@ -3,14 +3,14 @@
 // found in the LICENSE file.
 import './app_management_cros_shared_style.css.js';
 import './app_management_cros_shared_vars.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icons.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icons.css.js';
 
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppManagementEntryPoint, AppManagementEntryPointsHistogramName} from 'neovex://resources/cr_components/app_management/constants.js';
-import {getAppIcon} from 'neovex://resources/cr_components/app_management/util.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppManagementEntryPoint, AppManagementEntryPointsHistogramName} from 'chrome://resources/cr_components/app_management/constants.js';
+import {getAppIcon} from 'chrome://resources/cr_components/app_management/util.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AppManagementStoreMixin} from '../../common/app_management/store_mixin.js';
 

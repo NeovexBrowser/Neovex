@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsUsersAddUserDialogElement} from 'neovex://os-settings/lazy_load.js';
-import type {CrInputElement} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsUsersAddUserDialogElement} from 'chrome://os-settings/lazy_load.js';
+import type {CrInputElement} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {FakeUsersPrivate} from '../fake_users_private.js';
 

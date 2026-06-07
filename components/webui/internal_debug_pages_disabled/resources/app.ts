@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!loadTimeData.getBoolean('debugPagesEnabled')) {
@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const host = loadTimeData.getString('host');
   if (host) {
-    window.location.href = `neovex://${host}`;
+    window.location.href = `chrome://${host}`;
   }
 });

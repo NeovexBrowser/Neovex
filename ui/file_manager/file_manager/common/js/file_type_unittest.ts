@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {getIcon, getType, isDocument, isEncrypted} from './file_type.js';
 import {MockFileSystem} from './mock_entry.js';
@@ -13,7 +13,7 @@ function makeFakeEntry(name: string): Entry {
     isDirectory: false,
     rootType: RootType.MY_FILES,
     name: name,
-    toURL: () => `filesystem:neovex://file-manager/root/${name}`,
+    toURL: () => `filesystem:chrome://file-manager/root/${name}`,
   } as any as Entry;
 }
 
@@ -23,7 +23,7 @@ function makeFakeDriveEntry(name: string): Entry {
     rootType: RootType.DRIVE,
     name: name,
     toURL: () =>
-        `filesystem:neovex://file-manager/external/drivefs-aaaaa/root/${name}`,
+        `filesystem:chrome://file-manager/external/drivefs-aaaaa/root/${name}`,
   } as any as Entry;
 }
 

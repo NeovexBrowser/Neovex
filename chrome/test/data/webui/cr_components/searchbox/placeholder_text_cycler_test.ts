@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {PlaceholderTextCycler} from 'neovex://resources/cr_components/searchbox/placeholder_text_cycler.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {PlaceholderTextCycler} from 'chrome://resources/cr_components/searchbox/placeholder_text_cycler.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {waitForAttributeChange} from './searchbox_test_utils.js';
 

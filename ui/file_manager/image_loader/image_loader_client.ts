@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {LruCache} from 'neovex://file-manager/common/js/lru_cache.js';
+import {LruCache} from 'chrome://file-manager/common/js/lru_cache.js';
 
 import {cacheKey, type CacheValue, createCancel, type LoadImageRequest, LoadImageResponse, LoadImageResponseStatus} from './load_image_request.js';
 
@@ -158,7 +158,7 @@ const EXTENSION_ID = 'pmfjbimdmchhbnneeidfognadeopoehp';
 const CLIENT_URL_REGEX = /filesystem:chrome-extension:\/\/[a-z]+/;
 
 /**
- * Image loader client neovex://file-manager request URL matcher.
+ * Image loader client chrome://file-manager request URL matcher.
  */
 const CLIENT_SWA_REGEX = /filesystem:chrome:\/\/file-manager/;
 

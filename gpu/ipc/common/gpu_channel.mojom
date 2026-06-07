@@ -83,7 +83,7 @@ struct CommandBufferState {
 // this interface is associated with each C++ GpuChannel/Host's underlying
 // IPC::Channel interface. Eventually it will replace the IPC::Channel.
 interface GpuChannel {
-  // Crashes the GPU process in a similar way to how neovex://gpucrash does.
+  // Crashes the GPU process in a similar way to how chrome://gpucrash does.
   // This is only supported in testing environments with the GPU benchmarking
   // extension enabled and is otherwise ignored.
   //

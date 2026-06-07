@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {CrLinkRowElement, SearchEngine, SearchEnginesInfo} from 'neovex://os-settings/os_settings.js';
-import {Router, SearchEnginesBrowserProxyImpl, SettingsSearchEngineElement} from 'neovex://os-settings/os_settings.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {CrLinkRowElement, SearchEngine, SearchEnginesInfo} from 'chrome://os-settings/os_settings.js';
+import {Router, SearchEnginesBrowserProxyImpl, SettingsSearchEngineElement} from 'chrome://os-settings/os_settings.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {clearBody} from '../utils.js';
 

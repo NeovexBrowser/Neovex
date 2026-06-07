@@ -4,7 +4,7 @@
 
 import '../../elements/icons.html.js';
 
-import {assertInstanceof} from 'neovex://resources/js/assert.js';
+import {assertInstanceof} from 'chrome://resources/js/assert.js';
 
 import type {VolumeManager} from '../../../background/js/volume_manager.js';
 import {crInjectTypeAndInit} from '../../../common/js/cr_ui.js';

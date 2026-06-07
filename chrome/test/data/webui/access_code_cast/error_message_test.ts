@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://access-code-cast/error_message/error_message.js';
+import 'chrome://access-code-cast/error_message/error_message.js';
 
-import {AddSinkResultCode} from 'neovex://access-code-cast/access_code_cast.mojom-webui.js';
-import type {ErrorMessageElement} from 'neovex://access-code-cast/error_message/error_message.js';
-import {RouteRequestResultCode} from 'neovex://access-code-cast/route_request_result_code.mojom-webui.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import {AddSinkResultCode} from 'chrome://access-code-cast/access_code_cast.mojom-webui.js';
+import type {ErrorMessageElement} from 'chrome://access-code-cast/error_message/error_message.js';
+import {RouteRequestResultCode} from 'chrome://access-code-cast/route_request_result_code.mojom-webui.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 suite('ErrorMessageElementTest', () => {
   let c2cErrorMessage: ErrorMessageElement;

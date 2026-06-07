@@ -2,22 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://customize-chrome-side-panel.top-chrome/themes.js';
+import 'chrome://customize-chrome-side-panel.top-chrome/themes.js';
 
-import {CustomizeChromeAction, NtpImageType} from 'neovex://customize-chrome-side-panel.top-chrome/common.js';
-import type {BackgroundCollection, CollectionImage, CustomizeChromePageRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
-import {CustomizeChromeApiProxy} from 'neovex://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
-import type {ThemesElement} from 'neovex://customize-chrome-side-panel.top-chrome/themes.js';
-import {CHROME_THEME_BACK_ELEMENT_ID, CHROME_THEME_ELEMENT_ID} from 'neovex://customize-chrome-side-panel.top-chrome/themes.js';
-import {WindowProxy} from 'neovex://customize-chrome-side-panel.top-chrome/window_proxy.js';
-import type {CrAutoImgElement} from 'neovex://resources/cr_elements/cr_auto_img/cr_auto_img.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {CustomizeChromeAction, NtpImageType} from 'chrome://customize-chrome-side-panel.top-chrome/common.js';
+import type {BackgroundCollection, CollectionImage, CustomizeChromePageRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromePageCallbackRouter, CustomizeChromePageHandlerRemote} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome.mojom-webui.js';
+import {CustomizeChromeApiProxy} from 'chrome://customize-chrome-side-panel.top-chrome/customize_chrome_api_proxy.js';
+import type {ThemesElement} from 'chrome://customize-chrome-side-panel.top-chrome/themes.js';
+import {CHROME_THEME_BACK_ELEMENT_ID, CHROME_THEME_ELEMENT_ID} from 'chrome://customize-chrome-side-panel.top-chrome/themes.js';
+import {WindowProxy} from 'chrome://customize-chrome-side-panel.top-chrome/window_proxy.js';
+import type {CrAutoImgElement} from 'chrome://resources/cr_elements/cr_auto_img/cr_auto_img.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {$$, createBackgroundImage, createTheme, installMock} from './test_support.js';
 
@@ -175,7 +175,7 @@ suite('ThemesTest', () => {
 
     // Turn toggle on.
     const theme = createTheme();
-    theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
+    theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
     theme.backgroundImage.collectionId = themesElement.selectedCollection!.id;
     theme.backgroundImage.dailyRefreshEnabled = true;
     callbackRouterRemote.setTheme(theme);
@@ -204,7 +204,7 @@ suite('ThemesTest', () => {
         // Check that toggle isn't on if refresh daily is a different
         // collection.
         theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('neovex://theme/foo');
+        theme.backgroundImage = createBackgroundImage('chrome://theme/foo');
         theme.backgroundImage.collectionId = 'different_collection';
         theme.backgroundImage.dailyRefreshEnabled = true;
         callbackRouterRemote.setTheme(theme);
@@ -213,7 +213,7 @@ suite('ThemesTest', () => {
 
         // Check that toggle is on if refresh daily matches current collection.
         theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('neovex://theme/bar');
+        theme.backgroundImage = createBackgroundImage('chrome://theme/bar');
         theme.backgroundImage.collectionId =
             themesElement.selectedCollection!.id;
         theme.backgroundImage.dailyRefreshEnabled = true;
@@ -294,7 +294,7 @@ suite('ThemesTest', () => {
 
         // Check that toggle is on if refresh daily matches current collection.
         theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('neovex://theme/bar');
+        theme.backgroundImage = createBackgroundImage('chrome://theme/bar');
         theme.backgroundImage.collectionId =
             themesElement.selectedCollection!.id;
         theme.backgroundImage.dailyRefreshEnabled = true;
@@ -304,7 +304,7 @@ suite('ThemesTest', () => {
 
         // Check that toggle is off if refresh daily is not enabled
         theme = createTheme();
-        theme.backgroundImage = createBackgroundImage('neovex://theme/bar');
+        theme.backgroundImage = createBackgroundImage('chrome://theme/bar');
         theme.backgroundImage.collectionId =
             themesElement.selectedCollection!.id;
         theme.backgroundImage.dailyRefreshEnabled = false;

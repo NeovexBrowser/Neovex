@@ -22,12 +22,12 @@
  * NO_SELECTION if nothing is selected.
  */
 
-import 'neovex://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
+import 'chrome://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
 
-import type {CrLazyListElement} from 'neovex://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {CrLitElement, html, render} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues, TemplateResult} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import type {CrLazyListElement} from 'chrome://resources/cr_elements/cr_lazy_list/cr_lazy_list.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CrLitElement, html, render} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues, TemplateResult} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getCss} from './selectable_lazy_list.css.js';
 

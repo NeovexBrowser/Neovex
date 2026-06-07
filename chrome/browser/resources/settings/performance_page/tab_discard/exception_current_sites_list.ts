@@ -2,18 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 import '../../controls/settings_checkbox_list_entry.js';
 import '../../settings_shared.css.js';
 import '../../site_favicon.js';
 
 import type {PrefsMixinInterface} from '/shared/settings/prefs/prefs_mixin.js';
 import {PrefsMixin} from '/shared/settings/prefs/prefs_mixin.js';
-import type {ListPropertyUpdateMixinInterface} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
-import {ListPropertyUpdateMixin} from 'neovex://resources/cr_elements/list_property_update_mixin.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {ListPropertyUpdateMixinInterface} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
+import {ListPropertyUpdateMixin} from 'chrome://resources/cr_elements/list_property_update_mixin.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {ScrollableMixinInterface} from '../../scrollable_mixin.js';
 import {ScrollableMixin} from '../../scrollable_mixin.js';

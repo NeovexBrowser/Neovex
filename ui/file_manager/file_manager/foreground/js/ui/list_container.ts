@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
-import {assert, assertInstanceof, assertNotReached, assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
+import {assert, assertInstanceof, assertNotReached, assertNotReachedCase} from 'chrome://resources/js/assert.js';
 
 import {queryRequiredElement} from '../../../common/js/dom_utils.js';
 import {DialogType} from '../../../state/state.js';

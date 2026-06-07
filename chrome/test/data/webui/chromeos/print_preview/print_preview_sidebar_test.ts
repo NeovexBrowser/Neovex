@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {PrintPreviewModelElement, PrintPreviewSidebarElement} from 'neovex://print/print_preview.js';
-import {NativeLayerImpl} from 'neovex://print/print_preview.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {fakeDataBind} from 'neovex://webui-test/polymer_test_util.js';
+import type {PrintPreviewModelElement, PrintPreviewSidebarElement} from 'chrome://print/print_preview.js';
+import {NativeLayerImpl} from 'chrome://print/print_preview.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {fakeDataBind} from 'chrome://webui-test/polymer_test_util.js';
 
 import {setNativeLayerCrosInstance} from './native_layer_cros_stub.js';
 

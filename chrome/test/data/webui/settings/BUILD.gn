@@ -256,17 +256,17 @@ build_webui_tests("build") {
   ts_path_mappings = [
     # Settings tests should only be importing from one of the URLs below, so
     # that tests work both in optimize_webui=true/false modes.
-    "neovex://settings/privacy_sandbox/*|" + rebase_path(
+    "chrome://settings/privacy_sandbox/*|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/settings/tsc/privacy_sandbox/*",
             target_gen_dir),
-    "neovex://settings/settings.js|" +
+    "chrome://settings/settings.js|" +
         rebase_path(
             "$root_gen_dir/chrome/browser/resources/settings/tsc/settings.d.ts",
             target_gen_dir),
-    "neovex://settings/lazy_load.js|" + rebase_path(
+    "chrome://settings/lazy_load.js|" + rebase_path(
             "$root_gen_dir/chrome/browser/resources/settings/tsc/lazy_load.d.ts",
             target_gen_dir),
-    "neovex://webui-test/cr_elements/cr_policy_strings.js|" + rebase_path(
+    "chrome://webui-test/cr_elements/cr_policy_strings.js|" + rebase_path(
             "$root_gen_dir/chrome/test/data/webui/cr_elements/tsc/cr_policy_strings.d.ts",
             target_gen_dir),
   ]

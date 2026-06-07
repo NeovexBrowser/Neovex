@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://flags/app.js';
+import 'chrome://flags/app.js';
 
-import type {FlagsAppElement} from 'neovex://flags/app.js';
-import {FlagsBrowserProxyImpl} from 'neovex://flags/flags_browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
+import type {FlagsAppElement} from 'chrome://flags/app.js';
+import {FlagsBrowserProxyImpl} from 'chrome://flags/flags_browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
 
 import {TestFlagsBrowserProxy} from './test_flags_browser_proxy.js';
 
-suite('neovex://flags/deprecated', function() {
+suite('chrome://flags/deprecated', function() {
   let app: FlagsAppElement;
   let searchTextArea: HTMLInputElement;
   let browserProxy: TestFlagsBrowserProxy;

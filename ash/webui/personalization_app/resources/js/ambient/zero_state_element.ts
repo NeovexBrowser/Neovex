@@ -6,8 +6,8 @@
  * @fileoverview Polymer element that displays the Ambient zero state.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/polymer/v3_0/iron-media-query/iron-media-query.js';
 
 import {WithPersonalizationStore} from '../personalization_store.js';
 
@@ -40,8 +40,8 @@ export class AmbientZeroStateElement extends WithPersonalizationStore {
    */
   private getImageSource_() {
     return this.isDarkModeActive_ ?
-        'neovex://personalization/images/ambient_mode_disabled_dark.svg' :
-        'neovex://personalization/images/ambient_mode_disabled.svg';
+        'chrome://personalization/images/ambient_mode_disabled_dark.svg' :
+        'chrome://personalization/images/ambient_mode_disabled.svg';
   }
 }
 

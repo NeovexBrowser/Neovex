@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsRadioGroupElement, TimezoneSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import {CrSettingsPrefs, GeolocationAccessLevel, Router, routes} from 'neovex://os-settings/os_settings.js';
-import {getDeepActiveElement} from 'neovex://resources/ash/common/util.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SettingsRadioGroupElement, TimezoneSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import {CrSettingsPrefs, GeolocationAccessLevel, Router, routes} from 'chrome://os-settings/os_settings.js';
+import {getDeepActiveElement} from 'chrome://resources/ash/common/util.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 let timezoneSubpage: TimezoneSubpageElement;
 

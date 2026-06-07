@@ -7,18 +7,18 @@
  * 'sanitize-done' is a dialog shown after reverting to safe settings
  * (aka sanitize).
  */
-import 'neovex://resources/ash/common/cr_elements/cr_shared_vars.css.js';
-import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
-import 'neovex://resources/cros_components/button/button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_expand_button/cr_expand_button.js';
+import 'chrome://resources/cros_components/button/button.js';
 import './sanitize_shared.css.js';
 import '/strings.m.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './sanitize_done.html.js';
 
@@ -35,32 +35,32 @@ export class SanitizeDoneElement extends SanitizeDoneElementBase {
   }
 
   private onExtensionsButtonClick_(): void {
-    OpenWindowProxyImpl.getInstance().openUrl('neovex://extensions');
+    OpenWindowProxyImpl.getInstance().openUrl('chrome://extensions');
   }
 
   private onChromeOsInputClick_(): void {
     OpenWindowProxyImpl.getInstance().openUrl(
-        'neovex://os-settings/osLanguages/input');
+        'chrome://os-settings/osLanguages/input');
   }
 
   private onChromeOsNetworkClick_(): void {
-    OpenWindowProxyImpl.getInstance().openUrl('neovex://os-settings/internet');
+    OpenWindowProxyImpl.getInstance().openUrl('chrome://os-settings/internet');
   }
 
   private onChromeSiteContentClick_(): void {
-    OpenWindowProxyImpl.getInstance().openUrl('neovex://settings/content');
+    OpenWindowProxyImpl.getInstance().openUrl('chrome://settings/content');
   }
 
   private onChromeStartupClick_(): void {
-    OpenWindowProxyImpl.getInstance().openUrl('neovex://settings/onStartup');
+    OpenWindowProxyImpl.getInstance().openUrl('chrome://settings/onStartup');
   }
 
   private onChromeHomepageClick_(): void {
-    OpenWindowProxyImpl.getInstance().openUrl('neovex://settings/appearance');
+    OpenWindowProxyImpl.getInstance().openUrl('chrome://settings/appearance');
   }
 
   private onChromeLanguagesClick_(): void {
-    OpenWindowProxyImpl.getInstance().openUrl('neovex://settings/languages');
+    OpenWindowProxyImpl.getInstance().openUrl('chrome://settings/languages');
   }
 
   private onDoneClick_(): void {

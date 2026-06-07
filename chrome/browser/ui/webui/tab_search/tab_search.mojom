@@ -91,7 +91,7 @@ struct Tab {
   url.mojom.Url url;
 
   // The URL of the favicon in data scheme.
-  // Only used in OTR profile where neovex://favicon2 is not available.
+  // Only used in OTR profile where chrome://favicon2 is not available.
   url.mojom.Url? favicon_url;
 
   // Whether the favicon is the default one.

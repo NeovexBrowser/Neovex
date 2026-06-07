@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import type {ViewerAttachmentElement} from 'chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/elements/viewer_attachment.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 function createAttachment(): ViewerAttachmentElement {
   document.body.innerHTML = '';

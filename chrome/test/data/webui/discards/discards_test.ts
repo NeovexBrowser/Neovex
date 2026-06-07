@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {durationToString, maybeMakePlural} from 'neovex://discards/discards.js';
-import type {TabDiscardsInfo} from 'neovex://discards/discards.mojom-webui.js';
-import {CanFreeze} from 'neovex://discards/discards.mojom-webui.js';
-import {getSortFunctionForKey} from 'neovex://discards/discards_tab.js';
-import {LifecycleUnitDiscardReason, LifecycleUnitLoadingState} from 'neovex://discards/lifecycle_unit_state.mojom-webui.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {durationToString, maybeMakePlural} from 'chrome://discards/discards.js';
+import type {TabDiscardsInfo} from 'chrome://discards/discards.mojom-webui.js';
+import {CanFreeze} from 'chrome://discards/discards.mojom-webui.js';
+import {getSortFunctionForKey} from 'chrome://discards/discards_tab.js';
+import {LifecycleUnitDiscardReason, LifecycleUnitLoadingState} from 'chrome://discards/lifecycle_unit_state.mojom-webui.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('discards', function() {
   test('GetSortFunctionForKey', function() {

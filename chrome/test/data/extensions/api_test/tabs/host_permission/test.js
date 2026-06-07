@@ -121,7 +121,7 @@ chrome.test.getConfig(function(config) {
           }
         });
 
-        chrome.tabs.create({url: 'neovex://newtab/'}, function(tab) {
+        chrome.tabs.create({url: 'chrome://newtab/'}, function(tab) {
           assertNoSensitiveFields(tab);
           chrome.tabs.update(tab.id, {url: 'about:blank'}, function(tab) {
             assertNoSensitiveFields(tab);
@@ -131,7 +131,7 @@ chrome.test.getConfig(function(config) {
     },
 
     function testQueryRevealsNoSensitiveFieldsWithNoHostPermission() {
-      chrome.tabs.create({url: 'neovex://newtab/'}, pass(function(tab) {
+      chrome.tabs.create({url: 'chrome://newtab/'}, pass(function(tab) {
         assertNoSensitiveFields(tab);
       }));
       chrome.tabs.query({active: true}, pass(function(tabs) {

@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ChromeVoxSubpageBrowserProxy} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {ChromeVoxSubpageBrowserProxy} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestChromeVoxSubpageBrowserProxy extends TestBrowserProxy
     implements ChromeVoxSubpageBrowserProxy {

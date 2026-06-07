@@ -2,33 +2,33 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {ActionChipsHandlerRemote, IconType, PageCallbackRouter as ActionChipsPageCallbackRouter} from 'neovex://new-tab-page/action_chips.mojom-webui.js';
-import type {PageRemote as ActionChipsPageRemote, TabInfo} from 'neovex://new-tab-page/action_chips.mojom-webui.js';
-import type {CustomizeButtonsDocumentRemote} from 'neovex://new-tab-page/customize_buttons.mojom-webui.js';
-import {CustomizeButtonsDocumentCallbackRouter, CustomizeButtonsHandlerRemote, SidePanelOpenTrigger} from 'neovex://new-tab-page/customize_buttons.mojom-webui.js';
-import {CustomizeChromeSection} from 'neovex://new-tab-page/customize_chrome.mojom-webui.js';
-import {ActionChipsApiProxyImpl, VoiceSearchAction} from 'neovex://new-tab-page/lazy_load.js';
-import type {Module} from 'neovex://new-tab-page/lazy_load.js';
-import {ActionChipsRetrievalState, ComposeboxProxyImpl, counterfactualLoad, ModuleDescriptor, ModuleRegistry} from 'neovex://new-tab-page/lazy_load.js';
-import {$$, BackgroundManager, BrowserCommandProxy, CONTEXTUAL_ENTRYPOINT_ELEMENT_ID, CUSTOMIZE_CHROME_BUTTON_ELEMENT_ID, CustomizeButtonsProxy, CustomizeDialogPage, GlifAnimationState, NewTabPageProxy, NtpCustomizeChromeEntryPoint, NtpElement, SearchboxBrowserProxy, VoiceAction, WindowProxy} from 'neovex://new-tab-page/new_tab_page.js';
-import type {AppElement, CustomizeButtonsElement} from 'neovex://new-tab-page/new_tab_page.js';
-import type {PageRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {NtpBackgroundImageSource, PageCallbackRouter, PageHandlerRemote} from 'neovex://new-tab-page/new_tab_page.mojom-webui.js';
-import {PageCallbackRouter as ComposeboxPageCallbackRouter, PageHandlerRemote as ComposeboxPageHandlerRemote} from 'neovex://resources/cr_components/composebox/composebox.mojom-webui.js';
-import {ToolMode as ComposeboxToolMode} from 'neovex://resources/cr_components/composebox/composebox_query.mojom-webui.js';
-import type {SearchboxElement} from 'neovex://resources/cr_components/searchbox/searchbox.js';
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrToastElement} from 'neovex://resources/cr_elements/cr_toast/cr_toast.js';
-import {Command, CommandHandlerRemote} from 'neovex://resources/js/browser_command.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
-import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {ActionChipsHandlerRemote, IconType, PageCallbackRouter as ActionChipsPageCallbackRouter} from 'chrome://new-tab-page/action_chips.mojom-webui.js';
+import type {PageRemote as ActionChipsPageRemote, TabInfo} from 'chrome://new-tab-page/action_chips.mojom-webui.js';
+import type {CustomizeButtonsDocumentRemote} from 'chrome://new-tab-page/customize_buttons.mojom-webui.js';
+import {CustomizeButtonsDocumentCallbackRouter, CustomizeButtonsHandlerRemote, SidePanelOpenTrigger} from 'chrome://new-tab-page/customize_buttons.mojom-webui.js';
+import {CustomizeChromeSection} from 'chrome://new-tab-page/customize_chrome.mojom-webui.js';
+import {ActionChipsApiProxyImpl, VoiceSearchAction} from 'chrome://new-tab-page/lazy_load.js';
+import type {Module} from 'chrome://new-tab-page/lazy_load.js';
+import {ActionChipsRetrievalState, ComposeboxProxyImpl, counterfactualLoad, ModuleDescriptor, ModuleRegistry} from 'chrome://new-tab-page/lazy_load.js';
+import {$$, BackgroundManager, BrowserCommandProxy, CONTEXTUAL_ENTRYPOINT_ELEMENT_ID, CUSTOMIZE_CHROME_BUTTON_ELEMENT_ID, CustomizeButtonsProxy, CustomizeDialogPage, GlifAnimationState, NewTabPageProxy, NtpCustomizeChromeEntryPoint, NtpElement, SearchboxBrowserProxy, VoiceAction, WindowProxy} from 'chrome://new-tab-page/new_tab_page.js';
+import type {AppElement, CustomizeButtonsElement} from 'chrome://new-tab-page/new_tab_page.js';
+import type {PageRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {NtpBackgroundImageSource, PageCallbackRouter, PageHandlerRemote} from 'chrome://new-tab-page/new_tab_page.mojom-webui.js';
+import {PageCallbackRouter as ComposeboxPageCallbackRouter, PageHandlerRemote as ComposeboxPageHandlerRemote} from 'chrome://resources/cr_components/composebox/composebox.mojom-webui.js';
+import {ToolMode as ComposeboxToolMode} from 'chrome://resources/cr_components/composebox/composebox_query.mojom-webui.js';
+import type {SearchboxElement} from 'chrome://resources/cr_components/searchbox/searchbox.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrToastElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast.js';
+import {Command, CommandHandlerRemote} from 'chrome://resources/js/browser_command.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
+import {PageCallbackRouter as SearchboxPageCallbackRouter, PageHandlerRemote as SearchboxPageHandlerRemote} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {assertNotStyle, assertStyle, createBackgroundImage, createTheme, installMock} from './test_support.js';
 
@@ -360,7 +360,7 @@ suite('NewTabPageAppTest', () => {
       // Arrange.
       const theme = createTheme();
       theme.backgroundImage = createBackgroundImage('https://foo.com');
-      theme.backgroundImage.attributionUrl = 'neovex://theme/foo';
+      theme.backgroundImage.attributionUrl = 'chrome://theme/foo';
 
       // Act.
       callbackRouterRemote.setTheme(theme);
@@ -369,7 +369,7 @@ suite('NewTabPageAppTest', () => {
 
       assertNotStyle($$(app, '#themeAttribution')!, 'display', 'none');
       assertEquals(
-          'neovex://theme/foo',
+          'chrome://theme/foo',
           $$<HTMLImageElement>(app, '#themeAttribution img')!.src);
     });
 

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-print/js/fakes/fake_destination_provider.js';
+import 'chrome://os-print/js/fakes/fake_destination_provider.js';
 
-import {PDF_DESTINATION} from 'neovex://os-print/js/data/destination_constants.js';
-import {FAKE_GET_LOCAL_DESTINATIONS_SUCCESSFUL_EMPTY, FakeDestinationProvider, GET_LOCAL_DESTINATIONS_METHOD, getFakeCapabilitiesResponse, OBSERVE_DESTINATION_CHANGES_METHOD} from 'neovex://os-print/js/fakes/fake_destination_provider.js';
-import type {Destination, FakeDestinationObserverInterface} from 'neovex://os-print/js/utils/print_preview_cros_app_types.js';
-import {PrinterType} from 'neovex://os-print/print.mojom-webui.js';
-import {assertDeepEquals, assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {PDF_DESTINATION} from 'chrome://os-print/js/data/destination_constants.js';
+import {FAKE_GET_LOCAL_DESTINATIONS_SUCCESSFUL_EMPTY, FakeDestinationProvider, GET_LOCAL_DESTINATIONS_METHOD, getFakeCapabilitiesResponse, OBSERVE_DESTINATION_CHANGES_METHOD} from 'chrome://os-print/js/fakes/fake_destination_provider.js';
+import type {Destination, FakeDestinationObserverInterface} from 'chrome://os-print/js/utils/print_preview_cros_app_types.js';
+import {PrinterType} from 'chrome://os-print/print.mojom-webui.js';
+import {assertDeepEquals, assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 // Test implementation of FakeDestinationObserverInterface used to verify
 // observer called with expected data and call count.

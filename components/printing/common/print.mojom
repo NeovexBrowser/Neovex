@@ -221,7 +221,7 @@ interface PrintRenderer {
 // preview UI.
 interface PrintPreviewUI {
   // Notifies the WebUI to set print preset options from source PDF.
-  // `request_id` comes from the neovex://print WebUI when it requests to update
+  // `request_id` comes from the chrome://print WebUI when it requests to update
   // the print preview.
   [EnableIf=enable_print_preview]
   SetOptionsFromDocument(OptionsFromDocumentParams params, int32 request_id);

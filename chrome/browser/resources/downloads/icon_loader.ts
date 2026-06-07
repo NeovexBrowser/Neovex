@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getFileIconUrl} from 'neovex://resources/js/icon.js';
-import {PromiseResolver} from 'neovex://resources/js/promise_resolver.js';
+import {getFileIconUrl} from 'chrome://resources/js/icon.js';
+import {PromiseResolver} from 'chrome://resources/js/promise_resolver.js';
 
 export interface IconLoader {
   loadIcon(imageEl: HTMLImageElement, filePath: string): Promise<boolean>;

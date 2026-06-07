@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Account, AccountManagerBrowserProxy} from 'neovex://os-settings/lazy_load.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {Account, AccountManagerBrowserProxy} from 'chrome://os-settings/lazy_load.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestAccountManagerBrowserProxy extends TestBrowserProxy implements
     AccountManagerBrowserProxy {

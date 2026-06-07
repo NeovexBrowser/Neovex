@@ -37,8 +37,8 @@ chrome.test.runTests([
     });
   },
   function uninstallInvalidURLNonHttpOrHttps() {
-    chrome.runtime.setUninstallURL('neovex://newtab', function() {
-      chrome.test.assertLastError('Invalid URL: "neovex://newtab".');
+    chrome.runtime.setUninstallURL('chrome://newtab', function() {
+      chrome.test.assertLastError('Invalid URL: "chrome://newtab".');
       chrome.test.succeed();
     });
   }

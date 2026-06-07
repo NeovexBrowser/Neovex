@@ -7,11 +7,11 @@
  * Suite of tests for the Route class and collection of OsSettingsRoutes.
  */
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {OsSettingsRoutes} from 'neovex://os-settings/os_settings.js';
-import {createRoutesForTesting} from 'neovex://os-settings/os_settings.js';
-import {assertEquals, assertNull} from 'neovex://webui-test/chai_assert.js';
+import type {OsSettingsRoutes} from 'chrome://os-settings/os_settings.js';
+import {createRoutesForTesting} from 'chrome://os-settings/os_settings.js';
+import {assertEquals, assertNull} from 'chrome://webui-test/chai_assert.js';
 
 suite('Route', () => {
   let testRoutes: OsSettingsRoutes;

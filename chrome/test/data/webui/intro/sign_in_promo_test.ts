@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://intro/sign_in_promo.js';
+import 'chrome://intro/sign_in_promo.js';
 
-import {IntroBrowserProxyImpl} from 'neovex://intro/browser_proxy.js';
-import type {SignInPromoElement} from 'neovex://intro/sign_in_promo.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {IntroBrowserProxyImpl} from 'chrome://intro/browser_proxy.js';
+import type {SignInPromoElement} from 'chrome://intro/sign_in_promo.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestIntroBrowserProxy} from './test_intro_browser_proxy.js';
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {SecurityInterstitialCommandId, sendCommand} from 'neovex://interstitials/common/resources/interstitial_common.js';
+import {SecurityInterstitialCommandId, sendCommand} from 'chrome://interstitials/common/resources/interstitial_common.js';
 
 function initPage() {
   const learnMoreLink = document.querySelector('#learn-more-link');

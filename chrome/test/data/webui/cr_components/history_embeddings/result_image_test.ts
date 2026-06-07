@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://history/strings.m.js';
-import 'neovex://resources/cr_components/history_embeddings/result_image.js';
+import 'chrome://history/strings.m.js';
+import 'chrome://resources/cr_components/history_embeddings/result_image.js';
 
-import type {SearchResultItem} from 'neovex://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
-import type {HistoryEmbeddingsResultImageElement} from 'neovex://resources/cr_components/history_embeddings/result_image.js';
-import {PageImageServiceBrowserProxy} from 'neovex://resources/cr_components/page_image_service/browser_proxy.js';
-import {ClientId as PageImageServiceClientId, PageImageServiceHandlerRemote} from 'neovex://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {SearchResultItem} from 'chrome://resources/cr_components/history_embeddings/history_embeddings.mojom-webui.js';
+import type {HistoryEmbeddingsResultImageElement} from 'chrome://resources/cr_components/history_embeddings/result_image.js';
+import {PageImageServiceBrowserProxy} from 'chrome://resources/cr_components/page_image_service/browser_proxy.js';
+import {ClientId as PageImageServiceClientId, PageImageServiceHandlerRemote} from 'chrome://resources/cr_components/page_image_service/page_image_service.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 suite('cr-history-embeddings-result-image', () => {
   let element: HistoryEmbeddingsResultImageElement;

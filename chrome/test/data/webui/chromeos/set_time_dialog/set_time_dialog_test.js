@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://set-time/set_time.js';
+import 'chrome://set-time/set_time.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {SetTimeBrowserProxyImpl} from 'neovex://set-time/set_time_browser_proxy.js';
-import {assertEquals, assertGT, assertLE, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {SetTimeBrowserProxyImpl} from 'chrome://set-time/set_time_browser_proxy.js';
+import {assertEquals, assertGT, assertLE, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {TestSetTimeBrowserProxy} from './test_set_time_browser_proxy.js';
 

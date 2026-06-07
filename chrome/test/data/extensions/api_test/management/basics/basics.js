@@ -8,7 +8,7 @@ function checkIcon(item, size, path) {
     var icon = icons[i];
     if (icon.size == size) {
       var expected_url =
-          "neovex://extension-icon/" + item.id + "/" + size + "/0";
+          "chrome://extension-icon/" + item.id + "/" + size + "/0";
       assertEq(expected_url, icon.url);
       return;
     }

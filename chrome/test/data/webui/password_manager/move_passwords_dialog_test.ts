@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://password-manager/password_manager.js';
+import 'chrome://password-manager/password_manager.js';
 
 import {loadTimeData} from '//resources/js/load_time_data.js';
-import {PasswordManagerImpl, PluralStringProxyImpl, SyncBrowserProxyImpl} from 'neovex://password-manager/password_manager.js';
-import type {MovePasswordsDialogElement} from 'neovex://password-manager/password_manager.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {TestPluralStringProxy} from 'neovex://webui-test/test_plural_string_proxy.js';
-import {isChildVisible} from 'neovex://webui-test/test_util.js';
+import {PasswordManagerImpl, PluralStringProxyImpl, SyncBrowserProxyImpl} from 'chrome://password-manager/password_manager.js';
+import type {MovePasswordsDialogElement} from 'chrome://password-manager/password_manager.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {TestPluralStringProxy} from 'chrome://webui-test/test_plural_string_proxy.js';
+import {isChildVisible} from 'chrome://webui-test/test_util.js';
 
 import {TestPasswordManagerProxy} from './test_password_manager_proxy.js';
 import {TestSyncBrowserProxy} from './test_sync_browser_proxy.js';

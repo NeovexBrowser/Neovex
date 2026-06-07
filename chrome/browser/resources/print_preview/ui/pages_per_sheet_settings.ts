@@ -4,8 +4,8 @@
 
 import './settings_section.js';
 
-import {getCss as getMdSelectLitCss} from 'neovex://resources/cr_elements/md_select_lit.css.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {getCss as getMdSelectLitCss} from 'chrome://resources/cr_elements/md_select_lit.css.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {getHtml} from './pages_per_sheet_settings.html.js';
 import {getCss as getPrintPreviewSharedCss} from './print_preview_shared.css.js';

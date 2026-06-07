@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {DefaultUserImage, UserImage, UserImageObserverRemote, UserInfo, UserProviderInterface} from 'neovex://personalization/js/personalization_app.js';
-import type {BigBuffer} from 'neovex://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import type {DefaultUserImage, UserImage, UserImageObserverRemote, UserInfo, UserProviderInterface} from 'chrome://personalization/js/personalization_app.js';
+import type {BigBuffer} from 'chrome://resources/mojo/mojo/public/mojom/base/big_buffer.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 export class TestUserProvider extends TestBrowserProxy implements
     UserProviderInterface {

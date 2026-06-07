@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cros_components/menu/menu_separator.js';
+import 'chrome://resources/cros_components/menu/menu_separator.js';
 import './cra/cra-icon.js';
 import './cra/cra-icon-dropdown.js';
 import './cra/cra-icon-dropdown-option.js';
@@ -13,7 +13,7 @@ import {
   live,
   map,
   nothing,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {i18n} from '../core/i18n.js';
 import {

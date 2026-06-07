@@ -10,7 +10,7 @@ export function getHtml(this: ManagedUserProfileNoticeValuePropElement) {
   return html`<!--_html_template_start_-->
 <main class="tangible-sync-style">
   <img id="product-logo" alt="Chrome logo" role="presentation"
-      src="neovex://theme/current-channel-logo@2x">
+      src="chrome://theme/current-channel-logo@2x">
   <h1 class="title" tabindex="-1">${this.title}</h1>
   <p class="subtitle">${this.subtitle}</p>
   <div class="pill">

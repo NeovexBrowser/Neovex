@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 
 // clang-format off
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import type { PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {dedupingMixin} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import type { PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {dedupingMixin} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 import type {LifetimeBrowserProxy} from '/shared/settings/lifetime_browser_proxy.js';
 import { LifetimeBrowserProxyImpl} from '/shared/settings/lifetime_browser_proxy.js';
 // clang-format on

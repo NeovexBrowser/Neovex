@@ -6,13 +6,13 @@
  * @fileoverview Polymer element that displays the Google Photos zero state.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
-import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
+import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {GooglePhotosTab} from './google_photos_collection_element.js';
 import {getTemplate} from './google_photos_zero_state_element.html.js';
@@ -68,8 +68,8 @@ export class GooglePhotosZeroStateElement extends Base {
 
   private getImageSource_(): string {
     return this.isDarkModeActive_ ?
-        'neovex://personalization/images/no_google_photos_images_dark.svg' :
-        'neovex://personalization/images/no_google_photos_images.svg';
+        'chrome://personalization/images/no_google_photos_images_dark.svg' :
+        'chrome://personalization/images/no_google_photos_images.svg';
   }
 }
 

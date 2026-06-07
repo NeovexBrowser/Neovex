@@ -30,7 +30,7 @@ async function testOnUpdated() {
   });
   // Don't use about:blank because on Android it doesn't cause the WebContents
   // to load any web content. The version page is light-weight enough.
-  const tab = await chrome.tabs.create({ url: 'neovex://version' });
+  const tab = await chrome.tabs.create({ url: 'chrome://version' });
   // The exact value is not important.
   chrome.test.assertTrue(tab.id != null, 'id not valid');
   // chrome.test.succeed() will be called in the closure above.

@@ -9,14 +9,14 @@
  * an animation if the percentage is indeterminate.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icons.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_auto_img/cr_auto_img.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icons.css.js';
 import './nearby_shared_icons.html.js';
 import './nearby_device_icon.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {NearbyDeviceIconElement} from './nearby_device_icon.js';
 import {getTemplate} from './nearby_progress.html.js';

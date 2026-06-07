@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shimless-rma/shimless_rma.js';
+import 'chrome://shimless-rma/shimless_rma.js';
 
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {FATAL_HARDWARE_ERROR} from 'neovex://shimless-rma/events.js';
-import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
-import {ShimlessRma} from 'neovex://shimless-rma/shimless_rma.js';
-import type {StateResult} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
-import {FinalizationError, FinalizationStatus, RmadErrorCode} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
-import {FINALIZATION_ERROR_CODE_PREFIX, WrapupFinalizePage} from 'neovex://shimless-rma/wrapup_finalize_page.js';
-import {assertEquals, assertFalse} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {FATAL_HARDWARE_ERROR} from 'chrome://shimless-rma/events.js';
+import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
+import {ShimlessRma} from 'chrome://shimless-rma/shimless_rma.js';
+import type {StateResult} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
+import {FinalizationError, FinalizationStatus, RmadErrorCode} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
+import {FINALIZATION_ERROR_CODE_PREFIX, WrapupFinalizePage} from 'chrome://shimless-rma/wrapup_finalize_page.js';
+import {assertEquals, assertFalse} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 suite('wrapupFinalizePageTest', function() {
   // ShimlessRma is needed to handle the 'transition-state' event used when

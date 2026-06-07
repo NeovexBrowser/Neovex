@@ -3,9 +3,9 @@
 // found in the LICENSE file.
 import './policy_test_row.js';
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CustomElement} from 'neovex://resources/js/custom_element.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CustomElement} from 'chrome://resources/js/custom_element.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import type {PolicyInfo, PolicySchema} from './policy_test_browser_proxy.js';
 import type {PolicyTestRowElement} from './policy_test_row.js';

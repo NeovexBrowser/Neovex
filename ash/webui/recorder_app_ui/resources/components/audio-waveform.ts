@@ -10,7 +10,7 @@ import {
   PropertyDeclarations,
   repeat,
   svg,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {
   POWER_BARS_PER_SECOND,

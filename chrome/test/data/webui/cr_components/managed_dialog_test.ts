@@ -4,11 +4,11 @@
 
 /** @fileoverview Test suite for managed-dialog. */
 
-import 'neovex://resources/cr_components/managed_dialog/managed_dialog.js';
+import 'chrome://resources/cr_components/managed_dialog/managed_dialog.js';
 
-import type {ManagedDialogElement} from 'neovex://resources/cr_components/managed_dialog/managed_dialog.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {ManagedDialogElement} from 'chrome://resources/cr_components/managed_dialog/managed_dialog.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('ManagedDialogTest', function() {
   suiteSetup(function() {

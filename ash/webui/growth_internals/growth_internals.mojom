@@ -4,7 +4,7 @@
 
 module ash.growth.mojom;
 
-// Implemented in ash and used by WebUI neovex://growth-internals/.
+// Implemented in ash and used by WebUI chrome://growth-internals/.
 // More information can be found at: go/cros-growth-framework-internal-page.
 interface PageHandler {
   // Fetches a list of logs of the growth campaigns. Each item in the logs is a

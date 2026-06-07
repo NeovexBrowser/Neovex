@@ -6,7 +6,7 @@
  * @fileoverview Fake implementation of InSessionAuth for testing.
  */
 
-import type {RequestTokenReply} from 'neovex://resources/mojo/chromeos/components/in_session_auth/mojom/in_session_auth.mojom-webui.js';
+import type {RequestTokenReply} from 'chrome://resources/mojo/chromeos/components/in_session_auth/mojom/in_session_auth.mojom-webui.js';
 
 /**
  * Fake implementation of TimeDelta used inside the InSessionAuth token reply

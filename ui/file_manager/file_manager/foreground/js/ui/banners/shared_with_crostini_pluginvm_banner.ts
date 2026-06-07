@@ -77,17 +77,17 @@ export class SharedWithCrostiniPluginVmBanner extends StateBanner {
     if (context.type === (DEFAULT_CROSTINI_VM + PLUGIN_VM)) {
       text.innerText = str('MESSAGE_FOLDER_SHARED_WITH_CROSTINI_AND_PLUGIN_VM');
       button.setAttribute(
-          'href', 'neovex://os-settings/app-management/pluginVm/sharedPaths');
+          'href', 'chrome://os-settings/app-management/pluginVm/sharedPaths');
       return;
     }
     if (context.type === PLUGIN_VM) {
       text.innerText = str('MESSAGE_FOLDER_SHARED_WITH_PLUGIN_VM');
       button.setAttribute(
-          'href', 'neovex://os-settings/app-management/pluginVm/sharedPaths');
+          'href', 'chrome://os-settings/app-management/pluginVm/sharedPaths');
       return;
     }
     text.innerText = str('MESSAGE_FOLDER_SHARED_WITH_CROSTINI');
-    button.setAttribute('href', 'neovex://os-settings/crostini/sharedPaths');
+    button.setAttribute('href', 'chrome://os-settings/crostini/sharedPaths');
   }
 }
 

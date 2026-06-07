@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {DisplayLayoutElement, SettingsDisplayElement} from 'neovex://os-settings/lazy_load.js';
-import {NightLightScheduleType} from 'neovex://os-settings/lazy_load.js';
-import type {CrLinkRowElement, CrSliderElement, SettingsDropdownMenuElement, SettingsSliderElement, SettingsToggleButtonElement} from 'neovex://os-settings/os_settings.js';
-import {CrA11yAnnouncerElement, CrToggleElement, DevicePageBrowserProxyImpl, displaySettingsProviderMojom, GeolocationAccessLevel, Router, routes, setDisplayApiForTesting, setDisplaySettingsProviderForTesting} from 'neovex://os-settings/os_settings.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {flush, microTask} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import type {DisplayLayoutElement, SettingsDisplayElement} from 'chrome://os-settings/lazy_load.js';
+import {NightLightScheduleType} from 'chrome://os-settings/lazy_load.js';
+import type {CrLinkRowElement, CrSliderElement, SettingsDropdownMenuElement, SettingsSliderElement, SettingsToggleButtonElement} from 'chrome://os-settings/os_settings.js';
+import {CrA11yAnnouncerElement, CrToggleElement, DevicePageBrowserProxyImpl, displaySettingsProviderMojom, GeolocationAccessLevel, Router, routes, setDisplayApiForTesting, setDisplaySettingsProviderForTesting} from 'chrome://os-settings/os_settings.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {flush, microTask} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 import {FakeSystemDisplay} from '../fake_system_display.js';
 

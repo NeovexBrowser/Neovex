@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
 
-import type {RelatedWebsiteSetsAppElement, RelatedWebsiteSetsListContainerElement, RelatedWebsiteSetsToolbarElement} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
-import {RelatedWebsiteSetsApiBrowserProxyImpl} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {$$, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {RelatedWebsiteSetsAppElement, RelatedWebsiteSetsListContainerElement, RelatedWebsiteSetsToolbarElement} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import {RelatedWebsiteSetsApiBrowserProxyImpl} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {$$, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestRelatedWebsiteSetsApiBrowserProxy} from './test_api_proxy.js';
 import {GetRelatedWebsiteSetsResponseForTest} from './test_data.js';

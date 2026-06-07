@@ -8,22 +8,22 @@
  * objects.
  */
 
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/wallpaper.css.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/wallpaper.css.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
 
-import {WallpaperGridItemSelectedEvent} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-import {isManagedSeaPenEnabled, isSeaPenEnabled, isSeaPenTextInputEnabled} from 'neovex://resources/ash/common/sea_pen/load_time_booleans.js';
-import {cleanUpSeaPenQueryStates} from 'neovex://resources/ash/common/sea_pen/sea_pen_controller.js';
-import {getSeaPenStore} from 'neovex://resources/ash/common/sea_pen/sea_pen_store.js';
-import {isImageDataUrl, isNonEmptyArray, isUrl} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {FilePath} from 'neovex://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
-import type {IronListElement} from 'neovex://resources/polymer/v3_0/iron-list/iron-list.js';
-import {afterNextRender} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {WallpaperGridItemSelectedEvent} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+import {isManagedSeaPenEnabled, isSeaPenEnabled, isSeaPenTextInputEnabled} from 'chrome://resources/ash/common/sea_pen/load_time_booleans.js';
+import {cleanUpSeaPenQueryStates} from 'chrome://resources/ash/common/sea_pen/sea_pen_controller.js';
+import {getSeaPenStore} from 'chrome://resources/ash/common/sea_pen/sea_pen_store.js';
+import {isImageDataUrl, isNonEmptyArray, isUrl} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {FilePath} from 'chrome://resources/mojo/mojo/public/mojom/base/file_path.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
+import type {IronListElement} from 'chrome://resources/polymer/v3_0/iron-list/iron-list.js';
+import {afterNextRender} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {WallpaperCollection, WallpaperImage} from '../../personalization_app.mojom-webui.js';
 import {GooglePhotosEnablementState} from '../../personalization_app.mojom-webui.js';
@@ -149,7 +149,7 @@ function getGooglePhotosTile(enablementState: GooglePhotosEnablementState):
     id: kGooglePhotosCollectionId,
     name: loadTimeData.getString('googlePhotosLabel'),
     type: TileType.IMAGE_GOOGLE_PHOTOS,
-    preview: ['neovex://personalization/images/google_photos.svg'],
+    preview: ['chrome://personalization/images/google_photos.svg'],
   };
 }
 
@@ -194,7 +194,7 @@ function getLocalTile(
       disabled: true,
       id: kLocalCollectionId,
       name: loadTimeData.getString('myImagesLabel'),
-      preview: ['neovex://personalization/images/no_images.svg'],
+      preview: ['chrome://personalization/images/no_images.svg'],
       type: TileType.IMAGE_LOCAL,
     };
   }
@@ -241,7 +241,7 @@ function getSeaPenPromptingTile(): SeaPenPromptingTile {
     name: 'Sea Pen Prompting',
     type: TileType.SEA_PEN_PROMPTING,
     preview: [
-      'neovex://resources/ash/common/sea_pen/sea_pen_images/sea_pen_freeform.jpg',
+      'chrome://resources/ash/common/sea_pen/sea_pen_images/sea_pen_freeform.jpg',
     ],
   };
 }
@@ -253,7 +253,7 @@ function getSeaPenTemplatesTile(): SeaPenTemplatesTile {
     name: 'Sea Pen',
     type: TileType.SEA_PEN_TEMPLATES,
     preview: [
-      'neovex://resources/ash/common/sea_pen/sea_pen_images/sea_pen_tile.jpg',
+      'chrome://resources/ash/common/sea_pen/sea_pen_images/sea_pen_tile.jpg',
     ],
   };
 }

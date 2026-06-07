@@ -4,13 +4,13 @@
 
 /*
  * This file is roughly a static copy of
- * neovex://theme/colors.css?sets=ref,sys&generate_rgb_vars=true with
+ * chrome://theme/colors.css?sets=ref,sys&generate_rgb_vars=true with
  * color values extracted from the cros-component web catalog.
  *
  * This is only used in dev server.
  *
  * TODO(pihsun): Find a way to generate this file with the given seed color,
- * but more similar to neovex://theme/colors.css.
+ * but more similar to chrome://theme/colors.css.
  */
 
 /*

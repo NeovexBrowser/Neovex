@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_tab_box/cr_tab_box.js';
+import 'chrome://resources/cr_elements/cr_tab_box/cr_tab_box.js';
 
-import {assertInstanceof} from 'neovex://resources/js/assert.js';
-import {addWebUiListener, sendWithPromise} from 'neovex://resources/js/cr.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {assertInstanceof} from 'chrome://resources/js/assert.js';
+import {addWebUiListener, sendWithPromise} from 'chrome://resources/js/cr.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 interface MediaRouterLog {
   time: string;

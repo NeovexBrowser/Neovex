@@ -4,7 +4,7 @@
 
 import '/strings.m.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 export function isProfileCreationAllowed(): boolean {
   return loadTimeData.getBoolean('isProfileCreationAllowed');

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import {MessagePipe} from '//system_apps/message_pipe.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import {PageHandlerFactory, PageHandlerRemote} from './help_app_ui.mojom-webui.js';
 import {Index} from './index.mojom-webui.js';
@@ -282,7 +282,7 @@ guestMessagePipe.registerHandler(
 
 guestMessagePipe.registerHandler(
     Message.OPEN_APP_MALL_PATH, ({path}: {path: string}) => {
-      window.open(`neovex://mall/${path}`);
+      window.open(`chrome://mall/${path}`);
     });
 
 /** Compare two positions by their start index. Use for sorting. */

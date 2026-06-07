@@ -1,8 +1,8 @@
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {assert} from 'neovex://resources/js/assert.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 import {getDirectory} from '../../common/js/api.js';
 import type {FilesAppState} from '../../common/js/files_app_state.js';

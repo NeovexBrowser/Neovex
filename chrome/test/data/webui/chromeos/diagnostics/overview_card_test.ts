@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/overview_card.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/overview_card.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {fakeSystemInfo, fakeSystemInfoWithoutBoardName, fakeSystemInfoWithTBD} from 'neovex://diagnostics/fake_data.js';
-import {FakeSystemDataProvider} from 'neovex://diagnostics/fake_system_data_provider.js';
-import {setSystemDataProviderForTesting} from 'neovex://diagnostics/mojo_interface_provider.js';
-import {OverviewCardElement} from 'neovex://diagnostics/overview_card.js';
-import type {SystemInfo} from 'neovex://diagnostics/system_data_provider.mojom-webui.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals, assertFalse, assertNotEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {fakeSystemInfo, fakeSystemInfoWithoutBoardName, fakeSystemInfoWithTBD} from 'chrome://diagnostics/fake_data.js';
+import {FakeSystemDataProvider} from 'chrome://diagnostics/fake_system_data_provider.js';
+import {setSystemDataProviderForTesting} from 'chrome://diagnostics/mojo_interface_provider.js';
+import {OverviewCardElement} from 'chrome://diagnostics/overview_card.js';
+import type {SystemInfo} from 'chrome://diagnostics/system_data_provider.mojom-webui.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals, assertFalse, assertNotEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

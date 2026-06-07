@@ -3,12 +3,12 @@
 // found in the LICENSE file.
 
 /** @fileoverview Suite of tests for site-permissions-site-group. */
-import 'neovex://extensions/extensions.js';
+import 'chrome://extensions/extensions.js';
 
-import type {SitePermissionsSiteGroupElement} from 'neovex://extensions/extensions.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SitePermissionsSiteGroupElement} from 'chrome://extensions/extensions.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('SitePermissionsSiteGroupElement', function() {
   const PERMITTED_TEXT = loadTimeData.getString('permittedSites');

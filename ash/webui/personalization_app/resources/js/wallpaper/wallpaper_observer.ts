@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {FullscreenPreviewState} from 'neovex://resources/ash/common/personalization/wallpaper_state.js';
+import {FullscreenPreviewState} from 'chrome://resources/ash/common/personalization/wallpaper_state.js';
 
 import type {CurrentAttribution, CurrentWallpaper, WallpaperObserverInterface, WallpaperProviderInterface} from '../../personalization_app.mojom-webui.js';
 import {WallpaperObserverReceiver, WallpaperType} from '../../personalization_app.mojom-webui.js';

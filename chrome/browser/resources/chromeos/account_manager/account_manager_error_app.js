@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
 import '/strings.m.js';
 import './account_manager_shared.css.js';
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {Polymer} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {Polymer} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {AccountManagerBrowserProxyImpl} from './account_manager_browser_proxy.js';
 import {getTemplate} from './account_manager_error_app.html.js';

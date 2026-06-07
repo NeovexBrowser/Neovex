@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://profile-picker/profile_picker.js';
+import 'chrome://profile-picker/profile_picker.js';
 
-import type {ProfilePickerAppElement} from 'neovex://profile-picker/profile_picker.js';
-import {ensureLazyLoaded, ManageProfilesBrowserProxyImpl, navigateTo, Routes} from 'neovex://profile-picker/profile_picker.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished, whenCheck} from 'neovex://webui-test/test_util.js';
+import type {ProfilePickerAppElement} from 'chrome://profile-picker/profile_picker.js';
+import {ensureLazyLoaded, ManageProfilesBrowserProxyImpl, navigateTo, Routes} from 'chrome://profile-picker/profile_picker.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished, whenCheck} from 'chrome://webui-test/test_util.js';
 
 import {TestManageProfilesBrowserProxy} from './test_manage_profiles_browser_proxy.js';
 

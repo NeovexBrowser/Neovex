@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/os_settings.js';
+import 'chrome://os-settings/os_settings.js';
 
-import type {PageDisplayerElement} from 'neovex://os-settings/os_settings.js';
-import {routesMojom} from 'neovex://os-settings/os_settings.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertNotEquals} from 'neovex://webui-test/chai_assert.js';
+import type {PageDisplayerElement} from 'chrome://os-settings/os_settings.js';
+import {routesMojom} from 'chrome://os-settings/os_settings.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertNotEquals} from 'chrome://webui-test/chai_assert.js';
 
 const {Section} = routesMojom;
 

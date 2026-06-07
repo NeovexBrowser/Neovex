@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://on-device-translation-internals/app.js';
-import type {OnDeviceTranslationInternalsAppElement} from 'neovex://on-device-translation-internals/app.js';
-import {BrowserProxy} from 'neovex://on-device-translation-internals/browser_proxy.js';
-import {LanguagePackStatus} from 'neovex://on-device-translation-internals/on_device_translation_internals.mojom-webui.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import 'chrome://on-device-translation-internals/app.js';
+import type {OnDeviceTranslationInternalsAppElement} from 'chrome://on-device-translation-internals/app.js';
+import {BrowserProxy} from 'chrome://on-device-translation-internals/browser_proxy.js';
+import {LanguagePackStatus} from 'chrome://on-device-translation-internals/on_device_translation_internals.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestOnDeviceTranslationInternalsBrowserProxy} from './test_on_device_translation_internals_browser_proxy.js';
 

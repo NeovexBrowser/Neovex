@@ -4,21 +4,21 @@
 
 /**
  * @fileoverview 'settings-cups-printers' is a component for showing CUPS
- * Printer settings subpage (neovex://settings/cupsPrinters). It is used to
+ * Printer settings subpage (chrome://settings/cupsPrinters). It is used to
  * set up legacy & non-CloudPrint printers on ChromeOS by leveraging CUPS (the
  * unix printing system) and the many open source drivers built for CUPS.
  */
 
 // TODO(xdai): Rename it to 'settings-cups-printers-page'.
-import 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import 'neovex://resources/ash/common/cr_elements/policy/cr_policy_pref_indicator.js';
-import 'neovex://resources/js/action_link.js';
-import 'neovex://resources/ash/common/cr_elements/action_link.css.js';
-import 'neovex://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/ash/common/cr_elements/localized_link/localized_link.js';
+import 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import 'chrome://resources/ash/common/cr_elements/policy/cr_policy_pref_indicator.js';
+import 'chrome://resources/js/action_link.js';
+import 'chrome://resources/ash/common/cr_elements/action_link.css.js';
+import 'chrome://resources/polymer/v3_0/iron-flex-layout/iron-flex-layout-classes.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/ash/common/cr_elements/localized_link/localized_link.js';
 import './cups_edit_printer_dialog.js';
 import './cups_enterprise_printers.js';
 import './cups_nearby_printers.js';
@@ -29,22 +29,22 @@ import './cups_printers_entry_manager.js';
 import './cups_saved_printers.js';
 import './cups_settings_add_printer_dialog.js';
 
-import type {CrIconButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import type {CrToastElement} from 'neovex://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
-import type {WebUiListenerMixinInterface} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {WebUiListenerMixin} from 'neovex://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
-import {MojoInterfaceProviderImpl} from 'neovex://resources/ash/common/network/mojo_interface_provider.js';
-import type {NetworkListenerBehaviorInterface} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {NetworkListenerBehavior} from 'neovex://resources/ash/common/network/network_listener_behavior.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import type {WebUiListener} from 'neovex://resources/js/cr.js';
-import {addWebUiListener, removeWebUiListener} from 'neovex://resources/js/cr.js';
-import {focusWithoutInk} from 'neovex://resources/js/focus_without_ink.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {CrosNetworkConfigInterface, NetworkStateProperties} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {FilterType, NO_LIMIT} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
-import {ConnectionStateType, NetworkType} from 'neovex://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
-import {afterNextRender, mixinBehaviors, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrIconButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import type {CrToastElement} from 'chrome://resources/ash/common/cr_elements/cr_toast/cr_toast.js';
+import type {WebUiListenerMixinInterface} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {WebUiListenerMixin} from 'chrome://resources/ash/common/cr_elements/web_ui_listener_mixin.js';
+import {MojoInterfaceProviderImpl} from 'chrome://resources/ash/common/network/mojo_interface_provider.js';
+import type {NetworkListenerBehaviorInterface} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {NetworkListenerBehavior} from 'chrome://resources/ash/common/network/network_listener_behavior.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import type {WebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener, removeWebUiListener} from 'chrome://resources/js/cr.js';
+import {focusWithoutInk} from 'chrome://resources/js/focus_without_ink.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {CrosNetworkConfigInterface, NetworkStateProperties} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {FilterType, NO_LIMIT} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/cros_network_config.mojom-webui.js';
+import {ConnectionStateType, NetworkType} from 'chrome://resources/mojo/chromeos/services/network_config/public/mojom/network_types.mojom-webui.js';
+import {afterNextRender, mixinBehaviors, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {DeepLinkingMixinInterface} from '../common/deep_linking_mixin.js';
 import {DeepLinkingMixin} from '../common/deep_linking_mixin.js';

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertEquals} from 'neovex://webui-test/chromeos/chai_assert.js';
+import {assertEquals} from 'chrome://webui-test/chromeos/chai_assert.js';
 
 import {getFileTypeForName} from './file_types_base.js';
 

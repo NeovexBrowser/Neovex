@@ -253,13 +253,13 @@ build_webui_tests("build") {
     "*/strings.m.js|" +
         rebase_path("//tools/typescript/definitions/strings.d.ts",
                     target_gen_dir),
-    "neovex://internet-detail-dialog/*|" + rebase_path(
+    "chrome://internet-detail-dialog/*|" + rebase_path(
             "${root_gen_dir}/chrome/browser/resources/chromeos/internet_detail_dialog/tsc/*",
             target_gen_dir),
-    "neovex://internet-config-dialog/*|" + rebase_path(
+    "chrome://internet-config-dialog/*|" + rebase_path(
             "${root_gen_dir}/chrome/browser/resources/chromeos/internet_config_dialog/tsc/*",
             target_gen_dir),
-    "neovex://webui-test/*|" +
+    "chrome://webui-test/*|" +
         rebase_path("$root_gen_dir/chrome/test/data/webui/tsc/*",
                     target_gen_dir),
   ]

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {ViewerZoomToolbarElement} from 'neovex://print/pdf/pdf_print_wrapper.js';
-import {ToolbarManager} from 'neovex://print/pdf/pdf_print_wrapper.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {ViewerZoomToolbarElement} from 'chrome://print/pdf/pdf_print_wrapper.js';
+import {ToolbarManager} from 'chrome://print/pdf/pdf_print_wrapper.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 class MockWindow {
   innerWidth: number;

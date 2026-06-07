@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://site-engagement/app.js';
+import 'chrome://site-engagement/app.js';
 
-import type {SiteEngagementAppElement} from 'neovex://site-engagement/app.js';
-import {assertDeepEquals, assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {SiteEngagementAppElement} from 'chrome://site-engagement/app.js';
+import {assertDeepEquals, assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 suite('SiteEngagement', function() {
-  const APP_URL = 'neovex://site-engagement/';
+  const APP_URL = 'chrome://site-engagement/';
   const EXAMPLE_URL_1 = 'http://example.com/';
   const EXAMPLE_URL_2 = 'http://shmlexample.com/';
 

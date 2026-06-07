@@ -25,7 +25,7 @@ function JSToGtestBrowserTest() {}
 JSToGtestBrowserTest.prototype = {
   __proto__: testing.Test.prototype,
 
-  browsePreload: 'neovex://dummyurl',
+  browsePreload: 'chrome://dummyurl',
 
   /** @override */
   testGenPostamble() {

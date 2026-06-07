@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://borealis-installer/app.js';
+import 'chrome://borealis-installer/app.js';
 
-import type {BorealisInstallerAppElement} from 'neovex://borealis-installer/app.js';
-import type {PageRemote} from 'neovex://borealis-installer/borealis_installer.mojom-webui.js';
-import {PageCallbackRouter, PageHandlerRemote} from 'neovex://borealis-installer/borealis_installer.mojom-webui.js';
-import {InstallResult} from 'neovex://borealis-installer/borealis_types.mojom-webui.js';
-import {BrowserProxy} from 'neovex://borealis-installer/browser_proxy.js';
-import type {BorealisInstallerErrorDialogElement} from 'neovex://borealis-installer/error_dialog.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
+import type {BorealisInstallerAppElement} from 'chrome://borealis-installer/app.js';
+import type {PageRemote} from 'chrome://borealis-installer/borealis_installer.mojom-webui.js';
+import {PageCallbackRouter, PageHandlerRemote} from 'chrome://borealis-installer/borealis_installer.mojom-webui.js';
+import {InstallResult} from 'chrome://borealis-installer/borealis_types.mojom-webui.js';
+import {BrowserProxy} from 'chrome://borealis-installer/browser_proxy.js';
+import type {BorealisInstallerErrorDialogElement} from 'chrome://borealis-installer/error_dialog.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
 
 class FakeBrowserProxy extends TestBrowserProxy implements BrowserProxy {
   callbackRouter: PageCallbackRouter;

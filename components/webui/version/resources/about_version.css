@@ -99,7 +99,7 @@ body {
 }
 
 #copy-to-clipboard-icon {
-  -webkit-mask-image: url(neovex://resources/images/icon_copy_content.svg);
+  -webkit-mask-image: url(chrome://resources/images/icon_copy_content.svg);
   -webkit-mask-size: cover;
   background: none;
   background-color: var(--primary-color);

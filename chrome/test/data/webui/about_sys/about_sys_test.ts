@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://system/app.js';
+import 'chrome://system/app.js';
 
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {AppElement} from 'neovex://system/app.js';
-import {BrowserProxyImpl} from 'neovex://system/browser_proxy.js';
-import type {SystemLog} from 'neovex://system/browser_proxy.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {AppElement} from 'chrome://system/app.js';
+import {BrowserProxyImpl} from 'chrome://system/browser_proxy.js';
+import type {SystemLog} from 'chrome://system/browser_proxy.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 import {TestAboutSysBrowserProxy} from './test_about_sys_browser_proxy.js';
 

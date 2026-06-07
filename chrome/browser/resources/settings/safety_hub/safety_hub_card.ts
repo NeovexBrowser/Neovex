@@ -7,13 +7,13 @@
  * 'settings-safety-hub-card' is used by the top cards in Safety Hub settings
  * page.
  */
-import 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import 'neovex://resources/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import 'chrome://resources/cr_elements/cr_shared_style.css.js';
 import '../settings_shared.css.js';
 
-import type {CrIconElement} from 'neovex://resources/cr_elements/cr_icon/cr_icon.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {CardInfo} from './safety_hub_browser_proxy.js';
 import {CardState} from './safety_hub_browser_proxy.js';

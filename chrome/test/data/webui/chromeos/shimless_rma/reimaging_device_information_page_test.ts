@@ -2,24 +2,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shimless-rma/shimless_rma.js';
+import 'chrome://shimless-rma/shimless_rma.js';
 
-import {CrButtonElement} from 'neovex://resources/ash/common/cr_elements/cr_button/cr_button.js';
-import {CrInputElement} from 'neovex://resources/ash/common/cr_elements/cr_input/cr_input.js';
-import {loadTimeData} from 'neovex://resources/ash/common/load_time_data.m.js';
-import {PromiseResolver} from 'neovex://resources/ash/common/promise_resolver.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {DISABLE_NEXT_BUTTON} from 'neovex://shimless-rma/events.js';
-import {fakeDeviceCustomLabels, fakeDeviceRegions, fakeDeviceSkuDescriptions, fakeDeviceSkus} from 'neovex://shimless-rma/fake_data.js';
-import {FakeShimlessRmaService} from 'neovex://shimless-rma/fake_shimless_rma_service.js';
-import {setShimlessRmaServiceForTesting} from 'neovex://shimless-rma/mojo_interface_provider.js';
-import {BooleanOrDefaultOptions, ReimagingDeviceInformationPage} from 'neovex://shimless-rma/reimaging_device_information_page.js';
-import type {StateResult} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
-import {FeatureLevel} from 'neovex://shimless-rma/shimless_rma.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise, isVisible} from 'neovex://webui-test/test_util.js';
+import {CrButtonElement} from 'chrome://resources/ash/common/cr_elements/cr_button/cr_button.js';
+import {CrInputElement} from 'chrome://resources/ash/common/cr_elements/cr_input/cr_input.js';
+import {loadTimeData} from 'chrome://resources/ash/common/load_time_data.m.js';
+import {PromiseResolver} from 'chrome://resources/ash/common/promise_resolver.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {DISABLE_NEXT_BUTTON} from 'chrome://shimless-rma/events.js';
+import {fakeDeviceCustomLabels, fakeDeviceRegions, fakeDeviceSkuDescriptions, fakeDeviceSkus} from 'chrome://shimless-rma/fake_data.js';
+import {FakeShimlessRmaService} from 'chrome://shimless-rma/fake_shimless_rma_service.js';
+import {setShimlessRmaServiceForTesting} from 'chrome://shimless-rma/mojo_interface_provider.js';
+import {BooleanOrDefaultOptions, ReimagingDeviceInformationPage} from 'chrome://shimless-rma/reimaging_device_information_page.js';
+import type {StateResult} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
+import {FeatureLevel} from 'chrome://shimless-rma/shimless_rma.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise, isVisible} from 'chrome://webui-test/test_util.js';
 
 interface SetDeviceInformationResult {
   serialNumber: string;

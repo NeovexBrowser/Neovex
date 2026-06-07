@@ -9,29 +9,29 @@
  */
 
 import '/strings.m.js';
-import 'neovex://resources/ash/common/personalization/common.css.js';
-import 'neovex://resources/ash/common/personalization/cros_button_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icons.css.js';
-import 'neovex://resources/ash/common/cr_elements/icons.html.js';
-import 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import 'neovex://resources/polymer/v3_0/iron-icon/iron-icon.js';
-import 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import 'chrome://resources/ash/common/personalization/common.css.js';
+import 'chrome://resources/ash/common/personalization/cros_button_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icons.css.js';
+import 'chrome://resources/ash/common/cr_elements/icons.html.js';
+import 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import 'chrome://resources/polymer/v3_0/iron-icon/iron-icon.js';
+import 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
 
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import type {CrActionMenuElement} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import {AnchorAlignment} from 'neovex://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
-import type {SeaPenTemplate} from 'neovex://resources/ash/common/sea_pen/constants.js';
-import {getSeaPenTemplates} from 'neovex://resources/ash/common/sea_pen/constants.js';
-import {isSeaPenEnabled, isSeaPenTextInputEnabled} from 'neovex://resources/ash/common/sea_pen/load_time_booleans.js';
-import {cleanUpSeaPenQueryStates} from 'neovex://resources/ash/common/sea_pen/sea_pen_controller.js';
-import type {SeaPenTemplateId} from 'neovex://resources/ash/common/sea_pen/sea_pen_generated.mojom-webui.js';
-import {logSeaPenTemplateSelect} from 'neovex://resources/ash/common/sea_pen/sea_pen_metrics_logger.js';
-import {getSeaPenStore} from 'neovex://resources/ash/common/sea_pen/sea_pen_store.js';
-import {getTemplateIdFromString, isNonEmptyArray} from 'neovex://resources/ash/common/sea_pen/sea_pen_utils.js';
-import {getTransitionEnabled, setTransitionsEnabled} from 'neovex://resources/ash/common/sea_pen/transition.js';
-import type {IronA11yKeysElement} from 'neovex://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
-import type {IronSelectorElement} from 'neovex://resources/polymer/v3_0/iron-selector/iron-selector.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import type {CrActionMenuElement} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import {AnchorAlignment} from 'chrome://resources/ash/common/cr_elements/cr_action_menu/cr_action_menu.js';
+import type {SeaPenTemplate} from 'chrome://resources/ash/common/sea_pen/constants.js';
+import {getSeaPenTemplates} from 'chrome://resources/ash/common/sea_pen/constants.js';
+import {isSeaPenEnabled, isSeaPenTextInputEnabled} from 'chrome://resources/ash/common/sea_pen/load_time_booleans.js';
+import {cleanUpSeaPenQueryStates} from 'chrome://resources/ash/common/sea_pen/sea_pen_controller.js';
+import type {SeaPenTemplateId} from 'chrome://resources/ash/common/sea_pen/sea_pen_generated.mojom-webui.js';
+import {logSeaPenTemplateSelect} from 'chrome://resources/ash/common/sea_pen/sea_pen_metrics_logger.js';
+import {getSeaPenStore} from 'chrome://resources/ash/common/sea_pen/sea_pen_store.js';
+import {getTemplateIdFromString, isNonEmptyArray} from 'chrome://resources/ash/common/sea_pen/sea_pen_utils.js';
+import {getTransitionEnabled, setTransitionsEnabled} from 'chrome://resources/ash/common/sea_pen/transition.js';
+import type {IronA11yKeysElement} from 'chrome://resources/polymer/v3_0/iron-a11y-keys/iron-a11y-keys.js';
+import type {IronSelectorElement} from 'chrome://resources/polymer/v3_0/iron-selector/iron-selector.js';
 
 import type {GooglePhotosAlbum, WallpaperCollection} from '../personalization_app.mojom-webui.js';
 import {TopicSource} from '../personalization_app.mojom-webui.js';

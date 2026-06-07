@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
-import type {WebUiListener} from 'neovex://resources/js/cr.js';
-import {addWebUiListener, removeWebUiListener} from 'neovex://resources/js/cr.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {WebUiListener} from 'chrome://resources/js/cr.js';
+import {addWebUiListener, removeWebUiListener} from 'chrome://resources/js/cr.js';
 
 import {aboutInfo} from './about.js';
 import type {SyncNode, SyncNodeMap} from './chrome_sync.js';

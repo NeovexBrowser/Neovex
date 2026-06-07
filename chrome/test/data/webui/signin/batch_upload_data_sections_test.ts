@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://batch-upload/batch_upload.js';
+import 'chrome://batch-upload/batch_upload.js';
 
 import type {CrCheckboxElement} from '//resources/cr_elements/cr_checkbox/cr_checkbox.js';
-import type {DataContainer, DataItem, DataSectionElement} from 'neovex://batch-upload/batch_upload.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {DataContainer, DataItem, DataSectionElement} from 'chrome://batch-upload/batch_upload.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('BatchUploadViewTest', function() {
   let dataSectionElement: DataSectionElement;
@@ -19,13 +19,13 @@ suite('BatchUploadViewTest', function() {
     // Create passwords section.
     const password1: DataItem = {
       id: 1,
-      iconUrl: 'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
+      iconUrl: 'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
       title: 'password1',
       subtitle: 'username1',
     };
     const password2: DataItem = {
       id: 2,
-      iconUrl: 'neovex://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
+      iconUrl: 'chrome://theme/IDR_PROFILE_AVATAR_PLACEHOLDER_LARGE',
       title: 'password2',
       subtitle: 'username2',
     };

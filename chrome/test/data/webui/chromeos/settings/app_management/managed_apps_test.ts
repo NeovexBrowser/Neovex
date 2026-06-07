@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {AppManagementPwaDetailViewElement} from 'neovex://os-settings/lazy_load.js';
-import {AppManagementStore, updateSelectedAppId} from 'neovex://os-settings/os_settings.js';
-import type {Permission} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType, InstallReason, PermissionType, TriState} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import type {PermissionTypeIndex} from 'neovex://resources/cr_components/app_management/permission_constants.js';
-import {createTriStatePermission} from 'neovex://resources/cr_components/app_management/permission_util.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
+import type {AppManagementPwaDetailViewElement} from 'chrome://os-settings/lazy_load.js';
+import {AppManagementStore, updateSelectedAppId} from 'chrome://os-settings/os_settings.js';
+import type {Permission} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType, InstallReason, PermissionType, TriState} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import type {PermissionTypeIndex} from 'chrome://resources/cr_components/app_management/permission_constants.js';
+import {createTriStatePermission} from 'chrome://resources/cr_components/app_management/permission_util.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
 
 import {FakePageHandler} from './fake_page_handler.js';
 import {getPermissionToggleByType, replaceBody, replaceStore, setupFakeHandler} from './test_util.js';

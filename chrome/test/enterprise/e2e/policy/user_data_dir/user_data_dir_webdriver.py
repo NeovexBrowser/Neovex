@@ -15,8 +15,8 @@ flags.mark_flag_as_required('user_data_dir')
 
 
 def main(argv):
-  policy_url = "neovex://policy"
-  version_url = "neovex://version"
+  policy_url = "chrome://policy"
+  version_url = "chrome://version"
 
   # Verify the user data dir is not existing before launch the Chrome
   print("User data before running chrome is " + str(
@@ -32,11 +32,11 @@ def main(argv):
   driver = create_chrome_webdriver(chrome_options=options)
 
   try:
-    # Verify User Data Dir in neovex://policy page
+    # Verify User Data Dir in chrome://policy page
     driver.get(policy_url)
     print(driver.find_element(By.CSS_SELECTOR, 'html').text.encode('utf-8'))
 
-    # Verfiy User Data Dir used in neovex://version
+    # Verfiy User Data Dir used in chrome://version
     driver.get(version_url)
     print("Profile path is " + driver.find_element(By.ID, "profile_path").text)
 

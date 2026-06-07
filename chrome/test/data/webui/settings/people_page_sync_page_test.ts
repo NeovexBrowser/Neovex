@@ -3,26 +3,26 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/lazy_load.js';
+import 'chrome://settings/lazy_load.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {CrExpandButtonElement, CrInputElement, SettingsSyncEncryptionOptionsElement, SettingsSyncPageElement} from 'neovex://settings/lazy_load.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {CrExpandButtonElement, CrInputElement, SettingsSyncEncryptionOptionsElement, SettingsSyncPageElement} from 'chrome://settings/lazy_load.js';
 // <if expr="not is_chromeos">
-import type {CrDialogElement} from 'neovex://settings/lazy_load.js';
+import type {CrDialogElement} from 'chrome://settings/lazy_load.js';
 // </if>
-import type {CrCollapseElement} from 'neovex://settings/lazy_load.js';
-import type {CrButtonElement, CrRadioButtonElement, CrRadioGroupElement} from 'neovex://settings/settings.js';
-import {MetricsBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {loadTimeData, OpenWindowProxyImpl, PageStatus, Router, routes, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {TestOpenWindowProxy} from 'neovex://webui-test/test_open_window_proxy.js';
-import {isChildVisible, eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {CrCollapseElement} from 'chrome://settings/lazy_load.js';
+import type {CrButtonElement, CrRadioButtonElement, CrRadioGroupElement} from 'chrome://settings/settings.js';
+import {MetricsBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {loadTimeData, OpenWindowProxyImpl, PageStatus, Router, routes, SignedInState, StatusAction, SyncBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {TestOpenWindowProxy} from 'chrome://webui-test/test_open_window_proxy.js';
+import {isChildVisible, eventToPromise} from 'chrome://webui-test/test_util.js';
 
 // <if expr="not is_chromeos">
 import {simulateStoredAccounts} from './sync_test_util.js';
-import {resetRouterForTesting} from 'neovex://settings/settings.js';
+import {resetRouterForTesting} from 'chrome://settings/settings.js';
 // </if>
 
 import {getSyncAllPrefs} from './sync_test_util.js';

@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://print/print_preview.js';
+import 'chrome://print/print_preview.js';
 
-import type {Destination, DestinationStore, LocalDestinationInfo, PrintPreviewDestinationDialogElement, PrintPreviewDestinationListItemElement} from 'neovex://print/print_preview.js';
-import {GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl} from 'neovex://print/print_preview.js';
-import {assertEquals} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {Destination, DestinationStore, LocalDestinationInfo, PrintPreviewDestinationDialogElement, PrintPreviewDestinationListItemElement} from 'chrome://print/print_preview.js';
+import {GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl} from 'chrome://print/print_preview.js';
+import {assertEquals} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {NativeLayerStub} from './native_layer_stub.js';
 import {createDestinationStore, getDestinations, getExtensionDestinations, setupTestListenerElement} from './print_preview_test_utils.js';

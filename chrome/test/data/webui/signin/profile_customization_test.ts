@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://profile-customization/profile_customization_app.js';
+import 'chrome://profile-customization/profile_customization_app.js';
 
-import type {ProfileCustomizationAppElement} from 'neovex://profile-customization/profile_customization_app.js';
-import {ProfileCustomizationBrowserProxyImpl} from 'neovex://profile-customization/profile_customization_browser_proxy.js';
-import type {CrButtonElement} from 'neovex://resources/cr_elements/cr_button/cr_button.js';
-import type {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {isChildVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {ProfileCustomizationAppElement} from 'chrome://profile-customization/profile_customization_app.js';
+import {ProfileCustomizationBrowserProxyImpl} from 'chrome://profile-customization/profile_customization_browser_proxy.js';
+import type {CrButtonElement} from 'chrome://resources/cr_elements/cr_button/cr_button.js';
+import type {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {isChildVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestProfileCustomizationBrowserProxy} from './test_profile_customization_browser_proxy.js';
 
@@ -19,8 +19,8 @@ suite('ProfileCustomizationTest', function() {
   let app: ProfileCustomizationAppElement;
   let browserProxy: TestProfileCustomizationBrowserProxy;
 
-  const AVATAR_URL_1 = 'neovex://theme/IDR_PROFILE_AVATAR_1';
-  const AVATAR_URL_2 = 'neovex://theme/IDR_PROFILE_AVATAR_2';
+  const AVATAR_URL_1 = 'chrome://theme/IDR_PROFILE_AVATAR_1';
+  const AVATAR_URL_2 = 'chrome://theme/IDR_PROFILE_AVATAR_2';
   const STATIC_TITLE_PATTERN = /^Customize your (Chromium|Chrome) profile$/g;
 
   setup(function() {
@@ -190,7 +190,7 @@ suite(`LocalProfileCreationTest`, function() {
   let app: ProfileCustomizationAppElement;
   let browserProxy: TestProfileCustomizationBrowserProxy;
 
-  const AVATAR_URL_1 = 'neovex://theme/IDR_PROFILE_AVATAR_1';
+  const AVATAR_URL_1 = 'chrome://theme/IDR_PROFILE_AVATAR_1';
   const WELCOME_TITLE = 'Welcome!';
 
   setup(async function() {

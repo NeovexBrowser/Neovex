@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Note: The following neovex:// URLs are not actually fetched at runtime. They
+// Note: The following chrome:// URLs are not actually fetched at runtime. They
 // are handled in
 // components/security_interstitials/core/browser/resources:bundle_js, which
 // finds the correct files and inlines them.
-import {HIDDEN_CLASS, preventDefaultOnPoundLinkClicks, SecurityInterstitialCommandId, sendCommand} from 'neovex://interstitials/common/resources/interstitial_common.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {HIDDEN_CLASS, preventDefaultOnPoundLinkClicks, SecurityInterstitialCommandId, sendCommand} from 'chrome://interstitials/common/resources/interstitial_common.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 /**
  * Restores the interstitial content to the initial state if the window size

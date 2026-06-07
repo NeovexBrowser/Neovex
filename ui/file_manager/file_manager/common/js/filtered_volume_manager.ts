@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assertNotReachedCase} from 'neovex://resources/js/assert.js';
+import {assertNotReachedCase} from 'chrome://resources/js/assert.js';
 
 import type {EntryLocation} from '../../background/js/entry_location_impl.js';
 import type {VolumeInfo} from '../../background/js/volume_info.js';
@@ -71,7 +71,7 @@ export class FilteredVolumeManager extends VolumeManager {
   private readonly isMediaStoreOnly_: boolean;
 
   /**
-   * True if neovex://flags#fuse-box-debug is enabled. This shows additional
+   * True if chrome://flags#fuse-box-debug is enabled. This shows additional
    * UI elements, for manual fusebox testing.
    */
   private readonly isFuseBoxDebugEnabled_ = isFuseBoxDebugEnabled();
@@ -175,7 +175,7 @@ export class FilteredVolumeManager extends VolumeManager {
     // at all.
     //
     // There's also the isFuseBoxDebugEnabled_ field, corresponding to
-    // neovex://flags#fuse-box-debug. When true, we should show both FSF and
+    // chrome://flags#fuse-box-debug. When true, we should show both FSF and
     // FWF volumes, for manual testing. But normally, we should show only one
     // of the FSF and FWF categories.
     //
@@ -211,7 +211,7 @@ export class FilteredVolumeManager extends VolumeManager {
       case AllowedPaths.ANY_PATH:
       case AllowedPaths.ANY_PATH_OR_URL:
         if (this.isFuseBoxDebugEnabled_) {
-          // neovex://flags#fuse-box-debug is enabled. Show everything.
+          // chrome://flags#fuse-box-debug is enabled. Show everything.
           return true;  // Equivalent to (nat || fsf || fwf).
         } else {
           // If not nat (native), prefer fsf (foreign-sans-fusebox) over fwf

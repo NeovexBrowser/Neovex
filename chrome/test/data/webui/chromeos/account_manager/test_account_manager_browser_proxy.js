@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {AccountManagerBrowserProxy} from 'neovex://account-migration-welcome/account_manager_browser_proxy.js';
+import {AccountManagerBrowserProxy} from 'chrome://account-migration-welcome/account_manager_browser_proxy.js';
 
-import {TestBrowserProxy} from 'neovex://webui-test/chromeos/test_browser_proxy.js';
+import {TestBrowserProxy} from 'chrome://webui-test/chromeos/test_browser_proxy.js';
 
 /** @implements {AccountManagerBrowserProxy} */
 export class TestAccountManagerBrowserProxy extends TestBrowserProxy {

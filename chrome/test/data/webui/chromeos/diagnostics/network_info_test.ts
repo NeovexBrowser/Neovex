@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://diagnostics/network_info.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://diagnostics/network_info.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import type {CellularNetwork, EthernetNetwork, WiFiNetwork} from 'neovex://diagnostics/diagnostics_types.js';
-import {fakeCellularNetwork, fakeEthernetNetwork, fakeWifiNetwork} from 'neovex://diagnostics/fake_data.js';
-import type {Network} from 'neovex://diagnostics/network_health_provider.mojom-webui.js';
-import type {NetworkInfoElement} from 'neovex://diagnostics/network_info.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import type {CellularNetwork, EthernetNetwork, WiFiNetwork} from 'chrome://diagnostics/diagnostics_types.js';
+import {fakeCellularNetwork, fakeEthernetNetwork, fakeWifiNetwork} from 'chrome://diagnostics/fake_data.js';
+import type {Network} from 'chrome://diagnostics/network_health_provider.mojom-webui.js';
+import type {NetworkInfoElement} from 'chrome://diagnostics/network_info.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import * as dx_utils from './diagnostics_test_utils.js';
 

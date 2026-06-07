@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://new-tab-page/strings.m.js';
-import 'neovex://resources/cr_components/composebox/recent_tab_chip.js';
+import 'chrome://new-tab-page/strings.m.js';
+import 'chrome://resources/cr_components/composebox/recent_tab_chip.js';
 
-import {TabUploadOrigin} from 'neovex://resources/cr_components/composebox/common.js';
-import type {RecentTabChipElement} from 'neovex://resources/cr_components/composebox/recent_tab_chip.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import type {TabInfo} from 'neovex://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {MetricsTracker} from 'neovex://webui-test/metrics_test_support.js';
-import {fakeMetricsPrivate} from 'neovex://webui-test/metrics_test_support.js';
-import {$$, eventToPromise, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {TabUploadOrigin} from 'chrome://resources/cr_components/composebox/common.js';
+import type {RecentTabChipElement} from 'chrome://resources/cr_components/composebox/recent_tab_chip.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import type {TabInfo} from 'chrome://resources/mojo/components/omnibox/browser/searchbox.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {MetricsTracker} from 'chrome://webui-test/metrics_test_support.js';
+import {fakeMetricsPrivate} from 'chrome://webui-test/metrics_test_support.js';
+import {$$, eventToPromise, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('RecentTabChipTest', function() {
   let recentTabChip: RecentTabChipElement;

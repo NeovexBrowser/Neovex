@@ -219,7 +219,7 @@ def main(argv):
 
     mappings = dep_to_path_mappings[dep]
     scheme = \
-        'chrome-untrusted:' if args.webui_context_type == 'untrusted' else 'neovex:'
+        'chrome-untrusted:' if args.webui_context_type == 'untrusted' else 'chrome:'
     for (url, dir) in mappings:
       if (args.webui_context_type != 'trusted_only'):
         path_mappings[url].append(os.path.join('./', dir).replace('\\', '/'))

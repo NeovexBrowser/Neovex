@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksAppElement} from 'neovex://bookmarks/bookmarks.js';
-import {BookmarksCommandManagerElement, BrowserProxyImpl, Command, IncognitoAvailability} from 'neovex://bookmarks/bookmarks.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {BookmarksAppElement} from 'chrome://bookmarks/bookmarks.js';
+import {BookmarksCommandManagerElement, BrowserProxyImpl, Command, IncognitoAvailability} from 'chrome://bookmarks/bookmarks.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {TestBookmarksBrowserProxy} from './test_browser_proxy.js';
 import {TestStore} from './test_store.js';

@@ -4,9 +4,9 @@
 
 import './settings_section.js';
 
-import {getCss as getMdSelectLitCss} from 'neovex://resources/cr_elements/md_select_lit.css.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
+import {getCss as getMdSelectLitCss} from 'chrome://resources/cr_elements/md_select_lit.css.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
 
 import {MarginsType} from '../data/margins.js';
 import {State} from '../data/state.js';

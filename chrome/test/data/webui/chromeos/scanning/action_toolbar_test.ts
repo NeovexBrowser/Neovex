@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
-import 'neovex://scanning/action_toolbar.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://scanning/action_toolbar.js';
 
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import type {ActionToolbarElement} from 'neovex://scanning/action_toolbar.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {eventToPromise} from 'neovex://webui-test/chromeos/test_util.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import type {ActionToolbarElement} from 'chrome://scanning/action_toolbar.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {eventToPromise} from 'chrome://webui-test/chromeos/test_util.js';
 
 suite('actionToolbarTest', function() {
   let actionToolbar: ActionToolbarElement|null = null;

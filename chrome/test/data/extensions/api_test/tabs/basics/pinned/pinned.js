@@ -10,7 +10,7 @@ let loadScript = chrome.test.loadScript(scriptUrl);
 loadScript.then(async function() {
 chrome.test.runTests([
   function setupWindow() {
-    createWindow(["about:blank", "neovex://newtab/", pageUrl("a")], {},
+    createWindow(["about:blank", "chrome://newtab/", pageUrl("a")], {},
                  pass(function(winId, tabIds) {
       firstWindowId = winId;
     }));

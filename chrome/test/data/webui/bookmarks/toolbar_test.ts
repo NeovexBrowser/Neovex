@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {BookmarksToolbarElement} from 'neovex://bookmarks/bookmarks.js';
-import {BookmarkManagerApiProxyImpl, Command} from 'neovex://bookmarks/bookmarks.js';
-import {isMac} from 'neovex://resources/js/platform.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {pressAndReleaseKeyOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {BookmarksToolbarElement} from 'chrome://bookmarks/bookmarks.js';
+import {BookmarkManagerApiProxyImpl, Command} from 'chrome://bookmarks/bookmarks.js';
+import {isMac} from 'chrome://resources/js/platform.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {pressAndReleaseKeyOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {TestBookmarkManagerApiProxy} from './test_bookmark_manager_api_proxy.js';
 import {TestCommandManager} from './test_command_manager.js';

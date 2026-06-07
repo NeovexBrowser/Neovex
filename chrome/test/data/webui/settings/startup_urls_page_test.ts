@@ -3,16 +3,16 @@
 // found in the LICENSE file.
 
 // clang-format off
-import 'neovex://settings/settings.js';
+import 'chrome://settings/settings.js';
 
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {keyEventOn} from 'neovex://webui-test/keyboard_mock_interactions.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {SettingsStartupUrlDialogElement,SettingsStartupUrlEntryElement, SettingsStartupUrlsPageElement, StartupUrlsPageBrowserProxy} from 'neovex://settings/settings.js';
-import {EDIT_STARTUP_URL_EVENT, StartupUrlsPageBrowserProxyImpl} from 'neovex://settings/settings.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {keyEventOn} from 'chrome://webui-test/keyboard_mock_interactions.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {SettingsStartupUrlDialogElement,SettingsStartupUrlEntryElement, SettingsStartupUrlsPageElement, StartupUrlsPageBrowserProxy} from 'chrome://settings/settings.js';
+import {EDIT_STARTUP_URL_EVENT, StartupUrlsPageBrowserProxyImpl} from 'chrome://settings/settings.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
 
 // clang-format on
 
@@ -266,14 +266,14 @@ suite('StartupUrlsPage', function() {
       modelIndex: 2,
       title: 'Test page 1',
       tooltip: 'test tooltip',
-      url: 'neovex://bar',
+      url: 'chrome://bar',
     };
 
     const entry2 = {
       modelIndex: 2,
       title: 'Test page 2',
       tooltip: 'test tooltip',
-      url: 'neovex://foo',
+      url: 'chrome://foo',
     };
 
     webUIListenerCallback('update-startup-pages', [entry1, entry2]);
@@ -322,7 +322,7 @@ function createSampleUrlEntry() {
     modelIndex: 2,
     title: 'Test page',
     tooltip: 'test tooltip',
-    url: 'neovex://foo',
+    url: 'chrome://foo',
   };
 }
 

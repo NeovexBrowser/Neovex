@@ -2,16 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://device-log/app.js';
+import 'chrome://device-log/app.js';
 
-import type {DeviceLogAppElement} from 'neovex://device-log/app.js';
-import type {BrowserProxy, LogEntry} from 'neovex://device-log/browser_proxy.js';
-import {BrowserProxyImpl, LogLevel} from 'neovex://device-log/browser_proxy.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {MockTimer} from 'neovex://webui-test/mock_timer.js';
-import {TestBrowserProxy as BaseTestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {DeviceLogAppElement} from 'chrome://device-log/app.js';
+import type {BrowserProxy, LogEntry} from 'chrome://device-log/browser_proxy.js';
+import {BrowserProxyImpl, LogLevel} from 'chrome://device-log/browser_proxy.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {MockTimer} from 'chrome://webui-test/mock_timer.js';
+import {TestBrowserProxy as BaseTestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 class TestBrowserProxy extends BaseTestBrowserProxy implements BrowserProxy {
   private logs_: string = '';

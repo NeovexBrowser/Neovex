@@ -8,7 +8,7 @@ import {
   html,
   LitElement,
   PropertyDeclarations,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {checkInstanceof} from '../../assert.js';
 import {DEFAULT_STYLE} from '../styles.js';

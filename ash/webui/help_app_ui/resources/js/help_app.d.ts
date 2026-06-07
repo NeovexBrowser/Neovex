@@ -67,7 +67,7 @@ declare interface LauncherSearchableItem {
   /**
    * The URL path containing the relevant content, which may or may not contain
    * URL parameters. For example, if the help content is at
-   * neovex://help-app/help/sub/3399763/id/1282338#install-user, then the field
+   * chrome://help-app/help/sub/3399763/id/1282338#install-user, then the field
    * would be "help/sub/3399763/id/1282338#install-user" for this page.
    */
   urlPathWithParameters: string;

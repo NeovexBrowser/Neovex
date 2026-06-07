@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {getTrustedHTML} from 'neovex://resources/js/static_types.js';
-import {getRequiredElement} from 'neovex://resources/js/util.js';
+import {getTrustedHTML} from 'chrome://resources/js/static_types.js';
+import {getRequiredElement} from 'chrome://resources/js/util.js';
 
 import type {ClientInfo, SegmentInfo} from './segmentation_internals.mojom-webui.js';
 import {SegmentationInternalsBrowserProxy} from './segmentation_internals_browser_proxy.js';

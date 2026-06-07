@@ -2,19 +2,19 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-settings/lazy_load.js';
+import 'chrome://os-settings/lazy_load.js';
 
-import type {SettingsKerberosAccountsSubpageElement} from 'neovex://os-settings/lazy_load.js';
-import {KerberosAccountsBrowserProxyImpl} from 'neovex://os-settings/lazy_load.js';
-import type {CrButtonElement, CrToastElement} from 'neovex://os-settings/os_settings.js';
-import {createRouterForTesting, Router, routes} from 'neovex://os-settings/os_settings.js';
-import {webUIListenerCallback} from 'neovex://resources/js/cr.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {getDeepActiveElement} from 'neovex://resources/js/util.js';
-import type {DomRepeat} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertNull, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {SettingsKerberosAccountsSubpageElement} from 'chrome://os-settings/lazy_load.js';
+import {KerberosAccountsBrowserProxyImpl} from 'chrome://os-settings/lazy_load.js';
+import type {CrButtonElement, CrToastElement} from 'chrome://os-settings/os_settings.js';
+import {createRouterForTesting, Router, routes} from 'chrome://os-settings/os_settings.js';
+import {webUIListenerCallback} from 'chrome://resources/js/cr.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {getDeepActiveElement} from 'chrome://resources/js/util.js';
+import type {DomRepeat} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertNull, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {AccountIndex, TEST_KERBEROS_ACCOUNTS, TestKerberosAccountsBrowserProxy} from './test_kerberos_accounts_browser_proxy.js';
 

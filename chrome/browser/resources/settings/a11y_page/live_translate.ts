@@ -5,8 +5,8 @@
 /**
  * @fileoverview 'settings-live-translate' is a component for showing Live
  * Translate settings. It appears on the accessibility subpage
- * (neovex://settings/accessibility) on Mac and some versions of Windows and on
- * the captions subpage (neovex://settings/captions) on Linux, ChromeOS, and
+ * (chrome://settings/accessibility) on Mac and some versions of Windows and on
+ * the captions subpage (chrome://settings/captions) on Linux, ChromeOS, and
  * other versions of Windows.
  */
 

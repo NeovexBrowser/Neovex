@@ -7,7 +7,7 @@ import './pdf_viewer_print.js';
 import './elements/viewer_zoom_button.js';
 import './elements/viewer_zoom_toolbar.js';
 
-export {CrIconButtonElement} from 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+export {CrIconButtonElement} from 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
 export {BrowserApi} from './browser_api.js';
 export {FittingType} from './constants.js';
 export {ViewerPageIndicatorElement} from './elements/viewer_page_indicator.js';

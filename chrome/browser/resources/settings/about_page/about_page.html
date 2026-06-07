@@ -48,8 +48,8 @@
     <settings-section page-title="$i18n{aboutPageTitle}">
       <div class="cr-row two-line first">
         <img id="product-logo" on-click="onProductLogoClick_"
-            srcset="neovex://theme/current-channel-logo@1x 1x,
-                    neovex://theme/current-channel-logo@2x 2x"
+            srcset="chrome://theme/current-channel-logo@1x 1x,
+                    chrome://theme/current-channel-logo@2x 2x"
             alt="$i18n{aboutProductLogoAlt}"
             role="presentation">
         <div class="product-title">$i18n{aboutProductTitle}</div>
@@ -66,7 +66,7 @@
               icon$="[[getUpdateStatusIcon_(
                   obsoleteSystemInfo_, currentUpdateStatusEvent_)]]">
           </cr-icon>
-          <img id="throbber" src="neovex://resources/images/throbber_small.svg"
+          <img id="throbber" src="chrome://resources/images/throbber_small.svg"
               hidden="[[!shouldShowThrobber_(
                   obsoleteSystemInfo_, currentUpdateStatusEvent_)]]">
         </div>

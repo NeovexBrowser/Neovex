@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 
-import 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
 
-import type {SiteFaviconElement} from 'neovex://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
-import {assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {SiteFaviconElement} from 'chrome://privacy-sandbox-internals/related_website_sets/related_website_sets.js';
+import {assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 suite('SiteFaviconTest', () => {
   let icon: SiteFaviconElement;
@@ -20,7 +20,7 @@ suite('SiteFaviconTest', () => {
 
   test('on successful download', async () => {
     icon.domain = 'https://test.com';
-    icon.url = 'neovex://resources/images/chrome_logo_dark.svg';
+    icon.url = 'chrome://resources/images/chrome_logo_dark.svg';
     await eventToPromise('site-favicon-loaded', icon);
 
     assertTrue(isVisible(icon.$.downloadedFavicon));
@@ -29,7 +29,7 @@ suite('SiteFaviconTest', () => {
 
   test('on failed download', async () => {
     icon.domain = 'https://test.com';
-    icon.url = 'neovex://resources/images/invalid_url';
+    icon.url = 'chrome://resources/images/invalid_url';
     await eventToPromise('site-favicon-error', icon);
 
     assertFalse(isVisible(icon.$.downloadedFavicon));
@@ -38,7 +38,7 @@ suite('SiteFaviconTest', () => {
 
   test('url change', async () => {
     icon.domain = 'https://test.com';
-    icon.url = 'neovex://resources/images/chrome_logo_dark.svg';
+    icon.url = 'chrome://resources/images/chrome_logo_dark.svg';
     await eventToPromise('site-favicon-loaded', icon);
 
     assertTrue(isVisible(icon.$.downloadedFavicon));

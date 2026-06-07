@@ -7,15 +7,15 @@
  * the settings page.
  */
 
-import 'neovex://resources/cr_elements/cr_icon_button/cr_icon_button.js';
-import 'neovex://resources/cr_elements/cr_shared_vars.css.js';
+import 'chrome://resources/cr_elements/cr_icon_button/cr_icon_button.js';
+import 'chrome://resources/cr_elements/cr_shared_vars.css.js';
 import '../settings_shared.css.js';
 import './passwords_shared.css.js';
 import './screen_reader_only.css.js';
 
 import {I18nMixin} from '//resources/cr_elements/i18n_mixin.js';
-import {assert, assertNotReached} from 'neovex://resources/js/assert.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assert, assertNotReached} from 'chrome://resources/js/assert.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {loadTimeData} from '../i18n_setup.js';
 import {CardBenefitsUserAction, MetricsBrowserProxyImpl} from '../metrics_browser_proxy.js';
@@ -309,7 +309,7 @@ export class SettingsCreditCardListEntryElement extends
    * `imageSrc`.
    */
   private getCardImage_(imageSrc: string): string {
-    return imageSrc.startsWith('neovex://theme') ?
+    return imageSrc.startsWith('chrome://theme') ?
         this.getScaledSrcSet_(imageSrc) :
         imageSrc;
   }

@@ -8,16 +8,16 @@
  * Share onboarding flow. It allows users to setup their visibility preference
  * while enabling the feature for the first time.
  *
- * It is embedded in neovex://os-settings, neovex://settings and as a standalone
- * dialog via neovex://nearby.
+ * It is embedded in chrome://os-settings, chrome://settings and as a standalone
+ * dialog via chrome://nearby.
  */
 
-import 'neovex://resources/ash/common/cr_elements/cr_shared_style.css.js';
-import 'neovex://resources/ash/common/cr_elements/cr_icons.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_shared_style.css.js';
+import 'chrome://resources/ash/common/cr_elements/cr_icons.css.js';
 import './nearby_contact_visibility.js';
 
-import {I18nMixin} from 'neovex://resources/ash/common/cr_elements/i18n_mixin.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {I18nMixin} from 'chrome://resources/ash/common/cr_elements/i18n_mixin.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import type {NearbyContactVisibilityElement} from './nearby_contact_visibility.js';
 import {getOnboardingEntryPoint, NearbyShareOnboardingEntryPoint, NearbyShareOnboardingFinalState, processOnePageOnboardingCancelledMetrics, processOnePageOnboardingCompleteMetrics, processOnePageOnboardingManageContactsMetrics, processOnePageOnboardingVisibilityPageShownMetrics} from './nearby_metrics_logger.js';

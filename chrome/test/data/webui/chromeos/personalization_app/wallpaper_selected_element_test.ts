@@ -4,13 +4,13 @@
 
 /** @fileoverview Test suite for wallpaper-selected component.  */
 
-import 'neovex://personalization/strings.m.js';
+import 'chrome://personalization/strings.m.js';
 
-import type {CurrentAttribution, CurrentWallpaper, GooglePhotosPhoto} from 'neovex://personalization/js/personalization_app.js';
-import {DailyRefreshType, GooglePhotosSharedAlbumDialogElement, Paths, WallpaperLayout, WallpaperSelectedElement, WallpaperType} from 'neovex://personalization/js/personalization_app.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNull, assertStringContains, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks, waitAfterNextRender} from 'neovex://webui-test/polymer_test_util.js';
+import type {CurrentAttribution, CurrentWallpaper, GooglePhotosPhoto} from 'chrome://personalization/js/personalization_app.js';
+import {DailyRefreshType, GooglePhotosSharedAlbumDialogElement, Paths, WallpaperLayout, WallpaperSelectedElement, WallpaperType} from 'chrome://personalization/js/personalization_app.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertDeepEquals, assertEquals, assertFalse, assertNotEquals, assertNull, assertStringContains, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks, waitAfterNextRender} from 'chrome://webui-test/polymer_test_util.js';
 
 import {baseSetup, createSvgDataUrl, initElement} from './personalization_app_test_utils.js';
 import type {TestPersonalizationStore} from './test_personalization_store.js';
@@ -224,7 +224,7 @@ suite('WallpaperSelectedElementTest', function() {
     const img = wallpaperSelectedElement.shadowRoot!.querySelector('img');
     assertStringContains(
         img!.src,
-        `neovex://personalization/wallpaper.jpg?key=${
+        `chrome://personalization/wallpaper.jpg?key=${
             wallpaperProvider.currentWallpaper.key}`);
 
     const textContainerElements =
@@ -281,7 +281,7 @@ suite('WallpaperSelectedElementTest', function() {
     assertTrue(!!img);
     assertStringContains(
         img.src,
-        `neovex://personalization/wallpaper.jpg?key=${
+        `chrome://personalization/wallpaper.jpg?key=${
             wallpaperProvider.currentWallpaper.key}`);
 
 
@@ -293,7 +293,7 @@ suite('WallpaperSelectedElementTest', function() {
     await waitAfterNextRender(wallpaperSelectedElement);
 
     assertStringContains(
-        img.src, `neovex://personalization/wallpaper.jpg?key=new_key`);
+        img.src, `chrome://personalization/wallpaper.jpg?key=new_key`);
   });
 
   test('shows placeholders when image fails to load', async () => {

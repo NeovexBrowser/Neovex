@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {Action, StoreObserver} from 'neovex://resources/js/store.js';
-import {Store} from 'neovex://resources/js/store.js';
-import {assertDeepEquals, assertEquals, assertFalse} from 'neovex://webui-test/chai_assert.js';
+import type {Action, StoreObserver} from 'chrome://resources/js/store.js';
+import {Store} from 'chrome://resources/js/store.js';
+import {assertDeepEquals, assertEquals, assertFalse} from 'chrome://webui-test/chai_assert.js';
 
 interface TestState {
   value: string;

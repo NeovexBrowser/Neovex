@@ -6,9 +6,9 @@ module glic.mojom;
 
 import "url/mojom/url.mojom";
 
-// Factory for PageHandler used in neovex://glic-fre.
+// Factory for PageHandler used in chrome://glic-fre.
 interface FrePageHandlerFactory {
-  // Creates the PageHandler for neovex://glic-fre.
+  // Creates the PageHandler for chrome://glic-fre.
   CreatePageHandler(pending_receiver<FrePageHandler> receiver);
 };
 

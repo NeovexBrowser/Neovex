@@ -12,7 +12,7 @@ import {RootPath, sendBrowserTestCommand} from '../test_util.js';
 import {testcase} from '../testcase.js';
 
 /** Application ID (URL) for File Manager System Web App (SWA). */
-const FILE_MANAGER_SWA_ID = 'neovex://file-manager';
+const FILE_MANAGER_SWA_ID = 'chrome://file-manager';
 
 export let remoteCall: RemoteCallFilesApp;
 

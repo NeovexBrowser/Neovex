@@ -10,12 +10,12 @@ import './plugin_vm_page/plugin_vm_detail_view.js';
 import './borealis_page/borealis_detail_view.js';
 import '../../settings_shared.css.js';
 
-import type {App} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppType} from 'neovex://resources/cr_components/app_management/app_management.mojom-webui.js';
-import {AppManagementUserAction} from 'neovex://resources/cr_components/app_management/constants.js';
-import {getSelectedApp, recordAppManagementUserAction} from 'neovex://resources/cr_components/app_management/util.js';
-import {assertNotReached} from 'neovex://resources/js/assert.js';
-import {microTask, PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {App} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppType} from 'chrome://resources/cr_components/app_management/app_management.mojom-webui.js';
+import {AppManagementUserAction} from 'chrome://resources/cr_components/app_management/constants.js';
+import {getSelectedApp, recordAppManagementUserAction} from 'chrome://resources/cr_components/app_management/util.js';
+import {assertNotReached} from 'chrome://resources/js/assert.js';
+import {microTask, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {castExists} from '../../assert_extras.js';
 import {updateSelectedAppId} from '../../common/app_management/actions.js';

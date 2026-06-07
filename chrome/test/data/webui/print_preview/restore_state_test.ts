@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {NativeInitialSettings, PrintPreviewAppElement, SerializedSettings, Settings, SettingsMixinInterface} from 'neovex://print/print_preview.js';
-import {getInstance, MarginsType, NativeLayerImpl, PluginProxyImpl, ScalingType} from 'neovex://print/print_preview.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {microtasksFinished} from 'neovex://webui-test/test_util.js';
+import type {NativeInitialSettings, PrintPreviewAppElement, SerializedSettings, Settings, SettingsMixinInterface} from 'chrome://print/print_preview.js';
+import {getInstance, MarginsType, NativeLayerImpl, PluginProxyImpl, ScalingType} from 'chrome://print/print_preview.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {NativeLayerStub} from './native_layer_stub.js';
 import {getCddTemplateWithAdvancedSettings, getDefaultInitialSettings} from './print_preview_test_utils.js';

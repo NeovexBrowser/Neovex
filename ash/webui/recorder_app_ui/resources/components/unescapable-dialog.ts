@@ -12,7 +12,7 @@ import {
   PropertyDeclarations,
   PropertyValues,
   ref,
-} from 'neovex://resources/mwc/lit/index.js';
+} from 'chrome://resources/mwc/lit/index.js';
 
 import {ReactiveLitElement} from '../core/reactive/lit.js';
 

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {MetricsReporter} from 'neovex://resources/js/metrics_reporter/metrics_reporter.js';
+import type {MetricsReporter} from 'chrome://resources/js/metrics_reporter/metrics_reporter.js';
 
 export class MockedMetricsReporter implements MetricsReporter {
   mark(_name: string, _time?: bigint): void {}

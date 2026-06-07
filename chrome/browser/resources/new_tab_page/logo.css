@@ -4,7 +4,7 @@
 
 /* #css_wrapper_metadata_start
  * #type=style-lit
- * #import=neovex://resources/cr_elements/cr_hidden_style_lit.css.js
+ * #import=chrome://resources/cr_elements/cr_hidden_style_lit.css.js
  * #scheme=relative
  * #include=cr-hidden-style-lit
  * #css_wrapper_metadata_end */
@@ -109,6 +109,6 @@
   height: 18px;
   margin: 7px;
   vertical-align: bottom;
-  mask-image: url(neovex://new-tab-page/icons/share_unfilled.svg);
+  mask-image: url(chrome://new-tab-page/icons/share_unfilled.svg);
   background-color: var(--color-new-tab-page-doodle-share-button-icon, none);
 }

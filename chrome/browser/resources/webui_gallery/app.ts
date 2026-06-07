@@ -213,7 +213,7 @@ export class WebuiGalleryAppElement extends CrLitElement {
       assert(document.body.querySelector(COLORS_CSS_SELECTOR) === null);
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'neovex://theme/colors.css?sets=ui,chrome';
+      link.href = 'chrome://theme/colors.css?sets=ui,chrome';
       document.body.appendChild(link);
       return;
     }

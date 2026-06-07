@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://os-feedback/help_content.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://os-feedback/help_content.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
 import type {IronIconElement} from '//resources/polymer/v3_0/iron-icon/iron-icon.js';
-import {fakeHelpContentList, fakePopularHelpContentList} from 'neovex://os-feedback/fake_data.js';
-import type {HelpContentList} from 'neovex://os-feedback/feedback_types.js';
-import type {HelpContentElement} from 'neovex://os-feedback/help_content.js';
-import {HelpContentType} from 'neovex://os-feedback/os_feedback_ui.mojom-webui.js';
-import {assert} from 'neovex://resources/ash/common/assert.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {DomRepeat} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chromeos/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {fakeHelpContentList, fakePopularHelpContentList} from 'chrome://os-feedback/fake_data.js';
+import type {HelpContentList} from 'chrome://os-feedback/feedback_types.js';
+import type {HelpContentElement} from 'chrome://os-feedback/help_content.js';
+import {HelpContentType} from 'chrome://os-feedback/os_feedback_ui.mojom-webui.js';
+import {assert} from 'chrome://resources/ash/common/assert.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {DomRepeat} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chromeos/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 suite('helpContentTestSuite', () => {
   let helpContentElement: HelpContentElement;

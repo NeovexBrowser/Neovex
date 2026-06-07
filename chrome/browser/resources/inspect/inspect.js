@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {assert} from 'neovex://resources/js/assert.js';
+import {assert} from 'chrome://resources/js/assert.js';
 
 function $(id) {
   // Disable getElementById restriction here, because this UI uses non valid
@@ -24,7 +24,7 @@ const WEBRTC_SERIAL = 'WEBRTC';
 let HOST_CHROME_VERSION;
 
 const queryParamsObject = {};
-let browserInspector = 'neovex://tracing';
+let browserInspector = 'chrome://tracing';
 let browserInspectorTitle = 'trace';
 let staleDataCounter = 0;
 

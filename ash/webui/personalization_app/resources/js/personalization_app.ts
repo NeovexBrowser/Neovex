@@ -43,8 +43,8 @@ import './user/user_subpage_element.js';
 import './utils.js';
 import './wallpaper/index.js';
 
-import {ColorChangeUpdater} from 'neovex://resources/cr_components/color_change_listener/colors_css_updater.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
+import {ColorChangeUpdater} from 'chrome://resources/cr_components/color_change_listener/colors_css_updater.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
 
 import {emptyState} from './personalization_state.js';
 import {PersonalizationStore} from './personalization_store.js';
@@ -52,11 +52,11 @@ import {SeaPenStoreAdapter} from './sea_pen_store_adapter.js';
 
 /**
  * With optimize_webui, the generated JS files are bundled into single file
- * `neovex://personalization/js/personalization_app.js`. These exports are
+ * `chrome://personalization/js/personalization_app.js`. These exports are
  * necessary so they can be imported in tests.
  */
-export {WallpaperGridItemElement} from 'neovex://resources/ash/common/personalization/wallpaper_grid_item_element.js';
-export {SparklePlaceholderElement} from 'neovex://resources/ash/common/sea_pen/surface_effects/sparkle_placeholder.js';
+export {WallpaperGridItemElement} from 'chrome://resources/ash/common/personalization/wallpaper_grid_item_element.js';
+export {SparklePlaceholderElement} from 'chrome://resources/ash/common/sea_pen/surface_effects/sparkle_placeholder.js';
 export {AlbumListElement} from './ambient/album_list_element.js';
 export {AlbumsSubpageElement} from './ambient/albums_subpage_element.js';
 export type {AmbientActions, SetAlbumsAction, SetAlbumSelectedAction, SetAmbientModeEnabledAction, SetAmbientThemeAction, SetGeolocationPermissionEnabledAction as SetGeolocationPermissionEnabledActionForAmbient, SetPreviewsAction, SetScreenSaverDurationAction, SetShouldShowTimeOfDayBannerAction, SetTemperatureUnitAction, SetTopicSourceAction} from './ambient/ambient_actions.js';
@@ -127,30 +127,30 @@ export {GooglePhotosSharedAlbumDialogElement, AcceptEvent} from './wallpaper/goo
 export {GooglePhotosZeroStateElement} from './wallpaper/google_photos_zero_state_element.js';
 export {DEFAULT_COLOR_SCHEME} from './theme/utils.js';
 export {LocalImagesElement} from './wallpaper/local_images_element.js';
-export {FullscreenPreviewState} from 'neovex://resources/ash/common/personalization/wallpaper_state.js';
-export * from 'neovex://resources/ash/common/sea_pen/sea_pen_actions.js';
-export {getRecentSeaPenImageIds, selectRecentSeaPenImage, getSeaPenThumbnails, selectSeaPenThumbnail} from 'neovex://resources/ash/common/sea_pen/sea_pen_controller.js';
-export {SeaPenErrorElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_error_element.js';
-export {SeaPenFeedbackElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_feedback_element.js';
-export {SeaPenImageLoadingElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_image_loading_element.js';
-export {SeaPenHistoryPromptSelectedEvent, SeaPenImagesElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_images_element.js';
-export {SeaPenInputQueryElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_input_query_element.js';
-export {SeaPenOptionsElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_options_element.js';
-export {SeaPenSamplesElement, SeaPenSampleSelectedEvent} from 'neovex://resources/ash/common/sea_pen/sea_pen_samples_element.js';
-export {SeaPenFreeformElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_freeform_element.js';
-export {SeaPenSuggestionsElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_suggestions_element.js';
-export {SeaPenRecentImageDeleteEvent, SeaPenRecentWallpapersElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_recent_wallpapers_element.js';
-export {SeaPenRouterElement, SeaPenPaths} from 'neovex://resources/ash/common/sea_pen/sea_pen_router_element.js';
-export type {SeaPenState} from 'neovex://resources/ash/common/sea_pen/sea_pen_state.js';
-export type {SeaPenStoreInterface} from 'neovex://resources/ash/common/sea_pen/sea_pen_store.js';
-export {getSeaPenStore, setSeaPenStore} from 'neovex://resources/ash/common/sea_pen/sea_pen_store.js';
-export {SeaPenTemplateQueryElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_template_query_element.js';
-export {SeaPenTemplatesElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_templates_element.js';
-export {setSeaPenProviderForTesting} from 'neovex://resources/ash/common/sea_pen/sea_pen_interface_provider.js';
-export {SeaPenIntroductionDialogElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_introduction_dialog_element.js';
-export {SeaPenToastElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_toast_element.js';
-export {SeaPenZeroStateSvgElement} from 'neovex://resources/ash/common/sea_pen/sea_pen_zero_state_svg_element.js';
-export {CrTooltipIconElement} from 'neovex://resources/ash/common/cr_elements/policy/cr_tooltip_icon.js';
+export {FullscreenPreviewState} from 'chrome://resources/ash/common/personalization/wallpaper_state.js';
+export * from 'chrome://resources/ash/common/sea_pen/sea_pen_actions.js';
+export {getRecentSeaPenImageIds, selectRecentSeaPenImage, getSeaPenThumbnails, selectSeaPenThumbnail} from 'chrome://resources/ash/common/sea_pen/sea_pen_controller.js';
+export {SeaPenErrorElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_error_element.js';
+export {SeaPenFeedbackElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_feedback_element.js';
+export {SeaPenImageLoadingElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_image_loading_element.js';
+export {SeaPenHistoryPromptSelectedEvent, SeaPenImagesElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_images_element.js';
+export {SeaPenInputQueryElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_input_query_element.js';
+export {SeaPenOptionsElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_options_element.js';
+export {SeaPenSamplesElement, SeaPenSampleSelectedEvent} from 'chrome://resources/ash/common/sea_pen/sea_pen_samples_element.js';
+export {SeaPenFreeformElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_freeform_element.js';
+export {SeaPenSuggestionsElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_suggestions_element.js';
+export {SeaPenRecentImageDeleteEvent, SeaPenRecentWallpapersElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_recent_wallpapers_element.js';
+export {SeaPenRouterElement, SeaPenPaths} from 'chrome://resources/ash/common/sea_pen/sea_pen_router_element.js';
+export type {SeaPenState} from 'chrome://resources/ash/common/sea_pen/sea_pen_state.js';
+export type {SeaPenStoreInterface} from 'chrome://resources/ash/common/sea_pen/sea_pen_store.js';
+export {getSeaPenStore, setSeaPenStore} from 'chrome://resources/ash/common/sea_pen/sea_pen_store.js';
+export {SeaPenTemplateQueryElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_template_query_element.js';
+export {SeaPenTemplatesElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_templates_element.js';
+export {setSeaPenProviderForTesting} from 'chrome://resources/ash/common/sea_pen/sea_pen_interface_provider.js';
+export {SeaPenIntroductionDialogElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_introduction_dialog_element.js';
+export {SeaPenToastElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_toast_element.js';
+export {SeaPenZeroStateSvgElement} from 'chrome://resources/ash/common/sea_pen/sea_pen_zero_state_svg_element.js';
+export {CrTooltipIconElement} from 'chrome://resources/ash/common/cr_elements/policy/cr_tooltip_icon.js';
 export {isDefaultImage, isGooglePhotosPhoto, isWallpaperImage} from './wallpaper/utils.js';
 export * from './wallpaper/wallpaper_actions.js';
 export {WallpaperCollectionsElement} from './wallpaper/wallpaper_collections_element.js';
@@ -165,7 +165,7 @@ export {WallpaperSelectedElement} from './wallpaper/wallpaper_selected_element.j
 export {WallpaperSubpageElement} from './wallpaper/wallpaper_subpage_element.js';
 export {DailyRefreshType} from './wallpaper/wallpaper_state.js';
 export {TimeOfDayAcceptEvent, TimeOfDayWallpaperDialogElement} from './wallpaper/time_of_day_wallpaper_dialog_element.js';
-export {setTransitionsEnabled, maybeDoPageTransition} from 'neovex://resources/ash/common/sea_pen/transition.js';
+export {setTransitionsEnabled, maybeDoPageTransition} from 'chrome://resources/ash/common/sea_pen/transition.js';
 
 PersonalizationStore.getInstance().init(emptyState());
 SeaPenStoreAdapter.initSeaPenStore();

@@ -2,13 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import type {LocalDestinationInfo, PrintPreviewDestinationSettingsElement, RecentDestination} from 'neovex://print/print_preview.js';
-import {Destination, DestinationErrorType, DestinationOrigin, DestinationState, DestinationStoreEventType, Error, GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl, NUM_PERSISTED_DESTINATIONS, State} from 'neovex://print/print_preview.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {fakeDataBind, waitBeforeNextRender} from 'neovex://webui-test/polymer_test_util.js';
-import {eventToPromise} from 'neovex://webui-test/test_util.js';
+import type {LocalDestinationInfo, PrintPreviewDestinationSettingsElement, RecentDestination} from 'chrome://print/print_preview.js';
+import {Destination, DestinationErrorType, DestinationOrigin, DestinationState, DestinationStoreEventType, Error, GooglePromotedDestinationId, makeRecentDestination, NativeLayerImpl, NUM_PERSISTED_DESTINATIONS, State} from 'chrome://print/print_preview.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {fakeDataBind, waitBeforeNextRender} from 'chrome://webui-test/polymer_test_util.js';
+import {eventToPromise} from 'chrome://webui-test/test_util.js';
 
 // clang-format off
 import type {NativeLayerCrosStub} from './native_layer_cros_stub.js';
@@ -713,7 +713,7 @@ suite('DestinationSettingsTest', function() {
     // Recent destinations start out empty.
     assertRecentDestinations([]);
 
-    const expectedUrl = 'neovex://os-credits/eula';
+    const expectedUrl = 'chrome://os-credits/eula';
 
     assertEquals(0, nativeLayerCros.getCallCount('getEulaUrl'));
 
@@ -730,7 +730,7 @@ suite('DestinationSettingsTest', function() {
           return nativeLayer.whenCalled('getPrinters');
         })
         .then(() => {
-          nativeLayerCros.setEulaUrl('neovex://os-credits/eula');
+          nativeLayerCros.setEulaUrl('chrome://os-credits/eula');
           // Simulate selecting a destination that has a EULA URL from the
           // dialog.
           selectDestination(destinations[0]!);

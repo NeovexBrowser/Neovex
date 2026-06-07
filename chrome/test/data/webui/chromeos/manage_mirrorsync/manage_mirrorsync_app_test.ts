@@ -2,17 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://manage-mirrorsync/components/manage_mirrorsync.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://manage-mirrorsync/components/manage_mirrorsync.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {BrowserProxy} from 'neovex://manage-mirrorsync/browser_proxy.js';
-import type {FolderSelector} from 'neovex://manage-mirrorsync/components/folder_selector.js';
-import {PageHandlerRemote} from 'neovex://manage-mirrorsync/manage_mirrorsync.mojom-webui.js';
-import {assert} from 'neovex://resources/js/assert.js';
-import {assertArrayEquals, assertNotEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {TestBrowserProxy} from 'neovex://webui-test/test_browser_proxy.js';
-import {TestMock} from 'neovex://webui-test/test_mock.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {BrowserProxy} from 'chrome://manage-mirrorsync/browser_proxy.js';
+import type {FolderSelector} from 'chrome://manage-mirrorsync/components/folder_selector.js';
+import {PageHandlerRemote} from 'chrome://manage-mirrorsync/manage_mirrorsync.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {assertArrayEquals, assertNotEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {TestBrowserProxy} from 'chrome://webui-test/test_browser_proxy.js';
+import {TestMock} from 'chrome://webui-test/test_mock.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 /**
  * A fake BrowserProxy implementation that enables switching out the real one to

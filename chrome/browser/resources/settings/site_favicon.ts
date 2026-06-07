@@ -7,8 +7,8 @@
  * site URL.
  */
 
-import {getFavicon, getFaviconForPageURL} from 'neovex://resources/js/icon.js';
-import {PolymerElement} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import {getFavicon, getFaviconForPageURL} from 'chrome://resources/js/icon.js';
+import {PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
 
 import {getTemplate} from './site_favicon.html.js';
 

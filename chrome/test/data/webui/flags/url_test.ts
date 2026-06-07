@@ -4,7 +4,7 @@
 
 /**
  * @fileoverview Suites of tests for flags-app loaded with an experiment
- * reference tag in the URL, i.e., neovex://flags/#test-feature. All tests are
+ * reference tag in the URL, i.e., chrome://flags/#test-feature. All tests are
  * loaded with the same tag, i.e., test-feature.
  * 1) UrlWithSupportedFeatureTest suite expects test-feature is
  * highlighted under supported feature tab.
@@ -12,13 +12,13 @@
  * under the unsupported feature tab.
  */
 
-import 'neovex://flags/app.js';
+import 'chrome://flags/app.js';
 
-import type {FlagsAppElement} from 'neovex://flags/app.js';
-import type {ExperimentElement} from 'neovex://flags/experiment.js';
-import type {ExperimentalFeaturesData, Feature} from 'neovex://flags/flags_browser_proxy.js';
-import {FlagsBrowserProxyImpl} from 'neovex://flags/flags_browser_proxy.js';
-import {assertEquals, assertTrue} from 'neovex://webui-test/chai_assert.js';
+import type {FlagsAppElement} from 'chrome://flags/app.js';
+import type {ExperimentElement} from 'chrome://flags/experiment.js';
+import type {ExperimentalFeaturesData, Feature} from 'chrome://flags/flags_browser_proxy.js';
+import {FlagsBrowserProxyImpl} from 'chrome://flags/flags_browser_proxy.js';
+import {assertEquals, assertTrue} from 'chrome://webui-test/chai_assert.js';
 
 import {TestFlagsBrowserProxy} from './test_flags_browser_proxy.js';
 

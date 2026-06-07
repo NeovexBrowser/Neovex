@@ -18,7 +18,7 @@
  *
  */
 
-import {dispatchSimpleEvent} from 'neovex://resources/ash/common/cr_deprecated.js';
+import {dispatchSimpleEvent} from 'chrome://resources/ash/common/cr_deprecated.js';
 
 interface SplitterHandlers {
   touchmove?: (event: TouchEvent) => void;

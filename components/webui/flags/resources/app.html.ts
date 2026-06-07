@@ -51,7 +51,7 @@ export function getHtml(this: AppElement) {
     </div>
     <p id="promos" ?hidden="${!this.shouldShowPromos_()}">
       <!-- Those strings are not localized because they only appear in
-          neovex://flags, which is not localized. -->
+          chrome://flags, which is not localized. -->
       <span id="channel-promo-beta"
           ?hidden="${!this.data.showBetaChannelPromotion}">
         Interested in cool new Chrome features? Try our

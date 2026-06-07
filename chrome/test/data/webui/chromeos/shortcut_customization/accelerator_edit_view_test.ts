@@ -2,27 +2,27 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://shortcut-customization/js/accelerator_edit_view.js';
-import 'neovex://webui-test/chromeos/mojo_webui_test_support.js';
+import 'chrome://shortcut-customization/js/accelerator_edit_view.js';
+import 'chrome://webui-test/chromeos/mojo_webui_test_support.js';
 
-import {VKey} from 'neovex://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
-import {FakeShortcutInputProvider} from 'neovex://resources/ash/common/shortcut_input_ui/fake_shortcut_input_provider.js';
-import type {KeyEvent} from 'neovex://resources/ash/common/shortcut_input_ui/input_device_settings.mojom-webui.js';
-import {Modifier as ModifierEnum} from 'neovex://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
-import {strictQuery} from 'neovex://resources/ash/common/typescript_utils/strict_query.js';
-import {flush} from 'neovex://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
-import type {AcceleratorEditViewElement} from 'neovex://shortcut-customization/js/accelerator_edit_view.js';
-import {AcceleratorLookupManager} from 'neovex://shortcut-customization/js/accelerator_lookup_manager.js';
-import {fakeAcceleratorConfig, fakeDefaultAccelerators, fakeLayoutInfo} from 'neovex://shortcut-customization/js/fake_data.js';
-import {FakeShortcutProvider} from 'neovex://shortcut-customization/js/fake_shortcut_provider.js';
-import {setShortcutProviderForTesting} from 'neovex://shortcut-customization/js/mojo_interface_provider.js';
-import {setShortcutInputProviderForTesting} from 'neovex://shortcut-customization/js/shortcut_input_mojo_interface_provider.js';
-import {AcceleratorConfigResult, AcceleratorSource, Modifier} from 'neovex://shortcut-customization/js/shortcut_types.js';
-import type {AcceleratorResultData} from 'neovex://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
-import {Subactions} from 'neovex://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import {flushTasks} from 'neovex://webui-test/polymer_test_util.js';
-import {isVisible} from 'neovex://webui-test/test_util.js';
+import {VKey} from 'chrome://resources/ash/common/shortcut_input_ui/accelerator_keys.mojom-webui.js';
+import {FakeShortcutInputProvider} from 'chrome://resources/ash/common/shortcut_input_ui/fake_shortcut_input_provider.js';
+import type {KeyEvent} from 'chrome://resources/ash/common/shortcut_input_ui/input_device_settings.mojom-webui.js';
+import {Modifier as ModifierEnum} from 'chrome://resources/ash/common/shortcut_input_ui/shortcut_utils.js';
+import {strictQuery} from 'chrome://resources/ash/common/typescript_utils/strict_query.js';
+import {flush} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
+import type {AcceleratorEditViewElement} from 'chrome://shortcut-customization/js/accelerator_edit_view.js';
+import {AcceleratorLookupManager} from 'chrome://shortcut-customization/js/accelerator_lookup_manager.js';
+import {fakeAcceleratorConfig, fakeDefaultAccelerators, fakeLayoutInfo} from 'chrome://shortcut-customization/js/fake_data.js';
+import {FakeShortcutProvider} from 'chrome://shortcut-customization/js/fake_shortcut_provider.js';
+import {setShortcutProviderForTesting} from 'chrome://shortcut-customization/js/mojo_interface_provider.js';
+import {setShortcutInputProviderForTesting} from 'chrome://shortcut-customization/js/shortcut_input_mojo_interface_provider.js';
+import {AcceleratorConfigResult, AcceleratorSource, Modifier} from 'chrome://shortcut-customization/js/shortcut_types.js';
+import type {AcceleratorResultData} from 'chrome://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
+import {Subactions} from 'chrome://shortcut-customization/mojom-webui/shortcut_customization.mojom-webui.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import {flushTasks} from 'chrome://webui-test/polymer_test_util.js';
+import {isVisible} from 'chrome://webui-test/test_util.js';
 
 import {createStandardAcceleratorInfo, createUserAcceleratorInfo} from './shortcut_customization_test_util.js';
 

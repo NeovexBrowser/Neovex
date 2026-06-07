@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import {GoogleCalendarPageHandlerRemote} from 'neovex://new-tab-page/google_calendar.mojom-webui.js';
-import type {DisableModuleEvent, DismissModuleInstanceEvent, GoogleCalendarModuleElement} from 'neovex://new-tab-page/lazy_load.js';
-import {googleCalendarDescriptor, GoogleCalendarProxyImpl} from 'neovex://new-tab-page/lazy_load.js';
-import {$$} from 'neovex://new-tab-page/new_tab_page.js';
-import {loadTimeData} from 'neovex://resources/js/load_time_data.js';
-import {assertEquals, assertFalse, assertTrue} from 'neovex://webui-test/chai_assert.js';
-import type {TestMock} from 'neovex://webui-test/test_mock.js';
-import {eventToPromise, isVisible, microtasksFinished} from 'neovex://webui-test/test_util.js';
+import {GoogleCalendarPageHandlerRemote} from 'chrome://new-tab-page/google_calendar.mojom-webui.js';
+import type {DisableModuleEvent, DismissModuleInstanceEvent, GoogleCalendarModuleElement} from 'chrome://new-tab-page/lazy_load.js';
+import {googleCalendarDescriptor, GoogleCalendarProxyImpl} from 'chrome://new-tab-page/lazy_load.js';
+import {$$} from 'chrome://new-tab-page/new_tab_page.js';
+import {loadTimeData} from 'chrome://resources/js/load_time_data.js';
+import {assertEquals, assertFalse, assertTrue} from 'chrome://webui-test/chai_assert.js';
+import type {TestMock} from 'chrome://webui-test/test_mock.js';
+import {eventToPromise, isVisible, microtasksFinished} from 'chrome://webui-test/test_util.js';
 
 import {installMock} from '../../test_support.js';
 

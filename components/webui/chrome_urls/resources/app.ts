@@ -2,20 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'neovex://resources/cr_elements/cr_button/cr_button.js';
+import 'chrome://resources/cr_elements/cr_button/cr_button.js';
 // <if expr="is_ios">
 // TODO(crbug.com/41173939): Remove this once injected by web. -->
-import 'neovex://resources/js/ios/web_ui.js';
+import 'chrome://resources/js/ios/web_ui.js';
 
 // </if>
 
-import {assert} from 'neovex://resources/js/assert.js';
-import {CrRouter} from 'neovex://resources/js/cr_router.js';
-import {EventTracker} from 'neovex://resources/js/event_tracker.js';
-import {OpenWindowProxyImpl} from 'neovex://resources/js/open_window_proxy.js';
-import {CrLitElement} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {PropertyValues} from 'neovex://resources/lit/v3_0/lit.rollup.js';
-import type {Url} from 'neovex://resources/mojo/url/mojom/url.mojom-webui.js';
+import {assert} from 'chrome://resources/js/assert.js';
+import {CrRouter} from 'chrome://resources/js/cr_router.js';
+import {EventTracker} from 'chrome://resources/js/event_tracker.js';
+import {OpenWindowProxyImpl} from 'chrome://resources/js/open_window_proxy.js';
+import {CrLitElement} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {PropertyValues} from 'chrome://resources/lit/v3_0/lit.rollup.js';
+import type {Url} from 'chrome://resources/mojo/url/mojom/url.mojom-webui.js';
 
 import {getCss} from './app.css.js';
 import {getHtml} from './app.html.js';
@@ -175,7 +175,7 @@ export class ChromeUrlsAppElement extends CrLitElement {
   }
 
   protected isChromeUrlsUrl_(info: WebuiUrlInfo): boolean {
-    return info.url === 'neovex://chrome-urls';
+    return info.url === 'chrome://chrome-urls';
   }
 }
 
