@@ -130,7 +130,7 @@
 
 
       .settings-btn{
-        position:absolute;bottom:22px;left:24px;
+        position:absolute;bottom:90px;left:24px;
         width:32px;height:32px;border-radius:50%;
         background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
         display:flex;align-items:center;justify-content:center;
@@ -141,7 +141,7 @@
       .settings-btn:hover svg{fill:rgba(255,255,255,0.7);}
 
       .study-mode{
-        position:absolute;bottom:22px;right:24px;
+        position:absolute;bottom:90px;right:24px;
         display:flex;align-items:center;gap:8px;
         color:rgba(255,255,255,0.4);font-size:12px;font-weight:500;
         z-index:10;user-select:none;
@@ -215,6 +215,185 @@
       .file-input-wrap .file-name{font-size:11px;color:rgba(255,255,255,0.25);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px;}
       .bg-preview{margin-top:10px;width:100%;height:70px;border-radius:8px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,0.06);display:none;}
       .bg-preview.active{display:block;}
+
+      /* === WEATHER WIDGET === */
+      .weather-widget {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: min(520px, 85vw);
+        min-height: 56px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(20px) saturate(1.2);
+        -webkit-backdrop-filter: blur(20px) saturate(1.2);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        transition: background 0.2s;
+      }
+      .weather-widget:hover {
+        background: rgba(255,255,255,0.07);
+        border-color: rgba(255,255,255,0.12);
+      }
+
+      /* Setup state */
+      .weather-setup {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+      .weather-setup-icon {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(100,160,255,0.1);
+        border-radius: 10px;
+      }
+      .weather-setup-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: rgba(100,160,255,0.7);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .weather-setup-text {
+        flex: 1;
+        font-size: 12px;
+        color: rgba(255,255,255,0.4);
+        line-height: 1.4;
+      }
+      .weather-setup-text strong {
+        color: rgba(255,255,255,0.7);
+        font-weight: 600;
+      }
+      .weather-setup-input {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .weather-setup-input input {
+        width: 160px;
+        padding: 7px 12px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        color: #eee;
+        font-size: 12px;
+        outline: none;
+        font-family: inherit;
+      }
+      .weather-setup-input input:focus {
+        border-color: rgba(100,160,255,0.4);
+      }
+      .weather-setup-input input::placeholder {
+        color: rgba(255,255,255,0.2);
+      }
+      .weather-setup-input button {
+        padding: 7px 14px;
+        border-radius: 8px;
+        border: none;
+        background: rgba(80,140,255,0.5);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: inherit;
+        white-space: nowrap;
+      }
+      .weather-setup-input button:hover {
+        background: rgba(80,140,255,0.7);
+      }
+
+      /* Active weather display */
+      .weather-display {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+      }
+      .weather-display .w-icon {
+        flex-shrink: 0;
+        font-size: 28px;
+        line-height: 1;
+        width: 36px;
+        text-align: center;
+      }
+      .weather-display .w-temp {
+        font-size: 22px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.85);
+        letter-spacing: -0.5px;
+        min-width: 50px;
+      }
+      .weather-display .w-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .weather-display .w-condition {
+        font-size: 12px;
+        color: rgba(255,255,255,0.6);
+        font-weight: 500;
+      }
+      .weather-display .w-details {
+        font-size: 10px;
+        color: rgba(255,255,255,0.3);
+        display: flex;
+        gap: 12px;
+      }
+      .weather-display .w-city {
+        font-size: 11px;
+        color: rgba(255,255,255,0.3);
+        text-align: right;
+        cursor: pointer;
+        transition: color 0.15s;
+        flex-shrink: 0;
+      }
+      .weather-display .w-city:hover {
+        color: rgba(255,255,255,0.6);
+      }
+      .weather-loading {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: rgba(255,255,255,0.3);
+      }
+      .weather-error {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        color: rgba(255,120,120,0.6);
+      }
+      .weather-error button {
+        padding: 5px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.04);
+        color: rgba(255,255,255,0.4);
+        font-size: 10px;
+        cursor: pointer;
+        font-family: inherit;
+        white-space: nowrap;
+      }
+      .weather-error button:hover {
+        background: rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.6);
+      }
     </style>
   </head>
   <body>
@@ -289,6 +468,9 @@
 
     <!-- Clock -->
     <div class="clock" id="clock"></div>
+
+    <!-- Weather Widget -->
+    <div class="weather-widget" id="weatherWidget"></div>
 
     <!-- Add/Edit Site Modal -->
     <div class="modal-overlay" id="siteModal">
@@ -654,6 +836,197 @@
           e.source.postMessage({type: 'neovexWallpaper', data: bg}, '*');
         }
       });
+
+      // -- WEATHER WIDGET --
+      (function() {
+        var WEATHER_CODES = {
+          0: {desc:'Clear sky', icon:'sun'},
+          1: {desc:'Mostly clear', icon:'sun'},
+          2: {desc:'Partly cloudy', icon:'cloud-sun'},
+          3: {desc:'Overcast', icon:'cloud'},
+          45: {desc:'Foggy', icon:'fog'},
+          48: {desc:'Rime fog', icon:'fog'},
+          51: {desc:'Light drizzle', icon:'drizzle'},
+          53: {desc:'Drizzle', icon:'drizzle'},
+          55: {desc:'Dense drizzle', icon:'drizzle'},
+          56: {desc:'Freezing drizzle', icon:'drizzle'},
+          57: {desc:'Heavy freezing drizzle', icon:'drizzle'},
+          61: {desc:'Light rain', icon:'rain'},
+          63: {desc:'Rain', icon:'rain'},
+          65: {desc:'Heavy rain', icon:'rain'},
+          66: {desc:'Freezing rain', icon:'rain'},
+          67: {desc:'Heavy freezing rain', icon:'rain'},
+          71: {desc:'Light snow', icon:'snow'},
+          73: {desc:'Snow', icon:'snow'},
+          75: {desc:'Heavy snow', icon:'snow'},
+          77: {desc:'Snow grains', icon:'snow'},
+          80: {desc:'Light showers', icon:'rain'},
+          81: {desc:'Showers', icon:'rain'},
+          82: {desc:'Heavy showers', icon:'rain'},
+          85: {desc:'Light snow showers', icon:'snow'},
+          86: {desc:'Heavy snow showers', icon:'snow'},
+          95: {desc:'Thunderstorm', icon:'storm'},
+          96: {desc:'Thunderstorm with hail', icon:'storm'},
+          99: {desc:'Thunderstorm with heavy hail', icon:'storm'}
+        };
+
+        var WEATHER_SVG = {
+          sun: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#f9c74f" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>',
+          'cloud-sun': '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#aab8d0" stroke-width="2" stroke-linecap="round"><path d="M12 2v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M20 12h2"/><path d="M17.66 6.34l1.41-1.41"/><path d="M2 12h2"/><path d="M8 12a4 4 0 014-4c1.5 0 2.8.8 3.5 2"/><path d="M17 18H8a4 4 0 01-.8-7.9" stroke="#8899bb"/><path d="M17 18a3 3 0 000-6h-.5A5 5 0 007.2 10" stroke="#8899bb"/></svg>',
+          cloud: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#8899bb" stroke-width="2" stroke-linecap="round"><path d="M18 18H6a4 4 0 01-.8-7.9A5.5 5.5 0 0115.9 9h.6A3.5 3.5 0 0118 18z"/></svg>',
+          fog: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#8899bb" stroke-width="2" stroke-linecap="round"><line x1="3" y1="10" x2="21" y2="10"/><line x1="5" y1="14" x2="19" y2="14"/><line x1="7" y1="18" x2="17" y2="18"/><path d="M16 6a3 3 0 00-5.7-1.3A3.5 3.5 0 006 6"/></svg>',
+          drizzle: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#6ba3d6" stroke-width="2" stroke-linecap="round"><path d="M18 14H6a4 4 0 01-.8-7.9A5.5 5.5 0 0115.9 5h.6A3.5 3.5 0 0118 14z" stroke="#8899bb"/><line x1="8" y1="17" x2="8" y2="19"/><line x1="12" y1="17" x2="12" y2="19"/><line x1="16" y1="17" x2="16" y2="19"/></svg>',
+          rain: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#6ba3d6" stroke-width="2" stroke-linecap="round"><path d="M18 13H6a4 4 0 01-.8-7.9A5.5 5.5 0 0115.9 4h.6A3.5 3.5 0 0118 13z" stroke="#8899bb"/><line x1="7" y1="16" x2="6" y2="20"/><line x1="11" y1="16" x2="10" y2="20"/><line x1="15" y1="16" x2="14" y2="20"/></svg>',
+          snow: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#b0c4de" stroke-width="2" stroke-linecap="round"><path d="M18 13H6a4 4 0 01-.8-7.9A5.5 5.5 0 0115.9 4h.6A3.5 3.5 0 0118 13z" stroke="#8899bb"/><circle cx="8" cy="17" r="1" fill="#b0c4de" stroke="none"/><circle cx="12" cy="19" r="1" fill="#b0c4de" stroke="none"/><circle cx="16" cy="17" r="1" fill="#b0c4de" stroke="none"/></svg>',
+          storm: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#f9c74f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 12H6a4 4 0 01-.8-7.9A5.5 5.5 0 0115.9 3h.6A3.5 3.5 0 0118 12z" stroke="#8899bb"/><polygon points="13,14 9,21 12,21 11,24 15,17 12,17" fill="#f9c74f" stroke="#f9c74f" stroke-width="1"/></svg>'
+        };
+
+        function loadWeatherCity() { return localStorage.getItem('ntp_weather_city') || ''; }
+        function saveWeatherCity(c) { localStorage.setItem('ntp_weather_city', c); }
+        function loadWeatherCache() {
+          try { return JSON.parse(localStorage.getItem('ntp_weather_cache')); } catch(e) { return null; }
+        }
+        function saveWeatherCache(d) { localStorage.setItem('ntp_weather_cache', JSON.stringify(d)); }
+
+        function renderSetup() {
+          var w = document.getElementById('weatherWidget');
+          w.innerHTML =
+            '<div class="weather-setup">' +
+              '<div class="weather-setup-icon">' +
+                '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>' +
+              '</div>' +
+              '<div class="weather-setup-text">' +
+                '<strong>Weather Widget</strong><br>Enter your city to see live weather here.' +
+              '</div>' +
+              '<div class="weather-setup-input">' +
+                '<input type="text" id="weatherCityInput" placeholder="e.g. New York">' +
+                '<button id="weatherSetupBtn">Set</button>' +
+              '</div>' +
+            '</div>';
+
+          document.getElementById('weatherSetupBtn').addEventListener('click', function() {
+            var city = document.getElementById('weatherCityInput').value.trim();
+            if (city) { saveWeatherCity(city); fetchWeather(city); }
+          });
+          document.getElementById('weatherCityInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') document.getElementById('weatherSetupBtn').click();
+          });
+        }
+
+        function renderLoading() {
+          var w = document.getElementById('weatherWidget');
+          w.innerHTML = '<div class="weather-loading">Loading weather...</div>';
+        }
+
+        function renderError(msg) {
+          var w = document.getElementById('weatherWidget');
+          w.innerHTML =
+            '<div class="weather-error">' +
+              '<span>' + (msg || 'Could not load weather data.') + '</span>' +
+              '<button id="weatherRetryBtn">Retry</button>' +
+              '<button id="weatherResetBtn">Change City</button>' +
+            '</div>';
+          document.getElementById('weatherRetryBtn').addEventListener('click', function() {
+            var city = loadWeatherCity();
+            if (city) fetchWeather(city);
+          });
+          document.getElementById('weatherResetBtn').addEventListener('click', function() {
+            saveWeatherCity('');
+            localStorage.removeItem('ntp_weather_cache');
+            renderSetup();
+          });
+        }
+
+        function renderWeather(data, cityName) {
+          var code = data.current.weather_code;
+          var info = WEATHER_CODES[code] || {desc: 'Unknown', icon: 'cloud'};
+          var svgIcon = WEATHER_SVG[info.icon] || WEATHER_SVG['cloud'];
+          var temp = Math.round(data.current.temperature_2m);
+          var feelsLike = Math.round(data.current.apparent_temperature);
+          var wind = Math.round(data.current.wind_speed_10m);
+          var humidity = data.current.relative_humidity_2m;
+
+          var w = document.getElementById('weatherWidget');
+          w.innerHTML =
+            '<div class="weather-display">' +
+              '<div class="w-icon">' + svgIcon + '</div>' +
+              '<div class="w-temp">' + temp + '&deg;C</div>' +
+              '<div class="w-info">' +
+                '<div class="w-condition">' + info.desc + '</div>' +
+                '<div class="w-details">' +
+                  '<span>Feels ' + feelsLike + '&deg;</span>' +
+                  '<span>Wind ' + wind + ' km/h</span>' +
+                  '<span>Humidity ' + humidity + '%</span>' +
+                '</div>' +
+              '</div>' +
+              '<div class="w-city" id="weatherChangeCity" title="Click to change city">' + cityName + '</div>' +
+            '</div>';
+
+          document.getElementById('weatherChangeCity').addEventListener('click', function() {
+            saveWeatherCity('');
+            localStorage.removeItem('ntp_weather_cache');
+            renderSetup();
+          });
+        }
+
+        function fetchWeather(cityName) {
+          renderLoading();
+          // Step 1: geocode city name
+          var geoUrl = 'https://geocoding-api.open-meteo.com/v1/search?name=' +
+            encodeURIComponent(cityName) + '&count=1&language=en&format=json';
+
+          fetch(geoUrl).then(function(r) { return r.json(); }).then(function(geo) {
+            if (!geo.results || geo.results.length === 0) {
+              renderError('City "' + cityName + '" not found.');
+              return;
+            }
+            var loc = geo.results[0];
+            var lat = loc.latitude;
+            var lon = loc.longitude;
+            var displayName = loc.name + (loc.country ? ', ' + loc.country : '');
+            saveWeatherCity(displayName);
+
+            // Step 2: get weather
+            var weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat +
+              '&longitude=' + lon +
+              '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m' +
+              '&timezone=auto';
+
+            return fetch(weatherUrl).then(function(r) { return r.json(); }).then(function(data) {
+              saveWeatherCache({data: data, city: displayName, ts: Date.now()});
+              renderWeather(data, displayName);
+            });
+          }).catch(function(err) {
+            // Try cached data as fallback
+            var cached = loadWeatherCache();
+            if (cached && cached.data) {
+              renderWeather(cached.data, cached.city);
+            } else {
+              renderError('Network error. Check your connection.');
+            }
+          });
+        }
+
+        // Init: check if city is set
+        var savedCity = loadWeatherCity();
+        if (savedCity) {
+          // Use cache if less than 15 minutes old
+          var cached = loadWeatherCache();
+          if (cached && cached.data && (Date.now() - cached.ts) < 15 * 60 * 1000) {
+            renderWeather(cached.data, cached.city);
+          } else {
+            fetchWeather(savedCity);
+          }
+        } else {
+          renderSetup();
+        }
+
+        // Refresh weather every 15 minutes
+        setInterval(function() {
+          var city = loadWeatherCity();
+          if (city) fetchWeather(city);
+        }, 15 * 60 * 1000);
+      })();
     </script>
   </body>
 </html>

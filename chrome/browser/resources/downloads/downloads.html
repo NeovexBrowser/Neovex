@@ -178,10 +178,18 @@
     }
 
     #neovex-sidebar .nvx-cat-icon {
-      font-size: 14px;
-      width: 18px;
+      font-size: 9px;
+      font-weight: 700;
+      width: 28px;
       text-align: center;
       flex-shrink: 0;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.3);
+      font-family: monospace;
+    }
+
+    #neovex-sidebar .nvx-cat.active .nvx-cat-icon {
+      color: rgba(160, 173, 255, 0.7);
     }
 
     #neovex-sidebar .nvx-cat-count {
@@ -206,6 +214,7 @@
       flex: 1;
       min-width: 0;
       overflow: hidden;
+      margin-left: 160px;
     }
 
     #neovex-sidebar::-webkit-scrollbar { width: 3px; }
@@ -217,54 +226,54 @@
   </style>
 </head>
 <body>
-<div id="debug-panel" style="position:fixed;top:0;right:0;background:#ff4444;color:#fff;padding:4px;z-index:10000;">DEBUG</div>
+
   <!-- NEOVEX DOWNLOADS: Category sidebar (static HTML, matching settings page layout) -->
   <nav id="neovex-sidebar">
     <div class="nvx-sb-title">Categories</div>
     <button class="nvx-cat active" data-category="All">
-      <span class="nvx-cat-icon">&#x1F4CB;</span>
+      <span class="nvx-cat-icon">All</span>
       <span>All</span>
       <span class="nvx-cat-count" data-count="All">0</span>
     </button>
     <button class="nvx-cat" data-category="Images">
-      <span class="nvx-cat-icon">&#x1F5BC;&#xFE0F;</span>
+      <span class="nvx-cat-icon">IMG</span>
       <span>Images</span>
       <span class="nvx-cat-count" data-count="Images">0</span>
     </button>
     <button class="nvx-cat" data-category="Documents">
-      <span class="nvx-cat-icon">&#x1F4C4;</span>
+      <span class="nvx-cat-icon">DOC</span>
       <span>Documents</span>
       <span class="nvx-cat-count" data-count="Documents">0</span>
     </button>
     <button class="nvx-cat" data-category="Videos">
-      <span class="nvx-cat-icon">&#x1F3AC;</span>
+      <span class="nvx-cat-icon">VID</span>
       <span>Videos</span>
       <span class="nvx-cat-count" data-count="Videos">0</span>
     </button>
     <button class="nvx-cat" data-category="Audio">
-      <span class="nvx-cat-icon">&#x1F3B5;</span>
+      <span class="nvx-cat-icon">SND</span>
       <span>Audio</span>
       <span class="nvx-cat-count" data-count="Audio">0</span>
     </button>
     <div class="nvx-sep"></div>
     <button class="nvx-cat" data-category="Archives">
-      <span class="nvx-cat-icon">&#x1F5DC;&#xFE0F;</span>
+      <span class="nvx-cat-icon">ZIP</span>
       <span>Archives</span>
       <span class="nvx-cat-count" data-count="Archives">0</span>
     </button>
     <button class="nvx-cat" data-category="Programs">
-      <span class="nvx-cat-icon">&#x2699;&#xFE0F;</span>
+      <span class="nvx-cat-icon">EXE</span>
       <span>Programs</span>
       <span class="nvx-cat-count" data-count="Programs">0</span>
     </button>
     <button class="nvx-cat" data-category="Code">
-      <span class="nvx-cat-icon">&#x1F4BB;</span>
+      <span class="nvx-cat-icon">&lt;/&gt;</span>
       <span>Code</span>
       <span class="nvx-cat-count" data-count="Code">0</span>
     </button>
     <div class="nvx-sep"></div>
     <button class="nvx-cat" data-category="Other">
-      <span class="nvx-cat-icon">&#x1F4E6;</span>
+      <span class="nvx-cat-icon">...</span>
       <span>Other</span>
       <span class="nvx-cat-count" data-count="Other">0</span>
     </button>

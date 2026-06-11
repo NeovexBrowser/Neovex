@@ -7,15 +7,15 @@
 
   // ===== Category definitions =====
   const CATEGORIES = {
-    'All':        { icon: '📋', extensions: null },
-    'Images':     { icon: '🖼️', extensions: ['jpg','jpeg','png','gif','webp','svg','bmp','ico','tiff','raw','heic','avif'] },
-    'Documents':  { icon: '📄', extensions: ['pdf','docx','doc','pptx','ppt','xlsx','xls','txt','md','csv','odt','ods','odp','rtf','epub'] },
-    'Videos':     { icon: '🎬', extensions: ['mp4','mkv','avi','mov','wmv','flv','webm','m4v','3gp','mpeg'] },
-    'Audio':      { icon: '🎵', extensions: ['mp3','wav','flac','aac','ogg','wma','m4a','opus','aiff'] },
-    'Archives':   { icon: '🗜️', extensions: ['zip','rar','7z','tar','gz','bz2','xz','iso','cab'] },
-    'Programs':   { icon: '⚙️', extensions: ['exe','msi','apk','dmg','pkg','deb','run','bat','sh','ps1'] },
-    'Code':       { icon: '💻', extensions: ['js','ts','py','cpp','c','h','java','cs','html','css','json','xml','php','rb','go','rs'] },
-    'Other':      { icon: '📦', extensions: [] }
+    'All':        { icon: 'All', extensions: null },
+    'Images':     { icon: 'IMG', extensions: ['jpg','jpeg','png','gif','webp','svg','bmp','ico','tiff','raw','heic','avif'] },
+    'Documents':  { icon: 'DOC', extensions: ['pdf','docx','doc','pptx','ppt','xlsx','xls','txt','md','csv','odt','ods','odp','rtf','epub'] },
+    'Videos':     { icon: 'VID', extensions: ['mp4','mkv','avi','mov','wmv','flv','webm','m4v','3gp','mpeg'] },
+    'Audio':      { icon: 'SND', extensions: ['mp3','wav','flac','aac','ogg','wma','m4a','opus','aiff'] },
+    'Archives':   { icon: 'ZIP', extensions: ['zip','rar','7z','tar','gz','bz2','xz','iso','cab'] },
+    'Programs':   { icon: 'EXE', extensions: ['exe','msi','apk','dmg','pkg','deb','run','bat','sh','ps1'] },
+    'Code':       { icon: '</>', extensions: ['js','ts','py','cpp','c','h','java','cs','html','css','json','xml','php','rb','go','rs'] },
+    'Other':      { icon: '...', extensions: [] }
   };
 
   let activeCategory = 'All';
@@ -127,7 +127,7 @@
     const header = document.createElement('div');
     header.className = 'sidebar-header';
     header.innerHTML = `
-      <div class="logo-icon">⬇</div>
+      <div class="logo-icon">DL</div>
       <h1>Downloads</h1>
     `;
     sidebarEl.appendChild(header);
@@ -156,7 +156,7 @@
     footer.className = 'sidebar-footer';
 
     const openBtn = document.createElement('button');
-    openBtn.textContent = '📂 Open Folder';
+    openBtn.textContent = 'Open Folder';
     openBtn.addEventListener('click', () => {
       // Trigger the existing "Open downloads folder" button in toolbar
       const manager = document.querySelector('downloads-manager');
