@@ -130,7 +130,7 @@
 
 
       .settings-btn{
-        position:absolute;bottom:90px;left:24px;
+        position:absolute;bottom:24px;left:24px;
         width:32px;height:32px;border-radius:50%;
         background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
         display:flex;align-items:center;justify-content:center;
@@ -141,7 +141,7 @@
       .settings-btn:hover svg{fill:rgba(255,255,255,0.7);}
 
       .study-mode{
-        position:absolute;bottom:90px;right:24px;
+        position:absolute;bottom:24px;right:24px;
         display:flex;align-items:center;gap:8px;
         color:rgba(255,255,255,0.4);font-size:12px;font-weight:500;
         z-index:10;user-select:none;
@@ -219,18 +219,18 @@
       /* === WEATHER WIDGET === */
       .weather-widget {
         position: absolute;
-        bottom: 24px;
+        bottom: 80px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
-        width: min(520px, 85vw);
-        min-height: 56px;
+        width: min(400px, 85vw);
+        min-height: 72px;
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(20px) saturate(1.2);
         -webkit-backdrop-filter: blur(20px) saturate(1.2);
         border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 16px;
-        padding: 14px 20px;
+        border-radius: 999px;
+        padding: 16px 28px;
         display: flex;
         align-items: center;
         gap: 16px;
@@ -971,60 +971,85 @@
 
         function fetchWeather(cityName) {
           renderLoading();
-          // Step 1: geocode city name
-          var geoUrl = 'https://geocoding-api.open-meteo.com/v1/search?name=' +
-            encodeURIComponent(cityName) + '&count=1&language=en&format=json';
+          // Use setTimeout to break out of the synchronous event handler
+          // callstack. On chrome:// pages, CSP violations from fetch() can
+          // crash the renderer before the Promise .catch() fires.
+          setTimeout(function() {
+            try {
+              var geoUrl = 'https://geocoding-api.open-meteo.com/v1/search?name=' +
+                encodeURIComponent(cityName) + '&count=1&language=en&format=json';
 
-          fetch(geoUrl).then(function(r) { return r.json(); }).then(function(geo) {
-            if (!geo.results || geo.results.length === 0) {
-              renderError('City "' + cityName + '" not found.');
-              return;
+              fetch(geoUrl).then(function(r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+              }).then(function(geo) {
+                if (!geo.results || geo.results.length === 0) {
+                  renderError('City "' + cityName + '" not found.');
+                  return;
+                }
+                var loc = geo.results[0];
+                var lat = loc.latitude;
+                var lon = loc.longitude;
+                var displayName = loc.name + (loc.country ? ', ' + loc.country : '');
+                saveWeatherCity(displayName);
+
+                var weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat +
+                  '&longitude=' + lon +
+                  '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m' +
+                  '&timezone=auto';
+
+                return fetch(weatherUrl).then(function(r) {
+                  if (!r.ok) throw new Error('HTTP ' + r.status);
+                  return r.json();
+                }).then(function(data) {
+                  saveWeatherCache({data: data, city: displayName, ts: Date.now()});
+                  renderWeather(data, displayName);
+                });
+              }).catch(function(err) {
+                var cached = loadWeatherCache();
+                if (cached && cached.data) {
+                  renderWeather(cached.data, cached.city);
+                } else {
+                  renderError('Weather unavailable. Build with CSP changes required.');
+                }
+              });
+            } catch(e) {
+              // Synchronous error from fetch() itself (CSP block on chrome:// pages)
+              var cached = loadWeatherCache();
+              if (cached && cached.data) {
+                renderWeather(cached.data, cached.city);
+              } else {
+                renderError('Weather unavailable. Rebuild browser to enable.');
+              }
             }
-            var loc = geo.results[0];
-            var lat = loc.latitude;
-            var lon = loc.longitude;
-            var displayName = loc.name + (loc.country ? ', ' + loc.country : '');
-            saveWeatherCity(displayName);
-
-            // Step 2: get weather
-            var weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat +
-              '&longitude=' + lon +
-              '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m' +
-              '&timezone=auto';
-
-            return fetch(weatherUrl).then(function(r) { return r.json(); }).then(function(data) {
-              saveWeatherCache({data: data, city: displayName, ts: Date.now()});
-              renderWeather(data, displayName);
-            });
-          }).catch(function(err) {
-            // Try cached data as fallback
-            var cached = loadWeatherCache();
-            if (cached && cached.data) {
-              renderWeather(cached.data, cached.city);
-            } else {
-              renderError('Network error. Check your connection.');
-            }
-          });
+          }, 0);
         }
 
         // Init: check if city is set
-        var savedCity = loadWeatherCity();
-        if (savedCity) {
-          // Use cache if less than 15 minutes old
-          var cached = loadWeatherCache();
-          if (cached && cached.data && (Date.now() - cached.ts) < 15 * 60 * 1000) {
-            renderWeather(cached.data, cached.city);
+        try {
+          var savedCity = loadWeatherCity();
+          if (savedCity) {
+            // Use cache if less than 15 minutes old
+            var cached = loadWeatherCache();
+            if (cached && cached.data && (Date.now() - cached.ts) < 15 * 60 * 1000) {
+              renderWeather(cached.data, cached.city);
+            } else {
+              fetchWeather(savedCity);
+            }
           } else {
-            fetchWeather(savedCity);
+            renderSetup();
           }
-        } else {
-          renderSetup();
+        } catch(e) {
+          // If anything fails during init, show setup
+          try { renderSetup(); } catch(e2) {}
         }
 
         // Refresh weather every 15 minutes
         setInterval(function() {
-          var city = loadWeatherCity();
-          if (city) fetchWeather(city);
+          try {
+            var city = loadWeatherCity();
+            if (city) fetchWeather(city);
+          } catch(e) {}
         }, 15 * 60 * 1000);
       })();
     </script>

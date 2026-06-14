@@ -829,6 +829,15 @@ content::WebUIDataSource* CreateAndAddNewTabPageUiHtmlSource(Profile* profile) {
                          chrome::kChromeUIUntrustedNewTabPageUrl,
                          chrome::kChromeUIUntrustedNtpMicrosoftAuthURL));
 
+  // Custom NTP: Allow fetching weather API data.
+  // IMPORTANT: Must also include 'self', chrome://, and chrome-untrusted://
+  // origins so that internal Mojo IPC and resource loading still work.
+  source->OverrideContentSecurityPolicy(
+      network::mojom::CSPDirectiveName::ConnectSrc,
+      "connect-src 'self' chrome://resources chrome-untrusted://new-tab-page "
+      "https://api.open-meteo.com https://geocoding-api.open-meteo.com "
+      "https://*.open-meteo.com;");
+
   // Custom NTP: Add 'unsafe-inline' to script-src for our inline <script>.
   // NOTE: The default script-src set by SetJSModuleDefaults does NOT include
   // 'unsafe-inline'. We need it for our custom NTP's inline JavaScript.
