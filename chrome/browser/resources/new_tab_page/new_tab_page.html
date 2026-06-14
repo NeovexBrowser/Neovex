@@ -969,90 +969,105 @@
           });
         }
 
-        function fetchWeather(cityName) {
-          renderLoading();
-          // Use setTimeout to break out of the synchronous event handler
-          // callstack. On chrome:// pages, CSP violations from fetch() can
-          // crash the renderer before the Promise .catch() fires.
-          setTimeout(function() {
-            try {
-              var geoUrl = 'https://geocoding-api.open-meteo.com/v1/search?name=' +
-                encodeURIComponent(cityName) + '&count=1&language=en&format=json';
+        // Helper: use chrome.send to proxy fetch via browser process.
+        // Uses the WebUI promise resolver pattern:
+        //   chrome.send('fetchWeatherData', [callbackId, url])
+        //   -> C++ calls ResolveJavascriptCallback(callbackId, jsonData)
+        //   -> triggers cr.webUIResponse(callbackId, true, jsonData)
+        var _weatherCallbackId = 0;
+        var _weatherCallbacks = {};
 
-              fetch(geoUrl).then(function(r) {
-                if (!r.ok) throw new Error('HTTP ' + r.status);
-                return r.json();
-              }).then(function(geo) {
-                if (!geo.results || geo.results.length === 0) {
-                  renderError('City "' + cityName + '" not found.');
-                  return;
-                }
-                var loc = geo.results[0];
-                var lat = loc.latitude;
-                var lon = loc.longitude;
-                var displayName = loc.name + (loc.country ? ', ' + loc.country : '');
-                saveWeatherCity(displayName);
-
-                var weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat +
-                  '&longitude=' + lon +
-                  '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m' +
-                  '&timezone=auto';
-
-                return fetch(weatherUrl).then(function(r) {
-                  if (!r.ok) throw new Error('HTTP ' + r.status);
-                  return r.json();
-                }).then(function(data) {
-                  saveWeatherCache({data: data, city: displayName, ts: Date.now()});
-                  renderWeather(data, displayName);
-                });
-              }).catch(function(err) {
-                var cached = loadWeatherCache();
-                if (cached && cached.data) {
-                  renderWeather(cached.data, cached.city);
+        // Listen for responses from the C++ WeatherProxyHandler.
+        function _initWeatherResponseListener() {
+          // In Chromium WebUI, chrome.send + ResolveJavascriptCallback
+          // calls cr.webUIResponse(id, success, data).
+          // We need to make sure cr.webUIResponse is available.
+          if (!window.cr) window.cr = {};
+          if (!window.cr.webUIResponse) {
+            window.cr.webUIResponse = function(id, success, data) {
+              var cb = _weatherCallbacks[id];
+              if (cb) {
+                delete _weatherCallbacks[id];
+                if (success) {
+                  cb.resolve(data);
                 } else {
-                  renderError('Weather unavailable. Build with CSP changes required.');
+                  cb.reject(data);
                 }
-              });
-            } catch(e) {
-              // Synchronous error from fetch() itself (CSP block on chrome:// pages)
-              var cached = loadWeatherCache();
-              if (cached && cached.data) {
-                renderWeather(cached.data, cached.city);
-              } else {
-                renderError('Weather unavailable. Rebuild browser to enable.');
               }
-            }
-          }, 0);
+            };
+          }
         }
 
-        // Init: check if city is set
-        try {
-          var savedCity = loadWeatherCity();
-          if (savedCity) {
-            // Use cache if less than 15 minutes old
+        function proxyFetch(url) {
+          return new Promise(function(resolve, reject) {
+            var id = 'weather_' + (++_weatherCallbackId);
+            _weatherCallbacks[id] = {resolve: resolve, reject: reject};
+            try {
+              chrome.send('fetchWeatherData', [id, url]);
+            } catch(e) {
+              delete _weatherCallbacks[id];
+              reject('chrome.send unavailable');
+            }
+          });
+        }
+
+        function fetchWeather(cityName) {
+          renderLoading();
+          var geoUrl = 'https://geocoding-api.open-meteo.com/v1/search?name=' +
+            encodeURIComponent(cityName) + '&count=1&language=en&format=json';
+
+          proxyFetch(geoUrl).then(function(geo) {
+            if (!geo.results || geo.results.length === 0) {
+              renderError('City "' + cityName + '" not found.');
+              return;
+            }
+            var loc = geo.results[0];
+            var lat = loc.latitude;
+            var lon = loc.longitude;
+            var displayName = loc.name + (loc.country ? ', ' + loc.country : '');
+            saveWeatherCity(displayName);
+
+            var weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat +
+              '&longitude=' + lon +
+              '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m' +
+              '&timezone=auto';
+
+            return proxyFetch(weatherUrl).then(function(data) {
+              saveWeatherCache({data: data, city: displayName, ts: Date.now()});
+              renderWeather(data, displayName);
+            });
+          }).catch(function(err) {
             var cached = loadWeatherCache();
-            if (cached && cached.data && (Date.now() - cached.ts) < 15 * 60 * 1000) {
+            if (cached && cached.data) {
               renderWeather(cached.data, cached.city);
             } else {
-              fetchWeather(savedCity);
+              renderError('Weather unavailable. Check connection.');
             }
+          });
+        }
+
+        // Initialize the response listener
+        _initWeatherResponseListener();
+
+        // Init: check if city is set
+        var savedCity = loadWeatherCity();
+        if (savedCity) {
+          var cached = loadWeatherCache();
+          if (cached && cached.data && (Date.now() - cached.ts) < 15 * 60 * 1000) {
+            renderWeather(cached.data, cached.city);
           } else {
-            renderSetup();
+            fetchWeather(savedCity);
           }
-        } catch(e) {
-          // If anything fails during init, show setup
-          try { renderSetup(); } catch(e2) {}
+        } else {
+          renderSetup();
         }
 
         // Refresh weather every 15 minutes
         setInterval(function() {
-          try {
-            var city = loadWeatherCity();
-            if (city) fetchWeather(city);
-          } catch(e) {}
+          var city = loadWeatherCity();
+          if (city) fetchWeather(city);
         }, 15 * 60 * 1000);
       })();
     </script>
   </body>
 </html>
-

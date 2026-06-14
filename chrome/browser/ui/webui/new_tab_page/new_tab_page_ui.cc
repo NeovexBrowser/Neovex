@@ -21,6 +21,11 @@
 #include "base/strings/stringprintf.h"
 #include "base/time/time.h"
 #include "base/values.h"
+#include "base/json/json_reader.h"
+#include "net/base/net_errors.h"
+#include "net/traffic_annotation/network_traffic_annotation.h"
+#include "services/network/public/cpp/resource_request.h"
+#include "services/network/public/cpp/simple_url_loader.h"
 #include "build/branding_buildflags.h"
 #include "chrome/browser/autocomplete/aim_eligibility_service_factory.h"
 #include "chrome/browser/browser_features.h"
@@ -187,6 +192,91 @@ class StudyModeMessageHandler : public content::WebUIMessageHandler {
       }
       StudyModeNavigationThrottle::SetWhitelist(domains);
     }
+  }
+};
+
+// Handles chrome.send() messages for the weather widget.
+// Proxies HTTP requests to Open-Meteo API from the browser process to avoid
+// CSP restrictions on chrome:// pages.
+class WeatherProxyHandler : public content::WebUIMessageHandler {
+ public:
+  WeatherProxyHandler() = default;
+  ~WeatherProxyHandler() override = default;
+
+  void RegisterMessages() override {
+    web_ui()->RegisterMessageCallback(
+        "fetchWeatherData",
+        base::BindRepeating(&WeatherProxyHandler::HandleFetchWeatherData,
+                            base::Unretained(this)));
+  }
+
+ private:
+  void HandleFetchWeatherData(const base::ListValue& args) {
+    AllowJavascript();
+    // args[0] = callback_id (string), args[1] = url (string)
+    if (args.size() < 2 || !args[0].is_string() || !args[1].is_string()) {
+      return;
+    }
+    std::string callback_id = args[0].GetString();
+    std::string url_str = args[1].GetString();
+
+    // Only allow Open-Meteo API URLs for security.
+    GURL url(url_str);
+    if (!url.is_valid() || !url.SchemeIs(url::kHttpsScheme) ||
+        (url.host() != "api.open-meteo.com" &&
+         url.host() != "geocoding-api.open-meteo.com")) {
+      RejectJavascriptCallback(base::Value(callback_id),
+                               base::Value("Invalid URL"));
+      return;
+    }
+
+    auto traffic_annotation =
+        net::DefineNetworkTrafficAnnotation("ntp_weather_widget", R"(
+          semantics {
+            sender: "New Tab Page Weather Widget"
+            description: "Fetches weather data from Open-Meteo API."
+            trigger: "User sets up the weather widget on the New Tab Page."
+            data: "City name for geocoding, lat/lon for forecast."
+            destination: OTHER
+          }
+          policy {
+            cookies_allowed: NO
+            setting: "Can be disabled by not using the weather widget."
+          })");
+
+    Profile* profile = Profile::FromWebUI(web_ui());
+    auto url_loader_factory = profile->GetURLLoaderFactory();
+    auto request = std::make_unique<network::ResourceRequest>();
+    request->url = url;
+
+    auto loader = network::SimpleURLLoader::Create(
+        std::move(request), traffic_annotation);
+    auto* loader_ptr = loader.get();
+    loader_ptr->DownloadToString(
+        url_loader_factory.get(),
+        base::BindOnce(&WeatherProxyHandler::OnFetchComplete,
+                       base::Unretained(this), callback_id,
+                       std::move(loader)),
+        256 * 1024);  // 256KB max
+  }
+
+  void OnFetchComplete(const std::string& callback_id,
+                       std::unique_ptr<network::SimpleURLLoader> loader,
+                       std::optional<std::string> body) {
+    if (!body || loader->NetError() != net::OK) {
+      RejectJavascriptCallback(base::Value(callback_id),
+                               base::Value("Network error"));
+      return;
+    }
+    // Parse the JSON and send it back as a base::Value.
+    auto parsed = base::JSONReader::Read(*body);
+    if (!parsed.has_value()) {
+      RejectJavascriptCallback(base::Value(callback_id),
+                               base::Value("Invalid JSON response"));
+      return;
+    }
+    ResolveJavascriptCallback(base::Value(callback_id),
+                              std::move(*parsed));
   }
 };
 
@@ -829,14 +919,6 @@ content::WebUIDataSource* CreateAndAddNewTabPageUiHtmlSource(Profile* profile) {
                          chrome::kChromeUIUntrustedNewTabPageUrl,
                          chrome::kChromeUIUntrustedNtpMicrosoftAuthURL));
 
-  // Custom NTP: Allow fetching weather API data.
-  // IMPORTANT: Must also include 'self', chrome://, and chrome-untrusted://
-  // origins so that internal Mojo IPC and resource loading still work.
-  source->OverrideContentSecurityPolicy(
-      network::mojom::CSPDirectiveName::ConnectSrc,
-      "connect-src 'self' chrome://resources chrome-untrusted://new-tab-page "
-      "https://api.open-meteo.com https://geocoding-api.open-meteo.com "
-      "https://*.open-meteo.com;");
 
   // Custom NTP: Add 'unsafe-inline' to script-src for our inline <script>.
   // NOTE: The default script-src set by SetJSModuleDefaults does NOT include
@@ -922,6 +1004,9 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
 
   // Custom NTP: Study Mode message handler.
   web_ui->AddMessageHandler(std::make_unique<StudyModeMessageHandler>());
+
+  // Custom NTP: Weather proxy message handler.
+  web_ui->AddMessageHandler(std::make_unique<WeatherProxyHandler>());
 
   content::URLDataSource::Add(profile_,
                               std::make_unique<SanitizedImageSource>(profile_));
