@@ -216,6 +216,33 @@
       .bg-preview{margin-top:10px;width:100%;height:70px;border-radius:8px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,0.06);display:none;}
       .bg-preview.active{display:block;}
 
+      .wallpaper-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 10px;
+        max-height: 250px;
+        overflow-y: auto;
+        padding-right: 4px;
+      }
+      .wallpaper-item {
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+      }
+      .wallpaper-item:hover {
+        transform: scale(1.05);
+        border-color: rgba(255,255,255,0.3);
+      }
+      .wallpaper-item.selected {
+        border-color: rgba(100,160,255,0.9);
+        box-shadow: 0 0 8px rgba(100,160,255,0.4);
+      }
+
       /* === WEATHER WIDGET === */
       .weather-widget {
         position: absolute;
@@ -439,8 +466,8 @@
 
 
     <!-- Settings -->
-    <div class="settings-btn" id="settingsBtn" title="Settings">
-      <svg viewBox="0 0 20 20"><path d="M10 13a3 3 0 100-6 3 3 0 000 6zm7.6-2.8l-1.4-.3a6.2 6.2 0 00-.5-1.2l.8-1.2a.5.5 0 00-.1-.6l-1.4-1.4a.5.5 0 00-.6-.1l-1.2.8a6.2 6.2 0 00-1.2-.5l-.3-1.4a.5.5 0 00-.5-.4h-2a.5.5 0 00-.5.4l-.3 1.4a6.2 6.2 0 00-1.2.5l-1.2-.8a.5.5 0 00-.6.1L4 6.9a.5.5 0 00-.1.6l.8 1.2a6.2 6.2 0 00-.5 1.2l-1.4.3a.5.5 0 00-.4.5v2a.5.5 0 00.4.5l1.4.3c.1.4.3.8.5 1.2l-.8 1.2a.5.5 0 00.1.6l1.4 1.4a.5.5 0 00.6.1l1.2-.8c.4.2.8.4 1.2.5l.3 1.4a.5.5 0 00.5.4h2a.5.5 0 00.5-.4l.3-1.4c.4-.1.8-.3 1.2-.5l1.2.8a.5.5 0 00.6-.1l1.4-1.4a.5.5 0 00.1-.6l-.8-1.2c.2-.4.4-.8.5-1.2l1.4-.3a.5.5 0 00.4-.5v-2a.5.5 0 00-.4-.5z"/></svg>
+    <div class="settings-btn" id="settingsBtn" title="Change Wallpaper">
+      <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
     </div>
 
     <!-- Study Mode -->
@@ -491,18 +518,10 @@
     <!-- Settings Modal -->
     <div class="modal-overlay" id="settingsModal">
       <div class="modal">
-        <h2>Settings</h2>
-        <label>Background Image</label>
-        <div class="file-input-wrap">
-          <label class="file-btn" for="bgFileInput">Choose Image</label>
-          <input type="file" id="bgFileInput" accept="image/*">
-          <span class="file-name" id="bgFileName">No file chosen</span>
-        </div>
-        <div class="bg-preview" id="bgPreview"></div>
+        <h2>Change Wallpaper</h2>
+        <div class="wallpaper-grid" id="wallpaperGrid"></div>
         <div class="modal-actions" style="margin-top:14px">
-          <button class="btn-danger" id="bgResetBtn" style="display:none">Remove</button>
-          <button class="btn-secondary" id="settingsCancelBtn">Cancel</button>
-          <button class="btn-primary" id="settingsSaveBtn">Save</button>
+          <button class="btn-secondary" id="settingsCancelBtn">Close</button>
         </div>
       </div>
     </div>
@@ -522,7 +541,7 @@
 
       function loadSites(){try{var d=JSON.parse(localStorage.getItem('ntp_sites'));return Array.isArray(d)?d:DEFAULT_SITES;}catch(e){return DEFAULT_SITES;}}
       function saveSitesData(s){localStorage.setItem('ntp_sites',JSON.stringify(s));}
-      function loadBg(){return localStorage.getItem('ntp_bg')||'';}
+      function loadBg(){return localStorage.getItem('ntp_bg')||'wallpapers/default.jpg';}
       function saveBgData(v){localStorage.setItem('ntp_bg',v);syncBgToIDB(v);}
 
       // Sync background to IndexedDB for cross-origin access (chrome://settings)
@@ -660,52 +679,45 @@
       document.getElementById('siteModal').addEventListener('click',function(e){if(e.target===e.currentTarget)closeSiteModal();});
 
       // â”€â”€ SETTINGS MODAL â”€â”€
-      var pendingBg='';
-
-      document.getElementById('settingsBtn').addEventListener('click',function(){
-        var existing=loadBg();
-        pendingBg=existing;
-        document.getElementById('bgResetBtn').style.display=existing?'':'none';
-        var preview=document.getElementById('bgPreview');
-        if(existing){
-          preview.style.backgroundImage='url('+existing+')';
-          preview.classList.add('active');
-          document.getElementById('bgFileName').textContent='Current background';
-        }else{
-          preview.classList.remove('active');
-          document.getElementById('bgFileName').textContent='No file chosen';
+      var WALLPAPERS = [
+        'wallpapers/default.jpg',
+        'wallpapers/NeonCity.png',
+        'wallpapers/NeonSolitude.png',
+        'wallpapers/SunsetValley.png',
+        'wallpapers/TranquilWaterfall.png'
+      ];
+      
+      function renderWallpaperGrid() {
+        var grid = document.getElementById('wallpaperGrid');
+        grid.innerHTML = '';
+        var currentBg = loadBg();
+        
+        for (var i = 0; i < WALLPAPERS.length; i++) {
+          (function(bg) {
+            var item = document.createElement('div');
+            item.className = 'wallpaper-item';
+            if (currentBg === bg) {
+              item.classList.add('selected');
+            }
+            item.style.backgroundImage = 'url(' + bg + ')';
+            item.addEventListener('click', function() {
+              saveBgData(bg);
+              applyBg();
+              renderWallpaperGrid();
+            });
+            grid.appendChild(item);
+          })(WALLPAPERS[i]);
         }
+      }
+
+      document.getElementById('settingsBtn').addEventListener('click', function(){
+        renderWallpaperGrid();
         document.getElementById('settingsModal').classList.add('open');
-      });
-
-      document.getElementById('bgFileInput').addEventListener('change',function(){
-        var file=this.files[0];if(!file)return;
-        document.getElementById('bgFileName').textContent=file.name;
-        var reader=new FileReader();
-        reader.onload=function(e){
-          pendingBg=e.target.result;
-          var p=document.getElementById('bgPreview');
-          p.style.backgroundImage='url('+pendingBg+')';
-          p.classList.add('active');
-          document.getElementById('bgResetBtn').style.display='';
-        };
-        reader.readAsDataURL(file);
-      });
-
-      document.getElementById('bgResetBtn').addEventListener('click',function(){
-        pendingBg='';
-        document.getElementById('bgPreview').classList.remove('active');
-        document.getElementById('bgFileName').textContent='No file chosen';
-        document.getElementById('bgResetBtn').style.display='none';
-        document.getElementById('bgFileInput').value='';
       });
 
       function closeSettingsModal(){document.getElementById('settingsModal').classList.remove('open');}
       document.getElementById('settingsCancelBtn').addEventListener('click',closeSettingsModal);
       document.getElementById('settingsModal').addEventListener('click',function(e){if(e.target===e.currentTarget)closeSettingsModal();});
-      document.getElementById('settingsSaveBtn').addEventListener('click',function(){
-        saveBgData(pendingBg);applyBg();closeSettingsModal();
-      });
 
       function applyBg(){
         var bg=loadBg();

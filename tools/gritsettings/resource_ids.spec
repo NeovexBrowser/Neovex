@@ -800,6 +800,10 @@
     "META": {"sizes": {"includes": [10]}},
     "includes": [5290],
   },
+  "<(SHARED_INTERMEDIATE_DIR)/chrome/browser/resources/neovex_whats_new/resources.grd": {
+    "META": {"sizes": {"includes": [10]}},
+    "includes": [5300],
+  },
   # END chrome/ WebUI resources section
 
   # START chrome/ miscellaneous section.

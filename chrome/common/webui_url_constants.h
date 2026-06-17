@@ -442,6 +442,8 @@ inline constexpr char kChromeUIWebAppSettingsHost[] = "app-settings";
 inline constexpr char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
 inline constexpr char kChromeUIWhatsNewHost[] = "whats-new";
 inline constexpr char kChromeUIWhatsNewURL[] = "chrome://whats-new/";
+inline constexpr char kChromeUINeovexWhatsNewHost[] = "neovex-whatsnew";
+inline constexpr char kChromeUINeovexWhatsNewURL[] = "chrome://neovex-whatsnew/";
 #endif
 
 #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)

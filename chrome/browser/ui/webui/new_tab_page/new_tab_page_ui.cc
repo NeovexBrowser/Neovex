@@ -269,7 +269,7 @@ class WeatherProxyHandler : public content::WebUIMessageHandler {
       return;
     }
     // Parse the JSON and send it back as a base::Value.
-    auto parsed = base::JSONReader::Read(*body);
+    auto parsed = base::JSONReader::Read(*body, base::JSON_PARSE_RFC);
     if (!parsed.has_value()) {
       RejectJavascriptCallback(base::Value(callback_id),
                                base::Value("Invalid JSON response"));

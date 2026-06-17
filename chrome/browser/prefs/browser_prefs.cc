@@ -1440,9 +1440,10 @@ std::string GetCountry() {
 }
 
 void RegisterLocalState(PrefRegistrySimple* registry) {
-  // NEOVEX UPDATE
-  registry->RegisterTimePref("neovex.last_update_check_time", base::Time());
-  registry->RegisterStringPref("neovex.update_installer_path", "");
+  // NEOVEX UPDATE SYSTEM
+  registry->RegisterBooleanPref("neovex.update.downloaded", false);
+  registry->RegisterStringPref("neovex.update.installer_path", "");
+  registry->RegisterStringPref("neovex.update.last_version", "");
 
   // Call outs to individual subsystems that register Local State (browser-wide)
   // prefs en masse. See RegisterProfilePrefs for per-profile prefs. Please

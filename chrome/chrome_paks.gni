@@ -256,6 +256,7 @@ template("chrome_extra_paks") {
         "$root_gen_dir/chrome/webui_gallery_resources.pak",
         "$root_gen_dir/chrome/webui_toolbar_resources.pak",
         "$root_gen_dir/chrome/whats_new_resources.pak",
+        "$root_gen_dir/chrome/neovex_whats_new_resources.pak",
         "$root_gen_dir/content/browser/tracing/tracing_resources.pak",
         "$root_gen_dir/content/traces_internals_resources.pak",
       ]

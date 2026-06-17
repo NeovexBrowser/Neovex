@@ -22,6 +22,11 @@ build_webui("build") {
   static_files = [
     "new_tab_page.html",
     "shared_vars.css",
+    "wallpapers/default.jpg",
+    "wallpapers/NeonCity.png",
+    "wallpapers/NeonSolitude.png",
+    "wallpapers/SunsetValley.png",
+    "wallpapers/TranquilWaterfall.png",
   ]
 
   extra_grdp_files = [

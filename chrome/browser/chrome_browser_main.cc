@@ -34,6 +34,10 @@
 #include "chrome/browser/browser_features.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/browser_process_impl.h"
+#include "chrome/browser/neovex_update_checker.h"
+#include "chrome/browser/neovex_version.h"
+#include "chrome/browser/ui/browser_navigator.h"
+#include "chrome/browser/ui/browser_navigator_params.h"
 #include "chrome/browser/chrome_browser_main_extra_parts.h"
 #include "chrome/browser/component_updater/registration.h"
 #include "chrome/browser/enterprise/browser_management/management_service_factory.h"
@@ -1687,6 +1691,26 @@ void ChromeBrowserMainParts::PostBrowserStart() {
             UpgradeDetector::GetInstance());
   }
 #endif
+  // NEOVEX: Kick off background update check 30 seconds after startup.
+#if BUILDFLAG(IS_WIN)
+  content::GetUIThreadTaskRunner({})->PostDelayedTask(
+      FROM_HERE, base::BindOnce([]() {
+        auto* local_state = g_browser_process->local_state();
+        auto url_loader_factory =
+            g_browser_process->shared_url_loader_factory();
+        if (local_state && url_loader_factory) {
+          auto checker = std::make_unique<neovex::UpdateChecker>(
+              local_state, url_loader_factory);
+          auto* raw = checker.get();
+          // The checker self-destructs via weak pointers when the load completes
+          // or the BrowserProcess tears down, but we leak it intentionally since
+          // it must outlive the async callbacks. It's a one-shot per session.
+          raw->CheckForUpdate();
+          checker.release();  // intentional leak for the session.
+        }
+      }),
+      base::Seconds(30));
+#endif
 }
 
 int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
@@ -2074,6 +2098,28 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
   browser_creator_.reset();
 #endif  // BUILDFLAG(IS_ANDROID)
 
+  // NEOVEX: Open What's New tab if this is the first launch after an update.
+#if BUILDFLAG(IS_WIN)
+  if (profile) {
+    PrefService* local_state = g_browser_process->local_state();
+    if (local_state) {
+      std::string last_version =
+          local_state->GetString(neovex::kUpdateLastVersion);
+      if (!last_version.empty() && last_version != NEOVEX_VERSION) {
+        // Version changed — this is a post-update launch.
+        local_state->SetString(neovex::kUpdateLastVersion, NEOVEX_VERSION);
+        local_state->CommitPendingWrite();
+        // Open the What's New page.
+        NavigateParams params(
+            NavigateParams(profile, GURL("chrome://neovex-whatsnew/"),
+                           ui::PAGE_TRANSITION_AUTO_TOPLEVEL));
+        params.disposition = WindowOpenDisposition::NEW_FOREGROUND_TAB;
+        Navigate(&params);
+      }
+    }
+  }
+#endif
+
   PostBrowserStart();
 
 #if BUILDFLAG(ENABLE_DOWNGRADE_PROCESSING)
@@ -2175,6 +2221,12 @@ void ChromeBrowserMainParts::PostMainMessageLoopRun() {
   // unavailable. Since SyntheticTrialSyncer depends on SyntheticTrialRegistry,
   // destroy before the tear-down.
   synthetic_trial_syncer_.reset();
+
+  // NEOVEX: Launch downloaded installer before tear-down.
+#if BUILDFLAG(IS_WIN)
+  neovex::MaybeLaunchInstallerOnShutdown(
+      browser_process_->local_state());
+#endif
 
   restart_last_session_ = browser_shutdown::ShutdownPreThreadsStop();
   browser_process_->StartTearDown();
