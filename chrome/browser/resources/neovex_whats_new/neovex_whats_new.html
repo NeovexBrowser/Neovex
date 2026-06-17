@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's New in Neovex</title>
     <link rel="stylesheet" href="neovex_whats_new.css">
-    <!-- Use Google Fonts for modern typography -->
+    <!-- Use standard fonts because CSP blocks external resources -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 </head>
+
 <body>
     <div class="glow-bg"></div>
     <div class="glow-bg bg-2"></div>
-    
+
     <div class="container">
         <header class="glass-header">
             <div class="logo-container">
@@ -35,10 +39,17 @@
                 <!-- Main Feature -->
                 <div class="bento-item glass-card feature-main">
                     <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
                     </div>
                     <h3>Automated Background Updates</h3>
-                    <p>Neovex now silently checks GitHub for new releases and updates in the background, ensuring you always have the latest security patches and features without any interruption to your workflow.</p>
+                    <p>Neovex now silently checks GitHub for new releases and updates in the background, ensuring you
+                        always have the latest security patches and features without any interruption to your workflow.
+                    </p>
                     <div class="tech-stack">
                         <span>GitHub Releases API</span>
                         <span>C++ ThreadPool</span>
@@ -48,19 +59,29 @@
                 <!-- Feature 2 -->
                 <div class="bento-item glass-card feature-side">
                     <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
                     </div>
                     <h3>Custom Wallpaper Gallery</h3>
-                    <p>Personalize your New Tab Page with a collection of curated, high-quality Cyberpunk and Glassmorphism wallpapers directly built into the browser.</p>
+                    <p>Personalize your New Tab Page with a collection of curated, high-quality Cyberpunk and
+                        Glassmorphism wallpapers directly built into the browser.</p>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="bento-item glass-card feature-side">
                     <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
                     </div>
                     <h3>C++ Proxy Handlers</h3>
-                    <p>Re-engineered internal components to use C++ Proxy handlers for data fetching, eliminating CSP violations and rendering crashes.</p>
+                    <p>Re-engineered internal components to use C++ Proxy handlers for data fetching, eliminating CSP
+                        violations and rendering crashes.</p>
                 </div>
 
                 <!-- Info Box -->
@@ -70,7 +91,12 @@
                         <p>Explore the source code or report issues on our GitHub repository.</p>
                         <a href="https://github.com/pahal-desai/Neovex" target="_blank" class="cyber-button">
                             <span>View Source</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -78,7 +104,7 @@
         </main>
     </div>
 
-    <script src="chrome://resources/js/load_time_data.js"></script>
     <script type="module" src="neovex_whats_new.js"></script>
 </body>
+
 </html>

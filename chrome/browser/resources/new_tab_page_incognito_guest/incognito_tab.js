@@ -30,9 +30,12 @@ window.addEventListener('load', function() {
   let fiftySecondsPassed = false;
   let fiftySecondsTimeout = null;
 
-  // Tor is DISABLED by default
+  // Set initial UI state
   toggle.checked = false;
   updateToggleUI(false, false);
+
+  // Request initial Tor status
+  chrome.send('getTorStatus');
 
   toggle.addEventListener('change', function() {
     if (toggle.checked) {
@@ -138,6 +141,30 @@ window.addEventListener('load', function() {
 
   // NEOVEX TOR: Listen for real Tor status updates
   addWebUiListener('tor-status-changed', status => {
+    // If Tor is running/ready but our UI thinks it's disabled, sync it
+    if (!torEnabled && (status.isReady || status.isRunning)) {
+      torEnabled = true;
+      toggle.checked = true;
+      fiftySecondsPassed = true; // Skip animation if already enabled
+      if (status.isReady) {
+        torReady = true;
+        updateToggleUI(false, true);
+        hideLoadingOverlay();
+      } else {
+        showLoadingOverlay();
+      }
+    }
+
+    // If Tor is disabled but our UI thinks it's enabled, sync it
+    if (torEnabled && !status.isReady && !status.isRunning && status.logs === "Waiting for Tor to start...") {
+      torEnabled = false;
+      torReady = false;
+      toggle.checked = false;
+      updateToggleUI(false, false);
+      hideLoadingOverlay();
+      stopProgressBar();
+    }
+
     if (!torEnabled) return;
 
     if (status.isReady) {

@@ -1022,9 +1022,6 @@ Profile* ProfileImpl::GetOffTheRecordProfile(const OTRProfileID& otr_profile_id,
     otr_prefs->SetString(
         prefs::kDnsOverHttpsTemplates,
         "https://cloudflare-dns.com/dns-query");
-
-    // NEOVEX TOR: Apply Tor SOCKS5 proxy to this incognito profile.
-    neovex::TorProfileManager::ApplyTorProxy(raw_otr_profile);
   }
 
   return raw_otr_profile;

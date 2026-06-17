@@ -21,12 +21,21 @@ void TorLauncherFactory::OnIncognitoWindowOpened() {
   incognito_window_count_++;
   LOG(INFO) << "NEOVEX TOR: Incognito window opened (count: "
             << incognito_window_count_ << ")";
+}
 
+void TorLauncherFactory::EnableTor() {
   if (!launcher_) {
     launcher_ = std::make_unique<TorLauncher>();
     launcher_->Start();
   } else if (!launcher_->IsRunning()) {
     launcher_->Start();
+  }
+}
+
+void TorLauncherFactory::DisableTor() {
+  if (launcher_) {
+    launcher_->Stop();
+    launcher_.reset();
   }
 }
 

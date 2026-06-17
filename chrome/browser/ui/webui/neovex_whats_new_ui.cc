@@ -10,6 +10,7 @@
 #include "chrome/grit/neovex_whats_new_resources.h"
 #include "chrome/grit/neovex_whats_new_resources_map.h"
 #include "content/public/browser/web_ui_data_source.h"
+#include "ui/webui/webui_util.h"
 
 NeovexWhatsNewUIConfig::NeovexWhatsNewUIConfig()
     : DefaultWebUIConfig(content::kChromeUIScheme,
@@ -23,10 +24,12 @@ NeovexWhatsNewUI::NeovexWhatsNewUI(content::WebUI* web_ui)
   // Add the current version so JS can display it.
   source->AddString("neovexVersion", NEOVEX_VERSION);
 
-  // Setup resources
-  source->AddResourcePaths(
-      base::span<const webui::ResourcePath>(kNeovexWhatsNewResources));
-  source->SetDefaultResource(IDR_NEOVEX_WHATS_NEW_NEOVEX_WHATS_NEW_HTML);
+  // Setup resources using the standard WebUI utility. This correctly configures
+  // Content Security Policies, TrustedTypes, and string injection, preventing
+  // KILLED_BAD_MESSAGE renderer crashes.
+  webui::SetupWebUIDataSource(
+      source, base::span<const webui::ResourcePath>(kNeovexWhatsNewResources),
+      IDR_NEOVEX_WHATS_NEW_NEOVEX_WHATS_NEW_HTML);
 }
 
 NeovexWhatsNewUI::~NeovexWhatsNewUI() = default;

@@ -36,4 +36,20 @@ void TorProfileManager::ApplyTorProxy(Profile* profile) {
              base::Value(std::move(proxy_dict)));
 }
 
+// static
+void TorProfileManager::RemoveTorProxy(Profile* profile) {
+  if (!profile) {
+    return;
+  }
+
+  LOG(INFO) << "NEOVEX TOR: Removing Tor proxy from profile";
+
+  PrefService* prefs = profile->GetPrefs();
+  if (!prefs) {
+    return;
+  }
+
+  prefs->ClearPref(proxy_config::prefs::kProxy);
+}
+
 }  // namespace neovex

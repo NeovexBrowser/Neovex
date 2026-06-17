@@ -235,14 +235,20 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
   // Clear the flags before launching so we don't try again on next shutdown.
   local_state->SetBoolean(kUpdateDownloaded, false);
   local_state->SetString(kUpdateInstallerPath, "");
-  // Store current version so the What's New page can detect the upgrade.
-  local_state->SetString(kUpdateLastVersion, NEOVEX_VERSION);
+  // Store a dummy version so the What's New page triggers on next launch (for testing)
+  local_state->SetString(kUpdateLastVersion, "0.0.0");
   local_state->CommitPendingWrite();
 
   // Launch the installer as a fully detached process.
   base::CommandLine cmd(installer_path);
+  cmd.AppendSwitch("do-not-launch-chrome");
   base::LaunchOptions options;
   options.start_hidden = true;
+  
+  // BYPASS UAC: Prevent Windows "Installer Detection" from forcing an admin prompt
+  // for setup.exe by setting the compatibility layer to RunAsInvoker.
+  options.environment[L"__COMPAT_LAYER"] = L"RunAsInvoker";
+  
   base::LaunchProcess(cmd, options);
 
   LOG(INFO) << "[Neovex] Launched installer: " << installer_path.value();

@@ -13,6 +13,9 @@ class TorProfileManager {
  public:
   // Apply the Tor SOCKS5 proxy configuration to the given profile.
   static void ApplyTorProxy(Profile* profile);
+
+  // Remove the Tor SOCKS5 proxy configuration from the given profile.
+  static void RemoveTorProxy(Profile* profile);
 };
 
 }  // namespace neovex

@@ -6,6 +6,9 @@
 #include "base/functional/bind.h"
 #include "base/values.h"
 #include "chrome/browser/tor/tor_launcher_factory.h"
+#include "chrome/browser/tor/tor_profile_manager.h"
+#include "chrome/browser/profiles/profile.h"
+#include "content/public/browser/web_ui.h"
 
 TorStatusHandler::TorStatusHandler() = default;
 
@@ -33,7 +36,10 @@ void TorStatusHandler::HandleEnableTor(const base::ListValue& args) {
 
   neovex::TorLauncherFactory* factory =
       neovex::TorLauncherFactory::GetInstance();
-  factory->OnIncognitoWindowOpened();
+  factory->EnableTor();
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  neovex::TorProfileManager::ApplyTorProxy(profile);
 
   was_ready_ = false;
 
@@ -51,7 +57,10 @@ void TorStatusHandler::HandleDisableTor(const base::ListValue& args) {
 
   neovex::TorLauncherFactory* factory =
       neovex::TorLauncherFactory::GetInstance();
-  factory->OnIncognitoWindowClosed();
+  factory->DisableTor();
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  neovex::TorProfileManager::RemoveTorProxy(profile);
 }
 
 void TorStatusHandler::HandleGetTorStatus(const base::ListValue& args) {

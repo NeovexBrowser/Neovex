@@ -27,6 +27,12 @@ class TorLauncherFactory {
   // Called when an incognito window is closed.
   void OnIncognitoWindowClosed();
 
+  // Called to start Tor explicitly.
+  void EnableTor();
+
+  // Called to stop Tor explicitly.
+  void DisableTor();
+
   // Returns the TorLauncher instance (may be null if not started).
   TorLauncher* GetLauncher();
 
