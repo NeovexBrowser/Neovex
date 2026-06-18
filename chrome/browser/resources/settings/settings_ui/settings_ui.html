@@ -22,6 +22,16 @@
         --cr-toolbar-left-spacer-width: var(--settings-menu-width);
       }
 
+      cr-drawer {
+        --cr-drawer-background-color: rgba(16, 16, 28, 0.7) !important;
+        --cr-drawer-backdrop-filter: blur(20px) saturate(1.2) !important;
+        --cr-drawer-header-color: rgba(255, 255, 255, 0.9) !important;
+        --cr-drawer-width: 280px;
+        --cr-drawer-border-start-end-radius: 24px;
+        --cr-drawer-border-end-end-radius: 24px;
+      }
+
+
       #container {
         display: flex;
         flex: 1;
@@ -57,7 +67,7 @@
       @media (max-width: 980px) {
         #main {
           min-width: auto;
-          padding: 0 3px;
+          padding: 0 16px;
         }
       }
     </style>

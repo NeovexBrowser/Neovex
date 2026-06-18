@@ -53,11 +53,11 @@ constexpr net::NetworkTrafficAnnotationTag kTrafficAnnotation =
 
 base::FilePath GetUpdatesDir() {
 #if BUILDFLAG(IS_WIN)
-  base::FilePath local_app_data;
-  if (!base::PathService::Get(base::DIR_LOCAL_APP_DATA, &local_app_data)) {
+  base::FilePath temp_dir;
+  if (!base::PathService::Get(base::DIR_TEMP, &temp_dir)) {
     return base::FilePath();
   }
-  return local_app_data.Append(L"Neovex").Append(L"Updates");
+  return temp_dir.Append(L"NeovexUpdates");
 #else
   return base::FilePath();
 #endif

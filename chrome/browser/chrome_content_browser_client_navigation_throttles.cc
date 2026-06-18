@@ -490,6 +490,7 @@ void CreateAndAddChromeThrottlesForNavigation(
   ImageNavigationThrottle::MaybeCreateAndAdd(registry);
 
   StudyModeNavigationThrottle::MaybeCreateAndAdd(registry);
+  NeovexShieldThrottle::MaybeCreateAndAdd(registry);
 #endif  // !BUILDFLAG(IS_ANDROID)
 
 #if BUILDFLAG(SAFE_BROWSING_AVAILABLE)

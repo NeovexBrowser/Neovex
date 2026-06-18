@@ -14,6 +14,8 @@
 #include "base/strings/string_util.h"
 #include "content/public/browser/navigation_handle.h"
 #include "content/public/browser/navigation_throttle_registry.h"
+#include "services/network/public/cpp/resource_request.h"
+#include "net/url_request/redirect_info.h"
 #include "url/gurl.h"
 
 namespace {
@@ -761,9 +763,10 @@ const char* const kBlockedDomains[] = {
     "zoopla.co.uk",
 };
 
-
 bool EndsWith(const std::string& host, const std::string& domain) {
-  if (host == domain) return true;
+  if (host == domain) {
+    return true;
+  }
   if (host.length() > domain.length() &&
       host[host.length() - domain.length() - 1] == '.' &&
       host.substr(host.length() - domain.length()) == domain) {
@@ -846,8 +849,7 @@ StudyModeNavigationThrottle::WillRedirectRequest() {
 
 content::NavigationThrottle::ThrottleCheckResult
 StudyModeNavigationThrottle::CheckNavigation() {
-  const GURL& url =
-      navigation_handle()->GetURL();
+  const GURL& url = navigation_handle()->GetURL();
 
   const std::string host(url.host());
 
@@ -858,17 +860,20 @@ StudyModeNavigationThrottle::CheckNavigation() {
       std::string domain = query.substr(7);
       GetUserWhitelist().push_back(domain);
       LOG(INFO) << "NEOVEX Study Mode: Whitelisted " << domain;
-      
+
       // Return a basic HTML page that auto-navigates back to the original page
-      std::string back_html = 
+      std::string back_html =
           "<!DOCTYPE html><html><head><title>Whitelisted</title></head>"
-          "<body style=\"background:#0d0620;color:#fff;font-family:sans-serif;text-align:center;padding:50px;\">"
+          "<body "
+          "style=\"background:#0d0620;color:#fff;font-family:sans-serif;text-"
+          "align:center;padding:50px;\">"
           "<h2>Whitelisted! Returning...</h2>"
           "<script>window.history.go(-2);</script>"
           "</body></html>";
-          
+
       return content::NavigationThrottle::ThrottleCheckResult(
-          content::NavigationThrottle::CANCEL, net::ERR_BLOCKED_BY_CLIENT, back_html);
+          content::NavigationThrottle::CANCEL, net::ERR_BLOCKED_BY_CLIENT,
+          back_html);
     }
   }
 
@@ -877,7 +882,7 @@ StudyModeNavigationThrottle::CheckNavigation() {
   }
   if (IsDomainBlocked(host)) {
     LOG(INFO) << "NEOVEX Study Mode: Blocked " << host;
-    
+
     std::string error_html = R"HTML(
 <!DOCTYPE html>
 <html>
@@ -960,11 +965,13 @@ StudyModeNavigationThrottle::CheckNavigation() {
   <div class="container">
     <div class="icon">🎓</div>
     <h1>Study Mode Active</h1>
-    <div class="domain">)HTML" + host + R"HTML(</div>
+    <div class="domain">)HTML" +
+                             host + R"HTML(</div>
     <p>This site is blocked while Study Mode is enabled.<br><br>Stay focused &mdash; you've got this!</p>
     <div class="buttons">
       <button class="btn-primary" onclick="window.history.back()">Go Back</button>
-      <button class="btn-secondary" onclick="window.location.href='http://study-mode-whitelist.local/?domain=)HTML" + host + R"HTML('">Whitelist This Site</button>
+      <button class="btn-secondary" onclick="window.location.href='http://study-mode-whitelist.local/?domain=)HTML" +
+                             host + R"HTML('">Whitelist This Site</button>
     </div>
   </div>
 </body>
@@ -972,8 +979,202 @@ StudyModeNavigationThrottle::CheckNavigation() {
 )HTML";
 
     return content::NavigationThrottle::ThrottleCheckResult(
-        content::NavigationThrottle::CANCEL, net::ERR_BLOCKED_BY_CLIENT, error_html);
+        content::NavigationThrottle::CANCEL, net::ERR_BLOCKED_BY_CLIENT,
+        error_html);
   }
 
   return PROCEED;
+}
+
+// --- Neovex Shield Privacy Service ---
+
+// static
+NeovexShieldService* NeovexShieldService::GetInstance() {
+  static base::NoDestructor<NeovexShieldService> instance;
+  return instance.get();
+}
+
+NeovexShieldService::NeovexShieldService() {
+  trackers_blocked_ = 0;
+  ads_blocked_ = 0;
+  fingerprints_blocked_ = 0;
+  cookies_managed_ = 0;
+}
+
+void NeovexShieldService::IncrementTrackersBlocked() {
+  trackers_blocked_++;
+}
+void NeovexShieldService::IncrementAdsBlocked() {
+  ads_blocked_++;
+}
+void NeovexShieldService::IncrementFingerprintsBlocked() {
+  fingerprints_blocked_++;
+}
+void NeovexShieldService::IncrementCookiesManaged() {
+  cookies_managed_++;
+}
+
+int NeovexShieldService::GetTrackersBlocked() const {
+  return trackers_blocked_.load();
+}
+int NeovexShieldService::GetAdsBlocked() const {
+  return ads_blocked_.load();
+}
+int NeovexShieldService::GetFingerprintsBlocked() const {
+  return fingerprints_blocked_.load();
+}
+int NeovexShieldService::GetCookiesManaged() const {
+  return cookies_managed_.load();
+}
+
+// --- Neovex Shield Throttle ---
+
+namespace {
+bool IsTrackerDomainForShield(const std::string& host) {
+  const char* const kTrackers[] = {"google-analytics.com",
+                                   "doubleclick.net",
+                                   "facebook.net",
+                                   "connect.facebook.net",
+                                   "criteo.com",
+                                   "googlesyndication.com",
+                                   "scorecardresearch.com",
+                                   "quantserve.com",
+                                   "taboola.com",
+                                   "outbrain.com",
+                                   "adnxs.com",
+                                   "adsrvr.org",
+                                   "moatads.com",
+                                   "amazon-adsystem.com",
+                                   "rubiconproject.com",
+                                   "casalemedia.com",
+                                   "pubmatic.com",
+                                   "crwdcntrl.net",
+                                   "demdex.net",
+                                   "ads-twitter.com",
+                                   "rlcdn.com",
+                                   "tapad.com",
+                                   "advertising.com",
+                                   "addthis.com",
+                                   "adservice.google.com",
+                                   "analytics.twitter.com"};
+  for (const char* tracker : kTrackers) {
+    if (base::EqualsCaseInsensitiveASCII(host, tracker)) {
+      return true;
+    }
+    if (host.length() > std::string(tracker).length() &&
+        host[host.length() - std::string(tracker).length() - 1] == '.' &&
+        base::EndsWith(host, tracker, base::CompareCase::INSENSITIVE_ASCII)) {
+      return true;
+    }
+  }
+  return false;
+}
+}  // namespace
+
+// static
+void NeovexShieldThrottle::MaybeCreateAndAdd(
+    content::NavigationThrottleRegistry& registry) {
+  registry.AddThrottle(std::make_unique<NeovexShieldThrottle>(registry));
+}
+
+NeovexShieldThrottle::NeovexShieldThrottle(
+    content::NavigationThrottleRegistry& registry)
+    : content::NavigationThrottle(registry) {}
+
+NeovexShieldThrottle::~NeovexShieldThrottle() = default;
+
+content::NavigationThrottle::ThrottleCheckResult
+NeovexShieldThrottle::WillStartRequest() {
+  return CheckIfBlocked();
+}
+
+content::NavigationThrottle::ThrottleCheckResult
+NeovexShieldThrottle::WillRedirectRequest() {
+  return CheckIfBlocked();
+}
+
+content::NavigationThrottle::ThrottleCheckResult
+NeovexShieldThrottle::CheckIfBlocked() {
+  const GURL& url = navigation_handle()->GetURL();
+  std::string host = std::string(url.host());
+
+  if (IsTrackerDomainForShield(host)) {
+    auto* shield = NeovexShieldService::GetInstance();
+    shield->IncrementTrackersBlocked();
+
+    if (host.find("doubleclick") != std::string::npos ||
+        host.find("syndication") != std::string::npos ||
+        host.find("ad") != std::string::npos) {
+      shield->IncrementAdsBlocked();
+    }
+
+    // Simulate fingerprint attempts for specific heavy trackers
+    if (host.find("crwdcntrl") != std::string::npos ||
+        host.find("demdex") != std::string::npos) {
+      shield->IncrementFingerprintsBlocked();
+    }
+
+    return content::NavigationThrottle::CANCEL;
+  }
+  return content::NavigationThrottle::PROCEED;
+}
+
+const char* NeovexShieldThrottle::GetNameForLogging() {
+  return "NeovexShieldThrottle";
+}
+
+// --- Neovex Shield URLLoader Throttle ---
+
+void NeovexShieldURLLoaderThrottle::WillStartRequest(
+    network::ResourceRequest* request,
+    bool* defer) {
+  if (!request->url.SchemeIsHTTPOrHTTPS()) return;
+
+  std::string host = std::string(request->url.host());
+  if (IsTrackerDomainForShield(host)) {
+    auto* shield = NeovexShieldService::GetInstance();
+    shield->IncrementTrackersBlocked();
+
+    if (host.find("doubleclick") != std::string::npos ||
+        host.find("syndication") != std::string::npos ||
+        host.find("ad") != std::string::npos) {
+      shield->IncrementAdsBlocked();
+    }
+
+    if (host.find("crwdcntrl") != std::string::npos ||
+        host.find("demdex") != std::string::npos) {
+      shield->IncrementFingerprintsBlocked();
+    }
+
+    delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+  }
+}
+
+void NeovexShieldURLLoaderThrottle::WillRedirectRequest(
+    net::RedirectInfo* redirect_info,
+    const network::mojom::URLResponseHead& response_head,
+    bool* defer,
+    std::vector<std::string>* to_be_removed_request_headers,
+    net::HttpRequestHeaders* modified_request_headers,
+    net::HttpRequestHeaders* modified_cors_exempt_request_headers) {
+  if (!redirect_info->new_url.SchemeIsHTTPOrHTTPS()) return;
+
+  std::string host = std::string(redirect_info->new_url.host());
+  if (IsTrackerDomainForShield(host)) {
+    auto* shield = NeovexShieldService::GetInstance();
+    shield->IncrementTrackersBlocked();
+
+    if (host.find("doubleclick") != std::string::npos ||
+        host.find("syndication") != std::string::npos ||
+        host.find("ad") != std::string::npos) {
+      shield->IncrementAdsBlocked();
+    }
+
+    if (host.find("crwdcntrl") != std::string::npos ||
+        host.find("demdex") != std::string::npos) {
+      shield->IncrementFingerprintsBlocked();
+    }
+
+    delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+  }
 }

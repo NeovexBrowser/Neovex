@@ -28,6 +28,8 @@
   top: 0;
   transition: left var(--transition-timing);
   width: var(--cr-drawer-width);
+  backdrop-filter: var(--cr-drawer-backdrop-filter, none);
+  -webkit-backdrop-filter: var(--cr-drawer-backdrop-filter, none);
 }
 
 @media (prefers-color-scheme: dark) {

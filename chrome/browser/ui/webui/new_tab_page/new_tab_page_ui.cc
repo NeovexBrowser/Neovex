@@ -157,6 +157,36 @@
 using content::BrowserContext;
 using content::WebContents;
 
+// Handles chrome.send() messages from the custom NTP for Neovex Shield Privacy.
+class NeovexShieldMessageHandler : public content::WebUIMessageHandler {
+ public:
+  NeovexShieldMessageHandler() = default;
+  ~NeovexShieldMessageHandler() override = default;
+
+  void RegisterMessages() override {
+    web_ui()->RegisterMessageCallback(
+        "getNeovexPrivacyStats",
+        base::BindRepeating(&NeovexShieldMessageHandler::HandleGetPrivacyStats,
+                            base::Unretained(this)));
+  }
+
+ private:
+  void HandleGetPrivacyStats(const base::ListValue& args) {
+    AllowJavascript();
+    if (args.size() < 1 || !args[0].is_string()) return;
+    std::string callback_id = args[0].GetString();
+
+    auto* service = NeovexShieldService::GetInstance();
+    base::DictValue data;
+    data.Set("trackers", service->GetTrackersBlocked());
+    data.Set("ads", service->GetAdsBlocked());
+    data.Set("fingerprints", service->GetFingerprintsBlocked());
+    data.Set("cookies", service->GetCookiesManaged());
+
+    ResolveJavascriptCallback(base::Value(callback_id), data);
+  }
+};
+
 // Handles chrome.send() messages from the custom NTP for Study Mode.
 class StudyModeMessageHandler : public content::WebUIMessageHandler {
  public:
@@ -1004,6 +1034,9 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
 
   // Custom NTP: Study Mode message handler.
   web_ui->AddMessageHandler(std::make_unique<StudyModeMessageHandler>());
+
+  // Custom NTP: Neovex Shield message handler.
+  web_ui->AddMessageHandler(std::make_unique<NeovexShieldMessageHandler>());
 
   // Custom NTP: Weather proxy message handler.
   web_ui->AddMessageHandler(std::make_unique<WeatherProxyHandler>());

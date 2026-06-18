@@ -5905,6 +5905,8 @@ std::unique_ptr<blink::URLLoaderThrottle> CreateGoogleURLLoaderThrottle(
       std::move(dynamic_params));
 }
 
+#include "chrome/browser/study_mode/study_mode_navigation_throttle.h"
+
 std::vector<std::unique_ptr<blink::URLLoaderThrottle>>
 ChromeContentBrowserClient::CreateURLLoaderThrottles(
     const network::ResourceRequest& request,
@@ -5916,6 +5918,9 @@ ChromeContentBrowserClient::CreateURLLoaderThrottles(
   DCHECK_CURRENTLY_ON(BrowserThread::UI);
 
   std::vector<std::unique_ptr<blink::URLLoaderThrottle>> result;
+  
+  // Add our tracker blocking throttle for subresources
+  result.push_back(std::make_unique<NeovexShieldURLLoaderThrottle>());
 
   DCHECK(browser_context);
   Profile* profile = Profile::FromBrowserContext(browser_context);

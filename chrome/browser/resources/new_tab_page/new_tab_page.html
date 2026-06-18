@@ -77,7 +77,18 @@
       .search-icon{flex-shrink:0;width:18px;height:18px;opacity:.4;cursor:pointer;}
       .search-icon:hover{opacity:.8;}
 
-      .quick-links{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;justify-content:center;max-width:720px;}
+      .dashboard-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        width: 100%;
+        max-width: 1000px;
+        flex-wrap: wrap;
+      }
+      .quick-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:600px;}
       .link-card{
         width:80px;height:80px;
         display:flex;align-items:center;justify-content:center;
@@ -421,6 +432,191 @@
         background: rgba(255,255,255,0.08);
         color: rgba(255,255,255,0.6);
       }
+
+      /* === NEOVEX SHIELD WIDGET === */
+      .shield-widget {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        z-index: 10;
+        width: 280px;
+        background: rgba(10, 10, 15, 0.4);
+        backdrop-filter: blur(20px) saturate(1.2);
+        -webkit-backdrop-filter: blur(20px) saturate(1.2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        color: #fff;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .shield-widget:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        background: rgba(15, 15, 25, 0.5);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+      .shield-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .shield-icon {
+        font-size: 22px;
+        line-height: 1;
+        filter: drop-shadow(0 0 8px rgba(100, 160, 255, 0.4));
+      }
+      .shield-title-wrap {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .shield-title {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        color: rgba(255,255,255,0.95);
+      }
+      .shield-subtitle {
+        font-size: 11px;
+        color: rgba(255,255,255,0.45);
+      }
+      .shield-status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 14px;
+        padding: 12px 16px;
+      }
+      .shield-status-left {
+        display: flex;
+        flex-direction: column;
+      }
+      .shield-status-label {
+        font-size: 11px;
+        color: rgba(255,255,255,0.5);
+      }
+      .shield-status-value {
+        font-size: 14px;
+        font-weight: 600;
+        color: #73c991;
+        text-shadow: 0 0 10px rgba(115, 201, 145, 0.2);
+      }
+      .shield-stars {
+        color: #f9c74f;
+        font-size: 13px;
+        letter-spacing: 1px;
+      }
+      
+      .shield-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .shield-stat-box {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 12px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .shield-stat-num {
+        font-size: 20px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.9);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+      .shield-stat-label {
+        font-size: 10px;
+        color: rgba(255,255,255,0.4);
+        text-transform: uppercase;
+        margin-top: 4px;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+      }
+      
+      .shield-expand-btn {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255,255,255,0.7);
+        border-radius: 10px;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .shield-expand-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255,255,255,0.95);
+      }
+      
+      .shield-details {
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 18px;
+      }
+      .shield-widget.expanded .shield-details {
+        display: flex;
+      }
+      
+      .shield-section-title {
+        font-size: 11px;
+        color: rgba(255,255,255,0.5);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      
+      .shield-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .shield-feed-item {
+        font-size: 12px;
+        color: rgba(255,255,255,0.65);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .shield-feed-item::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #73c991;
+        box-shadow: 0 0 6px rgba(115, 201, 145, 0.4);
+      }
+      
+      .shield-site-info {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 12px;
+      }
+      .shield-site-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+      .shield-site-row:last-child {
+        margin-bottom: 0;
+      }
+      .shield-site-label { color: rgba(255,255,255,0.45); }
+      .shield-site-val { color: rgba(255,255,255,0.85); }
     </style>
   </head>
   <body>
@@ -460,10 +656,83 @@
           <polyline points="9 18 15 12 9 6"/>
         </svg>
       </div>
-      <div class="quick-links" id="quickLinks"></div>
+      <div class="dashboard-layout">
+        <div class="quick-links" id="quickLinks"></div>
+      </div>
     </div>
 
-
+    <!-- Neovex Shield Widget (Moved to top-left) -->
+    <div class="shield-widget" id="shieldWidget">
+      <div class="shield-header">
+        <span class="shield-icon">🛡</span>
+        <div class="shield-title-wrap">
+          <span class="shield-title">Neovex Shield</span>
+          <span class="shield-subtitle">Your privacy overview</span>
+        </div>
+      </div>
+      
+      <div class="shield-status">
+        <div class="shield-status-left">
+          <span class="shield-status-label">Privacy Status</span>
+          <span class="shield-status-value">Protected</span>
+        </div>
+        <div class="shield-stars">★★★★★</div>
+      </div>
+      
+      <div class="shield-stats-grid">
+        <div class="shield-stat-box">
+          <span class="shield-stat-num" id="shieldTrackers">0</span>
+          <span class="shield-stat-label">Trackers blocked</span>
+        </div>
+        <div class="shield-stat-box">
+          <span class="shield-stat-num" id="shieldAds">0</span>
+          <span class="shield-stat-label">Ads blocked</span>
+        </div>
+        <div class="shield-stat-box">
+          <span class="shield-stat-num" id="shieldFingerprints">0</span>
+          <span class="shield-stat-label" style="font-size: 8px;">Fingerprint attempts</span>
+        </div>
+        <div class="shield-stat-box">
+          <span class="shield-stat-num" id="shieldCookies">0</span>
+          <span class="shield-stat-label">Cookies managed</span>
+        </div>
+      </div>
+      
+      <div class="shield-expand-btn" id="shieldExpandBtn">View details</div>
+      
+      <div class="shield-details">
+        <div>
+          <div class="shield-section-title">Today</div>
+          <div class="shield-feed" id="shieldActivityFeed">
+            <div class="shield-feed-item">Tracker blocked</div>
+            <div class="shield-feed-item">Cookie restricted</div>
+            <div class="shield-feed-item">Permission controlled</div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="shield-section-title">Current site</div>
+          <div class="shield-site-info">
+            <div class="shield-site-row">
+              <span class="shield-site-label">Current site:</span>
+              <span class="shield-site-val" id="shieldCurrentSite">New Tab</span>
+            </div>
+            <div class="shield-site-row">
+              <span class="shield-site-label">Privacy score:</span>
+              <span class="shield-site-val" style="color:#f9c74f;">★★★★★</span>
+            </div>
+            <div class="shield-site-row">
+              <span class="shield-site-label">Trackers:</span>
+              <span class="shield-site-val" id="shieldSiteTrackers">0</span>
+            </div>
+            <div class="shield-site-row">
+              <span class="shield-site-label">Permissions:</span>
+              <span class="shield-site-val" id="shieldSitePerms">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Settings -->
     <div class="settings-btn" id="settingsBtn" title="Change Wallpaper">
@@ -1079,6 +1348,90 @@
           var city = loadWeatherCity();
           if (city) fetchWeather(city);
         }, 15 * 60 * 1000);
+      })();
+
+      // â”€â”€ NEOVEX SHIELD â”€â”€
+      (function() {
+        function animateValue(id, start, end, duration) {
+          var obj = document.getElementById(id);
+          if(!obj) return;
+          var startTimestamp = null;
+          var step = function(timestamp) {
+            if (!startTimestamp) startTimestamp = timestamp;
+            var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            }
+          };
+          window.requestAnimationFrame(step);
+        }
+
+        var shieldExpanded = false;
+        var expandBtn = document.getElementById('shieldExpandBtn');
+        if(expandBtn) {
+          expandBtn.addEventListener('click', function() {
+            shieldExpanded = !shieldExpanded;
+            var w = document.getElementById('shieldWidget');
+            if (shieldExpanded) {
+              w.classList.add('expanded');
+              this.textContent = 'Hide details';
+            } else {
+              w.classList.remove('expanded');
+              this.textContent = 'View details';
+            }
+          });
+        }
+
+        var _shieldCallbackId = 0;
+        var _shieldCallbacks = {};
+        
+        // Chain the webUIResponse to handle shield callbacks
+        var originalWebUIResponse = window.cr && window.cr.webUIResponse;
+        if (!window.cr) window.cr = {};
+        window.cr.webUIResponse = function(id, success, data) {
+          if (typeof id === 'string' && id.indexOf('shield_') === 0) {
+            var cb = _shieldCallbacks[id];
+            if (cb) {
+              delete _shieldCallbacks[id];
+              if (success) cb.resolve(data); else cb.reject(data);
+            }
+          } else if (originalWebUIResponse) {
+            originalWebUIResponse(id, success, data);
+          }
+        };
+
+        function getShieldStats() {
+          return new Promise(function(resolve, reject) {
+            var id = 'shield_' + (++_shieldCallbackId);
+            _shieldCallbacks[id] = {resolve: resolve, reject: reject};
+            try {
+              chrome.send('getNeovexPrivacyStats', [id]);
+            } catch(e) {
+              delete _shieldCallbacks[id];
+              reject('chrome.send unavailable');
+            }
+          });
+        }
+
+        function updateShieldStats() {
+          getShieldStats().then(function(data) {
+            var oldTrackers = parseInt(document.getElementById('shieldTrackers').textContent) || 0;
+            var oldAds = parseInt(document.getElementById('shieldAds').textContent) || 0;
+            var oldFingerprints = parseInt(document.getElementById('shieldFingerprints').textContent) || 0;
+            var oldCookies = parseInt(document.getElementById('shieldCookies').textContent) || 0;
+
+            if (data.trackers !== undefined) animateValue('shieldTrackers', oldTrackers, data.trackers, 1000);
+            if (data.ads !== undefined) animateValue('shieldAds', oldAds, data.ads, 1000);
+            if (data.fingerprints !== undefined) animateValue('shieldFingerprints', oldFingerprints, data.fingerprints, 1000);
+            if (data.cookies !== undefined) animateValue('shieldCookies', oldCookies, data.cookies, 1000);
+          }).catch(function(err) {
+            console.warn('Could not fetch real Neovex Shield stats:', err);
+          });
+        }
+
+        setTimeout(updateShieldStats, 300);
+        setInterval(updateShieldStats, 8000);
       })();
     </script>
   </body>
