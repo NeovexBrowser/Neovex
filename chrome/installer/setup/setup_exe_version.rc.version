@@ -29,7 +29,7 @@ BEGIN
             VALUE "CompanyName", "@COMPANY_FULLNAME@"
             VALUE "FileDescription", "@PRODUCT_INSTALLER_FULLNAME@"
             VALUE "FileVersion", "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"
-            VALUE "InternalName", "setup"
+            VALUE "InternalName", "NeovexUpdater"
             VALUE "LegalCopyright", "@COPYRIGHT@"
             VALUE "ProductName", "@PRODUCT_INSTALLER_FULLNAME@"
             VALUE "ProductVersion", "@MAJOR@.@MINOR@.@BUILD@.@PATCH@"

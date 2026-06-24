@@ -10,6 +10,7 @@ import("//testing/test.gni")
 
 if (is_win) {
   executable("setup") {
+    output_name = "NeovexUpdater"
     sources = [
       "setup.rc",
       "setup_main.cc",

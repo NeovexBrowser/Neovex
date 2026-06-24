@@ -60,6 +60,8 @@ class NeovexShieldService {
   int GetFingerprintsBlocked() const;
   int GetCookiesManaged() const;
 
+  static bool IsTrackerDomainForShield(const std::string& host);
+
  private:
   friend class base::NoDestructor<NeovexShieldService>;
   NeovexShieldService();

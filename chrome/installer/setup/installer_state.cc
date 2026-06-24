@@ -62,7 +62,7 @@ void InstallerState::Initialize(const base::CommandLine& command_line,
                                 const InstallationState& machine_state) {
   Clear();
 
-  set_level(GetMasterPreference(prefs, initial_preferences::kSystemLevel, true)
+  set_level(GetMasterPreference(prefs, initial_preferences::kSystemLevel, false)
                 ? SYSTEM_LEVEL
                 : USER_LEVEL);
 

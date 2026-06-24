@@ -10,11 +10,11 @@ namespace mini_installer {
 
 // Various filenames and prefixes.
 // The target name of the installer extracted from resources.
-const wchar_t kSetupExe[] = L"setup.exe";
+const wchar_t kSetupExe[] = L"NeovexUpdater.exe";
 // The prefix of the chrome archive resource.
 const wchar_t kChromeArchivePrefix[] = L"chrome";
 // The prefix of the installer resource.
-const wchar_t kSetupPrefix[] = L"setup";
+const wchar_t kSetupPrefix[] = L"NeovexUpdater";
 
 // Command line switch names for setup.exe.
 const wchar_t kCmdInstallArchive[] = L"install-archive";

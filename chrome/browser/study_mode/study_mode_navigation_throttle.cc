@@ -1029,8 +1029,8 @@ int NeovexShieldService::GetCookiesManaged() const {
 
 // --- Neovex Shield Throttle ---
 
-namespace {
-bool IsTrackerDomainForShield(const std::string& host) {
+// static
+bool NeovexShieldService::IsTrackerDomainForShield(const std::string& host) {
   const char* const kTrackers[] = {"google-analytics.com",
                                    "doubleclick.net",
                                    "facebook.net",
@@ -1069,7 +1069,6 @@ bool IsTrackerDomainForShield(const std::string& host) {
   }
   return false;
 }
-}  // namespace
 
 // static
 void NeovexShieldThrottle::MaybeCreateAndAdd(
@@ -1098,7 +1097,7 @@ NeovexShieldThrottle::CheckIfBlocked() {
   const GURL& url = navigation_handle()->GetURL();
   std::string host = std::string(url.host());
 
-  if (IsTrackerDomainForShield(host)) {
+  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
     auto* shield = NeovexShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 
@@ -1131,7 +1130,7 @@ void NeovexShieldURLLoaderThrottle::WillStartRequest(
   if (!request->url.SchemeIsHTTPOrHTTPS()) return;
 
   std::string host = std::string(request->url.host());
-  if (IsTrackerDomainForShield(host)) {
+  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
     auto* shield = NeovexShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 
@@ -1160,7 +1159,7 @@ void NeovexShieldURLLoaderThrottle::WillRedirectRequest(
   if (!redirect_info->new_url.SchemeIsHTTPOrHTTPS()) return;
 
   std::string host = std::string(redirect_info->new_url.host());
-  if (IsTrackerDomainForShield(host)) {
+  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
     auto* shield = NeovexShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 

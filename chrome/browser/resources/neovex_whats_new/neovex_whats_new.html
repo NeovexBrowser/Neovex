@@ -1,101 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Neovex</title>
-    <link rel="stylesheet" href="neovex_whats_new.css">
-    <!-- Use standard fonts because CSP blocks external resources -->
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>What's New in Neovex</title>
+  <style>
+    :root {
+      --bg-color: #0b0c10;
+      --surface: rgba(255, 255, 255, 0.03);
+      --surface-hover: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.08);
+      --primary: #10b981;
+      --primary-gradient: linear-gradient(135deg, #34d399, #059669);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15), transparent 40%);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      padding: var(--space-6) var(--space-3);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: var(--space-6);
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: 6px 16px;
+      border-radius: 24px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: var(--space-3);
+      letter-spacing: -1px;
+    }
+
+    .gradient-text {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .shield-showcase {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: var(--space-5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      margin-bottom: var(--space-5);
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+      opacity: 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feature-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feature-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="glow-bg"></div>
-    <div class="glow-bg bg-2"></div>
-
-    <div class="container">
-        <header class="glass-header">
-            <div class="logo-container">
-                <img src="logo.svg" alt="Neovex Logo" class="logo">
-                <div class="logo-text">
-                    <h1>Neovex</h1>
-                    <span class="badge" id="versionBadge">v1.0.0</span>
-                </div>
-            </div>
-        </header>
-
-        <main>
-            <section class="hero-section">
-                <h2 class="gradient-text">Welcome to Neovex.</h2>
-                <p class="subtitle">Experience the next generation of web browsing, engineered for privacy, speed, and aesthetics.</p>
-            </section>
-
-            <div class="bento-grid">
-                <!-- Main Feature: Speed -->
-                <div class="bento-item glass-card feature-main">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                        </svg>
-                    </div>
-                    <h3>Unmatched Speed</h3>
-                    <p>Engineered from the ground up to minimize resource footprint and maximize performance. Neovex's core is optimized to deliver lightning-fast page loads and immediate responsiveness without draining your battery.</p>
-                    <div class="tech-stack">
-                        <span>Optimized C++ Core</span>
-                        <span>Low Memory Footprint</span>
-                    </div>
-                </div>
-
-                <!-- Feature 2: Tor in Incognito -->
-                <div class="bento-item glass-card feature-side">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                    </div>
-                    <h3>True Privacy</h3>
-                    <p>Incognito mode is powered by the Tor network. Your traffic is encrypted and routed through multiple relays, providing unparalleled anonymity and security.</p>
-                </div>
-
-                <!-- Feature 3: Better UI -->
-                <div class="bento-item glass-card feature-side">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                        </svg>
-                    </div>
-                    <h3>Better UI</h3>
-                    <p>Immerse yourself in a beautifully crafted interface. Featuring dark-mode by default, glassmorphism elements, and highly customizable visual aesthetics.</p>
-                </div>
-
-                <!-- Feature 4: Study Mode -->
-                <div class="bento-item glass-card feature-info">
-                    <div class="card-content">
-                        <div class="card-icon" style="margin-bottom: 12px; color: var(--accent-1);">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                            </svg>
-                        </div>
-                        <h3>Study Mode</h3>
-                        <p>A built-in distraction-free environment that blocks time-wasting sites and helps you maintain deep focus when you need it most.</p>
-                    </div>
-                </div>
-            </div>
-        </main>
+  <div class="container">
+    <div class="hero">
+      <div class="badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        New Feature
+      </div>
+      <h1>Introducing <span class="gradient-text">Neovex Shield</span></h1>
+      <p class="hero-subtitle">Take back control of your privacy. Our completely rebuilt, native subresource tracking engine stops ads, trackers, and fingerprinting dead in their tracks.</p>
     </div>
 
-    <script type="module" src="neovex_whats_new.js"></script>
-</body>
+    <div class="shield-showcase">
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h3 class="feature-title">Native C++ Interception</h3>
+          <p class="feature-desc">Unlike extensions, Shield operates natively within the Chromium engine, intercepting tracking scripts at the network layer before they even reach the browser renderer.</p>
+        </div>
 
+        <!-- Feature 2 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="feature-title">Real-Time Analytics</h3>
+          <p class="feature-desc">The New Tab Page widget now hooks directly into the browser process, providing live, to-the-second updates on every ad, tracker, and fingerprint attempt blocked.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="feature-title">Zero-Overhead Blocking</h3>
+          <p class="feature-desc">Because it's integrated natively, Neovex Shield requires zero extra memory and CPU overhead compared to bloated Javascript-based ad blocking extensions.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+          </div>
+          <h3 class="feature-title">Anti-Fingerprinting</h3>
+          <p class="feature-desc">Automatically terminates subresource requests to domains known for executing complex canvas, font, and hardware fingerprinting techniques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
