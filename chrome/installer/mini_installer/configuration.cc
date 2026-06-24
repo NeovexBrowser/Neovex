@@ -63,7 +63,7 @@ void Configuration::Clear() {
   chrome_app_guid_ = google_update::kAppGuid;
   command_line_ = nullptr;
   argument_count_ = 0;
-  is_system_level_ = false;
+  is_system_level_ = true;
   has_invalid_switch_ = false;
   should_delete_extracted_files_ = true;
 }
