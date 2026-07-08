@@ -335,7 +335,12 @@ void AddAboutStrings(content::WebUIDataSource* html_source, Profile* profile) {
 
   std::u16string browser_version = VersionUI::GetAnnotatedVersionStringForUi();
   // NEOVEX: Append the Neovex product version so it shows on the About page.
-  browser_version += u" (Neovex v" + base::UTF8ToUTF16(NEOVEX_VERSION) + u")";
+  // Use separate += statements to avoid -Wunreachable-code on chained u"" +
+  // and wrap NEOVEX_VERSION in std::string to satisfy UTF8ToUTF16's
+  // static_assert that rejects raw string literal arguments.
+  browser_version += u" (Neovex v";
+  browser_version += base::UTF8ToUTF16(std::string(NEOVEX_VERSION));
+  browser_version += u")";
 
   html_source->AddString("aboutBrowserVersion", browser_version);
   html_source->AddString(
