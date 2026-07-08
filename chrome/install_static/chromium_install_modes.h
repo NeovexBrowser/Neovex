@@ -17,14 +17,14 @@ namespace install_static {
 
 // The brand-specific company name to be included as a component of the install
 // and user data directory paths. May be empty if no such dir is to be used.
-inline constexpr wchar_t kCompanyPathName[] = L"";
+inline constexpr wchar_t kCompanyPathName[] = L"NeovexBrowser";
 
 // The brand-specific product name to be included as a component of the install
 // and user data directory paths.
-inline constexpr wchar_t kProductPathName[] = L"Chromium";
+inline constexpr wchar_t kProductPathName[] = L"Neovex";
 
 // The brand-specific safe browsing client name.
-inline constexpr char kSafeBrowsingName[] = "chromium";
+inline constexpr char kSafeBrowsingName[] = "neovex";
 
 // Note: This list of indices must be kept in sync with the brand-specific
 // resource strings in chrome/installer/util/prebuild/create_string_rc.
@@ -45,15 +45,15 @@ inline constexpr auto kInstallModes = std::to_array<InstallConstants>({
         .logo_suffix = L"",  // No logo suffix for the primary install mode.
         .app_guid =
             L"",  // Empty app_guid since no integration with Google Update.
-        .base_app_name = L"Chromium",              // A distinct base_app_name.
-        .base_app_id = L"Chromium",                // A distinct base_app_id.
-        .browser_prog_id_prefix = L"ChromiumHTM",  // Browser ProgID prefix.
+        .base_app_name = L"Neovex",              // A distinct base_app_name.
+        .base_app_id = L"Neovex",                // A distinct base_app_id.
+        .browser_prog_id_prefix = L"NeovexHTM",  // Browser ProgID prefix.
         .browser_prog_id_description =
-            L"Chromium HTML Document",  // Browser ProgID description.
-        .direct_launch_url_scheme = "chromium",
-        .pdf_prog_id_prefix = L"ChromiumPDF",  // PDF ProgID prefix.
+            L"Neovex HTML Document",  // Browser ProgID description.
+        .direct_launch_url_scheme = "neovex",
+        .pdf_prog_id_prefix = L"NeovexPDF",  // PDF ProgID prefix.
         .pdf_prog_id_description =
-            L"Chromium PDF Document",  // PDF ProgID description.
+            L"Neovex PDF Document",  // PDF ProgID description.
         .active_setup_guid =
             L"{7D2B3E1D-D096-4594-9D8F-A6667F12E0AC}",  // Active Setup
                                                         // GUID.

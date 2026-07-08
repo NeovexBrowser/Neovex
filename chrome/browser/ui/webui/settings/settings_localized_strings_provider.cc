@@ -54,6 +54,7 @@
 #include "chrome/browser/ui/webui/settings/reset_settings_handler.h"
 #include "chrome/browser/ui/webui/settings/shared_settings_localized_strings_provider.h"
 #include "chrome/browser/ui/webui/version/version_ui.h"
+#include "chrome/browser/neovex_version.h"
 #include "chrome/common/channel_info.h"
 #include "chrome/common/chrome_features.h"
 #include "chrome/common/chrome_switches.h"
@@ -333,6 +334,8 @@ void AddAboutStrings(content::WebUIDataSource* html_source, Profile* profile) {
 #endif
 
   std::u16string browser_version = VersionUI::GetAnnotatedVersionStringForUi();
+  // NEOVEX: Append the Neovex product version so it shows on the About page.
+  browser_version += u" (Neovex v" + base::UTF8ToUTF16(NEOVEX_VERSION) + u")";
 
   html_source->AddString("aboutBrowserVersion", browser_version);
   html_source->AddString(

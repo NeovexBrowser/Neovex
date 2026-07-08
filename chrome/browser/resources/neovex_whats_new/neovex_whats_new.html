@@ -5,208 +5,251 @@
   <title>What's New in Neovex</title>
   <style>
     :root {
-      --bg-color: #0b0c10;
-      --surface: rgba(255, 255, 255, 0.03);
-      --surface-hover: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.08);
-      --primary: #10b981;
-      --primary-gradient: linear-gradient(135deg, #34d399, #059669);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --space-1: 8px;
-      --space-2: 16px;
-      --space-3: 24px;
-      --space-4: 32px;
-      --space-5: 48px;
-      --space-6: 64px;
+      --bg:        #0b0c10;
+      --surface:   rgba(255, 255, 255, 0.03);
+      --border:    rgba(255, 255, 255, 0.08);
+      --primary:   #10b981;
+      --primary-g: linear-gradient(135deg, #34d399, #059669);
+      --amber:     #f59e0b;
+      --amber-g:   linear-gradient(135deg, #fbbf24, #d97706);
+      --text:      #f8fafc;
+      --muted:     #94a3b8;
+      --sp1: 8px; --sp2: 16px; --sp3: 24px;
+      --sp4: 32px; --sp5: 48px; --sp6: 64px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15), transparent 40%);
-      line-height: 1.5;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(16,185,129,.12), transparent 40%);
+      line-height: 1.6;
     }
 
-    .container {
-      max-width: 1000px;
-      width: 100%;
-      padding: var(--space-6) var(--space-3);
-    }
+    .page { max-width: 900px; width: 100%; padding: var(--sp6) var(--sp3); }
 
+    /* ── Hero ── */
     .hero {
       text-align: center;
-      margin-bottom: var(--space-6);
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      margin-bottom: var(--sp6);
+      opacity: 0;
+      animation: up .8s cubic-bezier(.16,1,.3,1) .05s forwards;
     }
 
-    .badge {
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: var(--space-1);
-      padding: 6px 16px;
-      border-radius: 24px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.2);
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      background: rgba(16,185,129,.1);
+      border: 1px solid rgba(16,185,129,.2);
       color: var(--primary);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .8px;
       text-transform: uppercase;
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--sp3);
     }
+
+    .pill svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     h1 {
-      font-size: clamp(40px, 6vw, 56px);
+      font-size: clamp(36px, 5vw, 52px);
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: var(--space-3);
       letter-spacing: -1px;
+      margin-bottom: var(--sp2);
     }
 
-    .gradient-text {
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .grad { background: var(--primary-g); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    .subtitle { font-size: 18px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+
+    /* ── Section label ── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: var(--sp2);
+      margin-bottom: var(--sp3);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
-    .hero-subtitle {
-      font-size: 20px;
-      color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .shield-showcase {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: var(--space-5);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      margin-bottom: var(--space-5);
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-      opacity: 0;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-4);
-    }
-
-    .feature-item {
+    /* ── Bug fix cards ── */
+    .fixes {
       display: flex;
       flex-direction: column;
-      gap: var(--space-2);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: var(--sp3);
+      margin-bottom: var(--sp5);
+      opacity: 0;
+      animation: up .8s cubic-bezier(.16,1,.3,1) .15s forwards;
     }
 
-    .feature-item:hover {
-      transform: translateY(-4px);
-    }
-
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.05);
+    .fix-card {
+      background: var(--surface);
       border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: var(--sp4);
+      display: flex;
+      gap: var(--sp3);
+      align-items: flex-start;
+      transition: border-color .25s, transform .3s cubic-bezier(.16,1,.3,1);
+    }
+
+    .fix-card:hover {
+      border-color: rgba(255,255,255,.15);
+      transform: translateX(4px);
+    }
+
+    .fix-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary);
     }
 
-    .feature-icon svg {
-      width: 24px;
-      height: 24px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .fix-icon svg { width: 22px; height: 22px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .fix-icon.amber { background: var(--amber-g); box-shadow: 0 4px 16px rgba(245,158,11,.3); }
+    .fix-icon.green { background: var(--primary-g); box-shadow: 0 4px 16px rgba(16,185,129,.3); }
+
+    .fix-body {}
+    .fix-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+    .fix-desc  { color: var(--muted); font-size: 14px; }
+
+    .fix-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      background: rgba(245,158,11,.1);
+      border: 1px solid rgba(245,158,11,.2);
+      color: var(--amber);
     }
 
-    .feature-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-main);
+    /* ── Stable banner ── */
+    .stable-banner {
+      background: var(--surface);
+      border: 1px solid rgba(16,185,129,.2);
+      border-radius: 16px;
+      padding: var(--sp3) var(--sp4);
+      display: flex;
+      align-items: center;
+      gap: var(--sp3);
+      opacity: 0;
+      animation: up .8s cubic-bezier(.16,1,.3,1) .3s forwards;
     }
 
-    .feature-desc {
-      color: var(--text-muted);
-      font-size: 15px;
+    .stable-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--primary-g);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(16,185,129,.3);
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .stable-icon svg { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .stable-text p { color: var(--muted); font-size: 14px; }
+    .stable-text strong { font-size: 15px; color: var(--text); }
+
+    @keyframes up {
+      from { opacity:0; transform: translateY(18px); }
+      to   { opacity:1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="page">
+
+    <!-- Hero -->
     <div class="hero">
-      <div class="badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        New Feature
+      <div class="pill">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Neovex v1.0.2
       </div>
-      <h1>Introducing <span class="gradient-text">Neovex Shield</span></h1>
-      <p class="hero-subtitle">Take back control of your privacy. Our completely rebuilt, native subresource tracking engine stops ads, trackers, and fingerprinting dead in their tracks.</p>
+      <h1>Patch Release — <span class="grad">Stability Update</span></h1>
+      <p class="subtitle">Version 1.0.2 is a focused patch that fixes two critical bugs introduced in the previous release.</p>
     </div>
 
-    <div class="shield-showcase">
-      <div class="features-grid">
-        <!-- Feature 1 -->
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
-          </div>
-          <h3 class="feature-title">Native C++ Interception</h3>
-          <p class="feature-desc">Unlike extensions, Shield operates natively within the Chromium engine, intercepting tracking scripts at the network layer before they even reach the browser renderer.</p>
-        </div>
+    <!-- Bug fixes -->
+    <div class="section-label">Bug Fixes</div>
 
-        <!-- Feature 2 -->
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3 class="feature-title">Real-Time Analytics</h3>
-          <p class="feature-desc">The New Tab Page widget now hooks directly into the browser process, providing live, to-the-second updates on every ad, tracker, and fingerprint attempt blocked.</p>
-        </div>
+    <div class="fixes">
 
-        <!-- Feature 3 -->
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3 class="feature-title">Zero-Overhead Blocking</h3>
-          <p class="feature-desc">Because it's integrated natively, Neovex Shield requires zero extra memory and CPU overhead compared to bloated Javascript-based ad blocking extensions.</p>
+      <!-- Bug 1: What's New spam -->
+      <div class="fix-card">
+        <div class="fix-icon amber">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         </div>
-
-        <!-- Feature 4 -->
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
-          </div>
-          <h3 class="feature-title">Anti-Fingerprinting</h3>
-          <p class="feature-desc">Automatically terminates subresource requests to domains known for executing complex canvas, font, and hardware fingerprinting techniques.</p>
+        <div class="fix-body">
+          <div class="fix-title">What's New Tab Opened on Every Startup</div>
+          <p class="fix-desc">
+            After an update, the "What's New" tab was appearing every single time the browser was launched instead of only once.
+            This was caused by the update system resetting the tracked version to <code style="color:var(--amber);background:rgba(245,158,11,.08);padding:1px 5px;border-radius:4px;">0.0.0</code> on each shutdown,
+            making the browser believe a new update had always just been installed.
+          </p>
+          <span class="fix-tag">Fixed</span>
         </div>
       </div>
+
+      <!-- Bug 2: Google session logout -->
+      <div class="fix-card">
+        <div class="fix-icon amber">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <div class="fix-body">
+          <div class="fix-title">Google &amp; Other Sessions Logged Out After Each Session</div>
+          <p class="fix-desc">
+            The same version-reset bug was silently re-launching the update installer on every shutdown.
+            Because the installer reinstalls the browser, it wiped cookies and session data — logging users out of Google
+            and all other websites on every restart.
+          </p>
+          <span class="fix-tag">Fixed</span>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Stable notice -->
+    <div class="stable-banner">
+      <div class="stable-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="stable-text">
+        <strong>Neovex Shield and all 1.0.1 features remain fully intact.</strong>
+        <p>No features were changed or removed. This update is purely a stability fix — native ad-blocking, real-time analytics, and anti-fingerprinting all continue to work as designed.</p>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>

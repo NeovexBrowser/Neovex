@@ -233,10 +233,13 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
   }
 
   // Clear the flags before launching so we don't try again on next shutdown.
+  // NOTE: Do NOT reset kUpdateLastVersion here. The installer will update the
+  // binary to the new version, and the next launch will naturally record the
+  // new NEOVEX_VERSION into kUpdateLastVersion via the startup logic.
+  // Resetting it to "0.0.0" caused the What's New tab to open on every single
+  // startup and re-launched the installer repeatedly, wiping Google sessions.
   local_state->SetBoolean(kUpdateDownloaded, false);
   local_state->SetString(kUpdateInstallerPath, "");
-  // Store a dummy version so the What's New page triggers on next launch (for testing)
-  local_state->SetString(kUpdateLastVersion, "0.0.0");
   local_state->CommitPendingWrite();
 
   // Launch the installer as a fully detached process.
@@ -244,11 +247,7 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
   cmd.AppendSwitch("do-not-launch-chrome");
   base::LaunchOptions options;
   options.start_hidden = true;
-  
-  // BYPASS UAC: Prevent Windows "Installer Detection" from forcing an admin prompt
-  // for setup.exe by setting the compatibility layer to RunAsInvoker.
-  options.environment[L"__COMPAT_LAYER"] = L"RunAsInvoker";
-  
+
   base::LaunchProcess(cmd, options);
 
   LOG(INFO) << "[Neovex] Launched installer: " << installer_path.value();
