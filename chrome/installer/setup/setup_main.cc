@@ -1203,9 +1203,9 @@ InstallStatus InstallProductsHelper(InstallationState& original_state,
                                     InstallerState& installer_state) {
   const bool system_install = installer_state.system_install();
 
-  // Delete the already installed browser first (keeping user data intact, as it is outside target_path).
+  // Close any running browser processes to free up file locks
   if (!installer_state.target_path().empty()) {
-    base::DeletePathRecursively(installer_state.target_path());
+    CloseAllChromeProcesses(installer_state.target_path());
   }
 
   // Create a temp folder where we will unpack Chrome archive. If it fails,

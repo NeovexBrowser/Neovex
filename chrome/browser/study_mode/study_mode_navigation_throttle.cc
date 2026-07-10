@@ -1145,7 +1145,9 @@ void NeovexShieldURLLoaderThrottle::WillStartRequest(
       shield->IncrementFingerprintsBlocked();
     }
 
-    delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+    if (delegate_) {
+      delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+    }
   }
 }
 
@@ -1174,6 +1176,8 @@ void NeovexShieldURLLoaderThrottle::WillRedirectRequest(
       shield->IncrementFingerprintsBlocked();
     }
 
-    delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+    if (delegate_) {
+      delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+    }
   }
 }

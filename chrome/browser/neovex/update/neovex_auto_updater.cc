@@ -26,9 +26,9 @@ namespace neovex {
 
 // NEOVEX AUTOUPDATE
 
-class NeovexUpdateGlobalError : public GlobalErrorWithStandardBubble {
+class NeovexAutoUpdateGlobalError : public GlobalErrorWithStandardBubble {
 public:
-    explicit NeovexUpdateGlobalError(const std::string& message) : message_(message) {}
+    explicit NeovexAutoUpdateGlobalError(const std::string& message) : message_(message) {}
 
     bool HasMenuItem() override { return false; }
     int MenuItemCommandID() override { return 0; }
@@ -50,7 +50,7 @@ public:
 
 private:
     std::string message_;
-    base::WeakPtrFactory<NeovexUpdateGlobalError> weak_ptr_factory_{this};
+    base::WeakPtrFactory<NeovexAutoUpdateGlobalError> weak_ptr_factory_{this};
 };
 
 static void ShowUpdateNotification(const std::string& message) {
@@ -60,7 +60,7 @@ static void ShowUpdateNotification(const std::string& message) {
     Profile* profile = browser->profile();
     GlobalErrorService* error_service = GlobalErrorServiceFactory::GetForProfile(profile);
     if (error_service) {
-        auto error = std::make_unique<NeovexUpdateGlobalError>(message);
+        auto error = std::make_unique<NeovexAutoUpdateGlobalError>(message);
         error->ShowBubbleView(browser);
         error_service->AddGlobalError(std::move(error));
     }

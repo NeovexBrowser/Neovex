@@ -13,7 +13,9 @@
 #include "base/process/launch.h"
 #include "base/strings/string_util.h"
 #include "base/task/thread_pool.h"
+#include "base/task/single_thread_task_runner.h"
 #include "base/version.h"
+#include "chrome/browser/browser_process.h"
 #include "chrome/browser/neovex_version.h"
 #include "components/prefs/pref_service.h"
 #include "net/base/load_flags.h"
@@ -93,7 +95,9 @@ UpdateChecker::~UpdateChecker() = default;
 
 void UpdateChecker::CheckForUpdate() {
   // If we already downloaded an update, don't check again.
-  if (local_state_->GetBoolean(kUpdateDownloaded)) {
+  if (g_browser_process && !g_browser_process->IsShuttingDown() && g_browser_process->local_state() &&
+      g_browser_process->local_state()->GetBoolean(kUpdateDownloaded)) {
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
@@ -116,12 +120,14 @@ void UpdateChecker::CheckForUpdate() {
 void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   if (!body) {
     LOG(WARNING) << "[Neovex] Update check failed: no response.";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
   auto parsed = base::JSONReader::Read(*body, base::JSON_PARSE_RFC);
   if (!parsed || !parsed->is_dict()) {
     LOG(WARNING) << "[Neovex] Update check failed: invalid JSON.";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
@@ -129,11 +135,13 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   const std::string* tag = dict.FindString("tag_name");
   if (!tag) {
     LOG(WARNING) << "[Neovex] Update check: no tag_name in release.";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
   if (!IsNewerVersion(*tag)) {
     VLOG(1) << "[Neovex] Already up to date (" << NEOVEX_VERSION << ").";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
@@ -142,6 +150,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   // Find the mini_installer.exe asset.
   const base::ListValue* assets = dict.FindList("assets");
   if (!assets) {
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
@@ -160,12 +169,14 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 
   if (download_url_.empty()) {
     LOG(WARNING) << "[Neovex] No mini_installer.exe asset found.";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
   // Ensure the updates directory exists (on a background thread).
   base::FilePath updates_dir = GetUpdatesDir();
   if (updates_dir.empty()) {
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
@@ -200,14 +211,26 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
   if (path.empty()) {
     LOG(WARNING) << "[Neovex] Installer download failed.";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
     return;
   }
 
   LOG(INFO) << "[Neovex] Installer downloaded to: " << path.value();
 
-  local_state_->SetBoolean(kUpdateDownloaded, true);
-  local_state_->SetString(kUpdateInstallerPath, path.AsUTF8Unsafe());
-  local_state_->CommitPendingWrite();
+  if (g_browser_process && !g_browser_process->IsShuttingDown() && g_browser_process->local_state()) {
+    g_browser_process->local_state()->SetBoolean(kUpdateDownloaded, true);
+    g_browser_process->local_state()->SetString(kUpdateInstallerPath, path.AsUTF8Unsafe());
+    
+    // Force the What's New page to open on the next launch even if the NEOVEX_VERSION
+    // string hasn't changed. This is safe here (unlike in shutdown) because the
+    // browser is still running, so CommitPendingWrite() will reliably save this to disk,
+    // avoiding the loop Pahal experienced earlier.
+    g_browser_process->local_state()->SetString(kUpdateLastVersion, "0.0.0");
+    
+    g_browser_process->local_state()->CommitPendingWrite();
+  }
+  
+  base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
 }
 
 // ---------- Shutdown helper ----------

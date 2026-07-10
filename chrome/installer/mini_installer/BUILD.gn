@@ -288,7 +288,7 @@ template("generate_mini_installer") {
       "/NXCOMPAT",
     ]
 
-    libs = [ "setupapi.lib" ]
+    libs = [ "setupapi.lib", "comctl32.lib" ]
 
     deps = [
       ":copy_signing",

@@ -27,6 +27,7 @@
 #include "chrome/installer/mini_installer/mini_installer.h"
 
 #include <windows.h>
+#include <commctrl.h>
 
 // #define needed to link in RtlGenRandom(), a.k.a. SystemFunction036.  See the
 // "Community Additions" comment on MSDN here:
@@ -739,6 +740,181 @@ bool GetWorkDir(HMODULE module,
          CreateWorkDir(base_path.get(), work_dir, exit_code);
 }
 
+// ---- Neovex Progress Window -------------------------------------------------
+// A simple Win32 progress dialog shown during installation.
+// Uses no CRT — only Win32 API and comctl32 (for PROGRESS_CLASS).
+
+namespace {
+
+// Control IDs.
+static const int kProgressBarId = 101;
+static const int kStatusTextId  = 102;
+
+// Window class name (wide literal — no CRT needed).
+static const wchar_t kProgressWindowClass[] = L"NeovexInstallerProgress";
+
+// A plain Win32 window procedure.
+LRESULT CALLBACK ProgressWndProc(HWND hwnd, UINT msg, WPARAM wparam,
+                                  LPARAM lparam) {
+  switch (msg) {
+    case WM_CTLCOLORSTATIC: {
+      HDC hdc = reinterpret_cast<HDC>(wparam);
+      ::SetBkColor(hdc, RGB(15, 15, 20));
+      ::SetTextColor(hdc, RGB(248, 250, 252));
+      static HBRUSH bg_brush = ::CreateSolidBrush(RGB(15, 15, 20));
+      return reinterpret_cast<LRESULT>(bg_brush);
+    }
+    case WM_ERASEBKGND: {
+      RECT rc;
+      ::GetClientRect(hwnd, &rc);
+      HBRUSH brush = ::CreateSolidBrush(RGB(15, 15, 20));
+      ::FillRect(reinterpret_cast<HDC>(wparam), &rc, brush);
+      ::DeleteObject(brush);
+      return 1;
+    }
+    case WM_DESTROY:
+      return 0;
+    default:
+      return ::DefWindowProc(hwnd, msg, wparam, lparam);
+  }
+}
+
+// Creates the progress window. Returns nullptr on failure.
+HWND CreateProgressWindow(HMODULE module) {
+  // Init common controls (needed for PROGRESS_CLASS).
+  INITCOMMONCONTROLSEX icc = {sizeof(icc), ICC_PROGRESS_CLASS};
+  ::InitCommonControlsEx(&icc);
+
+  WNDCLASSEXW wc = {};
+  wc.cbSize        = sizeof(wc);
+  wc.style         = CS_HREDRAW | CS_VREDRAW;
+  wc.lpfnWndProc   = ProgressWndProc;
+  wc.hInstance     = module;
+  wc.hCursor       = ::LoadCursor(nullptr, IDC_ARROW);
+  wc.hbrBackground = ::CreateSolidBrush(RGB(15, 15, 20));
+  wc.lpszClassName = kProgressWindowClass;
+  ::RegisterClassExW(&wc);
+
+  // Window size.
+  const int kW = 400;
+  const int kH = 140;
+  int screen_w = ::GetSystemMetrics(SM_CXSCREEN);
+  int screen_h = ::GetSystemMetrics(SM_CYSCREEN);
+  int x = (screen_w - kW) / 2;
+  int y = (screen_h - kH) / 2;
+
+  HWND hwnd = ::CreateWindowExW(
+      WS_EX_APPWINDOW | WS_EX_TOOLWINDOW,
+      kProgressWindowClass,
+      L"Neovex Browser Installer",
+      WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
+      x, y, kW, kH,
+      nullptr, nullptr, module, nullptr);
+  if (!hwnd)
+    return nullptr;
+
+  // Title / status text label.
+  HWND title = ::CreateWindowExW(
+      0, L"STATIC", L"Installing Neovex Browser",
+      WS_CHILD | WS_VISIBLE | SS_LEFT,
+      20, 20, kW - 40, 24,
+      hwnd, reinterpret_cast<HMENU>(kStatusTextId), module, nullptr);
+
+  // Try to set a nicer font.
+  HFONT font = ::CreateFontW(
+      -14, 0, 0, 0, FW_SEMIBOLD, FALSE, FALSE, FALSE,
+      DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+      CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Segoe UI");
+  if (font && title)
+    ::SendMessage(title, WM_SETFONT, reinterpret_cast<WPARAM>(font), TRUE);
+
+  // Sub-label.
+  HWND sub = ::CreateWindowExW(
+      0, L"STATIC", L"Preparing...",
+      WS_CHILD | WS_VISIBLE | SS_LEFT,
+      20, 46, kW - 40, 18,
+      hwnd, reinterpret_cast<HMENU>(102), module, nullptr);
+  HFONT small_font = ::CreateFontW(
+      -12, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE,
+      DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+      CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Segoe UI");
+  if (small_font && sub) {
+    ::SetWindowLong(sub, GWL_ID, kStatusTextId);
+    ::SendMessage(sub, WM_SETFONT, reinterpret_cast<WPARAM>(small_font), TRUE);
+  }
+
+  // Progress bar.
+  HWND progress = ::CreateWindowExW(
+      0, PROGRESS_CLASS, nullptr,
+      WS_CHILD | WS_VISIBLE | PBS_SMOOTH,
+      20, 76, kW - 40, 18,
+      hwnd, reinterpret_cast<HMENU>(kProgressBarId), module, nullptr);
+  if (progress) {
+    // Style the progress bar green.
+    ::SendMessage(progress, PBM_SETRANGE32, 0, 100);
+    ::SendMessage(progress, PBM_SETPOS, 0, 0);
+    // Green color (works on XP+; ignored on modern Windows which uses themes)
+    ::SendMessage(progress, PBM_SETBARCOLOR, 0,
+                  static_cast<LPARAM>(RGB(16, 185, 129)));
+    ::SendMessage(progress, PBM_SETBKCOLOR, 0,
+                  static_cast<LPARAM>(RGB(30, 32, 40)));
+  }
+
+  ::ShowWindow(hwnd, SW_SHOW);
+  ::UpdateWindow(hwnd);
+  return hwnd;
+}
+
+// Pumps pending messages so the window stays responsive.
+void PumpMessages() {
+  MSG msg;
+  while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
+    ::TranslateMessage(&msg);
+    ::DispatchMessage(&msg);
+  }
+}
+
+// Sets the progress bar value (0-100) and sub-label text.
+void SetProgress(HWND hwnd, int value, const wchar_t* status) {
+  if (!hwnd)
+    return;
+  HWND pb  = ::GetDlgItem(hwnd, kProgressBarId);
+  HWND lbl = ::GetDlgItem(hwnd, kStatusTextId);
+  if (pb) {
+    // If marquee is on, turn it off first.
+    LONG style = ::GetWindowLong(pb, GWL_STYLE);
+    if (style & PBS_MARQUEE) {
+      ::SetWindowLong(pb, GWL_STYLE, style & ~PBS_MARQUEE);
+      ::SendMessage(pb, PBM_SETMARQUEE, FALSE, 0);
+    }
+    ::SendMessage(pb, PBM_SETPOS, static_cast<WPARAM>(value), 0);
+  }
+  if (lbl && status)
+    ::SetWindowTextW(lbl, status);
+  PumpMessages();
+}
+
+// Switches the progress bar to indeterminate marquee mode.
+void SetMarquee(HWND hwnd, const wchar_t* status) {
+  if (!hwnd)
+    return;
+  HWND pb  = ::GetDlgItem(hwnd, kProgressBarId);
+  HWND lbl = ::GetDlgItem(hwnd, kStatusTextId);
+  if (pb) {
+    LONG style = ::GetWindowLong(pb, GWL_STYLE);
+    if (!(style & PBS_MARQUEE)) {
+      ::SetWindowLong(pb, GWL_STYLE, style | PBS_MARQUEE);
+    }
+    ::SendMessage(pb, PBM_SETMARQUEE, TRUE, 30);
+  }
+  if (lbl && status)
+    ::SetWindowTextW(lbl, status);
+  PumpMessages();
+}
+
+}  // namespace
+// ---- End Neovex Progress Window ---------------------------------------------
+
 ProcessExitResult WMain(HMODULE module) {
   ProcessExitResult exit_code = ProcessExitResult(SUCCESS_EXIT_CODE);
 
@@ -754,11 +930,19 @@ ProcessExitResult WMain(HMODULE module) {
     return ProcessExitResult(INVALID_OPTION);
   }
 
+  // Show the progress window.
+  HWND progress_hwnd = CreateProgressWindow(module);
+  SetProgress(progress_hwnd, 5, L"Preparing installation directory...");
+
   // First get a path where we can extract payload
   PathString base_path;
   if (!GetWorkDir(module, &base_path, &exit_code)) {
+    if (progress_hwnd)
+      ::DestroyWindow(progress_hwnd);
     return exit_code;
   }
+
+  SetProgress(progress_hwnd, 15, L"Extracting installer files...");
 
   int max_delete_attempts = 0;
   PathString setup_path;
@@ -775,9 +959,23 @@ ProcessExitResult WMain(HMODULE module) {
   ::SetProcessWorkingSetSize(::GetCurrentProcess(), (SIZE_T)-1, (SIZE_T)-1);
 
   if (exit_code.IsSuccess()) {
+    // Switch to marquee — we can't measure setup.exe's internal progress.
+    SetProgress(progress_hwnd, 40, L"Installing Neovex Browser...");
+    SetMarquee(progress_hwnd, L"Installing — this may take a moment...");
+
     exit_code = RunSetup(configuration, archive_path.get(), setup_path.get(),
                          archive_type.compare(kLZMAResourceType) == 0);
   }
+
+  // Show completion before tearing down.
+  if (exit_code.IsSuccess()) {
+    SetProgress(progress_hwnd, 100, L"Installation complete!");
+    // Give user a brief moment to see the 100% state.
+    ::Sleep(800);
+  }
+
+  if (progress_hwnd)
+    ::DestroyWindow(progress_hwnd);
 
   if (configuration.should_delete_extracted_files()) {
     DeleteExtractedFiles(module, archive_path, setup_path, base_path,

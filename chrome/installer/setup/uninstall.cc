@@ -146,45 +146,7 @@ bool RemoveInstallerFiles(const base::FilePath& installer_directory) {
   return success;
 }
 
-// Filter for processes whose base name matches and whose path starts with a
-// specified prefix.
-class ProcessPathPrefixFilter : public base::ProcessFilter {
- public:
-  explicit ProcessPathPrefixFilter(
-      base::FilePath::StringViewType process_path_prefix)
-      : process_path_prefix_(process_path_prefix) {}
 
-  // base::ProcessFilter:
-  bool Includes(const base::ProcessEntry& entry) const override {
-    // Test if |entry|'s file path starts with the prefix we're looking for.
-    base::Process process(::OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION,
-                                        FALSE, entry.th32ProcessID));
-    if (!process.IsValid())
-      return false;
-
-    DWORD path_len = MAX_PATH;
-    wchar_t path_string[MAX_PATH];
-    if (::QueryFullProcessImageName(process.Handle(), 0, path_string,
-                                    &path_len)) {
-      base::FilePath file_path(path_string);
-      return base::StartsWith(file_path.value(), process_path_prefix_,
-                              base::CompareCase::INSENSITIVE_ASCII);
-    }
-    PLOG(WARNING) << "QueryFullProcessImageName failed for PID "
-                  << entry.th32ProcessID;
-    return false;
-  }
-
- private:
-  const base::FilePath::StringViewType process_path_prefix_;
-};
-
-// Kills all Chrome processes in |target_path|, immediately.
-void CloseAllChromeProcesses(const base::FilePath& target_path) {
-  ProcessPathPrefixFilter target_path_filter(target_path.value());
-  base::CleanupProcesses(installer::kChromeExe, base::TimeDelta(),
-                         content::RESULT_CODE_HUNG, &target_path_filter);
-}
 
 // Updates shortcuts to |old_target_exe| that have non-empty args, making them
 // target |new_target_exe| instead. The non-empty args requirement is a
@@ -568,6 +530,46 @@ bool DeleteSoftwareClassesSubkey(HKEY root, const std::wstring& subkey) {
 }
 
 }  // namespace
+
+// Filter for processes whose base name matches and whose path starts with a
+// specified prefix.
+class ProcessPathPrefixFilter : public base::ProcessFilter {
+ public:
+  explicit ProcessPathPrefixFilter(
+      base::FilePath::StringViewType process_path_prefix)
+      : process_path_prefix_(process_path_prefix) {}
+
+  // base::ProcessFilter:
+  bool Includes(const base::ProcessEntry& entry) const override {
+    // Test if |entry|'s file path starts with the prefix we're looking for.
+    base::Process process(::OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION,
+                                        FALSE, entry.th32ProcessID));
+    if (!process.IsValid())
+      return false;
+
+    DWORD path_len = MAX_PATH;
+    wchar_t path_string[MAX_PATH];
+    if (::QueryFullProcessImageName(process.Handle(), 0, path_string,
+                                    &path_len)) {
+      base::FilePath file_path(path_string);
+      return base::StartsWith(file_path.value(), process_path_prefix_,
+                              base::CompareCase::INSENSITIVE_ASCII);
+    }
+    PLOG(WARNING) << "QueryFullProcessImageName failed for PID "
+                  << entry.th32ProcessID;
+    return false;
+  }
+
+ private:
+  const base::FilePath::StringViewType process_path_prefix_;
+};
+
+// Kills all Chrome processes in |target_path|, immediately.
+void CloseAllChromeProcesses(const base::FilePath& target_path) {
+  ProcessPathPrefixFilter target_path_filter(target_path.value());
+  base::CleanupProcesses(installer::kChromeExe, base::TimeDelta(),
+                         content::RESULT_CODE_HUNG, &target_path_filter);
+}
 
 DeleteResult DeleteChromeDirectoriesIfEmpty(
     const base::FilePath& application_directory) {

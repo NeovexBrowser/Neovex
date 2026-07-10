@@ -19,6 +19,7 @@
 #include "base/metrics/histogram_functions.h"
 #include "base/metrics/histogram_macros.h"
 #include "base/path_service.h"
+#include "base/base_paths.h"
 #include "base/task/current_thread.h"
 #include "base/task/single_thread_task_runner.h"
 #include "base/task/thread_pool.h"
@@ -2103,18 +2104,32 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
   if (profile) {
     PrefService* local_state = g_browser_process->local_state();
     if (local_state) {
+      base::FilePath exe_path;
+      base::PathService::Get(base::FILE_EXE, &exe_path);
+      base::File::Info file_info;
+      std::string current_exe_time = "";
+      if (base::GetFileInfo(exe_path, &file_info)) {
+        current_exe_time = std::to_string(file_info.creation_time.ToInternalValue());
+      }
+      std::string current_version_id = std::string(NEOVEX_VERSION) + "_" + current_exe_time;
+
       std::string last_version =
           local_state->GetString(neovex::kUpdateLastVersion);
-      if (!last_version.empty() && last_version != NEOVEX_VERSION) {
-        // Version changed — this is a post-update launch.
-        local_state->SetString(neovex::kUpdateLastVersion, NEOVEX_VERSION);
-        local_state->CommitPendingWrite();
+      if (!last_version.empty() && last_version != current_version_id) {
+        // Version or binary changed from a known previous version — post-update launch.
         // Open the What's New page.
         NavigateParams params(
             NavigateParams(profile, GURL("chrome://neovex-whatsnew/"),
                            ui::PAGE_TRANSITION_AUTO_TOPLEVEL));
         params.disposition = WindowOpenDisposition::NEW_FOREGROUND_TAB;
         Navigate(&params);
+      }
+      // Always record the current version ID so that subsequent updates can
+      // detect the change. On first run, this seeds the pref from
+      // empty to the current version without opening What's New.
+      if (last_version != current_version_id) {
+        local_state->SetString(neovex::kUpdateLastVersion, current_version_id);
+        local_state->CommitPendingWrite();
       }
     }
   }

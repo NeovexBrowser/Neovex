@@ -46,6 +46,9 @@ bool DeleteChromeRegistrationKeys(const InstallerState& installer_state,
                                   const std::wstring& browser_entry_suffix,
                                   InstallStatus* exit_code);
 
+// Kills all Chrome processes in |target_path|, immediately.
+void CloseAllChromeProcesses(const base::FilePath& target_path);
+
 // Removes any legacy registry keys from earlier versions of Chrome that are no
 // longer needed. This is used during autoupdate since we don't do full
 // uninstalls/reinstalls to update.
