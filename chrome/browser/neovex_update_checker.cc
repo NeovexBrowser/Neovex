@@ -198,7 +198,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
                 std::move(request), kTrafficAnnotation);
 
             base::FilePath dest =
-                GetUpdatesDir().Append(L"mini_installer.exe");
+                GetUpdatesDir().Append(FILE_PATH_LITERAL("mini_installer.exe"));
             self->download_loader_->DownloadToFile(
                 self->url_loader_factory_.get(),
                 base::BindOnce(&UpdateChecker::OnInstallerDownloaded,

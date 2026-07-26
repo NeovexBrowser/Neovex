@@ -4427,17 +4427,21 @@ void BrowserView::UpdateTabSearchBubbleHost() {
     combo_button->SetTabSearchBubbleHost(tab_search_bubble_host_.get());
   } else if (tabs::GetTabSearchPosition(browser_) ==
              tabs::TabSearchPosition::kToolbarButton) {
-    tab_search_bubble_host_ = std::make_unique<TabSearchBubbleHost>(
-        toolbar_->tab_search_button(), browser_.get());
-    auto* toolbar_button_controller =
-        browser_->GetFeatures().tab_search_toolbar_button_controller();
-    CHECK(toolbar_button_controller);
-    toolbar_button_controller->UpdateBubbleHost(tab_search_bubble_host_.get());
+    if (auto* tab_search_button = toolbar_->tab_search_button()) {
+      tab_search_bubble_host_ = std::make_unique<TabSearchBubbleHost>(
+          tab_search_button, browser_.get());
+      auto* toolbar_button_controller =
+          browser_->GetFeatures().tab_search_toolbar_button_controller();
+      CHECK(toolbar_button_controller);
+      toolbar_button_controller->UpdateBubbleHost(tab_search_bubble_host_.get());
+    }
   } else {
-    tab_search_bubble_host_ = std::make_unique<TabSearchBubbleHost>(
-        BrowserElementsViews::From(browser_.get())
-            ->GetViewAs<TabSearchButton>(kTabSearchButtonElementId),
-        browser_.get());
+    if (auto* tab_search_button =
+            BrowserElementsViews::From(browser_.get())
+                ->GetViewAs<TabSearchButton>(kTabSearchButtonElementId)) {
+      tab_search_bubble_host_ = std::make_unique<TabSearchBubbleHost>(
+          tab_search_button, browser_.get());
+    }
   }
 }
 

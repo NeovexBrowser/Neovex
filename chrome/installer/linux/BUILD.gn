@@ -32,7 +32,7 @@ declare_args() {
 assert(is_linux)
 
 packaging_files_executables = [
-  "$root_out_dir/chrome",
+  "$root_out_dir/neovex",
   "$root_out_dir/chrome_crashpad_handler",
   "$root_out_dir/chrome_management_service",
   "$root_out_dir/chrome_sandbox",
@@ -172,7 +172,7 @@ action("merge_rpm_dependencies") {
 }
 
 strip_binary("strip_chrome_binary") {
-  binary_input = "$root_out_dir/chrome"
+  binary_input = "$root_out_dir/neovex"
   deps = [ "//chrome" ]
 }
 

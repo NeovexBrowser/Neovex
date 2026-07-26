@@ -2188,7 +2188,8 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
                                 false);
 
   registry->RegisterBooleanPref(prefs::kPrivacyGuideViewed, false);
-
+  // NEOVEX: Register adblock pref.
+  registry->RegisterBooleanPref(prefs::kNeovexAdblockEnabled, true);
   RegisterProfilePrefsForMigration(registry);
 
 #if !BUILDFLAG(IS_ANDROID)

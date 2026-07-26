@@ -104,7 +104,6 @@ if (is_win) {
     deps = [ ":chrome_initial" ]
   }
 }
-
 # This does not currently work. See crbug.com/1311822.
 # This target exists above chrome and it's main components in the dependency
 # tree as a central place to put assert_no_deps annotations. Since this depends
@@ -1697,7 +1696,7 @@ if (is_linux || is_chromeos) {
     group("linux_symbols") {
       deps = [
         ":chrome_crashpad_symbols",
-        ":chrome_symbols",
+        #":chrome_symbols",
       ]
       if (is_linux) {
         deps += [ ":swiftshader_vk_symbols" ]
@@ -1718,18 +1717,18 @@ if (is_linux || is_chromeos) {
         ]
       }
     }
-    extract_symbols("chrome_symbols") {
-      binary = "$root_out_dir/chrome"
+    #extract_symbols("chrome_symbols") {
+     # binary = "$root_out_dir/chrome"
 
-      if (current_cpu == "x86") {
+      #if (current_cpu == "x86") {
         # GYP used "ia32" so keep that naming for back-compat.
-        symbol_file = "$root_out_dir/chrome.breakpad.ia32"
-      } else {
-        symbol_file = "$root_out_dir/chrome.breakpad.$current_cpu"
-      }
-
-      deps = [ ":chrome" ]
-    }
+       # symbol_file = "$root_out_dir/chrome.breakpad.ia32"
+      #} else {
+      #  symbol_file = "$root_out_dir/chrome.breakpad.$current_cpu"
+      #}
+#
+      #deps = [ ":chrome" ]
+    #}
     extract_symbols("chrome_crashpad_symbols") {
       binary = "$root_out_dir/chrome_crashpad_handler"
 

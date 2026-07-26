@@ -35,7 +35,11 @@ bool TorLauncher::Start() {
   // NEOVEX TOR - Locate tor.exe relative to the chrome.exe directory.
   base::FilePath exe_dir;
   base::PathService::Get(base::DIR_EXE, &exe_dir);
+  #if BUILDFLAG(IS_WIN)
   base::FilePath tor_path = exe_dir.Append(L"tor\\tor.exe");
+#else
+  base::FilePath tor_path = exe_dir.Append("tor/tor.exe");
+#endif
   if (!base::PathExists(tor_path)) {
     LOG(ERROR) << "NEOVEX TOR: tor.exe not found at " << tor_path.value();
     return false;
