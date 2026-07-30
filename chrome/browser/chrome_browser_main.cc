@@ -2064,6 +2064,35 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
         g_browser_process->profile_manager()->GetLastOpenedProfiles();
   }
 #endif
+  // NEOVEX: Open What's New tab if this is the first launch after an update.
+#if BUILDFLAG(IS_WIN)
+  if (PrefService* local_state = g_browser_process->local_state()) {
+    base::FilePath exe_path;
+    base::PathService::Get(base::FILE_EXE, &exe_path);
+    base::File::Info file_info;
+    std::string current_exe_time = "";
+    if (base::GetFileInfo(exe_path, &file_info)) {
+      current_exe_time = std::to_string(file_info.creation_time.ToInternalValue());
+    }
+    std::string current_version_id = std::string(NEOVEX_VERSION) + "_" + current_exe_time;
+
+    std::string last_version =
+        local_state->GetString(neovex::kUpdateLastVersion);
+    if (!last_version.empty() && last_version != current_version_id) {
+      // Version or binary changed from a known previous version — post-update launch.
+      // Append What's New URL to the command line so StartupBrowserCreator opens it safely.
+      base::CommandLine::ForCurrentProcess()->AppendArg("chrome://neovex-whatsnew/");
+    }
+    // Always record the current version ID so that subsequent updates can
+    // detect the change. On first run, this seeds the pref from
+    // empty to the current version without opening What's New.
+    if (last_version != current_version_id) {
+      local_state->SetString(neovex::kUpdateLastVersion, current_version_id);
+      local_state->CommitPendingWrite();
+    }
+  }
+#endif
+
   // This step is costly.
   if (browser_creator_->Start(*base::CommandLine::ForCurrentProcess(),
                               base::FilePath(), profile_info,
@@ -2099,41 +2128,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
   browser_creator_.reset();
 #endif  // BUILDFLAG(IS_ANDROID)
 
-  // NEOVEX: Open What's New tab if this is the first launch after an update.
-#if BUILDFLAG(IS_WIN)
-  if (profile) {
-    PrefService* local_state = g_browser_process->local_state();
-    if (local_state) {
-      base::FilePath exe_path;
-      base::PathService::Get(base::FILE_EXE, &exe_path);
-      base::File::Info file_info;
-      std::string current_exe_time = "";
-      if (base::GetFileInfo(exe_path, &file_info)) {
-        current_exe_time = std::to_string(file_info.creation_time.ToInternalValue());
-      }
-      std::string current_version_id = std::string(NEOVEX_VERSION) + "_" + current_exe_time;
 
-      std::string last_version =
-          local_state->GetString(neovex::kUpdateLastVersion);
-      if (!last_version.empty() && last_version != current_version_id) {
-        // Version or binary changed from a known previous version — post-update launch.
-        // Open the What's New page.
-        NavigateParams params(
-            NavigateParams(profile, GURL("chrome://neovex-whatsnew/"),
-                           ui::PAGE_TRANSITION_AUTO_TOPLEVEL));
-        params.disposition = WindowOpenDisposition::NEW_FOREGROUND_TAB;
-        Navigate(&params);
-      }
-      // Always record the current version ID so that subsequent updates can
-      // detect the change. On first run, this seeds the pref from
-      // empty to the current version without opening What's New.
-      if (last_version != current_version_id) {
-        local_state->SetString(neovex::kUpdateLastVersion, current_version_id);
-        local_state->CommitPendingWrite();
-      }
-    }
-  }
-#endif
 
   PostBrowserStart();
 
@@ -2351,3 +2346,4 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificationForTesting(
                                               /*current_directory=*/{});
 }
 #endif  // BUILDFLAG(ENABLE_PROCESS_SINGLETON)
+
