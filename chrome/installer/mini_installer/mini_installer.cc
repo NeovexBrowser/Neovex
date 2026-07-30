@@ -27,7 +27,7 @@
 #include "chrome/installer/mini_installer/mini_installer.h"
 
 #include <windows.h>
-#include <commctrl.h>
+
 
 // #define needed to link in RtlGenRandom(), a.k.a. SystemFunction036.  See the
 // "Community Additions" comment on MSDN here:
@@ -192,11 +192,30 @@ ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
   ::CloseHandle(pi.hThread);
 
   DWORD exit_code = SUCCESS_EXIT_CODE;
-  DWORD wr = ::WaitForSingleObject(pi.hProcess, INFINITE);
-  if (WAIT_OBJECT_0 != wr || !::GetExitCodeProcess(pi.hProcess, &exit_code)) {
-    // Note:  We've assumed that WAIT_OBJCT_0 != wr means a failure.  The call
-    // could return a different object but since we never spawn more than one
-    // sub-process at a time that case should never happen.
+  while (true) {
+    DWORD wr = ::MsgWaitForMultipleObjects(1, &pi.hProcess, FALSE, INFINITE, QS_ALLINPUT);
+    if (wr == WAIT_OBJECT_0) {
+      break;  // Process finished.
+    } else if (wr == WAIT_OBJECT_0 + 1) {
+      // Messages are available, pump them to keep the UI responsive.
+      MSG msg;
+      while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
+        if (msg.message == WM_QUIT) {
+          // If we receive a quit message, post it back and return an error to abort.
+          ::PostQuitMessage(static_cast<int>(msg.wParam));
+          ::CloseHandle(pi.hProcess);
+          return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, ERROR_PROCESS_ABORTED);
+        }
+        ::TranslateMessage(&msg);
+        ::DispatchMessage(&msg);
+      }
+    } else {
+      // Wait failed.
+      return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, ::GetLastError());
+    }
+  }
+
+  if (!::GetExitCodeProcess(pi.hProcess, &exit_code)) {
     return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, ::GetLastError());
   }
 
@@ -505,13 +524,15 @@ ProcessExitResult RunSetup(const Configuration& configuration,
     bool has_system_level = false;
     size_t search_len = SafeStrLen(search, cmd_line.capacity());
     for (size_t i = 0; i + 14 <= search_len; ++i) {
-      if (search[i] == L'-' && search[i+1] == L'-') {
+      if (search[i] == L'-' && search[i + 1] == L'-') {
         bool match = true;
         const wchar_t* target = L"system-level";
         for (size_t j = 0; j < 12; ++j) {
           wchar_t a = search[i + 2 + j];
           wchar_t b = target[j];
-          if (a >= L'A' && a <= L'Z') a += (L'a' - L'A');
+          if (a >= L'A' && a <= L'Z') {
+            a += (L'a' - L'A');
+          }
           if (a != b) {
             match = false;
             break;
@@ -741,124 +762,355 @@ bool GetWorkDir(HMODULE module,
 }
 
 // ---- Neovex Progress Window -------------------------------------------------
-// A simple Win32 progress dialog shown during installation.
-// Uses no CRT — only Win32 API and comctl32 (for PROGRESS_CLASS).
+// Modern borderless installer UI.  Owner-drawn with GDI — no themed controls.
+// Non-interactive: the user cannot close, move, or resize the window.
 
 namespace {
 
-// Control IDs.
-static const int kProgressBarId = 101;
-static const int kStatusTextId  = 102;
+// Layout constants.
+static const int kWindowW = 440;
+static const int kWindowH = 156;
+static const int kPadX = 28;           // horizontal padding
+static const int kTitleY = 24;         // title baseline offset
+static const int kStatusY = 48;        // status text baseline offset
+static const int kBarY = 78;           // progress bar top
+static const int kBarH = 6;            // progress bar height
+static const int kBarRadius = 3;       // progress bar corner radius
 
-// Window class name (wide literal — no CRT needed).
+static const int kBtnW = 90;
+static const int kBtnH = 32;
+static const int kBtnRadius = 4;
+static const int kBtnY = 100;
+
+// Colors — dark matte palette.
+static const COLORREF kBgColor = RGB(14, 15, 19);       // #0E0F13
+static const COLORREF kBorderColor = RGB(32, 34, 42);   // #20222A
+static const COLORREF kTitleColor = RGB(237, 238, 242);  // #EDEEF2
+static const COLORREF kStatusColor = RGB(130, 134, 148); // #828694
+static const COLORREF kBarTrack = RGB(26, 27, 35);       // #1A1B23
+static const COLORREF kBarFill = RGB(99, 102, 241);      // #6366F1 — indigo
+
+static const COLORREF kBtnBg = RGB(99, 102, 241);        // #6366F1
+static const COLORREF kBtnHover = RGB(79, 70, 229);      // #4F46E5
+static const COLORREF kBtnPress = RGB(67, 56, 202);      // #4338CA
+static const COLORREF kBtnText = RGB(255, 255, 255);
+
+// Per-window state kept in GWLP_USERDATA.
+struct ProgressState {
+  int progress;          // 0-100, or -1 for marquee
+  int marquee_offset;    // animated offset for marquee mode
+  bool is_complete;
+  bool button_hovered;
+  bool button_pressed;
+  wchar_t title[64];
+  wchar_t status[128];
+  HFONT title_font;
+  HFONT status_font;
+  UINT_PTR timer_id;
+};
+
 static const wchar_t kProgressWindowClass[] = L"NeovexInstallerProgress";
 
-// A plain Win32 window procedure.
-LRESULT CALLBACK ProgressWndProc(HWND hwnd, UINT msg, WPARAM wparam,
-                                  LPARAM lparam) {
+// Fills a rounded rectangle into the given DC.
+void FillRoundRect(HDC hdc, int x, int y, int w, int h, int r, COLORREF color) {
+  HBRUSH brush = ::CreateSolidBrush(color);
+  HPEN pen = ::CreatePen(PS_SOLID, 0, color);
+  HGDIOBJ old_brush = ::SelectObject(hdc, brush);
+  HGDIOBJ old_pen = ::SelectObject(hdc, pen);
+  ::RoundRect(hdc, x, y, x + w, y + h, r * 2, r * 2);
+  ::SelectObject(hdc, old_pen);
+  ::SelectObject(hdc, old_brush);
+  ::DeleteObject(pen);
+  ::DeleteObject(brush);
+}
+
+// Paints the entire client area.
+void PaintWindow(HWND hwnd, HDC hdc) {
+  ProgressState* ps = reinterpret_cast<ProgressState*>(
+      ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+  if (!ps) {
+    return;
+  }
+
+  RECT rc;
+  ::GetClientRect(hwnd, &rc);
+  int cw = rc.right;
+
+  // Background fill.
+  HBRUSH bg = ::CreateSolidBrush(kBgColor);
+  ::FillRect(hdc, &rc, bg);
+  ::DeleteObject(bg);
+
+  // 1px border inset.
+  HBRUSH border_brush = ::CreateSolidBrush(kBorderColor);
+  ::FrameRect(hdc, &rc, border_brush);
+  ::DeleteObject(border_brush);
+
+  // Title text.
+  ::SetBkMode(hdc, TRANSPARENT);
+  if (ps->title_font) {
+    ::SelectObject(hdc, ps->title_font);
+  }
+  ::SetTextColor(hdc, kTitleColor);
+  RECT title_rc = {kPadX, kTitleY, cw - kPadX, kTitleY + 22};
+  ::DrawTextW(hdc, ps->title, -1, &title_rc, DT_LEFT | DT_SINGLELINE | DT_NOPREFIX);
+
+  // Status text.
+  if (ps->status_font) {
+    ::SelectObject(hdc, ps->status_font);
+  }
+  ::SetTextColor(hdc, kStatusColor);
+  RECT status_rc = {kPadX, kStatusY, cw - kPadX, kStatusY + 18};
+  ::DrawTextW(hdc, ps->status, -1, &status_rc, DT_LEFT | DT_SINGLELINE | DT_NOPREFIX);
+
+  // Progress bar track.
+  int bar_w = cw - kPadX * 2;
+  FillRoundRect(hdc, kPadX, kBarY, bar_w, kBarH, kBarRadius, kBarTrack);
+
+  // Progress bar fill.
+  if (ps->progress >= 0) {
+    // Determinate: fill proportionally.
+    int fill_w = (bar_w * ps->progress) / 100;
+    if (fill_w > 0) {
+      // Clamp the minimum visible width to the diameter so the rounding looks right.
+      if (fill_w < kBarRadius * 2) {
+        fill_w = kBarRadius * 2;
+      }
+      FillRoundRect(hdc, kPadX, kBarY, fill_w, kBarH, kBarRadius, kBarFill);
+    }
+  } else {
+    // Marquee: sliding segment.
+    int seg_w = bar_w / 3;
+    int travel = bar_w + seg_w;
+    int offset = ps->marquee_offset % travel;
+    int seg_x = kPadX + offset - seg_w;
+
+    // Clip to the track area so the segment doesn't bleed outside.
+    HRGN clip = ::CreateRoundRectRgn(kPadX, kBarY, kPadX + bar_w + 1,
+                                     kBarY + kBarH + 1,
+                                     kBarRadius * 2, kBarRadius * 2);
+    ::SelectClipRgn(hdc, clip);
+    FillRoundRect(hdc, seg_x, kBarY, seg_w, kBarH, kBarRadius, kBarFill);
+    ::SelectClipRgn(hdc, nullptr);
+    ::DeleteObject(clip);
+  }
+
+  if (ps->is_complete) {
+    int btn_x = cw - kPadX - kBtnW;
+    COLORREF btn_color = ps->button_pressed ? kBtnPress : (ps->button_hovered ? kBtnHover : kBtnBg);
+    FillRoundRect(hdc, btn_x, kBtnY, kBtnW, kBtnH, kBtnRadius, btn_color);
+    
+    ::SetBkMode(hdc, TRANSPARENT);
+    if (ps->status_font) {
+      ::SelectObject(hdc, ps->status_font);
+    }
+    ::SetTextColor(hdc, kBtnText);
+    RECT btn_text_rc = { btn_x, kBtnY, btn_x + kBtnW, kBtnY + kBtnH };
+    ::DrawTextW(hdc, L"Finish", -1, &btn_text_rc, DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_NOPREFIX);
+  }
+}
+
+LRESULT CALLBACK ProgressWndProc(HWND hwnd,
+                                 UINT msg,
+                                 WPARAM wparam,
+                                 LPARAM lparam) {
   switch (msg) {
-    case WM_CTLCOLORSTATIC: {
-      HDC hdc = reinterpret_cast<HDC>(wparam);
-      ::SetBkColor(hdc, RGB(15, 15, 20));
-      ::SetTextColor(hdc, RGB(248, 250, 252));
-      static HBRUSH bg_brush = ::CreateSolidBrush(RGB(15, 15, 20));
-      return reinterpret_cast<LRESULT>(bg_brush);
-    }
-    case WM_ERASEBKGND: {
-      RECT rc;
-      ::GetClientRect(hwnd, &rc);
-      HBRUSH brush = ::CreateSolidBrush(RGB(15, 15, 20));
-      ::FillRect(reinterpret_cast<HDC>(wparam), &rc, brush);
-      ::DeleteObject(brush);
-      return 1;
-    }
-    case WM_DESTROY:
+    case WM_PAINT: {
+      PAINTSTRUCT ps_paint;
+      HDC hdc = ::BeginPaint(hwnd, &ps_paint);
+      PaintWindow(hwnd, hdc);
+      ::EndPaint(hwnd, &ps_paint);
       return 0;
+    }
+    case WM_ERASEBKGND:
+      return 1;  // We handle all painting in WM_PAINT.
+    case WM_MOUSEMOVE: {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+      if (ps && ps->is_complete) {
+        POINT pt = { (short)LOWORD(lparam), (short)HIWORD(lparam) };
+        RECT rc;
+        ::GetClientRect(hwnd, &rc);
+        int cw = rc.right;
+        RECT btn_rc = {cw - kPadX - kBtnW, kBtnY, cw - kPadX, kBtnY + kBtnH};
+        bool hovered = (pt.x >= btn_rc.left && pt.x <= btn_rc.right &&
+                        pt.y >= btn_rc.top && pt.y <= btn_rc.bottom);
+        if (hovered != ps->button_hovered) {
+          ps->button_hovered = hovered;
+          ::InvalidateRect(hwnd, &btn_rc, FALSE);
+          
+          if (hovered) {
+            TRACKMOUSEEVENT tme = { sizeof(TRACKMOUSEEVENT), TME_LEAVE, hwnd, 0 };
+            ::TrackMouseEvent(&tme);
+          }
+        }
+      }
+      return 0;
+    }
+    case WM_MOUSELEAVE: {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+      if (ps && ps->button_hovered) {
+        ps->button_hovered = false;
+        ps->button_pressed = false;
+        RECT rc;
+        ::GetClientRect(hwnd, &rc);
+        int cw = rc.right;
+        RECT btn_rc = {cw - kPadX - kBtnW, kBtnY, cw - kPadX, kBtnY + kBtnH};
+        ::InvalidateRect(hwnd, &btn_rc, FALSE);
+      }
+      return 0;
+    }
+    case WM_LBUTTONDOWN: {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+      if (ps && ps->is_complete && ps->button_hovered) {
+        ps->button_pressed = true;
+        RECT rc;
+        ::GetClientRect(hwnd, &rc);
+        int cw = rc.right;
+        RECT btn_rc = {cw - kPadX - kBtnW, kBtnY, cw - kPadX, kBtnY + kBtnH};
+        ::InvalidateRect(hwnd, &btn_rc, FALSE);
+      }
+      return 0;
+    }
+    case WM_LBUTTONUP: {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+      if (ps && ps->is_complete && ps->button_pressed) {
+        ps->button_pressed = false;
+        if (ps->button_hovered) {
+          ::DestroyWindow(hwnd);
+        } else {
+          RECT rc;
+          ::GetClientRect(hwnd, &rc);
+          int cw = rc.right;
+          RECT btn_rc = {cw - kPadX - kBtnW, kBtnY, cw - kPadX, kBtnY + kBtnH};
+          ::InvalidateRect(hwnd, &btn_rc, FALSE);
+        }
+      }
+      return 0;
+    }
+    case WM_TIMER: {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+      if (ps && ps->progress < 0) {
+        ps->marquee_offset += 4;
+        ::InvalidateRect(hwnd, nullptr, FALSE);
+      }
+      return 0;
+    }
+    case WM_NCHITTEST:
+      return HTCLIENT;  // Prevent dragging — treat everything as client area.
+    case WM_DESTROY: {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+      if (ps) {
+        if (ps->timer_id) {
+          ::KillTimer(hwnd, ps->timer_id);
+        }
+        if (ps->title_font) {
+          ::DeleteObject(ps->title_font);
+        }
+        if (ps->status_font) {
+          ::DeleteObject(ps->status_font);
+        }
+        // ps itself lives on the stack in WMain — do not free it.
+      }
+      ::PostQuitMessage(0);
+      return 0;
+    }
     default:
       return ::DefWindowProc(hwnd, msg, wparam, lparam);
   }
 }
 
+// Copies src into dst, up to (max_len - 1) characters, then null-terminates.
+void SafeCopy(wchar_t* dst, const wchar_t* src, int max_len) {
+  int i = 0;
+  while (i < max_len - 1 && src[i]) {
+    dst[i] = src[i];
+    ++i;
+  }
+  dst[i] = L'\0';
+}
+
 // Creates the progress window. Returns nullptr on failure.
-HWND CreateProgressWindow(HMODULE module) {
-  // Init common controls (needed for PROGRESS_CLASS).
-  INITCOMMONCONTROLSEX icc = {sizeof(icc), ICC_PROGRESS_CLASS};
-  ::InitCommonControlsEx(&icc);
+HWND CreateProgressWindow(HMODULE module, ProgressState* ps) {
+  // Zero-init the state.
+  for (int i = 0; i < static_cast<int>(sizeof(*ps)); ++i) {
+    reinterpret_cast<char*>(ps)[i] = 0;
+  }
+  SafeCopy(ps->title, L"Installing Neovex", 64);
+  SafeCopy(ps->status, L"Preparing\x2026", 128);  // ellipsis character
+  ps->progress = 0;
+
+  // Fonts.
+  ps->title_font =
+      ::CreateFontW(-15, 0, 0, 0, FW_MEDIUM, FALSE, FALSE, FALSE,
+                    DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+                    CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS,
+                    L"Segoe UI Variable");
+  if (!ps->title_font) {
+    // Fallback if Variable is not available.
+    ps->title_font =
+        ::CreateFontW(-15, 0, 0, 0, FW_MEDIUM, FALSE, FALSE, FALSE,
+                      DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+                      CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS,
+                      L"Segoe UI");
+  }
+  ps->status_font =
+      ::CreateFontW(-12, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE,
+                    DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+                    CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS,
+                    L"Segoe UI");
 
   WNDCLASSEXW wc = {};
-  wc.cbSize        = sizeof(wc);
-  wc.style         = CS_HREDRAW | CS_VREDRAW;
-  wc.lpfnWndProc   = ProgressWndProc;
-  wc.hInstance     = module;
-  wc.hCursor       = ::LoadCursor(nullptr, IDC_ARROW);
-  wc.hbrBackground = ::CreateSolidBrush(RGB(15, 15, 20));
+  wc.cbSize = sizeof(wc);
+  wc.style = CS_HREDRAW | CS_VREDRAW | CS_DROPSHADOW;
+  wc.lpfnWndProc = ProgressWndProc;
+  wc.hInstance = module;
+  wc.hCursor = ::LoadCursor(nullptr, IDC_APPSTARTING);
+  wc.hbrBackground = nullptr;  // We paint everything ourselves.
   wc.lpszClassName = kProgressWindowClass;
   ::RegisterClassExW(&wc);
 
-  // Window size.
-  const int kW = 400;
-  const int kH = 140;
+  // Center on screen.
   int screen_w = ::GetSystemMetrics(SM_CXSCREEN);
   int screen_h = ::GetSystemMetrics(SM_CYSCREEN);
-  int x = (screen_w - kW) / 2;
-  int y = (screen_h - kH) / 2;
+  int x = (screen_w - kWindowW) / 2;
+  int y = (screen_h - kWindowH) / 2;
 
+  // Borderless popup — no title bar, no system menu, no resize grip.
   HWND hwnd = ::CreateWindowExW(
-      WS_EX_APPWINDOW | WS_EX_TOOLWINDOW,
-      kProgressWindowClass,
-      L"Neovex Browser Installer",
-      WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
-      x, y, kW, kH,
+      WS_EX_APPWINDOW | WS_EX_TOPMOST,
+      kProgressWindowClass, L"Neovex",
+      WS_POPUP | WS_VISIBLE,
+      x, y, kWindowW, kWindowH,
       nullptr, nullptr, module, nullptr);
-  if (!hwnd)
+  if (!hwnd) {
     return nullptr;
-
-  // Title / status text label.
-  HWND title = ::CreateWindowExW(
-      0, L"STATIC", L"Installing Neovex Browser",
-      WS_CHILD | WS_VISIBLE | SS_LEFT,
-      20, 20, kW - 40, 24,
-      hwnd, reinterpret_cast<HMENU>(kStatusTextId), module, nullptr);
-
-  // Try to set a nicer font.
-  HFONT font = ::CreateFontW(
-      -14, 0, 0, 0, FW_SEMIBOLD, FALSE, FALSE, FALSE,
-      DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
-      CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Segoe UI");
-  if (font && title)
-    ::SendMessage(title, WM_SETFONT, reinterpret_cast<WPARAM>(font), TRUE);
-
-  // Sub-label.
-  HWND sub = ::CreateWindowExW(
-      0, L"STATIC", L"Preparing...",
-      WS_CHILD | WS_VISIBLE | SS_LEFT,
-      20, 46, kW - 40, 18,
-      hwnd, reinterpret_cast<HMENU>(102), module, nullptr);
-  HFONT small_font = ::CreateFontW(
-      -12, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE,
-      DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
-      CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Segoe UI");
-  if (small_font && sub) {
-    ::SetWindowLong(sub, GWL_ID, kStatusTextId);
-    ::SendMessage(sub, WM_SETFONT, reinterpret_cast<WPARAM>(small_font), TRUE);
   }
 
-  // Progress bar.
-  HWND progress = ::CreateWindowExW(
-      0, PROGRESS_CLASS, nullptr,
-      WS_CHILD | WS_VISIBLE | PBS_SMOOTH,
-      20, 76, kW - 40, 18,
-      hwnd, reinterpret_cast<HMENU>(kProgressBarId), module, nullptr);
-  if (progress) {
-    // Style the progress bar green.
-    ::SendMessage(progress, PBM_SETRANGE32, 0, 100);
-    ::SendMessage(progress, PBM_SETPOS, 0, 0);
-    // Green color (works on XP+; ignored on modern Windows which uses themes)
-    ::SendMessage(progress, PBM_SETBARCOLOR, 0,
-                  static_cast<LPARAM>(RGB(16, 185, 129)));
-    ::SendMessage(progress, PBM_SETBKCOLOR, 0,
-                  static_cast<LPARAM>(RGB(30, 32, 40)));
+  // Try to set rounded corners on Windows 11+ via DwmSetWindowAttribute.
+  // DWMWA_WINDOW_CORNER_PREFERENCE = 33, DWMWCP_ROUNDSMALL = 3 (8px radius).
+  typedef HRESULT(WINAPI* DwmSetAttrFn)(HWND, DWORD, LPCVOID, DWORD);
+  HMODULE dwm = ::LoadLibraryW(L"dwmapi.dll");
+  if (dwm) {
+    DwmSetAttrFn fn = reinterpret_cast<DwmSetAttrFn>(
+        ::GetProcAddress(dwm, "DwmSetWindowAttribute"));
+    if (fn) {
+      int pref = 3;  // DWMWCP_ROUNDSMALL — subtle 8px rounding.
+      fn(hwnd, 33, &pref, sizeof(pref));
+    }
+    // Don't FreeLibrary — DWM stays loaded for the process lifetime anyway.
   }
+
+  // Store state pointer.
+  ::SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(ps));
+
+  // Start a timer for marquee animation (will only animate when progress < 0).
+  ps->timer_id = ::SetTimer(hwnd, 1, 16, nullptr);  // ~60fps
 
   ::ShowWindow(hwnd, SW_SHOW);
   ::UpdateWindow(hwnd);
@@ -869,46 +1121,49 @@ HWND CreateProgressWindow(HMODULE module) {
 void PumpMessages() {
   MSG msg;
   while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
+    if (msg.message == WM_QUIT) {
+      ::PostQuitMessage(static_cast<int>(msg.wParam));
+      break;
+    }
     ::TranslateMessage(&msg);
     ::DispatchMessage(&msg);
   }
 }
 
-// Sets the progress bar value (0-100) and sub-label text.
+// Sets the progress bar value (0-100) and status text.
 void SetProgress(HWND hwnd, int value, const wchar_t* status) {
-  if (!hwnd)
+  if (!hwnd) {
     return;
-  HWND pb  = ::GetDlgItem(hwnd, kProgressBarId);
-  HWND lbl = ::GetDlgItem(hwnd, kStatusTextId);
-  if (pb) {
-    // If marquee is on, turn it off first.
-    LONG style = ::GetWindowLong(pb, GWL_STYLE);
-    if (style & PBS_MARQUEE) {
-      ::SetWindowLong(pb, GWL_STYLE, style & ~PBS_MARQUEE);
-      ::SendMessage(pb, PBM_SETMARQUEE, FALSE, 0);
-    }
-    ::SendMessage(pb, PBM_SETPOS, static_cast<WPARAM>(value), 0);
   }
-  if (lbl && status)
-    ::SetWindowTextW(lbl, status);
+  ProgressState* ps = reinterpret_cast<ProgressState*>(
+      ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+  if (!ps) {
+    return;
+  }
+  ps->progress = value;
+  if (status) {
+    SafeCopy(ps->status, status, 128);
+  }
+  ::InvalidateRect(hwnd, nullptr, FALSE);
   PumpMessages();
 }
 
 // Switches the progress bar to indeterminate marquee mode.
 void SetMarquee(HWND hwnd, const wchar_t* status) {
-  if (!hwnd)
+  if (!hwnd) {
     return;
-  HWND pb  = ::GetDlgItem(hwnd, kProgressBarId);
-  HWND lbl = ::GetDlgItem(hwnd, kStatusTextId);
-  if (pb) {
-    LONG style = ::GetWindowLong(pb, GWL_STYLE);
-    if (!(style & PBS_MARQUEE)) {
-      ::SetWindowLong(pb, GWL_STYLE, style | PBS_MARQUEE);
-    }
-    ::SendMessage(pb, PBM_SETMARQUEE, TRUE, 30);
   }
-  if (lbl && status)
-    ::SetWindowTextW(lbl, status);
+  ProgressState* ps = reinterpret_cast<ProgressState*>(
+      ::GetWindowLongPtr(hwnd, GWLP_USERDATA));
+  if (!ps) {
+    return;
+  }
+  ps->progress = -1;
+  ps->marquee_offset = 0;
+  if (status) {
+    SafeCopy(ps->status, status, 128);
+  }
+  ::InvalidateRect(hwnd, nullptr, FALSE);
   PumpMessages();
 }
 
@@ -931,18 +1186,20 @@ ProcessExitResult WMain(HMODULE module) {
   }
 
   // Show the progress window.
-  HWND progress_hwnd = CreateProgressWindow(module);
-  SetProgress(progress_hwnd, 5, L"Preparing installation directory...");
+  ProgressState progress_state;
+  HWND progress_hwnd = CreateProgressWindow(module, &progress_state);
+  SetProgress(progress_hwnd, 5, L"Preparing installation directory\x2026");
 
   // First get a path where we can extract payload
   PathString base_path;
   if (!GetWorkDir(module, &base_path, &exit_code)) {
-    if (progress_hwnd)
+    if (progress_hwnd) {
       ::DestroyWindow(progress_hwnd);
+    }
     return exit_code;
   }
 
-  SetProgress(progress_hwnd, 15, L"Extracting installer files...");
+  SetProgress(progress_hwnd, 15, L"Extracting files\x2026");
 
   int max_delete_attempts = 0;
   PathString setup_path;
@@ -960,8 +1217,8 @@ ProcessExitResult WMain(HMODULE module) {
 
   if (exit_code.IsSuccess()) {
     // Switch to marquee — we can't measure setup.exe's internal progress.
-    SetProgress(progress_hwnd, 40, L"Installing Neovex Browser...");
-    SetMarquee(progress_hwnd, L"Installing — this may take a moment...");
+    SetProgress(progress_hwnd, 40, L"Installing Neovex\x2026");
+    SetMarquee(progress_hwnd, L"Installing \x2014 this may take a moment\x2026");
 
     exit_code = RunSetup(configuration, archive_path.get(), setup_path.get(),
                          archive_type.compare(kLZMAResourceType) == 0);
@@ -969,13 +1226,28 @@ ProcessExitResult WMain(HMODULE module) {
 
   // Show completion before tearing down.
   if (exit_code.IsSuccess()) {
-    SetProgress(progress_hwnd, 100, L"Installation complete!");
-    // Give user a brief moment to see the 100% state.
-    ::Sleep(800);
+    SetProgress(progress_hwnd, 100, L"Installation Complete!");
+    
+    if (progress_hwnd) {
+      ProgressState* ps = reinterpret_cast<ProgressState*>(
+          ::GetWindowLongPtr(progress_hwnd, GWLP_USERDATA));
+      if (ps) {
+        ps->is_complete = true;
+        ::InvalidateRect(progress_hwnd, nullptr, FALSE);
+      }
+      
+      MSG msg;
+      while (::GetMessage(&msg, nullptr, 0, 0)) {
+        ::TranslateMessage(&msg);
+        ::DispatchMessage(&msg);
+      }
+      progress_hwnd = nullptr;
+    }
   }
 
-  if (progress_hwnd)
+  if (progress_hwnd && ::IsWindow(progress_hwnd)) {
     ::DestroyWindow(progress_hwnd);
+  }
 
   if (configuration.should_delete_extracted_files()) {
     DeleteExtractedFiles(module, archive_path, setup_path, base_path,

@@ -21,7 +21,7 @@ const wchar_t kCmdInstallArchive[] = L"install-archive";
 const wchar_t kCmdUncompressedArchive[] = L"uncompressed-archive";
 
 // Temp directory prefix that this process creates.
-const wchar_t kTempPrefix[] = L"CR_";
+const wchar_t kTempPrefix[] = L"NVX_";
 
 // The resource types that would be unpacked from the mini installer.
 // Uncompressed binary.
