@@ -1224,25 +1224,35 @@ ProcessExitResult WMain(HMODULE module) {
                          archive_type.compare(kLZMAResourceType) == 0);
   }
 
-  // Show completion before tearing down.
-  if (exit_code.IsSuccess()) {
-    SetProgress(progress_hwnd, 100, L"Installation Complete!");
-    
-    if (progress_hwnd) {
-      ProgressState* ps = reinterpret_cast<ProgressState*>(
-          ::GetWindowLongPtr(progress_hwnd, GWLP_USERDATA));
+  // Show completion or failure before tearing down.
+  if (progress_hwnd) {
+    ProgressState* ps = reinterpret_cast<ProgressState*>(
+        ::GetWindowLongPtr(progress_hwnd, GWLP_USERDATA));
+        
+    if (exit_code.IsSuccess()) {
+      SetProgress(progress_hwnd, 100, L"Installation Complete!");
+    } else {
+      SetProgress(progress_hwnd, 100, L"Installation Failed.");
       if (ps) {
-        ps->is_complete = true;
-        ::InvalidateRect(progress_hwnd, nullptr, FALSE);
+        SafeCopy(ps->title, L"Installation Failed", 64);
+        // Format a helpful error message with the exit code
+        wchar_t err_msg[128];
+        wsprintfW(err_msg, L"Failed with code: %lu", exit_code.exit_code);
+        SafeCopy(ps->status, err_msg, 128);
       }
-      
-      MSG msg;
-      while (::GetMessage(&msg, nullptr, 0, 0)) {
-        ::TranslateMessage(&msg);
-        ::DispatchMessage(&msg);
-      }
-      progress_hwnd = nullptr;
     }
+    
+    if (ps) {
+      ps->is_complete = true;
+      ::InvalidateRect(progress_hwnd, nullptr, FALSE);
+    }
+    
+    MSG msg;
+    while (::GetMessage(&msg, nullptr, 0, 0)) {
+      ::TranslateMessage(&msg);
+      ::DispatchMessage(&msg);
+    }
+    progress_hwnd = nullptr;
   }
 
   if (progress_hwnd && ::IsWindow(progress_hwnd)) {
