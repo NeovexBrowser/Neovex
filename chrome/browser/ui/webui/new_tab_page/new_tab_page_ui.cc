@@ -144,6 +144,10 @@
 #include "ui/webui/webui_util.h"
 #include "url/origin.h"
 #include "url/url_util.h"
+#include "chrome/browser/shell_integration.h"
+#include "base/memory/scoped_refptr.h"
+#include "base/strings/utf_string_conversions.h"
+#include "components/search_engines/template_url.h"
 
 #if !BUILDFLAG(OPTIMIZE_WEBUI)
 #include "chrome/grit/new_tab_shared_resources.h"
@@ -307,6 +311,115 @@ class WeatherProxyHandler : public content::WebUIMessageHandler {
     }
     ResolveJavascriptCallback(base::Value(callback_id),
                               std::move(*parsed));
+  }
+};
+
+// Handles chrome.send() messages from the custom NTP for setting the default browser.
+class DefaultBrowserMessageHandler : public content::WebUIMessageHandler {
+ public:
+  DefaultBrowserMessageHandler() = default;
+  ~DefaultBrowserMessageHandler() override = default;
+
+  void RegisterMessages() override {
+    web_ui()->RegisterMessageCallback(
+        "setAsDefaultBrowser",
+        base::BindRepeating(&DefaultBrowserMessageHandler::HandleSetAsDefaultBrowser,
+                            base::Unretained(this)));
+  }
+
+ private:
+  void HandleSetAsDefaultBrowser(const base::ListValue& args) {
+    if (!default_browser_worker_) {
+      default_browser_worker_ = base::MakeRefCounted<shell_integration::DefaultBrowserWorker>();
+    }
+    default_browser_worker_->StartSetAsDefault(base::DoNothing());
+  }
+
+  scoped_refptr<shell_integration::DefaultBrowserWorker> default_browser_worker_;
+};
+
+// Handles chrome.send() messages from the custom NTP for search engines.
+class SearchEngineMessageHandler : public content::WebUIMessageHandler {
+ public:
+  SearchEngineMessageHandler() = default;
+  ~SearchEngineMessageHandler() override = default;
+
+  void RegisterMessages() override {
+    web_ui()->RegisterMessageCallback(
+        "getSearchEngines",
+        base::BindRepeating(&SearchEngineMessageHandler::HandleGetSearchEngines,
+                            base::Unretained(this)));
+    web_ui()->RegisterMessageCallback(
+        "setDefaultSearchEngine",
+        base::BindRepeating(&SearchEngineMessageHandler::HandleSetDefaultSearchEngine,
+                            base::Unretained(this)));
+    web_ui()->RegisterMessageCallback(
+        "getSearchUrl",
+        base::BindRepeating(&SearchEngineMessageHandler::HandleGetSearchUrl,
+                            base::Unretained(this)));
+  }
+
+ private:
+  void HandleGetSearchEngines(const base::ListValue& args) {
+    if (args.empty()) return;
+    std::string callback_id = args[0].GetString();
+
+    TemplateURLService* service = TemplateURLServiceFactory::GetForProfile(Profile::FromWebUI(web_ui()));
+    if (service && !service->loaded()) {
+      service->Load();
+    }
+
+    base::ListValue engines_list;
+    if (service) {
+      const TemplateURL* default_engine = service->GetDefaultSearchProvider();
+      auto urls = service->GetTemplateURLs();
+      for (const TemplateURL* url : urls) {
+        if (url->type() != TemplateURL::NORMAL) continue;
+        if (url->prepopulate_id() == 0 && static_cast<int>(url->starter_pack_id()) == 0) continue;
+
+        base::DictValue dict;
+        dict.Set("name", url->short_name());
+        dict.Set("keyword", url->keyword());
+        dict.Set("is_default", default_engine && default_engine->id() == url->id());
+        engines_list.Append(std::move(dict));
+      }
+    }
+
+    AllowJavascript();
+    web_ui()->CallJavascriptFunctionUnsafe(callback_id, std::move(engines_list));
+  }
+
+  void HandleSetDefaultSearchEngine(const base::ListValue& args) {
+    if (args.empty()) return;
+    std::u16string keyword = base::UTF8ToUTF16(args[0].GetString());
+    
+    TemplateURLService* service = TemplateURLServiceFactory::GetForProfile(Profile::FromWebUI(web_ui()));
+    if (service) {
+      TemplateURL* url = service->GetTemplateURLForKeyword(keyword);
+      if (url) {
+        service->SetUserSelectedDefaultSearchProvider(url);
+      }
+    }
+  }
+
+  void HandleGetSearchUrl(const base::ListValue& args) {
+    if (args.size() < 2) return;
+    std::string callback_id = args[0].GetString();
+    std::string query_utf8 = args[1].GetString();
+    std::u16string query = base::UTF8ToUTF16(query_utf8);
+    
+    std::string search_url = "https://duckduckgo.com/?q=" + query_utf8;
+    TemplateURLService* service = TemplateURLServiceFactory::GetForProfile(Profile::FromWebUI(web_ui()));
+    if (service) {
+      const TemplateURL* default_engine = service->GetDefaultSearchProvider();
+      if (default_engine) {
+        TemplateURLRef::SearchTermsArgs search_args(query);
+        search_url = default_engine->url_ref().ReplaceSearchTerms(search_args, service->search_terms_data());
+      }
+    }
+    
+    AllowJavascript();
+    web_ui()->CallJavascriptFunctionUnsafe(callback_id, base::Value(search_url));
   }
 };
 
@@ -1040,6 +1153,12 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
 
   // Custom NTP: Weather proxy message handler.
   web_ui->AddMessageHandler(std::make_unique<WeatherProxyHandler>());
+
+  // Custom NTP: Default browser message handler.
+  web_ui->AddMessageHandler(std::make_unique<DefaultBrowserMessageHandler>());
+
+  // Custom NTP: Search engine message handler.
+  web_ui->AddMessageHandler(std::make_unique<SearchEngineMessageHandler>());
 
   content::URLDataSource::Add(profile_,
                               std::make_unique<SanitizedImageSource>(profile_));

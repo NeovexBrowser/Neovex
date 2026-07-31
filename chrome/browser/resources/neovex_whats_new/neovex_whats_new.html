@@ -194,46 +194,42 @@
     <div class="hero">
       <div class="pill">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Neovex v1.1
+        Neovex v1.2
       </div>
-      <h1>Release — <span class="grad">Stability Update</span></h1>
-      <p class="subtitle">Version 1.1 introduces significant reliability updates to the browser's core update mechanisms.</p>
+      <h1>Release — <span class="grad">Performance & Redesign</span></h1>
+      <p class="subtitle">Version 1.2 introduces a completely redesigned, performance-optimized New Tab Page and various bug fixes.</p>
     </div>
 
     <!-- Bug fixes -->
-    <div class="section-label">Bug Fixes</div>
+    <div class="section-label">New Features & Updates</div>
 
     <div class="fixes">
 
-      <!-- Bug 1: What's New spam -->
+      <!-- Feature 1: NTP Redesign -->
       <div class="fix-card">
-        <div class="fix-icon amber">
+        <div class="fix-icon green">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         </div>
         <div class="fix-body">
-          <div class="fix-title">What's New Tab Opened on Every Startup</div>
+          <div class="fix-title">Minimalist New Tab Page</div>
           <p class="fix-desc">
-            After an update, the "What's New" tab was appearing every single time the browser was launched instead of only once.
-            This was caused by the update system resetting the tracked version to <code style="color:var(--amber);background:rgba(245,158,11,.08);padding:1px 5px;border-radius:4px;">0.0.0</code> on each shutdown,
-            making the browser believe a new update had always just been installed.
+            We completely rebuilt the New Tab Page with a focus on speed and typography. Gone are the heavy blurs and glassmorphism. The new layout is edge-to-edge, putting your wallpaper front and center while ensuring fluid, 60fps animations across all UI states.
           </p>
-          <span class="fix-tag">Fixed</span>
+          <span class="fix-tag" style="background:rgba(16,185,129,.1); color:var(--primary); border-color:rgba(16,185,129,.2);">New</span>
         </div>
       </div>
 
-      <!-- Bug 2: Google session logout -->
+      <!-- Feature 2: Default Browser & Speed Dial -->
       <div class="fix-card">
-        <div class="fix-icon amber">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        <div class="fix-icon green">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
         </div>
         <div class="fix-body">
-          <div class="fix-title">Google &amp; Other Sessions Logged Out After Each Session</div>
+          <div class="fix-title">Speed Dial Consistency & Default Browser Access</div>
           <p class="fix-desc">
-            The same version-reset bug was silently re-launching the update installer on every shutdown.
-            Because the installer reinstalls the browser, it wiped cookies and session data — logging users out of Google
-            and all other websites on every restart.
+            Speed Dial cards now have uniform sizes for a cleaner look. We also removed unnecessary default shortcuts and added a quick "Set as Default Browser" option directly into the New Tab Page settings panel.
           </p>
-          <span class="fix-tag">Fixed</span>
+          <span class="fix-tag" style="background:rgba(16,185,129,.1); color:var(--primary); border-color:rgba(16,185,129,.2);">Updated</span>
         </div>
       </div>
 
