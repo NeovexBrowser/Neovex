@@ -143,11 +143,11 @@
       height: 50px;
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(15, 15, 20, 0.65);
       backdrop-filter: blur(20px) saturate(1.2);
       -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
       padding: 0 20px;
       gap: 12px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
@@ -156,7 +156,7 @@
 
     .search-bar:hover {
       background: rgba(255, 255, 255, 0.10);
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.12);
     }
 
     .search-bar:focus-within {
@@ -228,7 +228,7 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
+      border-radius: 8px;
       cursor: pointer;
       box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
       text-decoration: none;
@@ -238,7 +238,7 @@
 
     .link-card:hover {
       background: rgba(255, 255, 255, 0.10);
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.12);
       transform: translateY(-2px);
     }
 
@@ -332,13 +332,13 @@
       justify-content: center;
       background: rgba(255, 255, 255, 0.03);
       border: 1.5px dashed rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
+      border-radius: 8px;
       cursor: pointer;
       flex-shrink: 0;
     }
 
     .add-card:hover {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(15, 15, 20, 0.65);
       border-color: rgba(255, 255, 255, 0.25);
     }
 
@@ -410,7 +410,7 @@
       border-radius: 10px;
       position: relative;
       cursor: pointer;
-      transition: all .2s;
+      transition: all 0.15s ease-out;
     }
 
     .toggle.active {
@@ -493,7 +493,7 @@
       flex: 1;
       padding: 7px 10px;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 8px;
       color: #eee;
       font-size: 12px;
@@ -575,7 +575,7 @@
       width: 100%;
       padding: 9px 12px;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 8px;
       color: #eee;
       font-size: 13px;
@@ -614,7 +614,7 @@
     .btn-secondary {
       background: rgba(255, 255, 255, 0.06);
       color: rgba(255, 255, 255, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .btn-secondary:hover {
@@ -641,7 +641,7 @@
       padding: 8px 14px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       color: rgba(255, 255, 255, 0.6);
       font-size: 12px;
       font-weight: 500;
@@ -699,7 +699,7 @@
       background-position: center;
       border: 2px solid transparent;
       cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: transform 0.15s ease-out, border-color 0.15s ease-out;
     }
 
     .wallpaper-item:hover {
@@ -725,7 +725,7 @@
       backdrop-filter: blur(20px) saturate(1.2);
       -webkit-backdrop-filter: blur(20px) saturate(1.2);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
+      border-radius: 8px;
       padding: 16px 28px;
       display: flex;
       align-items: center;
@@ -735,7 +735,7 @@
     }
 
     .weather-widget:hover {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(15, 15, 20, 0.65);
       border-color: rgba(255, 255, 255, 0.12);
     }
 
@@ -790,7 +790,7 @@
       width: 160px;
       padding: 7px 12px;
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 8px;
       color: #eee;
       font-size: 12px;
@@ -920,18 +920,18 @@
       left: 24px;
       z-index: 10;
       width: 280px;
-      background: rgba(10, 10, 15, 0.4);
+      background: rgba(12, 12, 16, 0.7);
       backdrop-filter: blur(20px) saturate(1.2);
       -webkit-backdrop-filter: blur(20px) saturate(1.2);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
+      border-radius: 8px;
       padding: 22px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       gap: 18px;
       color: #fff;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.15s ease-out;
       overflow: hidden;
       flex-shrink: 0;
     }
@@ -978,7 +978,7 @@
       justify-content: space-between;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 14px;
+      border-radius: 8px;
       padding: 12px 16px;
     }
 
@@ -1014,7 +1014,7 @@
     .shield-stat-box {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 12px;
       display: flex;
       flex-direction: column;
@@ -1022,19 +1022,19 @@
     }
 
     .shield-stat-num {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.95);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-variant-numeric: slashed-zero;
+      margin-bottom: 8px;
     }
 
     .shield-stat-label {
       font-size: 10px;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.45);
       text-transform: uppercase;
-      margin-top: 4px;
       letter-spacing: 0.5px;
-      line-height: 1.2;
     }
 
     .shield-expand-btn {
@@ -1101,7 +1101,7 @@
     .shield-site-info {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 12px;
       font-size: 12px;
     }
@@ -1172,75 +1172,33 @@
     </div>
   </div>
 
-  <!-- Neovex Shield Widget (Moved to top-left) -->
+  <!-- Neovex Shield Widget -->
   <div class="shield-widget" id="shieldWidget">
     <div class="shield-header">
-      <span class="shield-icon">🛡</span>
+      <svg class="shield-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
       <div class="shield-title-wrap">
         <span class="shield-title">Neovex Shield</span>
         <span class="shield-subtitle">Your privacy overview</span>
       </div>
     </div>
-
-    <!--<div class="shield-status">
-      <div class="shield-status-left">
-        <span class="shield-status-label">Privacy Status</span>
-        <span class="shield-status-value">Protected</span>
-      </div>
-      <div class="shield-stars">★★★★★</div>
-    </div>--> <!--fixing this ai slop-->
-
     <div class="shield-stats-grid">
       <div class="shield-stat-box">
         <span class="shield-stat-num" id="shieldTrackers">0</span>
-        <span class="shield-stat-label">Trackers blocked</span>
+        <span class="shield-stat-label">TRACKERS BLOCKED</span>
       </div>
       <div class="shield-stat-box">
         <span class="shield-stat-num" id="shieldAds">0</span>
-        <span class="shield-stat-label">Ads blocked</span>
+        <span class="shield-stat-label">ADS BLOCKED</span>
       </div>
       <div class="shield-stat-box">
         <span class="shield-stat-num" id="shieldFingerprints">0</span>
-        <span class="shield-stat-label" style="font-size: 8px;">Fingerprint attempts</span>
+        <span class="shield-stat-label">FINGERPRINT ATTEMPTS</span>
       </div>
       <div class="shield-stat-box">
         <span class="shield-stat-num" id="shieldCookies">0</span>
-        <span class="shield-stat-label">Cookies managed</span>
-      </div>
-    </div>
-
-    <div class="shield-expand-btn" id="shieldExpandBtn">View details</div>
-
-    <div class="shield-details">
-      <div>
-        <div class="shield-section-title">Today</div>
-        <div class="shield-feed" id="shieldActivityFeed">
-          <div class="shield-feed-item">Tracker blocked</div>
-          <div class="shield-feed-item">Cookie restricted</div>
-          <div class="shield-feed-item">Permission controlled</div>
-        </div>
-      </div>
-
-      <div>
-        <div class="shield-section-title">Current site</div>
-        <div class="shield-site-info">
-          <div class="shield-site-row">
-            <span class="shield-site-label">Current site:</span>
-            <span class="shield-site-val" id="shieldCurrentSite">New Tab</span>
-          </div>
-          <div class="shield-site-row">
-            <span class="shield-site-label">Privacy score:</span>
-            <span class="shield-site-val" style="color:#f9c74f;">★★★★★</span>
-          </div>
-          <div class="shield-site-row">
-            <span class="shield-site-label">Trackers:</span>
-            <span class="shield-site-val" id="shieldSiteTrackers">0</span>
-          </div>
-          <div class="shield-site-row">
-            <span class="shield-site-label">Permissions:</span>
-            <span class="shield-site-val" id="shieldSitePerms">0</span>
-          </div>
-        </div>
+        <span class="shield-stat-label">COOKIES MANAGED</span>
       </div>
     </div>
   </div>
