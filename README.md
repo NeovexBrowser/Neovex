@@ -27,12 +27,9 @@ Neovex is a Chromium-based browser focused on minimalism, performance, privacy, 
 
 Neovex currently contains modified source files and custom additions built on top of Chromium.
 
-### Get Chromium
+### Fetch and Build Chromium
 
-```bash
-fetch chromium
-cd src
-```
+Follow the [chromium documentation](https://www.chromium.org/developers/how-tos/get-the-code/) for fetching and building chromium.
 
 ### Clone Neovex
 
@@ -42,7 +39,38 @@ git clone https://github.com/pahal-desai/Neovex.git neovex
 
 ### Apply Neovex modifications
 
-Copy and replace the files from the Neovex repository into the Chromium source directory.
+## For Windows
+
+clone neovex 
+```bash
+git clone https://github.com/NeovexBrowser/Neovex.git
+```
+
+copy neovex files to chromium src
+
+```bash
+robocopy Neovex path\to\chromium\src /E
+```
+
+
+## For Linux
+
+
+clone neovex
+```bash
+git clone https://github.com/NeovexBrowser/Neovex.git
+```
+
+Install rsync
+```bash
+sudo apt install rsync
+```
+
+Copy neovex files to chromium src
+```bash
+rsync -avh /neovex/ path/to/chromium/src
+```
+
 
 ### Generate build files
 

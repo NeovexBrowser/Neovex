@@ -1,10 +1,10 @@
-COMPANY_FULLNAME=Neovex Browser
-COMPANY_SHORTNAME=Neovex Browser
-PRODUCT_FULLNAME=Neovex Browser
-PRODUCT_SHORTNAME=Neovex Browser
-PRODUCT_INSTALLER_FULLNAME=Neovex Browser Installer
-PRODUCT_INSTALLER_SHORTNAME=Neovex Browser Installer
-COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Neovex Authors. All rights reserved.
+COMPANY_FULLNAME=Neovex
+COMPANY_SHORTNAME=Neovex
+PRODUCT_FULLNAME=Neovex
+PRODUCT_SHORTNAME=Neovex
+PRODUCT_INSTALLER_FULLNAME=Neovex Installer
+PRODUCT_INSTALLER_SHORTNAME=Neovex Installer
+COPYRIGHT=Copyright 2026 The Neovex Authors. All rights reserved.
 MAC_BUNDLE_ID=app.neovex.browser
 MAC_CREATOR_CODE=NvxB
 MAC_TEAM_ID=
