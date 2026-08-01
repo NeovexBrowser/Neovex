@@ -68,7 +68,7 @@ sudo apt install rsync
 
 Copy neovex files to chromium src
 ```bash
-rsync -avh /neovex/ path/to/chromium/src
+rsync -avh /Neovex/ path/to/chromium/src
 ```
 
 
