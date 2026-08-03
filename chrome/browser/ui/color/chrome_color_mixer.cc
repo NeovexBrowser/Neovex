@@ -1156,15 +1156,17 @@ void AddChromeColorMixer(ui::ColorProvider* provider,
 
   // === CUSTOM THEME: Frame and omnibox overrides ===
   // Override frame colors so the tab strip background matches our NTP.
-  mixer[ui::kColorFrameActive] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
-  mixer[ui::kColorFrameInactive] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
-  // Omnibox / location bar blends into toolbar.
-  mixer[kColorToolbarBackgroundSubtleEmphasis] = {
-      SkColorSetRGB(0x1a, 0x1a, 0x2e)};
-  mixer[kColorToolbarBackgroundSubtleEmphasisHovered] = {
-      SkColorSetRGB(0x25, 0x25, 0x40)};
-  mixer[kColorLocationBarBackground] = {SkColorSetRGB(0x1a, 0x1a, 0x2e)};
-  mixer[kColorLocationBarBackgroundHovered] = {SkColorSetRGB(0x25, 0x25, 0x40)};
+  if (dark_mode) {
+    mixer[ui::kColorFrameActive] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
+    mixer[ui::kColorFrameInactive] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
+    // Omnibox / location bar blends into toolbar.
+    mixer[kColorToolbarBackgroundSubtleEmphasis] = {
+        SkColorSetRGB(0x1a, 0x1a, 0x2e)};
+    mixer[kColorToolbarBackgroundSubtleEmphasisHovered] = {
+        SkColorSetRGB(0x25, 0x25, 0x40)};
+    mixer[kColorLocationBarBackground] = {SkColorSetRGB(0x1a, 0x1a, 0x2e)};
+    mixer[kColorLocationBarBackgroundHovered] = {SkColorSetRGB(0x25, 0x25, 0x40)};
+  }
 
   // Apply high contrast recipes if necessary.
   if (!ShouldApplyHighContrastColors(key)) {

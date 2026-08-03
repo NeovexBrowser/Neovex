@@ -54,6 +54,29 @@
   box-shadow: 0 2px 20px rgba(124, 140, 255, 0.1);
 }
 
+@media (prefers-color-scheme: light) {
+  .cr-nav-menu-item {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    color: rgba(0, 0, 0, 0.65) !important;
+    --iron-icon-fill-color: rgba(0, 0, 0, 0.45) !important;
+  }
+  .cr-nav-menu-item:hover {
+    background: rgba(0, 0, 0, 0.06) !important;
+    border-color: rgba(0, 0, 0, 0.12) !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+    --iron-icon-fill-color: rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+  .cr-nav-menu-item[selected] {
+    background: rgba(61, 78, 219, 0.08) !important;
+    border-color: rgba(61, 78, 219, 0.15) !important;
+    color: #3d4edb !important;
+    --iron-icon-fill-color: #3d4edb !important;
+    box-shadow: 0 2px 20px rgba(61, 78, 219, 0.05);
+  }
+}
+
 .cr-nav-menu-item:focus {
   outline: auto 5px -webkit-focus-ring-color;
   z-index: 1;

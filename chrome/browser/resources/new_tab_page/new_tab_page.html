@@ -6,10 +6,75 @@
   <title>$i18n{title}</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; height: 100%; overflow: hidden; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color-scheme: dark !important; }
-    body { background: $i18n{backgroundColor}; color: #fff; margin: 0; background-color: #050505; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    html { color-scheme: dark; }
+    html.light-mode { color-scheme: light; }
+    body { background: $i18n{backgroundColor}; color: #fff; margin: 0; background-color: #050505; transition: background-color 0.4s ease, color 0.4s ease; }
     #backgroundImage, ntp-app { display: none !important; }
 
+    /* ── LIGHT MODE ROOT OVERRIDES ── */
+    html.light-mode body { background-color: #f5f5f0 !important; color: #1a1a1a; }
+    html.light-mode .bg-overlay { background: transparent; }
+    html.light-mode .clock-display { color: #1a1a1a; text-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    html.light-mode .weather-widget { color: #333; }
+    html.light-mode .w-city { color: #555; }
+    html.light-mode .w-condition { color: #666; }
+    html.light-mode .weather-setup, html.light-mode .weather-loading, html.light-mode .weather-error { color: #555; }
+    html.light-mode .weather-setup-input input { border-bottom-color: rgba(0,0,0,0.25); color: #1a1a1a; }
+    html.light-mode .weather-setup-input input:focus { border-color: #1a1a1a; }
+    html.light-mode .weather-setup-input button { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); color: #1a1a1a; }
+    html.light-mode .weather-setup-input button:hover { background: #1a1a1a; color: white; }
+    html.light-mode .study-mode { background: rgba(255,255,255,0.7); border-color: rgba(0,0,0,0.1); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    html.light-mode .study-mode:hover { background: rgba(255,255,255,0.95); border-color: rgba(0,0,0,0.2); }
+    html.light-mode .sm-label { color: #1a1a1a; }
+    html.light-mode .settings-btn { color: #1a1a1a; opacity: 0.4; }
+    html.light-mode .settings-btn:hover { opacity: 0.9; }
+    html.light-mode .search-prompt { color: #1a1a1a; opacity: 0.3; }
+    html.light-mode .search-input { color: #1a1a1a; }
+    html.light-mode .search-line { background: rgba(0,0,0,0.12); }
+    html.light-mode .search-input:focus ~ .search-line { background: rgba(0,0,0,0.8); box-shadow: 0 0 18px rgba(0,0,0,0.1); }
+    html.light-mode .link-card { background: rgba(255,255,255,0.7); border-color: rgba(0,0,0,0.06); color: #1a1a1a; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    html.light-mode .link-card:hover, html.light-mode .link-card:focus-visible { background: rgba(255,255,255,0.95); border-color: rgba(0,0,0,0.15); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
+    html.light-mode .link-card .favicon { filter: grayscale(100%) opacity(0.5); }
+    html.light-mode .link-card:hover .favicon { filter: grayscale(0%) opacity(1); }
+    html.light-mode .add-card { border-color: rgba(0,0,0,0.15); }
+    html.light-mode .add-card:hover { border-color: rgba(0,0,0,0.4); background: rgba(0,0,0,0.03); }
+    html.light-mode .add-card svg { color: #1a1a1a; }
+    html.light-mode .shield-widget { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+    html.light-mode .shield-widget:hover { border-color: rgba(0,0,0,0.18); box-shadow: 0 32px 80px rgba(0,0,0,0.18); }
+    html.light-mode .shield-header { opacity: 0.7; border-bottom-color: rgba(0,0,0,0.1); }
+    html.light-mode .shield-icon { stroke: #1a1a1a; }
+    html.light-mode .shield-title { color: #1a1a1a; }
+    html.light-mode .shield-stat-label { color: rgba(0,0,0,0.45); }
+    html.light-mode .shield-widget:hover .shield-stat-label { color: rgba(0,0,0,0.65); }
+    html.light-mode .shield-stat-num { color: rgba(0,0,0,0.75); }
+    html.light-mode .shield-widget:hover .shield-stat-num { color: #1a1a1a; }
+    html.light-mode .modal-overlay { background: rgba(245,245,240,0.75); backdrop-filter: blur(16px); }
+    html.light-mode .modal { background: #ffffff; border-color: rgba(0,0,0,0.1); box-shadow: 0 40px 100px rgba(0,0,0,0.15); }
+    html.light-mode .modal h2 { color: #1a1a1a; }
+    html.light-mode .modal label { color: rgba(0,0,0,0.45); }
+    html.light-mode .modal input[type="text"], html.light-mode .modal input[type="url"] { color: #1a1a1a; border-bottom-color: rgba(0,0,0,0.2); }
+    html.light-mode .modal input:focus { border-bottom-color: #1a1a1a; }
+    html.light-mode .modal-actions button { border-color: rgba(0,0,0,0.15); color: #1a1a1a; }
+    html.light-mode .modal-actions button:hover { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.3); }
+    html.light-mode .modal-actions .btn-primary { background: #1a1a1a; color: white; }
+    html.light-mode .modal-actions .btn-primary:hover { background: #333; }
+    html.light-mode .wallpaper-item { border-color: transparent; }
+    html.light-mode .wallpaper-item:hover { border-color: rgba(0,0,0,0.4); }
+    html.light-mode .wallpaper-item.selected { border-color: #1a1a1a; }
+    html.light-mode .wl-item { border-bottom-color: rgba(0,0,0,0.06); color: #1a1a1a; }
+    html.light-mode .wl-rm { color: rgba(200,50,50,0.8); }
+    html.light-mode .wl-rm:hover { color: #cc3333; }
+    /* ── Override all inline-style elements inside modals in light mode ── */
+    html.light-mode .modal [style*="color: white"] { color: #1a1a1a !important; }
+    html.light-mode .modal [style*="color: rgba(255,255,255"] { color: rgba(0,0,0,0.5) !important; }
+    html.light-mode .modal [style*="background: rgba(255,255,255,0.02)"] { background: rgba(0,0,0,0.03) !important; border-color: rgba(0,0,0,0.08) !important; }
+    html.light-mode .modal [style*="background: rgba(255,255,255,0.1)"] { background: rgba(0,0,0,0.05) !important; color: #1a1a1a !important; border-color: rgba(0,0,0,0.18) !important; }
+    html.light-mode .modal [style*="border: 1px solid rgba(255,255,255,0.2)"] { border-color: rgba(0,0,0,0.2) !important; color: #1a1a1a !important; }
+    html.light-mode .modal [style*="border: 1px solid rgba(255,255,255,0.08)"] { border-color: rgba(0,0,0,0.08) !important; background: rgba(0,0,0,0.03) !important; }
+    html.light-mode #searchEngineSelect { background: rgba(0,0,0,0.06) !important; color: #1a1a1a !important; border-color: rgba(0,0,0,0.2) !important; }
+    html.light-mode #themeTrack { border-color: rgba(0,0,0,0.15) !important; }
+    /* Light mode overlay for wallpaper removed per user request */
     .bg-custom { position: absolute; inset: 0; z-index: 1; background-size: cover; background-position: center; display: none; }
     .bg-custom.active { display: block; }
     .bg-overlay {
@@ -133,7 +198,24 @@
     .wl-rm { color: rgba(255,50,50,0.8); cursor: pointer; font-size: 20px; line-height: 1; transition: 0.2s; }
     .wl-rm:hover { color: #ff5555; transform: scale(1.1); }
     .wl-add-row { display: flex; gap: 16px; align-items: flex-end; }
+
+    /* Settings modal section rows (class-based, themeable) */
+    .settings-section-row { margin-top: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; border-radius: 8px; }
+    .settings-row-title { font-size: 14px; font-weight: 500; color: white; margin-bottom: 4px; }
+    .settings-row-desc { font-size: 12px; color: rgba(255,255,255,0.5); }
+    .settings-select { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 8px; border-radius: 4px; outline: none; }
+    .browse-btn { display: inline-block; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 4px; cursor: pointer; color: white; font-size: 13px; }
+    .modal-body-text { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; line-height: 1.5; }
+    /* Light mode overrides for class-based settings elements */
+    html.light-mode .settings-section-row { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+    html.light-mode .settings-row-title { color: #1a1a1a; }
+    html.light-mode .settings-row-desc { color: rgba(0,0,0,0.5); }
+    html.light-mode .settings-select { background: rgba(0,0,0,0.05); color: #1a1a1a; border-color: rgba(0,0,0,0.18); }
+    html.light-mode .browse-btn { border-color: rgba(0,0,0,0.2); color: #1a1a1a; }
+    html.light-mode .modal-body-text { color: rgba(0,0,0,0.5); }
+
     @media (max-width: 1400px), (max-height: 850px) {
+
       .ntp-canvas { grid-template-columns: 240px 1fr 240px; padding: 40px; }
       .search-prompt { font-size: 36px; }
       .search-input { font-size: 36px; padding: 0 0 12px 0; }
@@ -244,22 +326,22 @@
       
       <!-- Default Browser Section -->
       <label>Default Browser</label>
-      <div style="margin-top: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; border-radius: 8px;">
+      <div class="settings-section-row">
         <div>
-          <div style="font-size: 14px; font-weight: 500; color: white; margin-bottom: 4px;">Make Neovex your default</div>
-          <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Set Neovex as your default browser for opening links.</div>
+          <div class="settings-row-title">Make Neovex your default</div>
+          <div class="settings-row-desc">Set Neovex as your default browser for opening links.</div>
         </div>
         <button id="defaultBrowserBtn" class="btn-primary" style="padding: 8px 16px; font-size: 12px;">Set as Default</button>
       </div>
 
       <!-- Search Engine Section -->
       <label>Default Search Engine</label>
-      <div style="margin-top: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; border-radius: 8px;">
+      <div class="settings-section-row">
         <div>
-          <div style="font-size: 14px; font-weight: 500; color: white; margin-bottom: 4px;">Search Provider</div>
-          <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Choose the search engine used in the address bar.</div>
+          <div class="settings-row-title">Search Provider</div>
+          <div class="settings-row-desc">Choose the search engine used in the address bar.</div>
         </div>
-        <select id="searchEngineSelect" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 8px; border-radius: 4px; outline: none;">
+        <select id="searchEngineSelect" class="settings-select">
           <option value="">Loading...</option>
         </select>
       </div>
@@ -269,10 +351,25 @@
       <div class="wallpaper-grid" id="wallpaperGrid"></div>
       <label>Custom Wallpaper</label>
       <div style="margin-top: 12px;">
-        <label for="customFileInput" style="display:inline-block; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 4px; cursor: pointer; color: white; font-size: 13px;">Browse Device</label>
+        <label for="customFileInput" class="browse-btn">Browse Device</label>
         <input type="file" id="customFileInput" accept="image/*" style="display:none;">
       </div>
       <div id="bgPreview" style="height:90px; background-size:cover; margin-top:16px; border-radius:4px; display:none;"></div>
+
+      <!-- Theme Section -->
+      <label>Theme</label>
+      <div id="themeToggleRow" class="settings-section-row" style="transition: background 0.3s, border-color 0.3s;">
+        <div>
+          <div id="themeLabel" class="settings-row-title" style="transition: color 0.3s;">Dark Mode</div>
+          <div id="themeDesc" class="settings-row-desc" style="transition: color 0.3s;">Switch to a light, minimal theme.</div>
+        </div>
+        <!-- Toggle switch -->
+        <div id="themeToggleWrap" style="position: relative; width: 48px; height: 26px; cursor: pointer; flex-shrink: 0;" title="Toggle Light/Dark Mode">
+          <div id="themeTrack" style="position: absolute; inset: 0; border-radius: 13px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); transition: background 0.3s, border-color 0.3s;"></div>
+          <div id="thumbIndicator" style="position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,0.5); transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), background 0.3s;"></div>
+        </div>
+      </div>
+
       <div class="modal-actions"><button id="settingsCancelBtn" class="btn-primary">Done</button></div>
     </div>
   </div>
@@ -280,7 +377,7 @@
   <div class="modal-overlay" id="whitelistModal">
     <div class="modal">
       <h2>Focus Mode Exclusions</h2>
-      <p style="font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:24px; line-height: 1.5;">These domains will remain accessible when Focus Mode is active. All other domains will be blocked to help you stay productive.</p>
+      <p class="modal-body-text">These domains will remain accessible when Focus Mode is active. All other domains will be blocked to help you stay productive.</p>
       <div class="wl-list" id="wlList"></div>
       <div class="wl-add-row">
         <input type="text" id="wlInput" placeholder="example.com">
@@ -301,7 +398,7 @@
 
     function loadSites() { try { var d = JSON.parse(localStorage.getItem('ntp_sites')); return Array.isArray(d) ? d : DEFAULT_SITES; } catch (e) { return DEFAULT_SITES; } }
     function saveSitesData(s) { localStorage.setItem('ntp_sites', JSON.stringify(s)); }
-    function loadBg() { return localStorage.getItem('ntp_bg') || 'wallpapers/default.jpg'; }
+    function loadBg() { return localStorage.getItem('ntp_bg') || null; }
     function saveBgData(v) { localStorage.setItem('ntp_bg', v); syncBgToIDB(v); }
 
     // Sync background to IndexedDB for cross-origin access (chrome://settings)
@@ -446,19 +543,39 @@
       'wallpapers/TranquilWaterfall.png'
     ];
 
+    function getThemeAwareBg(bg) {
+      if (!bg || !bg.startsWith('wallpapers/')) return bg;
+      var isLight = loadTheme() === 'light';
+      var isAlreadyLight = bg.includes('_light.');
+      
+      if (isLight && !isAlreadyLight) {
+        return bg.replace(/\.(png|jpg|jpeg)$/i, '_light.png');
+      } else if (!isLight && isAlreadyLight) {
+        if (bg.includes('default_light')) return bg.replace('_light.png', '.jpg');
+        return bg.replace('_light.png', '.png');
+      }
+      return bg;
+    }
+
     function renderWallpaperGrid() {
       var grid = document.getElementById('wallpaperGrid');
       grid.innerHTML = '';
-      var currentBg = loadBg();
+      var currentBg = loadBg(); // null when no custom wallpaper set
 
       for (var i = 0; i < WALLPAPERS.length; i++) {
         (function (bg) {
           var item = document.createElement('div');
           item.className = 'wallpaper-item';
-          if (currentBg === bg) {
+          
+          var currentBase = currentBg ? currentBg.replace(/_light\.(png|jpg|jpeg)$/i, '').replace(/\.(png|jpg|jpeg)$/i, '') : null;
+          var bgBase = bg.replace(/\.(png|jpg|jpeg)$/i, '');
+          
+          if (currentBase === bgBase) {
             item.classList.add('selected');
           }
-          item.style.backgroundImage = 'url(' + bg + ')';
+          
+          var themeAwareBg = getThemeAwareBg(bg);
+          item.style.backgroundImage = 'url(' + themeAwareBg + ')';
           item.addEventListener('click', function () {
             saveBgData(bg);
             applyBg();
@@ -471,6 +588,7 @@
 
     document.getElementById('settingsBtn').addEventListener('click', function () {
       renderWallpaperGrid();
+      updateThemeToggleUI();
       document.getElementById('settingsModal').classList.add('open');
     });
 
@@ -512,6 +630,7 @@
     function applyBg() {
       var bg = loadBg();
       var el = document.getElementById('bgCustom');
+      bg = getThemeAwareBg(bg);
       if (bg) { el.style.backgroundImage = 'url(' + bg + ')'; el.classList.add('active'); document.body.classList.add('has-custom-bg'); }
       else { el.style.backgroundImage = ''; el.classList.remove('active'); document.body.classList.remove('has-custom-bg'); }
     }
@@ -606,6 +725,78 @@
     applyStudyModeUI();
     syncStudyModeToCpp();
 
+    // ── THEME (LIGHT/DARK) ──
+    function loadTheme() { return localStorage.getItem('neovex_theme') || 'dark'; }
+    function saveTheme(t) {
+      localStorage.setItem('neovex_theme', t);
+      // Sync to IndexedDB so downloads/extensions pages can read it
+      var request = indexedDB.open('NeovexShared', 1);
+      request.onupgradeneeded = function(e) {
+        var db = e.target.result;
+        if (!db.objectStoreNames.contains('settings')) db.createObjectStore('settings');
+      };
+      request.onsuccess = function(e) {
+        var db = e.target.result;
+        var tx = db.transaction('settings', 'readwrite');
+        tx.objectStore('settings').put(t, 'neovex_theme');
+      };
+    }
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      } else {
+        document.documentElement.classList.remove('light-mode');
+      }
+      try { chrome.send('setNeovexTheme', [theme === 'light']); } catch(e) {}
+      updateThemeToggleUI();
+      applyBg();
+    }
+
+    function updateThemeToggleUI() {
+      var theme = loadTheme();
+      var isLight = theme === 'light';
+      var track = document.getElementById('themeTrack');
+      var thumb = document.getElementById('thumbIndicator');
+      var label = document.getElementById('themeLabel');
+      var desc = document.getElementById('themeDesc');
+      var row = document.getElementById('themeToggleRow');
+      if (!track) return;
+
+      // Clear any previous inline styles from the row so CSS class rules win
+      row.style.background = '';
+      row.style.borderColor = '';
+
+      if (isLight) {
+        // In light mode: dark track/thumb for contrast on white background
+        track.style.background = '#1a1a1a';
+        track.style.borderColor = '#1a1a1a';
+        thumb.style.transform = 'translateX(22px)';
+        thumb.style.background = '#fff';
+        label.textContent = 'Light Mode';
+        desc.textContent = 'Switch back to dark mode.';
+      } else {
+        // In dark mode: subtle white-glass track
+        track.style.background = 'rgba(255,255,255,0.1)';
+        track.style.borderColor = 'rgba(255,255,255,0.15)';
+        thumb.style.transform = 'translateX(0)';
+        thumb.style.background = 'rgba(255,255,255,0.5)';
+        label.textContent = 'Dark Mode';
+        desc.textContent = 'Switch to a light, minimal theme.';
+      }
+    }
+
+    document.getElementById('themeToggleWrap').addEventListener('click', function() {
+      var next = loadTheme() === 'light' ? 'dark' : 'light';
+      saveTheme(next);
+      applyTheme(next);
+      // Broadcast to any parent window (e.g., Downloads/Extensions embedding this as iframe)
+      try { window.parent.postMessage({ type: 'neovexTheme', data: next }, '*'); } catch(e) {}
+    });
+
+    // Apply theme on load (before first paint)
+    applyTheme(loadTheme());
+
     // ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ SEARCH ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
     document.getElementById('searchBar').addEventListener('click', function () { document.getElementById('searchInput').focus(); });
     function doSearch() { 
@@ -644,9 +835,16 @@
     // ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CROSS-ORIGIN WALLPAPER BRIDGE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
 
     window.addEventListener('message', function (e) {
-      if (e.data && e.data.type === 'getNeovexWallpaper') {
-        var bg = loadBg();
-        e.source.postMessage({ type: 'neovexWallpaper', data: bg }, '*');
+      if (!e.data || !e.source) return;
+      if (e.data.type === 'getNeovexWallpaper') {
+        e.source.postMessage({ type: 'neovexWallpaper', data: loadBg() }, '*');
+      }
+      if (e.data.type === 'getNeovexTheme') {
+        e.source.postMessage({ type: 'neovexTheme', data: loadTheme() }, '*');
+      }
+      // Combined single-request handler for efficiency
+      if (e.data.type === 'getNeovexSettings') {
+        e.source.postMessage({ type: 'neovexSettings', wallpaper: loadBg(), theme: loadTheme() }, '*');
       }
     });
 

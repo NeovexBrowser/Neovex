@@ -31,11 +31,6 @@ Neovex currently contains modified source files and custom additions built on to
 
 Follow the [chromium documentation](https://www.chromium.org/developers/how-tos/get-the-code/) for fetching and building chromium.
 
-### Clone Neovex
-
-```bash
-git clone https://github.com/pahal-desai/Neovex.git neovex
-```
 
 ### Apply Neovex modifications
 

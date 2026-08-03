@@ -23,10 +23,15 @@ build_webui("build") {
     "new_tab_page.html",
     "shared_vars.css",
     "wallpapers/default.jpg",
+    "wallpapers/default_light.png",
     "wallpapers/NeonCity.png",
+    "wallpapers/NeonCity_light.png",
     "wallpapers/NeonSolitude.png",
+    "wallpapers/NeonSolitude_light.png",
     "wallpapers/SunsetValley.png",
+    "wallpapers/SunsetValley_light.png",
     "wallpapers/TranquilWaterfall.png",
+    "wallpapers/TranquilWaterfall_light.png",
   ]
 
   extra_grdp_files = [
