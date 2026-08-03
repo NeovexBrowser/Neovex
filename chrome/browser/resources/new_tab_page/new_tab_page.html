@@ -40,15 +40,6 @@
     html.light-mode .add-card { border-color: rgba(0,0,0,0.15); }
     html.light-mode .add-card:hover { border-color: rgba(0,0,0,0.4); background: rgba(0,0,0,0.03); }
     html.light-mode .add-card svg { color: #1a1a1a; }
-    html.light-mode .shield-widget { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-    html.light-mode .shield-widget:hover { border-color: rgba(0,0,0,0.18); box-shadow: 0 32px 80px rgba(0,0,0,0.18); }
-    html.light-mode .shield-header { opacity: 0.7; border-bottom-color: rgba(0,0,0,0.1); }
-    html.light-mode .shield-icon { stroke: #1a1a1a; }
-    html.light-mode .shield-title { color: #1a1a1a; }
-    html.light-mode .shield-stat-label { color: rgba(0,0,0,0.45); }
-    html.light-mode .shield-widget:hover .shield-stat-label { color: rgba(0,0,0,0.65); }
-    html.light-mode .shield-stat-num { color: rgba(0,0,0,0.75); }
-    html.light-mode .shield-widget:hover .shield-stat-num { color: #1a1a1a; }
     html.light-mode .modal-overlay { background: rgba(245,245,240,0.75); backdrop-filter: blur(16px); }
     html.light-mode .modal { background: #ffffff; border-color: rgba(0,0,0,0.1); box-shadow: 0 40px 100px rgba(0,0,0,0.15); }
     html.light-mode .modal h2 { color: #1a1a1a; }
@@ -135,7 +126,7 @@
     .settings-btn { background: transparent; border: none; color: white; opacity: 0.5; cursor: pointer; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; }
     .settings-btn:hover { opacity: 1; transform: rotate(90deg); }
 
-    .center-content { grid-column: 2; grid-row: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: -60px; }
+    .center-content { grid-column: 2; grid-row: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: -180px; }
     .search-wrapper { position: relative; width: 100%; max-width: 720px; display: flex; flex-direction: column; }
     .search-prompt { font-size: 48px; font-weight: 200; opacity: 0.4; position: absolute; left: 0; bottom: 16px; pointer-events: none; transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); transform-origin: left bottom; letter-spacing: -1.5px; margin: 0; }
     .search-input { width: 100%; font-size: 48px; font-weight: 400; color: white; background: transparent; border: none; outline: none; padding: 0 0 16px 0; letter-spacing: -1px; z-index: 2; position: relative; }
@@ -157,20 +148,6 @@
     .add-card { border: 1px dashed rgba(255,255,255,0.15); border-radius: 32px; padding: 14px 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0.5; }
     .add-card:hover { opacity: 1; border-color: rgba(255,255,255,0.4); transform: translateY(-4px); background: rgba(255,255,255,0.02); }
     .add-card svg { width: 20px; height: 20px; color: white; }
-
-    .bottom-right { grid-column: 3; grid-row: 3; display: flex; justify-content: flex-end; align-items: flex-end; }
-    .shield-widget { background: rgba(8,8,10,0.9); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 32px; width: 340px; box-shadow: 0 32px 80px rgba(0,0,0,0.7); display: flex; flex-direction: column; gap: 32px; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: default; }
-    .shield-widget:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); box-shadow: 0 40px 100px rgba(0,0,0,0.9); }
-    .shield-header { display: flex; align-items: center; gap: 12px; opacity: 0.7; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; transition: 0.3s; }
-    .shield-widget:hover .shield-header { opacity: 1; }
-    .shield-icon { stroke: white; }
-    .shield-title { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
-    .shield-stats-grid { display: flex; flex-direction: column; gap: 20px; }
-    .shield-stat-row { display: flex; justify-content: space-between; align-items: baseline; }
-    .shield-stat-label { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.45); transition: 0.3s; }
-    .shield-widget:hover .shield-stat-label { color: rgba(255,255,255,0.6); }
-    .shield-stat-num { font-size: 20px; font-weight: 300; font-variant-numeric: tabular-nums slashed-zero; color: rgba(255,255,255,0.8); transition: 0.3s; }
-    .shield-widget:hover .shield-stat-num { color: white; }
 
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
     .modal-overlay.open { display: flex; opacity: 1; }
@@ -225,7 +202,7 @@
       .link-card .favicon { width: 20px; height: 20px; }
       .link-card::after { font-size: 13px; max-width: 110px; }
       .add-card { padding: 10px 16px; border-radius: 24px; }
-      .center-content { margin-top: -40px; }
+      .center-content { margin-top: -140px; }
       .search-input:focus ~ .search-prompt, .search-input:not(:placeholder-shown) ~ .search-prompt { transform: translateY(-50px) scale(0.35); }
     }
 
@@ -234,7 +211,6 @@
       .top-left { grid-column: 1; grid-row: 1; align-items: flex-start; }
       .top-right { grid-column: 1; grid-row: 1; align-items: flex-start; justify-content: flex-end; }
       .center-content { grid-column: 1; grid-row: 3; margin-top: 0; }
-      .bottom-right { grid-column: 1; grid-row: 4; justify-content: center; }
       .search-prompt { font-size: 32px; }
       .search-input { font-size: 32px; padding: 0 0 8px 0; }
       .clock-display { font-size: 48px; }
@@ -243,7 +219,6 @@
       .link-card .favicon { width: 18px; height: 18px; }
       .link-card::after { font-size: 12px; max-width: 80px; }
       .add-card { padding: 8px 12px; border-radius: 20px; }
-      .shield-widget { width: 100%; max-width: 320px; padding: 20px; gap: 20px; }
       .search-input:focus ~ .search-prompt, .search-input:not(:placeholder-shown) ~ .search-prompt { transform: translateY(-40px) scale(0.35); }
     }
 
@@ -288,21 +263,6 @@
         <button id="searchBtn" style="display:none;"></button>
       </div>
       <div class="speed-dial dim-on-search" id="quickLinks">
-      </div>
-    </div>
-
-    <div class="bottom-right anim-3 dim-on-search">
-      <div class="shield-widget" id="shieldWidget">
-        <div class="shield-header">
-          <svg class="shield-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span class="shield-title">Privacy Shield</span>
-        </div>
-        <div class="shield-stats-grid">
-          <div class="shield-stat-row"><span class="shield-stat-label">Ads Blocked</span><span class="shield-stat-num" id="shieldAds">0</span></div>
-          <div class="shield-stat-row"><span class="shield-stat-label">Trackers Blocked</span><span class="shield-stat-num" id="shieldTrackers">0</span></div>
-          <div class="shield-stat-row"><span class="shield-stat-label">Fingerprint Attempts</span><span class="shield-stat-num" id="shieldFingerprints">0</span></div>
-          <div class="shield-stat-row"><span class="shield-stat-label">Cookies Managed</span><span class="shield-stat-num" id="shieldCookies">0</span></div>
-        </div>
       </div>
     </div>
   </div>
