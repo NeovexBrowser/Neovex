@@ -161,6 +161,14 @@ void WriteExtraCode1(const Configuration& configuration, DWORD extra_code_1) {
 // In case of error waiting for the process to exit, returns a results object
 // with (WAIT_FOR_PROCESS_FAILED, last error code). Otherwise, returns a results
 // object with the subprocess's exit code.
+// Returns true if |error| is a transient failure that may resolve with a retry.
+bool IsTransientProcessError(DWORD error) {
+  return error == ERROR_SHARING_VIOLATION ||
+         error == ERROR_ACCESS_DENIED ||
+         error == ERROR_LOCK_VIOLATION ||
+         error == ERROR_NOT_READY;
+}
+
 ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
                                     wchar_t* cmdline,
                                     DWORD file_not_found_code,
@@ -168,14 +176,38 @@ ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
                                     DWORD generic_failure_code) {
   STARTUPINFOW si = {sizeof(si)};
   PROCESS_INFORMATION pi = {0};
-  if (!::CreateProcess(exe_path, cmdline, nullptr, nullptr, FALSE,
-                       CREATE_NO_WINDOW, nullptr, nullptr, &si, &pi)) {
-    // Split specific failure modes. If setup.exe couldn't be launched because
-    // its file/path couldn't be found, report its attributes in ExtraCode1.
-    // This will help diagnose the prevalence of launch failures due to Image
-    // File Execution Options tampering. See https://crbug.com/41290422 for more
-    // details.
-    const DWORD last_error = ::GetLastError();
+
+  // Retry CreateProcess up to 10 times with a 500ms delay between attempts.
+  // Antivirus software may hold a temporary lock on the just-extracted
+  // NeovexUpdater.exe while it scans it, causing transient failures.
+  constexpr int kMaxLaunchAttempts = 10;
+  constexpr DWORD kLaunchRetryDelayMs = 500;
+  DWORD last_error = 0;
+  bool launched = false;
+
+  for (int attempt = 0; attempt < kMaxLaunchAttempts; ++attempt) {
+    if (::CreateProcess(exe_path, cmdline, nullptr, nullptr, FALSE,
+                        CREATE_NO_WINDOW, nullptr, nullptr, &si, &pi)) {
+      launched = true;
+      break;
+    }
+    last_error = ::GetLastError();
+    // Only retry on transient errors; for permanent errors bail out now.
+    if (!IsTransientProcessError(last_error)) {
+      break;
+    }
+    // Pump messages during the wait to keep the progress window responsive.
+    MSG msg;
+    while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
+      if (msg.message != WM_QUIT) {
+        ::TranslateMessage(&msg);
+        ::DispatchMessage(&msg);
+      }
+    }
+    ::Sleep(kLaunchRetryDelayMs);
+  }
+
+  if (!launched) {
     const DWORD attributes = ::GetFileAttributes(exe_path);
     switch (last_error) {
       case ERROR_FILE_NOT_FOUND:
@@ -185,7 +217,6 @@ ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
       default:
         break;
     }
-    // Lump all other errors into a distinct failure bucket.
     return ProcessExitResult(generic_failure_code, last_error);
   }
 
@@ -193,30 +224,36 @@ ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
 
   DWORD exit_code = SUCCESS_EXIT_CODE;
   while (true) {
-    DWORD wr = ::MsgWaitForMultipleObjects(1, &pi.hProcess, FALSE, INFINITE, QS_ALLINPUT);
+    DWORD wr = ::MsgWaitForMultipleObjects(1, &pi.hProcess, FALSE, INFINITE,
+                                           QS_ALLINPUT);
     if (wr == WAIT_OBJECT_0) {
       break;  // Process finished.
     } else if (wr == WAIT_OBJECT_0 + 1) {
       // Messages are available, pump them to keep the UI responsive.
       MSG msg;
       while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
+        // CRITICAL FIX: Do NOT abort on WM_QUIT during the wait.  The progress
+        // window's WM_DESTROY handler posts WM_QUIT which would previously
+        // kill the installation mid-flight.  Instead, silently consume the
+        // quit message and continue waiting for NeovexUpdater.exe to finish.
         if (msg.message == WM_QUIT) {
-          // If we receive a quit message, post it back and return an error to abort.
-          ::PostQuitMessage(static_cast<int>(msg.wParam));
-          ::CloseHandle(pi.hProcess);
-          return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, ERROR_PROCESS_ABORTED);
+          continue;  // Suppress — do not re-post or abort.
         }
         ::TranslateMessage(&msg);
         ::DispatchMessage(&msg);
       }
-    } else {
-      // Wait failed.
-      return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, ::GetLastError());
+    } else if (wr == WAIT_FAILED) {
+      // True wait failure.  Fall through to get the exit code anyway, as the
+      // process may have completed between the failed wait and now.
+      break;
     }
+    // For WAIT_TIMEOUT or other return values, simply loop again.
   }
 
   if (!::GetExitCodeProcess(pi.hProcess, &exit_code)) {
-    return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, ::GetLastError());
+    DWORD err = ::GetLastError();
+    ::CloseHandle(pi.hProcess);
+    return ProcessExitResult(WAIT_FOR_PROCESS_FAILED, err);
   }
 
   ::CloseHandle(pi.hProcess);
@@ -441,7 +478,7 @@ ProcessExitResult UnpackBinaryResources(HMODULE module,
                              ::GetLastError());
   }
 
-  // Extract directly to "setup.exe" if the resource is not compressed.
+  // Extract directly to "NeovexUpdater.exe" if the resource is not compressed.
   if (!setup_path.assign(base_path) ||
       !setup_path.append(setup_type.compare(kBinResourceType) == 0
                              ? kSetupExe
@@ -474,7 +511,7 @@ ProcessExitResult UnpackBinaryResources(HMODULE module,
 
 #if defined(COMPONENT_BUILD)
   if (exit_code.IsSuccess()) {
-    // Extract the modules in component build required by setup.exe.
+    // Extract the modules in component build required by NeovexUpdater.exe.
     if (!EnumerateResources(ResourceWriterDelegate(base_path), module,
                             kDepResourceType)) {
       return ProcessExitResult(UNABLE_TO_EXTRACT_SETUP, ::GetLastError());
@@ -485,22 +522,22 @@ ProcessExitResult UnpackBinaryResources(HMODULE module,
   return exit_code;
 }
 
-// Executes setup.exe, waits for it to finish and returns the exit code.
+// Executes NeovexUpdater.exe, waits for it to finish and returns the exit code.
 ProcessExitResult RunSetup(const Configuration& configuration,
                            const wchar_t* archive_path,
                            const wchar_t* setup_path,
                            bool compressed_archive) {
-  // Get the path to setup.exe.
+  // Get the path to NeovexUpdater.exe.
   PathString setup_exe;
   if (!setup_exe.assign(setup_path)) {
     return ProcessExitResult(COMMAND_STRING_OVERFLOW);
   }
 
-  // There could be three full paths in the command line for setup.exe (path
+  // There could be three full paths in the command line for NeovexUpdater.exe (path
   // to exe itself, path to archive and path to log file), so we declare
   // total size as three + one additional to hold command line options.
   CommandString cmd_line;
-  // Put the quoted path to setup.exe in cmd_line first.
+  // Put the quoted path to NeovexUpdater.exe in cmd_line first.
   if (!cmd_line.assign(L"\"") || !cmd_line.append(setup_exe.get()) ||
       !cmd_line.append(L"\"")) {
     return ProcessExitResult(COMMAND_STRING_OVERFLOW);
@@ -516,7 +553,7 @@ ProcessExitResult RunSetup(const Configuration& configuration,
   }
 
   // Get any command line option specified for mini_installer and pass them
-  // on to setup.exe
+  // on to NeovexUpdater.exe
   AppendCommandLineFlags(configuration.command_line(), &cmd_line);
 
   if (configuration.is_system_level()) {
@@ -572,7 +609,7 @@ void DeleteExtractedFiles(HMODULE module,
   }
 
 #if defined(COMPONENT_BUILD)
-  // Delete the modules in a component build extracted for use by setup.exe.
+  // Delete the modules in a component build extracted for use by NeovexUpdater.exe.
   EnumerateResources(ResourceDeleterDelegate(base_path.get()), module,
                      kDepResourceType);
 #endif  // defined(COMPONENT_BUILD)
@@ -751,14 +788,56 @@ bool CreateWorkDir(const wchar_t* base_path,
 // extract mini_installer payload. |work_dir| ends with a path separator.
 // Returns true if |work_dir| is available for use, or false in case of error
 // (indicated by |exit_code|).
+//
+// ROBUSTNESS: Tries multiple base paths in order of preference:
+//   1. Directory containing the running mini_installer.exe
+//   2. %TEMP%  (standard Windows temp, works when running from locked dirs)
+//   3. %LOCALAPPDATA%\Temp  (fallback if %TEMP% is on a network drive)
+// This is critical for auto-updates, which run from a temp directory that may
+// have restrictive ACLs or be on a volume that doesn't support the required
+// operations.
 bool GetWorkDir(HMODULE module,
                 PathString* work_dir,
                 ProcessExitResult* exit_code) {
+  // Strategy 1: create work dir next to the current module.
   PathString base_path;
+  if (GetModuleDir(module, &base_path) &&
+      CreateWorkDir(base_path.get(), work_dir, exit_code)) {
+    return true;
+  }
 
-  // Create a directory next to the current module.
-  return GetModuleDir(module, &base_path) &&
-         CreateWorkDir(base_path.get(), work_dir, exit_code);
+  // Strategy 2: use %TEMP%.
+  {
+    PathString temp_path;
+    DWORD len = ::GetTempPath(static_cast<DWORD>(temp_path.capacity()),
+                              temp_path.get());
+    if (len > 0 && len < temp_path.capacity()) {
+      if (CreateWorkDir(temp_path.get(), work_dir, exit_code)) {
+        return true;
+      }
+    }
+  }
+
+  // Strategy 3: use %LOCALAPPDATA%\Temp\.
+  {
+    PathString local_path;
+    DWORD len = ::GetEnvironmentVariable(
+        L"LOCALAPPDATA", local_path.get(),
+        static_cast<DWORD>(local_path.capacity()));
+    if (len > 0 && len < local_path.capacity()) {
+      if (local_path.append(L"\\Temp\\")) {
+        // Ensure the directory exists.
+        ::CreateDirectory(local_path.get(), nullptr);
+        if (CreateWorkDir(local_path.get(), work_dir, exit_code)) {
+          return true;
+        }
+      }
+    }
+  }
+
+  // All strategies exhausted.
+  *exit_code = ProcessExitResult(UNABLE_TO_GET_WORK_DIRECTORY, ::GetLastError());
+  return false;
 }
 
 // ---- Neovex Progress Window -------------------------------------------------
@@ -1000,6 +1079,11 @@ LRESULT CALLBACK ProgressWndProc(HWND hwnd,
       }
       return 0;
     }
+    case WM_CLOSE:
+      // Block WM_CLOSE during installation.  Without this, external events
+      // (task-kill via taskbar, EndSession, etc.) would destroy the progress
+      // window, post WM_QUIT, and silently abort the installation.
+      return 0;
     case WM_NCHITTEST:
       return HTCLIENT;  // Prevent dragging — treat everything as client area.
     case WM_DESTROY: {
@@ -1118,12 +1202,14 @@ HWND CreateProgressWindow(HMODULE module, ProgressState* ps) {
 }
 
 // Pumps pending messages so the window stays responsive.
+// CRITICAL: Silently consumes WM_QUIT to prevent the installation from being
+// aborted if the progress window is somehow destroyed during a progress update.
 void PumpMessages() {
   MSG msg;
   while (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
     if (msg.message == WM_QUIT) {
-      ::PostQuitMessage(static_cast<int>(msg.wParam));
-      break;
+      // Suppress — do not re-post or break.  The installation must continue.
+      continue;
     }
     ::TranslateMessage(&msg);
     ::DispatchMessage(&msg);
@@ -1216,7 +1302,7 @@ ProcessExitResult WMain(HMODULE module) {
   ::SetProcessWorkingSetSize(::GetCurrentProcess(), (SIZE_T)-1, (SIZE_T)-1);
 
   if (exit_code.IsSuccess()) {
-    // Switch to marquee — we can't measure setup.exe's internal progress.
+    // Switch to marquee — we can't measure NeovexUpdater.exe's internal progress.
     SetProgress(progress_hwnd, 40, L"Installing Neovex\x2026");
     SetMarquee(progress_hwnd, L"Installing \x2014 this may take a moment\x2026");
 

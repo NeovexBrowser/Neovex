@@ -22,7 +22,30 @@ namespace mini_installer {
 
 bool WriteToDisk(const MemoryRange& data, const wchar_t* full_path) {
   MiniFile file;
-  if (!file.Create(full_path)) {
+
+  // Retry file creation to handle transient locks from antivirus scanners,
+  // leftover handles from a previous installer cleanup, or file system delays
+  // in finalizing a DeleteOnClose.  This is the root cause of "exit code 57"
+  // and similar intermittent extraction failures.
+  constexpr int kMaxCreateAttempts = 20;
+  constexpr DWORD kCreateRetryDelayMs = 100;
+  bool created = false;
+  for (int attempt = 0; attempt < kMaxCreateAttempts; ++attempt) {
+    if (file.Create(full_path)) {
+      created = true;
+      break;
+    }
+    DWORD err = ::GetLastError();
+    // Only retry on transient errors.
+    if (err != ERROR_SHARING_VIOLATION &&
+        err != ERROR_ACCESS_DENIED &&
+        err != ERROR_LOCK_VIOLATION &&
+        err != ERROR_NOT_READY) {
+      break;
+    }
+    ::Sleep(kCreateRetryDelayMs);
+  }
+  if (!created) {
     return false;
   }
 
@@ -47,6 +70,13 @@ bool WriteToDisk(const MemoryRange& data, const wchar_t* full_path) {
     }
     total_written += write_amount;
   }
+
+  // Flush file buffers to ensure the data is fully committed to disk before
+  // the handle is closed.  This prevents corruption on some Windows 10
+  // configurations (see https://crbug.com/1443320 for similar issue in
+  // decompress.cc).
+  ::FlushFileBuffers(file.GetHandleUnsafe());
+
   return true;
 }
 
