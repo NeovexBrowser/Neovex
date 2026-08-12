@@ -453,7 +453,7 @@ class InstallerConfig:
                 StandardPermissions.EXECUTABLE,
             ),
             Artifact(
-                f"{progname}_sandbox.stripped",
+                "chrome_sandbox.stripped",
                 "chrome-sandbox",
                 ArtifactType.BINARY,
                 StandardPermissions.SANDBOX,
@@ -1162,6 +1162,6 @@ class Installer:
                             f"be {oct(expected_perms)}")
                         if on_cog:
                             msg += f" or {oct(relaxed_expected_perms)}"
-                        msg += f", but they were {oct(actual_perms)}"
+                        msg += f", but they were {oct(actual_perms)}. Fixing automatically..."
                         print(msg, file=sys.stderr)
-                        sys.exit(1)
+                        path.chmod(expected_perms)

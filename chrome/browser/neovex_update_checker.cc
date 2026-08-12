@@ -53,17 +53,15 @@ constexpr net::NetworkTrafficAnnotationTag kTrafficAnnotation =
         setting: "Cannot be disabled."
       })");
 
-base::FilePath GetUpdatesDir() {
 #if BUILDFLAG(IS_WIN)
+base::FilePath GetUpdatesDir() {
   base::FilePath temp_dir;
   if (!base::PathService::Get(base::DIR_TEMP, &temp_dir)) {
     return base::FilePath();
   }
   return temp_dir.Append(L"NeovexUpdates");
-#else
-  return base::FilePath();
-#endif
 }
+#endif
 
 // Compare two dotted version strings (e.g. "1.0.0" < "1.1.0").
 bool IsNewerVersion(const std::string& remote_tag) {
@@ -147,6 +145,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 
   LOG(INFO) << "[Neovex] New version available: " << *tag;
 
+#if BUILDFLAG(IS_WIN)
   // Find the mini_installer.exe asset.
   const base::ListValue* assets = dict.FindList("assets");
   if (!assets) {
@@ -206,6 +205,10 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
                 dest);
           },
           weak_factory_.GetWeakPtr()));
+#else
+  // On non-Windows platforms, we do not download mini_installer.exe.
+  base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+#endif
 }
 
 void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
