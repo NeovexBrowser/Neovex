@@ -67,6 +67,19 @@ rsync -avh /Neovex/ path/to/chromium/src
 ```
 
 
+### Install Build Dependencies
+
+```bash
+cd src
+./build/install-build-deps.sh
+```
+
+### Do the runhooks thing
+
+```bash
+gclient runhooks
+```
+
 ### Generate build files
 
 ```bash
