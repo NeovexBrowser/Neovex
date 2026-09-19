@@ -100,19 +100,6 @@ out/Default/chrome.exe
 
 ---
 
-## Project Structure
-
-```
-Neovex/
-├── chrome/
-├── components/
-├── ui/
-├── third_party/
-└── custom browser features
-```
-
----
-
 ## Contributing
 
 Contributions, suggestions, and feedback are welcome.
