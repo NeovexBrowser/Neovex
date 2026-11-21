@@ -12,6 +12,6 @@
 
 // GitHub API endpoint for checking the latest release.
 #define NEOVEX_GITHUB_RELEASES_API \
-  "https://api.github.com/repos/pahal-desai/Neovex/releases/latest"
+  "https://api.github.com/repos/NeovexBrowser/Neovex/releases/latest"
 
 #endif  // CHROME_BROWSER_NEOVEX_VERSION_H_

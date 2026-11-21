@@ -1693,7 +1693,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
   }
 #endif
   // NEOVEX: Kick off background update check 30 seconds after startup.
-#if BUILDFLAG(IS_WIN)
+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
   content::GetUIThreadTaskRunner({})->PostDelayedTask(
       FROM_HERE, base::BindOnce([]() {
         auto* local_state = g_browser_process->local_state();
@@ -2065,14 +2065,17 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
   }
 #endif
   // NEOVEX: Open What's New tab if this is the first launch after an update.
-#if BUILDFLAG(IS_WIN)
+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
   if (PrefService* local_state = g_browser_process->local_state()) {
     base::FilePath exe_path;
     base::PathService::Get(base::FILE_EXE, &exe_path);
     base::File::Info file_info;
     std::string current_exe_time = "";
     if (base::GetFileInfo(exe_path, &file_info)) {
-      current_exe_time = std::to_string(file_info.creation_time.ToInternalValue());
+      int64_t stamp = file_info.creation_time.is_null()
+                          ? file_info.last_modified.ToInternalValue()
+                          : file_info.creation_time.ToInternalValue();
+      current_exe_time = std::to_string(stamp);
     }
     std::string current_version_id = std::string(NEOVEX_VERSION) + "_" + current_exe_time;
 

@@ -136,6 +136,7 @@
 #include "components/metrics/demographics/user_demographics.h"
 #include "components/metrics/metrics_pref_names.h"
 #include "components/network_time/network_time_tracker.h"
+#include "components/unified_consent/pref_names.h"
 #include "components/ntp_tiles/custom_links_manager_impl.h"
 #include "components/ntp_tiles/enterprise/enterprise_shortcuts_manager_impl.h"
 #include "components/ntp_tiles/most_visited_sites.h"
@@ -1444,6 +1445,13 @@ void RegisterLocalState(PrefRegistrySimple* registry) {
   registry->RegisterBooleanPref("neovex.update.downloaded", false);
   registry->RegisterStringPref("neovex.update.installer_path", "");
   registry->RegisterStringPref("neovex.update.last_version", "");
+  registry->RegisterStringPref("neovex.update.available_version", "");
+
+  // NEOVEX OPT TELEMETRY OFF: Disable local metrics reporting & network time pings by default
+  registry->SetDefaultPrefValue(metrics::prefs::kMetricsReportingEnabled, base::Value(false));
+  registry->SetDefaultPrefValue("network_time.network_time_queries_enabled", base::Value(false));
+  // NEOVEX OPT PERFORMANCE: Enable Memory Saver mode (1 = enabled)
+  registry->SetDefaultPrefValue(performance_manager::user_tuning::prefs::kMemorySaverModeState, base::Value(1));
 
   // Call outs to individual subsystems that register Local State (browser-wide)
   // prefs en masse. See RegisterProfilePrefs for per-profile prefs. Please
@@ -2277,6 +2285,17 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
   registry->SetDefaultPrefValue(
       "net.network_prediction_options",
       base::Value(2));  // Disable network prediction
+
+  // NEOVEX OPT TELEMETRY OFF: Disable URL-keyed metrics, Extended Safe Browsing telemetry, and CC upload
+  registry->SetDefaultPrefValue(
+      unified_consent::prefs::kUrlKeyedAnonymizedDataCollectionEnabled,
+      base::Value(false));
+  registry->SetDefaultPrefValue(
+      prefs::kSafeBrowsingScoutReportingEnabled, base::Value(false));
+  registry->SetDefaultPrefValue(
+      prefs::kSafeBrowsingEnhanced, base::Value(false));
+  registry->SetDefaultPrefValue(
+      autofill::prefs::kAutofillCreditCardUploadEnabled, base::Value(false));
 }
 
 void RegisterUserProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {

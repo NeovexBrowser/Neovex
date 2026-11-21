@@ -24,6 +24,7 @@ namespace neovex {
 extern const char kUpdateDownloaded[];
 extern const char kUpdateInstallerPath[];
 extern const char kUpdateLastVersion[];
+extern const char kUpdateAvailableVersion[];
 
 // Checks GitHub Releases for a newer Neovex version, downloads the
 // mini_installer.exe asset in the background, and sets local-state prefs

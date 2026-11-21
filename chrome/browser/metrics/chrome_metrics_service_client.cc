@@ -240,6 +240,31 @@
 
 namespace {
 
+class NoOpMetricsLogUploader : public metrics::MetricsLogUploader {
+ public:
+  explicit NoOpMetricsLogUploader(
+      const metrics::MetricsLogUploader::UploadCallback& on_upload_complete)
+      : on_upload_complete_(on_upload_complete) {}
+
+  ~NoOpMetricsLogUploader() override = default;
+
+  void UploadLog(const std::string& compressed_log_data,
+                 const metrics::LogMetadata& log_metadata,
+                 const std::string& log_hash,
+                 const std::string& log_signature,
+                 const metrics::ReportingInfo& reporting_info) override {
+    // Immediately report success without any network request.
+    // Discards logs cleanly and avoids null pointer crashes.
+    if (!on_upload_complete_.is_null()) {
+      on_upload_complete_.Run(/*response_code=*/200, /*net_error=*/0,
+                              /*was_https=*/true);
+    }
+  }
+
+ private:
+  metrics::MetricsLogUploader::UploadCallback on_upload_complete_;
+};
+
 #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS)
 const int kMaxHistogramStorageKiB = 100 << 10;  // 100 MiB
 #else
@@ -687,6 +712,32 @@ void ChromeMetricsServiceClient::CollectFinalMetricsForLog(
   CollectFinalHistograms();
 }
 
+namespace {
+
+class NoOpMetricsLogUploader : public metrics::MetricsLogUploader {
+ public:
+  explicit NoOpMetricsLogUploader(
+      const metrics::MetricsLogUploader::UploadCallback& on_upload_complete)
+      : on_upload_complete_(on_upload_complete) {}
+  ~NoOpMetricsLogUploader() override = default;
+
+  void UploadLog(const std::string& compressed_log_data,
+                 const metrics::LogMetadata& log_metadata,
+                 const std::string& log_hash,
+                 const std::string& log_signature,
+                 const metrics::ReportingInfo& reporting_info) override {
+    if (!on_upload_complete_.is_null()) {
+      on_upload_complete_.Run(/*response_code=*/200, /*net_error=*/0,
+                              /*was_https=*/true);
+    }
+  }
+
+ private:
+  metrics::MetricsLogUploader::UploadCallback on_upload_complete_;
+};
+
+}  // namespace
+
 std::unique_ptr<metrics::MetricsLogUploader>
 ChromeMetricsServiceClient::CreateUploader(
     const GURL& server_url,
@@ -695,10 +746,8 @@ ChromeMetricsServiceClient::CreateUploader(
     metrics::MetricsLogUploader::MetricServiceType service_type,
     const metrics::MetricsLogUploader::UploadCallback& on_upload_complete) {
   // NEOVEX OPT DEGOOGLE: Disable UMA telemetry upload to Google.
-  // Local metrics collection still works for crash detection.
-  // Return a no-op uploader that immediately reports success without sending.
-  return std::make_unique<metrics::NetMetricsLogUploader>(
-      nullptr, GURL(), GURL(), mime_type, service_type, on_upload_complete);
+  // Return a safe no-op uploader that immediately completes without sending data.
+  return std::make_unique<NoOpMetricsLogUploader>(on_upload_complete);
 }
 
 base::TimeDelta ChromeMetricsServiceClient::GetStandardUploadInterval() {

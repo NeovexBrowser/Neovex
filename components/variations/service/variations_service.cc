@@ -614,7 +614,8 @@ void VariationsService::EnableFetchForTesting() {
 }
 
 void VariationsService::DoActualFetch() {
-  DoFetchFromURL(variations_server_url_, false);
+  // NEOVEX OPT DEGOOGLE: Disable variations seed fetching from Google servers.
+  return;
 }
 
 const std::string& VariationsService::GetLatestSerialNumber() {

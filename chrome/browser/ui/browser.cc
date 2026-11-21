@@ -4,7 +4,6 @@
 
 #include "chrome/browser/ui/browser.h"
 
-#include "chrome/browser/neovex_update_checker.h"
 #include <stddef.h>
 
 #include <algorithm>
@@ -1298,11 +1297,6 @@ void Browser::DidBecomeInactive() {
 }
 
 void Browser::OnWindowClosing() {
-  // NEOVEX AUTOUPDATE: Apply update on exit if ready
-  if (g_browser_process && g_browser_process->local_state()) {
-    neovex::MaybeLaunchInstallerOnShutdown(g_browser_process->local_state());
-  }
-
   // There may be situations where async tasks, such as
   // UnloadController::ProcessPendingTabs, may call into OnWindowClosing() after
   // deletion has already been scheduled and closed notifications have been

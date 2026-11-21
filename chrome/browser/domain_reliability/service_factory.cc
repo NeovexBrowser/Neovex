@@ -13,7 +13,8 @@ namespace domain_reliability {
 namespace {
 
 // If Domain Reliability is enabled in the absence of a flag or field trial.
-const bool kDefaultEnabled = true;
+// NEOVEX OPT DEGOOGLE: Domain Reliability reporting disabled.
+const bool kDefaultEnabled = false;
 
 // The name and value of the field trial to turn Domain Reliability on.
 const char kFieldTrialName[] = "DomRel-Enable";
@@ -29,6 +30,7 @@ bool ShouldCreateService(const DomainReliabilityServiceDelegate* delegate) {
     return false;
   if (command_line->HasSwitch(switches::kEnableDomainReliability))
     return true;
+  return false;
   if (!delegate->IsDomainReliabilityAllowed()) {
     return false;
   }

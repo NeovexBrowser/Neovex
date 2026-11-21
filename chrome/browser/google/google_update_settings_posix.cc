@@ -77,9 +77,8 @@ GoogleUpdateSettings::CollectStatsConsentTaskRunner() {
 
 // static
 bool GoogleUpdateSettings::GetCollectStatsConsent() {
-  base::FilePath consent_dir;
-  base::PathService::Get(chrome::DIR_USER_DATA, &consent_dir);
-  return GetCollectStatsConsentFromDir(consent_dir);
+  // NEOVEX OPT DEGOOGLE: Always decline stats collection on POSIX / Linux as well.
+  return false;
 }
 
 // static

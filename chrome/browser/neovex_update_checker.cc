@@ -12,13 +12,16 @@
 #include "base/path_service.h"
 #include "base/process/launch.h"
 #include "base/strings/string_util.h"
-#include "base/task/thread_pool.h"
 #include "base/task/single_thread_task_runner.h"
+#include "base/task/thread_pool.h"
+#include "base/values.h"
 #include "base/version.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/neovex_version.h"
 #include "components/prefs/pref_service.h"
 #include "net/base/load_flags.h"
+#include "net/http/http_request_headers.h"
+#include "net/http/http_response_headers.h"
 #include "net/traffic_annotation/network_traffic_annotation.h"
 #include "services/network/public/cpp/resource_request.h"
 #include "services/network/public/cpp/shared_url_loader_factory.h"
@@ -34,6 +37,7 @@ namespace neovex {
 const char kUpdateDownloaded[] = "neovex.update.downloaded";
 const char kUpdateInstallerPath[] = "neovex.update.installer_path";
 const char kUpdateLastVersion[] = "neovex.update.last_version";
+const char kUpdateAvailableVersion[] = "neovex.update.available_version";
 
 namespace {
 
@@ -65,9 +69,9 @@ base::FilePath GetUpdatesDir() {
 
 // Compare two dotted version strings (e.g. "1.0.0" < "1.1.0").
 bool IsNewerVersion(const std::string& remote_tag) {
-  // Strip leading 'v' if present.
+  // Strip leading 'v' or 'V' if present.
   std::string remote = remote_tag;
-  if (!remote.empty() && remote[0] == 'v') {
+  if (!remote.empty() && (remote[0] == 'v' || remote[0] == 'V')) {
     remote = remote.substr(1);
   }
 
@@ -92,18 +96,34 @@ UpdateChecker::UpdateChecker(
 UpdateChecker::~UpdateChecker() = default;
 
 void UpdateChecker::CheckForUpdate() {
-  // If we already downloaded an update, don't check again.
-  if (g_browser_process && !g_browser_process->IsShuttingDown() && g_browser_process->local_state() &&
-      g_browser_process->local_state()->GetBoolean(kUpdateDownloaded)) {
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
-    return;
+  // Check if an update has already been downloaded and still exists on disk.
+  if (g_browser_process && !g_browser_process->IsShuttingDown() &&
+      g_browser_process->local_state()) {
+    PrefService* prefs = g_browser_process->local_state();
+    if (prefs->GetBoolean(kUpdateDownloaded)) {
+      std::string path_str = prefs->GetString(kUpdateInstallerPath);
+      if (!path_str.empty() &&
+          base::PathExists(base::FilePath::FromUTF8Unsafe(path_str))) {
+        // Valid installer already downloaded and waiting for restart.
+        base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                      this);
+        return;
+      }
+      // Stale pref pointing to missing or deleted file; reset to check anew.
+      prefs->SetBoolean(kUpdateDownloaded, false);
+      prefs->SetString(kUpdateInstallerPath, "");
+      prefs->CommitPendingWrite();
+    }
   }
 
   auto request = std::make_unique<network::ResourceRequest>();
   request->url = GURL(NEOVEX_GITHUB_RELEASES_API);
-  request->load_flags =
-      net::LOAD_BYPASS_CACHE | net::LOAD_DISABLE_CACHE;
-  request->headers.SetHeader("Accept", "application/vnd.github.v3+json");
+  request->load_flags = net::LOAD_BYPASS_CACHE | net::LOAD_DISABLE_CACHE;
+  request->headers.SetHeader(net::HttpRequestHeaders::kAccept,
+                             "application/vnd.github.v3+json");
+  // GitHub API requires a User-Agent header; requests without one can return 403.
+  request->headers.SetHeader(net::HttpRequestHeaders::kUserAgent,
+                             "NeovexBrowser/" NEOVEX_VERSION);
   request->credentials_mode = network::mojom::CredentialsMode::kOmit;
 
   loader_ = network::SimpleURLLoader::Create(std::move(request),
@@ -112,50 +132,62 @@ void UpdateChecker::CheckForUpdate() {
       url_loader_factory_.get(),
       base::BindOnce(&UpdateChecker::OnReleaseFetched,
                      weak_factory_.GetWeakPtr()),
-      512 * 1024);  // 512 KB max for the JSON response.
+      512 * 1024);  // 512 KB max for JSON response.
 }
 
 void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   if (!body) {
     LOG(WARNING) << "[Neovex] Update check failed: no response.";
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
   auto parsed = base::JSONReader::Read(*body, base::JSON_PARSE_RFC);
   if (!parsed || !parsed->is_dict()) {
     LOG(WARNING) << "[Neovex] Update check failed: invalid JSON.";
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
-  const base::DictValue& dict = parsed->GetDict();
+  const base::Value::Dict& dict = parsed->GetDict();
   const std::string* tag = dict.FindString("tag_name");
   if (!tag) {
     LOG(WARNING) << "[Neovex] Update check: no tag_name in release.";
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
   if (!IsNewerVersion(*tag)) {
     VLOG(1) << "[Neovex] Already up to date (" << NEOVEX_VERSION << ").";
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
   LOG(INFO) << "[Neovex] New version available: " << *tag;
 
+  // Record available version for UI / notification.
+  if (g_browser_process && !g_browser_process->IsShuttingDown() &&
+      g_browser_process->local_state()) {
+    g_browser_process->local_state()->SetString(kUpdateAvailableVersion, *tag);
+    g_browser_process->local_state()->CommitPendingWrite();
+  }
+
 #if BUILDFLAG(IS_WIN)
   // Find the mini_installer.exe asset.
-  const base::ListValue* assets = dict.FindList("assets");
+  const base::Value::List* assets = dict.FindList("assets");
   if (!assets) {
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
   for (const auto& asset_val : *assets) {
     if (!asset_val.is_dict()) continue;
-    const base::DictValue& asset = asset_val.GetDict();
+    const base::Value::Dict& asset = asset_val.GetDict();
     const std::string* name = asset.FindString("name");
     if (!name || *name != "mini_installer.exe") continue;
 
@@ -167,27 +199,35 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   }
 
   if (download_url_.empty()) {
-    LOG(WARNING) << "[Neovex] No mini_installer.exe asset found.";
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    LOG(WARNING) << "[Neovex] No mini_installer.exe asset found in release.";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
-  // Ensure the updates directory exists (on a background thread).
   base::FilePath updates_dir = GetUpdatesDir();
   if (updates_dir.empty()) {
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
+  // Ensure the updates directory exists and delete any existing partial file.
   base::ThreadPool::PostTaskAndReply(
       FROM_HERE, {base::MayBlock()},
       base::BindOnce(
-          [](base::FilePath dir) { base::CreateDirectory(dir); },
+          [](base::FilePath dir) {
+            base::CreateDirectory(dir);
+            base::FilePath stale_file =
+                dir.Append(FILE_PATH_LITERAL("mini_installer.exe"));
+            if (base::PathExists(stale_file)) {
+              base::DeleteFile(stale_file);
+            }
+          },
           updates_dir),
       base::BindOnce(
           [](base::WeakPtr<UpdateChecker> self) {
             if (!self) return;
-            // Now download the installer.
             auto request = std::make_unique<network::ResourceRequest>();
             request->url = GURL(self->download_url_);
             request->credentials_mode =
@@ -195,45 +235,60 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 
             self->download_loader_ = network::SimpleURLLoader::Create(
                 std::move(request), kTrafficAnnotation);
+            self->download_loader_->SetRetryMode(
+                network::SimpleURLLoader::RETRY_ON_NETWORK_CHANGE,
+                base::BindRepeating([](int retry_num) {}));
 
             base::FilePath dest =
                 GetUpdatesDir().Append(FILE_PATH_LITERAL("mini_installer.exe"));
             self->download_loader_->DownloadToFile(
                 self->url_loader_factory_.get(),
-                base::BindOnce(&UpdateChecker::OnInstallerDownloaded,
-                               self),
+                base::BindOnce(&UpdateChecker::OnInstallerDownloaded, self),
                 dest);
           },
           weak_factory_.GetWeakPtr()));
 #else
-  // On non-Windows platforms, we do not download mini_installer.exe.
-  base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+  // On Linux/POSIX, automatic package update is handled by package manager,
+  // but the update notification and version check are logged and stored.
+  base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                this);
 #endif
 }
 
 void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
-  if (path.empty()) {
-    LOG(WARNING) << "[Neovex] Installer download failed.";
-    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+  int net_error = download_loader_ ? download_loader_->NetError() : 0;
+  if (path.empty() || net_error != net::OK) {
+    LOG(WARNING) << "[Neovex] Installer download failed (net error: "
+                 << net_error << ").";
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
     return;
   }
 
-  LOG(INFO) << "[Neovex] Installer downloaded to: " << path.value();
-
-  if (g_browser_process && !g_browser_process->IsShuttingDown() && g_browser_process->local_state()) {
-    g_browser_process->local_state()->SetBoolean(kUpdateDownloaded, true);
-    g_browser_process->local_state()->SetString(kUpdateInstallerPath, path.AsUTF8Unsafe());
-    
-    // Force the What's New page to open on the next launch even if the NEOVEX_VERSION
-    // string hasn't changed. This is safe here (unlike in shutdown) because the
-    // browser is still running, so CommitPendingWrite() will reliably save this to disk,
-    // avoiding the loop Pahal experienced earlier.
-    g_browser_process->local_state()->SetString(kUpdateLastVersion, "0.0.0");
-    
-    g_browser_process->local_state()->CommitPendingWrite();
+  // Verify that the downloaded file is valid and non-empty.
+  int64_t file_size = 0;
+  if (!base::GetFileSize(path, &file_size) || file_size < 1024 * 1024) {
+    LOG(WARNING) << "[Neovex] Installer download invalid or too small: "
+                 << file_size << " bytes.";
+    base::DeleteFile(path);
+    base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                  this);
+    return;
   }
-  
-  base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE, this);
+
+  LOG(INFO) << "[Neovex] Installer successfully downloaded to: "
+            << path.value() << " (" << file_size << " bytes).";
+
+  if (g_browser_process && !g_browser_process->IsShuttingDown() &&
+      g_browser_process->local_state()) {
+    PrefService* local_state = g_browser_process->local_state();
+    local_state->SetBoolean(kUpdateDownloaded, true);
+    local_state->SetString(kUpdateInstallerPath, path.AsUTF8Unsafe());
+    local_state->CommitPendingWrite();
+  }
+
+  base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
+                                                                this);
 }
 
 // ---------- Shutdown helper ----------
@@ -251,32 +306,30 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
   if (!base::PathExists(installer_path)) {
     LOG(WARNING) << "[Neovex] Installer not found at: "
                  << installer_path.value();
-    // Clear the stale flags.
     local_state->SetBoolean(kUpdateDownloaded, false);
     local_state->SetString(kUpdateInstallerPath, "");
     local_state->CommitPendingWrite();
     return;
   }
 
-  // Clear the flags before launching so we don't try again on next shutdown.
-  // NOTE: Do NOT reset kUpdateLastVersion here. The installer will update the
-  // binary to the new version, and the next launch will naturally record the
-  // new NEOVEX_VERSION into kUpdateLastVersion via the startup logic.
-  // Resetting it to "0.0.0" caused the What's New tab to open on every single
-  // startup and re-launched the installer repeatedly, wiping Google sessions.
+  // Clear flags before launching so we do not re-run on subsequent shutdowns.
   local_state->SetBoolean(kUpdateDownloaded, false);
   local_state->SetString(kUpdateInstallerPath, "");
   local_state->CommitPendingWrite();
 
-  // Launch the installer as a fully detached process.
+  // Launch installer detached.
   base::CommandLine cmd(installer_path);
   cmd.AppendSwitch("do-not-launch-chrome");
   base::LaunchOptions options;
   options.start_hidden = true;
 
   base::LaunchProcess(cmd, options);
-
   LOG(INFO) << "[Neovex] Launched installer: " << installer_path.value();
+#else
+  // Non-Windows: clear downloaded flag if any was set.
+  local_state->SetBoolean(kUpdateDownloaded, false);
+  local_state->SetString(kUpdateInstallerPath, "");
+  local_state->CommitPendingWrite();
 #endif
 }
 
