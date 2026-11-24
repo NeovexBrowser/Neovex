@@ -2294,8 +2294,6 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
       prefs::kSafeBrowsingScoutReportingEnabled, base::Value(false));
   registry->SetDefaultPrefValue(
       prefs::kSafeBrowsingEnhanced, base::Value(false));
-  registry->SetDefaultPrefValue(
-      autofill::prefs::kAutofillCreditCardUploadEnabled, base::Value(false));
 }
 
 void RegisterUserProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
