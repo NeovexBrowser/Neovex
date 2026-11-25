@@ -1475,6 +1475,7 @@ static_library("ui") {
       ":layout_constants",
       "//base",
       "//chrome/app/vector_icons",
+      "//chrome/browser/resources/new_tab_page:resources_grit",
       "//chrome/browser/tor:neovex_tor",  # NEOVEX TOR
       "//chrome/browser:shell_integration",
       "//chrome/browser/actor/ui",

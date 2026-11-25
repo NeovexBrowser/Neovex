@@ -130,6 +130,14 @@ NTPResourceCache::NTPResourceCache(Profile* profile) : profile_(profile) {
 
   // TODO(crbug.com/40677117): Remove the global accessor to NativeTheme.
   theme_observation_.Observe(ui::NativeTheme::GetInstanceForNativeUi());
+
+  if (profile_->GetPrefs()) {
+    pref_change_registrar_.Init(profile_->GetPrefs());
+    pref_change_registrar_.Add(
+        prefs::kNeovexWallpaper,
+        base::BindRepeating(&NTPResourceCache::Invalidate,
+                            base::Unretained(this)));
+  }
 }
 
 NTPResourceCache::~NTPResourceCache() = default;
@@ -213,6 +221,7 @@ void NTPResourceCache::OnThemeChanged() {
 
 void NTPResourceCache::Shutdown() {
   ThemeServiceFactory::GetForProfile(profile_)->RemoveObserver(this);
+  pref_change_registrar_.RemoveAll();
 }
 
 void NTPResourceCache::OnNativeThemeUpdated(ui::NativeTheme* updated_theme) {

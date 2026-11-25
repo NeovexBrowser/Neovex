@@ -229,7 +229,6 @@ SettingsUI::SettingsUI(content::WebUI* web_ui)
   html_source->OverrideContentSecurityPolicy(
       network::mojom::CSPDirectiveName::FrameSrc,
       "frame-src chrome://new-tab-page 'self';");
-  webui::SetupNeovexWallpaperDataSource(html_source, profile);
 
   AddSettingsPageUIHandler(std::make_unique<AppearanceHandler>(web_ui));
 
@@ -461,6 +460,7 @@ SettingsUI::SettingsUI(content::WebUI* web_ui)
 
   webui::SetupWebUIDataSource(html_source, kSettingsResources,
                               IDR_SETTINGS_SETTINGS_HTML);
+  webui::SetupNeovexWallpaperDataSource(html_source, profile);
 
 #if !BUILDFLAG(OPTIMIZE_WEBUI)
   html_source->AddResourcePaths(kSettingsSharedResources);

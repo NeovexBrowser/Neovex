@@ -10,6 +10,7 @@
 #include "base/strings/string_util.h"
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/pref_names.h"
+#include "chrome/grit/new_tab_page_resources.h"
 #include "components/prefs/pref_service.h"
 #include "content/public/browser/web_ui_data_source.h"
 #include "services/network/public/mojom/content_security_policy.mojom.h"
@@ -224,6 +225,33 @@ base::flat_map<GURL, int> GetWebUIResourceUrlToCodeCacheMap() {
 
 void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
                                     Profile* profile) {
+  static constexpr struct {
+    const char* path;
+    int id;
+  } kNeovexWallpapers[] = {
+      {"wallpapers/default.jpg", IDR_NEW_TAB_PAGE_WALLPAPERS_DEFAULT_JPG},
+      {"wallpapers/default_light.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_DEFAULT_LIGHT_PNG},
+      {"wallpapers/NeonCity.png", IDR_NEW_TAB_PAGE_WALLPAPERS_NEONCITY_PNG},
+      {"wallpapers/NeonCity_light.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_NEONCITY_LIGHT_PNG},
+      {"wallpapers/NeonSolitude.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_NEONSOLITUDE_PNG},
+      {"wallpapers/NeonSolitude_light.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_NEONSOLITUDE_LIGHT_PNG},
+      {"wallpapers/SunsetValley.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_SUNSETVALLEY_PNG},
+      {"wallpapers/SunsetValley_light.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_SUNSETVALLEY_LIGHT_PNG},
+      {"wallpapers/TranquilWaterfall.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_TRANQUILWATERFALL_PNG},
+      {"wallpapers/TranquilWaterfall_light.png",
+       IDR_NEW_TAB_PAGE_WALLPAPERS_TRANQUILWATERFALL_LIGHT_PNG},
+  };
+  for (const auto& wp : kNeovexWallpapers) {
+    source->AddResourcePath(wp.path, wp.id);
+  }
+
   std::string wallpaper = "wallpapers/default.jpg";
   if (profile && profile->GetPrefs()) {
     wallpaper = profile->GetPrefs()->GetString(prefs::kNeovexWallpaper);
@@ -235,8 +263,17 @@ void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
   std::string dark_url = wallpaper;
   std::string light_url = wallpaper;
   if (base::StartsWith(wallpaper, "wallpapers/")) {
-    dark_url = "chrome://new-tab-page/" + wallpaper;
-    std::string light_name = wallpaper;
+    std::string dark_name = wallpaper;
+    if (dark_name.find("_light.") != std::string::npos) {
+      if (dark_name == "wallpapers/default_light.png") {
+        dark_name = "wallpapers/default.jpg";
+      } else {
+        base::ReplaceSubstringsAfterOffset(&dark_name, 0, "_light.png", ".png");
+      }
+    }
+    dark_url = "/" + dark_name;
+
+    std::string light_name = dark_name;
     if (light_name == "wallpapers/default.jpg") {
       light_name = "wallpapers/default_light.png";
     } else if (base::EndsWith(light_name, ".png")) {
@@ -244,12 +281,14 @@ void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
     } else if (base::EndsWith(light_name, ".jpg")) {
       base::ReplaceSubstringsAfterOffset(&light_name, 0, ".jpg", "_light.png");
     }
-    light_url = "chrome://new-tab-page/" + light_name;
+    light_url = "/" + light_name;
   }
 
   source->OverrideContentSecurityPolicy(
       network::mojom::CSPDirectiveName::ImgSrc,
-      "img-src chrome://resources chrome://theme chrome://image chrome://favicon2 chrome://extension-icon chrome://new-tab-page 'self' data: blob:;");
+      "img-src chrome://resources chrome://theme chrome://image "
+      "chrome://favicon2 chrome://app-icon chrome://extension-icon "
+      "chrome://fileicon chrome://new-tab-page blob: data: 'self';");
 
   source->AddString("neovexWallpaper", wallpaper);
   source->AddString("neovexWallpaperDarkUrl", dark_url);

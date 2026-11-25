@@ -114,7 +114,7 @@
     .weather-setup-input button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 4px; padding: 6px 16px; font-size: 12px; cursor: pointer; transition: 0.2s; position: relative; z-index: 20; pointer-events: auto; }
     .weather-setup-input button:hover { background: white; color: black; }
 
-    .top-right { grid-column: 3; grid-row: 1; display: flex; justify-content: flex-end; align-items: flex-start; gap: 16px; }
+    .top-right { grid-column: 3; grid-row: 1; display: flex; justify-content: flex-end; align-items: flex-start; gap: 16px; position: relative; z-index: 25; }
     .study-mode { display: flex; align-items: center; gap: 12px; background: rgba(10,10,10,0.6); padding: 10px 20px; border-radius: 32px; border: 1px solid rgba(255,255,255,0.06); cursor: pointer; transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 12px 32px rgba(0,0,0,0.3); position: relative; }
     .study-mode:hover { background: rgba(15,15,15,0.9); border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
     .sm-label { font-size: 13px; font-weight: 500; letter-spacing: 0.5px; opacity: 0.8; transition: 0.2s; }
@@ -124,7 +124,7 @@
     .wl-btn { background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 4px 12px; border-radius: 16px; font-size: 11px; font-weight: 600; cursor: pointer; display: none; transition: 0.2s; position: relative; z-index: 20; }
     .study-mode.active-mode .wl-btn { display: block; color: black; }
     .wl-btn:hover { background: rgba(0,0,0,0.1); }
-    .settings-btn { background: transparent; border: none; color: white; opacity: 0.5; cursor: pointer; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; }
+    .settings-btn { background: transparent; border: none; color: white; opacity: 0.5; cursor: pointer; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 25; flex-shrink: 0; pointer-events: auto; }
     .settings-btn:hover { opacity: 1; transform: rotate(90deg); }
 
     .center-content { grid-column: 2; grid-row: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: -180px; }
@@ -249,8 +249,8 @@
 
     @media (max-width: 1100px), (max-height: 700px) {
       .ntp-canvas { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr auto; padding: 24px; gap: 16px; }
-      .top-left { grid-column: 1; grid-row: 1; align-items: flex-start; }
-      .top-right { grid-column: 1; grid-row: 1; align-items: flex-start; justify-content: flex-end; pointer-events: none; }
+      .top-left { grid-column: 1; grid-row: 1; align-items: flex-start; width: fit-content; justify-self: start; }
+      .top-right { grid-column: 1; grid-row: 1; align-items: flex-start; justify-content: flex-end; justify-self: end; width: fit-content; pointer-events: none; position: relative; z-index: 25; }
       .top-right > * { pointer-events: auto; }
       .center-content { grid-column: 1; grid-row: 3; margin-top: 0; }
       .search-prompt { font-size: 32px; }
