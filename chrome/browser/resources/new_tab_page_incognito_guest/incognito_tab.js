@@ -44,13 +44,20 @@ window.addEventListener('load', function() {
     searchBtn.addEventListener('click', doSearch);
   }
 
-  // ── THEME SUPPORT ──
+  // ── THEME SUPPORT & BACKGROUND ──
   function updateTheme() {
     const isLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
     if (isLight) {
       document.documentElement.classList.add('light-mode');
     } else {
       document.documentElement.classList.remove('light-mode');
+    }
+    const bgEl = document.getElementById('bgCustom');
+    if (bgEl) {
+      const bgUrl = isLight ? bgEl.dataset.light : bgEl.dataset.dark;
+      if (bgUrl) {
+        bgEl.style.backgroundImage = `url("${bgUrl}")`;
+      }
     }
   }
   updateTheme();

@@ -215,7 +215,7 @@ std::string NewTabUI::NewTabHTMLSource::GetContentSecurityPolicy(
            "chrome://theme;";
   } else if (directive == network::mojom::CSPDirectiveName::ImgSrc) {
     return "img-src chrome-search://thumb chrome-search://thumb2 "
-           "chrome-search://theme chrome://theme data:;";
+           "chrome-search://theme chrome://theme chrome://new-tab-page data:;";
   } else if (directive == network::mojom::CSPDirectiveName::ChildSrc) {
     return "child-src chrome-search://most-visited;";
   } else if (directive ==

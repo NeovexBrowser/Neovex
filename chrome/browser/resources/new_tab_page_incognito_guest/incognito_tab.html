@@ -13,25 +13,19 @@
   </script>
   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
   <link rel="stylesheet" href="incognito_tab.css">
-  <style>
-    .bg-custom {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background-size: cover;
-      background-position: center;
-      background-image: url('$i18n{neovexWallpaperDarkUrl}');
-      display: block;
-    }
-    @media (prefers-color-scheme: light) {
-      .bg-custom {
-        background-image: url('$i18n{neovexWallpaperLightUrl}');
-      }
-    }
-  </style>
 </head>
 <body>
-  <div id="bgCustom" class="bg-custom"></div>
+  <div id="bgCustom" class="bg-custom active" data-dark="$i18n{neovexWallpaperDarkUrl}" data-light="$i18n{neovexWallpaperLightUrl}"></div>
+  <script>
+    (function() {
+      var el = document.getElementById('bgCustom');
+      if (el) {
+        var isLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        var url = isLight ? el.getAttribute('data-light') : el.getAttribute('data-dark');
+        if (url) el.style.backgroundImage = 'url("' + url + '")';
+      }
+    })();
+  </script>
   <div class="bg-overlay"></div>
 
   <!-- Tor Loading Overlay -->
