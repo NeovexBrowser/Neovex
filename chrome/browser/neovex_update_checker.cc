@@ -151,7 +151,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
     return;
   }
 
-  const base::Value::Dict& dict = parsed->GetDict();
+  const base::DictValue& dict = parsed->GetDict();
   const std::string* tag = dict.FindString("tag_name");
   if (!tag) {
     LOG(WARNING) << "[Neovex] Update check: no tag_name in release.";
@@ -178,7 +178,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 
 #if BUILDFLAG(IS_WIN)
   // Find the mini_installer.exe asset.
-  const base::Value::List* assets = dict.FindList("assets");
+  const base::ListValue* assets = dict.FindList("assets");
   if (!assets) {
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
@@ -187,7 +187,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 
   for (const auto& asset_val : *assets) {
     if (!asset_val.is_dict()) continue;
-    const base::Value::Dict& asset = asset_val.GetDict();
+    const base::DictValue& asset = asset_val.GetDict();
     const std::string* name = asset.FindString("name");
     if (!name || *name != "mini_installer.exe") continue;
 
@@ -266,8 +266,9 @@ void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
   }
 
   // Verify that the downloaded file is valid and non-empty.
-  int64_t file_size = 0;
-  if (!base::GetFileSize(path, &file_size) || file_size < 1024 * 1024) {
+  std::optional<int64_t> file_size_opt = base::GetFileSize(path);
+  int64_t file_size = file_size_opt.value_or(0);
+  if (!file_size_opt || file_size < 1024 * 1024) {
     LOG(WARNING) << "[Neovex] Installer download invalid or too small: "
                  << file_size << " bytes.";
     base::DeleteFile(path);
