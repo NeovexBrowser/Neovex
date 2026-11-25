@@ -22,7 +22,17 @@ class ThemeProvider;
 
 class GURL;
 
+// Forward declarations for Neovex
+namespace content {
+class WebUIDataSource;
+}
+class Profile;
+
 namespace webui {
+
+// Sets up Neovex wallpaper strings and CSP policies on the given data source.
+void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
+                                    Profile* profile);
 
 // These methods should not be used. Instead, browser-related state should be
 // passed from the owner of the WebUI instance to the WebUIController instance.

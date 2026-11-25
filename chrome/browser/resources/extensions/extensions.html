@@ -98,6 +98,33 @@
     html.has-custom-bg extensions-manager {
       background: transparent !important;
     }
+    #neovex-bg-custom {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      background-image: url('$i18n{neovexWallpaperDarkUrl}');
+    }
+    @media (prefers-color-scheme: light) {
+      #neovex-bg-custom {
+        background-image: url('$i18n{neovexWallpaperLightUrl}');
+      }
+    }
+    #neovex-bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    }
+    @media (prefers-color-scheme: light) {
+      #neovex-bg-overlay {
+        background: rgba(245, 245, 240, 0.6);
+      }
+    }
 
     /* Mimics the developer mode toolbar until the real one loads. Note:
      * .in-dev-mode is applied by i18n{loadTimeClasses}. */
@@ -111,117 +138,10 @@
   </style>
   <script type="module" src="extensions.js"></script>
 </head>
-<body>
+<body class="has-custom-bg">
+  <div id="neovex-bg-custom"></div>
+  <div id="neovex-bg-overlay"></div>
   <extensions-manager></extensions-manager>
   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
-<script>
-(function() {
-  function applyBg(bg, theme) {
-    var el = document.getElementById('neovex-bg-custom');
-    if (!el) {
-      el = document.createElement('div');
-      el.id = 'neovex-bg-custom';
-      el.style.position = 'fixed';
-      el.style.inset = '0';
-      el.style.zIndex = '-2';
-      el.style.backgroundSize = 'cover';
-      el.style.backgroundPosition = 'center';
-      el.style.backgroundRepeat = 'no-repeat';
-      el.style.pointerEvents = 'none';
-      el.style.display = 'none';
-      document.body.prepend(el);
-    }
-    var overlay = document.getElementById('neovex-bg-overlay');
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'neovex-bg-overlay';
-      overlay.style.position = 'fixed';
-      overlay.style.inset = '0';
-      overlay.style.zIndex = '-1';
-      overlay.style.pointerEvents = 'none';
-      overlay.style.display = 'none';
-      document.body.prepend(overlay);
-    }
-
-    var isLight = (theme === 'light') || document.documentElement.classList.contains('light-mode');
-
-    if (bg) {
-      var resolvedBg = bg;
-      if (resolvedBg.startsWith('wallpapers/')) {
-        var isAlreadyLight = resolvedBg.includes('_light.');
-        if (isLight && !isAlreadyLight) {
-          resolvedBg = resolvedBg.replace(/\.(png|jpg|jpeg)$/i, '_light.png');
-        } else if (!isLight && isAlreadyLight) {
-          if (resolvedBg.includes('default_light')) {
-            resolvedBg = resolvedBg.replace('_light.png', '.jpg');
-          } else {
-            resolvedBg = resolvedBg.replace('_light.png', '.png');
-          }
-        }
-        resolvedBg = 'chrome://new-tab-page/' + resolvedBg;
-      }
-      el.style.backgroundImage = 'url("' + resolvedBg + '")';
-      el.style.display = 'block';
-      document.documentElement.classList.add('has-custom-bg');
-      document.body.classList.add('has-custom-bg');
-
-      if (!isLight) {
-        overlay.style.background = 'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%)';
-        overlay.style.display = 'block';
-      } else {
-        overlay.style.background = 'rgba(245, 245, 240, 0.6)';
-        overlay.style.display = 'block';
-      }
-    } else {
-      el.style.display = 'none';
-      overlay.style.display = 'none';
-      document.documentElement.classList.remove('has-custom-bg');
-      document.body.classList.remove('has-custom-bg');
-    }
-  }
-
-  function loadShared() {
-    var loadedTheme = 'dark';
-    var i18nBg = '$i18n{neovexWallpaper}';
-    if (i18nBg && i18nBg !== 'neovexWallpaper' && !i18nBg.startsWith('$i18n')) {
-      applyBg(i18nBg, loadedTheme);
-    }
-    try {
-      var request = indexedDB.open('NeovexShared', 1);
-      request.onupgradeneeded = function(e) {
-        var db = e.target.result;
-        if (!db.objectStoreNames.contains('settings')) db.createObjectStore('settings');
-      };
-      request.onsuccess = function(e) {
-        var db = e.target.result;
-        try {
-          var tx = db.transaction('settings', 'readonly');
-          var store = tx.objectStore('settings');
-          var reqBg = store.get('ntp_bg');
-          var reqTheme = store.get('neovex_theme');
-
-          reqTheme.onsuccess = function() {
-            loadedTheme = reqTheme.result || 'dark';
-            if (i18nBg && i18nBg !== 'neovexWallpaper' && !i18nBg.startsWith('$i18n')) {
-              applyBg(i18nBg, loadedTheme);
-            }
-          };
-          reqBg.onsuccess = function() {
-            var idbBg = reqBg.result;
-            if (idbBg) applyBg(idbBg, loadedTheme);
-          };
-        } catch(err) {}
-      };
-    } catch(e) {}
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadShared);
-  } else {
-    loadShared();
-  }
-})();
-
-</script>
 </body>
 </html>

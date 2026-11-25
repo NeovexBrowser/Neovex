@@ -13,6 +13,22 @@
   </script>
   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
   <link rel="stylesheet" href="incognito_tab.css">
+  <style>
+    .bg-custom {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+      background-image: url('$i18n{neovexWallpaperDarkUrl}');
+      display: block;
+    }
+    @media (prefers-color-scheme: light) {
+      .bg-custom {
+        background-image: url('$i18n{neovexWallpaperLightUrl}');
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="bgCustom" class="bg-custom"></div>
@@ -80,7 +96,6 @@
     </div>
   </div>
 
-  <script>window.neovexWallpaper = '$i18n{neovexWallpaper}';</script>
   <script type="module" src="incognito_tab.js"></script>
 </body>
 </html>

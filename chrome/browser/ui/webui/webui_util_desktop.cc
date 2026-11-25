@@ -7,7 +7,12 @@
 #include "base/containers/fixed_flat_map.h"
 #include "base/containers/map_util.h"
 #include "base/strings/strcat.h"
+#include "base/strings/string_util.h"
 #include "chrome/browser/profiles/profile.h"
+#include "chrome/common/pref_names.h"
+#include "components/prefs/pref_service.h"
+#include "content/public/browser/web_ui_data_source.h"
+#include "services/network/public/mojom/content_security_policy.mojom.h"
 #include "chrome/browser/ui/browser.h"
 #include "chrome/browser/ui/browser_finder.h"
 #include "chrome/browser/ui/browser_list.h"
@@ -215,6 +220,40 @@ base::flat_map<GURL, int> GetWebUIResourceUrlToCodeCacheMap() {
 #endif  // BUILDFLAG(ENABLE_WEBUI_GENERATE_CODE_CACHE)
 
   return {url_to_code_cache_pairs};
+}
+
+void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
+                                    Profile* profile) {
+  std::string wallpaper = "wallpapers/default.jpg";
+  if (profile && profile->GetPrefs()) {
+    wallpaper = profile->GetPrefs()->GetString(prefs::kNeovexWallpaper);
+    if (wallpaper.empty()) {
+      wallpaper = "wallpapers/default.jpg";
+    }
+  }
+
+  std::string dark_url = wallpaper;
+  std::string light_url = wallpaper;
+  if (base::StartsWith(wallpaper, "wallpapers/")) {
+    dark_url = "chrome://new-tab-page/" + wallpaper;
+    std::string light_name = wallpaper;
+    if (light_name == "wallpapers/default.jpg") {
+      light_name = "wallpapers/default_light.png";
+    } else if (base::EndsWith(light_name, ".png")) {
+      base::ReplaceSubstringsAfterOffset(&light_name, 0, ".png", "_light.png");
+    } else if (base::EndsWith(light_name, ".jpg")) {
+      base::ReplaceSubstringsAfterOffset(&light_name, 0, ".jpg", "_light.png");
+    }
+    light_url = "chrome://new-tab-page/" + light_name;
+  }
+
+  source->OverrideContentSecurityPolicy(
+      network::mojom::CSPDirectiveName::ImgSrc,
+      "img-src chrome://resources chrome://theme chrome://image chrome://favicon2 chrome://extension-icon chrome://new-tab-page 'self' data: blob:;");
+
+  source->AddString("neovexWallpaper", wallpaper);
+  source->AddString("neovexWallpaperDarkUrl", dark_url);
+  source->AddString("neovexWallpaperLightUrl", light_url);
 }
 
 }  // namespace webui

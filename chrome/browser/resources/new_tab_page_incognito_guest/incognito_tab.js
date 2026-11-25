@@ -44,83 +44,19 @@ window.addEventListener('load', function() {
     searchBtn.addEventListener('click', doSearch);
   }
 
-  // ── SHARED BACKGROUND & THEME VIA INDEXEDDB ──
-  function applyBg(bg, theme) {
-    const el = document.getElementById('bgCustom');
-    if (!el) return;
-    if (theme === 'light') {
+  // ── THEME SUPPORT ──
+  function updateTheme() {
+    const isLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (isLight) {
       document.documentElement.classList.add('light-mode');
     } else {
       document.documentElement.classList.remove('light-mode');
     }
-
-    if (bg) {
-      let resolvedBg = bg;
-      if (resolvedBg.startsWith('wallpapers/')) {
-        const isLight = (theme === 'light');
-        const isAlreadyLight = resolvedBg.includes('_light.');
-        if (isLight && !isAlreadyLight) {
-          resolvedBg = resolvedBg.replace(/\.(png|jpg|jpeg)$/i, '_light.png');
-        } else if (!isLight && isAlreadyLight) {
-          if (resolvedBg.includes('default_light')) {
-            resolvedBg = resolvedBg.replace('_light.png', '.jpg');
-          } else {
-            resolvedBg = resolvedBg.replace('_light.png', '.png');
-          }
-        }
-        resolvedBg = 'chrome://new-tab-page/' + resolvedBg;
-      }
-      el.style.backgroundImage = 'url("' + resolvedBg + '")';
-      el.classList.add('active');
-    } else {
-      el.style.backgroundImage = '';
-      el.classList.remove('active');
-    }
   }
-
-  function loadSharedSettings() {
-    let loadedTheme = 'dark';
-    const i18nBg = window.neovexWallpaper;
-    if (i18nBg && i18nBg !== 'neovexWallpaper' && !i18nBg.startsWith('$i18n')) {
-      applyBg(i18nBg, loadedTheme);
-    }
-    try {
-      const request = indexedDB.open('NeovexShared', 1);
-      request.onupgradeneeded = function(e) {
-        const db = e.target.result;
-        if (!db.objectStoreNames.contains('settings')) {
-          db.createObjectStore('settings');
-        }
-      };
-      request.onsuccess = function(e) {
-        const db = e.target.result;
-        try {
-          const tx = db.transaction('settings', 'readonly');
-          const store = tx.objectStore('settings');
-          const reqBg = store.get('ntp_bg');
-          const reqTheme = store.get('neovex_theme');
-
-          reqTheme.onsuccess = function() {
-            loadedTheme = reqTheme.result || 'dark';
-            if (i18nBg && i18nBg !== 'neovexWallpaper' && !i18nBg.startsWith('$i18n')) {
-              applyBg(i18nBg, loadedTheme);
-            }
-          };
-          reqBg.onsuccess = function() {
-            const idbBg = reqBg.result;
-            if (idbBg) applyBg(idbBg, loadedTheme);
-          };
-        } catch (err) {
-          if (!i18nBg || i18nBg === 'neovexWallpaper' || i18nBg.startsWith('$i18n')) {
-            applyBg(null, 'dark');
-          }
-        }
-      };
-    } catch (e) {
-      // IndexedDB unavailable in certain security contexts
-    }
+  updateTheme();
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', updateTheme);
   }
-  loadSharedSettings();
 
   // ── TOR TOGGLE & STATUS ──
   const toggle = document.getElementById('tor-toggle-switch');

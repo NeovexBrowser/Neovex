@@ -4,6 +4,8 @@
 
 #include "chrome/browser/ui/webui/settings/settings_ui.h"
 
+#include "chrome/browser/ui/webui/webui_util_desktop.h"
+
 #include <stddef.h>
 
 #include <memory>
@@ -227,11 +229,7 @@ SettingsUI::SettingsUI(content::WebUI* web_ui)
   html_source->OverrideContentSecurityPolicy(
       network::mojom::CSPDirectiveName::FrameSrc,
       "frame-src chrome://new-tab-page 'self';");
-  html_source->OverrideContentSecurityPolicy(
-      network::mojom::CSPDirectiveName::ImgSrc,
-      "img-src chrome://resources chrome://theme chrome://image chrome://new-tab-page 'self' data: blob:;");
-  html_source->AddString("neovexWallpaper",
-                         profile->GetPrefs()->GetString(prefs::kNeovexWallpaper));
+  webui::SetupNeovexWallpaperDataSource(html_source, profile);
 
   AddSettingsPageUIHandler(std::make_unique<AppearanceHandler>(web_ui));
 

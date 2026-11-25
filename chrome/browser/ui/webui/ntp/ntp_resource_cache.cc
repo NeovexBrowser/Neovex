@@ -277,8 +277,27 @@ void NTPResourceCache::CreateNewTabIncognitoHTML(
           ui::ResourceBundle::GetSharedInstance().LoadDataResourceBytes(
               IDR_INCOGNITO_TAB_HTML));
   CHECK(*incognito_tab_html);
-  localized_strings.Set("neovexWallpaper",
-                        profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper));
+  {
+    std::string wallpaper = profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper);
+    if (wallpaper.empty()) wallpaper = "wallpapers/default.jpg";
+    std::string dark_url = wallpaper;
+    std::string light_url = wallpaper;
+    if (base::StartsWith(wallpaper, "wallpapers/")) {
+      dark_url = "chrome://new-tab-page/" + wallpaper;
+      std::string light_name = wallpaper;
+      if (light_name == "wallpapers/default.jpg") {
+        light_name = "wallpapers/default_light.png";
+      } else if (base::EndsWith(light_name, ".png")) {
+        base::ReplaceSubstringsAfterOffset(&light_name, 0, ".png", "_light.png");
+      } else if (base::EndsWith(light_name, ".jpg")) {
+        base::ReplaceSubstringsAfterOffset(&light_name, 0, ".jpg", "_light.png");
+      }
+      light_url = "chrome://new-tab-page/" + light_name;
+    }
+    localized_strings.Set("neovexWallpaper", wallpaper);
+    localized_strings.Set("neovexWallpaperDarkUrl", dark_url);
+    localized_strings.Set("neovexWallpaperLightUrl", light_url);
+  }
   ui::TemplateReplacementsFromDictionaryValue(localized_strings, &replacements);
   new_tab_incognito_html_ = base::MakeRefCounted<base::RefCountedString>(
       ReplaceTemplateExpressions(*incognito_tab_html, replacements));
@@ -350,8 +369,27 @@ void NTPResourceCache::CreateNewTabGuestHTML() {
               guest_tab_idr));
   CHECK(*guest_tab_html);
   ui::TemplateReplacements replacements;
-  localized_strings.Set("neovexWallpaper",
-                        profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper));
+  {
+    std::string wallpaper = profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper);
+    if (wallpaper.empty()) wallpaper = "wallpapers/default.jpg";
+    std::string dark_url = wallpaper;
+    std::string light_url = wallpaper;
+    if (base::StartsWith(wallpaper, "wallpapers/")) {
+      dark_url = "chrome://new-tab-page/" + wallpaper;
+      std::string light_name = wallpaper;
+      if (light_name == "wallpapers/default.jpg") {
+        light_name = "wallpapers/default_light.png";
+      } else if (base::EndsWith(light_name, ".png")) {
+        base::ReplaceSubstringsAfterOffset(&light_name, 0, ".png", "_light.png");
+      } else if (base::EndsWith(light_name, ".jpg")) {
+        base::ReplaceSubstringsAfterOffset(&light_name, 0, ".jpg", "_light.png");
+      }
+      light_url = "chrome://new-tab-page/" + light_name;
+    }
+    localized_strings.Set("neovexWallpaper", wallpaper);
+    localized_strings.Set("neovexWallpaperDarkUrl", dark_url);
+    localized_strings.Set("neovexWallpaperLightUrl", light_url);
+  }
   ui::TemplateReplacementsFromDictionaryValue(localized_strings, &replacements);
   new_tab_guest_html_ = base::MakeRefCounted<base::RefCountedString>(
       ReplaceTemplateExpressions(*guest_tab_html, replacements));

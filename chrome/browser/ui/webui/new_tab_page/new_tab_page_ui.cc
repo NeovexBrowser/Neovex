@@ -4,6 +4,8 @@
 
 #include "chrome/browser/ui/webui/new_tab_page/new_tab_page_ui.h"
 
+#include "chrome/browser/ui/webui/webui_util_desktop.h"
+
 #include <memory>
 #include <optional>
 #include <string>
@@ -1157,8 +1159,7 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
   instance_count_++;
   base::UmaHistogramCounts100("NewTabPage.Count", instance_count_);
   auto* source = CreateAndAddNewTabPageUiHtmlSource(profile_);
-  source->AddString("neovexWallpaper",
-                    profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper));
+  webui::SetupNeovexWallpaperDataSource(source, profile_);
   bool wallpaper_search_button_enabled =
       base::FeatureList::IsEnabled(ntp_features::kNtpWallpaperSearchButton) &&
       customize_chrome::IsWallpaperSearchEnabledForProfile(profile_);
