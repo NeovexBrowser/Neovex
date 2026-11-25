@@ -28,6 +28,7 @@
 #include "chrome/browser/ui/webui/theme_source.h"
 #include "chrome/common/buildflags.h"
 #include "chrome/common/chrome_switches.h"
+#include "chrome/common/pref_names.h"
 #include "chrome/common/url_constants.h"
 #include "chrome/grit/branded_strings.h"
 #include "chrome/grit/downloads_resources.h"
@@ -65,6 +66,11 @@ namespace {
 content::WebUIDataSource* CreateAndAddDownloadsUIHTMLSource(Profile* profile) {
   content::WebUIDataSource* source = content::WebUIDataSource::CreateAndAdd(
       profile, chrome::kChromeUIDownloadsHost);
+  source->OverrideContentSecurityPolicy(
+      network::mojom::CSPDirectiveName::ImgSrc,
+      "img-src chrome://resources chrome://theme chrome://new-tab-page 'self' data: blob:;");
+  source->AddString("neovexWallpaper",
+                    profile->GetPrefs()->GetString(prefs::kNeovexWallpaper));
   // NEOVEX DOWNLOADS: neovex_downloads.css and neovex_downloads.js are
   // registered as static_files in the resources BUILD.gn and loaded
   // from downloads.html to provide the category sidebar overlay.

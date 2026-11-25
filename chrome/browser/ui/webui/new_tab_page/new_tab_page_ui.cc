@@ -202,9 +202,18 @@ class NeovexThemeMessageHandler : public content::WebUIMessageHandler {
         "setNeovexTheme",
         base::BindRepeating(&NeovexThemeMessageHandler::HandleSetNeovexTheme,
                             base::Unretained(this)));
+    web_ui()->RegisterMessageCallback(
+        "setNeovexWallpaper",
+        base::BindRepeating(&NeovexThemeMessageHandler::HandleSetNeovexWallpaper,
+                            base::Unretained(this)));
   }
 
  private:
+  void HandleSetNeovexWallpaper(const base::ListValue& args) {
+    if (args.empty() || !args[0].is_string()) return;
+    std::string wallpaper = args[0].GetString();
+    Profile::FromWebUI(web_ui())->GetPrefs()->SetString(prefs::kNeovexWallpaper, wallpaper);
+  }
   void HandleSetNeovexTheme(const base::ListValue& args) {
     if (args.empty() || !args[0].is_bool()) return;
     bool is_light = args[0].GetBool();
@@ -1148,6 +1157,8 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
   instance_count_++;
   base::UmaHistogramCounts100("NewTabPage.Count", instance_count_);
   auto* source = CreateAndAddNewTabPageUiHtmlSource(profile_);
+  source->AddString("neovexWallpaper",
+                    profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper));
   bool wallpaper_search_button_enabled =
       base::FeatureList::IsEnabled(ntp_features::kNtpWallpaperSearchButton) &&
       customize_chrome::IsWallpaperSearchEnabledForProfile(profile_);

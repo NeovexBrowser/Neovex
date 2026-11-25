@@ -277,6 +277,8 @@ void NTPResourceCache::CreateNewTabIncognitoHTML(
           ui::ResourceBundle::GetSharedInstance().LoadDataResourceBytes(
               IDR_INCOGNITO_TAB_HTML));
   CHECK(*incognito_tab_html);
+  localized_strings.Set("neovexWallpaper",
+                        profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper));
   ui::TemplateReplacementsFromDictionaryValue(localized_strings, &replacements);
   new_tab_incognito_html_ = base::MakeRefCounted<base::RefCountedString>(
       ReplaceTemplateExpressions(*incognito_tab_html, replacements));
@@ -348,6 +350,8 @@ void NTPResourceCache::CreateNewTabGuestHTML() {
               guest_tab_idr));
   CHECK(*guest_tab_html);
   ui::TemplateReplacements replacements;
+  localized_strings.Set("neovexWallpaper",
+                        profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper));
   ui::TemplateReplacementsFromDictionaryValue(localized_strings, &replacements);
   new_tab_guest_html_ = base::MakeRefCounted<base::RefCountedString>(
       ReplaceTemplateExpressions(*guest_tab_html, replacements));

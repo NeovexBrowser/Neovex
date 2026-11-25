@@ -363,6 +363,8 @@ inline constexpr char kWebKitJavascriptEnabled[] =
     "webkit.webprefs.javascript_enabled";
 inline constexpr char kNeovexAdblockEnabled[] =
     "neovex.adblock_enabled";
+inline constexpr char kNeovexWallpaper[] =
+    "neovex.wallpaper";
 inline constexpr char kWebKitLoadsImagesAutomatically[] =
     "webkit.webprefs.loads_images_automatically";
 inline constexpr char kWebKitPluginsEnabled[] =

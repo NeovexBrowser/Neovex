@@ -551,6 +551,11 @@ ExtensionsUI::ExtensionsUI(content::WebUI* web_ui) : WebUIController(web_ui) {
   // plugin can be loaded within chrome://extensions.
   source->OverrideContentSecurityPolicy(
       network::mojom::CSPDirectiveName::ObjectSrc, "object-src 'self';");
+  source->OverrideContentSecurityPolicy(
+      network::mojom::CSPDirectiveName::ImgSrc,
+      "img-src chrome://resources chrome://theme chrome://image chrome://favicon2 chrome://extension-icon chrome://new-tab-page 'self' data: blob:;");
+  source->AddString("neovexWallpaper",
+                    profile->GetPrefs()->GetString(prefs::kNeovexWallpaper));
 
   content::URLDataSource::Add(
       profile, std::make_unique<FaviconSource>(

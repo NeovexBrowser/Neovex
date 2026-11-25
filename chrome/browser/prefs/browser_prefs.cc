@@ -2196,8 +2196,9 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
                                 false);
 
   registry->RegisterBooleanPref(prefs::kPrivacyGuideViewed, false);
-  // NEOVEX: Register adblock pref.
+  // NEOVEX: Register adblock pref and wallpaper pref.
   registry->RegisterBooleanPref(prefs::kNeovexAdblockEnabled, true);
+  registry->RegisterStringPref(prefs::kNeovexWallpaper, "wallpapers/default.jpg");
   RegisterProfilePrefsForMigration(registry);
 
 #if !BUILDFLAG(IS_ANDROID)

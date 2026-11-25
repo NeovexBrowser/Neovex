@@ -85,6 +85,13 @@
       }
     }
 
+    html.has-custom-bg, body.has-custom-bg {
+      background: transparent !important;
+    }
+    html.has-custom-bg downloads-manager {
+      background: transparent !important;
+    }
+
 
 
     html:not(.loading),
@@ -159,20 +166,9 @@
       color: #a0adff;
     }
 
-    #neovex-sidebar .nvx-cat-icon {
-      font-size: 9px;
-      font-weight: 700;
-      width: 28px;
-      text-align: center;
-      flex-shrink: 0;
-      letter-spacing: 0.5px;
-      color: rgba(255,255,255,0.3);
-      font-family: monospace;
-    }
+    
 
-    #neovex-sidebar .nvx-cat.active .nvx-cat-icon {
-      color: rgba(160, 173, 255, 0.7);
-    }
+    
 
     #neovex-sidebar .nvx-cat-count {
       margin-left: auto;
@@ -226,12 +222,8 @@
         background: rgba(61,78,219,0.1);
         color: #3d4edb;
       }
-      #neovex-sidebar .nvx-cat-icon {
-        color: rgba(0,0,0,0.28);
-      }
-      #neovex-sidebar .nvx-cat.active .nvx-cat-icon {
-        color: rgba(61,78,219,0.7);
-      }
+      
+      
       #neovex-sidebar .nvx-cat-count {
         color: rgba(0,0,0,0.2);
       }
@@ -250,49 +242,40 @@
   <nav id="neovex-sidebar">
     <div class="nvx-sb-title">Categories</div>
     <button class="nvx-cat active" data-category="All">
-      <span class="nvx-cat-icon">All</span>
       <span>All</span>
       <span class="nvx-cat-count" data-count="All">0</span>
     </button>
     <button class="nvx-cat" data-category="Images">
-      <span class="nvx-cat-icon">IMG</span>
       <span>Images</span>
       <span class="nvx-cat-count" data-count="Images">0</span>
     </button>
     <button class="nvx-cat" data-category="Documents">
-      <span class="nvx-cat-icon">DOC</span>
       <span>Documents</span>
       <span class="nvx-cat-count" data-count="Documents">0</span>
     </button>
     <button class="nvx-cat" data-category="Videos">
-      <span class="nvx-cat-icon">VID</span>
       <span>Videos</span>
       <span class="nvx-cat-count" data-count="Videos">0</span>
     </button>
     <button class="nvx-cat" data-category="Audio">
-      <span class="nvx-cat-icon">SND</span>
       <span>Audio</span>
       <span class="nvx-cat-count" data-count="Audio">0</span>
     </button>
     <div class="nvx-sep"></div>
     <button class="nvx-cat" data-category="Archives">
-      <span class="nvx-cat-icon">ZIP</span>
       <span>Archives</span>
       <span class="nvx-cat-count" data-count="Archives">0</span>
     </button>
     <button class="nvx-cat" data-category="Programs">
-      <span class="nvx-cat-icon">EXE</span>
       <span>Programs</span>
       <span class="nvx-cat-count" data-count="Programs">0</span>
     </button>
     <button class="nvx-cat" data-category="Code">
-      <span class="nvx-cat-icon">&lt;/&gt;</span>
       <span>Code</span>
       <span class="nvx-cat-count" data-count="Code">0</span>
     </button>
     <div class="nvx-sep"></div>
     <button class="nvx-cat" data-category="Other">
-      <span class="nvx-cat-icon">...</span>
       <span>Other</span>
       <span class="nvx-cat-count" data-count="Other">0</span>
     </button>
@@ -301,5 +284,114 @@
   <downloads-manager></downloads-manager>
   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
   <script type="module" src="downloads.js"></script>
+<script>
+(function() {
+  function applyBg(bg, theme) {
+    var el = document.getElementById('neovex-bg-custom');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'neovex-bg-custom';
+      el.style.position = 'fixed';
+      el.style.inset = '0';
+      el.style.zIndex = '-2';
+      el.style.backgroundSize = 'cover';
+      el.style.backgroundPosition = 'center';
+      el.style.backgroundRepeat = 'no-repeat';
+      el.style.pointerEvents = 'none';
+      el.style.display = 'none';
+      document.body.prepend(el);
+    }
+    var overlay = document.getElementById('neovex-bg-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'neovex-bg-overlay';
+      overlay.style.position = 'fixed';
+      overlay.style.inset = '0';
+      overlay.style.zIndex = '-1';
+      overlay.style.pointerEvents = 'none';
+      overlay.style.display = 'none';
+      document.body.prepend(overlay);
+    }
+
+    var isLight = (theme === 'light') || document.documentElement.classList.contains('light-mode');
+
+    if (bg) {
+      var resolvedBg = bg;
+      if (resolvedBg.startsWith('wallpapers/')) {
+        var isAlreadyLight = resolvedBg.includes('_light.');
+        if (isLight && !isAlreadyLight) {
+          resolvedBg = resolvedBg.replace(/\.(png|jpg|jpeg)$/i, '_light.png');
+        } else if (!isLight && isAlreadyLight) {
+          if (resolvedBg.includes('default_light')) {
+            resolvedBg = resolvedBg.replace('_light.png', '.jpg');
+          } else {
+            resolvedBg = resolvedBg.replace('_light.png', '.png');
+          }
+        }
+        resolvedBg = 'chrome://new-tab-page/' + resolvedBg;
+      }
+      el.style.backgroundImage = 'url("' + resolvedBg + '")';
+      el.style.display = 'block';
+      document.documentElement.classList.add('has-custom-bg');
+      document.body.classList.add('has-custom-bg');
+
+      if (!isLight) {
+        overlay.style.background = 'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%)';
+        overlay.style.display = 'block';
+      } else {
+        overlay.style.background = 'rgba(245, 245, 240, 0.6)';
+        overlay.style.display = 'block';
+      }
+    } else {
+      el.style.display = 'none';
+      overlay.style.display = 'none';
+      document.documentElement.classList.remove('has-custom-bg');
+      document.body.classList.remove('has-custom-bg');
+    }
+  }
+
+  function loadShared() {
+    var loadedTheme = 'dark';
+    var i18nBg = '$i18n{neovexWallpaper}';
+    if (i18nBg && i18nBg !== 'neovexWallpaper' && !i18nBg.startsWith('$i18n')) {
+      applyBg(i18nBg, loadedTheme);
+    }
+    try {
+      var request = indexedDB.open('NeovexShared', 1);
+      request.onupgradeneeded = function(e) {
+        var db = e.target.result;
+        if (!db.objectStoreNames.contains('settings')) db.createObjectStore('settings');
+      };
+      request.onsuccess = function(e) {
+        var db = e.target.result;
+        try {
+          var tx = db.transaction('settings', 'readonly');
+          var store = tx.objectStore('settings');
+          var reqBg = store.get('ntp_bg');
+          var reqTheme = store.get('neovex_theme');
+
+          reqTheme.onsuccess = function() {
+            loadedTheme = reqTheme.result || 'dark';
+            if (i18nBg && i18nBg !== 'neovexWallpaper' && !i18nBg.startsWith('$i18n')) {
+              applyBg(i18nBg, loadedTheme);
+            }
+          };
+          reqBg.onsuccess = function() {
+            var idbBg = reqBg.result;
+            if (idbBg) applyBg(idbBg, loadedTheme);
+          };
+        } catch(err) {}
+      };
+    } catch(e) {}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadShared);
+  } else {
+    loadShared();
+  }
+})();
+
+</script>
 </body>
 </html>

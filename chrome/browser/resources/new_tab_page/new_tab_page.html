@@ -95,22 +95,23 @@
     .anim-3 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; will-change: transform, opacity; }
 
     .dim-on-search { transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity; }
-    body:has(.search-input:focus) .dim-on-search { opacity: 0.15; pointer-events: none; }
+    body:has(.search-input:focus) .dim-on-search { opacity: 0.4; }
+    .dim-on-search:hover { opacity: 1 !important; }
 
-    .top-left { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; gap: 12px; }
+    .top-left { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 10; pointer-events: auto; }
     .clock-display { font-size: 72px; font-weight: 200; letter-spacing: -3px; line-height: 0.9; text-shadow: 0 8px 32px rgba(0,0,0,0.5); cursor: default; }
-    .weather-widget { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 400; opacity: 0.8; text-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+    .weather-widget { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 400; opacity: 0.8; text-shadow: 0 4px 16px rgba(0,0,0,0.4); position: relative; z-index: 10; pointer-events: auto; }
     .w-icon svg { width: 20px; height: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); stroke-width: 1.5; }
     .w-temp { font-weight: 500; font-size: 15px; }
     .w-condition { font-weight: 300; opacity: 0.7; }
     .w-city { font-weight: 300; opacity: 0.5; margin-left: 4px; cursor: pointer; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: 0.2s; }
     .w-city:hover { opacity: 1; text-decoration: underline; }
     .w-details { display: none; }
-    .weather-setup, .weather-error, .weather-loading { font-size: 13px; font-weight: 300; opacity: 0.7; }
-    .weather-setup-input { margin-top: 8px; display: flex; gap: 8px; align-items: center; }
-    .weather-setup-input input { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.3); color: white; outline: none; padding: 6px 0; font-size: 13px; width: 160px; transition: 0.2s; }
+    .weather-setup, .weather-error, .weather-loading { font-size: 13px; font-weight: 300; opacity: 0.7; position: relative; z-index: 10; pointer-events: auto; }
+    .weather-setup-input { margin-top: 8px; display: flex; gap: 8px; align-items: center; position: relative; z-index: 15; pointer-events: auto; }
+    .weather-setup-input input { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.3); color: white; outline: none; padding: 6px 0; font-size: 13px; width: 160px; transition: 0.2s; position: relative; z-index: 20; pointer-events: auto; cursor: text; }
     .weather-setup-input input:focus { border-color: white; }
-    .weather-setup-input button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 4px; padding: 6px 16px; font-size: 12px; cursor: pointer; transition: 0.2s; }
+    .weather-setup-input button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 4px; padding: 6px 16px; font-size: 12px; cursor: pointer; transition: 0.2s; position: relative; z-index: 20; pointer-events: auto; }
     .weather-setup-input button:hover { background: white; color: black; }
 
     .top-right { grid-column: 3; grid-row: 1; display: flex; justify-content: flex-end; align-items: flex-start; gap: 16px; }
@@ -151,13 +152,53 @@
 
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
     .modal-overlay.open { display: flex; opacity: 1; }
-    .modal { background: #0A0A0A; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 48px; width: 440px; box-shadow: 0 40px 100px rgba(0,0,0,1); transform: scale(0.95) translateY(10px); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .modal {
+      position: relative;
+      background: #0A0A0A;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 36px 40px;
+      width: 480px;
+      max-width: 90vw;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 40px 100px rgba(0,0,0,1);
+      transform: scale(0.95) translateY(10px);
+      transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+    }
+    .modal::-webkit-scrollbar { width: 5px; }
+    .modal::-webkit-scrollbar-track { background: transparent; }
+    .modal::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+    html.light-mode .modal::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); }
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 26px;
+      line-height: 1;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      z-index: 10;
+    }
+    .modal-close-btn:hover { background: rgba(255,255,255,0.1); color: white; transform: scale(1.1); }
+    html.light-mode .modal-close-btn { color: rgba(0,0,0,0.5); }
+    html.light-mode .modal-close-btn:hover { background: rgba(0,0,0,0.06); color: #1a1a1a; }
     .modal-overlay.open .modal { transform: scale(1) translateY(0); }
-    .modal h2 { font-size: 24px; font-weight: 300; margin-bottom: 32px; letter-spacing: -0.5px; }
-    .modal label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 8px; display: block; margin-top: 24px; }
+    .modal h2 { font-size: 24px; font-weight: 300; margin-bottom: 24px; letter-spacing: -0.5px; }
+    .modal label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 8px; display: block; margin-top: 20px; }
     .modal input[type="text"], .modal input[type="url"] { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 12px 0; font-size: 16px; color: white; outline: none; transition: 0.3s; }
     .modal input:focus { border-bottom-color: white; }
-    .modal-actions { display: flex; justify-content: flex-end; gap: 16px; margin-top: 48px; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 16px; margin-top: 36px; }
     .modal-actions button { background: transparent; border: 1px solid rgba(255,255,255,0.15); padding: 10px 24px; border-radius: 6px; color: white; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s; }
     .modal-actions button:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
     .modal-actions .btn-primary { background: white; color: black; border: none; }
@@ -209,7 +250,8 @@
     @media (max-width: 1100px), (max-height: 700px) {
       .ntp-canvas { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr auto; padding: 24px; gap: 16px; }
       .top-left { grid-column: 1; grid-row: 1; align-items: flex-start; }
-      .top-right { grid-column: 1; grid-row: 1; align-items: flex-start; justify-content: flex-end; }
+      .top-right { grid-column: 1; grid-row: 1; align-items: flex-start; justify-content: flex-end; pointer-events: none; }
+      .top-right > * { pointer-events: auto; }
       .center-content { grid-column: 1; grid-row: 3; margin-top: 0; }
       .search-prompt { font-size: 32px; }
       .search-input { font-size: 32px; padding: 0 0 8px 0; }
@@ -220,6 +262,15 @@
       .link-card::after { font-size: 12px; max-width: 80px; }
       .add-card { padding: 8px 12px; border-radius: 20px; }
       .search-input:focus ~ .search-prompt, .search-input:not(:placeholder-shown) ~ .search-prompt { transform: translateY(-40px) scale(0.35); }
+    }
+
+    @media (max-height: 750px), (max-width: 600px) {
+      .modal { padding: 24px 28px; max-height: 88vh; width: 92vw; }
+      .modal h2 { font-size: 20px; margin-bottom: 16px; }
+      .modal label { margin-top: 12px; margin-bottom: 4px; }
+      .settings-section-row { margin-top: 6px; margin-bottom: 12px; padding: 8px 12px; }
+      .wallpaper-grid { max-height: 140px; gap: 8px; }
+      .modal-actions { margin-top: 20px; }
     }
 
     @media (max-width: 600px) {
@@ -269,6 +320,7 @@
 
   <div class="modal-overlay" id="siteModal">
     <div class="modal">
+      <button class="modal-close-btn" id="siteCloseBtn" aria-label="Close">&times;</button>
       <h2 id="siteModalTitle">Shortcut</h2>
       <label>Name</label><input type="text" id="siteName" placeholder="Website Name">
       <label>URL</label><input type="url" id="siteUrl" placeholder="https://...">
@@ -282,6 +334,7 @@
 
   <div class="modal-overlay" id="settingsModal">
     <div class="modal">
+      <button class="modal-close-btn" id="settingsCloseBtn" aria-label="Close">&times;</button>
       <h2>Settings</h2>
       
       <!-- Default Browser Section -->
@@ -336,6 +389,7 @@
 
   <div class="modal-overlay" id="whitelistModal">
     <div class="modal">
+      <button class="modal-close-btn" id="wlCloseBtnX" aria-label="Close">&times;</button>
       <h2>Focus Mode Exclusions</h2>
       <p class="modal-body-text">These domains will remain accessible when Focus Mode is active. All other domains will be blocked to help you stay productive.</p>
       <div class="wl-list" id="wlList"></div>
@@ -359,7 +413,11 @@
     function loadSites() { try { var d = JSON.parse(localStorage.getItem('ntp_sites')); return Array.isArray(d) ? d : DEFAULT_SITES; } catch (e) { return DEFAULT_SITES; } }
     function saveSitesData(s) { localStorage.setItem('ntp_sites', JSON.stringify(s)); }
     function loadBg() { return localStorage.getItem('ntp_bg') || null; }
-    function saveBgData(v) { localStorage.setItem('ntp_bg', v); syncBgToIDB(v); }
+    function saveBgData(v) {
+      localStorage.setItem('ntp_bg', v);
+      syncBgToIDB(v);
+      try { chrome.send('setNeovexWallpaper', [v || '']); } catch (e) {}
+    }
 
     // Sync background to IndexedDB for cross-origin access (chrome://settings)
     function syncBgToIDB(v) {
@@ -490,6 +548,8 @@
     }
 
     document.getElementById('siteCancelBtn').addEventListener('click', closeSiteModal);
+    var siteCloseBtn = document.getElementById('siteCloseBtn');
+    if (siteCloseBtn) siteCloseBtn.addEventListener('click', closeSiteModal);
     document.getElementById('siteSaveBtn').addEventListener('click', saveSite);
     document.getElementById('siteDeleteBtn').addEventListener('click', function () { if (editIdx >= 0) { removeSite(editIdx); closeSiteModal(); } });
     document.getElementById('siteModal').addEventListener('click', function (e) { if (e.target === e.currentTarget) closeSiteModal(); });
@@ -554,7 +614,31 @@
 
     function closeSettingsModal() { document.getElementById('settingsModal').classList.remove('open'); }
     document.getElementById('settingsCancelBtn').addEventListener('click', closeSettingsModal);
+    var settingsCloseBtn = document.getElementById('settingsCloseBtn');
+    if (settingsCloseBtn) settingsCloseBtn.addEventListener('click', closeSettingsModal);
     document.getElementById('settingsModal').addEventListener('click', function (e) { if (e.target === e.currentTarget) closeSettingsModal(); });
+
+    var customFileInput = document.getElementById('customFileInput');
+    if (customFileInput) {
+      customFileInput.addEventListener('change', function (e) {
+        var file = e.target.files && e.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function (evt) {
+            var dataUrl = evt.target.result;
+            saveBgData(dataUrl);
+            applyBg();
+            renderWallpaperGrid();
+            var preview = document.getElementById('bgPreview');
+            if (preview) {
+              preview.style.backgroundImage = 'url(' + dataUrl + ')';
+              preview.style.display = 'block';
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
 
     document.getElementById('defaultBrowserBtn').addEventListener('click', function () {
       try {
@@ -664,11 +748,12 @@
       renderWhitelist();
       document.getElementById('whitelistModal').classList.add('open');
     });
-    document.getElementById('wlCloseBtn').addEventListener('click', function () {
-      document.getElementById('whitelistModal').classList.remove('open');
-    });
+    function closeWhitelistModal() { document.getElementById('whitelistModal').classList.remove('open'); }
+    document.getElementById('wlCloseBtn').addEventListener('click', closeWhitelistModal);
+    var wlCloseBtnX = document.getElementById('wlCloseBtnX');
+    if (wlCloseBtnX) wlCloseBtnX.addEventListener('click', closeWhitelistModal);
     document.getElementById('whitelistModal').addEventListener('click', function (e) {
-      if (e.target === e.currentTarget) document.getElementById('whitelistModal').classList.remove('open');
+      if (e.target === e.currentTarget) closeWhitelistModal();
     });
     document.getElementById('wlAddBtn').addEventListener('click', function () {
       var input = document.getElementById('wlInput');
@@ -790,7 +875,10 @@
     renderSites();
 
     var existingBg = loadBg();
-    if (existingBg) syncBgToIDB(existingBg);
+    if (existingBg) {
+      syncBgToIDB(existingBg);
+      try { chrome.send('setNeovexWallpaper', [existingBg]); } catch (e) {}
+    }
 
     // ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CROSS-ORIGIN WALLPAPER BRIDGE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
 
@@ -864,23 +952,36 @@
         w.innerHTML =
           '<div class="weather-setup">' +
           '<div class="weather-setup-icon">' +
-          '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>' +
+          '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>' +
           '</div>' +
           '<div class="weather-setup-text">' +
           '<strong>Weather Widget</strong><br>Enter your city to see live weather here.' +
           '</div>' +
           '<div class="weather-setup-input">' +
-          '<input type="text" id="weatherCityInput" placeholder="e.g. New York">' +
+          '<input type="text" id="weatherCityInput" placeholder="e.g. New York" autocomplete="off">' +
           '<button id="weatherSetupBtn">Set</button>' +
           '</div>' +
           '</div>';
 
-        document.getElementById('weatherSetupBtn').addEventListener('click', function () {
+        var cityInput = document.getElementById('weatherCityInput');
+        if (cityInput) {
+          cityInput.addEventListener('mousedown', function (e) {
+            e.stopPropagation();
+          });
+          cityInput.addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.focus();
+          });
+          cityInput.addEventListener('keydown', function (e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') document.getElementById('weatherSetupBtn').click();
+          });
+        }
+
+        document.getElementById('weatherSetupBtn').addEventListener('click', function (e) {
+          e.stopPropagation();
           var city = document.getElementById('weatherCityInput').value.trim();
           if (city) { saveWeatherCity(city); fetchWeather(city); }
-        });
-        document.getElementById('weatherCityInput').addEventListener('keydown', function (e) {
-          if (e.key === 'Enter') document.getElementById('weatherSetupBtn').click();
         });
       }
 
