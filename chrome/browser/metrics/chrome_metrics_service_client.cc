@@ -240,31 +240,6 @@
 
 namespace {
 
-class NoOpMetricsLogUploader : public metrics::MetricsLogUploader {
- public:
-  explicit NoOpMetricsLogUploader(
-      const metrics::MetricsLogUploader::UploadCallback& on_upload_complete)
-      : on_upload_complete_(on_upload_complete) {}
-
-  ~NoOpMetricsLogUploader() override = default;
-
-  void UploadLog(const std::string& compressed_log_data,
-                 const metrics::LogMetadata& log_metadata,
-                 const std::string& log_hash,
-                 const std::string& log_signature,
-                 const metrics::ReportingInfo& reporting_info) override {
-    // Immediately report success without any network request.
-    // Discards logs cleanly and avoids null pointer crashes.
-    if (!on_upload_complete_.is_null()) {
-      on_upload_complete_.Run(/*response_code=*/200, /*net_error=*/0,
-                              /*was_https=*/true);
-    }
-  }
-
- private:
-  metrics::MetricsLogUploader::UploadCallback on_upload_complete_;
-};
-
 #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS)
 const int kMaxHistogramStorageKiB = 100 << 10;  // 100 MiB
 #else
@@ -726,9 +701,12 @@ class NoOpMetricsLogUploader : public metrics::MetricsLogUploader {
                  const std::string& log_hash,
                  const std::string& log_signature,
                  const metrics::ReportingInfo& reporting_info) override {
+    // Immediately report success without any network request.
+    // Discards logs cleanly and avoids null pointer crashes.
     if (!on_upload_complete_.is_null()) {
       on_upload_complete_.Run(/*response_code=*/200, /*net_error=*/0,
-                              /*was_https=*/true);
+                              /*was_https=*/true, /*force_discard=*/false,
+                              /*force_discard_reason=*/"");
     }
   }
 
