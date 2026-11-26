@@ -163,16 +163,16 @@
 using content::BrowserContext;
 using content::WebContents;
 
-// Handles chrome.send() messages from the custom NTP for Neovex Shield Privacy.
-class NeovexShieldMessageHandler : public content::WebUIMessageHandler {
+// Handles chrome.send() messages from the custom NTP for Rhenium Shield Privacy.
+class RheniumShieldMessageHandler : public content::WebUIMessageHandler {
  public:
-  NeovexShieldMessageHandler() = default;
-  ~NeovexShieldMessageHandler() override = default;
+  RheniumShieldMessageHandler() = default;
+  ~RheniumShieldMessageHandler() override = default;
 
   void RegisterMessages() override {
     web_ui()->RegisterMessageCallback(
-        "getNeovexPrivacyStats",
-        base::BindRepeating(&NeovexShieldMessageHandler::HandleGetPrivacyStats,
+        "getRheniumPrivacyStats",
+        base::BindRepeating(&RheniumShieldMessageHandler::HandleGetPrivacyStats,
                             base::Unretained(this)));
   }
 
@@ -182,7 +182,7 @@ class NeovexShieldMessageHandler : public content::WebUIMessageHandler {
     if (args.size() < 1 || !args[0].is_string()) return;
     std::string callback_id = args[0].GetString();
 
-    auto* service = NeovexShieldService::GetInstance();
+    auto* service = RheniumShieldService::GetInstance();
     base::DictValue data;
     data.Set("trackers", service->GetTrackersBlocked());
     data.Set("ads", service->GetAdsBlocked());
@@ -194,29 +194,29 @@ class NeovexShieldMessageHandler : public content::WebUIMessageHandler {
 };
 
 // Handles chrome.send() messages from the custom NTP for setting the global browser theme.
-class NeovexThemeMessageHandler : public content::WebUIMessageHandler {
+class RheniumThemeMessageHandler : public content::WebUIMessageHandler {
  public:
-  NeovexThemeMessageHandler() = default;
-  ~NeovexThemeMessageHandler() override = default;
+  RheniumThemeMessageHandler() = default;
+  ~RheniumThemeMessageHandler() override = default;
 
   void RegisterMessages() override {
     web_ui()->RegisterMessageCallback(
-        "setNeovexTheme",
-        base::BindRepeating(&NeovexThemeMessageHandler::HandleSetNeovexTheme,
+        "setRheniumTheme",
+        base::BindRepeating(&RheniumThemeMessageHandler::HandleSetRheniumTheme,
                             base::Unretained(this)));
     web_ui()->RegisterMessageCallback(
-        "setNeovexWallpaper",
-        base::BindRepeating(&NeovexThemeMessageHandler::HandleSetNeovexWallpaper,
+        "setRheniumWallpaper",
+        base::BindRepeating(&RheniumThemeMessageHandler::HandleSetRheniumWallpaper,
                             base::Unretained(this)));
   }
 
  private:
-  void HandleSetNeovexWallpaper(const base::ListValue& args) {
+  void HandleSetRheniumWallpaper(const base::ListValue& args) {
     if (args.empty() || !args[0].is_string()) return;
     std::string wallpaper = args[0].GetString();
-    Profile::FromWebUI(web_ui())->GetPrefs()->SetString(prefs::kNeovexWallpaper, wallpaper);
+    Profile::FromWebUI(web_ui())->GetPrefs()->SetString(prefs::kRheniumWallpaper, wallpaper);
   }
-  void HandleSetNeovexTheme(const base::ListValue& args) {
+  void HandleSetRheniumTheme(const base::ListValue& args) {
     if (args.empty() || !args[0].is_bool()) return;
     bool is_light = args[0].GetBool();
     
@@ -1159,7 +1159,7 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
   instance_count_++;
   base::UmaHistogramCounts100("NewTabPage.Count", instance_count_);
   auto* source = CreateAndAddNewTabPageUiHtmlSource(profile_);
-  webui::SetupNeovexWallpaperDataSource(source, profile_);
+  webui::SetupRheniumWallpaperDataSource(source, profile_);
   bool wallpaper_search_button_enabled =
       base::FeatureList::IsEnabled(ntp_features::kNtpWallpaperSearchButton) &&
       customize_chrome::IsWallpaperSearchEnabledForProfile(profile_);
@@ -1190,12 +1190,12 @@ NewTabPageUI::NewTabPageUI(content::WebUI* web_ui)
   web_ui->AddMessageHandler(std::move(plural_string_handler));
 
   // Custom NTP: Theme message handler.
-  web_ui->AddMessageHandler(std::make_unique<NeovexThemeMessageHandler>());
+  web_ui->AddMessageHandler(std::make_unique<RheniumThemeMessageHandler>());
   // Custom NTP: Study Mode message handler.
   web_ui->AddMessageHandler(std::make_unique<StudyModeMessageHandler>());
 
-  // Custom NTP: Neovex Shield message handler.
-  web_ui->AddMessageHandler(std::make_unique<NeovexShieldMessageHandler>());
+  // Custom NTP: Rhenium Shield message handler.
+  web_ui->AddMessageHandler(std::make_unique<RheniumShieldMessageHandler>());
 
   // Custom NTP: Weather proxy message handler.
   web_ui->AddMessageHandler(std::make_unique<WeatherProxyHandler>());

@@ -89,7 +89,7 @@ content::WebUIDataSource* CreateAndAddExtensionsSource(Profile* profile,
       profile, chrome::kChromeUIExtensionsHost);
   webui::SetupWebUIDataSource(source, kExtensionsResources,
                               IDR_EXTENSIONS_EXTENSIONS_HTML);
-  webui::SetupNeovexWallpaperDataSource(source, profile);
+  webui::SetupRheniumWallpaperDataSource(source, profile);
 
   static constexpr webui::LocalizedString kLocalizedStrings[] = {
       // Add common strings.

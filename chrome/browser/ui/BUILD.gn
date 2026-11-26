@@ -1229,8 +1229,8 @@ static_library("ui") {
       "webui/new_tab_page/new_tab_page_handler.h",
       "webui/new_tab_page/new_tab_page_ui.cc",
       "webui/new_tab_page/new_tab_page_ui.h",
-      "webui/neovex_whats_new_ui.cc",
-      "webui/neovex_whats_new_ui.h",
+      "webui/rhenium_whats_new_ui.cc",
+      "webui/rhenium_whats_new_ui.h",
       "webui/new_tab_page/ntp_pref_names.cc",
       "webui/new_tab_page/ntp_pref_names.h",
       "webui/new_tab_page/untrusted_source.cc",
@@ -1247,8 +1247,8 @@ static_library("ui") {
       "webui/ntp/ntp_resource_cache.h",
       "webui/ntp/ntp_resource_cache_factory.cc",
       "webui/ntp/ntp_resource_cache_factory.h",
-      "webui/ntp/tor_status_handler.cc",  # NEOVEX TOR
-      "webui/ntp/tor_status_handler.h",  # NEOVEX TOR
+      "webui/ntp/tor_status_handler.cc",  # RHENIUM TOR
+      "webui/ntp/tor_status_handler.h",  # RHENIUM TOR
       "webui/ntp_microsoft_auth/ntp_microsoft_auth_page_handler.cc",
       "webui/ntp_microsoft_auth/ntp_microsoft_auth_page_handler.h",
       "webui/ntp_microsoft_auth/ntp_microsoft_auth_response_capture_navigation_throttle.cc",
@@ -1476,7 +1476,7 @@ static_library("ui") {
       "//base",
       "//chrome/app/vector_icons",
       "//chrome/browser/resources/new_tab_page:resources_grit",
-      "//chrome/browser/tor:neovex_tor",  # NEOVEX TOR
+      "//chrome/browser/tor:rhenium_tor",  # RHENIUM TOR
       "//chrome/browser:shell_integration",
       "//chrome/browser/actor/ui",
       "//chrome/browser/actor/ui:actor_overlay",

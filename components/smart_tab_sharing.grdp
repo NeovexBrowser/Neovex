@@ -55,7 +55,7 @@
 
   <!-- Reminding users how to manage Smart Tab Sharing settings -->
   <message name="IDS_STS_CONTEXT_REMINDER_CHANGE_IN_SETTINGS" desc="No implementation or screenshot yet. See http://crbug.com/490510281 for context.">
-    You can change this at any time in Chrome Settings
+    You can change this at any time in Rhenium Settings
   </message>
 
   <!-- Settings: Option 1: When On / Things To Consider -->
@@ -78,7 +78,7 @@
     Things to consider
   </message>
   <message name="IDS_STS_SETTINGS_OPTION_1_SENDS_YOUR_OPEN_TABS" desc="No implementation or screenshot yet. See http://crbug.com/490510281 for context.">
-    Chrome sends your open tabs, page content, and URLs to Google to personalize your responses
+    Rhenium sends your open tabs, page content, and URLs to Google to personalize your responses
   </message>
   <message name="IDS_STS_SETTINGS_OPTION_1_SEEN_BY_HUMAN_REVIEWERS" desc="No implementation or screenshot yet. See http://crbug.com/490510281 for context.">
     Threads may be seen by human reviewers to improve Google AI
@@ -152,6 +152,6 @@
     Always share relevant open tabs?
   </message>
   <message name="IDS_STS_THREAD_PROMO_CARD_MESSAGE_BODY" desc="No implementation or screenshot yet. See http://crbug.com/490510281 for context.">
-    Get faster, more tailored responses in every thread by sharing your open tabs by default. You can change this any time in Chrome settings.
+    Get faster, more tailored responses in every thread by sharing your open tabs by default. You can change this any time in Rhenium settings.
   </message>
 </grit-part>

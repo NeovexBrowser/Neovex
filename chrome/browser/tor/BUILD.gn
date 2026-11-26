@@ -1,9 +1,9 @@
-# Copyright 2024 Neovex Authors. All rights reserved.
-# NEOVEX TOR
+# Copyright 2024 Rhenium Authors. All rights reserved.
+# RHENIUM TOR
 
 import("//build/config/features.gni")
 
-source_set("neovex_tor") {
+source_set("rhenium_tor") {
   sources = [
     "tor_launcher.cc",
     "tor_launcher.h",

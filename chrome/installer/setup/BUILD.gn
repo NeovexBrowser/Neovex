@@ -10,7 +10,7 @@ import("//testing/test.gni")
 
 if (is_win) {
   executable("setup") {
-    output_name = "NeovexUpdater"
+    output_name = "RheniumUpdater"
     sources = [
       "setup.rc",
       "setup_main.cc",

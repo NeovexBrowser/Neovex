@@ -19,7 +19,7 @@
 #include "chrome/browser/ui/webui/ntp/core_app_launcher_handler.h"
 #include "chrome/browser/ui/webui/ntp/ntp_resource_cache.h"
 #include "chrome/browser/ui/webui/ntp/ntp_resource_cache_factory.h"
-#include "chrome/browser/ui/webui/ntp/tor_status_handler.h"  // NEOVEX TOR
+#include "chrome/browser/ui/webui/ntp/tor_status_handler.h"  // RHENIUM TOR
 #include "chrome/browser/ui/webui/theme_handler.h"
 #include "chrome/browser/ui/webui/theme_source.h"
 #include "chrome/common/url_constants.h"
@@ -98,7 +98,7 @@ NewTabUI::NewTabUI(content::WebUI* web_ui) : content::WebUIController(web_ui) {
     web_ui->AddMessageHandler(std::make_unique<ThemeHandler>());
   }
 
-  // NEOVEX TOR: Add Tor status handler for incognito profiles
+  // RHENIUM TOR: Add Tor status handler for incognito profiles
   if (profile->IsIncognitoProfile()) {
     web_ui->AddMessageHandler(std::make_unique<TorStatusHandler>());
   }

@@ -147,9 +147,9 @@ action("mini_installer_archive") {
   inputs = [
     "$root_out_dir/chrome.dll",
     "$root_out_dir/chrome_elf.dll",
-    "$root_out_dir/neovex.exe",
+    "$root_out_dir/rhenium.exe",
     "$root_out_dir/locales/en-US.pak",
-    "$root_out_dir/NeovexUpdater.exe",
+    "$root_out_dir/RheniumUpdater.exe",
     "//chrome/tools/build/win/makecab.py",
     release_file,
   ]
@@ -157,7 +157,7 @@ action("mini_installer_archive") {
   outputs = [
     "$root_out_dir/chrome.7z",
     "$root_out_dir/chrome.packed.7z",
-    "$root_out_dir/NeovexUpdater.ex_",
+    "$root_out_dir/RheniumUpdater.ex_",
     packed_files_rc_file,
   ]
   args = [

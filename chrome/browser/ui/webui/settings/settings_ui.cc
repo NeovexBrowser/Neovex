@@ -23,7 +23,7 @@
 #include "chrome/browser/browser_features.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/commerce/shopping_service_factory.h"
-// Glic includes removed for Neovex build
+// Glic includes removed for Rhenium build
 // #include "chrome/browser/glic/public/glic_enabling.h"
 // #include "chrome/browser/glic/public/glic_keyed_service.h"
 #include "chrome/browser/history_embeddings/history_embeddings_utils.h"
@@ -371,7 +371,7 @@ SettingsUI::SettingsUI(content::WebUI* web_ui)
 
   html_source->AddBoolean("enableComposeProactiveNudge", false);
 
-  // Glic/Gemini features disabled for Neovex
+  // Glic/Gemini features disabled for Rhenium
   html_source->AddBoolean("showGeminiPersonalContextLink", false);
   html_source->AddBoolean("showInstructionLink", false);
 
@@ -460,7 +460,7 @@ SettingsUI::SettingsUI(content::WebUI* web_ui)
 
   webui::SetupWebUIDataSource(html_source, kSettingsResources,
                               IDR_SETTINGS_SETTINGS_HTML);
-  webui::SetupNeovexWallpaperDataSource(html_source, profile);
+  webui::SetupRheniumWallpaperDataSource(html_source, profile);
 
 #if !BUILDFLAG(OPTIMIZE_WEBUI)
   html_source->AddResourcePaths(kSettingsSharedResources);
@@ -550,7 +550,7 @@ SettingsUI::SettingsUI(content::WebUI* web_ui)
       base::FeatureList::IsEnabled(
           autofill::features::kAutofillEnableSaveToWalletFromSettings));
 
-  // Glic/AI section disabled for Neovex
+  // Glic/AI section disabled for Rhenium
   const bool show_glic_section = false;
   const bool glic_disallowed_by_admin = false;
 
@@ -784,7 +784,7 @@ void SettingsUI::BindInterface(
 }
 
 void SettingsUI::UpdateShowGlicState() {
-  // Glic disabled for Neovex — no-op
+  // Glic disabled for Rhenium — no-op
 }
 
 WEB_UI_CONTROLLER_TYPE_IMPL(SettingsUI)

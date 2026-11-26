@@ -1,5 +1,5 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #include "chrome/browser/tor/tor_launcher.h"
 
@@ -18,7 +18,7 @@
 #pragma comment(lib, "ws2_32.lib")
 #endif
 
-namespace neovex {
+namespace rhenium {
 
 TorLauncher::TorLauncher() = default;
 
@@ -28,11 +28,11 @@ TorLauncher::~TorLauncher() {
 
 bool TorLauncher::Start() {
   if (is_started_ && IsRunning()) {
-    LOG(INFO) << "NEOVEX TOR: Tor is already running";
+    LOG(INFO) << "RHENIUM TOR: Tor is already running";
     return true;
   }
 
-  // NEOVEX TOR - Locate tor.exe relative to the chrome.exe directory.
+  // RHENIUM TOR - Locate tor.exe relative to the chrome.exe directory.
   base::FilePath exe_dir;
   base::PathService::Get(base::DIR_EXE, &exe_dir);
   #if BUILDFLAG(IS_WIN)
@@ -41,17 +41,17 @@ bool TorLauncher::Start() {
   base::FilePath tor_path = exe_dir.Append("tor/tor.exe");
 #endif
   if (!base::PathExists(tor_path)) {
-    LOG(ERROR) << "NEOVEX TOR: tor.exe not found at " << tor_path.value();
+    LOG(ERROR) << "RHENIUM TOR: tor.exe not found at " << tor_path.value();
     return false;
   }
 
-  LOG(INFO) << "NEOVEX TOR: Found tor.exe at " << tor_path.value();
+  LOG(INFO) << "RHENIUM TOR: Found tor.exe at " << tor_path.value();
 
   // Create a temporary directory for Tor data
   base::FilePath tor_data_dir;
-  if (!base::CreateNewTempDirectory(FILE_PATH_LITERAL("neovex_tor_"),
+  if (!base::CreateNewTempDirectory(FILE_PATH_LITERAL("rhenium_tor_"),
                                      &tor_data_dir)) {
-    LOG(ERROR) << "NEOVEX TOR: Failed to create temp directory for Tor data";
+    LOG(ERROR) << "RHENIUM TOR: Failed to create temp directory for Tor data";
     return false;
   }
 
@@ -62,12 +62,12 @@ bool TorLauncher::Start() {
   tor_cmd.AppendArg("--DataDirectory");
   tor_cmd.AppendArgPath(tor_data_dir);
 
-  // NEOVEX TOR - Tell Tor to log to our log file
+  // RHENIUM TOR - Tell Tor to log to our log file
   tor_log_file_ = tor_data_dir.Append(FILE_PATH_LITERAL("tor.log"));
   tor_cmd.AppendArg("--Log");
   tor_cmd.AppendArg("notice file " + tor_log_file_.AsUTF8Unsafe());
 
-  LOG(INFO) << "NEOVEX TOR: Launching tor with command: "
+  LOG(INFO) << "RHENIUM TOR: Launching tor with command: "
             << tor_cmd.GetCommandLineString();
 
   // Launch the Tor process
@@ -78,19 +78,19 @@ bool TorLauncher::Start() {
 
   tor_process_ = base::LaunchProcess(tor_cmd, options);
   if (!tor_process_.IsValid()) {
-    LOG(ERROR) << "NEOVEX TOR: Failed to launch tor.exe";
+    LOG(ERROR) << "RHENIUM TOR: Failed to launch tor.exe";
     return false;
   }
 
   is_started_ = true;
-  LOG(INFO) << "NEOVEX TOR: Tor process launched successfully (PID: "
+  LOG(INFO) << "RHENIUM TOR: Tor process launched successfully (PID: "
             << tor_process_.Pid() << ")";
   return true;
 }
 
 void TorLauncher::Stop() {
   if (tor_process_.IsValid()) {
-    LOG(INFO) << "NEOVEX TOR: Stopping Tor process";
+    LOG(INFO) << "RHENIUM TOR: Stopping Tor process";
     tor_process_.Terminate(0, false);
     tor_process_.Close();
   }
@@ -157,4 +157,4 @@ std::string TorLauncher::GetLogs() const {
   return contents;
 }
 
-}  // namespace neovex
+}  // namespace rhenium

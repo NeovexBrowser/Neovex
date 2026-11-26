@@ -756,7 +756,7 @@ class InstallerConfig:
             if self.channel not in ["beta", "unstable", "canary"]:
                 self.uri_scheme = "x-scheme-handler/google-chrome;"
         else:
-            self.uri_scheme = "x-scheme-handler/chromium;"
+            self.uri_scheme = "x-scheme-handler/rhenium;"
 
         # xdg-mime and xdg-settings
         artifacts.append(

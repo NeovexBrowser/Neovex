@@ -831,8 +831,8 @@ void WebSettingsImpl::SetRootScrollbarThemeColor(
   settings_->SetRootScrollbarThemeColor(theme_color);
 }
 
-void WebSettingsImpl::SetNeovexAdblockEnabled(bool enabled) {
-  settings_->SetNeovexAdblockEnabled(enabled);
+void WebSettingsImpl::SetRheniumAdblockEnabled(bool enabled) {
+  settings_->SetRheniumAdblockEnabled(enabled);
 }
 
 }  // namespace blink

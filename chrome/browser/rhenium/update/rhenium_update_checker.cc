@@ -1,5 +1,5 @@
-#include "chrome/browser/neovex/update/neovex_update_checker.h"
-#include "chrome/browser/neovex/update/neovex_auto_updater.h"
+#include "chrome/browser/rhenium/update/rhenium_update_checker.h"
+#include "chrome/browser/rhenium/update/rhenium_auto_updater.h"
 
 #include "base/json/json_reader.h"
 #include "base/logging.h"
@@ -10,7 +10,7 @@
 #include "base/time/time.h"
 #include "base/values.h"
 #include "chrome/browser/browser_process.h"
-#include "chrome/browser/neovex/update/neovex_update_notification.h"
+#include "chrome/browser/rhenium/update/rhenium_update_notification.h"
 #include "chrome/browser/net/system_network_context_manager.h"
 #include "chrome/common/channel_info.h"
 #include "components/prefs/pref_service.h"
@@ -20,9 +20,9 @@
 #include "services/network/public/cpp/shared_url_loader_factory.h"
 #include "services/network/public/cpp/simple_url_loader.h"
 
-namespace neovex {
+namespace rhenium {
 
-// NEOVEX UPDATE
+// RHENIUM UPDATE
 
 UpdateInfo::UpdateInfo() = default;
 UpdateInfo::~UpdateInfo() = default;
@@ -30,16 +30,16 @@ UpdateInfo::UpdateInfo(const UpdateInfo&) = default;
 UpdateInfo& UpdateInfo::operator=(const UpdateInfo&) = default;
 
 namespace {
-const char kUpdateUrl[] = "https://github.com/pahal-desai/Neovex/releases/latest/download/version.json";
-const char kLastUpdateCheckPref[] = "neovex.last_update_check_time";
+const char kUpdateUrl[] = "https://github.com/RheniumBrowser/Rhenium/releases/latest/download/version.json";
+const char kLastUpdateCheckPref[] = "rhenium.last_update_check_time";
 }
 
-NeovexUpdateChecker* NeovexUpdateChecker::GetInstance() {
-    static base::NoDestructor<NeovexUpdateChecker> instance;
+RheniumUpdateChecker* RheniumUpdateChecker::GetInstance() {
+    static base::NoDestructor<RheniumUpdateChecker> instance;
     return instance.get();
 }
 
-void NeovexUpdateChecker::CheckForUpdates() {
+void RheniumUpdateChecker::CheckForUpdates() {
     // Run in background / avoid blocking startup
     base::SingleThreadTaskRunner::GetCurrentDefault()->PostDelayedTask(
         FROM_HERE,
@@ -59,10 +59,10 @@ void NeovexUpdateChecker::CheckForUpdates() {
             request->url = GURL(kUpdateUrl);
 
             net::NetworkTrafficAnnotationTag traffic_annotation =
-                net::DefineNetworkTrafficAnnotation("neovex_update_checker", R"(
+                net::DefineNetworkTrafficAnnotation("rhenium_update_checker", R"(
                 semantics {
-                    sender: "Neovex Update Checker"
-                    description: "Checks for Neovex browser updates."
+                    sender: "Rhenium Update Checker"
+                    description: "Checks for Rhenium browser updates."
                     trigger: "Once per day on browser startup."
                     data: "None."
                     destination: OTHER
@@ -85,7 +85,7 @@ void NeovexUpdateChecker::CheckForUpdates() {
                 base::BindOnce([](std::unique_ptr<network::SimpleURLLoader> loader,
                                   std::optional<std::string> response_body) {
                     if (response_body && loader->NetError() == net::OK) {
-                        NeovexUpdateChecker::GetInstance()->OnVersionFetched(*response_body);
+                        RheniumUpdateChecker::GetInstance()->OnVersionFetched(*response_body);
                     }
                 }, std::move(url_loader)),
                 1024 * 1024 /* 1 MB max */);
@@ -93,11 +93,11 @@ void NeovexUpdateChecker::CheckForUpdates() {
         base::Seconds(5)); // Delay check by 5s to not impact startup
 }
 
-std::string NeovexUpdateChecker::GetCurrentVersion() {
+std::string RheniumUpdateChecker::GetCurrentVersion() {
     return std::string(version_info::GetVersionNumber());
 }
 
-bool NeovexUpdateChecker::IsNewerVersion(const std::string& remote, const std::string& local) {
+bool RheniumUpdateChecker::IsNewerVersion(const std::string& remote, const std::string& local) {
     std::vector<std::string> remote_parts = base::SplitString(remote, ".", base::KEEP_WHITESPACE, base::SPLIT_WANT_ALL);
     std::vector<std::string> local_parts = base::SplitString(local, ".", base::KEEP_WHITESPACE, base::SPLIT_WANT_ALL);
 
@@ -118,7 +118,7 @@ bool NeovexUpdateChecker::IsNewerVersion(const std::string& remote, const std::s
     return false;
 }
 
-void NeovexUpdateChecker::OnVersionFetched(const std::string& json_response) {
+void RheniumUpdateChecker::OnVersionFetched(const std::string& json_response) {
     std::optional<base::DictValue> dict = base::JSONReader::ReadDict(json_response, 0); // 0 = JSON_PARSE_RFC
     if (!dict) return;
 
@@ -134,14 +134,14 @@ void NeovexUpdateChecker::OnVersionFetched(const std::string& json_response) {
         std::string current_version = GetCurrentVersion();
         if (IsNewerVersion(*version, current_version)) {
             last_result_.update_available = true;
-            // NEOVEX AUTOUPDATE
-            neovex::NeovexAutoUpdater::GetInstance()->StartDownload(*installer_url);
+            // RHENIUM AUTOUPDATE
+            rhenium::RheniumAutoUpdater::GetInstance()->StartDownload(*installer_url);
         }
     }
 }
 
-UpdateInfo NeovexUpdateChecker::GetLastCheckResult() const {
+UpdateInfo RheniumUpdateChecker::GetLastCheckResult() const {
     return last_result_;
 }
 
-} // namespace neovex
+} // namespace rhenium

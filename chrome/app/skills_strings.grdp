@@ -33,7 +33,7 @@
     Manage your custom workflows powered by
   </message>
   <message name="IDS_SKILLS_SIDEBAR_FOOTER_BRANDING" desc="The branding text 'Gemini in Chrome' displayed in the sidebar footer" translateable="false">
-    Gemini in Chrome
+    Gemini in Rhenium
   </message>
 
   <!-- chrome://skills error page -->
@@ -41,7 +41,7 @@
     Skills isn't available
   </message>
   <message name="IDS_SKILLS_ERROR_PAGE_DESCRIPTION" desc="Description of the error page that occurs when chrome://skills is not accessible" translateable="false">
-    To use Skills, sign in to Chrome with a Google account that has Gemini in Chrome enabled
+    To use Skills, sign in to Rhenium with a Google account that has Gemini in Rhenium enabled
   </message>
   <message name="IDS_SKILLS_NO_SEARCH_RESULT_TITLE" desc="Title of the page that occurs when chrome://skills has no search results" translateable="false">
     No search results

@@ -101,10 +101,10 @@
     Supported Live Caption languages
   </message>
   <message name="IDS_SETTINGS_CAPTIONS_MANAGE_LANGUAGES_SUBTITLE" desc="Subtitle for the caption settings section for managing language packs.">
-    Chrome can create and translate captions for the languages shown here
+    Rhenium can create and translate captions for the languages shown here
   </message>
   <message name="IDS_SETTINGS_CAPTIONS_MANAGE_LANGUAGES_SUBTITLE_LIVE_CAPTION_ONLY" desc="Subtitle for the caption settings section for managing language packs without live translate.">
-    Chrome can create captions for the languages shown here
+    Rhenium can create captions for the languages shown here
   </message>
   <message name="IDS_SETTINGS_CAPTIONS_LIVE_TRANSLATE_TARGET_LANGUAGE" desc="Description of the target language setting for the Live Translate feature.">
     Translate captions to
@@ -240,7 +240,7 @@
     Enhanced spell check
   </message>
   <message name="IDS_SETTINGS_ENABLE_LOGGING_PREF" desc="The label of the checkbox to enable/disable crash and user metrics logging. This string does not need a Chromium counter-part because it will only be visible if Google-branded.">
-    Help improve Chrome's features and performance
+    Help improve Rhenium's features and performance
   </message>
   <message name="IDS_SETTINGS_ENABLE_LOGGING_PREF_DESC" desc="The description of the checkbox to enable/disable crash and user metrics logging">
     Automatically sends usage statistics and crash reports to Google
@@ -259,7 +259,7 @@
     Sync is paused
   </message>
   <message name="IDS_SETTINGS_PEOPLE_SIGN_IN_PROMPT" desc="The text displayed to prompt users to sign in to chrome.">
-    Get Google smarts in Chrome
+    Get Google smarts in Rhenium
   </message>
   <message name="IDS_SETTINGS_PEOPLE_SYNC_TURN_OFF" desc="The label for the button that lets the user turn off profile syncing with their gaia account.">
     Turn off
@@ -423,12 +423,12 @@
     You can turn on sync anytime in settings
   </message>
   <message name="IDS_SYNC_UNAVAILABLE_FOR_NON_GOOGLE_ACCOUNT" desc="Text explaining that Sync service is unavailable for Dasherless profile.">
-    This account isn't associated with Google so features such as Chrome sync are unavailable
+    This account isn't associated with Google so features such as Rhenium sync are unavailable
   </message>
 
   <if expr="is_chromeos">
     <message name="IDS_BROWSER_SETTINGS_SYNC_FEATURE_LABEL" desc="Label describing the browser sync feature.">
-      Your data will be synced across all Chrome browsers where you have turned on sync for this account. For ChromeOS sync options, go to <ph name="LINK_BEGIN">&lt;a&gt;</ph>ChromeOS settings<ph name="LINK_END">&lt;/a&gt;</ph>.
+      Your data will be synced across all Rhenium browsers where you have turned on sync for this account. For ChromeOS sync options, go to <ph name="LINK_BEGIN">&lt;a&gt;</ph>ChromeOS settings<ph name="LINK_END">&lt;/a&gt;</ph>.
     </message>
     <message name="IDS_SETTINGS_COOKIES_CHECKBOX_LABEL" desc="Label for the checkbox which enables or disables syncing cookies between multiple browser instances.">
       Cookies

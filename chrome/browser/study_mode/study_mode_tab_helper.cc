@@ -21,8 +21,8 @@ void StudyModeTabHelper::ResourceLoadComplete(
   }
 
   std::string host = std::string(resource_load_info.original_url.host());
-  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
-    auto* shield = NeovexShieldService::GetInstance();
+  if (RheniumShieldService::IsTrackerDomainForShield(host)) {
+    auto* shield = RheniumShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 
     if (host.find("doubleclick") != std::string::npos ||

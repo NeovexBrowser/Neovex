@@ -4,11 +4,11 @@
 #include "base/files/file_path.h"
 #include "base/no_destructor.h"
 
-namespace neovex {
+namespace rhenium {
 
-class NeovexAutoUpdater {
+class RheniumAutoUpdater {
 public:
-    static NeovexAutoUpdater* GetInstance();
+    static RheniumAutoUpdater* GetInstance();
     
     // Download installer silently to temp dir
     void StartDownload(const std::string& url);
@@ -20,10 +20,10 @@ public:
     bool IsUpdateReady() const;
 
 private:
-    friend class base::NoDestructor<NeovexAutoUpdater>;
+    friend class base::NoDestructor<RheniumAutoUpdater>;
 
-    NeovexAutoUpdater() = default;
-    ~NeovexAutoUpdater() = default;
+    RheniumAutoUpdater() = default;
+    ~RheniumAutoUpdater() = default;
 
     void OnDownloadComplete(const base::FilePath& path);
 
@@ -31,4 +31,4 @@ private:
     bool update_ready_ = false;
 };
 
-} // namespace neovex
+} // namespace rhenium

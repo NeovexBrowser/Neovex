@@ -1474,7 +1474,7 @@ std::optional<ResourceRequestBlockedReason> FrameFetchContext::CanRequest(
                     url.GetString()})));
     return ResourceRequestBlockedReason::kOther;
   }
-  if (GetFrame() && GetFrame()->GetSettings() && GetFrame()->GetSettings()->GetNeovexAdblockEnabled()) {
+  if (GetFrame() && GetFrame()->GetSettings() && GetFrame()->GetSettings()->GetRheniumAdblockEnabled()) {
     String url_str = url.GetString();
     static const char* const kAdDomains[] = {
         "doubleclick.net", "googleadservices.com", "googlesyndication.com",

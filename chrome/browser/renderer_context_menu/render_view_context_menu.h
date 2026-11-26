@@ -354,7 +354,7 @@ class RenderViewContextMenu
   bool IsDevCommandEnabled(int id) const;
   bool IsTranslateEnabled() const;
   bool IsSaveLinkAsEnabled() const;
-  bool IsFileDownloadLink(const GURL& url) const;  // NEOVEX VIRUS CHECK
+  bool IsFileDownloadLink(const GURL& url) const;  // RHENIUM VIRUS CHECK
   bool IsSaveImageAsEnabled() const;
   bool IsSaveAsEnabled() const;
   bool IsSavePageEnabled() const;

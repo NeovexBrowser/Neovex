@@ -1,4 +1,4 @@
-// Copyright 2025 Neovex Authors. All rights reserved.
+// Copyright 2025 Rhenium Authors. All rights reserved.
 // Study Mode Navigation Throttle - blocks distracting websites
 // YouTube is explicitly EXCLUDED from blocking.
 
@@ -799,7 +799,7 @@ void StudyModeNavigationThrottle::MaybeCreateAndAdd(
 // static
 void StudyModeNavigationThrottle::SetEnabled(bool enabled) {
   g_study_mode_enabled = enabled;
-  LOG(INFO) << "NEOVEX Study Mode: " << (enabled ? "ENABLED" : "DISABLED");
+  LOG(INFO) << "RHENIUM Study Mode: " << (enabled ? "ENABLED" : "DISABLED");
 }
 
 // static
@@ -859,7 +859,7 @@ StudyModeNavigationThrottle::CheckNavigation() {
     if (query.find("domain=") == 0) {
       std::string domain = query.substr(7);
       GetUserWhitelist().push_back(domain);
-      LOG(INFO) << "NEOVEX Study Mode: Whitelisted " << domain;
+      LOG(INFO) << "RHENIUM Study Mode: Whitelisted " << domain;
 
       // Return a basic HTML page that auto-navigates back to the original page
       std::string back_html =
@@ -881,7 +881,7 @@ StudyModeNavigationThrottle::CheckNavigation() {
     return PROCEED;
   }
   if (IsDomainBlocked(host)) {
-    LOG(INFO) << "NEOVEX Study Mode: Blocked " << host;
+    LOG(INFO) << "RHENIUM Study Mode: Blocked " << host;
 
     std::string error_html = R"HTML(
 <!DOCTYPE html>
@@ -986,51 +986,51 @@ StudyModeNavigationThrottle::CheckNavigation() {
   return PROCEED;
 }
 
-// --- Neovex Shield Privacy Service ---
+// --- Rhenium Shield Privacy Service ---
 
 // static
-NeovexShieldService* NeovexShieldService::GetInstance() {
-  static base::NoDestructor<NeovexShieldService> instance;
+RheniumShieldService* RheniumShieldService::GetInstance() {
+  static base::NoDestructor<RheniumShieldService> instance;
   return instance.get();
 }
 
-NeovexShieldService::NeovexShieldService() {
+RheniumShieldService::RheniumShieldService() {
   trackers_blocked_ = 0;
   ads_blocked_ = 0;
   fingerprints_blocked_ = 0;
   cookies_managed_ = 0;
 }
 
-void NeovexShieldService::IncrementTrackersBlocked() {
+void RheniumShieldService::IncrementTrackersBlocked() {
   trackers_blocked_++;
 }
-void NeovexShieldService::IncrementAdsBlocked() {
+void RheniumShieldService::IncrementAdsBlocked() {
   ads_blocked_++;
 }
-void NeovexShieldService::IncrementFingerprintsBlocked() {
+void RheniumShieldService::IncrementFingerprintsBlocked() {
   fingerprints_blocked_++;
 }
-void NeovexShieldService::IncrementCookiesManaged() {
+void RheniumShieldService::IncrementCookiesManaged() {
   cookies_managed_++;
 }
 
-int NeovexShieldService::GetTrackersBlocked() const {
+int RheniumShieldService::GetTrackersBlocked() const {
   return trackers_blocked_.load();
 }
-int NeovexShieldService::GetAdsBlocked() const {
+int RheniumShieldService::GetAdsBlocked() const {
   return ads_blocked_.load();
 }
-int NeovexShieldService::GetFingerprintsBlocked() const {
+int RheniumShieldService::GetFingerprintsBlocked() const {
   return fingerprints_blocked_.load();
 }
-int NeovexShieldService::GetCookiesManaged() const {
+int RheniumShieldService::GetCookiesManaged() const {
   return cookies_managed_.load();
 }
 
-// --- Neovex Shield Throttle ---
+// --- Rhenium Shield Throttle ---
 
 // static
-bool NeovexShieldService::IsTrackerDomainForShield(const std::string& host) {
+bool RheniumShieldService::IsTrackerDomainForShield(const std::string& host) {
   const char* const kTrackers[] = {"google-analytics.com",
                                    "doubleclick.net",
                                    "facebook.net",
@@ -1071,34 +1071,34 @@ bool NeovexShieldService::IsTrackerDomainForShield(const std::string& host) {
 }
 
 // static
-void NeovexShieldThrottle::MaybeCreateAndAdd(
+void RheniumShieldThrottle::MaybeCreateAndAdd(
     content::NavigationThrottleRegistry& registry) {
-  registry.AddThrottle(std::make_unique<NeovexShieldThrottle>(registry));
+  registry.AddThrottle(std::make_unique<RheniumShieldThrottle>(registry));
 }
 
-NeovexShieldThrottle::NeovexShieldThrottle(
+RheniumShieldThrottle::RheniumShieldThrottle(
     content::NavigationThrottleRegistry& registry)
     : content::NavigationThrottle(registry) {}
 
-NeovexShieldThrottle::~NeovexShieldThrottle() = default;
+RheniumShieldThrottle::~RheniumShieldThrottle() = default;
 
 content::NavigationThrottle::ThrottleCheckResult
-NeovexShieldThrottle::WillStartRequest() {
+RheniumShieldThrottle::WillStartRequest() {
   return CheckIfBlocked();
 }
 
 content::NavigationThrottle::ThrottleCheckResult
-NeovexShieldThrottle::WillRedirectRequest() {
+RheniumShieldThrottle::WillRedirectRequest() {
   return CheckIfBlocked();
 }
 
 content::NavigationThrottle::ThrottleCheckResult
-NeovexShieldThrottle::CheckIfBlocked() {
+RheniumShieldThrottle::CheckIfBlocked() {
   const GURL& url = navigation_handle()->GetURL();
   std::string host = std::string(url.host());
 
-  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
-    auto* shield = NeovexShieldService::GetInstance();
+  if (RheniumShieldService::IsTrackerDomainForShield(host)) {
+    auto* shield = RheniumShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 
     if (host.find("doubleclick") != std::string::npos ||
@@ -1118,20 +1118,20 @@ NeovexShieldThrottle::CheckIfBlocked() {
   return content::NavigationThrottle::PROCEED;
 }
 
-const char* NeovexShieldThrottle::GetNameForLogging() {
-  return "NeovexShieldThrottle";
+const char* RheniumShieldThrottle::GetNameForLogging() {
+  return "RheniumShieldThrottle";
 }
 
-// --- Neovex Shield URLLoader Throttle ---
+// --- Rhenium Shield URLLoader Throttle ---
 
-void NeovexShieldURLLoaderThrottle::WillStartRequest(
+void RheniumShieldURLLoaderThrottle::WillStartRequest(
     network::ResourceRequest* request,
     bool* defer) {
   if (!request->url.SchemeIsHTTPOrHTTPS()) return;
 
   std::string host = std::string(request->url.host());
-  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
-    auto* shield = NeovexShieldService::GetInstance();
+  if (RheniumShieldService::IsTrackerDomainForShield(host)) {
+    auto* shield = RheniumShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 
     if (host.find("doubleclick") != std::string::npos ||
@@ -1146,12 +1146,12 @@ void NeovexShieldURLLoaderThrottle::WillStartRequest(
     }
 
     if (delegate_) {
-      delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+      delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Rhenium Shield Blocked Tracker");
     }
   }
 }
 
-void NeovexShieldURLLoaderThrottle::WillRedirectRequest(
+void RheniumShieldURLLoaderThrottle::WillRedirectRequest(
     net::RedirectInfo* redirect_info,
     const network::mojom::URLResponseHead& response_head,
     bool* defer,
@@ -1161,8 +1161,8 @@ void NeovexShieldURLLoaderThrottle::WillRedirectRequest(
   if (!redirect_info->new_url.SchemeIsHTTPOrHTTPS()) return;
 
   std::string host = std::string(redirect_info->new_url.host());
-  if (NeovexShieldService::IsTrackerDomainForShield(host)) {
-    auto* shield = NeovexShieldService::GetInstance();
+  if (RheniumShieldService::IsTrackerDomainForShield(host)) {
+    auto* shield = RheniumShieldService::GetInstance();
     shield->IncrementTrackersBlocked();
 
     if (host.find("doubleclick") != std::string::npos ||
@@ -1177,7 +1177,7 @@ void NeovexShieldURLLoaderThrottle::WillRedirectRequest(
     }
 
     if (delegate_) {
-      delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Neovex Shield Blocked Tracker");
+      delegate_->CancelWithError(net::ERR_BLOCKED_BY_CLIENT, "Rhenium Shield Blocked Tracker");
     }
   }
 }

@@ -55,7 +55,7 @@ const char* const kWebPrefsToObserve[] = {
     prefs::kWebKitAllowRunningInsecureContent,
     prefs::kWebKitDefaultFixedFontSize,
     prefs::kWebKitDefaultFontSize,
-    prefs::kNeovexAdblockEnabled,
+    prefs::kRheniumAdblockEnabled,
     prefs::kWebKitDomPasteEnabled,
     prefs::kAccessibilityCaptionsTextSize,
     prefs::kAccessibilityCaptionsTextFont,

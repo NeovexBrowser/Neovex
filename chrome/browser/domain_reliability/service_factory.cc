@@ -13,7 +13,7 @@ namespace domain_reliability {
 namespace {
 
 // If Domain Reliability is enabled in the absence of a flag or field trial.
-// NEOVEX OPT DEGOOGLE: Domain Reliability reporting disabled.
+// RHENIUM OPT DEGOOGLE: Domain Reliability reporting disabled.
 const bool kDefaultEnabled = false;
 
 // The name and value of the field trial to turn Domain Reliability on.

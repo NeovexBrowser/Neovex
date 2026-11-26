@@ -43,8 +43,8 @@ def main() -> None:
         config.info_vars["INSTALLDIR"] = "/opt/google/chrome-repo"
         config.info_vars["PACKAGE"] = "google-chrome-repo"
     else:
-        config.info_vars["INSTALLDIR"] = "/opt/chromium.org/chromium-repo"
-        config.info_vars["PACKAGE"] = "chromium-browser-repo"
+        config.info_vars["INSTALLDIR"] = "/opt/rhenium-repo"
+        config.info_vars["PACKAGE"] = "rhenium-browser-repo"
 
     config.channel = "repo"
 

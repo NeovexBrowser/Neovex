@@ -1,5 +1,5 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #include "chrome/browser/ui/webui/ntp/tor_status_handler.h"
 
@@ -34,12 +34,12 @@ void TorStatusHandler::RegisterMessages() {
 void TorStatusHandler::HandleEnableTor(const base::ListValue& args) {
   AllowJavascript();
 
-  neovex::TorLauncherFactory* factory =
-      neovex::TorLauncherFactory::GetInstance();
+  rhenium::TorLauncherFactory* factory =
+      rhenium::TorLauncherFactory::GetInstance();
   factory->EnableTor();
 
   Profile* profile = Profile::FromWebUI(web_ui());
-  neovex::TorProfileManager::ApplyTorProxy(profile);
+  rhenium::TorProfileManager::ApplyTorProxy(profile);
 
   was_ready_ = false;
 
@@ -55,12 +55,12 @@ void TorStatusHandler::HandleDisableTor(const base::ListValue& args) {
   poll_timer_.Stop();
   was_ready_ = false;
 
-  neovex::TorLauncherFactory* factory =
-      neovex::TorLauncherFactory::GetInstance();
+  rhenium::TorLauncherFactory* factory =
+      rhenium::TorLauncherFactory::GetInstance();
   factory->DisableTor();
 
   Profile* profile = Profile::FromWebUI(web_ui());
-  neovex::TorProfileManager::RemoveTorProxy(profile);
+  rhenium::TorProfileManager::RemoveTorProxy(profile);
 }
 
 void TorStatusHandler::HandleGetTorStatus(const base::ListValue& args) {
@@ -87,9 +87,9 @@ void TorStatusHandler::PollTorStatus() {
 }
 
 void TorStatusHandler::SendTorStatus() {
-  neovex::TorLauncherFactory* factory =
-      neovex::TorLauncherFactory::GetInstance();
-  neovex::TorLauncher* launcher = factory->GetLauncher();
+  rhenium::TorLauncherFactory* factory =
+      rhenium::TorLauncherFactory::GetInstance();
+  rhenium::TorLauncher* launcher = factory->GetLauncher();
 
   base::DictValue tor_status;
 

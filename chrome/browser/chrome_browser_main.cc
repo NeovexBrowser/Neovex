@@ -35,8 +35,8 @@
 #include "chrome/browser/browser_features.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/browser_process_impl.h"
-#include "chrome/browser/neovex_update_checker.h"
-#include "chrome/browser/neovex_version.h"
+#include "chrome/browser/rhenium_update_checker.h"
+#include "chrome/browser/rhenium_version.h"
 #include "chrome/browser/ui/browser_navigator.h"
 #include "chrome/browser/ui/browser_navigator_params.h"
 #include "chrome/browser/chrome_browser_main_extra_parts.h"
@@ -1692,7 +1692,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
             UpgradeDetector::GetInstance());
   }
 #endif
-  // NEOVEX: Kick off background update check 30 seconds after startup.
+  // RHENIUM: Kick off background update check 30 seconds after startup.
 #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
   content::GetUIThreadTaskRunner({})->PostDelayedTask(
       FROM_HERE, base::BindOnce([]() {
@@ -1700,7 +1700,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
         auto url_loader_factory =
             g_browser_process->shared_url_loader_factory();
         if (local_state && url_loader_factory) {
-          auto checker = std::make_unique<neovex::UpdateChecker>(
+          auto checker = std::make_unique<rhenium::UpdateChecker>(
               local_state, url_loader_factory);
           auto* raw = checker.get();
           // The checker self-destructs via weak pointers when the load completes
@@ -2064,7 +2064,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
         g_browser_process->profile_manager()->GetLastOpenedProfiles();
   }
 #endif
-  // NEOVEX: Open What's New tab if this is the first launch after an update.
+  // RHENIUM: Open What's New tab if this is the first launch after an update.
 #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
   if (PrefService* local_state = g_browser_process->local_state()) {
     base::FilePath exe_path;
@@ -2077,20 +2077,20 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
                           : file_info.creation_time.ToInternalValue();
       current_exe_time = std::to_string(stamp);
     }
-    std::string current_version_id = std::string(NEOVEX_VERSION) + "_" + current_exe_time;
+    std::string current_version_id = std::string(RHENIUM_VERSION) + "_" + current_exe_time;
 
     std::string last_version =
-        local_state->GetString(neovex::kUpdateLastVersion);
+        local_state->GetString(rhenium::kUpdateLastVersion);
     if (!last_version.empty() && last_version != current_version_id) {
       // Version or binary changed from a known previous version — post-update launch.
       // Append What's New URL to the command line so StartupBrowserCreator opens it safely.
-      base::CommandLine::ForCurrentProcess()->AppendArg("chrome://neovex-whatsnew/");
+      base::CommandLine::ForCurrentProcess()->AppendArg("chrome://rhenium-whatsnew/");
     }
     // Always record the current version ID so that subsequent updates can
     // detect the change. On first run, this seeds the pref from
     // empty to the current version without opening What's New.
     if (last_version != current_version_id) {
-      local_state->SetString(neovex::kUpdateLastVersion, current_version_id);
+      local_state->SetString(rhenium::kUpdateLastVersion, current_version_id);
       local_state->CommitPendingWrite();
     }
   }
@@ -2235,9 +2235,9 @@ void ChromeBrowserMainParts::PostMainMessageLoopRun() {
   // destroy before the tear-down.
   synthetic_trial_syncer_.reset();
 
-  // NEOVEX: Launch downloaded installer before tear-down.
+  // RHENIUM: Launch downloaded installer before tear-down.
 #if BUILDFLAG(IS_WIN)
-  neovex::MaybeLaunchInstallerOnShutdown(
+  rhenium::MaybeLaunchInstallerOnShutdown(
       browser_process_->local_state());
 #endif
 

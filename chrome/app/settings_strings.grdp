@@ -69,7 +69,7 @@
   </if>
   <if expr="is_macosx">
     <message name="IDS_ABOUT_CHROME_AUTOUPDATE_ALL" desc="The 'Automatically update Chrome for all users.' button in the About window.  Mac-only.">
-      Automatically update Chrome for all users
+      Automatically update Rhenium for all users
     </message>
     <message name="IDS_ABOUT_CHROME_AUTOUPDATE_ALL_IS_ON" desc="The text in About Page to indicate automatic update is turned on.  Mac-only.">
       Automatic updates are turned on.
@@ -96,7 +96,7 @@
     Get image descriptions from Google
   </message>
   <message name="IDS_SETTINGS_ACCESSIBLE_IMAGE_LABELS_SUBTITLE" desc="Subtitle for screen reader image labels feature.">
-    If an image doesn’t have a useful description, Chrome will try to provide one for you. To create descriptions, images are sent to Google.
+    If an image doesn’t have a useful description, Rhenium will try to provide one for you. To create descriptions, images are sent to Google.
   </message>
   <message name="IDS_SETTINGS_MAIN_NODE_ANNOTATIONS_DOWNLOAD_COMPLETE" desc="Success message when it has downloaded main node annotation files.">
     Main node annotation files downloaded
@@ -249,7 +249,7 @@
     Reset toolbar to default settings
   </message>
   <message name="IDS_SETTINGS_CHROME_COLORS" desc="Text of the label describing 'Chrome Colors' theme.">
-    Chrome Colors
+    Rhenium Colors
   </message>
   <message name="IDS_SETTINGS_COLOR_SCHEME_MODE" desc="Text of the label for selecting a color scheme mode for the browser.">
     Mode
@@ -343,13 +343,13 @@
     Search settings
   </message>
   <message name="IDS_SETTINGS_SEARCH_NO_RESULTS_HELP" desc="Help text for a search that has no results.">
-    Go to <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1"&gt;</ph>Google Chrome help<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> if you can't find what you're looking for
+    Go to <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1"&gt;</ph>Rhenium help<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> if you can't find what you're looking for
   </message>
   <message name="IDS_SETTINGS_SETTINGS" desc="The settings page title.">
     Settings
   </message>
   <message name="IDS_SETTINGS_ALT_PAGE_TITLE" desc="The settings page title for the about page.">
-    Settings - <ph name="SECTION_TITLE">$1<ex>About Chromium</ex></ph>
+    Settings - <ph name="SECTION_TITLE">$1<ex>About Rhenium</ex></ph>
   </message>
   <message name="IDS_SETTINGS_SUBPAGE_BUTTON" desc="Accessibility description for a button navigating the user from a settings page to one of the settings subpages.">
     Subpage button
@@ -817,16 +817,16 @@
     Edit in Google Account
   </message>
   <message name="IDS_SETTINGS_HOME_AND_WORK_ADDRESS_REMOVE" desc="Label for a context menu item that removes the selected home and work address from Chrome.">
-    Remove from Chrome
+    Remove from Rhenium
   </message>
   <message name="IDS_SETTINGS_HOME_ADDRESS_REMOVE_CONFIRMATION_DIALOG_TITLE" desc="Title for the dialog that asks for confirmation to remove the selected home address from Chrome.">
-    Remove your home address from Chrome autofill?
+    Remove your home address from Rhenium autofill?
   </message>
   <message name="IDS_SETTINGS_WORK_ADDRESS_REMOVE_CONFIRMATION_DIALOG_TITLE" desc="Title for the dialog that asks for confirmation to remove the selected work address from Chrome.">
-    Remove your work address from Chrome autofill?
+    Remove your work address from Rhenium autofill?
   </message>
   <message name="IDS_SETTINGS_NAME_EMAIL_ADDRESS_REMOVE_CONFIRMATION_DIALOG_TITLE" desc="Title for the dialog that asks for confirmation to remove the selected name and email address from Chrome.">
-    Remove this info from Chrome autofill?
+    Remove this info from Rhenium autofill?
   </message>
   <message name="IDS_SETTINGS_HOME_ADDRESS_REMOVE_CONFIRMATION_DIALOG_NOTICE" desc="Body for the dialog that asks for confirmation to remove the selected home address from Chrome.">
     Your home address can help you get things done across Google services, like more relevant Search results and directions in Google Maps. You can edit or delete your address in your <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;</ph>Google Account <ph name="USERNAME">$2<ex>example@gmail.com</ex></ph><ph name="END_LINK">&lt;/a&gt;</ph>.
@@ -883,7 +883,7 @@
     Signs you out of most sites. You'll stay signed in to your Google Account so your synced data can be deleted.
   </message>
   <message name="IDS_SETTINGS_CLEAR_COOKIES_AND_SITE_DATA_SUMMARY_BASIC_SUPERVISED_PROFILE" desc="A summary for the 'Cookies and site data' option in the 'Clear Browsing Data' screen, explaining that deleting cookies and site data will sign the the child user out of most websites but your Google account and Family Link settings will stay .">
-    Signs you out of most sites. You'll stay signed in to your Google Account so your Family Link settings for Chrome apply.
+    Signs you out of most sites. You'll stay signed in to your Google Account so your Family Link settings for Rhenium apply.
   </message>
   <message name="IDS_SETTINGS_CLEAR_COOKIES_AND_SITE_DATA_SUMMARY_BASIC_SIGNED_IN_PROFILE" desc="A summary for the 'Cookies and site data' option in the 'Clear Browsing Data' screen, explaining that deleting cookies and site data will sign the user out of most websites but your Google sign in will stay.">
     Signs you out of most sites. You'll stay signed in to your Google Account.
@@ -1406,10 +1406,10 @@
     Sites you visit can verify that you're a real person and not a bot
   </message>
   <message name="IDS_SETTINGS_ANTI_ABUSE_WHEN_ON_SECTION_ONE" desc="A description that informs users that Chrome saves a small amount of data when the anti-abuse features are enabled.">
-    A site you visit can save a small amount of info with Chrome, mainly to validate you're not a bot
+    A site you visit can save a small amount of info with Rhenium, mainly to validate you're not a bot
   </message>
   <message name="IDS_SETTINGS_ANTI_ABUSE_WHEN_ON_SECTION_TWO" desc="A description that informs users how the anti-abuse features work.">
-    As you keep browsing, sites can check with Chrome and verify with a previous site you've visited that you're likely a real person
+    As you keep browsing, sites can check with Rhenium and verify with a previous site you've visited that you're likely a real person
   </message>
   <message name="IDS_SETTINGS_ANTI_ABUSE_WHEN_ON_SECTION_THREE" desc="A description that informs users how their browsing could be helped by the anti-abuse features.">
     Browsing is faster because a site is less likely to ask you to verify you're a real person
@@ -1475,7 +1475,7 @@
   <!-- Privacy Sandbox v4 - Topics Page -->
   <!-- Where possible, these strings have been unified on Desktop & Android in privacy_sandox_strings.grdp. The strings here either only appear on one platform, or have platform specific requirements, e.g. the format of placeholders, and so cannot be unified. For the latter case, they have corresponding _CANONICAL representations used when consent is recorded on either platform, and so they must stay in sync -->
   <message name="IDS_SETTINGS_TOPICS_PAGE_CURRENT_TOPICS_REGION_A11Y_DESCRIPTION" desc="An explanation read by screen readers that describes the list of topics.">
-    List of topics estimated by Chrome based on your recent browsing history
+    List of topics estimated by Rhenium based on your recent browsing history
   </message>
   <message name="IDS_SETTINGS_TOPICS_PAGE_BLOCKED_TOPICS_REGION_A11Y_DESCRIPTION" desc="Read by screen readers to describe the list of blocked topics.">
     List of topics you blocked that you don't want shared with sites
@@ -1497,7 +1497,7 @@
     Sites
   </message>
   <message name="IDS_SETTINGS_FLEDGE_PAGE_CURRENT_SITES_DESCRIPTION" desc="A paragraph beneath the 'Sites' label. It explains how users can control the sites that appear in the list. * 'block sites': When a user blocks a site, that site may no longer save info with Chrome about the user's visit. As the user continues to browse, they will not see ads suggested by the blocked site. * 'auto-deletes': We included the 'auto' to reinforce that this is part of a system and the deletion is done regularly.">
-    You can block sites you don't want. Chrome also auto-deletes sites from the list that are older than 30 days.
+    You can block sites you don't want. Rhenium also auto-deletes sites from the list that are older than 30 days.
   </message>
   <message name="IDS_SETTINGS_FLEDGE_PAGE_CURRENT_SITES_DESCRIPTION_LEARN_MORE" desc="A button label that opens a dialog box allowing the user to learn more about the Site-suggested ads setting.">
     Learn more
@@ -1542,13 +1542,13 @@
     More about site-suggested ads
   </message>
   <message name="IDS_SETTINGS_FLEDGE_PAGE_LEARN_MORE_BULLET_1" desc="1 of 3 paragraphs on the Learn more page for Site-suggested ads. * 'It's common...' this sentence is intended to be reassuring. Many sites the user visits are retaining some information about the user, such as their preferred language if the site has a language picker. If cookies are allowed, this info might be stored with a first-party cookie on the user's device. Sites can also store limited information with Chrome.">
-    It's common for sites you visit to remember things you're interested in, to personalize your experience. Sites can also store information with Chrome about your interests.
+    It's common for sites you visit to remember things you're interested in, to personalize your experience. Sites can also store information with Rhenium about your interests.
   </message>
   <message name="IDS_SETTINGS_FLEDGE_PAGE_LEARN_MORE_BULLET_2" desc="2 of 3 paragraphs on the Learn more page for Site-suggested ads.">
     For example, if you visit a site that sells long-distance running shoes, the site might decide that you're interested in running marathons. Later, if you visit a different site, that site can show you an ad for running shoes suggested by the first site.
   </message>
   <message name="IDS_SETTINGS_FLEDGE_PAGE_LEARN_MORE_BULLET_3" desc="3 of 3 paragraphs on the Learn more page for Site-suggested ads. * 'Auto-deletes': This could just read 'Chrome deletes...' but we include the 'auto' to suggest that the deletion happens regularly and as part of the system. * 'A site you visit again...': We want to reassure the user. We just told them sites are automatically deleted. And yet, a user might see the same site in the list month after month if they visit that site regularly.">
-    Chrome auto-deletes sites that are older than 30 days. A site you visit again might reappear on the list. Or you can block a site from suggesting ads for you. Learn more about <ph name="BEGIN_LINK">&lt;a href="$1" target="_blank"&gt;</ph>managing your ad privacy in Chrome.<ph name="END_LINK">&lt;/a&gt;</ph>
+    Rhenium auto-deletes sites that are older than 30 days. A site you visit again might reappear on the list. Or you can block a site from suggesting ads for you. Learn more about <ph name="BEGIN_LINK">&lt;a href="$1" target="_blank"&gt;</ph>managing your ad privacy in Rhenium.<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_FLEDGE_PAGE_CURRENT_SITES_DESCRIPTION_LEARN_MORE_A11Y_LABEL" desc="Text read by screen readers to help users distinguish this 'Learn more' link from others that might get added to this page.">
     Learn more about site-suggested ads
@@ -1577,7 +1577,7 @@
     You can always delete ad-measurement data by deleting your browsing data
   </message>
   <message name="IDS_SETTINGS_AD_MEASUREMENT_PAGE_CONSIDER_BULLET_2" desc="2 of 3 bullets in the 'Things to consider' section that describes the Ad measurement setting.">
-    Chrome limits the total amount of data that sites can share through the browser to measure ad performance
+    Rhenium limits the total amount of data that sites can share through the browser to measure ad performance
   </message>
 
   <!-- Privacy Guide -->
@@ -1636,7 +1636,7 @@
     Web &#38; App Activity
   </message>
   <message name="IDS_SETTINGS_PRIVACY_GUIDE_COMPLETION_CARD_AI_SETTINGS_LABEL" desc="Text of the AI Innovations sublabel in the completion card of the 'Privacy Guide'.">
-    Learn more about how AI shapes your experience and the controls provided by Chrome
+    Learn more about how AI shapes your experience and the controls provided by Rhenium
   </message>
   <message name="IDS_SETTINGS_PRIVACY_GUIDE_MSBB_CARD_HEADER" desc="Header of the 'make searches and browsing better' card in the 'Privacy Guide'.">
     Choose your search and browsing quality
@@ -1697,7 +1697,7 @@
       Sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address
     </message>
     <message name="IDS_SETTINGS_PRIVACY_GUIDE_SAFE_BROWSING_CARD_STANDARD_PROTECTION_PRIVACY_DESCRIPTION1_PROXY" desc="A part of the privacy description of the standard protection section of the safe browsing card in the 'Privacy Guide'.">
-      If a site tries to steal your password, or when you download a harmful file, Chrome may also send URLs, including bits of page content, to Google
+      If a site tries to steal your password, or when you download a harmful file, Rhenium may also send URLs, including bits of page content, to Google
     </message>
   </if>
 
@@ -1750,7 +1750,7 @@
     Passwords
   </message>
   <message name="IDS_SETTINGS_SAFETY_CHECK_PASSWORDS_FEATURE_UNAVAILABLE" desc="Explains that the password check feature is not available in this version of the browser.">
-    Password check is not available in Chromium
+    Password check is not available in Rhenium
   </message>
   <message name="IDS_SETTINGS_SAFETY_CHECK_SAFE_BROWSING_ENABLED" desc="This text points out that Safe Browsing is enabled and that the user is protected.">
     Safe Browsing is on and protecting you from harmful sites and downloads
@@ -1895,10 +1895,10 @@
   </message>
   <if expr="_google_chrome">
     <message name="IDS_SETTINGS_SAFEBROWSING_STANDARD_DESC_PROXY" desc="Description for safe browsing standard protection mode">
-      Protects against sites, downloads, and extensions that are known to be dangerous. When you visit a site, Chrome sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site does something suspicious, full URLs and bits of page content are also sent.
+      Protects against sites, downloads, and extensions that are known to be dangerous. When you visit a site, Rhenium sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site does something suspicious, full URLs and bits of page content are also sent.
     </message>
     <message name="IDS_SETTINGS_SAFEBROWSING_STANDARD_BULLET_TWO_PROXY" desc="Bullet point under the safe browsing standard protection mode">
-      Sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site tries to steal your password, or when you download a harmful file, Chrome may also send URLs, including bits of page content, to Google.
+      Sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site tries to steal your password, or when you download a harmful file, Rhenium may also send URLs, including bits of page content, to Google.
     </message>
   </if>
   <message name="IDS_SETTINGS_SAFEBROWSING_STANDARD_EXPAND_ACCESSIBILITY_LABEL" desc="Label for the button that toggles showing the detailed description of safe browsing standard protection. Only visible by screen reader software.">
@@ -2279,7 +2279,7 @@
     Some settings were reset
   </message>
   <message name="IDS_SETTINGS_RESET_BANNER_TEXT" desc="The text to show in a banner at the top of the chrome://settings page. The banner is displayed when Chrome detects that some settings have been tampered with and were reset to factory defaults.">
-    Chrome detected that some of your settings were corrupted by another program and reset them to their original defaults.
+    Rhenium detected that some of your settings were corrupted by another program and reset them to their original defaults.
   </message>
   <message name="IDS_SETTINGS_RESET_BANNER_RESET_BUTTON_TEXT" desc="The text on the reset button in the Automatic Settings Reset Banner suggesting to reset ALL settings after an automatic reset of SOME settings.">
     Reset all settings
@@ -2288,10 +2288,10 @@
     Learn more about resetting settings
   </message>
   <message name="IDS_SETTINGS_RESET_AUTOMATED_DIALOG_V2_TITLE" desc="The title of the dialog informing the user that automated resetting of some settings occurred.">
-    Chrome reset these settings
+    Rhenium reset these settings
   </message>
   <message name="IDS_SETTINGS_RESET_AUTOMATED_DIALOG_V2_BODY" desc="The body of the dialog informing the user that automated resetting of some settings occurred.">
-    These settings were changed from outside of Chrome. To protect you, Chrome reset them.
+    These settings were changed from outside of Rhenium. To protect you, Rhenium reset them.
   </message>
   <message name="IDS_SETTINGS_RESET_PINNED_TABS" desc="A string that is used to describe the pinned tabs setting.">
     Pinned tabs
@@ -2431,10 +2431,10 @@
     Site search
   </message>
   <message name="IDS_SETTINGS_SEARCH_ENGINES_SITE_SEARCH_EXPLANATION" desc="Explanation for 'Site Search' section. Used interchangeably with IDS_SETTINGS_SEARCH_ENGINES_SITE_SEARCH_EXPLANATION_STARTER_PACK">
-    To search a specific site or part of Chrome, type its shortcut in the address bar, followed by your preferred keyboard shortcut.
+    To search a specific site or part of Rhenium, type its shortcut in the address bar, followed by your preferred keyboard shortcut.
   </message>
   <message name="IDS_SETTINGS_SEARCH_ENGINES_SITE_SEARCH_EXPLANATION_STARTER_PACK" desc="Explanation for 'Site Search' section">
-    To search a specific site or part of Chrome, type its shortcut in the address bar, followed by your preferred keyboard shortcut. For example, to search only Bookmarks, type "@bookmarks", then press Tab or Space.
+    To search a specific site or part of Rhenium, type its shortcut in the address bar, followed by your preferred keyboard shortcut. For example, to search only Bookmarks, type "@bookmarks", then press Tab or Space.
   </message>
   <message name="IDS_SETTINGS_SEARCH_ENGINES_NO_SITES_ADDED" desc="Text shown when the 'Site Search' section is empty">
     No sites added
@@ -2449,7 +2449,7 @@
     Extensions
   </message>
   <message name="IDS_SETTINGS_SEARCH_ENGINES_EXTENSION_ENGINES_EXPLANATION" desc="Explanation for a section that displays search engines added by extensions">
-    Some extensions can add search engines to Chrome
+    Some extensions can add search engines to Rhenium
   </message>
   <message name="IDS_SETTINGS_SEARCH_ENGINES_NAME" desc="Label for a table column that holds the name of a search engine or site search provider">
     Name
@@ -3123,7 +3123,7 @@
   </if>
   <if expr="is_win and _google_chrome">
     <message name="IDS_SETTINGS_SITE_SETTINGS_PROTECTED_CONTENT_IDENTIFIERS_ALLOWED_SUB_LABEL" desc="A subtitle for the ‘Protected Content IDs’ setting, shown if user chooses to allow Protected Content IDs. This text explains that enabling protected content IDs may result in live captioning not working.">
-      Chrome Live Caption might not work
+      Rhenium Live Caption might not work
     </message>
   </if>
   <message name="IDS_SETTINGS_SITE_SETTINGS_PROTOCOL_HANDLERS_DESCRIPTION" desc="Description of the protocol handlers content setting.">
@@ -3338,7 +3338,7 @@
     Insecure content is blocked by default on secure sites
   </message>
   <message name="IDS_SETTINGS_SITE_SETTINGS_PDF_DOWNLOAD_PDFS" desc="Label for downloading PDF documents instead of automatically opening them in Chrome.">
-    Download PDF files instead of automatically opening them in Chrome
+    Download PDF files instead of automatically opening them in Rhenium
   </message>
   <message name="IDS_SETTINGS_SITE_SETTINGS_RECENT_ACTIVITY" desc="Label for the section which contains the user's recent permissions changes">
     Recent activity
@@ -3635,7 +3635,7 @@
     No sites added
   </message>
   <message name="IDS_SETTINGS_SITE_SETTINGS_BLOCK_AUTOPLAY" desc="A label for a toggle in site settings to block autoplay. If the toggle is on then Chrome will block autoplay by default and use an algorithm to determine which sites should still be able to autoplay. If the toggle is off then autoplay will be enabled for all sites.">
-    Let Chrome choose when sites can play sound (recommended)
+    Let Rhenium choose when sites can play sound (recommended)
   </message>
   <message name="IDS_SETTINGS_SITE_SETTINGS_EMPTY_ALL_SITES_PAGE" desc="Explanation shown when there are no sites that have appeared yet on the All Sites page.">
     Sites you visit will appear here
@@ -3920,7 +3920,7 @@
     Uses content on sites you visit, plus browser activity and interactions, for personalization
   </message>
   <message name="IDS_SETTINGS_ENCRYPT_WITH_SYNC_PASSPHRASE_LABEL" desc="Label for the radio button which, when selected, causes synced settings to be encrypted with a user-provided password.">
-    Encrypt synced data with your own <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>sync passphrase<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>. Payment methods and addresses from Google Pay won’t be encrypted. Browsing history from Chrome won’t sync.
+    Encrypt synced data with your own <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>sync passphrase<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>. Payment methods and addresses from Google Pay won’t be encrypted. Browsing history from Rhenium won’t sync.
   </message>
   <message name="IDS_SETTINGS_PASSPHRASE_EXPLANATION_TEXT" desc="Message shown when explicit passphrase is selected.">
     Only someone with your passphrase can read your encrypted data. The passphrase is not sent to or stored by Google. If you forget your passphrase or want to change this setting, you'll need to <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>reset sync<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>.
@@ -4058,7 +4058,7 @@
     When you ask questions about your history, you can get answers about specific information from a page you visited
   </message>
   <message name="IDS_SETTINGS_HISTORY_SEARCH_WITH_ANSWERS_CONSIDER_DATA_ENCRYPTED" desc="This is a bullet point in the ‘Things to consider’ column, which describes things users should consider about a feature. This string explains that AI features will save data to the user’s device in order to provide the feature’s respective benefit. The data will be appropriately encrypted for security. The tone should be informative.">
-    As you browse sites, their page contents are encrypted and saved to your device. This may affect Chrome's performance
+    As you browse sites, their page contents are encrypted and saved to your device. This may affect Rhenium's performance
   </message>
   <message name="IDS_SETTINGS_HISTORY_SEARCH_WITH_ANSWERS_CONSIDER_OUTDATED" desc="This is a bullet point in the ‘Things to consider’ column, which describes things users should consider about a feature. This string explains that history search results and answers powered by AI may become outdated since they are dependent on the user's last visit to the page contents.">
     AI-powered history search results and answers may become outdated if site content has changed since your last visit
@@ -4137,16 +4137,16 @@
       Use graphics acceleration when available
     </message>
     <message name="IDS_SETTINGS_SYSTEM_FEATURE_NOTIFICATIONS_LABEL" desc="Label for the toggle that enables Chrome system notifications about features.">
-      Show system notifications about Chrome features and tips
+      Show system notifications about Rhenium features and tips
     </message>
     <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL" desc="Label for the control that opens the system network proxy settings. These settings apply to the entire computer.">
       Open your computer's proxy settings
     </message>
     <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_EXTENSION_LABEL" desc="Non-interactive label that describes when Chrome's proxy settings are overwritten by an extension. This is used in place of IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL above.">
-      <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> is using proxy settings from an extension
+      <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Rhenium</ex></ph> is using proxy settings from an extension
     </message>
     <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_POLICY_LABEL" desc="Non-interactive label that describes when Chrome's proxy settings are overwritten by policy. This is used in place of IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL above.">
-      <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> is using proxy settings from your administrator
+      <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Rhenium</ex></ph> is using proxy settings from your administrator
     </message>
     <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_YOUR_ORGANIZATION_LABEL" desc="Non-interactive label that describes when Chrome's proxy settings are overwritten by the user's organization. This is used in place of IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL above.">
       Your organization
@@ -4163,7 +4163,7 @@
       On-device AI
     </message>
     <message name="IDS_SETTINGS_SYSTEM_FEATURE_ON_DEVICE_AI_ENABLED_SUB_LABEL" desc="This string describes what turning off the toggle implies.">
-      To power features like scam detection, Chrome can use AI models that run directly on your device without sending your data to Google servers. When this is off, these features might not work. <ph name="BEGIN_LINK">&lt;a href="$1" target="_blank" aria-description="$2"&gt;</ph>Learn more about on-device AI<ph name="END_LINK">&lt;/a&gt;</ph>
+      To power features like scam detection, Rhenium can use AI models that run directly on your device without sending your data to Google servers. When this is off, these features might not work. <ph name="BEGIN_LINK">&lt;a href="$1" target="_blank" aria-description="$2"&gt;</ph>Learn more about on-device AI<ph name="END_LINK">&lt;/a&gt;</ph>
     </message>
   </if>
 
@@ -4456,7 +4456,7 @@
     Enhanced Safe Browsing is on
   </message>
   <message name="IDS_SETTINGS_SAFETY_HUB_SB_ON_ENHANCED_SUBHEADER" desc="Safety Hub settings page (chrome://settings/safetyHub) gives users an overview over their safety status. Safe browsing card in this page shows the current state of Safe browsing setting (chrome://settings/security). This string is the body text of the Safe Browsing card when the current state is Enhanced protection.">
-    You have Chrome's strongest security
+    You have Rhenium's strongest security
   </message>
   <message name="IDS_SETTINGS_SAFETY_HUB_SB_ON_STANDARD_HEADER" desc="Safety Hub settings page (chrome://settings/safetyHub) gives users an overview over their safety status. Safe browsing card in this page shows the current state of Safe browsing setting (chrome://settings/security). This string is the headline of the Safe Browsing card when the current state is Standard protection.">
     Safe Browsing is on
@@ -4567,7 +4567,7 @@
     AI innovations
   </message>
   <message name="IDS_SETTINGS_AI_PAGE_MAIN_TITLE" desc="This string is the title of a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write, Tab organizer, and more. This title is before the ‘Things to consider’ subheading and bullet points. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. The tone should be motivating.">
-    Reimagine Chrome, supercharged with AI
+    Reimagine Rhenium, supercharged with AI
   </message>
   <message name="IDS_SETTINGS_AI_PAGE_MAIN_SUBLABEL_1" desc="This is a bullet point on a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write, Tab organizer, and more. This bullet point is after the ‘Reimagine Chrome, supercharged with AI’ title and ‘Things to consider’ subheading. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. This bullet point specifically notes that AI features are actively developing and results may include errors. The tone should be informative.">
     These features use AI, are in early development, and won’t always get it right
@@ -4576,7 +4576,7 @@
     When you use these features, relevant data is sent to Google in order to create AI experiences
   </message>
   <message name="IDS_SETTINGS_AI_PAGE_MAIN_SUBLABEL_3" desc="This is a bullet point on a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write, Tab organizer, and more. This bullet point is after the ‘Reimagine Chrome, supercharged with AI’ title and ‘Things to consider’ subheading. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. This bullet point specifically notes that AI features are actively developing, and that humans may review feature usage and corresponding data in order to further improve the feature. The tone should be informative.">
-    Data sent to Google may be seen by human reviewers to improve Chrome AI’s technology
+    Data sent to Google may be seen by human reviewers to improve Rhenium AI’s technology
   </message>
   <message name="IDS_SETTINGS_AI_PAGE_MAIN_MANAGED_SUBLABEL_3" desc="This is a bullet point on a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write, Tab organizer, and more. This bullet point is after the ‘Reimagine Chrome, supercharged with AI’ title and ‘Things to consider’ subheading. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. This bullet point specifically notes that AI features are actively developing, and that humans may review feature usage and corresponding data in order to further improve the feature. The tone should be informative.">
     Your organization manages how data collected by these features may be used.
@@ -4648,7 +4648,7 @@
     Automated Password Change
   </message>
   <message name="IDS_SETTINGS_PASSWORD_CHANGE_SUBLABEL" desc="Sublabel for password change entry in settings. The description of the feature beneath the “Automated password change” feature title. This and the bullets beneath this paragraph represent the full description of the feature. * “public” does two things: 1) it provides distance between “Chrome” and “data breach”, because we don’t want users to associate the breach with Chrome (Chrome didn’t have a data leak, 2) and related, it might reassure the user to know that Chrome is using public information to establish these lists of compromised passwords. * “Google Password Manager can offer…”: The user has to agree to have this feature update their password for them each time. So Google Password Manager is ‘offering’ to do something for the user.">
-    If Chrome finds one of your passwords in a public data breach, Google Password Manager can offer to change your password for you if you're signed in.
+    If Rhenium finds one of your passwords in a public data breach, Google Password Manager can offer to change your password for you if you're signed in.
   </message>
   <message name="IDS_SETTINGS_PASSWORD_CHANGE_DATA_BREACH" desc="Bullet 1 of 2 that appears beneath the “When used” subtitle. This string is repetitive of the feature description, but we want to have a complete description of what happens when the feature is used. * “Google Password Manager asks…”: This part is similar to the general feature description above, but it’s written as if the feature is being used by the user, so we use “asks” and not “can offer”. * “Strong password”: As an existing autofill feature, Google Password Manager can offer to generate and save passwords for the user. These passwords are typically stronger than passwords the user might create on their own">
     If one of your passwords is found in a data breach, Google Password Manager asks if you want it changed to a strong password

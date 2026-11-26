@@ -196,7 +196,7 @@
       <if expr="not is_android and not is_ios">
         <message name="IDS_ERRORPAGES_SUGGESTION_NETWORK_PREDICTION_BODY" desc="When a page fails to load, sometimes we suggest disabling predicting network actions.  These are details below a header for non Android devices.">
           Go to
-          the Chrome menu &gt;
+          the Rhenium menu &gt;
           <ph name="SETTINGS_TITLE">&lt;span&gt;$1&lt;/span&gt;<ex>Settings</ex></ph>
           &gt;
           <ph name="ADVANCED_TITLE">&lt;span&gt;$2&lt;/span&gt;<ex>Under the Hood</ex></ph>
@@ -205,12 +205,12 @@
           again for improved performance.
         </message>
         <message name="IDS_ERRORPAGES_SUGGESTION_FIREWALL_CONFIG_HEADER" desc="When a webpage fails to load, in some cases we suggest reconfiguring the firewall.  This is a header above some details.">
-          Allow Chrome to access the network in your firewall or antivirus
+          Allow Rhenium to access the network in your firewall or antivirus
           settings.
         </message>
       </if>
       <message name="IDS_ERRORPAGES_SUMMARY_BLOCKED_BY_CLIENT" desc="Summary in the error page when a request is blocked by the browser.">
-        This page has been blocked by Chrome
+        This page has been blocked by Rhenium
       </message>
       <if expr="is_macosx">
         <message name="IDS_ERRORPAGES_SUGGESTION_PROXY_DISABLE_PLATFORM" desc="macOS instructions for disabling use of a proxy server.">
@@ -223,7 +223,7 @@
       <if expr="is_linux">
         <message name="IDS_ERRORPAGES_SUGGESTION_PROXY_DISABLE_PLATFORM" desc="Linux instructions for disabling use of a proxy server.">
           Go to
-          the Chrome menu &gt;
+          the Rhenium menu &gt;
           <ph name="SETTINGS_TITLE">&lt;span&gt;$1&lt;/span&gt;<ex>Settings</ex></ph>
           &gt;
           <ph name="ADVANCED_TITLE">&lt;span&gt;$2&lt;/span&gt;<ex>Under the Hood</ex></ph>
@@ -235,7 +235,7 @@
       <if expr="is_win">
         <message name="IDS_ERRORPAGES_SUGGESTION_PROXY_DISABLE_PLATFORM" desc="Windows instructions for disabling use of a proxy server.">
           Go to
-          the Chrome menu &gt;
+          the Rhenium menu &gt;
           <ph name="SETTINGS_TITLE">&lt;span&gt;$1&lt;/span&gt;<ex>Settings</ex></ph>
           &gt;
           <ph name="SYSTEM_TITLE">&lt;span&gt;$2&lt;/span&gt;<ex>System</ex></ph>
@@ -246,17 +246,17 @@
           and deselect &quot;Automatically detect settings&quot;.
         </message>
         <message name="IDS_PAYMENTS_AUTOFILL_MANDATORY_REAUTH_PROMPT" desc="Message to be displayed to the user in the device authentication prompt when they click on the mandatory auth toggle on the Payments settings page, irrespective to enable or disable it. When mandatory auth toggle is enabled, we would authenticate the user before autofilling in the payment details.">
-          Google Chrome is trying to modify settings for filling payment methods.
+          Rhenium is trying to modify settings for filling payment methods.
         </message>
         <message name="IDS_PAYMENTS_AUTOFILL_EDIT_CARD_MANDATORY_REAUTH_PROMPT" desc="Message to be displayed to the user in the device authentication prompt when they try to edit a local card on the Payments settings page if the mandatory auth toggle is enabled. If the user auth was succesful, we would then show the edit card dialog.">
-          Google Chrome is trying to edit payment methods.
+          Rhenium is trying to edit payment methods.
         </message>
       </if>
 
       <!-- About Flags UI -->
       <if expr="not is_chromeos">
         <message name="IDS_FLAGS_UI_RELAUNCH_NOTICE" desc="Notifies the user that they need to relaunch Chrome. Shown next to a button that says 'Relaunch Now'.">
-          Your changes will take effect the next time you relaunch Chrome.
+          Your changes will take effect the next time you relaunch Rhenium.
         </message>
       </if>
       <if expr="is_chromeos">
@@ -272,41 +272,41 @@
 
       <!-- Version UI -->
       <message name="IDS_SHORT_PRODUCT_LOGO_ALT_TEXT" desc="Alt text for the Chrome logo image.">
-        Chrome logo
+        Rhenium logo
       </message>
 
       <message name="IDS_VERSION_UI_LICENSE" desc="The label below the copyright message, containing the URLs.">
-        Chrome is made possible by the <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1" aria-description="$3"&gt;</ph>Chromium<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> open source project and other <ph name="BEGIN_LINK_OSS">&lt;a target="_blank" href="$2" aria-description="$3"&gt;</ph>open source software<ph name="END_LINK_OSS">&lt;/a&gt;</ph>.
+        Rhenium is made possible by the <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1" aria-description="$3"&gt;</ph>Rhenium<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> open source project and other <ph name="BEGIN_LINK_OSS">&lt;a target="_blank" href="$2" aria-description="$3"&gt;</ph>open source software<ph name="END_LINK_OSS">&lt;/a&gt;</ph>.
       </message>
 
       <if expr="is_chromeos">
         <message name="IDS_VERSION_UI_LICENSE_CHROMIUM" desc="The label below the copyright message, containing the link to the Chromium project.">
-          Chrome is made possible by the <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1"&gt;</ph>Chromium<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> open source project.
+          Rhenium is made possible by the <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1"&gt;</ph>Rhenium<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> open source project.
         </message>
 
         <message name="IDS_VERSION_UI_LICENSE_OTHER" desc="The label below the copyright message, containing the link to other open source software.">
-          Chrome is also made possible by other <ph name="BEGIN_LINK_OSS">&lt;a href='#'&gt;</ph>open source software<ph name="END_LINK_OSS">&lt;/a&gt;</ph>.
+          Rhenium is also made possible by other <ph name="BEGIN_LINK_OSS">&lt;a href='#'&gt;</ph>open source software<ph name="END_LINK_OSS">&lt;/a&gt;</ph>.
         </message>
       </if>
 
       <!-- Page Info -->
       <message name="IDS_PAGE_INFO_INTERNAL_PAGE" desc="Message to display in the page info bubble when the page you are on is a chrome:// page or about:something.">
-        You're viewing a secure Chrome page
+        You're viewing a secure Rhenium page
       </message>
 
       <!-- Session Crash -->
       <message name="IDS_SESSION_CRASHED_VIEW_MESSAGE" desc="Message shown when the last session didn't exit cleanly.">
-        Chrome didn't shut down correctly.
+        Rhenium didn't shut down correctly.
       </message>
 
       <!-- Device Chooser Prompt -->
       <message name="IDS_BLUETOOTH_DEVICE_CHOOSER_AUTHORIZE_BLUETOOTH" desc="Text shown in the Chooser when browser does not have Bluetooth permission. The '&#10;' is a newline character to force the desired line wrapping.">
-        Google Chrome needs Bluetooth access to continue &#10; pairing. <ph name="IDS_BLUETOOTH_DEVICE_CHOOSER_AUTHORIZE_BLUETOOTH_LINK">$1<ex>Open Preferences</ex></ph>
+        Rhenium needs Bluetooth access to continue &#10; pairing. <ph name="IDS_BLUETOOTH_DEVICE_CHOOSER_AUTHORIZE_BLUETOOTH_LINK">$1<ex>Open Preferences</ex></ph>
       </message>
 
       <!-- Internal debug pages disabled interstitial. -->
       <message name="IDS_INTERNAL_DEBUG_PAGES_DISABLED_BODY" desc="This is the text, with a link, that appears below the heading for the page that appears when the user attempts to load an internal developer debugging page when such pages are disabled by a pref. It instructs the user on how to enable the pref if they wish.">
-        These pages are intended for use by Chrome developers, and may not be actively maintained or tested. To enable them, navigate to <ph name="BEGIN_LINK">&lt;a href="$1"&gt;</ph>chrome://chrome-urls<ph name="LINK_END">&lt;/a&gt;</ph>, click the button to enable debug pages, and then navigate to this page again.
+        These pages are intended for use by Rhenium developers, and may not be actively maintained or tested. To enable them, navigate to <ph name="BEGIN_LINK">&lt;a href="$1"&gt;</ph>chrome://chrome-urls<ph name="LINK_END">&lt;/a&gt;</ph>, click the button to enable debug pages, and then navigate to this page again.
       </message>
     </messages>
   </release>

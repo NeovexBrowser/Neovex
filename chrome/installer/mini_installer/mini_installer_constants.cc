@@ -10,18 +10,18 @@ namespace mini_installer {
 
 // Various filenames and prefixes.
 // The target name of the installer extracted from resources.
-const wchar_t kSetupExe[] = L"NeovexUpdater.exe";
+const wchar_t kSetupExe[] = L"RheniumUpdater.exe";
 // The prefix of the chrome archive resource.
 const wchar_t kChromeArchivePrefix[] = L"chrome";
 // The prefix of the installer resource.
-const wchar_t kSetupPrefix[] = L"NeovexUpdater";
+const wchar_t kSetupPrefix[] = L"RheniumUpdater";
 
 // Command line switch names for setup.exe.
 const wchar_t kCmdInstallArchive[] = L"install-archive";
 const wchar_t kCmdUncompressedArchive[] = L"uncompressed-archive";
 
 // Temp directory prefix that this process creates.
-const wchar_t kTempPrefix[] = L"NVX_";
+const wchar_t kTempPrefix[] = L"RHN_";
 
 // The resource types that would be unpacked from the mini installer.
 // Uncompressed binary.
@@ -67,12 +67,12 @@ const wchar_t kCleanupRegistryKey[] = L"Software\\Chrome for Testing";
 #else
 // The path to the key containing each app's Clients registry key.
 // No trailing slash on this one because the app's GUID is not appended.
-const wchar_t kClientsKeyBase[] = L"Software\\Chromium";
+const wchar_t kClientsKeyBase[] = L"Software\\Rhenium";
 // The path to the key containing each app's Client State registry key.
 // No trailing slash on this one because the app's GUID is not appended.
-const wchar_t kClientStateKeyBase[] = L"Software\\Chromium";
+const wchar_t kClientStateKeyBase[] = L"Software\\Rhenium";
 // The path to the key in which kCleanupRegistryValue is found.
-const wchar_t kCleanupRegistryKey[] = L"Software\\Chromium";
+const wchar_t kCleanupRegistryKey[] = L"Software\\Rhenium";
 #endif
 
 }  // namespace mini_installer

@@ -637,9 +637,9 @@ static_library("browser") {
     "net/system_network_context_manager.h",
     "net_benchmarking.cc",
     "net_benchmarking.h",
-    "neovex_update_checker.cc",
-    "neovex_update_checker.h",
-    "neovex_version.h",
+    "rhenium_update_checker.cc",
+    "rhenium_update_checker.h",
+    "rhenium_version.h",
     "notifications/metrics/notification_metrics_logger.cc",
     "notifications/metrics/notification_metrics_logger.h",
     "notifications/metrics/notification_metrics_logger_factory.cc",
@@ -1802,7 +1802,7 @@ static_library("browser") {
     "//chrome/browser/task_manager/common",
     "//chrome/browser/task_manager/common:impl",
     "//chrome/browser/thumbnail",
-    "//chrome/browser/tor:neovex_tor",  # NEOVEX TOR
+    "//chrome/browser/tor:rhenium_tor",  # RHENIUM TOR
     "//chrome/browser/top_level_storage_access_api:permissions",
     "//chrome/browser/touch_to_fill/password_manager",
     "//chrome/browser/tracing",

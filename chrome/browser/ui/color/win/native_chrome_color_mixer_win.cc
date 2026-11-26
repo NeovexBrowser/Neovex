@@ -102,7 +102,7 @@ FrameTransforms GetFrameTransforms(const ui::ColorProviderKey& key) {
     frame_transforms.inactive = {color.value()};
   }
   
-  // === CUSTOM THEME: Force Neovex Frame Color unconditionally ===
+  // === CUSTOM THEME: Force Rhenium Frame Color unconditionally ===
   frame_transforms.active = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
   frame_transforms.inactive = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
   

@@ -406,7 +406,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::GetFaviconResourceBytes(
   }
 
 #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-  // NEOVEX OPT DEBLOAT: Disable chrome://whats-new (Google promo page).
+  // RHENIUM OPT DEBLOAT: Disable chrome://whats-new (Google promo page).
   // if (page_url.host() == chrome::kChromeUIWhatsNewHost) {
   //   return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
   // }

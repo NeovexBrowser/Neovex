@@ -4,7 +4,7 @@
 
 #include "chrome/browser/profiles/profile_impl.h"
 
-#include "chrome/browser/tor/tor_profile_manager.h"  // NEOVEX TOR
+#include "chrome/browser/tor/tor_profile_manager.h"  // RHENIUM TOR
 
 #include <stddef.h>
 
@@ -1005,19 +1005,19 @@ Profile* ProfileImpl::GetOffTheRecordProfile(const OTRProfileID& otr_profile_id,
 
   NotifyOffTheRecordProfileCreated(raw_otr_profile);
 
-  // NEOVEX INCOGNITO: Apply enhanced privacy protections for incognito profiles.
+  // RHENIUM INCOGNITO: Apply enhanced privacy protections for incognito profiles.
   if (otr_profile_id == OTRProfileID::PrimaryID()) {
     PrefService* otr_prefs = raw_otr_profile->GetPrefs();
 
-    // NEOVEX INCOGNITO: Block WebRTC IP leaks by forcing disable_non_proxied_udp.
+    // RHENIUM INCOGNITO: Block WebRTC IP leaks by forcing disable_non_proxied_udp.
     otr_prefs->SetString(prefs::kWebRTCIPHandlingPolicy,
                          "disable_non_proxied_udp");
 
-    // NEOVEX INCOGNITO: Randomize canvas/audio fingerprint protection.
+    // RHENIUM INCOGNITO: Randomize canvas/audio fingerprint protection.
     // Disable WebGL debug renderer info to prevent GPU fingerprinting.
     otr_prefs->SetBoolean("hardware_acceleration_mode.enabled", false);
 
-    // NEOVEX TOR: Force DNS-over-HTTPS in automatic mode with Cloudflare.
+    // RHENIUM TOR: Force DNS-over-HTTPS in automatic mode with Cloudflare.
     otr_prefs->SetString(prefs::kDnsOverHttpsMode, "automatic");
     otr_prefs->SetString(
         prefs::kDnsOverHttpsTemplates,

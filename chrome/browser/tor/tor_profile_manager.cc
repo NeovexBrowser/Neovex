@@ -1,5 +1,5 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #include "chrome/browser/tor/tor_profile_manager.h"
 
@@ -9,7 +9,7 @@
 #include "components/prefs/pref_service.h"
 #include "components/proxy_config/proxy_config_pref_names.h"
 
-namespace neovex {
+namespace rhenium {
 
 // static
 void TorProfileManager::ApplyTorProxy(Profile* profile) {
@@ -17,11 +17,11 @@ void TorProfileManager::ApplyTorProxy(Profile* profile) {
     return;
   }
 
-  LOG(INFO) << "NEOVEX TOR: Applying SOCKS5 proxy 127.0.0.1:9050 to profile";
+  LOG(INFO) << "RHENIUM TOR: Applying SOCKS5 proxy 127.0.0.1:9050 to profile";
 
   PrefService* prefs = profile->GetPrefs();
   if (!prefs) {
-    LOG(ERROR) << "NEOVEX TOR: No pref service for profile";
+    LOG(ERROR) << "RHENIUM TOR: No pref service for profile";
     return;
   }
 
@@ -42,7 +42,7 @@ void TorProfileManager::RemoveTorProxy(Profile* profile) {
     return;
   }
 
-  LOG(INFO) << "NEOVEX TOR: Removing Tor proxy from profile";
+  LOG(INFO) << "RHENIUM TOR: Removing Tor proxy from profile";
 
   PrefService* prefs = profile->GetPrefs();
   if (!prefs) {
@@ -52,4 +52,4 @@ void TorProfileManager::RemoveTorProxy(Profile* profile) {
   prefs->ClearPref(proxy_config::prefs::kProxy);
 }
 
-}  // namespace neovex
+}  // namespace rhenium

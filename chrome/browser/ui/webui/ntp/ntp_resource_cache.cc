@@ -134,7 +134,7 @@ NTPResourceCache::NTPResourceCache(Profile* profile) : profile_(profile) {
   if (profile_->GetPrefs()) {
     pref_change_registrar_.Init(profile_->GetPrefs());
     pref_change_registrar_.Add(
-        prefs::kNeovexWallpaper,
+        prefs::kRheniumWallpaper,
         base::BindRepeating(&NTPResourceCache::Invalidate,
                             base::Unretained(this)));
   }
@@ -287,7 +287,7 @@ void NTPResourceCache::CreateNewTabIncognitoHTML(
               IDR_INCOGNITO_TAB_HTML));
   CHECK(*incognito_tab_html);
   {
-    std::string wallpaper = profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper);
+    std::string wallpaper = profile_->GetPrefs()->GetString(prefs::kRheniumWallpaper);
     if (wallpaper.empty()) wallpaper = "wallpapers/default.jpg";
     std::string dark_url = wallpaper;
     std::string light_url = wallpaper;
@@ -303,9 +303,9 @@ void NTPResourceCache::CreateNewTabIncognitoHTML(
       }
       light_url = "chrome://new-tab-page/" + light_name;
     }
-    localized_strings.Set("neovexWallpaper", wallpaper);
-    localized_strings.Set("neovexWallpaperDarkUrl", dark_url);
-    localized_strings.Set("neovexWallpaperLightUrl", light_url);
+    localized_strings.Set("rheniumWallpaper", wallpaper);
+    localized_strings.Set("rheniumWallpaperDarkUrl", dark_url);
+    localized_strings.Set("rheniumWallpaperLightUrl", light_url);
   }
   ui::TemplateReplacementsFromDictionaryValue(localized_strings, &replacements);
   new_tab_incognito_html_ = base::MakeRefCounted<base::RefCountedString>(
@@ -379,7 +379,7 @@ void NTPResourceCache::CreateNewTabGuestHTML() {
   CHECK(*guest_tab_html);
   ui::TemplateReplacements replacements;
   {
-    std::string wallpaper = profile_->GetPrefs()->GetString(prefs::kNeovexWallpaper);
+    std::string wallpaper = profile_->GetPrefs()->GetString(prefs::kRheniumWallpaper);
     if (wallpaper.empty()) wallpaper = "wallpapers/default.jpg";
     std::string dark_url = wallpaper;
     std::string light_url = wallpaper;
@@ -395,9 +395,9 @@ void NTPResourceCache::CreateNewTabGuestHTML() {
       }
       light_url = "chrome://new-tab-page/" + light_name;
     }
-    localized_strings.Set("neovexWallpaper", wallpaper);
-    localized_strings.Set("neovexWallpaperDarkUrl", dark_url);
-    localized_strings.Set("neovexWallpaperLightUrl", light_url);
+    localized_strings.Set("rheniumWallpaper", wallpaper);
+    localized_strings.Set("rheniumWallpaperDarkUrl", dark_url);
+    localized_strings.Set("rheniumWallpaperLightUrl", light_url);
   }
   ui::TemplateReplacementsFromDictionaryValue(localized_strings, &replacements);
   new_tab_guest_html_ = base::MakeRefCounted<base::RefCountedString>(

@@ -297,7 +297,7 @@ bool IsYoutubeDomainUrl(const GURL& url,
 }
 
 bool IsGoogleAssociatedDomainUrl(const GURL& url) {
-  // NEOVEX OPT DEGOOGLE: Disable X-Chrome-Connected headers to Google
+  // RHENIUM OPT DEGOOGLE: Disable X-Chrome-Connected headers to Google
   // tracking/ad infrastructure (doubleclick, googlesyndication, etc.).
   // Keep Google and YouTube domain checks for functionality.
   if (IsGoogleDomainUrl(url, ALLOW_SUBDOMAIN, ALLOW_NON_STANDARD_PORTS)) {
@@ -322,7 +322,7 @@ bool IsGoogleAssociatedDomainUrl(const GURL& url) {
     }
   }
 
-  // NEOVEX OPT DEGOOGLE: Block tracking domains:
+  // RHENIUM OPT DEGOOGLE: Block tracking domains:
   // doubleclick.com, doubleclick.net, googleadservices.com,
   // googlesyndication.com, googlevideo.com, ytimg.com, etc.
   return false;

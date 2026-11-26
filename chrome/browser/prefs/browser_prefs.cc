@@ -4,7 +4,7 @@
 
 #include "chrome/browser/prefs/browser_prefs.h"
 
-// NEOVEX OPT PRIVACY: Include for cookie control pref names.
+// RHENIUM OPT PRIVACY: Include for cookie control pref names.
 #include "components/content_settings/core/common/pref_names.h"
 
 #include <array>
@@ -1441,16 +1441,16 @@ std::string GetCountry() {
 }
 
 void RegisterLocalState(PrefRegistrySimple* registry) {
-  // NEOVEX UPDATE SYSTEM
-  registry->RegisterBooleanPref("neovex.update.downloaded", false);
-  registry->RegisterStringPref("neovex.update.installer_path", "");
-  registry->RegisterStringPref("neovex.update.last_version", "");
-  registry->RegisterStringPref("neovex.update.available_version", "");
+  // RHENIUM UPDATE SYSTEM
+  registry->RegisterBooleanPref("rhenium.update.downloaded", false);
+  registry->RegisterStringPref("rhenium.update.installer_path", "");
+  registry->RegisterStringPref("rhenium.update.last_version", "");
+  registry->RegisterStringPref("rhenium.update.available_version", "");
 
-  // NEOVEX OPT TELEMETRY OFF: Disable local metrics reporting & network time pings by default
+  // RHENIUM OPT TELEMETRY OFF: Disable local metrics reporting & network time pings by default
   registry->SetDefaultPrefValue(metrics::prefs::kMetricsReportingEnabled, base::Value(false));
   registry->SetDefaultPrefValue("network_time.network_time_queries_enabled", base::Value(false));
-  // NEOVEX OPT PERFORMANCE: Enable Memory Saver mode (1 = enabled)
+  // RHENIUM OPT PERFORMANCE: Enable Memory Saver mode (1 = enabled)
   registry->SetDefaultPrefValue(performance_manager::user_tuning::prefs::kMemorySaverModeState, base::Value(1));
 
   // Call outs to individual subsystems that register Local State (browser-wide)
@@ -1758,7 +1758,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) {
       policy::policy_prefs::kLocalNetworkAccessPermissionsPolicyDefaultEnabled,
       false);
 
-  // NEOVEX OPT DEGOOGLE: Disable tracking, keep useful features
+  // RHENIUM OPT DEGOOGLE: Disable tracking, keep useful features
   registry->SetDefaultPrefValue(
       prefs::kSearchSuggestEnabled, base::Value(false));
   registry->SetDefaultPrefValue(
@@ -1767,7 +1767,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) {
   // Keep extensions ON
   // Keep crash reporting preference as is
 
-  // NEOVEX OPT DEBLOAT: Disable background mode and network prediction
+  // RHENIUM OPT DEBLOAT: Disable background mode and network prediction
   registry->SetDefaultPrefValue(
       prefs::kBackgroundModeEnabled, base::Value(false));
 
@@ -2196,9 +2196,9 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
                                 false);
 
   registry->RegisterBooleanPref(prefs::kPrivacyGuideViewed, false);
-  // NEOVEX: Register adblock pref and wallpaper pref.
-  registry->RegisterBooleanPref(prefs::kNeovexAdblockEnabled, true);
-  registry->RegisterStringPref(prefs::kNeovexWallpaper, "wallpapers/default.jpg");
+  // RHENIUM: Register adblock pref and wallpaper pref.
+  registry->RegisterBooleanPref(prefs::kRheniumAdblockEnabled, true);
+  registry->RegisterStringPref(prefs::kRheniumWallpaper, "wallpapers/default.jpg");
   RegisterProfilePrefsForMigration(registry);
 
 #if !BUILDFLAG(IS_ANDROID)
@@ -2273,7 +2273,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
 
   registry->RegisterBooleanPref(prefs::kStaticStorageQuotaEnabled, false);
 
-  // NEOVEX OPT PRIVACY: Brave-style privacy defaults.
+  // RHENIUM OPT PRIVACY: Brave-style privacy defaults.
   // Block third party cookies by default like Brave.
   registry->SetDefaultPrefValue(
       prefs::kCookieControlsMode,
@@ -2282,12 +2282,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
   registry->SetDefaultPrefValue(
       prefs::kHttpsOnlyModeEnabled, base::Value(true));
 
-  // NEOVEX OPT DEBLOAT: Disable network prediction by default.
+  // RHENIUM OPT DEBLOAT: Disable network prediction by default.
   registry->SetDefaultPrefValue(
       "net.network_prediction_options",
       base::Value(2));  // Disable network prediction
 
-  // NEOVEX OPT TELEMETRY OFF: Disable URL-keyed metrics, Extended Safe Browsing telemetry, and CC upload
+  // RHENIUM OPT TELEMETRY OFF: Disable URL-keyed metrics, Extended Safe Browsing telemetry, and CC upload
   registry->SetDefaultPrefValue(
       unified_consent::prefs::kUrlKeyedAnonymizedDataCollectionEnabled,
       base::Value(false));

@@ -1,4 +1,4 @@
-// NEOVEX DOWNLOADS: Category sidebar interactivity
+// RHENIUM DOWNLOADS: Category sidebar interactivity
 // The sidebar DOM and CSS are in downloads.html.
 // This module handles click events and download item filtering.
 
@@ -99,7 +99,7 @@ function applyFilter() {
 
 function updateCounts() {
   const counts = countByCategory();
-  const sidebar = document.getElementById('neovex-sidebar');
+  const sidebar = document.getElementById('rhenium-sidebar');
   if (!sidebar) return;
   for (const cat in counts) {
     const el = sidebar.querySelector('[data-count="' + cat + '"]');
@@ -111,7 +111,7 @@ function updateCounts() {
 
 function switchCategory(category: string) {
   activeCategory = category;
-  const sidebar = document.getElementById('neovex-sidebar');
+  const sidebar = document.getElementById('rhenium-sidebar');
   if (!sidebar) return;
   sidebar.querySelectorAll('.nvx-cat').forEach((btn) => {
     const el = btn as HTMLElement;
@@ -122,7 +122,7 @@ function switchCategory(category: string) {
 }
 
 function setupSidebar() {
-  const sidebar = document.getElementById('neovex-sidebar');
+  const sidebar = document.getElementById('rhenium-sidebar');
   if (!sidebar) return;
   sidebar.querySelectorAll('.nvx-cat').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -154,7 +154,7 @@ function observeChanges() {
   }
 }
 
-function neovexDownloadsInit() {
+function rheniumDownloadsInit() {
   setupSidebar();
 
   // Wait for downloads-manager to be ready, then start filtering
@@ -176,7 +176,7 @@ function neovexDownloadsInit() {
 
 // Run when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', neovexDownloadsInit);
+  document.addEventListener('DOMContentLoaded', rheniumDownloadsInit);
 } else {
-  neovexDownloadsInit();
+  rheniumDownloadsInit();
 }

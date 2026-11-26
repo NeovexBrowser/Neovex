@@ -264,7 +264,7 @@ void AddChromeWorkItems(const InstallParams& install_params,
       WorkItem::MoveTreeOptions{.check_for_duplicates = check_for_duplicates,
                                 .lenient_deletion = true});
 
-  // NEOVEX TOR - Move the tor directory into the installation path
+  // RHENIUM TOR - Move the tor directory into the installation path
   install_list->AddMoveTreeWorkItem(
       src_path.AppendASCII("tor"), target_path.AppendASCII("tor"),
       temp_path,

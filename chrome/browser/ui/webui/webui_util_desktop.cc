@@ -223,12 +223,12 @@ base::flat_map<GURL, int> GetWebUIResourceUrlToCodeCacheMap() {
   return {url_to_code_cache_pairs};
 }
 
-void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
-                                    Profile* profile) {
+void SetupRheniumWallpaperDataSource(content::WebUIDataSource* source,
+                                     Profile* profile) {
   static constexpr struct {
     const char* path;
     int id;
-  } kNeovexWallpapers[] = {
+  } kRheniumWallpapers[] = {
       {"wallpapers/default.jpg", IDR_NEW_TAB_PAGE_WALLPAPERS_DEFAULT_JPG},
       {"wallpapers/default_light.png",
        IDR_NEW_TAB_PAGE_WALLPAPERS_DEFAULT_LIGHT_PNG},
@@ -248,13 +248,13 @@ void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
       {"wallpapers/TranquilWaterfall_light.png",
        IDR_NEW_TAB_PAGE_WALLPAPERS_TRANQUILWATERFALL_LIGHT_PNG},
   };
-  for (const auto& wp : kNeovexWallpapers) {
+  for (const auto& wp : kRheniumWallpapers) {
     source->AddResourcePath(wp.path, wp.id);
   }
 
   std::string wallpaper = "wallpapers/default.jpg";
   if (profile && profile->GetPrefs()) {
-    wallpaper = profile->GetPrefs()->GetString(prefs::kNeovexWallpaper);
+    wallpaper = profile->GetPrefs()->GetString(prefs::kRheniumWallpaper);
     if (wallpaper.empty()) {
       wallpaper = "wallpapers/default.jpg";
     }
@@ -290,9 +290,9 @@ void SetupNeovexWallpaperDataSource(content::WebUIDataSource* source,
       "chrome://favicon2 chrome://app-icon chrome://extension-icon "
       "chrome://fileicon chrome://new-tab-page blob: data: 'self';");
 
-  source->AddString("neovexWallpaper", wallpaper);
-  source->AddString("neovexWallpaperDarkUrl", dark_url);
-  source->AddString("neovexWallpaperLightUrl", light_url);
+  source->AddString("rheniumWallpaper", wallpaper);
+  source->AddString("rheniumWallpaperDarkUrl", dark_url);
+  source->AddString("rheniumWallpaperLightUrl", light_url);
 }
 
 }  // namespace webui

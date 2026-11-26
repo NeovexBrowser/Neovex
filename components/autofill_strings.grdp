@@ -18,29 +18,29 @@
   </message>
   <if expr="is_ios">
     <message name="IDS_AUTOFILL_AI_FILLING_REAUTH" desc="Message shown to the user when they need to authenticate to fill an Autofill AI form.">
-      Chrome is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
+      Rhenium is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
     </message>
   </if>
   <if expr="is_chromeos">
     <message name="IDS_AUTOFILL_AI_FILLING_REAUTH" desc="Message shown to the user when they need to authenticate to fill an Autofill AI form.">
-      Chrome browser is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
+      Rhenium browser is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
     </message>
     <message name="IDS_AUTOFILL_AI_VIEWING_REAUTH" desc="Message shown to the user when they need to authenticate to view Autofill AI data.">
-      Chrome browser is trying to show sensitive info
+      Rhenium browser is trying to show sensitive info
     </message>
     <message name="IDS_AUTOFILL_AI_UPDATE_REAUTH_REQUIREMENT" desc="Message shown to the user when they need to authenticate to update whether reauth is required when filling or viewing Autofill AI sensitive data.">
-      Chrome browser wants to verify it's you before you change settings
+      Rhenium browser wants to verify it's you before you change settings
     </message>
   </if>
   <if expr="is_win">
     <message name="IDS_AUTOFILL_AI_FILLING_REAUTH" desc="Message shown to the user when they need to authenticate to fill an Autofill AI form.">
-      Google Chrome is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
+      Rhenium is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
     </message>
     <message name="IDS_AUTOFILL_AI_VIEWING_REAUTH" desc="Message shown to the user when they need to authenticate to view Autofill AI data.">
-      Google Chrome is trying to show sensitive info
+      Rhenium is trying to show sensitive info
     </message>
     <message name="IDS_AUTOFILL_AI_UPDATE_REAUTH_REQUIREMENT" desc="Message shown to the user when they need to authenticate to update whether reauth is required when filling or viewing Autofill AI sensitive data.">
-      Google Chrome wants to verify it's you before you change settings
+      Rhenium wants to verify it's you before you change settings
     </message>
   </if>
   <if expr="is_macosx">
@@ -56,40 +56,40 @@
   </if>
   <if expr="_google_chrome">
     <message name="IDS_AUTOFILL_DELETE_AUTOCOMPLETE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an autocomplete form history suggestion.">
-      Remove form suggestion from Chrome?
+      Remove form suggestion from Rhenium?
     </message>
     <message name="IDS_AUTOFILL_DELETE_CREDIT_CARD_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete a credit card from Autofill.">
-      Remove credit card from Chrome?
+      Remove credit card from Rhenium?
     </message>
     <message name="IDS_AUTOFILL_DELETE_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an address from Autofill.">
-      Remove address from Chrome?
+      Remove address from Rhenium?
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_AUTOFILL_DELETE_AUTOCOMPLETE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an autocomplete form history suggestion.">
-      Remove form suggestion from Chromium?
+      Remove form suggestion from Rhenium?
     </message>
     <message name="IDS_AUTOFILL_DELETE_CREDIT_CARD_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete a credit card from Autofill.">
-      Remove credit card from Chromium?
+      Remove credit card from Rhenium?
     </message>
     <message name="IDS_AUTOFILL_DELETE_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an address from Autofill.">
-      Remove address from Chromium?
+      Remove address from Rhenium?
     </message>
   </if>
   <message name="IDS_AUTOFILL_REMOVE_HOME_PROFILE_SUGGESTION_CONFIRMATION_TITLE" desc="Title in a dialog to confirm that the user wants to delete their Home address from Autofill." formatter_data="android_java">
-    Remove home address from Chrome autofill?
+    Remove home address from Rhenium autofill?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_HOME_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete their Home address from Autofill." formatter_data="android_java">
     Your home address can help you get things done across Google services, like more relevant Search results and directions in Google Maps. You can edit or delete your address <ph name="BEGIN_LINK">&lt;link&gt;</ph>in your Google Account <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_AUTOFILL_REMOVE_WORK_PROFILE_SUGGESTION_CONFIRMATION_TITLE" desc="Title in a dialog to confirm that the user wants to delete their Work address from Autofill." formatter_data="android_java">
-    Remove work address from Chrome autofill?
+    Remove work address from Rhenium autofill?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_WORK_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Title in a dialog to confirm that the user wants to delete their Work address from Autofill." formatter_data="android_java">
     Your work address can help you get things done across Google services, like more relevant Search results and directions in Google Maps. You can edit or delete your address <ph name="BEGIN_LINK">&lt;link&gt;</ph>in your Google Account <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_AUTOFILL_REMOVE_ACCOUNT_NAME_AND_EMAIL_PROFILE_SUGGESTION_CONFIRMATION_TITLE" desc="Title in a dialog to confirm that the user wants to delete their account name and email from Autofill." formatter_data="android_java">
-    Remove this info from Chrome autofill?
+    Remove this info from Rhenium autofill?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_ACCOUNT_NAME_AND_EMAIL_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Title in a dialog to confirm that the user wants to delete their account name and email address from Autofill." formatter_data="android_java">
     You can edit your name in your <ph name="BEGIN_LINK">&lt;link&gt;</ph>Google Account<ph name="END_LINK">&lt;/link&gt;</ph> <ph name="ACCOUNT">$1<ex>example@gmail.com</ex></ph>
@@ -443,7 +443,7 @@
     You can use saved addresses across Google products. This won’t change your existing work address. It’ll be saved in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_ADDRESS_HOME_AND_WORK_RECORD_TYPE_NOTICE" desc="The footer message used to notify user that their Home/Work address is used to fill forms faster in Chrome." formatter_data="android_java">
-    Info from your Google Account <ph name="ACCOUNT">$1<ex>elisa.beckett@gmail.com</ex></ph> can help you fill forms faster in Chrome
+    Info from your Google Account <ph name="ACCOUNT">$1<ex>elisa.beckett@gmail.com</ex></ph> can help you fill forms faster in Rhenium
   </message>
   <message name="IDS_AUTOFILL_EDIT_ADDRESS_REQUIRED_FIELD_FORM_ERROR" desc="The form error message shown to the user in case of a single required field missing.">
     A required field is empty. Fill it before saving.
@@ -517,7 +517,7 @@
       Use info saved in your Google Account to autofill passwords, passkeys, addresses, payment methods, and other info
     </message>
     <message name="IDS_AUTOFILL_THIRD_PARTY_FILLING_OPT_IN_DESCRIPTION" desc="Description shown on the option enabling the use of third-party autofill in Chrome." formatter_data="android_java">
-      To use another autofill service in Chrome, choose your autofill provider in Android settings
+      To use another autofill service in Rhenium, choose your autofill provider in Android settings
     </message>
     <message name="IDS_PAYMENT_METHODS_SETTINGS_LOYALTY_CARDS_TITLE" desc="Title for the payment methods settings page row that links the user to the Google Wallet app." formatter_data="android_java">
       Loyalty cards
@@ -605,7 +605,7 @@
     You can use saved addresses across Google products. This address is saved in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_SYNCABLE_PROFILE_MIGRATION_PROMPT_NOTICE" desc="The syncable profile prompt body text.">
-    This address is currently saved to Chrome. To use it across Google products, save it in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
+    This address is currently saved to Rhenium. To use it across Google products, save it in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_LOCAL_PROFILE_MIGRATION_PROMPT_NOTICE" desc="The local profile prompt body text.">
     This address is currently saved to this device. To use it across Google products, save it in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
@@ -688,7 +688,7 @@
       You can use saved addresses across Google products. This address will be saved in your Google Account, <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph>.
     </message>
     <message name="IDS_IOS_AUTOFILL_HOME_WORK_PROFILE_FOOTER" desc="Footer text shown in the settings when home and work profile details are shown">
-      Info from your Google Account <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph> can help you fill forms faster in Chrome
+      Info from your Google Account <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph> can help you fill forms faster in Rhenium
     </message>
   </if>
   <!-- Autofill Settings Pages -->
@@ -724,7 +724,7 @@
       Add address
     </message>
     <message name="IDS_AUTOFILL_ADD_NEW_ADDRESS_INTO_CHROME_PROMPT_BODY_TEXT" desc="The 'Add new address' bubble body text if the address will be saved in Chrome (locally or syncable among Chromes on different devices).">
-      You don't have any addresses saved. Add an address to use it in Chrome.
+      You don't have any addresses saved. Add an address to use it in Rhenium.
     </message>
     <message name="IDS_AUTOFILL_ADD_NEW_ADDRESS_INTO_ACCOUNT_PROMPT_BODY_TEXT" desc="The 'Add new address' bubble body text if the address will be save in the user's Google account.">
       You don't have any addresses saved. Add an address to use it across Google products.
@@ -1231,7 +1231,7 @@
       Info saved to device only
     </message>
     <message name="IDS_AUTOFILL_AI_LOCAL_SAVE_NOTIFICATION_DESCRIPTION" desc="The body text of an informational dialog. The user sees this after a failed attempt to save to Google Wallet. 'Couldn't save...' acknowledges the server failure. 'Saved to Chrome...' confirms the safety of the data (local fallback). 'Chrome will offer...' sets expectations that the system will retry the cloud save the next time this data is accessed.">
-      Couldn't save this info to your Google Wallet. It's saved to Chrome on this device instead. Chrome will offer to save it to Wallet next time you use it.
+      Couldn't save this info to your Google Wallet. It's saved to Rhenium on this device instead. Rhenium will offer to save it to Wallet next time you use it.
     </message>
     <message name="IDS_AUTOFILL_AI_LOCAL_SAVE_NOTIFICATION_DISMISS_BUTTON_LABEL" desc="A button on an informational dialog. Clicking this button dismisses the dialog. The user accepts that the data is saved locally for now.">
       Got it
@@ -1375,25 +1375,25 @@
   </message>
   <if expr="_google_chrome">
     <message name="IDS_SETTINGS_AUTOFILL_AI_DESCRIPTION" desc="The description of the enhanced autofill button on chrome://settings/autofill." formatter_data="android_java">
-      Chrome understands forms better and can autofill them faster for you
+      Rhenium understands forms better and can autofill them faster for you
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_TOGGLE_SUB_LABEL" desc="The description of the setting. By 'understand forms better', we mean that when a user submits a form on a website, and if they're using enhanced autofill, this feature can offer to save the user's submitted info. When Chrome saves that info, we save the submitted values and consider the page context.">
-      Chrome understands forms better and can autofill them faster for you
+      Rhenium understands forms better and can autofill them faster for you
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_WHEN_ON_CAN_FILL_DIFFICULT_FIELDS" desc="Bullet point that appears beneath appears beneath the 'When on' title when seeing the Enhanced Autofill description page. This string explains one of the advantages users will get from enabling the feature and serves as a way to incentivize the user to do so." formatter_data="android_java">
-      Chrome can autofill difficult fields that standard autofill might miss
+      Rhenium can autofill difficult fields that standard autofill might miss
     </message>
 
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_SETTINGS_AUTOFILL_AI_DESCRIPTION" desc="The description of the enhanced autofill button on chrome://settings/autofill." formatter_data="android_java">
-      Chromium understands forms better and can autofill them faster for you
+      Rhenium understands forms better and can autofill them faster for you
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_TOGGLE_SUB_LABEL" desc="The description of the setting. By 'understand forms better', we mean that when a user submits a form on a website, and if they're using enhanced autofill, this feature can offer to save the user's submitted info. When Chromium saves that info, we save the submitted values and consider the page context.">
-      Chromium understands forms better and can autofill them faster for you
+      Rhenium understands forms better and can autofill them faster for you
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_WHEN_ON_CAN_FILL_DIFFICULT_FIELDS" desc="Bullet point that appears beneath the 'When on' title when seeing the Enhanced Autofill description page. This string explains one of the advantages users will get from enabling the feature and serves as a way to incentivize the user to do so." formatter_data="android_java">
-      Chromium can autofill difficult fields that standard autofill might miss
+      Rhenium can autofill difficult fields that standard autofill might miss
     </message>
   </if>
 </grit-part>

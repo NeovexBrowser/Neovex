@@ -1,6 +1,6 @@
-# ![Logo](chrome/app/theme/chromium/product_logo_64.png) Neovex
+# ![Logo](chrome/app/theme/chromium/product_logo_64.png) Rhenium
 
-Neovex is a Chromium-based browser focused on minimalism, performance, privacy, and a cleaner browsing experience.
+Rhenium is a Chromium-based browser focused on minimalism, performance, privacy, and a cleaner browsing experience.
 
 ---
 
@@ -18,42 +18,42 @@ Neovex is a Chromium-based browser focused on minimalism, performance, privacy, 
 ## Screenshots
 
 
-![Neovex Homepage](screenshots/home.png)
+![Rhenium Homepage](screenshots/home.png)
 
 
 ---
 
 ## Development Setup
 
-Neovex currently contains modified source files and custom additions built on top of Chromium.
+Rhenium currently contains modified source files and custom additions built on top of Chromium.
 
 ### Fetch and Build Chromium
 
 Follow the [chromium documentation](https://www.chromium.org/developers/how-tos/get-the-code/) for fetching and building chromium.
 
 
-### Apply Neovex modifications
+### Apply Rhenium modifications
 
 ## For Windows
 
-clone neovex 
+clone rhenium 
 ```bash
-git clone https://github.com/NeovexBrowser/Neovex.git
+git clone https://github.com/RheniumBrowser/Rhenium.git
 ```
 
-copy neovex files to chromium src
+copy rhenium files to chromium src
 
 ```bash
-robocopy Neovex path\to\chromium\src /E
+robocopy Rhenium path\to\chromium\src /E
 ```
 
 
 ## For Linux
 
 
-clone neovex
+clone rhenium
 ```bash
-git clone https://github.com/NeovexBrowser/Neovex.git
+git clone https://github.com/RheniumBrowser/Rhenium.git
 ```
 
 Install rsync
@@ -61,9 +61,9 @@ Install rsync
 sudo apt install rsync
 ```
 
-Copy neovex files to chromium src
+Copy rhenium files to chromium src
 ```bash
-rsync -avh /Neovex/ path/to/chromium/src
+rsync -avh /Rhenium/ path/to/chromium/src
 ```
 
 
@@ -114,7 +114,7 @@ If you discover bugs or UI issues:
 
 ## Disclaimer
 
-Neovex is an independent project and is not affiliated with Google or the Chromium project.
+Rhenium is an independent project and is not affiliated with Google or the Chromium project.
 
 Chromium is used as the browser engine.
 

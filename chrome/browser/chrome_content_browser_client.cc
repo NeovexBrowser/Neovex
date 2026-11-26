@@ -4629,7 +4629,7 @@ void ChromeContentBrowserClient::OverrideWebPreferences(
   if (!prefs->GetBoolean(prefs::kWebKitJavascriptEnabled)) {
     web_prefs->javascript_enabled = false;
   }
-  web_prefs->neovex_adblock_enabled = prefs->GetBoolean(prefs::kNeovexAdblockEnabled);
+  web_prefs->rhenium_adblock_enabled = prefs->GetBoolean(prefs::kRheniumAdblockEnabled);
 
   if (!prefs->GetBoolean(prefs::kWebKitWebSecurityEnabled)) {
     web_prefs->web_security_enabled = false;
@@ -4895,7 +4895,7 @@ void ChromeContentBrowserClient::OverrideWebPreferences(
     web_prefs->ai_ot_apis_enabled = true;
   }
 
-  // NEOVEX INCOGNITO: Randomize canvas and audio fingerprint in incognito.
+  // RHENIUM INCOGNITO: Randomize canvas and audio fingerprint in incognito.
   // Disable WebGL debug renderer info to prevent GPU/canvas fingerprinting.
   // This prevents sites from reading WEBGL_debug_renderer_info extension data,
   // which is one of the top fingerprinting vectors.
@@ -5920,7 +5920,7 @@ ChromeContentBrowserClient::CreateURLLoaderThrottles(
   std::vector<std::unique_ptr<blink::URLLoaderThrottle>> result;
   
   // Add our tracker blocking throttle for subresources
-  result.push_back(std::make_unique<NeovexShieldURLLoaderThrottle>());
+  result.push_back(std::make_unique<RheniumShieldURLLoaderThrottle>());
 
   DCHECK(browser_context);
   Profile* profile = Profile::FromBrowserContext(browser_context);

@@ -179,7 +179,7 @@ ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
 
   // Retry CreateProcess up to 10 times with a 500ms delay between attempts.
   // Antivirus software may hold a temporary lock on the just-extracted
-  // NeovexUpdater.exe while it scans it, causing transient failures.
+  // RheniumUpdater.exe while it scans it, causing transient failures.
   constexpr int kMaxLaunchAttempts = 10;
   constexpr DWORD kLaunchRetryDelayMs = 500;
   DWORD last_error = 0;
@@ -235,7 +235,7 @@ ProcessExitResult RunProcessAndWait(const wchar_t* exe_path,
         // CRITICAL FIX: Do NOT abort on WM_QUIT during the wait.  The progress
         // window's WM_DESTROY handler posts WM_QUIT which would previously
         // kill the installation mid-flight.  Instead, silently consume the
-        // quit message and continue waiting for NeovexUpdater.exe to finish.
+        // quit message and continue waiting for RheniumUpdater.exe to finish.
         if (msg.message == WM_QUIT) {
           continue;  // Suppress — do not re-post or abort.
         }
@@ -478,7 +478,7 @@ ProcessExitResult UnpackBinaryResources(HMODULE module,
                              ::GetLastError());
   }
 
-  // Extract directly to "NeovexUpdater.exe" if the resource is not compressed.
+  // Extract directly to "RheniumUpdater.exe" if the resource is not compressed.
   if (!setup_path.assign(base_path) ||
       !setup_path.append(setup_type.compare(kBinResourceType) == 0
                              ? kSetupExe
@@ -511,7 +511,7 @@ ProcessExitResult UnpackBinaryResources(HMODULE module,
 
 #if defined(COMPONENT_BUILD)
   if (exit_code.IsSuccess()) {
-    // Extract the modules in component build required by NeovexUpdater.exe.
+    // Extract the modules in component build required by RheniumUpdater.exe.
     if (!EnumerateResources(ResourceWriterDelegate(base_path), module,
                             kDepResourceType)) {
       return ProcessExitResult(UNABLE_TO_EXTRACT_SETUP, ::GetLastError());
@@ -522,22 +522,22 @@ ProcessExitResult UnpackBinaryResources(HMODULE module,
   return exit_code;
 }
 
-// Executes NeovexUpdater.exe, waits for it to finish and returns the exit code.
+// Executes RheniumUpdater.exe, waits for it to finish and returns the exit code.
 ProcessExitResult RunSetup(const Configuration& configuration,
                            const wchar_t* archive_path,
                            const wchar_t* setup_path,
                            bool compressed_archive) {
-  // Get the path to NeovexUpdater.exe.
+  // Get the path to RheniumUpdater.exe.
   PathString setup_exe;
   if (!setup_exe.assign(setup_path)) {
     return ProcessExitResult(COMMAND_STRING_OVERFLOW);
   }
 
-  // There could be three full paths in the command line for NeovexUpdater.exe (path
+  // There could be three full paths in the command line for RheniumUpdater.exe (path
   // to exe itself, path to archive and path to log file), so we declare
   // total size as three + one additional to hold command line options.
   CommandString cmd_line;
-  // Put the quoted path to NeovexUpdater.exe in cmd_line first.
+  // Put the quoted path to RheniumUpdater.exe in cmd_line first.
   if (!cmd_line.assign(L"\"") || !cmd_line.append(setup_exe.get()) ||
       !cmd_line.append(L"\"")) {
     return ProcessExitResult(COMMAND_STRING_OVERFLOW);
@@ -553,7 +553,7 @@ ProcessExitResult RunSetup(const Configuration& configuration,
   }
 
   // Get any command line option specified for mini_installer and pass them
-  // on to NeovexUpdater.exe
+  // on to RheniumUpdater.exe
   AppendCommandLineFlags(configuration.command_line(), &cmd_line);
 
   if (configuration.is_system_level()) {
@@ -609,7 +609,7 @@ void DeleteExtractedFiles(HMODULE module,
   }
 
 #if defined(COMPONENT_BUILD)
-  // Delete the modules in a component build extracted for use by NeovexUpdater.exe.
+  // Delete the modules in a component build extracted for use by RheniumUpdater.exe.
   EnumerateResources(ResourceDeleterDelegate(base_path.get()), module,
                      kDepResourceType);
 #endif  // defined(COMPONENT_BUILD)
@@ -840,7 +840,7 @@ bool GetWorkDir(HMODULE module,
   return false;
 }
 
-// ---- Neovex Progress Window -------------------------------------------------
+// ---- Rhenium Progress Window -------------------------------------------------
 // Modern borderless installer UI.  Owner-drawn with GDI — no themed controls.
 // Non-interactive: the user cannot close, move, or resize the window.
 
@@ -888,7 +888,7 @@ struct ProgressState {
   UINT_PTR timer_id;
 };
 
-static const wchar_t kProgressWindowClass[] = L"NeovexInstallerProgress";
+static const wchar_t kProgressWindowClass[] = L"RheniumInstallerProgress";
 
 // Fills a rounded rectangle into the given DC.
 void FillRoundRect(HDC hdc, int x, int y, int w, int h, int r, COLORREF color) {
@@ -1125,7 +1125,7 @@ HWND CreateProgressWindow(HMODULE module, ProgressState* ps) {
   for (int i = 0; i < static_cast<int>(sizeof(*ps)); ++i) {
     reinterpret_cast<char*>(ps)[i] = 0;
   }
-  SafeCopy(ps->title, L"Installing Neovex", 64);
+  SafeCopy(ps->title, L"Installing Rhenium", 64);
   SafeCopy(ps->status, L"Preparing\x2026", 128);  // ellipsis character
   ps->progress = 0;
 
@@ -1168,7 +1168,7 @@ HWND CreateProgressWindow(HMODULE module, ProgressState* ps) {
   // Borderless popup — no title bar, no system menu, no resize grip.
   HWND hwnd = ::CreateWindowExW(
       WS_EX_APPWINDOW | WS_EX_TOPMOST,
-      kProgressWindowClass, L"Neovex",
+      kProgressWindowClass, L"Rhenium",
       WS_POPUP | WS_VISIBLE,
       x, y, kWindowW, kWindowH,
       nullptr, nullptr, module, nullptr);
@@ -1254,7 +1254,7 @@ void SetMarquee(HWND hwnd, const wchar_t* status) {
 }
 
 }  // namespace
-// ---- End Neovex Progress Window ---------------------------------------------
+// ---- End Rhenium Progress Window ---------------------------------------------
 
 ProcessExitResult WMain(HMODULE module) {
   ProcessExitResult exit_code = ProcessExitResult(SUCCESS_EXIT_CODE);
@@ -1302,8 +1302,8 @@ ProcessExitResult WMain(HMODULE module) {
   ::SetProcessWorkingSetSize(::GetCurrentProcess(), (SIZE_T)-1, (SIZE_T)-1);
 
   if (exit_code.IsSuccess()) {
-    // Switch to marquee — we can't measure NeovexUpdater.exe's internal progress.
-    SetProgress(progress_hwnd, 40, L"Installing Neovex\x2026");
+    // Switch to marquee — we can't measure RheniumUpdater.exe's internal progress.
+    SetProgress(progress_hwnd, 40, L"Installing Rhenium\x2026");
     SetMarquee(progress_hwnd, L"Installing \x2014 this may take a moment\x2026");
 
     exit_code = RunSetup(configuration, archive_path.get(), setup_path.get(),

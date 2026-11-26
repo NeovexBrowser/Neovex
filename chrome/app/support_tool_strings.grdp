@@ -103,7 +103,7 @@
         </message>
         <!-- DataCollector strings -->
         <message name="IDS_SUPPORT_TOOL_CHROME_SYSTEM_INFO" desc="This is a data source name for internal Chrome logs.">
-            Chrome System Information
+            Rhenium System Information
         </message>
         <message name="IDS_SUPPORT_TOOL_CRASH_IDS" desc="An identification number is given every time Chrome crashes on the device. This data source collects those IDs.">
             Crash IDs
@@ -148,7 +148,7 @@
             ChromeOS System Logs
         </message>
         <message name="IDS_SUPPORT_TOOL_CHROMEOS_CHROME_USER_LOGS" desc="Chrome logs from user's session on ChromeOS.">
-            ChromeOS Chrome User Logs
+            ChromeOS Rhenium User Logs
         </message>
         <message name="IDS_SUPPORT_TOOL_CHROMEOS_BLUETOOTH_FLOSS" desc="Bluetooth logs if Floss is enabled on the device. Floss is the project that works on converging on a single Bluetooth stack between Android and ChromeOS.">
             ChromeOS Bluetooth
@@ -178,7 +178,7 @@
             ChromeOS Kiosk App Logs
         </message>
         <message name="IDS_SUPPORT_TOOL_CHROME_UPDATER" desc="Diagnostic information regarding Chrome's updater.">
-            Chrome Updater
+            Rhenium Updater
         </message>
         <!-- PII type strings -->
         <message name="IDS_SUPPORT_TOOL_ANDROID_APP_INFO" desc="Android App informations on the device. Includes information like app storage paths etc.">

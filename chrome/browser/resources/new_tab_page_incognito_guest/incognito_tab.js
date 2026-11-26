@@ -1,4 +1,4 @@
-// Copyright 2026 Neovex Authors
+// Copyright 2026 Rhenium Authors
 // Incognito tab UI controller (minimal NTP style with Tor support and shared NTP background)
 
 import {addWebUiListener} from 'chrome://resources/js/cr.js';

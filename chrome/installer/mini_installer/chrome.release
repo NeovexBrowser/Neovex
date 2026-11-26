@@ -6,7 +6,7 @@
 #
 # Chrome Application dir entries, sorted alphabetically.
 #
-neovex.exe: %(ChromeDir)s\
+rhenium.exe: %(ChromeDir)s\
 chrome_proxy.exe: %(ChromeDir)s\
 tor\*.*: %(ChromeDir)s\tor\
 #

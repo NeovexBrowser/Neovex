@@ -461,7 +461,7 @@ struct BLINK_COMMON_EXPORT WebPreferences {
   // devtools extension panels.
   bool ai_ot_apis_enabled = false;
 
-  bool neovex_adblock_enabled = false;
+  bool rhenium_adblock_enabled = false;
 
 #if BUILDFLAG(IS_MAC)
   bool should_disable_external_popups = false;

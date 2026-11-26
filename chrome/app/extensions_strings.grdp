@@ -512,7 +512,7 @@
     Global
   </message>
   <message name="IDS_EXTENSIONS_APPS_TITLE" desc="The text displayed in the sidebar to go to the apps section of the page.">
-    Chrome Apps
+    Rhenium Apps
   </message>
   <message name="IDS_EXTENSIONS_REMOVE" desc="The generic label for a button to remove an entry.">
     Remove
@@ -725,16 +725,16 @@
     Supercharge your browser with extensions and themes
   </message>
   <message name="IDS_EXTENSIONS_ZERO_STATE_CHIPS_IPH_DESCRIPTION" desc="An one line description for the extensions zero state in-product-help promo.">
-    Extensions are add-ons for Chrome that can help you do more
+    Extensions are add-ons for Rhenium that can help you do more
   </message>
   <message name="IDS_EXTENSIONS_ZERO_STATE_CHIPS_WITH_LINK_IPH_LINK_LABEL" desc="A label of extensions links to chrome web store home page.">
     Extensions
   </message>
   <message name="IDS_EXTENSIONS_ZERO_STATE_CHIPS_WITH_LINK_IPH_DESCRIPTION" desc="An one line description for the extensions zero state in-product-help promo with links to chrome web store home page.">
-    are add-ons for Chrome that can help you do more
+    are add-ons for Rhenium that can help you do more
   </message>
   <message name="IDS_EXTENSIONS_ZERO_STATE_PLAIN_LINK_IPH_DESCRIPTION" desc="An one line description for the extensions zero state in-product-help promo.">
-    Extensions are add-ons to Chrome that can help you
+    Extensions are add-ons to Rhenium that can help you
   </message>
   <message name="IDS_EXTENSIONS_ZERO_STATE_IPH_SHOPPING_CATEGORY_LABEL" desc="Label for the button that opens the Chrome Web Store shopping category page.">
     Find coupons

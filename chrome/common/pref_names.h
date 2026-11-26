@@ -361,10 +361,10 @@ inline constexpr char kWebKitMinimumLogicalFontSize[] =
     "webkit.webprefs.minimum_logical_font_size";
 inline constexpr char kWebKitJavascriptEnabled[] =
     "webkit.webprefs.javascript_enabled";
-inline constexpr char kNeovexAdblockEnabled[] =
-    "neovex.adblock_enabled";
-inline constexpr char kNeovexWallpaper[] =
-    "neovex.wallpaper";
+inline constexpr char kRheniumAdblockEnabled[] =
+    "rhenium.adblock_enabled";
+inline constexpr char kRheniumWallpaper[] =
+    "rhenium.wallpaper";
 inline constexpr char kWebKitLoadsImagesAutomatically[] =
     "webkit.webprefs.loads_images_automatically";
 inline constexpr char kWebKitPluginsEnabled[] =

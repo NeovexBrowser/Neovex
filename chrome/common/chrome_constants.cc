@@ -32,9 +32,9 @@ const char kChromeVersion[] = CHROME_VERSION_STRING;
 
 #if BUILDFLAG(IS_WIN)
 const base::FilePath::CharType kBrowserProcessExecutableName[] =
-    FPL("neovex.exe");
+    FPL("rhenium.exe");
 const base::FilePath::CharType kHelperProcessExecutableName[] =
-    FPL("neovex.exe");
+    FPL("rhenium.exe");
 #elif BUILDFLAG(IS_MAC)
 const base::FilePath::CharType kBrowserProcessExecutableName[] =
     FPL(PRODUCT_FULLNAME_STRING);
@@ -46,7 +46,7 @@ const base::FilePath::CharType kBrowserProcessExecutableName[] = FPL("chrome");
 const base::FilePath::CharType kHelperProcessExecutableName[] =
     FPL("sandboxed_process");
 #elif BUILDFLAG(IS_POSIX)
-const base::FilePath::CharType kBrowserProcessExecutableName[] = FPL("chrome");
+const base::FilePath::CharType kBrowserProcessExecutableName[] = FPL("rhenium");
 // Helper processes end up with a name of "exe" due to execing via
 // /proc/self/exe.  See bug 22703.
 const base::FilePath::CharType kHelperProcessExecutableName[] = FPL("exe");
@@ -54,9 +54,9 @@ const base::FilePath::CharType kHelperProcessExecutableName[] = FPL("exe");
 
 #if BUILDFLAG(IS_WIN)
 const base::FilePath::CharType kBrowserProcessExecutablePath[] =
-    FPL("chrome.exe");
+    FPL("rhenium.exe");
 const base::FilePath::CharType kHelperProcessExecutablePath[] =
-    FPL("chrome.exe");
+    FPL("rhenium.exe");
 #elif BUILDFLAG(IS_MAC)
 const base::FilePath::CharType kBrowserProcessExecutablePath[] =
     FPL(PRODUCT_FULLNAME_STRING ".app/Contents/MacOS/" PRODUCT_FULLNAME_STRING);
@@ -75,8 +75,8 @@ const base::FilePath::CharType kHelperProcessExecutablePath[] =
 const base::FilePath::CharType kBrowserProcessExecutablePath[] = FPL("chrome");
 const base::FilePath::CharType kHelperProcessExecutablePath[] = FPL("chrome");
 #elif BUILDFLAG(IS_POSIX)
-const base::FilePath::CharType kBrowserProcessExecutablePath[] = FPL("chrome");
-const base::FilePath::CharType kHelperProcessExecutablePath[] = FPL("chrome");
+const base::FilePath::CharType kBrowserProcessExecutablePath[] = FPL("rhenium");
+const base::FilePath::CharType kHelperProcessExecutablePath[] = FPL("rhenium");
 #endif  // OS_*
 
 #if BUILDFLAG(IS_MAC)
@@ -91,7 +91,7 @@ const char kMacHelperSuffixAlerts[] = " (Alerts)";
 const base::FilePath::CharType kBrowserResourcesDll[] = FPL("chrome.dll");
 const base::FilePath::CharType kElfDll[] = FPL("chrome_elf.dll");
 const base::FilePath::CharType kStatusTrayWindowClass[] =
-    FPL("Neovex_StatusTrayWindow");
+    FPL("Rhenium_StatusTrayWindow");
 #endif  // BUILDFLAG(IS_WIN)
 
 const char kInitialProfile[] = "Default";
@@ -169,7 +169,7 @@ const base::FilePath::CharType kJumpListIconDirname[] = FPL("JumpListIcons");
 
 // directory names
 #if BUILDFLAG(IS_WIN)
-const wchar_t kUserDataDirname[] = L"Neovex User Data";
+const wchar_t kUserDataDirname[] = L"Rhenium User Data";
 #elif BUILDFLAG(IS_ANDROID)
 const base::FilePath::CharType kOTRTempStateDirname[] = FPL("OTRTempState");
 #endif

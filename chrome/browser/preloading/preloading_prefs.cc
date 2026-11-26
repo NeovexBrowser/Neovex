@@ -14,7 +14,7 @@
 namespace prefetch {
 void RegisterPredictionOptionsProfilePrefs(
     user_prefs::PrefRegistrySyncable* registry) {
-  // NEOVEX OPT SPEED: Enable standard preloading by default for
+  // RHENIUM OPT SPEED: Enable standard preloading by default for
   // frequently visited sites. Uses Chromium's built-in preload system.
   registry->RegisterIntegerPref(
       prefs::kNetworkPredictionOptions,

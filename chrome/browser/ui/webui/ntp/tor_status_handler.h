@@ -1,5 +1,5 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #ifndef CHROME_BROWSER_UI_WEBUI_NTP_TOR_STATUS_HANDLER_H_
 #define CHROME_BROWSER_UI_WEBUI_NTP_TOR_STATUS_HANDLER_H_

@@ -365,7 +365,7 @@ void PrefsTabHelper::RegisterProfilePrefs(
   WebPreferences pref_defaults;
   registry->RegisterBooleanPref(prefs::kWebKitJavascriptEnabled,
                                 pref_defaults.javascript_enabled);
-  registry->RegisterBooleanPref(prefs::kNeovexAdblockEnabled, false);
+  registry->RegisterBooleanPref(prefs::kRheniumAdblockEnabled, false);
   registry->RegisterBooleanPref(prefs::kWebKitWebSecurityEnabled,
                                 pref_defaults.web_security_enabled);
   registry->RegisterBooleanPref(prefs::kWebKitLoadsImagesAutomatically,

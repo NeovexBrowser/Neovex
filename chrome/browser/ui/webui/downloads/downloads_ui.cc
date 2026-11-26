@@ -68,12 +68,12 @@ namespace {
 content::WebUIDataSource* CreateAndAddDownloadsUIHTMLSource(Profile* profile) {
   content::WebUIDataSource* source = content::WebUIDataSource::CreateAndAdd(
       profile, chrome::kChromeUIDownloadsHost);
-  // NEOVEX DOWNLOADS: neovex_downloads.css and neovex_downloads.js are
+  // RHENIUM DOWNLOADS: rhenium_downloads.css and rhenium_downloads.js are
   // registered as static_files in the resources BUILD.gn and loaded
   // from downloads.html to provide the category sidebar overlay.
   webui::SetupWebUIDataSource(source, kDownloadsResources,
                               IDR_DOWNLOADS_DOWNLOADS_HTML);
-  webui::SetupNeovexWallpaperDataSource(source, profile);
+  webui::SetupRheniumWallpaperDataSource(source, profile);
 
   bool requests_ap_verdicts =
       safe_browsing::AdvancedProtectionStatusManagerFactory::GetForProfile(

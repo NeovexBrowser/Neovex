@@ -1,7 +1,7 @@
-// Copyright 2026 Neovex Authors
+// Copyright 2026 Rhenium Authors
 // Background update checker implementation.
 
-#include "chrome/browser/neovex_update_checker.h"
+#include "chrome/browser/rhenium_update_checker.h"
 
 #include <optional>
 
@@ -17,7 +17,7 @@
 #include "base/values.h"
 #include "base/version.h"
 #include "chrome/browser/browser_process.h"
-#include "chrome/browser/neovex_version.h"
+#include "chrome/browser/rhenium_version.h"
 #include "components/prefs/pref_service.h"
 #include "net/base/load_flags.h"
 #include "net/http/http_request_headers.h"
@@ -32,21 +32,21 @@
 #include "base/win/windows_types.h"
 #endif
 
-namespace neovex {
+namespace rhenium {
 
-const char kUpdateDownloaded[] = "neovex.update.downloaded";
-const char kUpdateInstallerPath[] = "neovex.update.installer_path";
-const char kUpdateLastVersion[] = "neovex.update.last_version";
-const char kUpdateAvailableVersion[] = "neovex.update.available_version";
+const char kUpdateDownloaded[] = "rhenium.update.downloaded";
+const char kUpdateInstallerPath[] = "rhenium.update.installer_path";
+const char kUpdateLastVersion[] = "rhenium.update.last_version";
+const char kUpdateAvailableVersion[] = "rhenium.update.available_version";
 
 namespace {
 
 constexpr net::NetworkTrafficAnnotationTag kTrafficAnnotation =
-    net::DefineNetworkTrafficAnnotation("neovex_update_check", R"(
+    net::DefineNetworkTrafficAnnotation("rhenium_update_check", R"(
       semantics {
-        sender: "Neovex Update Checker"
+        sender: "Rhenium Update Checker"
         description:
-          "Checks the GitHub Releases API for a newer version of Neovex "
+          "Checks the GitHub Releases API for a newer version of Rhenium "
           "and downloads the installer if one is available."
         trigger: "Browser startup."
         data: "No user data is sent. A simple GET request is made."
@@ -63,7 +63,7 @@ base::FilePath GetUpdatesDir() {
   if (!base::PathService::Get(base::DIR_TEMP, &temp_dir)) {
     return base::FilePath();
   }
-  return temp_dir.Append(L"NeovexUpdates");
+  return temp_dir.Append(L"RheniumUpdates");
 }
 #endif
 
@@ -75,7 +75,7 @@ bool IsNewerVersion(const std::string& remote_tag) {
     remote = remote.substr(1);
   }
 
-  base::Version current(NEOVEX_VERSION);
+  base::Version current(RHENIUM_VERSION);
   base::Version latest(remote);
 
   if (!current.IsValid() || !latest.IsValid()) {
@@ -117,13 +117,13 @@ void UpdateChecker::CheckForUpdate() {
   }
 
   auto request = std::make_unique<network::ResourceRequest>();
-  request->url = GURL(NEOVEX_GITHUB_RELEASES_API);
+  request->url = GURL(RHENIUM_GITHUB_RELEASES_API);
   request->load_flags = net::LOAD_BYPASS_CACHE | net::LOAD_DISABLE_CACHE;
   request->headers.SetHeader(net::HttpRequestHeaders::kAccept,
                              "application/vnd.github.v3+json");
   // GitHub API requires a User-Agent header; requests without one can return 403.
   request->headers.SetHeader(net::HttpRequestHeaders::kUserAgent,
-                             "NeovexBrowser/" NEOVEX_VERSION);
+                             "RheniumBrowser/" RHENIUM_VERSION);
   request->credentials_mode = network::mojom::CredentialsMode::kOmit;
 
   loader_ = network::SimpleURLLoader::Create(std::move(request),
@@ -137,7 +137,7 @@ void UpdateChecker::CheckForUpdate() {
 
 void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   if (!body) {
-    LOG(WARNING) << "[Neovex] Update check failed: no response.";
+    LOG(WARNING) << "[Rhenium] Update check failed: no response.";
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
     return;
@@ -145,7 +145,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 
   auto parsed = base::JSONReader::Read(*body, base::JSON_PARSE_RFC);
   if (!parsed || !parsed->is_dict()) {
-    LOG(WARNING) << "[Neovex] Update check failed: invalid JSON.";
+    LOG(WARNING) << "[Rhenium] Update check failed: invalid JSON.";
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
     return;
@@ -154,20 +154,20 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   const base::DictValue& dict = parsed->GetDict();
   const std::string* tag = dict.FindString("tag_name");
   if (!tag) {
-    LOG(WARNING) << "[Neovex] Update check: no tag_name in release.";
+    LOG(WARNING) << "[Rhenium] Update check: no tag_name in release.";
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
     return;
   }
 
   if (!IsNewerVersion(*tag)) {
-    VLOG(1) << "[Neovex] Already up to date (" << NEOVEX_VERSION << ").";
+    VLOG(1) << "[Rhenium] Already up to date (" << RHENIUM_VERSION << ").";
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
     return;
   }
 
-  LOG(INFO) << "[Neovex] New version available: " << *tag;
+  LOG(INFO) << "[Rhenium] New version available: " << *tag;
 
   // Record available version for UI / notification.
   if (g_browser_process && !g_browser_process->IsShuttingDown() &&
@@ -199,7 +199,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
   }
 
   if (download_url_.empty()) {
-    LOG(WARNING) << "[Neovex] No mini_installer.exe asset found in release.";
+    LOG(WARNING) << "[Rhenium] No mini_installer.exe asset found in release.";
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
     return;
@@ -258,7 +258,7 @@ void UpdateChecker::OnReleaseFetched(std::optional<std::string> body) {
 void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
   int net_error = download_loader_ ? download_loader_->NetError() : 0;
   if (path.empty() || net_error != net::OK) {
-    LOG(WARNING) << "[Neovex] Installer download failed (net error: "
+    LOG(WARNING) << "[Rhenium] Installer download failed (net error: "
                  << net_error << ").";
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
                                                                   this);
@@ -269,7 +269,7 @@ void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
   std::optional<int64_t> file_size_opt = base::GetFileSize(path);
   int64_t file_size = file_size_opt.value_or(0);
   if (!file_size_opt || file_size < 1024 * 1024) {
-    LOG(WARNING) << "[Neovex] Installer download invalid or too small: "
+    LOG(WARNING) << "[Rhenium] Installer download invalid or too small: "
                  << file_size << " bytes.";
     base::DeleteFile(path);
     base::SingleThreadTaskRunner::GetCurrentDefault()->DeleteSoon(FROM_HERE,
@@ -277,7 +277,7 @@ void UpdateChecker::OnInstallerDownloaded(base::FilePath path) {
     return;
   }
 
-  LOG(INFO) << "[Neovex] Installer successfully downloaded to: "
+  LOG(INFO) << "[Rhenium] Installer successfully downloaded to: "
             << path.value() << " (" << file_size << " bytes).";
 
   if (g_browser_process && !g_browser_process->IsShuttingDown() &&
@@ -305,7 +305,7 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
 #if BUILDFLAG(IS_WIN)
   base::FilePath installer_path = base::FilePath::FromUTF8Unsafe(path_str);
   if (!base::PathExists(installer_path)) {
-    LOG(WARNING) << "[Neovex] Installer not found at: "
+    LOG(WARNING) << "[Rhenium] Installer not found at: "
                  << installer_path.value();
     local_state->SetBoolean(kUpdateDownloaded, false);
     local_state->SetString(kUpdateInstallerPath, "");
@@ -325,7 +325,7 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
   options.start_hidden = true;
 
   base::LaunchProcess(cmd, options);
-  LOG(INFO) << "[Neovex] Launched installer: " << installer_path.value();
+  LOG(INFO) << "[Rhenium] Launched installer: " << installer_path.value();
 #else
   // Non-Windows: clear downloaded flag if any was set.
   local_state->SetBoolean(kUpdateDownloaded, false);
@@ -334,4 +334,4 @@ void MaybeLaunchInstallerOnShutdown(PrefService* local_state) {
 #endif
 }
 
-}  // namespace neovex
+}  // namespace rhenium

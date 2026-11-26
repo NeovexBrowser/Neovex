@@ -518,7 +518,7 @@ struct WebPreferences {
   // devtools extension panels.
   bool ai_ot_apis_enabled = false;
 
-  bool neovex_adblock_enabled = false;
+  bool rhenium_adblock_enabled = false;
 
   [EnableIf=is_android]
   bool should_screenshot_on_mainframe_same_doc_navigation = true;

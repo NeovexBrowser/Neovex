@@ -1,4 +1,4 @@
-#include "chrome/browser/neovex/update/neovex_update_notification.h"
+#include "chrome/browser/rhenium/update/rhenium_update_notification.h"
 
 #include "base/strings/utf_string_conversions.h"
 #include "chrome/browser/ui/browser.h"
@@ -13,13 +13,13 @@
 #include "url/gurl.h"
 #include "content/public/browser/page_navigator.h"
 
-namespace neovex {
+namespace rhenium {
 
-// NEOVEX UPDATE
+// RHENIUM UPDATE
 
-class NeovexUpdateGlobalError : public GlobalErrorWithStandardBubble {
+class RheniumUpdateGlobalError : public GlobalErrorWithStandardBubble {
 public:
-    NeovexUpdateGlobalError(const std::string& version, const std::string& download_url)
+    RheniumUpdateGlobalError(const std::string& version, const std::string& download_url)
         : version_(version), download_url_(download_url) {}
 
     bool HasMenuItem() override { return false; } // We just show the bubble
@@ -28,10 +28,10 @@ public:
     void ExecuteMenuItem(Browser* browser) override {}
     
     std::u16string GetBubbleViewTitle() override {
-        return u"Neovex Update Available";
+        return u"Rhenium Update Available";
     }
     std::vector<std::u16string> GetBubbleViewMessages() override {
-        return {base::UTF8ToUTF16("A new version of Neovex (" + version_ + ") is available to download.")};
+        return {base::UTF8ToUTF16("A new version of Rhenium (" + version_ + ") is available to download.")};
     }
     std::u16string GetBubbleViewAcceptButtonLabel() override {
         return u"Download Update";
@@ -57,10 +57,10 @@ public:
 private:
     std::string version_;
     std::string download_url_;
-    base::WeakPtrFactory<NeovexUpdateGlobalError> weak_ptr_factory_{this};
+    base::WeakPtrFactory<RheniumUpdateGlobalError> weak_ptr_factory_{this};
 };
 
-void NeovexUpdateNotification::Show(const std::string& version,
+void RheniumUpdateNotification::Show(const std::string& version,
                                     const std::string& download_url,
                                     const std::string& release_notes) {
     Browser* browser = chrome::FindLastActive();
@@ -69,11 +69,11 @@ void NeovexUpdateNotification::Show(const std::string& version,
     Profile* profile = browser->profile();
     GlobalErrorService* error_service = GlobalErrorServiceFactory::GetForProfile(profile);
     if (error_service) {
-        auto error = std::make_unique<NeovexUpdateGlobalError>(version, download_url);
+        auto error = std::make_unique<RheniumUpdateGlobalError>(version, download_url);
         // We show the bubble directly
         error->ShowBubbleView(browser);
         error_service->AddGlobalError(std::move(error));
     }
 }
 
-} // namespace neovex
+} // namespace rhenium

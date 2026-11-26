@@ -309,7 +309,7 @@ if we want to translate this file.
 
         <!-- Snackbar strings for full form filling -->
         <message name="IDS_PLUS_ADDRESS_SNACKBAR_UNDO_EMAIL_SWAP_DESCRIPTION_TEXT_ANDROID" desc="The text displayed on the snackbar at the bottom of the screen. The snackbar is shown when the user's plus address was filled instead of a regular email." translateable="false">
-          Chrome filled your plus address for this site
+          Rhenium filled your plus address for this site
         </message>
         <message name="IDS_PLUS_ADDRESS_SNACKBAR_UNDO_EMAIL_SWAP_ACTION_TEXT_ANDROID" desc="The text displayed on the snackbar at the bottom of the screen. The snackbar is shown when the user's plus address was filled instead of a regular email." translateable="false">
           Undo
@@ -439,7 +439,7 @@ if we want to translate this file.
 
         <!-- Snackbar strings -->
         <message name="IDS_PLUS_ADDRESS_SNACKBAR_UNDO_EMAIL_SWAP_DESCRIPTION_TEXT_IOS" desc="The text displayed on the snackbar at the bottom of the screen. The snackbar is shown when the user's plus address was filled instead of a regular email." translateable="false">
-          Chrome filled your plus address for this site
+          Rhenium filled your plus address for this site
         </message>
         <message name="IDS_PLUS_ADDRESS_SNACKBAR_UNDO_EMAIL_SWAP_ACTION_TEXT_IOS" desc="The text displayed on the snackbar at the bottom of the screen. The snackbar is shown when the user's plus address was filled instead of a regular email." translateable="false">
           Undo
@@ -522,7 +522,7 @@ if we want to translate this file.
 
         <!-- Strings for the top toast that is shown after full form filling -->
         <message name="IDS_PLUS_ADDRESS_FULL_FORM_FILL_TOAST_MESSAGE" desc="The text shown in the Chrome top toast that is displayed after a plus address was automatically swapped in during full form filling." translateable="false">
-          Chrome filled your plus address for this site
+          Rhenium filled your plus address for this site
         </message>
         <message name="IDS_PLUS_ADDRESS_FULL_FORM_FILL_TOAST_UNDO" desc="The label of the menu option in the Chrome top toast to fill the profile's email address instead of the plus address." translateable="false">
           Replace with <ph name="EMAIL">$1<ex>foo@gmail.com</ex></ph>
@@ -553,7 +553,7 @@ if we want to translate this file.
         Phone numbers, email addresses, shipping addresses, and plus addresses
       </message>
       <message name="IDS_SETTINGS_ENCRYPT_WITH_SYNC_PASSPHRASE_INCLUDING_PLUS_ADDRESS_LABEL" desc="Label for the radio button which, when selected, causes synced settings to be encrypted with a user-provided password." translateable="false">
-        Encrypt synced data with your own <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>sync passphrase<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>. Payment methods and addresses from Google Pay and Plus Address won’t be encrypted. Browsing history from Chrome won’t sync.
+        Encrypt synced data with your own <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>sync passphrase<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>. Payment methods and addresses from Google Pay and Plus Address won’t be encrypted. Browsing history from Rhenium won’t sync.
       </message>
 
       <!-- Suggestion strings -->

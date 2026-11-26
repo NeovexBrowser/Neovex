@@ -614,7 +614,7 @@ void VariationsService::EnableFetchForTesting() {
 }
 
 void VariationsService::DoActualFetch() {
-  // NEOVEX OPT DEGOOGLE: Disable variations seed fetching from Google servers.
+  // RHENIUM OPT DEGOOGLE: Disable variations seed fetching from Google servers.
   return;
 }
 

@@ -1,12 +1,12 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #ifndef CHROME_BROWSER_TOR_TOR_PROFILE_MANAGER_H_
 #define CHROME_BROWSER_TOR_TOR_PROFILE_MANAGER_H_
 
 class Profile;
 
-namespace neovex {
+namespace rhenium {
 
 // TorProfileManager applies Tor SOCKS5 proxy settings to incognito profiles.
 class TorProfileManager {
@@ -18,6 +18,6 @@ class TorProfileManager {
   static void RemoveTorProxy(Profile* profile);
 };
 
-}  // namespace neovex
+}  // namespace rhenium
 
 #endif  // CHROME_BROWSER_TOR_TOR_PROFILE_MANAGER_H_

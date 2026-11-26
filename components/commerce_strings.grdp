@@ -66,7 +66,7 @@
       Try again
     </message>
     <message name="IDS_OMNIBOX_TRACK_PRICE_DIALOG_TITLE_FIRST_RUN" desc="The title text for the dialog that is shown at the first time a user tracks the product displayed on the current web page.">
-      Track prices with Chrome
+      Track prices with Rhenium
     </message>
     <message name="IDS_OMNIBOX_TRACK_PRICE_DIALOG_DESCRIPTION_FIRST_RUN" desc="The description text for the dialog that is shown at the first time a user tracks the product displayed on the current web page. It describes what will happen when price tracking is initiated, and tells users which bookmarks folder this page will be saved.">
       You’ll get email alerts if the price drops on any site. This page will be saved to the bookmark folder <ph name="LAST_BOOKMARKS_FOLDER">$1<ex>Other Bookmarks</ex></ph>.
@@ -386,7 +386,7 @@
       Price drop alerts are on. You can change this in <ph name="BEGIN_LINK">&lt;link&gt;</ph><ph name="NOTIFICATION_SETTINGS">%1$s<ex>settings</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
     </message>
     <message name="IDS_PRICE_NOTIFICATIONS_SETTINGS_MOBILE_DESCRIPTION_OFF" desc="The description text for managing mobile price drop popup notifications when the notification is currently disabled. Shown on the detailed page settings in Google services. It tells users that they can enable the popup notification in the Chrome notification settings." formatter_data="android_java">
-      Chrome notifications must be on. You can turn them on in <ph name="BEGIN_LINK">&lt;link&gt;</ph><ph name="NOTIFICATION_SETTINGS">%1$s<ex>settings</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
+      Rhenium notifications must be on. You can turn them on in <ph name="BEGIN_LINK">&lt;link&gt;</ph><ph name="NOTIFICATION_SETTINGS">%1$s<ex>settings</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
     </message>
     <message name="IDS_CHROME_NOTIFICATION_SETTINGS_FOR_PRICE_TRACKING" desc="The button text within the description for managing mobile price drop popup notifications. When user clicks this button, we send them to the Chrome notification settings." formatter_data="android_java">
       settings

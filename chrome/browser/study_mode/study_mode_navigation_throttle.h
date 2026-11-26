@@ -1,4 +1,4 @@
-// Copyright 2025 Neovex Authors. All rights reserved.
+// Copyright 2025 Rhenium Authors. All rights reserved.
 // Study Mode Navigation Throttle - blocks distracting websites
 
 #ifndef CHROME_BROWSER_STUDY_MODE_STUDY_MODE_NAVIGATION_THROTTLE_H_
@@ -41,14 +41,14 @@ class StudyModeNavigationThrottle : public content::NavigationThrottle {
   static bool IsDomainBlocked(const std::string& host);
 };
 
-// --- Neovex Shield Privacy Service ---
+// --- Rhenium Shield Privacy Service ---
 
 #include <atomic>
 #include "base/no_destructor.h"
 
-class NeovexShieldService {
+class RheniumShieldService {
  public:
-  static NeovexShieldService* GetInstance();
+  static RheniumShieldService* GetInstance();
   
   void IncrementTrackersBlocked();
   void IncrementAdsBlocked();
@@ -63,9 +63,9 @@ class NeovexShieldService {
   static bool IsTrackerDomainForShield(const std::string& host);
 
  private:
-  friend class base::NoDestructor<NeovexShieldService>;
-  NeovexShieldService();
-  ~NeovexShieldService() = default;
+  friend class base::NoDestructor<RheniumShieldService>;
+  RheniumShieldService();
+  ~RheniumShieldService() = default;
 
   std::atomic<int> trackers_blocked_{0};
   std::atomic<int> ads_blocked_{0};
@@ -73,12 +73,12 @@ class NeovexShieldService {
   std::atomic<int> cookies_managed_{0};
 };
 
-class NeovexShieldThrottle : public content::NavigationThrottle {
+class RheniumShieldThrottle : public content::NavigationThrottle {
  public:
   static void MaybeCreateAndAdd(content::NavigationThrottleRegistry& registry);
 
-  explicit NeovexShieldThrottle(content::NavigationThrottleRegistry& registry);
-  ~NeovexShieldThrottle() override;
+  explicit RheniumShieldThrottle(content::NavigationThrottleRegistry& registry);
+  ~RheniumShieldThrottle() override;
 
   ThrottleCheckResult WillStartRequest() override;
   ThrottleCheckResult WillRedirectRequest() override;
@@ -91,10 +91,10 @@ class NeovexShieldThrottle : public content::NavigationThrottle {
 #include "third_party/blink/public/common/loader/url_loader_throttle.h"
 
 // Throttle for subresources
-class NeovexShieldURLLoaderThrottle : public blink::URLLoaderThrottle {
+class RheniumShieldURLLoaderThrottle : public blink::URLLoaderThrottle {
  public:
-  NeovexShieldURLLoaderThrottle() = default;
-  ~NeovexShieldURLLoaderThrottle() override = default;
+  RheniumShieldURLLoaderThrottle() = default;
+  ~RheniumShieldURLLoaderThrottle() override = default;
 
   void WillStartRequest(network::ResourceRequest* request, bool* defer) override;
   void WillRedirectRequest(

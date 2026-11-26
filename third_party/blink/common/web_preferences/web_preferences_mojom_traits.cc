@@ -242,7 +242,7 @@ bool StructTraits<blink::mojom::WebPreferencesDataView,
       data.require_transient_activation_and_user_confirmation_for_subapps_api();
   out->payment_request_enabled = data.payment_request_enabled();
   out->ai_ot_apis_enabled = data.ai_ot_apis_enabled();
-  out->neovex_adblock_enabled = data.neovex_adblock_enabled();
+  out->rhenium_adblock_enabled = data.rhenium_adblock_enabled();
 
 #if BUILDFLAG(IS_MAC)
   out->should_disable_external_popups = data.should_disable_external_popups();

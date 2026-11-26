@@ -84,8 +84,8 @@ def main() -> None:
     script_dir = pathlib.Path(__file__).parent.absolute()
     output_dir = pathlib.Path(args.output_dir)
 
-    staging_dir = pathlib.Path("/tmp") / f"neovex-deb-staging-{args.channel}"
-    tmp_file_dir = pathlib.Path("/tmp") / f"neovex-deb-tmp-{args.channel}"
+    staging_dir = pathlib.Path("/tmp") / f"rhenium-deb-staging-{args.channel}"
+    tmp_file_dir = pathlib.Path("/tmp") / f"rhenium-deb-tmp-{args.channel}"
 
     with installer.StagingContext(staging_dir, tmp_file_dir):
         deb_changelog = tmp_file_dir / "changelog"

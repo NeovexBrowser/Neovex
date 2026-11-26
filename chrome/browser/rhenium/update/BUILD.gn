@@ -1,11 +1,11 @@
-source_set("neovex_update") {
+source_set("rhenium_update") {
   sources = [
-    "neovex_auto_updater.h",
-    "neovex_auto_updater.cc",
-    "neovex_update_checker.h",
-    "neovex_update_checker.cc",
-    "neovex_update_notification.h",
-    "neovex_update_notification.cc",
+    "rhenium_auto_updater.h",
+    "rhenium_auto_updater.cc",
+    "rhenium_update_checker.h",
+    "rhenium_update_checker.cc",
+    "rhenium_update_notification.h",
+    "rhenium_update_notification.cc",
   ]
   deps = [
     "//base",

@@ -436,7 +436,7 @@ void AddMaterialChromeColorMixer(ui::ColorProvider* provider,
   mixer[kColorGlicInactiveTabUnderlineGradient3] = {
       ui::kColorGlicTabUnderline3};
 
-  // === CUSTOM THEME: Ensure Neovex colors override GM3 ===
+  // === CUSTOM THEME: Ensure Rhenium colors override GM3 ===
   if (key.color_mode == ui::ColorProviderKey::ColorMode::kDark) {
     mixer[kColorToolbar] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
     mixer[ui::kColorFrameActive] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};

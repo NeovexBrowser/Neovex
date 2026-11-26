@@ -92,7 +92,7 @@
 #include "chrome/browser/tab_contents/tab_util.h"
 #include "chrome/browser/themes/theme_service.h"
 #include "chrome/browser/themes/theme_service_factory.h"
-#include "chrome/browser/tor/tor_launcher_factory.h"  // NEOVEX TOR
+#include "chrome/browser/tor/tor_launcher_factory.h"  // RHENIUM TOR
 #include "chrome/browser/ui/blocked_content/chrome_popup_navigation_delegate.h"
 #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
 #include "chrome/browser/ui/bookmarks/bookmark_bar_controller.h"
@@ -685,15 +685,15 @@ Browser::Browser(const CreateParams& params)
 
   BrowserList::AddBrowser(this);
 
-  // NEOVEX INCOGNITO: Apply enhanced privacy protections for incognito mode.
+  // RHENIUM INCOGNITO: Apply enhanced privacy protections for incognito mode.
   if (profile_->IsIncognitoProfile()) {
     PrefService* prefs = profile_->GetPrefs();
 
-    // NEOVEX INCOGNITO: Block WebRTC IP leaks by forcing
+    // RHENIUM INCOGNITO: Block WebRTC IP leaks by forcing
     // disable_non_proxied_udp.
     prefs->SetString(prefs::kWebRTCIPHandlingPolicy, "disable_non_proxied_udp");
 
-    // NEOVEX INCOGNITO: Force DoH - trigger global DNS config update.
+    // RHENIUM INCOGNITO: Force DoH - trigger global DNS config update.
     if (g_browser_process &&
         g_browser_process->system_network_context_manager()) {
       g_browser_process->system_network_context_manager()
@@ -749,12 +749,12 @@ Browser::~Browser() {
     service->WindowClosed(session_id_);
   }
 
-  // NEOVEX INCOGNITO: Flush DNS cache when incognito window closes.
+  // RHENIUM INCOGNITO: Flush DNS cache when incognito window closes.
   if (profile_->IsIncognitoProfile()) {
     profile_->GetDefaultStoragePartition()->GetNetworkContext()->ClearHostCache(
         nullptr, base::NullCallback());
 
-    // NEOVEX INCOGNITO: Revert global DoH config back to user settings.
+    // RHENIUM INCOGNITO: Revert global DoH config back to user settings.
     if (g_browser_process &&
         g_browser_process->system_network_context_manager()) {
       g_browser_process->system_network_context_manager()
@@ -1310,9 +1310,9 @@ void Browser::OnWindowClosing() {
     return;
   }
 
-  // NEOVEX TOR - Notify TorLauncherFactory when an incognito window closes
+  // RHENIUM TOR - Notify TorLauncherFactory when an incognito window closes
   if (profile_->IsIncognitoProfile()) {
-    neovex::TorLauncherFactory::GetInstance()->OnIncognitoWindowClosed();
+    rhenium::TorLauncherFactory::GetInstance()->OnIncognitoWindowClosed();
   }
 
   // Don't use GetForProfileIfExisting here, we want to force creation of the
@@ -1949,7 +1949,7 @@ void Browser::OnWindowDidShow() {
   }
   window_has_shown_ = true;
 
-  // NEOVEX UPDATE: Check for updates on startup
+  // RHENIUM UPDATE: Check for updates on startup
   // (Old update checker removed)
 
   startup_metric_utils::GetBrowser().RecordBrowserWindowDisplay(

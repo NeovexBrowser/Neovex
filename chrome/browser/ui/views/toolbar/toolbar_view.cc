@@ -465,7 +465,7 @@ void ToolbarView::Init() {
       base::BindRepeating(&ToolbarView::OnAdblockButtonClicked,
                           base::Unretained(this))));
   adblock_button_->SetTooltipText(u"Toggle Adblocker");
-  adblock_button_->SetVectorIcon(prefs->GetBoolean(prefs::kNeovexAdblockEnabled)
+  adblock_button_->SetVectorIcon(prefs->GetBoolean(prefs::kRheniumAdblockEnabled)
                                      ? vector_icons::kNeovexAdblockOnIcon
                                      : vector_icons::kNeovexAdblockOffIcon);
 
@@ -1189,8 +1189,8 @@ void ToolbarView::OnThemeChanged() {
 
 void ToolbarView::OnAdblockButtonClicked() {
   PrefService* prefs = browser_->profile()->GetPrefs();
-  bool current_state = prefs->GetBoolean(prefs::kNeovexAdblockEnabled);
-  prefs->SetBoolean(prefs::kNeovexAdblockEnabled, !current_state);
+  bool current_state = prefs->GetBoolean(prefs::kRheniumAdblockEnabled);
+  prefs->SetBoolean(prefs::kRheniumAdblockEnabled, !current_state);
   
   if (adblock_button_) {
     adblock_button_->SetVectorIcon(!current_state ? vector_icons::kNeovexAdblockOnIcon : vector_icons::kNeovexAdblockOffIcon);

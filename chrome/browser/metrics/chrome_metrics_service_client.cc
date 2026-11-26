@@ -723,7 +723,7 @@ ChromeMetricsServiceClient::CreateUploader(
     std::string_view mime_type,
     metrics::MetricsLogUploader::MetricServiceType service_type,
     const metrics::MetricsLogUploader::UploadCallback& on_upload_complete) {
-  // NEOVEX OPT DEGOOGLE: Disable UMA telemetry upload to Google.
+  // RHENIUM OPT DEGOOGLE: Disable UMA telemetry upload to Google.
   // Return a safe no-op uploader that immediately completes without sending data.
   return std::make_unique<NoOpMetricsLogUploader>(on_upload_complete);
 }
@@ -743,7 +743,7 @@ ChromeMetricsServiceClient::GetCustomUploadInterval() const {
 }
 
 bool ChromeMetricsServiceClient::IsReportingPolicyManaged() {
-  // NEOVEX OPT DEGOOGLE: Report metrics as policy-managed (disabled)
+  // RHENIUM OPT DEGOOGLE: Report metrics as policy-managed (disabled)
   // to prevent upload while keeping local collection for crash detection.
   return true;
 }

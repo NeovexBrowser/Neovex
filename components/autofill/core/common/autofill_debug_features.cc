@@ -110,7 +110,7 @@ BASE_FEATURE_PARAM(std::string,
 // autofill server API url up to the parent "directory" of the "query" and
 // "upload" resources.
 // i.e., https://other.autofill.server:port/tbproxy/af/
-// NEOVEX OPT DEGOOGLE: Disable autofill server communication by default.
+// RHENIUM OPT DEGOOGLE: Disable autofill server communication by default.
 BASE_FEATURE(kAutofillServerCommunication, base::FEATURE_DISABLED_BY_DEFAULT);
 
 // Controls attaching the autofill type predictions to their respective

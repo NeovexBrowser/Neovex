@@ -86,12 +86,12 @@ if (is_win) {
     # initialexe/ is used so that the we can reorder imports and write back to
     # the final destination at $root_out_dir/.
     inputs = [
-      "$root_out_dir/initialexe/neovex.exe",
-      "$root_out_dir/initialexe/neovex.exe.pdb",
+      "$root_out_dir/initialexe/rhenium.exe",
+      "$root_out_dir/initialexe/rhenium.exe.pdb",
     ]
     outputs = [
-      "$root_out_dir/neovex.exe",
-      "$root_out_dir/neovex.exe.pdb",
+      "$root_out_dir/rhenium.exe",
+      "$root_out_dir/rhenium.exe.pdb",
     ]
     args = [
       "-i",
@@ -148,9 +148,9 @@ if (!is_android && !is_mac) {
   }
 
   if (is_win) {
-    _chrome_output_name = "initialexe/neovex"
+    _chrome_output_name = "initialexe/rhenium"
   } else {
-    _chrome_output_name = "neovex"
+    _chrome_output_name = "rhenium"
   }
 
   executable("chrome_initial") {
@@ -204,7 +204,7 @@ if (!is_android && !is_mac) {
         ":chrome_dll",
         ":chrome_exe_version",
         ":copy_first_run",
-        ":copy_tor_binaries", # NEOVEX TOR
+        ":copy_tor_binaries", # RHENIUM TOR
         ":packed_resources_integrity_header",
         ":visual_elements_resources",
         "//base",
@@ -456,7 +456,7 @@ if (is_win) {
     outputs = [ "$root_out_dir/First Run" ]
   }
 
-  # NEOVEX TOR
+  # RHENIUM TOR
   copy("copy_tor_binaries") {
     sources = [
       "//third_party/tor/win/tor/tor.exe",

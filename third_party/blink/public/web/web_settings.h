@@ -288,7 +288,7 @@ class WebSettings {
   virtual void SetRequireTransientActivationAndAuthorizationForSubAppsAPIs(
       bool) = 0;
   virtual void SetRootScrollbarThemeColor(std::optional<SkColor>) = 0;
-  virtual void SetNeovexAdblockEnabled(bool) = 0;
+  virtual void SetRheniumAdblockEnabled(bool) = 0;
 
  protected:
   ~WebSettings() = default;

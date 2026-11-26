@@ -102,7 +102,7 @@
     Permission to cast is rejected. Open a help center article in a new tab to learn more.
   </message>
   <message name="IDS_MEDIA_ROUTER_LOCAL_DISCOVERY_PERMISSION_REJECTED_LABEL" desc="The error message including the link to the OS settings page, shown when the browser does not have the permission to connect to devices on the local network.">
-    To cast, give Chrome access in: <ph name="IDS_MEDIA_ROUTER_LOCAL_DISCOVERY_PERMISSION_REJECTED_LINK">$1<ex>System Settings</ex></ph> > Local Network > Chrome
+    To cast, give Rhenium access in: <ph name="IDS_MEDIA_ROUTER_LOCAL_DISCOVERY_PERMISSION_REJECTED_LINK">$1<ex>System Settings</ex></ph> > Local Network > Rhenium
   </message>
   <message name="IDS_MEDIA_ROUTER_LOCAL_DISCOVERY_PERMISSION_REJECTED_LINK" desc="Text for the link to the OS settings page allowing useres to turn on the permission. This string will be embedded in a longer sentence that makes up the whole label.">
     System Settings
@@ -366,7 +366,7 @@
     Send debug logs (recommended)
   </message>
   <message name="IDS_MEDIA_ROUTER_FEEDBACK_PRIVACY_DATA_USAGE" desc="Text with details about data usage of details submitted in the feedback page.">
-    Your Chrome version, operating system version, Cast settings,
+    Your Rhenium version, operating system version, Cast settings,
     mirroring performance stats, and communication channel diagnostic
     logs will be submitted in addition to any information you choose
     to include above. This feedback is used to diagnose problems and

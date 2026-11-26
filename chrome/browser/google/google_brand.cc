@@ -34,14 +34,14 @@ bool GetBrand(std::string* brand) {
     return true;
   }
 
-  // NEOVEX OPT DEGOOGLE: Return empty brand to disable RLZ tracking.
+  // RHENIUM OPT DEGOOGLE: Return empty brand to disable RLZ tracking.
   // RLZ is a pure Google tracking token with zero user benefit.
   brand->clear();
   return true;
 }
 
 bool GetReactivationBrand(std::string* brand) {
-  // NEOVEX OPT DEGOOGLE: Disable reactivation brand tracking.
+  // RHENIUM OPT DEGOOGLE: Disable reactivation brand tracking.
   brand->clear();
   return true;
 }
@@ -70,7 +70,7 @@ bool GetReactivationBrand(std::string* brand) {
 #endif
 
 bool GetRlzBrand(std::string* brand) {
-  // NEOVEX OPT DEGOOGLE: Disable RLZ brand tracking entirely.
+  // RHENIUM OPT DEGOOGLE: Disable RLZ brand tracking entirely.
   brand->clear();
   return true;
 }

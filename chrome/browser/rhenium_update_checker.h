@@ -1,8 +1,8 @@
-// Copyright 2026 Neovex Authors
+// Copyright 2026 Rhenium Authors
 // Background update checker that uses GitHub Releases API.
 
-#ifndef CHROME_BROWSER_NEOVEX_UPDATE_CHECKER_H_
-#define CHROME_BROWSER_NEOVEX_UPDATE_CHECKER_H_
+#ifndef CHROME_BROWSER_RHENIUM_UPDATE_CHECKER_H_
+#define CHROME_BROWSER_RHENIUM_UPDATE_CHECKER_H_
 
 #include <optional>
 #include <memory>
@@ -18,15 +18,15 @@ class SimpleURLLoader;
 
 class PrefService;
 
-namespace neovex {
+namespace rhenium {
 
-// Pref names for the Neovex update system.
+// Pref names for the Rhenium update system.
 extern const char kUpdateDownloaded[];
 extern const char kUpdateInstallerPath[];
 extern const char kUpdateLastVersion[];
 extern const char kUpdateAvailableVersion[];
 
-// Checks GitHub Releases for a newer Neovex version, downloads the
+// Checks GitHub Releases for a newer Rhenium version, downloads the
 // mini_installer.exe asset in the background, and sets local-state prefs
 // when the download is ready.  All network I/O uses SimpleURLLoader on the
 // UI thread; the file write is dispatched to base::ThreadPool.
@@ -59,6 +59,6 @@ class UpdateChecker {
 // Called from the shutdown path.  Never blocks.
 void MaybeLaunchInstallerOnShutdown(PrefService* local_state);
 
-}  // namespace neovex
+}  // namespace rhenium
 
-#endif  // CHROME_BROWSER_NEOVEX_UPDATE_CHECKER_H_
+#endif  // CHROME_BROWSER_RHENIUM_UPDATE_CHECKER_H_

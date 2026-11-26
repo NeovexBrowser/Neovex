@@ -1,4 +1,4 @@
-// NEOVEX DOWNLOADS: Category sidebar overlay for chrome://downloads
+// RHENIUM DOWNLOADS: Category sidebar overlay for chrome://downloads
 // This script injects a category sidebar and filters the existing
 // downloads list by file extension categories.
 
@@ -118,10 +118,10 @@
 
   // ===== Build the sidebar DOM =====
   function buildSidebar() {
-    if (document.getElementById('neovex-sidebar')) return;
+    if (document.getElementById('rhenium-sidebar')) return;
 
     sidebarEl = document.createElement('aside');
-    sidebarEl.id = 'neovex-sidebar';
+    sidebarEl.id = 'rhenium-sidebar';
 
     // Header
     const header = document.createElement('div');
@@ -135,7 +135,7 @@
     // Category list
     const nav = document.createElement('nav');
     nav.className = 'category-list';
-    nav.id = 'neovex-cat-list';
+    nav.id = 'rhenium-cat-list';
 
     for (const [name, data] of Object.entries(CATEGORIES)) {
       const item = document.createElement('div');
@@ -176,7 +176,7 @@
       }
       // Direct Mojo call via BrowserProxy
       try {
-        const bp = window.__neovexBrowserProxy;
+        const bp = window.__rheniumBrowserProxy;
         if (bp) bp.handler.openDownloadsFolderRequiringGesture();
       } catch(e) {}
     });
@@ -190,10 +190,10 @@
 
   // ===== Build filter badge (shown inside the main content area) =====
   function buildBadge() {
-    if (document.getElementById('neovex-cat-badge')) return;
+    if (document.getElementById('rhenium-cat-badge')) return;
 
     badgeEl = document.createElement('div');
-    badgeEl.id = 'neovex-cat-badge';
+    badgeEl.id = 'rhenium-cat-badge';
     badgeEl.innerHTML = `
       <span class="badge-icon"></span>
       <span class="badge-text"></span>
@@ -257,7 +257,7 @@
       const modUrl = 'chrome://downloads/browser_proxy.js';
       import(modUrl).then(mod => {
         if (mod && mod.BrowserProxy) {
-          window.__neovexBrowserProxy = mod.BrowserProxy.getInstance();
+          window.__rheniumBrowserProxy = mod.BrowserProxy.getInstance();
         }
       }).catch(() => {});
     } catch(e) {}

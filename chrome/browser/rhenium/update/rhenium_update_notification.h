@@ -1,14 +1,14 @@
 #pragma once
 #include <string>
 
-namespace neovex {
+namespace rhenium {
 
-// NEOVEX UPDATE
-class NeovexUpdateNotification {
+// RHENIUM UPDATE
+class RheniumUpdateNotification {
 public:
     static void Show(const std::string& version,
                      const std::string& download_url,
                      const std::string& release_notes);
 };
 
-} // namespace neovex
+} // namespace rhenium

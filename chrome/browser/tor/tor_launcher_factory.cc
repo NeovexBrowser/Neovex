@@ -1,12 +1,12 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #include "chrome/browser/tor/tor_launcher_factory.h"
 
 #include "base/logging.h"
 #include "base/no_destructor.h"
 
-namespace neovex {
+namespace rhenium {
 
 // static
 TorLauncherFactory* TorLauncherFactory::GetInstance() {
@@ -19,7 +19,7 @@ TorLauncherFactory::~TorLauncherFactory() = default;
 
 void TorLauncherFactory::OnIncognitoWindowOpened() {
   incognito_window_count_++;
-  LOG(INFO) << "NEOVEX TOR: Incognito window opened (count: "
+  LOG(INFO) << "RHENIUM TOR: Incognito window opened (count: "
             << incognito_window_count_ << ")";
 }
 
@@ -43,11 +43,11 @@ void TorLauncherFactory::OnIncognitoWindowClosed() {
   if (incognito_window_count_ > 0) {
     incognito_window_count_--;
   }
-  LOG(INFO) << "NEOVEX TOR: Incognito window closed (count: "
+  LOG(INFO) << "RHENIUM TOR: Incognito window closed (count: "
             << incognito_window_count_ << ")";
 
   if (incognito_window_count_ == 0 && launcher_) {
-    LOG(INFO) << "NEOVEX TOR: Last incognito window closed, stopping Tor";
+    LOG(INFO) << "RHENIUM TOR: Last incognito window closed, stopping Tor";
     launcher_->Stop();
     launcher_.reset();
   }
@@ -57,4 +57,4 @@ TorLauncher* TorLauncherFactory::GetLauncher() {
   return launcher_.get();
 }
 
-}  // namespace neovex
+}  // namespace rhenium

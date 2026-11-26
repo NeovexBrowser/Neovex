@@ -1625,7 +1625,7 @@ void WebView::ApplyWebPreferences(const web_pref::WebPreferences& prefs,
       !prefs.disable_ipc_flooding_protection);
   settings->SetHyperlinkAuditingEnabled(prefs.hyperlink_auditing_enabled);
   settings->SetCookieEnabled(prefs.cookie_enabled);
-  settings->SetNeovexAdblockEnabled(prefs.neovex_adblock_enabled);
+  settings->SetRheniumAdblockEnabled(prefs.rhenium_adblock_enabled);
 
   // By default, allow_universal_access_from_file_urls is set to false and thus
   // we mitigate attacks from local HTML files by not granting file:// URLs

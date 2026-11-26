@@ -799,7 +799,7 @@
       initial: false,
     },
     {
-      name: "neovexAdblockEnabled",
+      name: "rheniumAdblockEnabled",
       initial: false,
     },
     {

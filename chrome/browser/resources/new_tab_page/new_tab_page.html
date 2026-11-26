@@ -341,8 +341,8 @@
       <label>Default Browser</label>
       <div class="settings-section-row">
         <div>
-          <div class="settings-row-title">Make Neovex your default</div>
-          <div class="settings-row-desc">Set Neovex as your default browser for opening links.</div>
+          <div class="settings-row-title">Make Rhenium your default</div>
+          <div class="settings-row-desc">Set Rhenium as your default browser for opening links.</div>
         </div>
         <button id="defaultBrowserBtn" class="btn-primary" style="padding: 8px 16px; font-size: 12px;">Set as Default</button>
       </div>
@@ -416,12 +416,12 @@
     function saveBgData(v) {
       localStorage.setItem('ntp_bg', v);
       syncBgToIDB(v);
-      try { chrome.send('setNeovexWallpaper', [v || '']); } catch (e) {}
+      try { chrome.send('setRheniumWallpaper', [v || '']); } catch (e) {}
     }
 
     // Sync background to IndexedDB for cross-origin access (chrome://settings)
     function syncBgToIDB(v) {
-      var request = indexedDB.open('NeovexShared', 1);
+      var request = indexedDB.open('RheniumShared', 1);
       request.onupgradeneeded = function (e) {
         var db = e.target.result;
         if (!db.objectStoreNames.contains('settings')) db.createObjectStore('settings');
@@ -771,11 +771,11 @@
     syncStudyModeToCpp();
 
     // ── THEME (LIGHT/DARK) ──
-    function loadTheme() { return localStorage.getItem('neovex_theme') || 'dark'; }
+    function loadTheme() { return localStorage.getItem('rhenium_theme') || 'dark'; }
     function saveTheme(t) {
-      localStorage.setItem('neovex_theme', t);
+      localStorage.setItem('rhenium_theme', t);
       // Sync to IndexedDB so downloads/extensions pages can read it
-      var request = indexedDB.open('NeovexShared', 1);
+      var request = indexedDB.open('RheniumShared', 1);
       request.onupgradeneeded = function(e) {
         var db = e.target.result;
         if (!db.objectStoreNames.contains('settings')) db.createObjectStore('settings');
@@ -783,7 +783,7 @@
       request.onsuccess = function(e) {
         var db = e.target.result;
         var tx = db.transaction('settings', 'readwrite');
-        tx.objectStore('settings').put(t, 'neovex_theme');
+        tx.objectStore('settings').put(t, 'rhenium_theme');
       };
     }
 
@@ -793,7 +793,7 @@
       } else {
         document.documentElement.classList.remove('light-mode');
       }
-      try { chrome.send('setNeovexTheme', [theme === 'light']); } catch(e) {}
+      try { chrome.send('setRheniumTheme', [theme === 'light']); } catch(e) {}
       updateThemeToggleUI();
       applyBg();
     }
@@ -836,7 +836,7 @@
       saveTheme(next);
       applyTheme(next);
       // Broadcast to any parent window (e.g., Downloads/Extensions embedding this as iframe)
-      try { window.parent.postMessage({ type: 'neovexTheme', data: next }, '*'); } catch(e) {}
+      try { window.parent.postMessage({ type: 'rheniumTheme', data: next }, '*'); } catch(e) {}
     });
 
     // Apply theme on load (before first paint)
@@ -877,22 +877,22 @@
     var existingBg = loadBg();
     if (existingBg) {
       syncBgToIDB(existingBg);
-      try { chrome.send('setNeovexWallpaper', [existingBg]); } catch (e) {}
+      try { chrome.send('setRheniumWallpaper', [existingBg]); } catch (e) {}
     }
 
     // ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CROSS-ORIGIN WALLPAPER BRIDGE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
 
     window.addEventListener('message', function (e) {
       if (!e.data || !e.source) return;
-      if (e.data.type === 'getNeovexWallpaper') {
-        e.source.postMessage({ type: 'neovexWallpaper', data: loadBg() }, '*');
+      if (e.data.type === 'getRheniumWallpaper') {
+        e.source.postMessage({ type: 'rheniumWallpaper', data: loadBg() }, '*');
       }
-      if (e.data.type === 'getNeovexTheme') {
-        e.source.postMessage({ type: 'neovexTheme', data: loadTheme() }, '*');
+      if (e.data.type === 'getRheniumTheme') {
+        e.source.postMessage({ type: 'rheniumTheme', data: loadTheme() }, '*');
       }
       // Combined single-request handler for efficiency
-      if (e.data.type === 'getNeovexSettings') {
-        e.source.postMessage({ type: 'neovexSettings', wallpaper: loadBg(), theme: loadTheme() }, '*');
+      if (e.data.type === 'getRheniumSettings') {
+        e.source.postMessage({ type: 'rheniumSettings', wallpaper: loadBg(), theme: loadTheme() }, '*');
       }
     });
 
@@ -1140,7 +1140,7 @@
       }, 15 * 60 * 1000);
     })();
 
-    // ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ NEOVEX SHIELD ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
+    // ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ RHENIUM SHIELD ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬
     (function () {
       function animateValue(id, start, end, duration) {
         var obj = document.getElementById(id);
@@ -1195,7 +1195,7 @@
           var id = 'shield_' + (++_shieldCallbackId);
           _shieldCallbacks[id] = { resolve: resolve, reject: reject };
           try {
-            chrome.send('getNeovexPrivacyStats', [id]);
+            chrome.send('getRheniumPrivacyStats', [id]);
           } catch (e) {
             delete _shieldCallbacks[id];
             reject('chrome.send unavailable');
@@ -1215,7 +1215,7 @@
           if (data.fingerprints !== undefined) animateValue('shieldFingerprints', oldFingerprints, data.fingerprints, 1000);
           if (data.cookies !== undefined) animateValue('shieldCookies', oldCookies, data.cookies, 1000);
         }).catch(function (err) {
-          console.warn('Could not fetch real Neovex Shield stats:', err);
+          console.warn('Could not fetch real Rhenium Shield stats:', err);
         });
       }
 

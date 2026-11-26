@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import './manager.js';
-import './neovex_downloads.js';  // NEOVEX DOWNLOADS: Category sidebar
+import './rhenium_downloads.js';  // RHENIUM DOWNLOADS: Category sidebar
 
 export {CrIconElement} from 'chrome://resources/cr_elements/cr_icon/cr_icon.js';
 export {CrToastManagerElement} from 'chrome://resources/cr_elements/cr_toast/cr_toast_manager.js';

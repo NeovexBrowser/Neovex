@@ -41,7 +41,7 @@
 #include "services/network/public/mojom/host_resolver.mojom.h"
 #include "services/network/public/mojom/network_service.mojom.h"
 
-// NEOVEX INCOGNITO: Include profile management headers for DoH forcing.
+// RHENIUM INCOGNITO: Include profile management headers for DoH forcing.
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/browser/profiles/profile_manager.h"
 
@@ -459,7 +459,7 @@ SecureDnsConfig StubResolverConfigReader::GetAndUpdateConfiguration(
     }
   }
 
-  // NEOVEX INCOGNITO: Force DoH in Secure mode when any incognito profile is
+  // RHENIUM INCOGNITO: Force DoH in Secure mode when any incognito profile is
   // active. Primary: Cloudflare, Fallback: NextDNS.
   if (g_browser_process && g_browser_process->profile_manager()) {
     bool has_incognito = false;

@@ -21,7 +21,7 @@ build_webui("build") {
     "bypass_warning_confirmation_dialog.ts",
     "data.ts",
     "downloads.ts",
-    "neovex_downloads.ts",
+    "rhenium_downloads.ts",
     "icon_loader.ts",
     "item.html.ts",
     "item.ts",

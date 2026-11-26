@@ -64,18 +64,18 @@
     <if expr="not is_chromeos">
       <if expr="_google_chrome">
         <message name="IDS_MANAGEMENT_BROWSER_NOTICE" desc="Message shown when the (Google-branded) Chrome browser is managed, it indicates what the administrator can do on the browser.">
-        Your administrator can make changes to your profile and browser remotely, analyze information about the browser through reporting, and perform other necessary tasks. Activity on this device may also be managed outside of Chrome.  <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+        Your administrator can make changes to your profile and browser remotely, analyze information about the browser through reporting, and perform other necessary tasks. Activity on this device may also be managed outside of Rhenium.  <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
         </message>
         <message name="IDS_MANAGEMENT_NOT_MANAGED_NOTICE" desc="Message indicating that the (Google-branded) Chrome browser is not managed">
-        This browser is not managed by a company or other organization. Activity on this device may be managed outside of Chrome. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+        This browser is not managed by a company or other organization. Activity on this device may be managed outside of Rhenium. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
         </message>
       </if>
       <if expr="not _google_chrome">
         <message name="IDS_MANAGEMENT_BROWSER_NOTICE" desc="Message shown when the (non-Google-branded) Chromium browser is managed, it indicates what the administrator can do on the browser.">
-        Your administrator can make changes to your profile and browser remotely, analyze information about the browser through reporting, and perform other necessary tasks. Activity on this device may also be managed outside of Chromium. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+        Your administrator can make changes to your profile and browser remotely, analyze information about the browser through reporting, and perform other necessary tasks. Activity on this device may also be managed outside of Rhenium. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
         </message>
         <message name="IDS_MANAGEMENT_NOT_MANAGED_NOTICE" desc="Message indicating that the (non-Google-branded) Chromium browser is not managed">
-        This browser is not managed by a company or other organization. Activity on this device may be managed outside of Chromium. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+        This browser is not managed by a company or other organization. Activity on this device may be managed outside of Rhenium. <ph name="BEGIN_LINK">&lt;a target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
         </message>
       </if>
       <message name="IDS_MANAGEMENT_PROFILE_NOTICE" desc="Message shown when one profile from the Chrome browser is managed, it indicates what the administrator can do for that profile.">
@@ -264,7 +264,7 @@
       Website cookies (signed-in state on recently visited websites will be preserved)
     </message>
     <message name="IDS_MANAGEMENT_DESK_SYNC_OPT_OUT" desc="Message explaining that the user can opt out from the effects of the Desk sync feature in Chrome Sync settings.">
-      You can opt out of this policy in <ph name="BEGIN_LINK">&lt;a href='chrome://settings/syncSetup'&gt;</ph>Chrome Sync settings<ph name="END_LINK">&lt;/a&gt;</ph>.
+      You can opt out of this policy in <ph name="BEGIN_LINK">&lt;a href='chrome://settings/syncSetup'&gt;</ph>Rhenium Sync settings<ph name="END_LINK">&lt;/a&gt;</ph>.
     </message>
     <message name="IDS_MANAGEMENT_DESK_SYNC_LEARN_MORE" desc="Learn more link for the section about the Desk sync feature to provide additional informaiton">
       <ph name="BEGIN_LINK">&lt;a target="_blank" href="https://support.google.com/chrome/a?p=office_cookies_sync" &gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
@@ -331,7 +331,7 @@
       Your device name and network address
     </message>
     <message name="IDS_MANAGEMENT_EXTENSION_REPORT_USERNAME" desc="Message explaining that an extension currently reports the user's username" formatter_data="android_java">
-      Your device username and Chrome username
+      Your device username and Rhenium username
     </message>
     <message name="IDS_MANAGEMENT_EXTENSION_REPORT_VERSION" desc="Message explaining that an extension currently reports the user's browser and machine version" formatter_data="android_java">
       Version information about your device and browser
@@ -399,7 +399,7 @@
       Applications authorized by your administrator can capture all screens attached to your device. This information can be processed locally or uploaded to your organization’s servers.
     </message>
     <message name="IDS_MANAGEMENT_EXTENSION_TELEMETRY_VISIBLE_DATA" desc="Description of the visible data for the extension telemetry feature.">
-      When extensions are added to Chrome, relevant data about these extensions is sent to third parties for analysis and may be visible to your administrator. The data includes information about the extensions such as name, install time, source of install as well as activity associated with these extensions (like changing tabs, contacting websites, or accessing cookies). This data is collected for extensions installed from the Chrome Web Store as well as off-store extensions.
+      When extensions are added to Rhenium, relevant data about these extensions is sent to third parties for analysis and may be visible to your administrator. The data includes information about the extensions such as name, install time, source of install as well as activity associated with these extensions (like changing tabs, contacting websites, or accessing cookies). This data is collected for extensions installed from the Chrome Web Store as well as off-store extensions.
     </message>
   </if>
 
@@ -461,7 +461,7 @@
   </if>
   <if expr="is_ios">
     <message name="IDS_IOS_MANAGEMENT_UI_DESC" desc="The descriptive text on chrome://management page when the browser is managed.">
-      Your administrator can change your browser setup remotely. Activity on this device may also be managed outside of Chrome.
+      Your administrator can change your browser setup remotely. Activity on this device may also be managed outside of Rhenium.
     </message>
     <message name="IDS_IOS_MANAGEMENT_UI_LEARN_MORE_LINK" desc="The clickable text on chrome://management.">
       Learn more
@@ -507,7 +507,7 @@
     URLs of pages you visit are sent to Google Cloud or third parties for analysis, and may be visible to your administrator. For example, they might be scanned to detect unsafe websites or filter websites based on rules set by the administrator.
   </message>
   <message name="IDS_MANAGEMENT_ENTERPRISE_REPORTING_VISIBLE_DATA" desc="Description of the visible data for the Connectors reporting feature" formatter_data="android_java">
-    When security events are flagged by Chrome, relevant data about the events is sent to your administrator. This can include URLs of pages you visit in Chrome, URLs of pages you copied data from, file names or metadata, IP addresses, browser or tab crashes, and the username that you use to sign in to web based applications, your device and Chrome.
+    When security events are flagged by Rhenium, relevant data about the events is sent to your administrator. This can include URLs of pages you visit in Rhenium, URLs of pages you copied data from, file names or metadata, IP addresses, browser or tab crashes, and the username that you use to sign in to web based applications, your device and Rhenium.
   </message>
 
   <!-- Management toolbar button dialog view -->

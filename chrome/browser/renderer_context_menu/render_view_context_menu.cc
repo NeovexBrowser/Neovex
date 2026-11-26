@@ -12,7 +12,7 @@
 #include <string>
 #include <utility>
 
-#include "base/base64.h"  // NEOVEX VIRUS CHECK
+#include "base/base64.h"  // RHENIUM VIRUS CHECK
 #include "base/check.h"
 #include "base/command_line.h"
 #include "base/feature_list.h"
@@ -547,7 +547,7 @@ const std::map<int, int>& GetIdcToUmaMap(UmaEnumIdLookupType type) {
        {IDC_CONTENT_CONTEXT_INSPECTELEMENT_WITH_GEMINI, 159},
        {IDC_CONTENT_CONTEXT_INSPECTELEMENT_WITH_DEVTOOLS, 160},
        {IDC_CONTENT_CONTEXT_AUTOFILL_FALLBACK_AT_MEMORY, 161},
-       {IDC_CONTENT_CONTEXT_CHECK_VIRUS, 162},  // NEOVEX VIRUS CHECK
+       {IDC_CONTENT_CONTEXT_CHECK_VIRUS, 162},  // RHENIUM VIRUS CHECK
        // To add new items:
        //   - Add one more line above this comment block, using the UMA value
        //     from the line below this comment block.
@@ -594,7 +594,7 @@ const std::map<int, int>& GetIdcToUmaMap(UmaEnumIdLookupType type) {
        {IDC_CONTENT_CONTEXT_OPENLINKPREVIEW, 30},
        {IDC_CONTENT_CONTEXT_OPENLINKSPLITVIEW, 31},
        {IDC_CONTENT_CONTEXT_GLICSHAREIMAGE, 32},
-       {IDC_CONTENT_CONTEXT_CHECK_VIRUS, 33},  // NEOVEX VIRUS CHECK
+       {IDC_CONTENT_CONTEXT_CHECK_VIRUS, 33},  // RHENIUM VIRUS CHECK
        // To add new items:
        //   - Add one more line above this comment block, using the UMA value
        //     from the line below this comment block.
@@ -1895,7 +1895,7 @@ void RenderViewContextMenu::AppendLinkItems() {
     menu_model_.AddItemWithStringId(IDC_CONTENT_CONTEXT_SAVELINKAS,
                                     IDS_CONTENT_CONTEXT_SAVELINKAS);
 
-    // NEOVEX VIRUS CHECK: Add virus scan option for file links
+    // RHENIUM VIRUS CHECK: Add virus scan option for file links
     if (IsFileDownloadLink(params_.link_url)) {
       menu_model_.AddItemWithStringId(
           IDC_CONTENT_CONTEXT_CHECK_VIRUS,
@@ -2956,7 +2956,7 @@ bool RenderViewContextMenu::IsCommandIdEnabled(int id) const {
     case IDC_CONTENT_CONTEXT_SAVELINKAS:
       return IsSaveLinkAsEnabled();
 
-    // NEOVEX VIRUS CHECK
+    // RHENIUM VIRUS CHECK
     case IDC_CONTENT_CONTEXT_CHECK_VIRUS:
       return true;
 
@@ -3313,7 +3313,7 @@ void RenderViewContextMenu::ExecuteCommand(int id, int event_flags) {
       CheckSupervisedUserURLFilterAndSaveLinkAs();
       break;
 
-    // NEOVEX VIRUS CHECK: Encode URL and open MetaDefender
+    // RHENIUM VIRUS CHECK: Encode URL and open MetaDefender
     case IDC_CONTENT_CONTEXT_CHECK_VIRUS: {
       std::string url_str = params_.link_url.spec();
       std::string encoded = base::Base64Encode(url_str);
@@ -3910,7 +3910,7 @@ bool RenderViewContextMenu::IsSaveLinkAsEnabled() const {
          ProfileIOData::IsHandledProtocol(params_.link_url.GetScheme());
 }
 
-// NEOVEX VIRUS CHECK: Check if link points to downloadable file
+// RHENIUM VIRUS CHECK: Check if link points to downloadable file
 bool RenderViewContextMenu::IsFileDownloadLink(const GURL& url) const {
   std::string path(url.path());
   static const char* kFileExtensions[] = {

@@ -245,7 +245,7 @@ GoogleUpdateSettings::CollectStatsConsentTaskRunner() {
 }
 
 bool GoogleUpdateSettings::GetCollectStatsConsent() {
-  // NEOVEX OPT DEGOOGLE: Always decline stats collection.
+  // RHENIUM OPT DEGOOGLE: Always decline stats collection.
   // This disables usage stats reporting to Google only.
   // Update checks and Safe Browsing are NOT affected by this.
   return false;

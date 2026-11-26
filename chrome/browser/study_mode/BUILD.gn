@@ -1,4 +1,4 @@
-# Copyright 2025 Neovex Authors. All rights reserved.
+# Copyright 2025 Rhenium Authors. All rights reserved.
 # Study Mode - blocks distracting websites during study sessions
 
 source_set("study_mode") {

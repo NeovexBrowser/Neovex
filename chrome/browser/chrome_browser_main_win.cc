@@ -735,7 +735,7 @@ void ChromeBrowserMainPartsWin::PostBrowserStart() {
 // static
 void ChromeBrowserMainPartsWin::RegisterApplicationRestart(
     const base::CommandLine& parsed_command_line) {
-  // NEOVEX: Disable launch on Windows startup.
+  // RHENIUM: Disable launch on Windows startup.
   return;
 }
 

@@ -1,6 +1,6 @@
-# Contributing to Neovex
+# Contributing to Rhenium
 
-This guide explains how to contribute to Neovex.
+This guide explains how to contribute to Rhenium.
 
 ---
 
@@ -50,7 +50,7 @@ By contributing:
 
 - Your code is original or properly licensed
 - You have rights to submit it
-- You agree to Neovex licensing (TBD)
+- You agree to Rhenium licensing (TBD)
 
 A CLA may be required.
 
@@ -68,8 +68,8 @@ A CLA may be required.
 
 Clone the repo and install dependencies:
 
-git clone https://github.com/<your-username>/neovex.git  
-cd neovex  
+git clone https://github.com/<your-username>/rhenium.git  
+cd rhenium  
 npm install  
 npm run dev  
 
@@ -146,10 +146,10 @@ update code
 
 ## Code of Conduct
 
-Follow Neovex Code of Conduct.
+Follow Rhenium Code of Conduct.
 
 ---
 
 ## License
 
-Contributions are under Neovex license (TBD).
+Contributions are under Rhenium license (TBD).

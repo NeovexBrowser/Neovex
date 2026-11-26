@@ -98,7 +98,7 @@
     html.has-custom-bg extensions-manager {
       background: transparent !important;
     }
-    #neovex-bg-custom {
+    #rhenium-bg-custom {
       position: fixed;
       inset: 0;
       z-index: -2;
@@ -106,14 +106,14 @@
       background-position: center;
       background-repeat: no-repeat;
       pointer-events: none;
-      background-image: url('$i18n{neovexWallpaperDarkUrl}');
+      background-image: url('$i18n{rheniumWallpaperDarkUrl}');
     }
     @media (prefers-color-scheme: light) {
-      #neovex-bg-custom {
-        background-image: url('$i18n{neovexWallpaperLightUrl}');
+      #rhenium-bg-custom {
+        background-image: url('$i18n{rheniumWallpaperLightUrl}');
       }
     }
-    #neovex-bg-overlay {
+    #rhenium-bg-overlay {
       position: fixed;
       inset: 0;
       z-index: -1;
@@ -121,7 +121,7 @@
       background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
     }
     @media (prefers-color-scheme: light) {
-      #neovex-bg-overlay {
+      #rhenium-bg-overlay {
         background: rgba(245, 245, 240, 0.6);
       }
     }
@@ -139,8 +139,8 @@
   <script type="module" src="extensions.js"></script>
 </head>
 <body class="has-custom-bg">
-  <div id="neovex-bg-custom"></div>
-  <div id="neovex-bg-overlay"></div>
+  <div id="rhenium-bg-custom"></div>
+  <div id="rhenium-bg-overlay"></div>
   <extensions-manager></extensions-manager>
   <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
 </body>

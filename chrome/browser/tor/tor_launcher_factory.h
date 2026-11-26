@@ -1,5 +1,5 @@
-// Copyright 2024 Neovex Authors. All rights reserved.
-// NEOVEX TOR
+// Copyright 2024 Rhenium Authors. All rights reserved.
+// RHENIUM TOR
 
 #ifndef CHROME_BROWSER_TOR_TOR_LAUNCHER_FACTORY_H_
 #define CHROME_BROWSER_TOR_TOR_LAUNCHER_FACTORY_H_
@@ -9,7 +9,7 @@
 #include "base/no_destructor.h"
 #include "chrome/browser/tor/tor_launcher.h"
 
-namespace neovex {
+namespace rhenium {
 
 // TorLauncherFactory is a process-wide singleton that manages the lifecycle
 // of the Tor SOCKS5 proxy. It starts Tor when the first incognito window
@@ -46,6 +46,6 @@ class TorLauncherFactory {
   int incognito_window_count_ = 0;
 };
 
-}  // namespace neovex
+}  // namespace rhenium
 
 #endif  // CHROME_BROWSER_TOR_TOR_LAUNCHER_FACTORY_H_

@@ -1,11 +1,11 @@
-/* NEOVEX DOWNLOADS: Category sidebar and grid overlay */
+/* RHENIUM DOWNLOADS: Category sidebar and grid overlay */
 body {
   display: flex !important;
   flex-direction: row !important;
   overflow: hidden !important;
 }
 
-#neovex-sidebar {
+#rhenium-sidebar {
   width: 230px;
   min-width: 230px;
   background: rgba(255, 255, 255, 0.025);
@@ -23,7 +23,7 @@ body {
   order: -1;
 }
 
-#neovex-sidebar .sidebar-header {
+#rhenium-sidebar .sidebar-header {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -31,7 +31,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-#neovex-sidebar .sidebar-header h1 {
+#rhenium-sidebar .sidebar-header h1 {
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -39,7 +39,7 @@ body {
   letter-spacing: 0.3px;
 }
 
-#neovex-sidebar .sidebar-header .logo-icon {
+#rhenium-sidebar .sidebar-header .logo-icon {
   width: 28px;
   height: 28px;
   display: flex;
@@ -50,13 +50,13 @@ body {
   font-size: 14px;
 }
 
-#neovex-sidebar .category-list {
+#rhenium-sidebar .category-list {
   padding: 8px 0;
   flex: 1;
   overflow-y: auto;
 }
 
-#neovex-sidebar .category-item {
+#rhenium-sidebar .category-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -72,25 +72,25 @@ body {
   user-select: none;
 }
 
-#neovex-sidebar .category-item:hover {
+#rhenium-sidebar .category-item:hover {
   background: rgba(255, 255, 255, 0.05);
   color: #c0c0c0;
 }
 
-#neovex-sidebar .category-item.active {
+#rhenium-sidebar .category-item.active {
   background: rgba(170, 255, 0, 0.08);
   color: #AF0;
   border-color: rgba(170, 255, 0, 0.15);
 }
 
-#neovex-sidebar .category-item .cat-icon {
+#rhenium-sidebar .category-item .cat-icon {
   font-size: 15px;
   width: 20px;
   text-align: center;
   flex-shrink: 0;
 }
 
-#neovex-sidebar .category-item .cat-count {
+#rhenium-sidebar .category-item .cat-count {
   margin-left: auto;
   font-size: 10px;
   background: rgba(255, 255, 255, 0.06);
@@ -102,12 +102,12 @@ body {
   text-align: center;
 }
 
-#neovex-sidebar .category-item.active .cat-count {
+#rhenium-sidebar .category-item.active .cat-count {
   background: rgba(170, 255, 0, 0.12);
   color: #AF0;
 }
 
-#neovex-sidebar .sidebar-footer {
+#rhenium-sidebar .sidebar-footer {
   padding: 12px 10px 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
@@ -115,7 +115,7 @@ body {
   gap: 6px;
 }
 
-#neovex-sidebar .sidebar-footer button {
+#rhenium-sidebar .sidebar-footer button {
   padding: 7px 14px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -128,7 +128,7 @@ body {
   font-family: inherit;
 }
 
-#neovex-sidebar .sidebar-footer button:hover {
+#rhenium-sidebar .sidebar-footer button:hover {
   background: rgba(255, 255, 255, 0.07);
   color: #c0c0c0;
   border-color: rgba(255, 255, 255, 0.12);
@@ -140,7 +140,7 @@ downloads-manager {
   overflow: hidden !important;
 }
 
-#neovex-cat-badge {
+#rhenium-cat-badge {
   display: none;
   align-items: center;
   gap: 8px;
@@ -155,13 +155,13 @@ downloads-manager {
   width: fit-content;
 }
 
-#neovex-cat-badge.visible {
+#rhenium-cat-badge.visible {
   display: inline-flex;
 }
 
-#neovex-cat-badge .badge-icon { font-size: 13px; }
+#rhenium-cat-badge .badge-icon { font-size: 13px; }
 
-#neovex-cat-badge .badge-clear {
+#rhenium-cat-badge .badge-clear {
   margin-left: 6px;
   cursor: pointer;
   opacity: 0.6;
@@ -169,23 +169,23 @@ downloads-manager {
   font-size: 11px;
 }
 
-#neovex-cat-badge .badge-clear:hover {
+#rhenium-cat-badge .badge-clear:hover {
   opacity: 1;
 }
 
-#neovex-sidebar::-webkit-scrollbar {
+#rhenium-sidebar::-webkit-scrollbar {
   width: 4px;
 }
 
-#neovex-sidebar::-webkit-scrollbar-track {
+#rhenium-sidebar::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#neovex-sidebar::-webkit-scrollbar-thumb {
+#rhenium-sidebar::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 2px;
 }
 
-#neovex-sidebar::-webkit-scrollbar-thumb:hover {
+#rhenium-sidebar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.12);
 }

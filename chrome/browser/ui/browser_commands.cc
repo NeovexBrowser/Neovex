@@ -40,7 +40,7 @@
 #include "chrome/browser/media/router/media_router_feature.h"
 #include "chrome/browser/prefs/incognito_mode_prefs.h"
 #include "chrome/browser/profiles/profile.h"
-#include "chrome/browser/tor/tor_launcher_factory.h"  // NEOVEX TOR
+#include "chrome/browser/tor/tor_launcher_factory.h"  // RHENIUM TOR
 #include "chrome/browser/reading_list/reading_list_model_factory.h"
 #include "chrome/browser/search/search.h"
 #include "chrome/browser/search_engines/template_url_service_factory.h"
@@ -1112,8 +1112,8 @@ void NewWindow(BrowserWindowInterface* browser) {
 }
 
 void NewIncognitoWindow(Profile* profile) {
-  // NEOVEX TOR - Start Tor before opening the incognito window
-  neovex::TorLauncherFactory::GetInstance()->OnIncognitoWindowOpened();
+  // RHENIUM TOR - Start Tor before opening the incognito window
+  rhenium::TorLauncherFactory::GetInstance()->OnIncognitoWindowOpened();
   NewEmptyWindow(profile->GetPrimaryOTRProfile(/*create_if_needed=*/true));
 }
 

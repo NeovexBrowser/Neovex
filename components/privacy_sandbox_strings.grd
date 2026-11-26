@@ -303,12 +303,12 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_MODE_B_ROLLBACK_DESCRIPTION" desc="Description text on the 3PCD rollback notice. Explains to the user that their settings state has been updated to allow third-party cookies and that this can be changed in settings." formatter_data="android_java">
-            Your current Chrome settings have been updated to allow websites to access third-party cookies. You can change this setting any time.
+            Your current Rhenium settings have been updated to allow websites to access third-party cookies. You can change this setting any time.
           </message>
         </then>
         <else>
           <message name="IDS_MODE_B_ROLLBACK_DESCRIPTION" desc="Description text on the 3PCD rollback notice. Explains to the user that their settings state has been updated to allow third-party cookies and that this can be changed in settings." formatter_data="android_java">
-            Your current Chromium settings have been updated to allow websites to access third-party cookies. You can change this setting any time.
+            Your current Rhenium settings have been updated to allow websites to access third-party cookies. You can change this setting any time.
           </message>
         </else>
       </if>
@@ -325,24 +325,24 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_SETTINGS_SITE_SUGGESTED_ADS_CURRENT_SITES_DESCRIPTION_V2" desc="This string signals to users that they have the ability to block any website they don’t want using their activity. “Auto-deletes” means “automatically deletes”." formatter_data="android_java">
-            You can block sites you don't want. Chrome also auto-deletes sites from the list that are older than 30 days.
+            You can block sites you don't want. Rhenium also auto-deletes sites from the list that are older than 30 days.
           </message>
           <message name="IDS_SETTINGS_SITE_SUGGESTED_ADS_PAGE_LEARN_MORE_BULLET_3_V2" desc="This string appears in the “More about site-suggested ads” dialog. “Activity data” refers to information about a user's actions or behaviors on the internet.">
-            Chrome deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK1">&lt;a href="$1" aria-description="$2" target="_blank"&gt;</ph>managing your ad privacy in Chrome<ph name="LINK_END1">&lt;/a&gt;</ph>.
+            Rhenium deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK1">&lt;a href="$1" aria-description="$2" target="_blank"&gt;</ph>managing your ad privacy in Rhenium<ph name="LINK_END1">&lt;/a&gt;</ph>.
           </message>
           <message name="IDS_SETTINGS_SITE_SUGGESTED_ADS_PAGE_LEARN_MORE_BULLET_3_V2_CLANK" desc="This string appears in the “More about site-suggested ads” dialog. “Activity data” refers to information about a user's actions or behaviors on the internet." formatter_data="android_java">
-            Chrome deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK">&lt;link&gt;</ph>managing your ad privacy in Chrome<ph name="END_LINK">&lt;/link&gt;</ph>.
+            Rhenium deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK">&lt;link&gt;</ph>managing your ad privacy in Rhenium<ph name="END_LINK">&lt;/link&gt;</ph>.
           </message>
         </then>
         <else>
           <message name="IDS_SETTINGS_SITE_SUGGESTED_ADS_CURRENT_SITES_DESCRIPTION_V2" desc="This string signals to users that they have the ability to block any website they don’t want using their activity. “Auto-deletes” means “automatically deletes”." formatter_data="android_java">
-            You can block sites you don't want. Chromium also auto-deletes sites from the list that are older than 30 days.
+            You can block sites you don't want. Rhenium also auto-deletes sites from the list that are older than 30 days.
           </message>
           <message name="IDS_SETTINGS_SITE_SUGGESTED_ADS_PAGE_LEARN_MORE_BULLET_3_V2" desc="This string appears in the “More about site-suggested ads” dialog. “Activity data” refers to information about a user's actions or behaviors on the internet.">
-            Chromium deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK1">&lt;a href="$1" aria-description="$2" target="_blank"&gt;</ph>managing your ad privacy in Chromium<ph name="LINK_END1">&lt;/a&gt;</ph>.
+            Rhenium deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK1">&lt;a href="$1" aria-description="$2" target="_blank"&gt;</ph>managing your ad privacy in Rhenium<ph name="LINK_END1">&lt;/a&gt;</ph>.
           </message>
           <message name="IDS_SETTINGS_SITE_SUGGESTED_ADS_PAGE_LEARN_MORE_BULLET_3_V2_CLANK" desc="This string appears in the “More about site-suggested ads” dialog. “Activity data” refers to information about a user's actions or behaviors on the internet." formatter_data="android_java">
-            Chromium deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK">&lt;link&gt;</ph>managing your ad privacy in Chromium<ph name="END_LINK">&lt;/link&gt;</ph>.
+            Rhenium deletes any activity data that you've shared with sites after 30 days. If you visit a site again it may reappear on the list. Learn more about <ph name="BEGIN_LINK">&lt;link&gt;</ph>managing your ad privacy in Rhenium<ph name="END_LINK">&lt;/link&gt;</ph>.
           </message>
         </else>
       </if>
@@ -415,24 +415,24 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_SETTINGS_PRIVACY_GUIDE_AD_TOPICS_WHEN_ON_BULLET1" desc="A part of the feature description of Ad Topics card in the Privacy Guide." formatter_data="android_java">
-            Chrome notes topics of interest based on your recent browsing history. For example, things like Sports, Apparel, and more
+            Rhenium notes topics of interest based on your recent browsing history. For example, things like Sports, Apparel, and more
           </message>
           <message name="IDS_SETTINGS_PRIVACY_GUIDE_AD_TOPICS_WHEN_ON_BULLET3" desc="A part of the feature description of Ad Topics card in the Privacy Guide." formatter_data="android_java">
-            Chrome auto-deletes ad topics that are older than 4 weeks
+            Rhenium auto-deletes ad topics that are older than 4 weeks
           </message>
           <message name="IDS_SETTINGS_PRIVACY_GUIDE_AD_TOPICS_THINGS_TO_CONSIDER_BULLET1" desc="A part of the things to consider section of the Ad Topics card in the Privacy Guide." formatter_data="android_java">
-            You can see your ad topics in Chrome settings and block the ones you don't want shared with sites
+            You can see your ad topics in Rhenium settings and block the ones you don't want shared with sites
           </message>
         </then>
         <else>
           <message name="IDS_SETTINGS_PRIVACY_GUIDE_AD_TOPICS_WHEN_ON_BULLET1" desc="A part of the feature description of Ad Topics card in the Privacy Guide." formatter_data="android_java">
-            Chromium notes topics of interest based on your recent browsing history. For example, things like Sports, Apparel, and more
+            Rhenium notes topics of interest based on your recent browsing history. For example, things like Sports, Apparel, and more
           </message>
           <message name="IDS_SETTINGS_PRIVACY_GUIDE_AD_TOPICS_WHEN_ON_BULLET3" desc="A part of the feature description of Ad Topics card in the Privacy Guide." formatter_data="android_java">
-            Chromium auto-deletes ad topics that are older than 4 weeks
+            Rhenium auto-deletes ad topics that are older than 4 weeks
           </message>
           <message name="IDS_SETTINGS_PRIVACY_GUIDE_AD_TOPICS_THINGS_TO_CONSIDER_BULLET1" desc="A part of the things to consider section of the Ad Topics card in the Privacy Guide." formatter_data="android_java">
-            You can see your ad topics in Chromium settings and block the ones you don't want shared with sites
+            You can see your ad topics in Rhenium settings and block the ones you don't want shared with sites
           </message>
         </else>
       </if>
@@ -455,12 +455,12 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_SETTINGS_AD_TOPICS_PAGE_ACTIVE_TOPICS_DESCRIPTION" desc="A description that appears beneath the 'Active topics' label." formatter_data="android_java">
-            Chrome auto-deletes ad topics that are older than 4 weeks
+            Rhenium auto-deletes ad topics that are older than 4 weeks
           </message>
         </then>
         <else>
           <message name="IDS_SETTINGS_AD_TOPICS_PAGE_ACTIVE_TOPICS_DESCRIPTION" desc="A description that appears beneath the 'Active topics' label." formatter_data="android_java">
-            Chromium auto-deletes ad topics that are older than 4 weeks
+            Rhenium auto-deletes ad topics that are older than 4 weeks
           </message>
         </else>
       </if>
@@ -481,12 +481,12 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_SETTINGS_COOKIES_BLOCK_THIRD_PARTY_SETTINGS_ALLOW_BULLET_THREE" desc="This text is for a bullet that provides detail about the first setting option. It describes the key new detail that now applies to this setting option." formatter_data="android_java">
-            When you're in Incognito mode, Chrome blocks sites from using third-party cookies
+            When you're in Incognito mode, Rhenium blocks sites from using third-party cookies
           </message>
         </then>
         <else>
           <message name="IDS_SETTINGS_COOKIES_BLOCK_THIRD_PARTY_SETTINGS_ALLOW_BULLET_THREE" desc="This text is for a bullet that provides detail about the first setting option. It describes the key new detail that now applies to this setting option." formatter_data="android_java">
-            When you're in Incognito mode, Chromium blocks sites from using third-party cookies
+            When you're in Incognito mode, Rhenium blocks sites from using third-party cookies
           </message>
         </else>
       </if>
@@ -519,12 +519,12 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_PRIVACY_GUIDE_COOKIE_SETTINGS_ALLOW_THINGS_TO_CONSIDER_BULLET_TWO" desc="This text is for a bullet that provides key considerations about the first setting option. It describes the key new detail that now applies to this setting option.">
-            When you're in Incognito mode, Chrome blocks sites from using third-party cookies
+            When you're in Incognito mode, Rhenium blocks sites from using third-party cookies
           </message>
         </then>
         <else>
           <message name="IDS_PRIVACY_GUIDE_COOKIE_SETTINGS_ALLOW_THINGS_TO_CONSIDER_BULLET_TWO" desc="This text is for a bullet that provides key considerations about the first setting option. It describes the key new detail that now applies to this setting option.">
-            When you're in Incognito mode, Chromium blocks sites from using third-party cookies
+            When you're in Incognito mode, Rhenium blocks sites from using third-party cookies
           </message>
         </else>
       </if>

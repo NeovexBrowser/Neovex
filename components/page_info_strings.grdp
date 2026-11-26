@@ -32,10 +32,10 @@
     You're viewing a developer tools page
   </message>
   <message name="IDS_PAGE_INFO_READER_MODE_PAGE_SECURE" desc="Message to display in the page info bubble when the page you are viewing is the reader mode version of an article which was retrieved over a secure connection.">
-    Chrome simplified this page to make it easier to read. Chrome retrieved the original page over a secure connection.
+    Rhenium simplified this page to make it easier to read. Rhenium retrieved the original page over a secure connection.
   </message>
   <message name="IDS_PAGE_INFO_READER_MODE_PAGE" desc="Message to display in the page info bubble when the page you are viewing is the reader mode version of an article which was retrieved over an insecure connection.">
-    Chrome simplified this page to make it easier to read. Chrome retrieved the original page over an insecure connection.
+    Rhenium simplified this page to make it easier to read. Rhenium retrieved the original page over an insecure connection.
   </message>
 
   <!-- Safety Tip summary strings -->
@@ -94,12 +94,12 @@
   </message>
   <if expr="_google_chrome">
     <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website.">
-      You just entered your password on a deceptive site. To secure your accounts, Chrome recommends checking your saved passwords.
+      You just entered your password on a deceptive site. To secure your accounts, Rhenium recommends checking your saved passwords.
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website.">
-      You just entered your password on a deceptive site. To secure your accounts, Chromium recommends checking your saved passwords.
+      You just entered your password on a deceptive site. To secure your accounts, Rhenium recommends checking your saved passwords.
     </message>
   </if>
   <if expr="use_titlecase">
@@ -226,7 +226,7 @@
     <if expr="is_android">
     <!-- Only used in the dialog shown after tapping "Details" in page info -->
     <message name="IDS_PAGE_INFO_SECURE_IDENTITY_VERIFIED" desc="The text of the identity section when the page is secure and uses a valid certificate">
-      <ph name="BROWSER">$1<ex>Chromium</ex></ph> verified that <ph name="ISSUER">$2<ex>VeriSign</ex></ph> issued this website's certificate.
+      <ph name="BROWSER">$1<ex>Rhenium</ex></ph> verified that <ph name="ISSUER">$2<ex>VeriSign</ex></ph> issued this website's certificate.
     </message>
     </if>
 
@@ -469,16 +469,16 @@
       </message>
     </if>
     <message name="IDS_PAGE_INFO_CAMERA_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the camera permission with a link to system settings.">
-        To use your camera, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your camera, give Rhenium access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_MICROPHONE_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the microphone permission with a link to system settings.">
-        To use your microphone, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your microphone, give Rhenium access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_LOCATION_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the location permission with a link to system settings.">
-        To use your location, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your location, give Rhenium access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_CLIPBOARD_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the clipboard permission with a link to system settings.">
-        To use your clipboard, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your clipboard, give Rhenium access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_SETTINGS_OF_A_SYSTEM_LINK" desc="This is the text of the link pointing to settings of a system. This appears under a permission in the Page Info bubble if the permission is blocked on the system level.">
         system settings
@@ -539,36 +539,36 @@
     <!-- Password Protection -->
     <if expr="_google_chrome">
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
-        You could lose access to your Google Account. Chrome recommends changing your password now. You'll be asked to sign in.
+        You could lose access to your Google Account. Rhenium recommends changing your password now. You'll be asked to sign in.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Chrome sync user that they have reused their Google password on the current website.">
-        Chrome can help you protect your Google Account and change your password.
+        Rhenium can help you protect your Google Account and change your password.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Google password on the current website.">
-        You just entered your password on a deceptive site. Chrome can help. To change your password and notify Google that your account may be at risk, click Protect Account.
+        You just entered your password on a deceptive site. Rhenium can help. To change your password and notify Google that your account may be at risk, click Protect Account.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your organization's account or experience identity theft. Chrome recommends changing your password now.
+        You could lose access to your organization's account or experience identity theft. Rhenium recommends changing your password now.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE_WITH_ORG_NAME" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Chrome recommends changing your password now.
+        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Rhenium recommends changing your password now.
       </message>
     </if>
     <if expr="not _google_chrome">
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
-        You could lose access to your Google Account. Chromium recommends changing your password now. You'll be asked to sign in.
+        You could lose access to your Google Account. Rhenium recommends changing your password now. You'll be asked to sign in.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Chrome sync user that they have reused their Google password on the current website.">
-        Chromium can help you protect your Google Account and change your password.
+        Rhenium can help you protect your Google Account and change your password.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Google password on the current website.">
-        You just entered your password on a deceptive site. Chromium can help. To change your password and notify Google that your account may be at risk, click Protect Account.
+        You just entered your password on a deceptive site. Rhenium can help. To change your password and notify Google that your account may be at risk, click Protect Account.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your organization's account or experience identity theft. Chromium recommends changing your password now.
+        You could lose access to your organization's account or experience identity theft. Rhenium recommends changing your password now.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE_WITH_ORG_NAME" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Chromium recommends changing your password now.
+        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Rhenium recommends changing your password now.
       </message>
     </if>
 
@@ -856,13 +856,13 @@
     See info used to show you ads
   </message>
   <message name="IDS_PAGE_INFO_AD_PRIVACY_TOPICS_DESCRIPTION"  desc="1 of 3 possible descriptions a user might see when they choose 'Ad privacy' from page info for a specific site. 1) Navigate to any site. 2) Click the icon (often a lock) to the left of the URL in the address bar. Information about the page you're viewing appears. The 'Ad privacy' label will appear above the 'Site settings' button. 3) Click on Ad privacy. This string describes the case that the site being viewed uses the Ad topics setting. What's the Ad topics setting? When on, Chrome will estimate the user's topics of interest based on their recent browsing history and then show up to 3 of those topics with a site so that the site can better personalize ads (a privacy-preserving way to replicate some of the functionality of third-party cookies). In this case, we're informing the user that this site uses the Ad topics API and we're showing the user the ad topics Chrome has shared with the site. A button 'Manage ad privacy' allows the user to turn 'Ad privacy' settings on/off or to block specific ad topics.">
-    This site gets your ad topics from Chrome to show you more relevant ads
+    This site gets your ad topics from Rhenium to show you more relevant ads
   </message>
   <message name="IDS_PAGE_INFO_AD_PRIVACY_FLEDGE_DESCRIPTION" desc="2 of 3 possible descriptions a user might see when they choose 'Ad privacy' from page info for a specific site. 1) Navigate to any site. 2) Click the icon (often a lock) to the left of the URL in the address bar. Information about the page you're viewing appears. The 'Ad privacy' label will appear above the 'Site settings' button. 3) Click on Ad privacy. This string describes the case that the site being viewed uses the Site-suggested ads setting. What's the Site-suggested ads setting? When on, a site can determine a user's interests, save info with Chrome relative to those interests. Later, as a user continues browsing, a site can ask Chrome for a user's interests and the first site can (through Chrome) suggest ads the user might like. In this case, we're informing the user that this site uses the Site-suggested ads API. A button 'Manage ad privacy' allows the user to turn 'Ad privacy' settings on/off or to block specific ad topics.">
     This site determines things you like and then suggests ads to other sites
   </message>
   <message name="IDS_PAGE_INFO_AD_PRIVACY_TOPICS_AND_FLEDGE_DESCRIPTION" desc="3 of 3 possible descriptions a user might see when they choose 'Ad privacy' from page info for a specific site. 1) Navigate to any site. 2) Click the icon (often a lock) to the left of the URL in the address bar. Information about the page you're viewing appears. The 'Ad privacy' label will appear above the 'Site settings' button. 3) Click on Ad privacy. This string describes the case that the site being viewed uses both the Ad topics &amp; Site-suggested ads settings. AD TOPICS: When on, Chrome will estimate the user's topics of interest based on their recent browsing history and then show up to 3 of those topics with a site so that the site can better personalize ads (a privacy-preserving way to replicate some of the functionality of third-party cookies). SITE-SUGGESTED ADS: When on, a site can determine a user's interests, save info with Chrome relative to those interests. Later, as a user continues browsing, a site can ask Chrome for a user's interests and the first site can (through Chrome) suggest ads the user might like. In this case, we're informing the user that this site 1) has asked Chrome for the user's interests (the Ad topics setting), and 2) uses the Site-suggested ads API (this site determines the user's interests and then can suggest ads to other sites as the user continues browsing). A button 'Manage ad privacy' allows the user to turn 'Ad privacy' settings on/off or to block specific ad topics or sites.">
-    This site determines things you like and then suggests ads to other sites. This site also gets your ad topics from Chrome to show you more relevant ads.
+    This site determines things you like and then suggests ads to other sites. This site also gets your ad topics from Rhenium to show you more relevant ads.
   </message>
   <message name="IDS_PAGE_INFO_AD_PRIVACY_SUBPAGE_MANAGE_BUTTON" desc="A button label that opens the Ad privacy page, allowing a user to turn on / off the ad privacy settings and to manage the topics and sites that influence ad personalization.">
     Manage ad privacy

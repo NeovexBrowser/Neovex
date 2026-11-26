@@ -1,4 +1,4 @@
-#include "chrome/browser/neovex/update/neovex_auto_updater.h"
+#include "chrome/browser/rhenium/update/rhenium_auto_updater.h"
 
 #include "base/files/file_util.h"
 #include "base/path_service.h"
@@ -22,20 +22,20 @@
 #include "services/network/public/cpp/shared_url_loader_factory.h"
 #include "services/network/public/cpp/simple_url_loader.h"
 
-namespace neovex {
+namespace rhenium {
 
-// NEOVEX AUTOUPDATE
+// RHENIUM AUTOUPDATE
 
-class NeovexAutoUpdateGlobalError : public GlobalErrorWithStandardBubble {
+class RheniumAutoUpdateGlobalError : public GlobalErrorWithStandardBubble {
 public:
-    explicit NeovexAutoUpdateGlobalError(const std::string& message) : message_(message) {}
+    explicit RheniumAutoUpdateGlobalError(const std::string& message) : message_(message) {}
 
     bool HasMenuItem() override { return false; }
     int MenuItemCommandID() override { return 0; }
     std::u16string MenuItemLabel() override { return std::u16string(); }
     void ExecuteMenuItem(Browser* browser) override {}
     
-    std::u16string GetBubbleViewTitle() override { return u"Neovex Update"; }
+    std::u16string GetBubbleViewTitle() override { return u"Rhenium Update"; }
     std::vector<std::u16string> GetBubbleViewMessages() override { return {base::UTF8ToUTF16(message_)}; }
     std::u16string GetBubbleViewAcceptButtonLabel() override { return u"OK"; }
     std::u16string GetBubbleViewCancelButtonLabel() override { return std::u16string(); }
@@ -50,7 +50,7 @@ public:
 
 private:
     std::string message_;
-    base::WeakPtrFactory<NeovexAutoUpdateGlobalError> weak_ptr_factory_{this};
+    base::WeakPtrFactory<RheniumAutoUpdateGlobalError> weak_ptr_factory_{this};
 };
 
 static void ShowUpdateNotification(const std::string& message) {
@@ -60,20 +60,20 @@ static void ShowUpdateNotification(const std::string& message) {
     Profile* profile = browser->profile();
     GlobalErrorService* error_service = GlobalErrorServiceFactory::GetForProfile(profile);
     if (error_service) {
-        auto error = std::make_unique<NeovexAutoUpdateGlobalError>(message);
+        auto error = std::make_unique<RheniumAutoUpdateGlobalError>(message);
         error->ShowBubbleView(browser);
         error_service->AddGlobalError(std::move(error));
     }
 }
 
-NeovexAutoUpdater* NeovexAutoUpdater::GetInstance() {
-    static base::NoDestructor<NeovexAutoUpdater> instance;
+RheniumAutoUpdater* RheniumAutoUpdater::GetInstance() {
+    static base::NoDestructor<RheniumAutoUpdater> instance;
     return instance.get();
 }
 
-void NeovexAutoUpdater::StartDownload(const std::string& url) {
+void RheniumAutoUpdater::StartDownload(const std::string& url) {
     // Check if we already have a ready update from a previous session
-    std::string saved_path = g_browser_process->local_state()->GetString("neovex.update_installer_path");
+    std::string saved_path = g_browser_process->local_state()->GetString("rhenium.update_installer_path");
     if (!saved_path.empty()) {
         base::FilePath path = base::FilePath::FromUTF8Unsafe(saved_path);
         
@@ -82,27 +82,27 @@ void NeovexAutoUpdater::StartDownload(const std::string& url) {
             base::BindOnce([](base::FilePath p) { return base::PathExists(p); }, path),
             base::BindOnce([](base::FilePath p, bool exists) {
                 if (exists) {
-                    NeovexAutoUpdater::GetInstance()->update_ready_ = true;
-                    NeovexAutoUpdater::GetInstance()->downloaded_installer_path_ = p;
-                    ShowUpdateNotification("Update ready. Restart Neovex to apply.");
+                    RheniumAutoUpdater::GetInstance()->update_ready_ = true;
+                    RheniumAutoUpdater::GetInstance()->downloaded_installer_path_ = p;
+                    ShowUpdateNotification("Update ready. Restart Rhenium to apply.");
                 } else {
-                    g_browser_process->local_state()->SetString("neovex.update_installer_path", "");
+                    g_browser_process->local_state()->SetString("rhenium.update_installer_path", "");
                 }
             }, path)
         );
         return;
     }
 
-    ShowUpdateNotification("Downloading Neovex update...");
+    ShowUpdateNotification("Downloading Rhenium update...");
 
     auto resource_request = std::make_unique<network::ResourceRequest>();
     resource_request->url = GURL(url);
     
     net::NetworkTrafficAnnotationTag traffic_annotation =
-        net::DefineNetworkTrafficAnnotation("neovex_auto_updater", R"(
+        net::DefineNetworkTrafficAnnotation("rhenium_auto_updater", R"(
           semantics {
-            sender: "Neovex Auto Updater"
-            description: "Downloads the latest Neovex installer."
+            sender: "Rhenium Auto Updater"
+            description: "Downloads the latest Rhenium installer."
             trigger: "Triggered automatically when a new version is detected."
             data: "None."
             destination: OTHER
@@ -121,7 +121,7 @@ void NeovexAutoUpdater::StartDownload(const std::string& url) {
         base::BindOnce([]() {
             base::FilePath temp_dir;
             base::GetTempDir(&temp_dir);
-            base::FilePath dest_path = temp_dir.AppendASCII("neovex_update").AppendASCII("mini_installer.exe");
+            base::FilePath dest_path = temp_dir.AppendASCII("rhenium_update").AppendASCII("mini_installer.exe");
             base::CreateDirectory(dest_path.DirName());
             return dest_path;
         }),
@@ -133,7 +133,7 @@ void NeovexAutoUpdater::StartDownload(const std::string& url) {
                 base::BindOnce([](std::unique_ptr<network::SimpleURLLoader> loader,
                                   base::FilePath downloaded_path) {
                     if (!downloaded_path.empty()) {
-                        NeovexAutoUpdater::GetInstance()->OnDownloadComplete(downloaded_path);
+                        RheniumAutoUpdater::GetInstance()->OnDownloadComplete(downloaded_path);
                     }
                 }, std::move(loader)),
                 path);
@@ -141,21 +141,21 @@ void NeovexAutoUpdater::StartDownload(const std::string& url) {
     );
 }
 
-void NeovexAutoUpdater::OnDownloadComplete(const base::FilePath& path) {
+void RheniumAutoUpdater::OnDownloadComplete(const base::FilePath& path) {
     downloaded_installer_path_ = path;
     update_ready_ = true;
 
     // Save installer path to local prefs so it survives browser restart
-    g_browser_process->local_state()->SetString("neovex.update_installer_path", path.AsUTF8Unsafe());
+    g_browser_process->local_state()->SetString("rhenium.update_installer_path", path.AsUTF8Unsafe());
 
-    ShowUpdateNotification("Update ready. Restart Neovex to apply.");
+    ShowUpdateNotification("Update ready. Restart Rhenium to apply.");
 }
 
-bool NeovexAutoUpdater::IsUpdateReady() const {
+bool RheniumAutoUpdater::IsUpdateReady() const {
     return update_ready_;
 }
 
-void NeovexAutoUpdater::ApplyUpdateIfReady() {
+void RheniumAutoUpdater::ApplyUpdateIfReady() {
     if (!update_ready_ || downloaded_installer_path_.empty()) return;
 
     base::ThreadPool::PostTask(
@@ -173,9 +173,9 @@ void NeovexAutoUpdater::ApplyUpdateIfReady() {
     );
 
     // Clear the path so it doesn't run again
-    g_browser_process->local_state()->SetString("neovex.update_installer_path", "");
+    g_browser_process->local_state()->SetString("rhenium.update_installer_path", "");
 
     chrome::AttemptRestart();
 }
 
-} // namespace neovex
+} // namespace rhenium

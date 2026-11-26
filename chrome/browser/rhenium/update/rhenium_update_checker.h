@@ -4,9 +4,9 @@
 #include "base/functional/callback.h"
 #include "base/no_destructor.h"
 
-namespace neovex {
+namespace rhenium {
 
-// NEOVEX UPDATE
+// RHENIUM UPDATE
 struct UpdateInfo {
     UpdateInfo();
     ~UpdateInfo();
@@ -19,9 +19,9 @@ struct UpdateInfo {
     bool update_available = false;
 };
 
-class NeovexUpdateChecker {
+class RheniumUpdateChecker {
 public:
-    static NeovexUpdateChecker* GetInstance();
+    static RheniumUpdateChecker* GetInstance();
     
     // Check once per day silently on startup
     void CheckForUpdates();
@@ -36,14 +36,14 @@ public:
     UpdateInfo GetLastCheckResult() const;
 
 private:
-    friend class base::NoDestructor<NeovexUpdateChecker>;
+    friend class base::NoDestructor<RheniumUpdateChecker>;
 
-    NeovexUpdateChecker() = default;
-    ~NeovexUpdateChecker() = default;
+    RheniumUpdateChecker() = default;
+    ~RheniumUpdateChecker() = default;
 
     void OnVersionFetched(const std::string& json_response);
     
     UpdateInfo last_result_;
 };
 
-} // namespace neovex
+} // namespace rhenium

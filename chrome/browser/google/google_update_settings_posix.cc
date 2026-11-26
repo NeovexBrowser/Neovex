@@ -77,7 +77,7 @@ GoogleUpdateSettings::CollectStatsConsentTaskRunner() {
 
 // static
 bool GoogleUpdateSettings::GetCollectStatsConsent() {
-  // NEOVEX OPT DEGOOGLE: Always decline stats collection on POSIX / Linux as well.
+  // RHENIUM OPT DEGOOGLE: Always decline stats collection on POSIX / Linux as well.
   return false;
 }
 

@@ -91,7 +91,7 @@
     html.has-custom-bg downloads-manager {
       background: transparent !important;
     }
-    #neovex-bg-custom {
+    #rhenium-bg-custom {
       position: fixed;
       inset: 0;
       z-index: -2;
@@ -99,14 +99,14 @@
       background-position: center;
       background-repeat: no-repeat;
       pointer-events: none;
-      background-image: url('$i18n{neovexWallpaperDarkUrl}');
+      background-image: url('$i18n{rheniumWallpaperDarkUrl}');
     }
     @media (prefers-color-scheme: light) {
-      #neovex-bg-custom {
-        background-image: url('$i18n{neovexWallpaperLightUrl}');
+      #rhenium-bg-custom {
+        background-image: url('$i18n{rheniumWallpaperLightUrl}');
       }
     }
-    #neovex-bg-overlay {
+    #rhenium-bg-overlay {
       position: fixed;
       inset: 0;
       z-index: -1;
@@ -114,7 +114,7 @@
       background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
     }
     @media (prefers-color-scheme: light) {
-      #neovex-bg-overlay {
+      #rhenium-bg-overlay {
         background: rgba(245, 245, 240, 0.6);
       }
     }
@@ -133,8 +133,8 @@
       overflow: hidden;
     }
 
-    /* NEOVEX DOWNLOADS: Category sidebar (matching settings page) */
-    #neovex-sidebar {
+    /* RHENIUM DOWNLOADS: Category sidebar (matching settings page) */
+    #rhenium-sidebar {
       position: fixed;
       left: 0;
       top: 0;
@@ -152,7 +152,7 @@
       z-index: 9999;
     }
 
-    #neovex-sidebar .nvx-sb-title {
+    #rhenium-sidebar .nvx-sb-title {
       font-size: 13px;
       font-weight: 600;
       color: rgba(255,255,255,0.35);
@@ -161,7 +161,7 @@
       letter-spacing: 0.5px;
     }
 
-    #neovex-sidebar .nvx-cat {
+    #rhenium-sidebar .nvx-cat {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -183,12 +183,12 @@
       line-height: 1.3;
     }
 
-    #neovex-sidebar .nvx-cat:hover {
+    #rhenium-sidebar .nvx-cat:hover {
       background: rgba(255, 255, 255, 0.05);
       color: rgba(255,255,255,0.8);
     }
 
-    #neovex-sidebar .nvx-cat.active {
+    #rhenium-sidebar .nvx-cat.active {
       background: rgba(124, 140, 255, 0.1);
       color: #a0adff;
     }
@@ -197,7 +197,7 @@
 
     
 
-    #neovex-sidebar .nvx-cat-count {
+    #rhenium-sidebar .nvx-cat-count {
       margin-left: auto;
       font-size: 10px;
       color: rgba(255,255,255,0.2);
@@ -205,11 +205,11 @@
       text-align: right;
     }
 
-    #neovex-sidebar .nvx-cat.active .nvx-cat-count {
+    #rhenium-sidebar .nvx-cat.active .nvx-cat-count {
       color: rgba(160, 173, 255, 0.5);
     }
 
-    #neovex-sidebar .nvx-sep {
+    #rhenium-sidebar .nvx-sep {
       height: 1px;
       background: rgba(255,255,255,0.04);
       margin: 6px 14px;
@@ -222,53 +222,53 @@
       margin-left: 160px;
     }
 
-    #neovex-sidebar::-webkit-scrollbar { width: 3px; }
-    #neovex-sidebar::-webkit-scrollbar-track { background: transparent; }
-    #neovex-sidebar::-webkit-scrollbar-thumb {
+    #rhenium-sidebar::-webkit-scrollbar { width: 3px; }
+    #rhenium-sidebar::-webkit-scrollbar-track { background: transparent; }
+    #rhenium-sidebar::-webkit-scrollbar-thumb {
       background: rgba(255,255,255,0.06);
       border-radius: 2px;
     }
 
     /* Sidebar light overrides */
     @media (prefers-color-scheme: light) {
-      #neovex-sidebar {
+      #rhenium-sidebar {
         background: rgba(255,255,255,0.6);
         border-right-color: rgba(0,0,0,0.07);
       }
-      #neovex-sidebar .nvx-sb-title {
+      #rhenium-sidebar .nvx-sb-title {
         color: rgba(0,0,0,0.35);
       }
-      #neovex-sidebar .nvx-cat {
+      #rhenium-sidebar .nvx-cat {
         color: rgba(0,0,0,0.55);
       }
-      #neovex-sidebar .nvx-cat:hover {
+      #rhenium-sidebar .nvx-cat:hover {
         background: rgba(0,0,0,0.05);
         color: rgba(0,0,0,0.85);
       }
-      #neovex-sidebar .nvx-cat.active {
+      #rhenium-sidebar .nvx-cat.active {
         background: rgba(61,78,219,0.1);
         color: #3d4edb;
       }
       
       
-      #neovex-sidebar .nvx-cat-count {
+      #rhenium-sidebar .nvx-cat-count {
         color: rgba(0,0,0,0.2);
       }
-      #neovex-sidebar .nvx-cat.active .nvx-cat-count {
+      #rhenium-sidebar .nvx-cat.active .nvx-cat-count {
         color: rgba(61,78,219,0.5);
       }
-      #neovex-sidebar .nvx-sep {
+      #rhenium-sidebar .nvx-sep {
         background: rgba(0,0,0,0.06);
       }
     }
   </style>
 </head>
 <body class="has-custom-bg">
-  <div id="neovex-bg-custom"></div>
-  <div id="neovex-bg-overlay"></div>
+  <div id="rhenium-bg-custom"></div>
+  <div id="rhenium-bg-overlay"></div>
 
-  <!-- NEOVEX DOWNLOADS: Category sidebar (static HTML, matching settings page layout) -->
-  <nav id="neovex-sidebar">
+  <!-- RHENIUM DOWNLOADS: Category sidebar (static HTML, matching settings page layout) -->
+  <nav id="rhenium-sidebar">
     <div class="nvx-sb-title">Categories</div>
     <button class="nvx-cat active" data-category="All">
       <span>All</span>

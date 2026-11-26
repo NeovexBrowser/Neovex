@@ -177,7 +177,7 @@
     Sync disabled
   </message>
   <message name="IDS_PROFILES_DASHER_FEATURE_DISABLED_TITLE" desc="Description of the profile user menu when certain features are disabled for Dasherless profile.">
-    This isn't a Google Account. Items you save to Chrome won't be available on other devices.
+    This isn't a Google Account. Items you save to Rhenium won't be available on other devices.
   </message>
    <message name="IDS_PROFILES_DICE_SYNC_PAUSED_TITLE" desc="Title of the profile user menu when sync is paused.">
     Sync is paused
@@ -879,7 +879,7 @@
       Guest mode
     </message>
     <message name="IDS_PROFILE_PICKER_BACK_BUTTON_ARIA_LABEL" desc="Label for a button that navigates user to the previous page from a profile picker subpage">
-      Back from <ph name="PAGE_TITLE">$1<ex>Set up your new Chrome profile</ex></ph> page
+      Back from <ph name="PAGE_TITLE">$1<ex>Set up your new Rhenium profile</ex></ph> page
     </message>
     <message name="IDS_PROFILE_PICKER_BACK_BUTTON_SIGN_IN_LABEL" desc="Label for a button that navigates user to the previous page from the 'Sign in' page">
       Back from sign in

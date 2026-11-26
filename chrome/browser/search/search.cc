@@ -236,7 +236,7 @@ bool IsRenderedInInstantProcess(content::WebContents* contents,
 }  // namespace
 
 bool DefaultSearchProviderIsGoogle(Profile* profile) {
-  // === CUSTOM NEOVEX HACK ===
+  // === CUSTOM RHENIUM HACK ===
   // Always return true so that the custom New Tab Page is always used,
   // regardless of which default search engine the user chooses in Settings.
   return true;

@@ -109,11 +109,11 @@ void AddGrayscaleSysColorOverrides(ColorMixer& mixer,
                                                 : kColorRefNeutral94};
 }
 
-void AddNeovexDarkThemeOverrides(ColorMixer& mixer, const ColorProviderKey& key) {
+void AddRheniumDarkThemeOverrides(ColorMixer& mixer, const ColorProviderKey& key) {
   if (key.color_mode != ColorProviderKey::ColorMode::kDark) {
     return;
   }
-  // Neovex Deep Dark Purple for the base surfaces
+  // Rhenium Deep Dark Purple for the base surfaces
   mixer[kColorSysSurface] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
   mixer[kColorSysBase] = {SkColorSetRGB(0x0b, 0x0b, 0x14)};
   
@@ -415,8 +415,8 @@ void AddSysColorMixer(ColorProvider* provider, const ColorProviderKey& key) {
     AddThemedSysColorOverrides(mixer, key);
   }
 
-  // === CUSTOM THEME: Enforce Neovex theme globally ===
-  AddNeovexDarkThemeOverrides(mixer, key);
+  // === CUSTOM THEME: Enforce Rhenium theme globally ===
+  AddRheniumDarkThemeOverrides(mixer, key);
 }
 
 }  // namespace ui
